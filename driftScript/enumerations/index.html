@@ -1292,7 +1292,25 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#effecttype" class="md-nav__link">
+    <span class="md-ellipsis">
+      EffectType
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#eventtype" class="md-nav__link">
+    <span class="md-ellipsis">
+      EventType
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eventtype_1" class="md-nav__link">
     <span class="md-ellipsis">
       EventType
     </span>
@@ -1586,7 +1604,25 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#effecttype" class="md-nav__link">
+    <span class="md-ellipsis">
+      EffectType
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#eventtype" class="md-nav__link">
+    <span class="md-ellipsis">
+      EventType
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eventtype_1" class="md-nav__link">
     <span class="md-ellipsis">
       EventType
     </span>
@@ -1841,8 +1877,14 @@ Also DO NOT assume <code>Invalid</code> will always be equal to <code>0</code> o
 </span><span id="__span-10-27"><a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a><span class="w">                            </span><span class="c1">// Allows you to override unit friendly name</span>
 </span><span id="__span-10-28"><a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a><span class="w">                            </span><span class="c1">// on a per-unit basis.</span>
 </span><span id="__span-10-29"><a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a>
-</span><span id="__span-10-30"><a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a><span class="w">    </span><span class="n">ForceInvulnerable</span><span class="w">       </span><span class="c1">// Read-Write       (bool)</span>
-</span><span id="__span-10-31"><a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a><span class="p">}</span>
+</span><span id="__span-10-30"><a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a><span class="w">    </span><span class="n">ForceInvulnerable</span><span class="p">,</span><span class="w">      </span><span class="c1">// Read-Write       (bool)</span>
+</span><span id="__span-10-31"><a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a><span class="w">    </span><span class="n">LookAtDirection</span><span class="p">,</span><span class="w">        </span><span class="c1">// Read-Write       (Float2)</span>
+</span><span id="__span-10-32"><a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a><span class="w">    </span><span class="n">DriftMode</span><span class="p">,</span><span class="w">              </span><span class="c1">// Read-Write       (bool)</span>
+</span><span id="__span-10-33"><a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a><span class="w">    </span><span class="n">IsCritter</span><span class="p">,</span><span class="w">              </span><span class="c1">// Read             (bool)</span>
+</span><span id="__span-10-34"><a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a><span class="w">    </span><span class="n">CritterFlag</span><span class="p">,</span><span class="w">            </span><span class="c1">// Read-Write       (bool)</span>
+</span><span id="__span-10-35"><a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a><span class="w">    </span><span class="n">IsSpeechBubbleActive</span><span class="p">,</span><span class="w">   </span><span class="c1">// Read             (bool)</span>
+</span><span id="__span-10-36"><a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a><span class="w">    </span><span class="n">Position</span><span class="w">                </span><span class="c1">// Read-Write       (Float2)</span>
+</span><span id="__span-10-37"><a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a><span class="p">}</span>
 </span></code></pre></div>
 <ul>
 <li>Primarily used in <a href="/DriftWarsEditor/driftScript/functions/#property-getterssetters">property-getterssetters</a></li>
@@ -1857,8 +1899,9 @@ Also DO NOT assume <code>Invalid</code> will always be equal to <code>0</code> o
 </span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">    </span><span class="n">Rotation</span><span class="p">,</span><span class="w">               </span><span class="c1">// Read/Write   float</span>
 </span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">    </span><span class="n">Size</span><span class="p">,</span><span class="w">                   </span><span class="c1">// Read/Write   Vec2&lt;float&gt;</span>
 </span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">    </span><span class="n">Tag</span><span class="p">,</span><span class="w">                    </span><span class="c1">// Read/Write   string</span>
-</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">    </span><span class="n">InterpolateTransforms</span><span class="w">   </span><span class="c1">// Read/Write   bool</span>
-</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="p">}</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">    </span><span class="n">InterpolateTransforms</span><span class="p">,</span><span class="w">  </span><span class="c1">// Read/Write   bool</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">    </span><span class="n">RestrictToSpace</span><span class="w">         </span><span class="c1">// Read/Write   bool</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="p">}</span>
 </span></code></pre></div>
 <h2 id="locationprop">LocationProp</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">enum</span><span class="w"> </span><span class="nc">LocationProp</span>
@@ -1871,7 +1914,8 @@ Also DO NOT assume <code>Invalid</code> will always be equal to <code>0</code> o
 </span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">    </span><span class="n">BottomRight</span><span class="p">,</span><span class="w">    </span><span class="c1">// Read         (Vec2)</span>
 </span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">    </span><span class="n">Center</span><span class="p">,</span><span class="w">         </span><span class="c1">// Read         (Vec2)</span>
 </span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">    </span><span class="n">Size</span><span class="w">            </span><span class="c1">// Read         (Vec2)</span>
-</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="p">}</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">    </span><span class="kt">AABR</span><span class="p">,</span><span class="w">           </span><span class="c1">// Read         (AABR)</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="p">}</span>
 </span></code></pre></div>
 <ul>
 <li>Primarily used in <a href="/DriftWarsEditor/driftScript/functions/#property-getterssetters">property-getterssetters</a></li>
@@ -1954,40 +1998,60 @@ Also DO NOT assume <code>Invalid</code> will always be equal to <code>0</code> o
 </span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">    </span><span class="n">Move</span><span class="p">,</span><span class="w">               </span><span class="c1">// valid params: [m_unitID, m_location, m_pos]</span>
 </span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">    </span><span class="n">Hold</span><span class="p">,</span><span class="w">               </span><span class="c1">// valid params: []</span>
 </span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">    </span><span class="n">Stop</span><span class="p">,</span><span class="w">               </span><span class="c1">// valid params: []</span>
-</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">    </span><span class="n">RightClick</span><span class="w">          </span><span class="c1">// valid params: [m_unitID, m_location, m_pos]</span>
-</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="p">}</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">    </span><span class="n">RightClick</span><span class="p">,</span><span class="w">         </span><span class="c1">// valid params: [m_unitID, m_location, m_pos]</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">    </span><span class="n">Patrol</span><span class="w">              </span><span class="c1">// valid params: [m_location, m_pos]</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="p">}</span>
 </span></code></pre></div>
 <ul>
 <li>Primarily used in <a href="/DriftWarsEditor/driftScript/functions/#gx_queue_command">gx_queue_command</a></li>
 <li><code>string</code> identifiers for <code>Spells</code> can be used as well.</li>
 <li>more to be added later</li>
 </ul>
-<h2 id="eventtype">EventType</h2>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">enum</span><span class="w"> </span><span class="nc">EventType</span>
+<h2 id="effecttype">EffectType</h2>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">enum</span><span class="w"> </span><span class="nc">EffectType</span>
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="p">{</span>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="n">Invalid</span><span class="p">,</span><span class="w">                </span><span class="c1">// Invalid Event</span>
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
-</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="n">PlayerNameChanged</span><span class="p">,</span><span class="w">      </span><span class="c1">// Populates m_playerID, m_playerName, m_oldPlayerName,</span>
-</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">                            </span><span class="c1">// m_playerName2, m_oldPlayerName2,</span>
-</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">                            </span><span class="c1">// m_playerNameColor, and m_oldPlayerNameColor</span>
-</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">                            </span><span class="c1">// of the Event structure</span>
-</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>
-</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="w">    </span><span class="n">PlayerNameColorChanged</span><span class="p">,</span><span class="w"> </span><span class="c1">// Populates m_playerID, m_playerName, m_oldPlayerName,</span>
-</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="w">                            </span><span class="c1">// m_playerName2, m_oldPlayerName2,</span>
-</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="w">                            </span><span class="c1">// m_playerNameColor, and m_oldPlayerNameColor</span>
-</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="w">                            </span><span class="c1">// of the Event structure</span>
-</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>
-</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="w">    </span><span class="n">PlayerLeftGame</span><span class="p">,</span><span class="w">         </span><span class="c1">// Populates m_playerID, m_playerName, and m_playerName2,</span>
-</span><span id="__span-17-16"><a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="w">                            </span><span class="c1">// of the Event structure</span>
-</span><span id="__span-17-17"><a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a>
-</span><span id="__span-17-18"><a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a><span class="w">    </span><span class="n">TextCommand</span><span class="w">             </span><span class="c1">// Populates m_playerID, m_playerName, m_playerName2,</span>
-</span><span id="__span-17-19"><a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a><span class="w">                            </span><span class="c1">// and m_cmd of Event structure</span>
-</span><span id="__span-17-20"><a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a>
-</span><span id="__span-17-21"><a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a><span class="w">    </span><span class="n">UnitEnteredLocation</span><span class="p">,</span><span class="w">    </span><span class="c1">// Populates m_unitID and m_location</span>
-</span><span id="__span-17-22"><a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a><span class="w">    </span><span class="n">UnitExitedLocation</span><span class="p">,</span><span class="w">     </span><span class="c1">// Populates m_unitID and m_location</span>
-</span><span id="__span-17-23"><a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a><span class="w">    </span><span class="n">Sound2dDestroyed</span><span class="p">,</span><span class="w">       </span><span class="c1">// Populates m_soundID</span>
-</span><span id="__span-17-24"><a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a><span class="w">    </span><span class="n">Sound3dDestroyed</span><span class="w">        </span><span class="c1">// Populates m_soundID</span>
-</span><span id="__span-17-25"><a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a><span class="p">}</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="n">Invalid</span><span class="p">,</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="n">BlackHole</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="eventtype">EventType</h2>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">enum</span><span class="w"> </span><span class="nc">EventType</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="p">{</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">    </span><span class="n">Invalid</span><span class="p">,</span><span class="w">                </span><span class="c1">// Invalid Event</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">    </span><span class="n">PlayerNameChanged</span><span class="p">,</span><span class="w">      </span><span class="c1">// Populates m_playerID, m_playerName, m_oldPlayerName,</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">                            </span><span class="c1">// m_playerName2, m_oldPlayerName2,</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="w">                            </span><span class="c1">// m_playerNameColor, and m_oldPlayerNameColor</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">                            </span><span class="c1">// of the Event structure</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">    </span><span class="n">PlayerNameColorChanged</span><span class="p">,</span><span class="w"> </span><span class="c1">// Populates m_playerID, m_playerName, m_oldPlayerName,</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">                            </span><span class="c1">// m_playerName2, m_oldPlayerName2,</span>
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="w">                            </span><span class="c1">// m_playerNameColor, and m_oldPlayerNameColor</span>
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="w">                            </span><span class="c1">// of the Event structure</span>
+</span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>
+</span><span id="__span-18-15"><a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="w">    </span><span class="n">PlayerLeftGame</span><span class="p">,</span><span class="w">         </span><span class="c1">// Populates m_playerID, m_playerName, and m_playerName2,</span>
+</span><span id="__span-18-16"><a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="w">                            </span><span class="c1">// of the Event structure</span>
+</span><span id="__span-18-17"><a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a>
+</span><span id="__span-18-18"><a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a><span class="w">    </span><span class="n">TextCommand</span><span class="w">             </span><span class="c1">// Populates m_playerID, m_playerName, m_playerName2,</span>
+</span><span id="__span-18-19"><a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a><span class="w">                            </span><span class="c1">// and m_cmd of Event structure</span>
+</span><span id="__span-18-20"><a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a>
+</span><span id="__span-18-21"><a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a><span class="w">    </span><span class="n">UnitEnteredLocation</span><span class="p">,</span><span class="w">    </span><span class="c1">// Populates m_unitID and m_location</span>
+</span><span id="__span-18-22"><a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a><span class="w">    </span><span class="n">UnitExitedLocation</span><span class="p">,</span><span class="w">     </span><span class="c1">// Populates m_unitID and m_location</span>
+</span><span id="__span-18-23"><a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a><span class="w">    </span><span class="n">Sound2dDestroyed</span><span class="p">,</span><span class="w">       </span><span class="c1">// Populates m_soundID</span>
+</span><span id="__span-18-24"><a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a><span class="w">    </span><span class="n">Sound3dDestroyed</span><span class="w">        </span><span class="c1">// Populates m_soundID</span>
+</span><span id="__span-18-25"><a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a><span class="w">    </span><span class="n">SwitchEvent</span><span class="p">,</span><span class="w">            </span><span class="c1">// todo</span>
+</span><span id="__span-18-26"><a id="__codelineno-18-26" name="__codelineno-18-26" href="#__codelineno-18-26"></a><span class="w">    </span><span class="n">UnitPlayerChanged</span><span class="p">,</span><span class="w">      </span><span class="c1">// todo</span>
+</span><span id="__span-18-27"><a id="__codelineno-18-27" name="__codelineno-18-27" href="#__codelineno-18-27"></a><span class="w">    </span><span class="n">ButtonPushed</span><span class="p">,</span><span class="w">           </span><span class="c1">// todo</span>
+</span><span id="__span-18-28"><a id="__codelineno-18-28" name="__codelineno-18-28" href="#__codelineno-18-28"></a><span class="w">    </span><span class="n">Explosion</span><span class="w">               </span><span class="c1">// todo</span>
+</span><span id="__span-18-29"><a id="__codelineno-18-29" name="__codelineno-18-29" href="#__codelineno-18-29"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="eventtype_1">EventType</h2>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">enum</span><span class="w"> </span><span class="nc">ExplosionEventType</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="p">{</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">    </span><span class="n">Invalid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">    </span><span class="n">Nuke</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">    </span><span class="n">Barrel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="p">}</span>
 </span></code></pre></div>
 
 
