@@ -23,7 +23,7 @@ class SquirrelLexer(CppLexer):
     EXTRA_TYPES = ('table', 'string', 'Vec2', 'Vec3', 'Vec4',
             'AABR', 'BoundsCheck', 'function', 'void', 'local',
             'foreach', 'in', 'constructor', 'EventType', 'Event',
-            'mixed'
+            'mixed', 'ComplexColor', 'ColorType'
     )
 
     def get_tokens_unprocessed(self, text, stack=('root',)):

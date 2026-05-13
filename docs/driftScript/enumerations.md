@@ -82,14 +82,16 @@ enum TerrainType
     Normal,         // See SecondaryTerrainTypeNormal
 					// for valid secondary types
 
-	Water,          // valid secondary types are 0 and 2
-	Lava,           // valid secondary types are 0 and 2
+	Water,          // valid secondary types are [0 - 3]
+	Lava,           // valid secondary types are [0 - 3]
 	Diamond,        // valid secondary types is just 0
+    Transparent,    // valid secondary types are [0 - 15]
     Glow,           // valid secondary types are [0 - 31]
 	PlayerColor,    // valid secondary types are player_id, i.e. [1-16]
 
 	Unpassable,     // !! Not a dynamic terrain type!
 					// Cannot dynamically change or be set to!
+                    // valid secondary type is just 0 (currently)
 
 	Space,          // valid secondary type is just 0
 
@@ -122,6 +124,18 @@ enum SecondaryTerrainTypeNormal
 - Primarily used in {{fn("gx_set_terrain_type")}} and {{fn("gx_get_terrain_type")}}
 - Should only be used in conjunction with `TerrainType.Normal`
 
+
+## MapProp
+```sq
+enum MapProp
+{
+					    // Access		Type
+	Invalid,
+	ThemeColor,		        	// Read-Write	(Vec4<float>)
+	GlowColor,			         // Read-Write	(Vec4<float>)
+    EnableChatMessageEvents,     // Read-Write  (bool)
+}
+```
 
 ## ForceProp
 ```sq
@@ -179,20 +193,20 @@ enum PlayerProp
 	IsInGame,				// Read				(bool)
 	VictoryStatus,			// Read-Write		(VictoryStatus),
 	AlliedVictory,			// Read-Write		(bool)
-	ColorID,				// Read				(int)
+	Color,					// Read-Write		(Vec3)
 	ForceID					// Read				(int)
-	PlayerNameColorID		// Read-Write		(int)
+	PlayerNameColorDesc		// Read-Write		(int) (i.e. ColorDesc)
 							// Is Write-Enabled only for computer players
 							
 	ColoredPlayerName		// Read 			(string)
 							// Equivalent to:
-							// gx_str_encode_color_id(PlayerNameColorID)
+							// gx_get_player_prop(PlayerProp.PlayerNameColorDesc, playerID)
 							// + PlayerName
 
 	ColoredPlayerName2		// Read				(string)
 							// Equivalent to:
                             // gx_str_encode_color_id(ColorID.PushColor)
-                            // + gx_str_encode_color_id(PlayerNameColorID)
+                            // + gx_get_player_prop(PlayerProp.ColoredPlayerName, playerID)
 							// + PlayerName
 							// + gx_str_encode_color_id(ColorID.PopColor)
 }
@@ -213,14 +227,13 @@ enum UnitProp
 	Size,                   // Read        		(float)
 	UnitType,               // Read        		(string)
     IsOnFire,               // Read        		(bool)
-    GetParentJeep,          // Read        		(int)
-	GetParentDropship,      // Read        		(int)
-	GetParentStarShip,      // Read        		(int)
-	GetParentSpinnerShip,   // Read        		(int)
-    GetParentBunker,        // Read        		(int)
+    ParentJeep,             // Read-Write       (int)
+	ParentDropship,         // Read-Write       (int)
+	ParentStarShip,         // Read-Write       (int)
+    ParentBunker,           // Read-Write       (int)
     GunShipState,           // Read-Write       (GunShipState)
 	Level,					// Read-Write		(int)
-    Identifier,             // Read-Write       (string)
+    Tag,             		// Read-Write       (string)
     PlayerID,               // Read-Write       (int)
 	
 	ForceGhostMode,			// Read-Write		(bool)
@@ -232,12 +245,34 @@ enum UnitProp
 							// Allows you to override unit friendly name
 							// on a per-unit basis.
 
-	ForceInvulnerable		// Read-Write		(bool)
+	ForceInvulnerable,		// Read-Write		(bool)
+    LookAtDirection,     	// Read-Write		(Float2)
+    DriftMode,            	// Read-Write		(bool)
+    IsCritter,     	        // Read	        	(bool)
+    CritterFlag,       	    // Read-Write		(bool)
+    IsSpeechBubbleActive,	// Read             (bool)
+    Position,            	// Read-Write		(Float2)
+    LockUnitToJeep,         // Read-Write       (bool)
 }
 ```
 
 - Primarily used in {{fn("property-getterssetters")}}
 - Setting `Health` to `<= 0` will cause unit to be set to `killed` state.
+
+## DecalProp
+```sq
+enum DecalProp
+{
+					        // Access	    Type
+    Invalid,
+    Position,               // Read/Write   Vec2<float>
+    Rotation,               // Read/Write   float
+    Size,                   // Read/Write   Vec2<float>
+    Tag,                    // Read/Write   string
+    InterpolateTransforms,  // Read/Write   bool
+    RestrictToSpace         // Read/Write   bool
+}
+```
 
 ## LocationProp
 ```sq
@@ -251,6 +286,7 @@ enum LocationProp
 	BottomRight,    // Read 		(Vec2)
 	Center,         // Read 		(Vec2)
 	Size            // Read 		(Vec2)
+    AABR,           // Read         (AABR)
 }
 ```
 
@@ -279,40 +315,52 @@ gx_set_unit_prop(unit_id, UnitProp.GunShipState, GunShipState.ChainGunLevel2)
 
 - the above would give a gunship two chainguns
 
-## ColorID
-```sq
-enum ColorID
+## ColorType
+enum ColorType
 {
-    Invalid,
-    Water,
-    Fire,
-    Rainbow,
-    DefaultTextColor,
-    PushColor,
-    PopColor,
-	PushInvisible,
-    PopInvisible,
-    Black,             	// 0x000000
-    White,            	// 0xFFFFFF
-    Red,              	// 0xFF0000
-    Orange,           	// 0xFF7F00
-    Yellow,           	// 0xFFFF00
-    Chartreuse,       	// 0x7FFF00
-    Green,            	// 0x00FF00
-    SpringGreen,      	// 0x00FF7F
-    Aqua,             	// 0x00FFFF
-    BabyBlue,         	// 0x007FFF
-    Blue,             	// 0x0000FF
-    Purple,           	// 0x7F00FF
-    Pink              	// 0xFF00FF
+	Invalid,
+	Normal,
+	Rainbow,
+	Water,
+	Lava
+}
+
+## Unicode
+```sq
+enum Unicode
+{
+    Special_PushColor,
+    Special_PopColor,
+    Special_PushInvisible,
+    Special_PopInvisible,
+    Special_DefaultColor,
+    Color_Effect_Water,
+    Color_Effect_Lava,
+    Color_Effect_Rainbow,
+    Color_Black,                 	# 0x000000
+    Color_White,                    # 0xFFFFFF
+    Color_Red,                      # 0xFF0000
+    Color_Orange,                   # 0xFF7F00
+    Color_Yellow,                   # 0xFFFF00
+    Color_Chartreuse,               # 0x7FFF00
+    Color_Green,                    # 0x00FF00
+    Color_SpringGreen,              # 0x00FF7F
+    Color_Aqua,                     # 0x00FFFF
+    Color_BabyBlue,                 # 0x007FFF
+    Color_Blue,                     # 0x0000FF
+    Color_Purple,                   # 0x7F00FF
+    Color_Pink                      # 0xFF00FF
 }
 ```
 
-- Common ColorIDs. See in-game Paint pallete for full-list.
-- `PushColor` and `PopColor` are sort of special, and is used for text.
-    - `PushColor` pushes the current color onto a color stack
-    - `PopColor` pops a color off, and sets current text color to it
+- Useful unicode characters available in the game.
+- `Special_PushColor` and `Special_PopColor` are sort of special, and is used for text.
+    - `Special_PushColor` pushes the current color onto a color stack
+    - `Special_PopColor` pops a color off, and sets current text color to it
     - Allows you to save the current arbitrary color, and then re-use it later.
+- `Special_PushInvisible` and `Special_PopInvisible` are also special
+	- All characters after `Special_PushInvisible` will be invisible unless highlighted until a corresponding `Special_PopInvisible` is reached.
+- The `Color_*` unicode characters control text colors for all characters after
 
 ## CommandType
 ```sq
@@ -323,13 +371,23 @@ enum CommandType
     Move,               // valid params: [m_unitID, m_location, m_pos]
     Hold,               // valid params: []
     Stop,               // valid params: []
-    RightClick          // valid params: [m_unitID, m_location, m_pos]
+    RightClick,         // valid params: [m_unitID, m_location, m_pos]
+    Patrol              // valid params: [m_location, m_pos]
 }
 ```
 
 - Primarily used in {{fn("gx_queue_command")}}
 - `string` identifiers for `Spells` can be used as well.
 - more to be added later
+
+## EffectType
+```sq
+enum EffectType
+{
+    Invalid,
+    BlackHole
+}
+```
 
 ## EventType
 
@@ -338,21 +396,43 @@ enum EventType
 {
     Invalid,            	// Invalid Event
 
-    PlayerNameChanged,  	// Event is emitted whenever a player changes their name
-							// or changes their player name color.
-							// Populates m_playerID, m_playerName, m_oldPlayerName,
-							// m_playerNameColorID, and m_oldPlayerNameColorID
+    PlayerNameChanged,  	// Populates m_playerID, m_playerName, m_oldPlayerName,
+							// m_playerName2, m_oldPlayerName2,
+							// m_playerNameColor, and m_oldPlayerNameColor
 							// of the Event structure
 
-    PlayerLeftGame,     	// Populates m_playerID, and m_playerName
+	PlayerNameColorChanged,	// Populates m_playerID, m_playerName, m_oldPlayerName,
+							// m_playerName2, m_oldPlayerName2,
+							// m_playerNameColor, and m_oldPlayerNameColor
 							// of the Event structure
 
-    TextCommand             // Populates m_playerID, m_playerName,
+    PlayerLeftGame,     	// Populates m_playerID, m_playerName, and m_playerName2,
+							// of the Event structure
+
+    TextCommand             // Populates m_playerID, m_playerName, m_playerName2,
 							// and m_cmd of Event structure
 
 	UnitEnteredLocation,	// Populates m_unitID and m_location
     UnitExitedLocation,		// Populates m_unitID and m_location
 	Sound2dDestroyed,		// Populates m_soundID
 	Sound3dDestroyed		// Populates m_soundID
+    SwitchEvent,            // todo
+    UnitPlayerChanged,      // todo
+    ButtonPushed,           // todo
+    Explosion               // todo
+    ChatMessage,            // Populates m_playerID, m_playerName, m_playerName2,
+    	                    // and m_text of Event structure
+    ItemPickup,             // Populates m_playerID, m_unitID, m_itemUnitType, m_itemTag, m_pos
+}
+```
+
+## EventType
+
+```sq
+enum ExplosionEventType
+{
+    Invalid = 0,
+    Nuke = 1,
+    Barrel = 2
 }
 ```

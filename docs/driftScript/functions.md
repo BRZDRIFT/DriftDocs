@@ -16,7 +16,7 @@ int gx_create_unit(int params)
 table params = {
     string m_unitType,              // Required
     int m_playerID,                 // Required
-    Vec2 m_position = {},           // Optional
+    Vec2 m_pos = {},           // Optional
     string m_location = {},         // Optional
     int m_level = 1                 // Optional, default unit level = 1
 }
@@ -26,9 +26,9 @@ table params = {
 local new_unit = gx_create_unit({ m_unitType = "Brute", m_playerID = 1, m_location = "my_cool_location" })
 ```
 
-- Will create unit of type `m_unitType` at position `m_position` or at location `m_location` for player `m_playerID`.
-- It is undefined behavior to have both `m_position` and `m_location` set.
-- If neither `m_position` nor `m_location` is set, unit will be created at `(0, 0)`
+- Will create unit of type `m_unitType` at position `m_pos` or at location `m_location` for player `m_playerID`.
+- It is undefined behavior to have both `m_pos` and `m_location` set.
+- If neither `m_pos` nor `m_location` is set, unit will be created at `(0, 0)`
 - Refer to {{type("Vec2")}} if needed.
 
 ## gx_get_sim_tick
@@ -49,6 +49,14 @@ float gx_get_distance_between_units(int unitID, int otherUnitID)
 
 - returns the distance between the edges of two units
 - will return 0 if one or both of the units do not exist
+
+## gx_units_touching
+```sq
+bool gx_units_touching(int unit0, int unit1)
+```
+
+- Returns `true` if the two units are "touching" (nearby eachother)
+
 
 ## gx_get_nearby_units / gx_get_nearby_units_count
 ```sq
@@ -86,6 +94,8 @@ int gx_get_units_count(table params)
 ```sq
 table params = {
     string m_locations[],                           // Optional
+    string m_aabrs[],                               // Optional
+    string m_tags[],                                // Optional, Filter for unit tags
     BoundsCheck m_boundsCheck                       // Default: BoundsCheck.Center
     int m_playerIDs[],                              // Optional, Filter for player_id
     int m_forceIDs[],                               // Optional, Filter for force_id
@@ -101,7 +111,9 @@ table params = {
 
 - If `m_locations` is defined:
     - Searches at `m_locations` for units
-- If `m_locations` is not defined:
+- If `m_aabrs` is defined:
+    - Searches at `m_aabrs` for units
+- If `m_locations` and `m_aabrs` is not defined:
     - Searches for units on entire map
 - Refer to {{enum("BoundsCheck ")}} if needed.
 
@@ -116,8 +128,8 @@ table params = {
     Vec3 m_color = Vec3(1, 1, 0)        // Optional, ColorSRGB of explosion.
     string m_location = {},             // Optional, Location for explosion
     bool m_bPlaySound = true            // Optional, defualt true
-    string m_sound = {}             // Optional, Sound to play
-    string m_soundPack = {}             // Optional, SoundPack to play
+    string m_sound = {}                 // Optional, Sound to play
+    string m_soundPack = {}             // Optional, Play random sound from soundpack
 }
 ```
 
@@ -157,12 +169,12 @@ void gx_kill_all_units(table params = {})
 table params = { 
     int m_playerIDs[],      // Optional
     int m_forceIDs[],       // Optional
-    bool m_bAllPlayers      // Optional
 }
 ```
 
 - kills all units for any players that match the params
 - It is valid to have both `m_forceIDs` and `m_playerIDs` set -- the players from `m_forceIDs` and `m_playerIDs` will be merged.
+- if neither m_playerIDs or m_forceIDs is set, all units will be killed
 
 ## gx_get_kills
 ```sq
@@ -292,7 +304,7 @@ int[] gx_get_players(table params = {})
 table params = {
     int m_forceIDs[],   # Optional if set, only consider players part of these forces
     int m_playerIDs[],  # Optional, if set, only consider these players
-    VictoryStatus m_allowedVictoryStates[]      # filter, default: [VictoryStatus.Pending]
+    VictoryStatus m_allowedVictoryStates[]      # filter
 	bool m_bIncludeNormalPlayers = true;        # filter, default true
 	bool m_bIncludeNeutralPlayer = false;       # filter, default false
 	bool m_bIncludeRescuePlayer = false;        # filter, default false
@@ -300,10 +312,9 @@ table params = {
 	bool m_bPlayerMustBeInGame = true;          # filter, default true
 }
 ```
-
-- Providing `VictoryStatus.Pending` in `m_allowedVictoryStates[]` returns players that have not yet been assigned a `VictoryState` (those who are still playing)
 - Function is used to query and/or filter playerIDs based on simple coonditions
 - If neither m_forceIDs[] nor m_playerIDs[] is set, then will consider all players
+- If `m_allowedVictoryStates` is not set, any victory state will be considered
 - It is valid to have both `m_forceIDs` and `m_playerIDs` set -- the players from `m_forceIDs` and `m_playerIDs` will be merged.
 
 ## gx_get_player
@@ -320,13 +331,15 @@ void gx_print(string message, table params = {})
 
 ```sq
 table params = {
-    int m_forceID = {},      // Optional, send message to only force_id
-    int m_playerID = {}     // Optional, send message to only player_id
+    int m_forceIDs = [],        // Optional, send message to only force_id
+    int m_playerIDs = [],       // Optional, send message to only player_id
+    bool m_bPlaySound = true    // Optional, default true
+    string m_sound = {}         // Optional, sound to play,
+    string m_soundPack = {}     // Optional, play random sound from soundPack
 }
 ```
 
-- Should only set `m_forceID` or `m_playerID`, it is undefined to set both.
-- If neither `m_forceID` nor `m_playerID` is set, message will be broadcasted to all players (and observers)
+- If both `m_forceIDs` and `m_playerIDs` are undefined, message will be sent to all players
 
 Example
 ```sq
@@ -378,43 +391,36 @@ gx_modify_scoreboard({
 gx_set_player_prop(PlayerProp.Score, 3, 7)
 ```
 
-## gx_set_victory
+## gx_set_victory_status
 ```sq
-void gx_set_victory(table params)
+void gx_set_victory_status(table params)
 ```
 
 ```sq
 table params = {
-    int m_playerID = {},            // Optional
-    int m_forceID = {},             // Optional
-    bool m_bKillAllUnits = false    // Optional, (default false)
+    int m_status = VictoryStatus.Victory,   // Optional
+                                            // Valid options: VictoryStatus.Victory or VictoryStatus.Defeat
+                                            // Default: VictoryStatus.Victory
+    int m_playerIDs[],              // Optional
+    int m_forceIDs[],               // Optional
+    bool m_bAllPlayers = false,     // Optional, (default: false)
+    bool m_bAllForces = false,      // Optional, (default: false)
+    bool m_bKillAllUnits,           // Optional
+                                    // if (m_status == VictoryStatus.Victory)
+                                    //      default: false
+                                    // if (m_status == VictoryStatus.Defeat)
+                                    //      default: true
+    string m_img,                   // Optional, (image to show)
+    float m_imgSpeedFactor = 1,     // Optional, speed if m_img is animated gif
+    string m_sound,                 // Optional, (sound to play)
+    float m_volume = 1,             // Optional, (default: 1)
+    float m_pitch = 1,              // Optional, (default: 1)
+    ComplexColor m_color,           // Optional, ComplexColor for m_img
+    ComplexColor m_bgColor,         // Optional, Background ComplexColor
 }
 ```
 
-- once a player or team is set to `victory`, future calls to `gx_set_victory`/`gx_set_defeat` for that player/team will be ignored
-- should only set one of `m_playerID` or `m_forceID`, setting both is undefined
-- this function does nothing if both `m_playerID` and `m_forceID` is unset
-- setting `m_forceID` will set victory for all players within that force
-- if `m_bKillAllUnits` is `true`, {{fn("gx_kill_all_units")}} will automatically be invoked for victorious player/force
-
-## gx_set_defeat
-```sq
-void gx_set_defeat(table params)
-```
-
-```sq
-table params = {
-    int m_playerID = {},            // Optional
-    int m_forceID = {},             // Optional
-    bool m_bKillAllUnits = true     // Optional, (default true)
-}
-```
-
-- if `m_bKillAllUnits` is `true`, {{fn("gx_kill_all_units")}} will automatically be invoked for defeated player/force
-- once a player or team is set to `defeat`, future calls to `gx_set_victory`/`gx_set_defeat` for that player/team will be ignored
-- this function does nothing if both `m_playerID` and `m_forceID` is unset
-- should only set one of `m_playerID` or `m_forceID`, setting both is undefined
-- setting `m_forceID` will set defeat for all players within that force
+- once a player or force is set to `victory` or `defeat`, future calls for that player/force will be ignored
 
 ## gx_is_players_mutually_allied
 ```sq
@@ -543,7 +549,7 @@ void gx_map_init_add_build_item(string unitType, table params)
 table params = {
     string m_unitType = {},     // unit type to add
     string m_research ={},      // research to add
-    string m_position = {}      // position in command card
+    Vec2 m_position = {}        // position in command card
 }
 ```
 
@@ -569,14 +575,16 @@ void gx_fling_unit(int unit_id, table params = {})
 
 ```sq
 table params = {
-    Vec2 m_dir = {},        // Optional, 2d direction to throw unit. Does not need to be normalized.
-    Vec3 m_dir3d = {},      // Optional, 3d direction to throw unit. Does not need to be normalized.
-    float m_force = 1       // Optional, velocity to throw unit
+    Vec2 m_dir2d = {},          // Optional, 2d direction to throw unit. Does not need to be normalized.
+    Vec3 m_dir3d = {},          // Optional, 3d direction to throw unit. Does not need to be normalized.
+    float m_force = 1           // Optional, velocity to throw unit
+    m_bFlingLookAtDir = false   // Optional, will fling unit in direction it is facing
+    m_bFlingStructures = false  // Optional, if true, structures will be thrown
 }
 ```
 
-- If neither `m_dir` nor `m_dir3d` is set, unit will be thrown in random direction
-- Only `m_dir` or `m_dir3d` should be set. Setting both is undefined behavior.
+- If neither `m_dir2d` nor `m_dir3d` is set, unit will be thrown in random direction
+- Only `m_dir2d` or `m_dir3d` should be set. Setting both is undefined behavior.
 - Refer to {{type("Vec2")}} and {{type("Vec3")}} if needed. 
 
 ## gx_set_area_vision
@@ -655,6 +663,51 @@ gx_set_terrain_type({
 - if `m_triangleGroup` is set, is it `undefined behavior` to also set `m_index`, `m_index2`, or `m_location`
 - if `m_index` is set, it is `undefined behavior` to also set `m_location`, and `m_triangleGroup`
 
+## gx_set_terrain_type_2
+```sq
+void gx_set_terrain_type_2(params = {})
+```
+
+```sq
+table params = {
+    TerrainType m_type              // Required. The type of terrain to change to. See TerrainType enum. 
+    int m_secondary = 0             // Secondary terrain type. (default = 0)
+    string m_locations[],           // location to set terrain tile types.,
+    AABR m_aabrs[],                 // aabrs to set terrain tile type
+    string m_excludeLocations[],    // location to NOT set terrain tile types.,
+    AABR m_excludeAABRs[]           // aabrs to NOT set terrian tile stype
+}
+```
+
+## gx_set_terrain_type_3
+```sq
+void gx_set_terrain_type_3(params = {})
+```
+
+```sq
+table params = {
+    float m_radius,
+    Float2 m_center,
+    TerrainType m_type,
+    int m_secondary,
+    int m_triGroups = []
+}
+```
+
+- Set the triangle types overlapping region defined by `m_radius` and `m_center` to `m_type`/`m_secondary` if they belong to any of the tri groups specified in `m_triGroups`
+- This function should be used if you are using barrels for 'destroying' terrain and making them space, or other terrain..
+
+```sq
+table params = {
+    TerrainType m_type              // Required. The type of terrain to change to. See TerrainType enum. 
+    int m_secondary = 0             // Secondary terrain type. (default = 0)
+    string m_locations[],           // location to set terrain tile types.,
+    AABR m_aabrs[],                 // aabrs to set terrain tile type
+    string m_excludeLocations[],    // location to NOT set terrain tile types.,
+    AABR m_excludeAABRs[]           // aabrs to NOT set terrian tile stype
+}
+```
+
 ## gx_get_terrain_type
 ```
 Vec2<int> gx_get_terrain_type(Vec2 index, int index2 = 0)
@@ -704,14 +757,14 @@ void gx_unlock_player_camera(int player_id)
 
 ## gx_queue_command
 ```sq
-gx_queue_command(int unit_ids[], CommandType command, table params = {})
+gx_queue_command(int unit_ids[], CommandType command, table params = {}, bool bQueueCommand = false)
 ```
 
 ```sq
 table params = {
     int m_unitID,            // unit to target
     string m_location = {},     // location to target
-    string m_pos = {},          // position to target
+    Vec2 m_pos = {},          // position to target
 }
 ```
 
@@ -719,6 +772,7 @@ table params = {
 - some commands/spells only work when certain params are set
 - (i.e., a spell that can only target units cannot target a `m_pos` or `m_location`)
 - `CommandType` can also be a spell identifier
+- if `bQueueCommand` is `true`, appends the command in the unit's command queue, otherwise command queue beforehand
 - See {{enum("CommandType")}} for possible command values
 
 ## gx_set_speech_bubble
@@ -779,14 +833,9 @@ int gx_get_player_ammo_total(int player_id, string ammoName)
 
 - Returns how much `player ammo` of type `ammoName` the player has
 
-## gx_get_unit_by_name
-```sq
-int gx_get_unit_by_name(params = {})
-```
-
 ```sq
 local params = {
-    string m_name,             // Required                                 (string)
+    string m_tag,             // Required                                 (string)
     int m_player_id = 0        // Optional, used to Filter. Default = 0.   (int)
 }
 ```
@@ -800,15 +849,19 @@ local params = {
 
 ```sq
 // getters
+mixed gx_get_map_prop(MapProp prop)
 mixed gx_get_force_prop(ForceProp prop, int force_id)
 mixed gx_get_player_prop(PlayerProp prop, int player_id)
 mixed gx_get_unit_prop(UnitProp prop, int unit_id)
 mixed gx_get_location_prop(LocationProp prop, string location)
+mixed gx_get_decal_prop(DecalProp prop, int decal_id)
 
 // setters
+void gx_set_map_prop(MapProp prop, mixed val)
 void gx_set_force_prop(ForceProp prop, int force_id, mixed val)
 void gx_set_player_prop(PlayerProp prop, int player_id, mixed val)
 void gx_set_unit_prop(UnitProp prop, int unit_id, mixed val)
+void gx_set_decal_prop(DecalProp prop, int decal_id, mixed val)
 
 // adders
 void gx_add_force_prop(ForceProp prop, int force_id, mixed val)
@@ -816,7 +869,7 @@ void gx_add_player_prop(PlayerProp prop, int player_id, mixed val)
 void gx_add_unit_prop(UnitProp prop, int unit_id, mixed val)
 ```
 
-- Please refer to {{enum("ForceProp")}}, {{enum("PlayerProp")}}, {{enum("UnitProp")}}, and {{enum("LocationProp")}} for possibles values you can get/set (and their types).
+- Please refer to {{enum("MapProp")}}, {{enum("ForceProp")}}, {{enum("PlayerProp")}}, {{enum("UnitProp")}}, {{enum("DecalProp")}}, and {{enum("LocationProp")}} for possibles values you can get/set (and their types).
 - Properties that are `int` or `float` and are `Read-Write` can use the `gx_add_*` functions
 
 ## UserData Getters/Setters
@@ -868,6 +921,11 @@ result = -1 % 5             // -1
 result = gx_modulo(-1, 5)   // 4 !! <-- DIFFERENT THAN % operator
 ```
 
+## gx_triangle_lerp
+```sq
+float gx_triangle_lerp(float begin, float end, float period, float x)
+```
+
 ## gx_str_starts_with
 ```sq
 bool gx_str_starts_with(string str, string val)
@@ -889,54 +947,51 @@ string gx_str_insert(string str, string toInsert, int index)
 
 - return a new string with `toInsert` inserted at position `index`
 
-## gx_str_encode_text
-```sq
-string gx_str_encode_text(string text)
-```
-
-Example
-```sq
-local someText = gx_str_encode_text("^23Rainbow Text")
-gx_print(someText)
-```
-
 ## gx_str_encode_color_id
 ```sq
 string gx_str_encode_color_id(int colorID)
 ```
 
-Example
+## gx_str_encode_color
 ```sq
-local colorID = 100
-local someText = gx_str_encode_text("^" + colorID)
-local someText2 = gx_str_encode_color_id(colorID)   # Equivalent to above
+string gx_str_encode_color(Vec3 color)
+```
+
+## gx_str_encode_color_hex3
+```sq
+string gx_str_encode_color_hex3(int hex3)
+```
+
+## gx_str_encode_complex_color
+```sq
+string gx_str_encode_complex_color(ComplexColor color)
 ```
 
 ## gx_str_color_username
 ```sq
-string gx_str_color_username(int colorID, string username)
+string gx_str_color_username(ComplexColor color, string username)
 ```
 
 Equivalent To / Implementation:
 ```sq
-function gx_str_color_username(colorID, username)
+function gx_str_color_username(ComplexColor color, string username)
 {
-    return gx_str_encode_color_id(colorID) + username
+    return gx_str_encode_complex_color(color) + username
 }
 ```
 
-## gx_str_color_username2
+## gx_str_color_username_2
 ```sq
-string gx_str_color_username2(int colorID, string username)
+string gx_str_color_username_2(ComplexColor complexColor, string username)
 ```
 
 Equivalent To / Implementation:
 ```sq
-function gx_str_color_username2(colorID, username)
+function gx_str_color_username_2(ComplexColor complexColor, string username)
 {
-    return gx_str_encode_color_id(ColorID.PushColor)
-    + gx_str_color_username(colorID, username)
-    + gx_str_encode_color_id(ColorID.PopColor)
+    return Unicode.Special_PushColor
+    + gx_str_color_username(complexColor, username)
+    + Unicode.Special_PopColor
 }
 ```
 
@@ -980,6 +1035,7 @@ int gx_sound2d_create(table params = {})
 ```sq
 params = {
     string m_sound,         // name of sound to play
+    string m_soundPack,     // will play random sound from soundpack
     int m_forceIDs[],       // forceIDs that can hear the sound
     int m_playerIDs[],      // playerIDs that can hear the sound
     float m_volume = 1,     // Optional, volume multiplier (default = 1)
@@ -987,6 +1043,7 @@ params = {
     bool m_bLoop = false    // Optional, controls if sound should loop
 }
 ```
+- You are required to set either `m_sound` or `m_soundPack` (but not both).
 - If neither `m_forceIDs` nor `m_playerIDs` are set, sound will be heard by all players
 - returns the `soundID`
 
@@ -1027,7 +1084,7 @@ int gx_sound3d_create(table params = {})
 ```sq
 params = {
     string m_sound,         // name of sound to play
-    string m_soundPack,     // name of soundpack to play
+    string m_soundPack,     // play random sound from soundpack
     int m_unitID,           // Optional, unit for sound to attach to
     bool m_bStopSoundOnUnitDeath,           // Optional, default true if m_unitID is set
     Vec2 m_pos2d,           // Optional, 2d position for sound
@@ -1085,21 +1142,24 @@ int gx_decal_create(table params)
 
 ```sq
 table params = {
-    string m_preset = {},           # decal preset
+    string m_preset = {},           // decal preset
     int m_alphaFn = {},
     int m_colorFn = {},
-    bool m_bAlwaysDisplay = {},     # ignore fog of war checks
+    bool m_bAlwaysDisplay = {},     // ignore fog of war checks
     bool m_bDisplayOnMinimap = {},
-    vec4 m_color = {},              # srgb with alpha
-    vec2 m_pos = {},
-    float m_rotation = {},          # radians
+    Vec4 m_color = {},              // srgb with alpha
+    Vec2 m_pos = {},
+    float m_rotation = {},          // radians
     float m_size = {},
+    Vec2 m_size = {},               // size, can either be Vec2<float> or float
     string m_tag = {},
-    string m_texture = {}           # icon to use
+    string m_texture = {},          // icon to use
+    float m_speedFactor = 1.0       // animation speed if m_texture is animated GIF
 }
 ```
 
 - create decal with properties, all fields are optional
+- only one (or zero) of `m_size` or `m_size2d` should be set
 
 ## gx_decal_modify
 ```sq
@@ -1113,16 +1173,18 @@ table params = {
     int m_colorFn = {},
     bool m_bAlwaysDisplay = {},     # ignore fog of war checks
     bool m_bDisplayOnMinimap = {},
-    vec4 m_color = {},              # srgb with alpha
-    vec2 m_pos = {},
+    Vec4 m_color = {},              # srgb with alpha
+    Vec2 m_pos = {},
     float m_rotation = {},          # radians
     float m_size = {},
     string m_tag = {},
-    string m_texture = {}           # icon to use
+    string m_texture = {},          # icon to use
+    float m_speedFactor = 1.0        animation speed if m_texture is animated GIF
 }
 ```
 
 - modify/overwrite decal properties, all fields are optional
+- only one (or zero) of `m_size` or `m_size2d` should be set
 
 ## gx_decal_destroy
 ```sq
@@ -1155,12 +1217,46 @@ table params = {
 - Query for decals inside `m_aabrs` and `m_locations`.
 - Setting `m_bAll` to true will return all decals on the map
 
+## gx_get_sim_image_colors
+```sq
+int[] gx_get_sim_image_colors(table params)
+```
+
+```sq
+table params = {
+    string m_img                   // Required, Icon Name
+}
+```
+
+- Returns all the pixels in the image in hex3 format
+- Alpha channel is ignored and not returned
+
+## gx_draw_glow_image
+```sq
+void gx_draw_glow_image(table params)
+```
+
+```sq
+table params = {
+    string m_img,                   // Required, Icon Name
+    AABR<int> m_aabr,               // AABR to draw to
+    string m_location,              // Location to draw to
+    AABR<int> m_excludeAABRs[],     // Optional, AABRs not to draw to
+    string m_excludeLocations[],    // Optional, locations not to draw to
+}
+```
+
+- `m_img` must be set
+- Exactly one of `m_abbr` or `m_location` must be set
+
 ## gx_set_terrain_glow_color
+```sq
 void gx_set_terrain_glow_color(table params = {})
+```
 ```sq
 table params = {
     int m_index,        // Glow index to change, required
-    int m_hex,          // srgb hex code for color to set
+    int m_hex,          // srgb hex3 code for color to set
     Vec3<float> m_color // srgb color (each component [0.0-1.0]) for new color to set
 }
 ```
@@ -1169,24 +1265,187 @@ table params = {
 - Internally, `m_hex` is converted to `m_color`.
 - `m_hex` parameter is only given for convenience.
 
+## gx_set_map_theme_color
+```sq
+void gx_set_map_theme_color(Vec4<float> srgb)
+```
+
+## gx_get_map_theme_color
+```sq
+Vec4<float> gx_get_map_theme_color()
+```
+
+## gx_set_map_glow_color
+```sq
+void gx_set_map_glow_color(Vec4<float> srgb)
+```
+
+## gx_get_map_glow_color
+```sq
+Vec4<float> gx_get_map_glow_color()
+```
+
 ## gx_color_*
 
 ```sq
-Vec3 gx_color_hsl_to_srgb(Vec3 hsl)
-Vec3 gx_color_srgb_to_hsl(Vec3 srgb)
-Vec3 gx_color_hex3_to_srgb(int hex3)
+Vec3<float> gx_color_hsv_to_srgb(Vec3 hsv)
+Vec3<float> gx_color_srgb_to_hsv(Vec3 srgb)
+Vec3<float> gx_color_hsl_to_srgb(Vec3 hsl)
+Vec3<float> gx_color_srgb_to_hsl(Vec3 srgb)
+Vec3<float> gx_color_hex3_to_srgb(int hex3)
 int gx_color_srgb_to_hex3(Vec3 srgb)
 
-Vec4 gx_color_hsla_to_srgba(Vec4 hsl)
-Vec4 gx_color_srgba_to_hsla(Vec4 srgb)
-Vec4 gx_color_hex4_to_srgba(int hex4)
+Vec4<float> gx_color_hsva_to_srgba(Vec4 hsva)
+Vec4<float> gx_color_srgba_to_hsva(Vec4 srgba)
+Vec4<float> gx_color_hsla_to_srgba(Vec4 hsla)
+Vec4<float> gx_color_srgba_to_hsla(Vec4 srgba)
+Vec4<float> gx_color_hex4_to_srgba(int hex4)
 int gx_color_srgba_to_hex4(Vec4 srgba)
 
-int gx_color_hex3_to_hex4(int hex3, int alpha = 255)
+int gx_color_hex3_to_hex4(int hex3, int alpha = 0xFF)
 int gx_color_hex4_to_hex3(int hex4)
 ```
 
 - color conversion functions
+- `hsla`: `hsla.m_x` is hue `[0-360]`, `hsla.m_y` is saturation `[0-100]`, `hsla.m_z` is lightness `[0-100]`, `hsla.m_w` is alpha `[0-1]`
+- `hsva`: `hsva.m_x` is hue `[0-360]`, `hsva.m_y` is saturation `[0-100]`, `hsva.m_z` is value `[0-100]`, `hsva.m_w` is alpha `[0-1]`
+- `srgba`: `srgba.m_x` is red `[0-1]`, `srgba.m_y` is green `[0-1]`, `srgba.m_z` is blue `[0-1]`, `srgba.m_w` is alpha `[0-1]`
+- `hex4` is an integer with value `0xAARRGGBB` where AA is alpha, RR is red, GG is green, BB is blue
+- `hex3` is an integer with value `0x00RRGGBB` where RR is red, GG is green, BB is blue
+
+## gx_rand_float
+```sq
+float gx_rand_float(float min, float max)
+```
+
+## gx_rand_int
+```sq
+int gx_rand_int(int min, int max)
+```
+
+## gx_rand_unit_vec*
+```sq
+Vec2<float> gx_rand_unit_vec2()
+Vec3<float> gx_rand_unit_vec3()
+Vec4<float> gx_rand_unit_vec4()
+```
+
+## gx_unit_vec_or_random
+```sq
+Vec2<float> gx_unit_vec_or_random(Vec2 v)
+Vec3<float> gx_unit_vec_or_random(Vec3 v)
+Vec4<float> gx_unit_vec_or_random(Vec4 v)
+```
+- Computes the unit vector of `v`.
+- Will return random unit vector if `v` has magnitude of `0`.
+
+## gx_unit_vec_or_zero
+```sq
+Vec2<float> gx_unit_vec_or_zero(Vec2 v)
+Vec3<float> gx_unit_vec_or_zero(Vec3 v)
+Vec4<float> gx_unit_vec_or_zero(Vec4 v)
+```
+
+- Computes the unit vector of `v`.
+- Will return zero-magnitude vector if unit vector `v` has magnitude of `0`.
+
+## gx_terrain_offset_z_add
+```sq
+void gx_terrain_offset_z_add(Vec2<int> vertexPos, float offset)
+```
+
+## gx_terrain_offset_z_add_2
+```sq
+void gx_terrain_offset_z_add_2(table params)
+```
+```sq
+table params = {
+    AABR<int> m_aabrs[],        # Optional
+    string m_locations[],       # Optional
+    Vec2<int> m_vertices[],     # Optional
+    float m_val,                # Required
+}
+```
+
+## gx_terrain_offset_z_set
+```sq
+void gx_terrain_offset_z_set(Vec2<int> vertexPos, float offset)
+```
+
+## gx_terrain_offset_z_set_2
+```sq
+void gx_terrain_offset_z_set_2(table params)
+```
+```sq
+table params = {
+    AABR<int> m_aabrs[],        # Optional
+    string m_locations[],       # Optional
+    Vec2<int> m_vertices[],     # Optional
+    float m_val,                # Required
+}
+```
+
+## gx_terrain_offset_z_get
+```sq
+float gx_terrain_offset_z_get(Vec2<int> vertexPos)
+```
+
+## gx_aabr_contains
+```sq
+bool gx_aabr_contains(AABR aabr, Vec2 pt)
+```
+
+## gx_aabr_contains_or_touching
+```sq
+bool gx_aabr_contains_or_touching(AABR aabr, Vec2 pt)
+```
+
+## gx_force_select_units
+```sq
+void gx_force_select_units(int playerID, int unitIDs[])
+```
+
+- clears player's unit selection, and sets unitIDs as new selection
+
+## gx_create_effect
+```sq
+int gx_create_effect(table params)
+
+```
+```sq
+table params = {
+    EffectType m_type,
+    Vec2<float> m_pos,
+    int m_duration,
+    Vec4<float> m_color,    # srgb
+    int m_playerID
+}
+```
+
+- Creates the Effect of type `m_type` and returns the Effect ID
+- See {{enum("EffectType")}} for effects
+
+## gx_destroy_effect
+```sq
+void gx_destroy_effect(int effectID)
+```
+- Destroys effect if it can be removed
+
+## gx_create_nuke_unit
+```sq
+int gx_create_nuke_unit(table params)
+```
+
+```sq
+table params = {
+    float m_damage,
+    int m_playerID,
+    Vec2<float> m_pos,
+    float m_radius
+}
+```
+
+- Creates a nuke unit
 
 ## gx_register_for_location_events
 ```sq
@@ -1197,6 +1456,13 @@ void gx_register_for_location_events(bool bEnable, table params = {})
 - no optional parameters currently
 - Usually you will want to only call this one time time in the `gx_sim_init` function
 - See {{enum("EventType")}} and {{eventQueue()}} for more information
+
+## gx_triangle_lerp
+```sq
+float gx_triangle_lerp(float begin, float end, float period, float x)
+```
+
+- Lerp function
 
 ## gx_is_event_queue_empty
 ```sq

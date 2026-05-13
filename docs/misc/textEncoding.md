@@ -10,9 +10,3 @@
     - Note: The editor might show the "color" character as a garbage character, but the Drift Wars client will render text in red.
     - You can go into Drift Wars game and look at the `Paint` dialog to find out all the color codes
     - Please note: the color codes [1-16] should not be used -- the colors they reference may change in the future.
-
-- You can also encode unicode text with DriftScript using the `gx_encode_text` function
-    ```sq
-    local yellowText = gx_encode_text("^230Yellow")
-    local smileyEmoji = gx_encode_text("\u{1F600}")
-    ```

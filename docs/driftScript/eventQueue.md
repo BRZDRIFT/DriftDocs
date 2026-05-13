@@ -5,19 +5,29 @@ Event Structure:
 table Event
 {
     EventType m_type        // Always populated, specifies type of event.
+    int m_oldPlayerID = {},
     int m_playerID = {}
-    string m_playerName = {}
-    string m_oldPlayerName = {}
-    int m_playerNameColorID = {}
-    int m_oldPlayerNameColorID = {}
-    string m_cmd = {}
+    ComplexColor m_playerNameColor = {},
+    ComplexColor m_oldPlayerNameColor = {},
+    string m_playerName = {},
+    string m_playerName2 = {},          // Player name with color embedded
+    string m_oldPlayerName = {},
+    string m_oldPlayerName2 = {},       // Player name with color embedded
+    string m_cmd = {},
     int m_unitID = {},
     int m_soundID = {},
-    string m_location = {}
+    string m_location = {},
+    Vec2 m_pos = {},
+    float m_radius = {},
+    bool m_bVal = {},
+    string m_itemUnitType = {},
+    string m_itemTag = {},
+    ExplosionEventType m_explosionEventType = {}
 }
 ```
 
 - Look at the comments in the definition of {{enum("EventType")}} to see which fields each `EventType` populates.
+- TODO: Better explain which fields are populated depending on `m_type`
 
 Example of reading events from queue
 

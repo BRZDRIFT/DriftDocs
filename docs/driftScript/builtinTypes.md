@@ -14,7 +14,9 @@ class Vec2 {
     function Dot(Vec2 other)                // returns float or int
     function Length()                       // returns float
     function LengthSquared()                // returns float or int
-    function Normalize()                    // returns Vec2<float>
+    function UnitVecOrZero()                // returns Vec2<float>
+    function UnitVecOrRandom()              // returns Vec2<float>
+    function NumComponents()                // returns 2
     function ToInt()                        // returns a copy as Vec2<int>
     function ToFloat()                      // returns a copy as Vec2<float>
     m_x = 0.0
@@ -46,7 +48,9 @@ class Vec3 {
     function Dot(Vec3 other)                // returns float or int
     function Length()                       // returns float
     function LengthSquared()                // returns float or int
-    function Normalize()                    // returns Vec3<float>
+    function UnitVecOrZero()                // returns Vec3<float>
+    function UnitVecOrRandom()              // returns Vec3<float>
+    function NumComponents()                // returns 3
     function xy()                           // returns Vec2(m_x, m_y)
     function ToInt()                        // returns a copy as Vec3<int>
     function ToFloat()                      // returns a copy as Vec3<float>
@@ -80,7 +84,9 @@ class Vec4 {
     function Dot(Vec4 other)                // returns float or int
     function Length()                       // returns float
     function LengthSquared()                // returns float or int
-    function Normalize()                    // returns Vec4<float>
+    function UnitVecOrZero()                // returns Vec4<float>
+    function UnitVecOrRandom()              // returns Vec4<float>
+    function NumComponents()                // returns 4
     function xy()                           // returns Vec2(m_x, m_y)
     function xyz()                          // returns Vec3(m_x, m_y, m_z)
     function ToInt()                        // returns a copy as Vec4<int>
@@ -121,6 +127,8 @@ class AABR {
     function GetBottomLeft()        // returns Vec2<int|float>
     function GetBottomRight()       // returns Vec2<int|float>
     function GetCenter()            // returns Vec2<float>
+    function Contains(Vec2 pt)                  // returns true if pt is inside AABR
+    function ContainsOrTouching(Vec2 pt)        // returns true if pt is inside or on edge of AABR
     function ToInt()                // returns a copy as AABR<int>
     function ToFloat()              // returns a copy as AABR<float>
 
@@ -137,6 +145,23 @@ class AABR {
 - Use `.Equals(other)` to compare `AABR` values.
 - Use `.Copy()` to create copies of `AABR` values.
 - Assignment operator `=` will only copy reference (not create a new `AABR`)
+
+## ComplexColor
+```sq
+class ComplexColor {
+    constructor()
+    constructor(Vec3<float> srgba)
+    constructor(Vec4<float> srgba)
+    constructor(ColorType colorType)
+    constructor(ColorType colorType, Vec3<float> srgba)
+    constructor(ColorType colorType, Vec4<float> srgba)
+    bool Equals(ComplexColor other)
+    bool Copy()
+
+    m_srgba = Vec4(1.0, 1.0, 1.0, 1.0)
+    m_type = ColorType.Normal
+}
+```
 
 ## Future additions
 - More types and member functions to be added later
