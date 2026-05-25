@@ -134,6 +134,8 @@ enum MapProp
 	ThemeColor,		        	// Read-Write	(Vec4<float>)
 	GlowColor,			         // Read-Write	(Vec4<float>)
     EnableChatMessageEvents,     // Read-Write  (bool)
+	EnableUnitDeathEvents, 		// Read-Write	(bool)
+	Timer,						// Read-Write		(int)
 }
 ```
 
@@ -253,6 +255,7 @@ enum UnitProp
     IsSpeechBubbleActive,	// Read             (bool)
     Position,            	// Read-Write		(Float2)
     LockUnitToJeep,         // Read-Write       (bool)
+	QuadDamageTicksRemaining, // Read-Write		(int)
 }
 ```
 
@@ -416,13 +419,15 @@ enum EventType
     UnitExitedLocation,		// Populates m_unitID and m_location
 	Sound2dDestroyed,		// Populates m_soundID
 	Sound3dDestroyed		// Populates m_soundID
-    SwitchEvent,            // todo
-    UnitPlayerChanged,      // todo
-    ButtonPushed,           // todo
-    Explosion               // todo
+    SwitchEvent,            // todo: add documentation
+    UnitPlayerChanged,      // todo: add documentation
+    ButtonPushed,           // todo: add documentation
+    Explosion               // todo: add documentation
     ChatMessage,            // Populates m_playerID, m_playerName, m_playerName2,
     	                    // and m_text of Event structure
     ItemPickup,             // Populates m_playerID, m_unitID, m_itemUnitType, m_itemTag, m_pos
+	CustomSpellEvent,		// todo: add documentation
+	UnitDeath				// todo: add documentation
 }
 ```
 

@@ -1480,3 +1480,101 @@ Event gx_pop_event_from_queue()
 - Pop event from event queue.
 - See {{eventQueue()}}
 
+
+# gx_update_map_hints
+```sq
+void gx_update_map_hints(local params)
+```
+
+```sq
+params = {
+    int m_forceIDs[],
+    int m_playerIDs[],
+    string m_button,
+    string m_description,
+    string m_hover,
+    bool m_bDisplay
+}
+```
+
+# gx_add_event_message
+```sq
+void gx_add_event_message(string message)
+```
+
+- Adds an event message visibly by all players on left side of screen
+
+
+# gx_display_ui_elements
+```sq
+void gx_display_ui_elements(local params = {})
+```
+
+```sq
+params = {
+    bool m_bAll,
+    bool m_bArmyCount,
+    bool m_bIdleWorkers,
+    bool m_bNumJeeps,
+    bool m_bNotEnoughSupply,
+    bool m_bResources,
+    bool m_bClock,
+    int m_forceIDs[],
+    int m_playerIDs[]
+}
+```
+
+- controls which UI elements are display for players matching `m_forceIDs` and `m_playerIDs`
+- if both `m_forceIDs` and `m_playerIDs` are unset, function will affect all players 
+
+
+# gx_add_player_event_message
+```sq
+int gx_add_player_event_message(local params = {})
+```
+
+```sq
+params = {
+    string m_msg,
+    int m_forceIDs[],
+    int m_playerIDs[],
+    int m_duration = 100, // 5 seconds
+}
+```
+
+- displays a player event message for player in middle of their screen for matching players
+- if `m_duration` is `-1` message will be displayed forever until `gx_clear_player_event_messages` or `gx_clear_player_event_message_by_id` is called.
+- returns `msgID` that can be used by `gx_clear_player_event_message_by_id` if needed.
+
+# gx_clear_player_event_messages
+```sq
+`void gx_clear_player_event_messages(local params = {})`
+```
+
+```sq
+params = {
+    int m_forceIDs[],
+    int m_playerIDs[]
+}
+```
+
+- clears all messages for players match params
+- if both `m_forceIDs` and `m_playerIDs` are empty, messages will be cleared for all players
+
+# gx_clear_player_event_message_by_id
+```sq
+`void gx_clear_player_event_message_by_id(int msgID)`
+```
+
+- clear message with msgID `msgID`
+
+# gx_clear_perma_decals
+```sq
+void gx_clear_perma_decals(table params)
+```
+
+```sq
+params = {
+    string m_locations = []
+}
+```
