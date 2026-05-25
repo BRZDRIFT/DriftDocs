@@ -6,7 +6,7 @@ def define_env(env):
 
     bGitHub = (os.getenv('GX_GITHUB', 0) == "1")
     if bGitHub:
-        baseUrl = '/DriftWarsEditor'
+        baseUrl = '/DriftEdit'
 
     @env.macro
     def fn(fnName):
