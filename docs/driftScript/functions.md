@@ -926,6 +926,11 @@ result = gx_modulo(-1, 5)   // 4 !! <-- DIFFERENT THAN % operator
 float gx_triangle_lerp(float begin, float end, float period, float x)
 ```
 
+## gx_str_replace(str, find, replace)
+```
+string gx_str_replace(string str, string find, string replace)
+```
+
 ## gx_str_starts_with
 ```sq
 bool gx_str_starts_with(string str, string val)
@@ -1568,13 +1573,32 @@ params = {
 
 - clear message with msgID `msgID`
 
-# gx_clear_perma_decals
+
+# gx_paint_terrain
 ```sq
-void gx_clear_perma_decals(table params)
+void gx_paint_terrain(table params)
 ```
 
 ```sq
 params = {
-    string m_locations = []
+    string m_location,
+    AABR<Fixed> m_aabr,
+    string m_img,           # img to paint
+    Vec4<Float> m_srgba     # srgb multiplier
+}
+```
+
+- only one of `m_location` or `m_aabr` should be set.
+
+
+# gx_clear_terrain_paint
+```sq
+void gx_clear_terrain_paint(table params)
+```
+
+```sq
+params = {
+    string m_locations[],
+    AABR<Fixed> m_aabrs[]
 }
 ```

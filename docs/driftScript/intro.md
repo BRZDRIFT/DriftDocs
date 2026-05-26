@@ -22,4 +22,4 @@ Additions to squirrel and/or things you might want to know..
 - `float` types modified to be a 64-bit `Q31.32` fixed point types
 - more type information at {{math("scalar-types")}}
 - encoding `utf-8`
-- `Squirrel Standard Library` is not supported
+- `Squirrel Standard Library` is not supported.

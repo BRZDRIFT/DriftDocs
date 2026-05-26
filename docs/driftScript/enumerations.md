@@ -397,37 +397,31 @@ enum EffectType
 ```sq
 enum EventType
 {
-    Invalid,            	// Invalid Event
+    Invalid,           	 	// Invalid Event
 
     PlayerNameChanged,  	// Populates m_playerID, m_playerName, m_oldPlayerName,
 							// m_playerName2, m_oldPlayerName2,
-							// m_playerNameColor, and m_oldPlayerNameColor
-							// of the Event structure
+							// m_playerNameColor, m_oldPlayerNameColor
 
 	PlayerNameColorChanged,	// Populates m_playerID, m_playerName, m_oldPlayerName,
 							// m_playerName2, m_oldPlayerName2,
-							// m_playerNameColor, and m_oldPlayerNameColor
-							// of the Event structure
+							// m_playerNameColor, m_oldPlayerNameColor
 
-    PlayerLeftGame,     	// Populates m_playerID, m_playerName, and m_playerName2,
-							// of the Event structure
-
-    TextCommand             // Populates m_playerID, m_playerName, m_playerName2,
-							// and m_cmd of Event structure
-
-	UnitEnteredLocation,	// Populates m_unitID and m_location
-    UnitExitedLocation,		// Populates m_unitID and m_location
+    PlayerLeftGame,     	// Populates m_playerID, m_playerName, m_playerName2,
+    TextCommand             // Populates m_playerID, m_playerName, m_playerName2, m_cmd
+	UnitEnteredLocation,	// Populates m_unitID, m_location
+    UnitExitedLocation,		// Populates m_unitID, m_location
 	Sound2dDestroyed,		// Populates m_soundID
 	Sound3dDestroyed		// Populates m_soundID
-    SwitchEvent,            // todo: add documentation
-    UnitPlayerChanged,      // todo: add documentation
-    ButtonPushed,           // todo: add documentation
-    Explosion               // todo: add documentation
-    ChatMessage,            // Populates m_playerID, m_playerName, m_playerName2,
-    	                    // and m_text of Event structure
-    ItemPickup,             // Populates m_playerID, m_unitID, m_itemUnitType, m_itemTag, m_pos
-	CustomSpellEvent,		// todo: add documentation
-	UnitDeath				// todo: add documentation
+    SwitchEvent,            // Populates m_playerID, m_unitID
+    UnitPlayerChanged,      // Populates m_oldPlayerID, m_playerID, m_unitID
+    ButtonPushed,           // Populates m_playerID, m_unitID
+    Explosion               // Populates m_radius, m_pos, m_explosionEventType
+    ChatMessage,            // Populates m_playerID, m_playerName, m_playerName2, m_text
+    ItemPickup,             // Populates m_playerID, m_unitID, m_pos, m_itemUnitType, m_itemTag
+	CustomSpellEvent,		// Populates m_playerID, m_unitID, m_pos, m_customSpellEventTag
+	UnitDeath,				// Populates m_unitID, m_unitType, m_unitTag, m_playerID, m_killerPlayerID, m_deathCause
+	TimerExpired,
 }
 ```
 
@@ -436,8 +430,22 @@ enum EventType
 ```sq
 enum ExplosionEventType
 {
-    Invalid = 0,
-    Nuke = 1,
-    Barrel = 2
-}
+    Invalid,
+    Nuke,
+    Barrel
+};
+```
+
+```sq
+enum DeathCause
+{
+    Unknown,
+    FellIntoSpace,
+    AutoAttack,
+    Barrel,
+    Railgun,
+    Grenade,
+    PlasmaGun,
+    LightingGun
+};
 ```
