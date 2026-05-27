@@ -1533,9 +1533,9 @@ params = {
 - if both `m_forceIDs` and `m_playerIDs` are unset, function will affect all players 
 
 
-# gx_add_player_event_message
+# gx_add_center_message
 ```sq
-int gx_add_player_event_message(local params = {})
+int gx_add_center_message(local params = {})
 ```
 
 ```sq
@@ -1548,12 +1548,12 @@ params = {
 ```
 
 - displays a player event message for player in middle of their screen for matching players
-- if `m_duration` is `-1` message will be displayed forever until `gx_clear_player_event_messages` or `gx_clear_player_event_message_by_id` is called.
-- returns `msgID` that can be used by `gx_clear_player_event_message_by_id` if needed.
+- if `m_duration` is `-1` message will be displayed forever until `gx_clear_center_messages` or `gx_clear_center_message_by_id` is called.
+- returns `msgID` that can be used by `gx_clear_center_message_by_id` if needed.
 
-# gx_clear_player_event_messages
+# gx_clear_center_messages
 ```sq
-`void gx_clear_player_event_messages(local params = {})`
+`void gx_clear_center_messages(local params = {})`
 ```
 
 ```sq
@@ -1566,9 +1566,9 @@ params = {
 - clears all messages for players match params
 - if both `m_forceIDs` and `m_playerIDs` are empty, messages will be cleared for all players
 
-# gx_clear_player_event_message_by_id
+# gx_clear_center_message_by_id
 ```sq
-`void gx_clear_player_event_message_by_id(int msgID)`
+`void gx_clear_center_message_by_id(int msgID)`
 ```
 
 - clear message with msgID `msgID`
