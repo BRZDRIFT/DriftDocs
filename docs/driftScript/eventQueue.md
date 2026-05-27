@@ -4,25 +4,32 @@ Event Structure:
 ```sq
 table Event
 {
-    EventType m_type        // Always populated, specifies type of event.
-    int m_oldPlayerID = {},
-    int m_playerID = {}
-    ComplexColor m_playerNameColor = {},
-    ComplexColor m_oldPlayerNameColor = {},
-    string m_playerName = {},
-    string m_playerName2 = {},          // Player name with color embedded
-    string m_oldPlayerName = {},
-    string m_oldPlayerName2 = {},       // Player name with color embedded
-    string m_cmd = {},
-    int m_unitID = {},
-    int m_soundID = {},
-    string m_location = {},
-    Vec2 m_pos = {},
-    float m_radius = {},
-    bool m_bVal = {},
-    string m_itemUnitType = {},
-    string m_itemTag = {},
-    ExplosionEventType m_explosionEventType = {}
+    EventType m_type = ScriptEventType::Invalid;
+    ComplexColor m_oldPlayerNameColor;
+    string m_oldPlayerName;
+    string m_oldPlayerName2;
+    ComplexColor m_playerNameColor;
+    string m_playerName;
+    string m_playerName2;
+    int m_oldPlayerID;
+    int m_playerID;
+    string m_cmd;
+    string m_text;
+    int m_unitID;
+    int m_itemPickupUnitID;
+    string m_location;
+    string m_itemUnitType;
+    string m_itemTag;
+    string m_customSpellEventTag;
+    string m_unitType;
+    string m_unitTag;
+    DeathCause m_deathCause;
+    int m_killerPlayerID;
+    Vec2<float> m_pos;
+    float m_radius;
+    int m_soundID;
+    bool m_bVal;
+    ExplosionEventType m_explosionEventType;
 }
 ```
 
