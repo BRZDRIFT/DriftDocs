@@ -2142,27 +2142,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gx_add_player_event_message" class="md-nav__link">
+  <a href="#gx_add_center_message" class="md-nav__link">
     <span class="md-ellipsis">
-      gx_add_player_event_message
+      gx_add_center_message
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#gx_clear_player_event_messages" class="md-nav__link">
+  <a href="#gx_clear_center_messages" class="md-nav__link">
     <span class="md-ellipsis">
-      gx_clear_player_event_messages
+      gx_clear_center_messages
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#gx_clear_player_event_message_by_id" class="md-nav__link">
+  <a href="#gx_clear_center_message_by_id" class="md-nav__link">
     <span class="md-ellipsis">
-      gx_clear_player_event_message_by_id
+      gx_clear_center_message_by_id
     </span>
   </a>
   
@@ -3368,27 +3368,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gx_add_player_event_message" class="md-nav__link">
+  <a href="#gx_add_center_message" class="md-nav__link">
     <span class="md-ellipsis">
-      gx_add_player_event_message
+      gx_add_center_message
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#gx_clear_player_event_messages" class="md-nav__link">
+  <a href="#gx_clear_center_messages" class="md-nav__link">
     <span class="md-ellipsis">
-      gx_clear_player_event_messages
+      gx_clear_center_messages
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#gx_clear_player_event_message_by_id" class="md-nav__link">
+  <a href="#gx_clear_center_message_by_id" class="md-nav__link">
     <span class="md-ellipsis">
-      gx_clear_player_event_message_by_id
+      gx_clear_center_message_by_id
     </span>
   </a>
   
@@ -4708,8 +4708,8 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <li>controls which UI elements are display for players matching <code>m_forceIDs</code> and <code>m_playerIDs</code></li>
 <li>if both <code>m_forceIDs</code> and <code>m_playerIDs</code> are unset, function will affect all players </li>
 </ul>
-<h1 id="gx_add_player_event_message">gx_add_player_event_message</h1>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-168-1"><a id="__codelineno-168-1" name="__codelineno-168-1" href="#__codelineno-168-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">gx_add_player_event_message</span><span class="p">(</span><span class="kt">local</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
+<h1 id="gx_add_center_message">gx_add_center_message</h1>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-168-1"><a id="__codelineno-168-1" name="__codelineno-168-1" href="#__codelineno-168-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">gx_add_center_message</span><span class="p">(</span><span class="kt">local</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-169-1"><a id="__codelineno-169-1" name="__codelineno-169-1" href="#__codelineno-169-1"></a><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-169-2"><a id="__codelineno-169-2" name="__codelineno-169-2" href="#__codelineno-169-2"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_msg</span><span class="p">,</span>
@@ -4720,11 +4720,11 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 </span></code></pre></div>
 <ul>
 <li>displays a player event message for player in middle of their screen for matching players</li>
-<li>if <code>m_duration</code> is <code>-1</code> message will be displayed forever until <code>gx_clear_player_event_messages</code> or <code>gx_clear_player_event_message_by_id</code> is called.</li>
-<li>returns <code>msgID</code> that can be used by <code>gx_clear_player_event_message_by_id</code> if needed.</li>
+<li>if <code>m_duration</code> is <code>-1</code> message will be displayed forever until <code>gx_clear_center_messages</code> or <code>gx_clear_center_message_by_id</code> is called.</li>
+<li>returns <code>msgID</code> that can be used by <code>gx_clear_center_message_by_id</code> if needed.</li>
 </ul>
-<h1 id="gx_clear_player_event_messages">gx_clear_player_event_messages</h1>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-170-1"><a id="__codelineno-170-1" name="__codelineno-170-1" href="#__codelineno-170-1"></a><span class="err">`</span><span class="kt">void</span><span class="w"> </span><span class="n">gx_clear_player_event_messages</span><span class="p">(</span><span class="kt">local</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span><span class="err">`</span>
+<h1 id="gx_clear_center_messages">gx_clear_center_messages</h1>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-170-1"><a id="__codelineno-170-1" name="__codelineno-170-1" href="#__codelineno-170-1"></a><span class="err">`</span><span class="kt">void</span><span class="w"> </span><span class="n">gx_clear_center_messages</span><span class="p">(</span><span class="kt">local</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span><span class="err">`</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-171-1"><a id="__codelineno-171-1" name="__codelineno-171-1" href="#__codelineno-171-1"></a><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-171-2"><a id="__codelineno-171-2" name="__codelineno-171-2" href="#__codelineno-171-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_forceIDs</span><span class="p">[],</span>
@@ -4735,8 +4735,8 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <li>clears all messages for players match params</li>
 <li>if both <code>m_forceIDs</code> and <code>m_playerIDs</code> are empty, messages will be cleared for all players</li>
 </ul>
-<h1 id="gx_clear_player_event_message_by_id">gx_clear_player_event_message_by_id</h1>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-172-1"><a id="__codelineno-172-1" name="__codelineno-172-1" href="#__codelineno-172-1"></a><span class="err">`</span><span class="kt">void</span><span class="w"> </span><span class="n">gx_clear_player_event_message_by_id</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">msgID</span><span class="p">)</span><span class="err">`</span>
+<h1 id="gx_clear_center_message_by_id">gx_clear_center_message_by_id</h1>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-172-1"><a id="__codelineno-172-1" name="__codelineno-172-1" href="#__codelineno-172-1"></a><span class="err">`</span><span class="kt">void</span><span class="w"> </span><span class="n">gx_clear_center_message_by_id</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">msgID</span><span class="p">)</span><span class="err">`</span>
 </span></code></pre></div>
 <ul>
 <li>clear message with msgID <code>msgID</code></li>
