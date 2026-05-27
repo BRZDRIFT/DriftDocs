@@ -425,7 +425,7 @@ enum EventType
 }
 ```
 
-## EventType
+## ExplosionEventType
 
 ```sq
 enum ExplosionEventType
@@ -435,6 +435,8 @@ enum ExplosionEventType
     Barrel
 };
 ```
+
+## DeathCause
 
 ```sq
 enum DeathCause
