@@ -926,17 +926,13 @@ result = gx_modulo(-1, 5)   // 4 !! <-- DIFFERENT THAN % operator
 float gx_triangle_lerp(float begin, float end, float period, float x)
 ```
 
-## gx_str_replace(str, find, replace)
-```
-string gx_str_replace(string str, string find, string replace)
-```
-
 ## gx_str_starts_with
 ```sq
 bool gx_str_starts_with(string str, string val)
 ```
 
 - returns `true` if `str` starts with `val`
+- equivalent to squirrel's string library `startswith` function
 
 ## gx_str_ends_with
 ```sq
@@ -944,6 +940,27 @@ bool gx_str_ends_with(string str, string val)
 ```
 
 - returns `true` if `str` ends with `val`
+- equivalent to squirrel's string library `endswith` function
+
+## gx_str_split
+```sq
+string[] gx_str_split(string str, string separators, bool bSkipEmpty = false)
+```
+
+- splits `str` by any of the characters found in `separators`.
+- equivalent to squirrel's string library `split` function
+
+## gx_str_replace(str, find, replace)
+```
+string gx_str_replace(string str, string find, string replace)
+```
+
+## gx_str_contains
+```sq
+bool gx_str_contains(string str, string search)
+```
+
+- returns `true` if `str` contains `search`
 
 ## gx_str_insert
 ```sq
@@ -1295,15 +1312,11 @@ Vec4<float> gx_get_map_glow_color()
 ```sq
 Vec3<float> gx_color_hsv_to_srgb(Vec3 hsv)
 Vec3<float> gx_color_srgb_to_hsv(Vec3 srgb)
-Vec3<float> gx_color_hsl_to_srgb(Vec3 hsl)
-Vec3<float> gx_color_srgb_to_hsl(Vec3 srgb)
 Vec3<float> gx_color_hex3_to_srgb(int hex3)
 int gx_color_srgb_to_hex3(Vec3 srgb)
 
 Vec4<float> gx_color_hsva_to_srgba(Vec4 hsva)
 Vec4<float> gx_color_srgba_to_hsva(Vec4 srgba)
-Vec4<float> gx_color_hsla_to_srgba(Vec4 hsla)
-Vec4<float> gx_color_srgba_to_hsla(Vec4 srgba)
 Vec4<float> gx_color_hex4_to_srgba(int hex4)
 int gx_color_srgba_to_hex4(Vec4 srgba)
 
@@ -1312,7 +1325,6 @@ int gx_color_hex4_to_hex3(int hex4)
 ```
 
 - color conversion functions
-- `hsla`: `hsla.m_x` is hue `[0-360]`, `hsla.m_y` is saturation `[0-100]`, `hsla.m_z` is lightness `[0-100]`, `hsla.m_w` is alpha `[0-1]`
 - `hsva`: `hsva.m_x` is hue `[0-360]`, `hsva.m_y` is saturation `[0-100]`, `hsva.m_z` is value `[0-100]`, `hsva.m_w` is alpha `[0-1]`
 - `srgba`: `srgba.m_x` is red `[0-1]`, `srgba.m_y` is green `[0-1]`, `srgba.m_z` is blue `[0-1]`, `srgba.m_w` is alpha `[0-1]`
 - `hex4` is an integer with value `0xAARRGGBB` where AA is alpha, RR is red, GG is green, BB is blue

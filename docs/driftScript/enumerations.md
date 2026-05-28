@@ -448,6 +448,9 @@ enum DeathCause
     Railgun,
     Grenade,
     PlasmaGun,
-    LightingGun
+    LightingGun,
+ 	Rocket,
+    SeekingRocket,
+	Nuke
 };
 ```
