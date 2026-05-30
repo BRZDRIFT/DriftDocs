@@ -42,6 +42,30 @@ int gx_get_sim_tick()
 - The second {{entry("gx_sim_update")}} call will have `tick = 2`, etc..
 - every tick corresponds to 50ms real time
 
+## gx_sim_ticks_to_seconds(simTicks)
+```sq
+float gx_sim_ticks_to_seconds(int simTicks)
+```
+
+- converts simTicks to seconds
+- equivalent to: `(simTicks.tofloat() / 20.0)`
+
+## gx_seconds_to_sim_ticks(float seconds)
+```sq
+float gx_seconds_to_sim_ticks(float seconds)
+```
+
+- converts `seconds` to `simTicks`
+- equivalent to: `(seconds * 20.0).tointeger()`
+
+## gx_get_seconds
+```sq
+float gx_get_seconds()
+```
+
+- return game time in seconds
+- equivalent to: `gx_sim_ticks_to_seconds(gx_get_sim_tick())`
+
 ## gx_get_distance_between_units
 ```sq
 float gx_get_distance_between_units(int unitID, int otherUnitID)

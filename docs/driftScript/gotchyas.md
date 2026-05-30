@@ -22,47 +22,20 @@ local myNewDictionary = { abc = 6, def = 9}   // no quotes for in-place string k
 myNewDictionary[15] <- "some string"        // keys can also be integers
 ```
 
-## `==` checks for reference equality, not value equality!
-- `==` and `!=` does not work as expected for Vec2, Vec3, Vec4, AABR and non-primitive types!   
-- `==` for non-primitive types check if references point to same object, which is usually not what you want
-- Instead use their defined `.Equals(other)` functions!  
-- `==` equality operator for primitive types `int`, `float`, `bool`, `string` compare by value (not reference)
-
-```sq
-// == checks if reference points to same object, not value equality
-local a = Vec2(6.0, 7.0)
-local b = Vec2(1.0, 5.0)
-local c = Vec2(1.0, 5.0)
-local d = c
-local isEqual0 = a.Equals(b)    // false
-local isEqual1 = b.Equals(c)    // true
-local isEqual2 = (b == c)       // THIS IS FALSE!!!
-                                // ^ References point to different objects.
-local isEqual3 = (c == d)       // true. References are the same.
-
-// However,
-// == works as expected for int, float, bool, string types
-local q = 3
-local w = 3
-local isEqual4 = (q == w)       // true 
-```
-
 ## `=` assignment operator copies reference, not value! (for custom types)
 ```sq
 local a = Vec2(2.0, 6.0)
 local b = a			// reference copy
-local c = a.Copy()	// value copy
-local d = clone a	// same as .Copy()
-print(a == b)		// true, a and b reference same object
-print(a == c)		// false, a and c reference different objects
-print(a.Equals(c))	// true
-print(a.Equals(d))	// true
+local c = clone a	// value copy
+print(a is b)		// true, a and b reference same object
+print(a is c)		// false, a and c reference different objects
+print(a == c)	// true
 ```
 
 - this behavior is only for non-primitive types (not `int`, `float`, `bool`, `string`)
 - `=` assignment operator primitive types `int`, `float`, `bool`, `string` copy by value (not by reference)
-- To make a copy of an object, use squirrel's builtin `clone` operator, or use `.Copy()` function if available.
-- If you make your own types, it's a good idea to create your own `.Copy()` and `.Equal(other)` functions.
+- To make a copy of an object, use squirrel's builtin `clone` operator
+- If you make your own types, it might be a good idea to create your own `._cmp(other)` and `._cloned(other)` functions.
 
 ## Casting, ints, floats, strings, etc...
 ```sq
