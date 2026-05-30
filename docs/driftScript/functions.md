@@ -1427,15 +1427,16 @@ void gx_force_select_units(int playerID, int unitIDs[])
 ## gx_create_effect
 ```sq
 int gx_create_effect(table params)
-
 ```
+
 ```sq
 table params = {
     EffectType m_type,
     Vec2<float> m_pos,
     int m_duration,
     Vec4<float> m_color,    # srgb
-    int m_playerID
+    int m_playerID,
+    int m_unitID
 }
 ```
 

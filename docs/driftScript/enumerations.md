@@ -388,7 +388,9 @@ enum CommandType
 enum EffectType
 {
     Invalid,
-    BlackHole
+    BlackHole,
+	Visual_QuadDamage,
+	Visual_DefMatrix
 }
 ```
 

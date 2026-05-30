@@ -5,6 +5,12 @@
     - (do not rely on the constant value staying the same)
 - `PI` - Constant float value for PI (`3.14159...`)
 - `TAU` - Constant float value for 2*PI (`6.28318...`)
+- `INT_MAX` - `2147483647`
+- `INT_MIN` - `2147483648`
+- `INT_SMALLEST` - `1`
+- `FLOAT_MAX` - `+9223372036854775807 / 4294967296` = `+2147483647.99999999976716935634...`
+- `FLOAT_MIN` - `-9223372036854775808 / 4294967296` = `-2147483648`
+- `FLOAT_SMALLEST` - `1 / 4294967296` = `0.00000000023283064365...`
 
 ## Functions
 - `float sqrt(x)` - returns square root of x
