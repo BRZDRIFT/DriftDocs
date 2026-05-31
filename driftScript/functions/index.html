@@ -1143,18 +1143,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gx_sim_ticks_to_secondssimticks" class="md-nav__link">
+  <a href="#gx_sim_ticks_to_seconds" class="md-nav__link">
     <span class="md-ellipsis">
-      gx_sim_ticks_to_seconds(simTicks)
+      gx_sim_ticks_to_seconds
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#gx_seconds_to_sim_ticksfloat-seconds" class="md-nav__link">
+  <a href="#gx_seconds_to_sim_ticks" class="md-nav__link">
     <span class="md-ellipsis">
-      gx_seconds_to_sim_ticks(float seconds)
+      gx_seconds_to_sim_ticks
     </span>
   </a>
   
@@ -2432,18 +2432,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gx_sim_ticks_to_secondssimticks" class="md-nav__link">
+  <a href="#gx_sim_ticks_to_seconds" class="md-nav__link">
     <span class="md-ellipsis">
-      gx_sim_ticks_to_seconds(simTicks)
+      gx_sim_ticks_to_seconds
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#gx_seconds_to_sim_ticksfloat-seconds" class="md-nav__link">
+  <a href="#gx_seconds_to_sim_ticks" class="md-nav__link">
     <span class="md-ellipsis">
-      gx_seconds_to_sim_ticks(float seconds)
+      gx_seconds_to_sim_ticks
     </span>
   </a>
   
@@ -3591,14 +3591,14 @@
 <li>The second <a href="/DriftEdit/driftScript/scriptEntryPoints/#gx_sim_update">gx_sim_update</a> call will have <code>tick = 2</code>, etc..</li>
 <li>every tick corresponds to 50ms real time</li>
 </ul>
-<h2 id="gx_sim_ticks_to_secondssimticks">gx_sim_ticks_to_seconds(simTicks)</h2>
+<h2 id="gx_sim_ticks_to_seconds">gx_sim_ticks_to_seconds</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">float</span><span class="w"> </span><span class="n">gx_sim_ticks_to_seconds</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">simTicks</span><span class="p">)</span>
 </span></code></pre></div>
 <ul>
 <li>converts simTicks to seconds</li>
 <li>equivalent to: <code>(simTicks.tofloat() / 20.0)</code></li>
 </ul>
-<h2 id="gx_seconds_to_sim_ticksfloat-seconds">gx_seconds_to_sim_ticks(float seconds)</h2>
+<h2 id="gx_seconds_to_sim_ticks">gx_seconds_to_sim_ticks</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">float</span><span class="w"> </span><span class="n">gx_seconds_to_sim_ticks</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">seconds</span><span class="p">)</span>
 </span></code></pre></div>
 <ul>
@@ -3624,7 +3624,7 @@
 <ul>
 <li><code>index</code> must be between <code>[0-15]</code></li>
 <li><code>val</code> will be clamped to an <code>int32_t</code></li>
-<li>values set with this function can be obtained in Background ShaderToy shader via shader function <code>int gx_get_bg_shader_val(int val)</code></li>
+<li>values set with this function can be obtained in Background ShaderToy shader via shader function <code>int gx_get_bg_shader_val(int index)</code></li>
 </ul>
 <h2 id="gx_get_distance_between_units">gx_get_distance_between_units</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kt">float</span><span class="w"> </span><span class="n">gx_get_distance_between_units</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unitID</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">otherUnitID</span><span class="p">)</span>
