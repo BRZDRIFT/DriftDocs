@@ -42,7 +42,7 @@ int gx_get_sim_tick()
 - The second {{entry("gx_sim_update")}} call will have `tick = 2`, etc..
 - every tick corresponds to 50ms real time
 
-## gx_sim_ticks_to_seconds(simTicks)
+## gx_sim_ticks_to_seconds
 ```sq
 float gx_sim_ticks_to_seconds(int simTicks)
 ```
@@ -50,7 +50,7 @@ float gx_sim_ticks_to_seconds(int simTicks)
 - converts simTicks to seconds
 - equivalent to: `(simTicks.tofloat() / 20.0)`
 
-## gx_seconds_to_sim_ticks(float seconds)
+## gx_seconds_to_sim_ticks
 ```sq
 float gx_seconds_to_sim_ticks(float seconds)
 ```
@@ -80,7 +80,7 @@ int gx_set_bg_shader_val(int index, int val);
 
 - `index` must be between `[0-15]`
 - `val` will be clamped to an `int32_t`
-- values set with this function can be obtained in Background ShaderToy shader via shader function `int gx_get_bg_shader_val(int val)`
+- values set with this function can be obtained in Background ShaderToy shader via shader function `int gx_get_bg_shader_val(int index)`
 
 ## gx_get_distance_between_units
 ```sq
