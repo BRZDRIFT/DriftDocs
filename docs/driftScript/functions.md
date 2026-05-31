@@ -66,21 +66,25 @@ float gx_get_seconds()
 - return game time in seconds
 - equivalent to: `gx_sim_ticks_to_seconds(gx_get_sim_tick())`
 
-## gx_get_bg_shader_val
+## gx_get_bg_shader_val_(int|float)
 ```sq
-int gx_get_bg_shader_val(int index);
+int gx_get_bg_shader_val_int(int index);
+float gx_get_bg_shader_val_float(int index);
 ```
 
 - index must be between `[0-15]`
 
-## gx_get_bg_shader_val
+## gx_get_bg_shader_val_(int|float)
 ```sq
-int gx_set_bg_shader_val(int index, int val);
+int gx_set_bg_shader_val_int(int index, int val);
+float gx_set_bg_shader_val_float(int index, int val);
 ```
 
 - `index` must be between `[0-15]`
 - `val` will be clamped to an `int32_t`
 - values set with this function can be obtained in Background ShaderToy shader via shader function `int gx_get_bg_shader_val(int index)`
+- it is INVALID!! to set an index to an `int` and then try to retrieve it as a `float`. If you call `gx_set_bg_shader_val_int(index, val)`, you MUST retrieve val as `gx_get_bg_shader_val_int(index)`.
+- and vice-versa, you cannot set a `float` and then try to retreive it as an `int` for the same slot index
 
 ## gx_get_distance_between_units
 ```sq
