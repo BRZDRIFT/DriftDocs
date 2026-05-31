@@ -1170,18 +1170,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gx_get_bg_shader_val_intfloat" class="md-nav__link">
+  <a href="#gx_get_bg_shader_val_float" class="md-nav__link">
     <span class="md-ellipsis">
-      gx_get_bg_shader_val_(int|float)
+      gx_get_bg_shader_val_float
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#gx_get_bg_shader_val_intfloat_1" class="md-nav__link">
+  <a href="#gx_get_bg_shader_val_float_1" class="md-nav__link">
     <span class="md-ellipsis">
-      gx_get_bg_shader_val_(int|float)
+      gx_get_bg_shader_val_float
     </span>
   </a>
   
@@ -2459,18 +2459,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gx_get_bg_shader_val_intfloat" class="md-nav__link">
+  <a href="#gx_get_bg_shader_val_float" class="md-nav__link">
     <span class="md-ellipsis">
-      gx_get_bg_shader_val_(int|float)
+      gx_get_bg_shader_val_float
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#gx_get_bg_shader_val_intfloat_1" class="md-nav__link">
+  <a href="#gx_get_bg_shader_val_float_1" class="md-nav__link">
     <span class="md-ellipsis">
-      gx_get_bg_shader_val_(int|float)
+      gx_get_bg_shader_val_float
     </span>
   </a>
   
@@ -3612,23 +3612,18 @@
 <li>return game time in seconds</li>
 <li>equivalent to: <code>gx_sim_ticks_to_seconds(gx_get_sim_tick())</code></li>
 </ul>
-<h2 id="gx_get_bg_shader_val_intfloat">gx_get_bg_shader_val_(int|float)</h2>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">gx_get_bg_shader_val_int</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">);</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kt">float</span><span class="w"> </span><span class="nf">gx_get_bg_shader_val_float</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">);</span>
+<h2 id="gx_get_bg_shader_val_float">gx_get_bg_shader_val_float</h2>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kt">float</span><span class="w"> </span><span class="nf">gx_get_bg_shader_val_float</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">);</span>
 </span></code></pre></div>
 <ul>
 <li>index must be between <code>[0-15]</code></li>
 </ul>
-<h2 id="gx_get_bg_shader_val_intfloat_1">gx_get_bg_shader_val_(int|float)</h2>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">gx_set_bg_shader_val_int</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="p">);</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kt">float</span><span class="w"> </span><span class="nf">gx_set_bg_shader_val_float</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="p">);</span>
+<h2 id="gx_get_bg_shader_val_float_1">gx_get_bg_shader_val_float</h2>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kt">float</span><span class="w"> </span><span class="nf">gx_set_bg_shader_val_float</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="p">);</span>
 </span></code></pre></div>
 <ul>
 <li><code>index</code> must be between <code>[0-15]</code></li>
-<li><code>val</code> will be clamped to an <code>int32_t</code></li>
-<li>values set with this function can be obtained in Background ShaderToy shader via shader function <code>int gx_get_bg_shader_val(int index)</code></li>
-<li>it is INVALID!! to set an index to an <code>int</code> and then try to retrieve it as a <code>float</code>. If you call <code>gx_set_bg_shader_val_int(index, val)</code>, you MUST retrieve val as <code>gx_get_bg_shader_val_int(index)</code>.</li>
-<li>and vice-versa, you cannot set a <code>float</code> and then try to retreive it as an <code>int</code> for the same slot index</li>
+<li>values set with this function can be obtained in Background ShaderToy shader via shader function <code>int gx_get_bg_shader_val_float(int index)</code></li>
 </ul>
 <h2 id="gx_get_distance_between_units">gx_get_distance_between_units</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kt">float</span><span class="w"> </span><span class="n">gx_get_distance_between_units</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unitID</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">otherUnitID</span><span class="p">)</span>
