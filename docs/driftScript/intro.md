@@ -19,10 +19,12 @@ Please refer to the language reference manual here:
 Major changes from Squirrel:
 
 - `_cmp` meta-function removed.
-- comparison operators `<`, `<=`, `>`, and `>=` automatically generated for user-classes when possible
-- `==` and `!=` operators changed to check for value-equality (instead of reference-equality)
+- comparison operators `<`, `<=`, `>`, and `>=` automatically generated for user classes when possible
+    - will not be generated if class contains a dictionary or array
+- `==` and `!=` operators changed to check for deep value-equality (instead of reference-equality)
     - works for all types (dictionaries, arrays, classes, etc..)
-    - recursively checks all child elements for equality.
+    - recursively checks all child members/arrays/dictionaries/etc for equality
+    - always auto-generated for user classes (even when class contains dictionaries/arrays/etc).
 - new keywords `is` and `is_not` added that check for reference-equality.
     - Equivalent to squirrel's `==` and `!=` behavior.
 - `int` types are signed 64-bit

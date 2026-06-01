@@ -35,7 +35,7 @@ print(a == c)	// true
 - this behavior is only for non-primitive types (not `int`, `float`, `bool`, `string`)
 - `=` assignment operator primitive types `int`, `float`, `bool`, `string` copy by value (not by reference)
 - To make a copy of an object, use squirrel's builtin `clone` operator
-- If you make your own types, it might be a good idea to create your own `._cmp(other)` and `._cloned(other)` functions.
+- If you make your own types, it might be a good idea to create your own `._cloned(other)` function.
 
 ## Casting, ints, floats, strings, etc...
 ```sq
