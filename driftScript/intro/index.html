@@ -1460,16 +1460,9 @@ to learn due to more learning material, and quicker feedback loops.</p>
 <p>Major changes from Squirrel:</p>
 <ul>
 <li>Comparison operator changes!<ul>
-<li><code>_cmp</code> meta-function removed.</li>
-<li><code>==</code> and <code>!=</code> operators overhauled to check for deep value-equality (instead of reference-equality)<ul>
-<li>works for all types (dictionaries, arrays, classes, etc..)</li>
-<li>recursively checks all child members/arrays/dictionaries/etc for equality</li>
-</ul>
-</li>
-<li>the other comparison operators <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, and <code>&gt;=</code> are provided for user classes when possible<ul>
-<li>will not be provided if class contains a dictionary or array</li>
-</ul>
-</li>
+<li><code>==</code> and <code>!=</code> changed to check for value-equality, unlike squirrel which checks for reference equality</li>
+<li><code>==</code> and <code>!=</code> operators now try to call the new <code>_eq</code> meta-function if exists, else relies on <code>_cmp</code></li>
+<li><code>==</code> and <code>!=</code> changed to recursively checks all child members of arrays and dictionaries for equality</li>
 <li>new keywords <code>is</code> and <code>is_not</code> added to check for reference-quality.<ul>
 <li>Equivalent to squirrel's <code>==</code> and <code>!=</code>.</li>
 </ul>
@@ -1482,6 +1475,7 @@ to learn due to more learning material, and quicker feedback loops.</p>
 </li>
 <li>Dictionary changes:<ul>
 <li>Key types are restricted to <code>int</code>, <code>float</code>, <code>bool</code>, and <code>string</code></li>
+<li>Todo: may allow class instances as keys in future.</li>
 </ul>
 </li>
 <li>Type changes:<ul>
