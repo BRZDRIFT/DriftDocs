@@ -41,7 +41,7 @@ nav:
         - 'VSCode Syntax Highlighting': 'driftScript/vscodeSyntaxHighlighting.md'
         - 'Examples and Gotchyas': 'driftScript/gotchyas.md'
         - 'More Examples..': 'driftScript/examples.md'
-    - 'Drift BG Shader':
+    - 'Drift Shader':
         - 'Introduction': 'driftShader/intro.md'
 
 theme:
