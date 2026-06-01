@@ -6,7 +6,7 @@ def define_env(env):
 
     bGitHub = (os.getenv('GX_GITHUB', 0) == "1")
     if bGitHub:
-        baseUrl = '/DriftEdit'
+        baseUrl = '/DriftDocs'
 
     @env.macro
     def fn(fnName):
@@ -42,12 +42,12 @@ def define_env(env):
 
     @env.macro
     def mode(header):
-        return '[' + header + ']('+baseUrl+'/modes/'+header+')'
+        return '[' + header + ']('+baseUrl+'/driftEdit/modes/'+header+')'
 
     @env.macro
     def sideControls(header):
-        return '[' + header + ']('+baseUrl+'/sideControls/#'+header.lower()+')'
+        return '[' + header + ']('+baseUrl+'/driftEdit/sideControls/#'+header.lower()+')'
 
     @env.macro
     def texSplatting(header):
-        return '[' + header + ']('+baseUrl+'/modes/texSplatting/#'+header.lower()+')'
+        return '[' + header + ']('+baseUrl+'/driftEdit/modes/texSplatting/#'+header.lower()+')'
