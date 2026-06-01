@@ -1343,10 +1343,14 @@ to learn due to more learning material, and quicker feedback loops.</p>
 <p>Major changes from Squirrel:</p>
 <ul>
 <li><code>_cmp</code> meta-function removed.</li>
-<li>comparison operators <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, and <code>&gt;=</code> automatically generated for user-classes when possible</li>
-<li><code>==</code> and <code>!=</code> operators changed to check for value-equality (instead of reference-equality)<ul>
+<li>comparison operators <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, and <code>&gt;=</code> automatically generated for user classes when possible<ul>
+<li>will not be generated if class contains a dictionary or array</li>
+</ul>
+</li>
+<li><code>==</code> and <code>!=</code> operators changed to check for deep value-equality (instead of reference-equality)<ul>
 <li>works for all types (dictionaries, arrays, classes, etc..)</li>
-<li>recursively checks all child elements for equality.</li>
+<li>recursively checks all child members/arrays/dictionaries/etc for equality</li>
+<li>always auto-generated for user classes</li>
 </ul>
 </li>
 <li>new keywords <code>is</code> and <code>is_not</code> added that check for reference-equality.<ul>
@@ -1357,7 +1361,10 @@ to learn due to more learning material, and quicker feedback loops.</p>
 <li><code>float</code> types modified to be a 64-bit <code>Q31.32</code> fixed point types</li>
 <li>more type information at <a href="/DriftEdit/driftScript/math/#scalar-types">scalar-types</a></li>
 <li>encoding <code>utf-8</code></li>
-<li><code>Squirrel Standard Library</code> is not supported.</li>
+<li><code>Squirrel Standard Library</code> is not supported.<ul>
+<li>Although, DriftScript provides many functions with identical behavior.</li>
+</ul>
+</li>
 </ul>
 
 

@@ -1484,7 +1484,7 @@
 <li>this behavior is only for non-primitive types (not <code>int</code>, <code>float</code>, <code>bool</code>, <code>string</code>)</li>
 <li><code>=</code> assignment operator primitive types <code>int</code>, <code>float</code>, <code>bool</code>, <code>string</code> copy by value (not by reference)</li>
 <li>To make a copy of an object, use squirrel's builtin <code>clone</code> operator</li>
-<li>If you make your own types, it might be a good idea to create your own <code>._cmp(other)</code> and <code>._cloned(other)</code> functions.</li>
+<li>If you make your own types, it might be a good idea to create your own <code>._cloned(other)</code> function.</li>
 </ul>
 <h2 id="casting-ints-floats-strings-etc">Casting, ints, floats, strings, etc...</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">local</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w">     </span><span class="c1">// a is type &#39;integer&#39; of value 5</span>
