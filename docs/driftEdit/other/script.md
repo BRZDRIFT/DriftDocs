@@ -6,4 +6,4 @@
 - `Run Sim-Update Script`: Does a dry run of `SimUpdate.DriftScript`
     - Calls `gx_sim_init` and `gx_sim_update` in `SimUpdate.DriftScript`
     - Prints any errors to console
-- Refer to [DriftScript](../../driftScript/intro) for more information
+- Refer to [DriftScript](../../../driftScript/intro) for more information
