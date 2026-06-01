@@ -19,18 +19,16 @@ Please refer to the language reference manual here:
 Major changes from Squirrel:
 
 - Comparison operator changes!
-    - `_cmp` meta-function removed.
-    - `==` and `!=` operators overhauled to check for deep value-equality (instead of reference-equality)
-        - works for all types (dictionaries, arrays, classes, etc..)
-        - recursively checks all child members/arrays/dictionaries/etc for equality
-    - the other comparison operators `<`, `<=`, `>`, and `>=` are provided for user classes when possible
-        - will not be provided if class contains a dictionary or array
+    - `==` and `!=` changed to check for value-equality, unlike squirrel which checks for reference equality
+    - `==` and `!=` operators now try to call the new `_eq` meta-function if exists, else relies on `_cmp`
+    - `==` and `!=` changed to recursively checks all child members of arrays and dictionaries for equality
     - new keywords `is` and `is_not` added to check for reference-quality.
         - Equivalent to squirrel's `==` and `!=`.
     - `array.find(value)` modified to check for value-equality rather than reference-equality
         - `array.find_ref(value)` added to check for reference-equality
 - Dictionary changes:
     - Key types are restricted to `int`, `float`, `bool`, and `string`
+    - Todo: may allow class instances as keys in future.
 - Type changes:
     - `int` types are signed 64-bit
     - `float` types modified to be a 64-bit `Q31.32` fixed point types
