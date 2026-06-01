@@ -3628,16 +3628,16 @@
 <li>Will create unit of type <code>m_unitType</code> at position <code>m_pos</code> or at location <code>m_location</code> for player <code>m_playerID</code>.</li>
 <li>It is undefined behavior to have both <code>m_pos</code> and <code>m_location</code> set.</li>
 <li>If neither <code>m_pos</code> nor <code>m_location</code> is set, unit will be created at <code>(0, 0)</code></li>
-<li>Refer to <a href="/DriftEdit/driftScript/builtinTypes/#vec2">Vec2</a> if needed.</li>
+<li>Refer to <a href="/DriftDocs/driftScript/builtinTypes/#vec2">Vec2</a> if needed.</li>
 </ul>
 <h2 id="gx_get_sim_tick">gx_get_sim_tick</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">gx_get_sim_tick</span><span class="p">()</span>
 </span></code></pre></div>
 <ul>
 <li>Returns the current sim tick number in simulation.</li>
-<li>The <a href="/DriftEdit/driftScript/scriptEntryPoints/#gx_sim_init">gx_sim_init</a> call will have <code>tick = 0</code></li>
-<li>The first <a href="/DriftEdit/driftScript/scriptEntryPoints/#gx_sim_update">gx_sim_update</a> call will have <code>tick = 1</code></li>
-<li>The second <a href="/DriftEdit/driftScript/scriptEntryPoints/#gx_sim_update">gx_sim_update</a> call will have <code>tick = 2</code>, etc..</li>
+<li>The <a href="/DriftDocs/driftScript/scriptEntryPoints/#gx_sim_init">gx_sim_init</a> call will have <code>tick = 0</code></li>
+<li>The first <a href="/DriftDocs/driftScript/scriptEntryPoints/#gx_sim_update">gx_sim_update</a> call will have <code>tick = 1</code></li>
+<li>The second <a href="/DriftDocs/driftScript/scriptEntryPoints/#gx_sim_update">gx_sim_update</a> call will have <code>tick = 2</code>, etc..</li>
 <li>every tick corresponds to 50ms real time</li>
 </ul>
 <h2 id="gx_sim_ticks_to_seconds">gx_sim_ticks_to_seconds</h2>
@@ -3744,7 +3744,7 @@
 <li>Searches for units on entire map</li>
 </ul>
 </li>
-<li>Refer to <a href="/DriftEdit/driftScript/enumerations/#boundscheck">BoundsCheck </a> if needed.</li>
+<li>Refer to <a href="/DriftDocs/driftScript/enumerations/#boundscheck">BoundsCheck </a> if needed.</li>
 </ul>
 <h2 id="gx_create_explosion">gx_create_explosion</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_create_explosion</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
@@ -3759,7 +3759,7 @@
 </span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="p">}</span>
 </span></code></pre></div>
 <ul>
-<li>Refer to <a href="/DriftEdit/driftScript/builtinTypes/#vec3">Vec3</a> if needed.</li>
+<li>Refer to <a href="/DriftDocs/driftScript/builtinTypes/#vec3">Vec3</a> if needed.</li>
 <li>Only one <code>m_sound</code> or <code>m_soundPack</code> should be set</li>
 <li>If neither <code>m_sound</code> nor <code>m_soundPack</code> is set, default sound will be played.</li>
 </ul>
@@ -3775,7 +3775,7 @@
 <li>if <code>m_size</code> is not set and <code>m_pos</code> is set, the resolved size will be <code>1</code></li>
 <li>Explosions are purely visual. They do not do any damage.</li>
 <li>Default value for <code>m_color</code> is <code>Vec3(1,1,0)</code> aka <code>0xFFFF00</code> (yellow)</li>
-<li>Refer to <a href="/DriftEdit/driftScript/builtinTypes/#vec2">Vec2</a> and <a href="/DriftEdit/driftScript/builtinTypes/#vec3">Vec3</a> if needed.</li>
+<li>Refer to <a href="/DriftDocs/driftScript/builtinTypes/#vec2">Vec2</a> and <a href="/DriftDocs/driftScript/builtinTypes/#vec3">Vec3</a> if needed.</li>
 </ul>
 <h2 id="gx_kill_unit">gx_kill_unit</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_kill_unit</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">)</span>
@@ -3826,7 +3826,7 @@
 </span></code></pre></div>
 <ul>
 <li>marks the unit to be removed by game</li>
-<li><code>unit_id</code> will be removed from game before the next <a href="/DriftEdit/driftScript/scriptEntryPoints/#gx_sim_update">gx_sim_update</a> call</li>
+<li><code>unit_id</code> will be removed from game before the next <a href="/DriftDocs/driftScript/scriptEntryPoints/#gx_sim_update">gx_sim_update</a> call</li>
 <li>It is safe to call this function on already killed or removed units</li>
 </ul>
 <h2 id="gx_is_unit_removed">gx_is_unit_removed</h2>
@@ -3966,7 +3966,7 @@
 <li>Set <code>m_bDisplay</code> to show scoreboard, must be <code>true</code> if you want to display</li>
 <li>Set <code>m_bShowForceScores</code> to show scores for forces</li>
 <li>Set <code>m_bShowPlayerScores</code> to show scores for players</li>
-<li>You can set/add/get scores by using <a href="/DriftEdit/driftScript/functions/#property-getterssetters">property-getterssetters</a></li>
+<li>You can set/add/get scores by using <a href="/DriftDocs/driftScript/functions/#property-getterssetters">property-getterssetters</a></li>
 </ul>
 <p>Example:
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="n">gx_modify_scoreboard</span><span class="p">({</span>
@@ -4044,8 +4044,8 @@ It copies the existing definition of "Brute" to "User_BabyBrute".</p>
 <li>this function will be a no-op if <code>new_unit_type</code> name does not begin with <code>User_</code></li>
 <li>This function will return empty string if <code>new_unit_type</code> already exists or if it does not start with <code>User_</code>.</li>
 <li><code>ud</code> is short for <code>unit_definition</code> </li>
-<li>Can only be called during <a href="/DriftEdit/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a></li>
-<li>any attempt to call this outside of the <a href="/DriftEdit/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a> will be ignored.</li>
+<li>Can only be called during <a href="/DriftDocs/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a></li>
+<li>any attempt to call this outside of the <a href="/DriftDocs/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a> will be ignored.</li>
 </ul>
 <h2 id="gx_map_init_modify_ud_props">gx_map_init_modify_ud_props</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_map_init_modify_ud_props</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">unit_type</span><span class="p">,</span><span class="w"> </span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
@@ -4077,8 +4077,8 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <ul>
 <li>Sets properties for a specific <code>unit_type</code></li>
 <li><code>ud</code> is short for <code>unit_definition</code> </li>
-<li>Can only be called during <a href="/DriftEdit/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a></li>
-<li>any attempt to call this outside of the <a href="/DriftEdit/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a> will be ignored.</li>
+<li>Can only be called during <a href="/DriftDocs/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a></li>
+<li>any attempt to call this outside of the <a href="/DriftDocs/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a> will be ignored.</li>
 </ul>
 <h2 id="gx_map_init_add_build_structure_item">gx_map_init_add_build_structure_item</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_map_init_add_build_structure_item</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">unitType</span><span class="p">,</span><span class="w"> </span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
@@ -4090,14 +4090,14 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 </span><span id="__span-57-5"><a id="__codelineno-57-5" name="__codelineno-57-5" href="#__codelineno-57-5"></a>}
 </span></code></pre></div>
 <ul>
-<li>Can only be called during <a href="/DriftEdit/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a></li>
+<li>Can only be called during <a href="/DriftDocs/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a></li>
 </ul>
 <h2 id="gx_map_init_remove_all_build_structure_items">gx_map_init_remove_all_build_structure_items</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_map_init_remove_all_build_structure_items</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">unitType</span><span class="p">)</span>
 </span></code></pre></div>
 <ul>
 <li>Remove all build structure items from worker</li>
-<li>Can only be called during <a href="/DriftEdit/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a></li>
+<li>Can only be called during <a href="/DriftDocs/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a></li>
 </ul>
 <h2 id="gx_map_init_add_build_item">gx_map_init_add_build_item</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_map_init_add_build_item</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">unitType</span><span class="p">,</span><span class="w"> </span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
@@ -4110,7 +4110,7 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 </span></code></pre></div>
 <ul>
 <li>Only one <code>m_unitType</code> or <code>m_research</code> should be set</li>
-<li>Can only be called during <a href="/DriftEdit/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a></li>
+<li>Can only be called during <a href="/DriftDocs/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a></li>
 <li>Remove all build items from structure</li>
 </ul>
 <h2 id="gx_map_init_remove_all_build_items">gx_map_init_remove_all_build_items</h2>
@@ -4118,7 +4118,7 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 </span></code></pre></div>
 <ul>
 <li>Remove all build items from structure</li>
-<li>Can only be called during <a href="/DriftEdit/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a></li>
+<li>Can only be called during <a href="/DriftDocs/driftScript/scriptEntryPoints/#gx_map_init">gx_map_init</a></li>
 </ul>
 <h2 id="gx_fling_unit">gx_fling_unit</h2>
 <p>throws the unit</p>
@@ -4135,7 +4135,7 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <ul>
 <li>If neither <code>m_dir2d</code> nor <code>m_dir3d</code> is set, unit will be thrown in random direction</li>
 <li>Only <code>m_dir2d</code> or <code>m_dir3d</code> should be set. Setting both is undefined behavior.</li>
-<li>Refer to <a href="/DriftEdit/driftScript/builtinTypes/#vec2">Vec2</a> and <a href="/DriftEdit/driftScript/builtinTypes/#vec3">Vec3</a> if needed. </li>
+<li>Refer to <a href="/DriftDocs/driftScript/builtinTypes/#vec2">Vec2</a> and <a href="/DriftDocs/driftScript/builtinTypes/#vec3">Vec3</a> if needed. </li>
 </ul>
 <h2 id="gx_set_area_vision">gx_set_area_vision</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-64-1"><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_set_area_vision</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">player_id</span><span class="p">,</span><span class="w"> </span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
@@ -4192,9 +4192,9 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 </span><span id="__span-70-5"><a id="__codelineno-70-5" name="__codelineno-70-5" href="#__codelineno-70-5"></a><span class="p">})</span>
 </span></code></pre></div></p>
 <ul>
-<li>Refer to <a href="/DriftEdit/driftScript/enumerations/#terraintype">TerrainType</a> for valid <code>m_type</code> values</li>
-<li>If <code>m_type</code> is set to <code>TerrainType.Normal</code>, <code>m_secondary</code> must be one of <a href="/DriftEdit/driftScript/enumerations/#secondaryterraintypenormal">SecondaryTerrainTypeNormal</a> values</li>
-<li>Refer to <a href="/DriftEdit/driftScript/builtinTypes/#vec2">Vec2</a> if needed.</li>
+<li>Refer to <a href="/DriftDocs/driftScript/enumerations/#terraintype">TerrainType</a> for valid <code>m_type</code> values</li>
+<li>If <code>m_type</code> is set to <code>TerrainType.Normal</code>, <code>m_secondary</code> must be one of <a href="/DriftDocs/driftScript/enumerations/#secondaryterraintypenormal">SecondaryTerrainTypeNormal</a> values</li>
+<li>Refer to <a href="/DriftDocs/driftScript/builtinTypes/#vec2">Vec2</a> if needed.</li>
 <li>if only <code>m_index</code> is set, the square at <code>m_index</code> is set to terrain type (i.e. both bottom and top triangle)</li>
 <li>if <code>m_location</code> is set, the triangles within the <code>m_location</code> are set to the new terrain type</li>
 <li>if <code>m_triangleGroup</code> is set, the triangles within <code>m_triangleGroup</code> are set to the new terrain type</li>
@@ -4274,7 +4274,7 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-81-1"><a id="__codelineno-81-1" name="__codelineno-81-1" href="#__codelineno-81-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_unlock_player_camera</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">player_id</span><span class="p">)</span>
 </span></code></pre></div>
 <ul>
-<li>unlocks <code>player_id</code> camera position set by <a href="/DriftEdit/driftScript/functions/#gx_lock_player_camera">gx_lock_player_camera</a></li>
+<li>unlocks <code>player_id</code> camera position set by <a href="/DriftDocs/driftScript/functions/#gx_lock_player_camera">gx_lock_player_camera</a></li>
 <li>equivalent to calling <code>gx_lock_player_camera(player_id, {})</code></li>
 </ul>
 <h2 id="gx_queue_command">gx_queue_command</h2>
@@ -4292,7 +4292,7 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <li>(i.e., a spell that can only target units cannot target a <code>m_pos</code> or <code>m_location</code>)</li>
 <li><code>CommandType</code> can also be a spell identifier</li>
 <li>if <code>bQueueCommand</code> is <code>true</code>, appends the command in the unit's command queue, otherwise command queue beforehand</li>
-<li>See <a href="/DriftEdit/driftScript/enumerations/#commandtype">CommandType</a> for possible command values</li>
+<li>See <a href="/DriftDocs/driftScript/enumerations/#commandtype">CommandType</a> for possible command values</li>
 </ul>
 <h2 id="gx_set_speech_bubble">gx_set_speech_bubble</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-84-1"><a id="__codelineno-84-1" name="__codelineno-84-1" href="#__codelineno-84-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">gx_set_speech_bubble</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">,</span><span class="w"> </span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
@@ -4379,7 +4379,7 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 </span><span id="__span-92-19"><a id="__codelineno-92-19" name="__codelineno-92-19" href="#__codelineno-92-19"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_add_unit_prop</span><span class="p">(</span><span class="n">UnitProp</span><span class="w"> </span><span class="n">prop</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">unit_id</span><span class="p">,</span><span class="w"> </span><span class="kt">mixed</span><span class="w"> </span><span class="n">val</span><span class="p">)</span>
 </span></code></pre></div>
 <ul>
-<li>Please refer to <a href="/DriftEdit/driftScript/enumerations/#mapprop">MapProp</a>, <a href="/DriftEdit/driftScript/enumerations/#forceprop">ForceProp</a>, <a href="/DriftEdit/driftScript/enumerations/#playerprop">PlayerProp</a>, <a href="/DriftEdit/driftScript/enumerations/#unitprop">UnitProp</a>, <a href="/DriftEdit/driftScript/enumerations/#decalprop">DecalProp</a>, and <a href="/DriftEdit/driftScript/enumerations/#locationprop">LocationProp</a> for possibles values you can get/set (and their types).</li>
+<li>Please refer to <a href="/DriftDocs/driftScript/enumerations/#mapprop">MapProp</a>, <a href="/DriftDocs/driftScript/enumerations/#forceprop">ForceProp</a>, <a href="/DriftDocs/driftScript/enumerations/#playerprop">PlayerProp</a>, <a href="/DriftDocs/driftScript/enumerations/#unitprop">UnitProp</a>, <a href="/DriftDocs/driftScript/enumerations/#decalprop">DecalProp</a>, and <a href="/DriftDocs/driftScript/enumerations/#locationprop">LocationProp</a> for possibles values you can get/set (and their types).</li>
 <li>Properties that are <code>int</code> or <code>float</code> and are <code>Read-Write</code> can use the <code>gx_add_*</code> functions</li>
 </ul>
 <h2 id="userdata-getterssetters">UserData Getters/Setters</h2>
@@ -4843,7 +4843,7 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 </span></code></pre></div>
 <ul>
 <li>Creates the Effect of type <code>m_type</code> and returns the Effect ID</li>
-<li>See <a href="/DriftEdit/driftScript/enumerations/#effecttype">EffectType</a> for effects</li>
+<li>See <a href="/DriftDocs/driftScript/enumerations/#effecttype">EffectType</a> for effects</li>
 </ul>
 <h2 id="gx_destroy_effect">gx_destroy_effect</h2>
 <p><div class="language-sq highlight"><pre><span></span><code><span id="__span-163-1"><a id="__codelineno-163-1" name="__codelineno-163-1" href="#__codelineno-163-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_destroy_effect</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">effectID</span><span class="p">)</span>
@@ -4869,7 +4869,7 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <li>Register to receive <code>UnitEnteredLocation</code> and <code>UnitExitedLocation</code> events</li>
 <li>no optional parameters currently</li>
 <li>Usually you will want to only call this one time time in the <code>gx_sim_init</code> function</li>
-<li>See <a href="/DriftEdit/driftScript/enumerations/#eventtype">EventType</a> and <a href="/DriftEdit/driftScript/eventQueue/#event_queue">Event Queue</a> for more information</li>
+<li>See <a href="/DriftDocs/driftScript/enumerations/#eventtype">EventType</a> and <a href="/DriftDocs/driftScript/eventQueue/#event_queue">Event Queue</a> for more information</li>
 </ul>
 <h2 id="gx_triangle_lerp_1">gx_triangle_lerp</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-167-1"><a id="__codelineno-167-1" name="__codelineno-167-1" href="#__codelineno-167-1"></a><span class="kt">float</span><span class="w"> </span><span class="n">gx_triangle_lerp</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">begin</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">end</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">period</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
@@ -4882,14 +4882,14 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 </span></code></pre></div>
 <ul>
 <li>Check if event queue is empty.</li>
-<li>See <a href="/DriftEdit/driftScript/eventQueue/#event_queue">Event Queue</a></li>
+<li>See <a href="/DriftDocs/driftScript/eventQueue/#event_queue">Event Queue</a></li>
 </ul>
 <h2 id="gx_pop_event_from_queue">gx_pop_event_from_queue</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-169-1"><a id="__codelineno-169-1" name="__codelineno-169-1" href="#__codelineno-169-1"></a><span class="kt">Event</span><span class="w"> </span><span class="n">gx_pop_event_from_queue</span><span class="p">()</span>
 </span></code></pre></div>
 <ul>
 <li>Pop event from event queue.</li>
-<li>See <a href="/DriftEdit/driftScript/eventQueue/#event_queue">Event Queue</a></li>
+<li>See <a href="/DriftDocs/driftScript/eventQueue/#event_queue">Event Queue</a></li>
 </ul>
 <h1 id="gx_update_map_hints">gx_update_map_hints</h1>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-170-1"><a id="__codelineno-170-1" name="__codelineno-170-1" href="#__codelineno-170-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_update_map_hints</span><span class="p">(</span><span class="kt">local</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
