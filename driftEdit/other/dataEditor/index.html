@@ -9,23 +9,25 @@
       
       
       
+        <link rel="prev" href="../teamSpawns/">
       
-        <link rel="next" href="driftEdit/modes/cliffsRamps/">
+      
+        <link rel="next" href="../script/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
     
     
       
-        <title>Drift Docs</title>
+        <title>Data Editor - Drift Docs</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.2a3383ac.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2a3383ac.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -69,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#units" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -81,7 +88,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Drift Docs" class="md-header__button md-logo" aria-label="Drift Docs" data-md-component="logo">
+    <a href="../../.." title="Drift Docs" class="md-header__button md-logo" aria-label="Drift Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -101,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Starting Location
+              Data Editor
             
           </span>
         </div>
@@ -205,7 +212,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Drift Docs" class="md-nav__button md-logo" aria-label="Drift Docs" data-md-component="logo">
+    <a href="../../.." title="Drift Docs" class="md-nav__button md-logo" aria-label="Drift Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -220,17 +227,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -241,7 +241,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -250,18 +249,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -277,7 +278,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Drift Edit
@@ -329,7 +330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftEdit/modes/cliffsRamps/" class="md-nav__link">
+      <a href="../../modes/cliffsRamps/" class="md-nav__link">
         
   
   
@@ -352,7 +353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftEdit/modes/heightMap/" class="md-nav__link">
+      <a href="../../modes/heightMap/" class="md-nav__link">
         
   
   
@@ -375,7 +376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftEdit/modes/spawns/" class="md-nav__link">
+      <a href="../../modes/spawns/" class="md-nav__link">
         
   
   
@@ -398,7 +399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftEdit/modes/texSplatting/" class="md-nav__link">
+      <a href="../../modes/texSplatting/" class="md-nav__link">
         
   
   
@@ -421,7 +422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftEdit/modes/units/" class="md-nav__link">
+      <a href="../../modes/units/" class="md-nav__link">
         
   
   
@@ -444,7 +445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftEdit/modes/triangles/" class="md-nav__link">
+      <a href="../../modes/triangles/" class="md-nav__link">
         
   
   
@@ -467,7 +468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftEdit/modes/triangleGroups/" class="md-nav__link">
+      <a href="../../modes/triangleGroups/" class="md-nav__link">
         
   
   
@@ -490,7 +491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftEdit/modes/decals/" class="md-nav__link">
+      <a href="../../modes/decals/" class="md-nav__link">
         
   
   
@@ -513,7 +514,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftEdit/modes/unbuildable/" class="md-nav__link">
+      <a href="../../modes/unbuildable/" class="md-nav__link">
         
   
   
@@ -536,7 +537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftEdit/modes/footprints/" class="md-nav__link">
+      <a href="../../modes/footprints/" class="md-nav__link">
         
   
   
@@ -559,7 +560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftEdit/modes/texLayers/" class="md-nav__link">
+      <a href="../../modes/texLayers/" class="md-nav__link">
         
   
   
@@ -582,7 +583,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftEdit/modes/locations/" class="md-nav__link">
+      <a href="../../modes/locations/" class="md-nav__link">
         
   
   
@@ -610,18 +611,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -637,7 +640,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Other
@@ -651,7 +654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftEdit/other/mapSettings/" class="md-nav__link">
+      <a href="../mapSettings/" class="md-nav__link">
         
   
   
@@ -674,7 +677,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftEdit/other/sceneSettings/" class="md-nav__link">
+      <a href="../sceneSettings/" class="md-nav__link">
         
   
   
@@ -697,7 +700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftEdit/other/1v1Spawns/" class="md-nav__link">
+      <a href="../1v1Spawns/" class="md-nav__link">
         
   
   
@@ -720,7 +723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftEdit/other/teamSpawns/" class="md-nav__link">
+      <a href="../teamSpawns/" class="md-nav__link">
         
   
   
@@ -740,10 +743,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="driftEdit/other/dataEditor/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Data Editor
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -754,6 +777,105 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#units" class="md-nav__link">
+    <span class="md-ellipsis">
+      Units
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spells" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spells
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#player-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      Player Research
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unit-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unit Research
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#player-ammo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Player Ammo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unit-ammo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unit Ammo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#icons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Icons
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sounds-packs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sounds Packs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sounds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sounds
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -766,7 +888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftEdit/other/script/" class="md-nav__link">
+      <a href="../script/" class="md-nav__link">
         
   
   
@@ -789,7 +911,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftEdit/other/forces/" class="md-nav__link">
+      <a href="../forces/" class="md-nav__link">
         
   
   
@@ -812,7 +934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftEdit/other/tags/" class="md-nav__link">
+      <a href="../tags/" class="md-nav__link">
         
   
   
@@ -835,7 +957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftEdit/other/tagsPerForce/" class="md-nav__link">
+      <a href="../tagsPerForce/" class="md-nav__link">
         
   
   
@@ -866,7 +988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftEdit/sideControls/" class="md-nav__link">
+      <a href="../../sideControls/" class="md-nav__link">
         
   
   
@@ -927,7 +1049,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftEdit/misc/textEncoding/" class="md-nav__link">
+      <a href="../../misc/textEncoding/" class="md-nav__link">
         
   
   
@@ -1003,7 +1125,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftScript/intro/" class="md-nav__link">
+      <a href="../../../driftScript/intro/" class="md-nav__link">
         
   
   
@@ -1026,7 +1148,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftScript/scriptEntryPoints/" class="md-nav__link">
+      <a href="../../../driftScript/scriptEntryPoints/" class="md-nav__link">
         
   
   
@@ -1049,7 +1171,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftScript/identifiers/" class="md-nav__link">
+      <a href="../../../driftScript/identifiers/" class="md-nav__link">
         
   
   
@@ -1072,7 +1194,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftScript/builtinTypes/" class="md-nav__link">
+      <a href="../../../driftScript/builtinTypes/" class="md-nav__link">
         
   
   
@@ -1095,7 +1217,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftScript/math/" class="md-nav__link">
+      <a href="../../../driftScript/math/" class="md-nav__link">
         
   
   
@@ -1118,7 +1240,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftScript/functions/" class="md-nav__link">
+      <a href="../../../driftScript/functions/" class="md-nav__link">
         
   
   
@@ -1141,7 +1263,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftScript/enumerations/" class="md-nav__link">
+      <a href="../../../driftScript/enumerations/" class="md-nav__link">
         
   
   
@@ -1164,7 +1286,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftScript/eventQueue/" class="md-nav__link">
+      <a href="../../../driftScript/eventQueue/" class="md-nav__link">
         
   
   
@@ -1187,7 +1309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftScript/vscodeSyntaxHighlighting/" class="md-nav__link">
+      <a href="../../../driftScript/vscodeSyntaxHighlighting/" class="md-nav__link">
         
   
   
@@ -1210,7 +1332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftScript/gotchyas/" class="md-nav__link">
+      <a href="../../../driftScript/gotchyas/" class="md-nav__link">
         
   
   
@@ -1233,7 +1355,7 @@
   
   
     <li class="md-nav__item">
-      <a href="driftScript/examples/" class="md-nav__link">
+      <a href="../../../driftScript/examples/" class="md-nav__link">
         
   
   
@@ -1274,6 +1396,95 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#units" class="md-nav__link">
+    <span class="md-ellipsis">
+      Units
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spells" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spells
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#player-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      Player Research
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unit-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unit Research
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#player-ammo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Player Ammo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unit-ammo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unit Ammo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#icons" class="md-nav__link">
+    <span class="md-ellipsis">
+      Icons
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sounds-packs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sounds Packs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sounds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sounds
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1288,13 +1499,84 @@
 
 
 
-  <h1>Starting Location</h1>
+  <h1>Data Editor</h1>
 
-<p>Welcome to the official Drift Wars documentation webpage!</p>
-<p>Please use the navigation on the left to browse through the documentation.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>!! Warning: This documentation is still a work in progress.. !!
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>!! Documentation is constantly changing and being updated..  !!
-</span></code></pre></div>
+<h2 id="units">Units</h2>
+<ul>
+<li>Allows you to edit/copy/delete units</li>
+<li>Can configure many properties, such as <code>health</code>, <code>attacks</code>, <code>armor</code>, <code>cost</code>, <code>requirements</code>, <code>castable spells</code>, etc..</li>
+<li>Official units are unable to be deleted</li>
+</ul>
+<h2 id="spells">Spells</h2>
+<ul>
+<li>Allows you to edit/copy/delete spells</li>
+<li>You can configure many different properties of spells, such as <code>research</code> requirements, <code>ammo</code> requirements, <code>soundpack</code> used, etc..</li>
+<li>Official spells are unable to be deleted</li>
+</ul>
+<h2 id="player-research">Player Research</h2>
+<ul>
+<li>Allows you to edit/copy/delete <code>player research</code> types</li>
+<li>A <code>Player Research</code> belongs to the player (example: <code>Armor Upgrades</code>, <code>Spell Upgrades</code>, <code>Speed Increase</code>, etc..)</li>
+<li><code>Player Research</code> can be used as a requirement to cast specific spells, etc</li>
+<li>Official <code>player research</code> types are unable to be deleted</li>
+</ul>
+<h2 id="unit-research">Unit Research</h2>
+<ul>
+<li>Allows you to edit/copy/delete <code>unit research</code> types</li>
+<li>A <code>Unit Research</code> belongs to a unit (Example: <code>Gunship</code>-style spells)</li>
+<li><code>Unit Research</code> can be used as a requirement to cast specific spells, etc (that only effects the unit that upgraded the research)</li>
+<li>Official <code>unit research</code> types are unable to be deleted</li>
+</ul>
+<h2 id="player-ammo">Player Ammo</h2>
+<ul>
+<li>Allows you to edit/copy/delete <code>Player Ammo</code> types</li>
+<li><code>Player Ammo</code> belong to the player. (example: <code>Nuke</code> ammo that is built and contained in a building, but useable for all units to use)</li>
+<li><code>Player Ammo</code> can be used as a requirement to cast specific spells</li>
+<li>Official <code>Player Ammo</code> types are unable to be deleted</li>
+</ul>
+<h2 id="unit-ammo">Unit Ammo</h2>
+<ul>
+<li>Allows you to edit/copy/delete <code>Unit Ammo</code> types</li>
+<li><code>Unit Ammo</code> belong to the unit.</li>
+<li><code>Unit Ammo</code> can be used as a requirement to cast specific spells</li>
+<li>Official <code>Unit Ammo</code> types are able to be deleted</li>
+</ul>
+<h2 id="icons">Icons</h2>
+<ul>
+<li>Allows you to edit/add/edit/delete <code>icons</code></li>
+<li><code>Icons</code> are used for unit portraits, and other in-game things.</li>
+<li>Official <code>icons</code> are unable to be deleted</li>
+<li>In the future, official <code>icons</code> will also be allowed to be overrided  with different images</li>
+</ul>
+<h2 id="sounds-packs">Sounds Packs</h2>
+<ul>
+<li>Allows you to add/edit/delete <code>soundpacks</code></li>
+<li>A <code>soundpack</code> is a grouping of <code>sounds</code> that can be played by the game. You can upload new Sounds to play through the <code>Sounds</code> node.</li>
+<li>A unit usually references multiple <code>soundpacks</code><ul>
+<li>1 sound pack for <code>acknowledgement</code> sounds</li>
+<li>1 sound pack for <code>selection</code> sounds</li>
+<li>possibly more depending on type of unit</li>
+</ul>
+</li>
+<li>Spells also reference and use sound packs</li>
+<li>Sound packs can also be played via <code>DriftScript</code></li>
+<li>A <code>sequence</code> is a list of sounds that will be played in order<ul>
+<li>Very useful if you want the unit to 'tell a joke' if you keep selecting it, etc..</li>
+<li><code>Sequence</code> is only used when soundpack is used in a non-3d-positional way (i.e, <code>unit acknowledgments</code>, <code>selection</code>, etc..)</li>
+<li>In the case when <code>soundpack</code> is used in a 3d-positional-way, a random sound will be selected to be played (sequences are ignored completely).</li>
+</ul>
+</li>
+<li>At the moment, only custom (non-official) <code>sounds</code> are able to be modified/deleted. In the future, 'official' sounds packs will be able to be edited as well.</li>
+</ul>
+<h2 id="sounds">Sounds</h2>
+<ul>
+<li>Allows you to add/edit/delete <code>sounds</code></li>
+<li>A sound by itself is unuseable by the game. It must be part of a <code>soundpack</code> for it to be used.</li>
+<li>Uploaded sounds should be 16-bit 44100Khz, mono (1 channel) or stereo (2 channels)</li>
+<li>For sounds that are meant to be played in 3d-space (gunshots, explosions, etc..), it is recommended that they are mono, (due to less map filesize required).</li>
+<li>For sounds that are meant to be played without 3d-effects (voicelines, etc..), sounds should also be <code>mono</code> (1 channel) to save map filesize space. The exception is if you want each ear to hear slighly different sounds, in that case 2-channel stereo is fine (but causes slightly bigger map filesize).</li>
+<li>At the moment, only custom (non-official) <code>sounds</code> are able to be edited/deleted. In the future, <code>official</code> sounds will be allowed to be overrided.</li>
+</ul>
 
 
 
@@ -1343,10 +1625,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
     
   </body>
