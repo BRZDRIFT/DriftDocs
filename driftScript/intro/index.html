@@ -1340,8 +1340,19 @@ to learn due to more learning material, and quicker feedback loops.</p>
 <p><code>DriftScript</code> is a modified version of <a href="http://squirrel-lang.org/squirreldoc/reference/language.html">Squirrel 3.2</a> language.</p>
 <p>Please refer to the language reference manual here:<br />
 <a href="http://squirrel-lang.org/squirreldoc/reference/language.html">http://squirrel-lang.org/squirreldoc/reference/language.html</a></p>
-<p>Additions to squirrel and/or things you might want to know..</p>
+<p>Major changes from Squirrel:</p>
 <ul>
+<li><code>_cmp</code> meta-function removed.</li>
+<li>comparison operators <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, and <code>&gt;=</code> automatically generated for user-classes when possible</li>
+<li><code>==</code> and <code>!=</code> operators changed to check for value-equality (instead of reference-equality)<ul>
+<li>works for all types (dictionaries, arrays, classes, etc..)</li>
+<li>recursively checks all child elements for equality.</li>
+</ul>
+</li>
+<li>new keywords <code>is</code> and <code>is_not</code> added that check for reference-equality.<ul>
+<li>Equivalent to squirrel's <code>==</code> and <code>!=</code> behavior.</li>
+</ul>
+</li>
 <li><code>int</code> types are signed 64-bit</li>
 <li><code>float</code> types modified to be a 64-bit <code>Q31.32</code> fixed point types</li>
 <li>more type information at <a href="/DriftEdit/driftScript/math/#scalar-types">scalar-types</a></li>
