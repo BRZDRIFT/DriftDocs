@@ -1,4 +1,4 @@
-Welcome to the Drift Wars Editor Documentation!
+Welcome to the Drift Edit Documentation!
 
 The editor can be used for creating both `melee` and `custom` maps.
 
