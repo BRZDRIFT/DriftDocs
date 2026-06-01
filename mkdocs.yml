@@ -1,4 +1,4 @@
-site_name: Drift Edit
+site_name: Drift Docs
 
 nav:
     - 'Starting Location': 'index.md'
