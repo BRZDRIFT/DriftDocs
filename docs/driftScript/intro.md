@@ -27,6 +27,9 @@ Major changes from Squirrel:
     - will not be generated if class contains a dictionary or array
 - new keywords `is` and `is_not` added that check for reference-equality.
     - Equivalent to squirrel's `==` and `!=` behavior.
+- `array.find(value)` changed to check for value-equality rather than reference-equality
+    - `array.find_ref(value)` added to check for reference-equality
+- Dictionary keys restricted to types `int`, `float`, `bool`, and `string`
 - `int` types are signed 64-bit
 - `float` types modified to be a 64-bit `Q31.32` fixed point types
 - more type information at {{math("scalar-types")}}
