@@ -1392,15 +1392,15 @@ to learn due to more learning material, and quicker feedback loops.</p>
 <p>Major changes from Squirrel:</p>
 <ul>
 <li>Comparison operator changes!<ul>
-<li>Custom <code>_cmp</code> meta-function removed.</li>
+<li><code>_cmp</code> meta-function removed.</li>
 <li><code>==</code> and <code>!=</code> operators overhauled to check for value-equality (instead of reference-equality)<ul>
 <li>works for all types (dictionaries, arrays, classes, etc..)</li>
 <li>recursively checks all child members/arrays/dictionaries/etc for equality</li>
-<li>always auto-generated for user classes</li>
+<li>always provided for user classes</li>
 </ul>
 </li>
-<li>the other comparison operators <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, and <code>&gt;=</code> are auto-generated for user classes when possible<ul>
-<li>will not be generated if class contains a dictionary or array</li>
+<li>the other comparison operators <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, and <code>&gt;=</code> are provided for user classes when possible<ul>
+<li>will not be provided if class contains a dictionary or array</li>
 </ul>
 </li>
 <li>new keywords <code>is</code> and <code>is_not</code> added to check for reference-quality.<ul>
