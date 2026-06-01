@@ -32,3 +32,4 @@ Major changes from Squirrel:
 - more type information at {{math("scalar-types")}}
 - encoding `utf-8`
 - `Squirrel Standard Library` is not supported.
+    - Although, DriftScript provides many functions with identical behavior.
