@@ -18,21 +18,24 @@ Please refer to the language reference manual here:
 
 Major changes from Squirrel:
 
-- `_cmp` meta-function removed.
-- `==` and `!=` operators changed to check for deep value-equality (instead of reference-equality)
-    - works for all types (dictionaries, arrays, classes, etc..)
-    - recursively checks all child members/arrays/dictionaries/etc for equality
-    - always auto-generated for user classes
-- the other comparison operators `<`, `<=`, `>`, and `>=` only generated for user classes when possible
-    - will not be generated if class contains a dictionary or array
-- new keywords `is` and `is_not` added that check for reference-equality.
-    - Equivalent to squirrel's `==` and `!=` behavior.
-- `array.find(value)` changed to check for value-equality rather than reference-equality
-    - `array.find_ref(value)` added to check for reference-equality
-- Dictionary keys restricted to types `int`, `float`, `bool`, and `string`
-- `int` types are signed 64-bit
-- `float` types modified to be a 64-bit `Q31.32` fixed point types
-- more type information at {{math("scalar-types")}}
-- encoding `utf-8`
+- Comparison operator changes!
+    - Custom `_cmp` meta-function removed.
+    - `==` and `!=` operators overhauled to check for value-equality (instead of reference-equality)
+        - works for all types (dictionaries, arrays, classes, etc..)
+        - recursively checks all child members/arrays/dictionaries/etc for equality
+        - always auto-generated for user classes
+    - the other comparison operators `<`, `<=`, `>`, and `>=` are auto-generated for user classes when possible
+        - will not be generated if class contains a dictionary or array
+    - new keywords `is` and `is_not` added to check for reference-quality.
+        - Equivalent to squirrel's `==` and `!=`.
+    - `array.find(value)` modified to check for value-equality rather than reference-equality
+        - `array.find_ref(value)` added to check for reference-equality
+- Dictionary changes:
+    - Key types are restricted to `int`, `float`, `bool`, and `string`
+- Type changes:
+    - `int` types are signed 64-bit
+    - `float` types modified to be a 64-bit `Q31.32` fixed point types
+    - more type information at {{math("scalar-types")}}
+- Encoding `utf-8`
 - `Squirrel Standard Library` is not supported.
     - Although, DriftScript provides many functions with identical behavior.
