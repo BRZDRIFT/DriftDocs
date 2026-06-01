@@ -24,7 +24,7 @@ Major changes from Squirrel:
 - `==` and `!=` operators changed to check for deep value-equality (instead of reference-equality)
     - works for all types (dictionaries, arrays, classes, etc..)
     - recursively checks all child members/arrays/dictionaries/etc for equality
-    - always auto-generated for user classes (even when class contains dictionaries/arrays/etc).
+    - always auto-generated for user classes
 - new keywords `is` and `is_not` added that check for reference-equality.
     - Equivalent to squirrel's `==` and `!=` behavior.
 - `int` types are signed 64-bit
