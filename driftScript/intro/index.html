@@ -1357,6 +1357,11 @@ to learn due to more learning material, and quicker feedback loops.</p>
 <li>Equivalent to squirrel's <code>==</code> and <code>!=</code> behavior.</li>
 </ul>
 </li>
+<li><code>array.find(value)</code> changed to check for value-equality rather than reference-equality<ul>
+<li><code>array.find_ref(value)</code> added to check for reference-equality</li>
+</ul>
+</li>
+<li>Dictionary keys restricted to types <code>int</code>, <code>float</code>, <code>bool</code>, and <code>string</code></li>
 <li><code>int</code> types are signed 64-bit</li>
 <li><code>float</code> types modified to be a 64-bit <code>Q31.32</code> fixed point types</li>
 <li>more type information at <a href="/DriftEdit/driftScript/math/#scalar-types">scalar-types</a></li>
