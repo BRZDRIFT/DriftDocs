@@ -77,7 +77,7 @@ print("abc " + a)           		// prints "abc 5"
 print("My Int Vector = " + Vec2(4, 5))
 
 // Prints: "My Float Vector = (4.00, 5.00)"
-print("My Float Vector = " + Vec2(4, 5).ToFloat2())
+print("My Float Vector = " + Vec2(4, 5).ToFloat())
 
 // Prints: "My Float Vector = (4.00, 5.00)"
 print("My Float Vector = " + Vec2(4.0, 5.0))
