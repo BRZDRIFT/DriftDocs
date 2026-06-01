@@ -19,13 +19,13 @@ Please refer to the language reference manual here:
 Major changes from Squirrel:
 
 - Comparison operator changes!
-    - Custom `_cmp` meta-function removed.
+    - `_cmp` meta-function removed.
     - `==` and `!=` operators overhauled to check for value-equality (instead of reference-equality)
         - works for all types (dictionaries, arrays, classes, etc..)
         - recursively checks all child members/arrays/dictionaries/etc for equality
-        - always auto-generated for user classes
-    - the other comparison operators `<`, `<=`, `>`, and `>=` are auto-generated for user classes when possible
-        - will not be generated if class contains a dictionary or array
+        - always provided for user classes
+    - the other comparison operators `<`, `<=`, `>`, and `>=` are provided for user classes when possible
+        - will not be provided if class contains a dictionary or array
     - new keywords `is` and `is_not` added to check for reference-quality.
         - Equivalent to squirrel's `==` and `!=`.
     - `array.find(value)` modified to check for value-equality rather than reference-equality
