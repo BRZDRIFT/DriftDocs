@@ -16,8 +16,15 @@ to learn due to more learning material, and quicker feedback loops.
 Please refer to the language reference manual here:  
 [http://squirrel-lang.org/squirreldoc/reference/language.html](http://squirrel-lang.org/squirreldoc/reference/language.html)
 
-Additions to squirrel and/or things you might want to know..
+Major changes from Squirrel:
 
+- `_cmp` meta-function removed.
+- comparison operators `<`, `<=`, `>`, and `>=` automatically generated for user-classes when possible
+- `==` and `!=` operators changed to check for value-equality (instead of reference-equality)
+    - works for all types (dictionaries, arrays, classes, etc..)
+    - recursively checks all child elements for equality.
+- new keywords `is` and `is_not` added that check for reference-equality.
+    - Equivalent to squirrel's `==` and `!=` behavior.
 - `int` types are signed 64-bit
 - `float` types modified to be a 64-bit `Q31.32` fixed point types
 - more type information at {{math("scalar-types")}}
