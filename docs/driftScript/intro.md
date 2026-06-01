@@ -20,10 +20,9 @@ Major changes from Squirrel:
 
 - Comparison operator changes!
     - `_cmp` meta-function removed.
-    - `==` and `!=` operators overhauled to check for value-equality (instead of reference-equality)
+    - `==` and `!=` operators overhauled to check for deep value-equality (instead of reference-equality)
         - works for all types (dictionaries, arrays, classes, etc..)
         - recursively checks all child members/arrays/dictionaries/etc for equality
-        - always provided for user classes
     - the other comparison operators `<`, `<=`, `>`, and `>=` are provided for user classes when possible
         - will not be provided if class contains a dictionary or array
     - new keywords `is` and `is_not` added to check for reference-quality.
