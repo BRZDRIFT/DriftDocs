@@ -20,11 +20,11 @@ Major changes from Squirrel:
 
 - Comparison operators and dictionaries check for value-equality:
     - `==` and `!=` check for value-equality! (not reference-equality, as-in squirrel)
-        - In DriftScript, `==` and `!=` call the user-implemented `_eq` meta function.
-            - If `_eq` is not defined, will fallback to calling `_cmp` meta function
+        - In DriftScript, `==` and `!=` call the user-implemented `_eq` meta-function.
+            - If `_eq` is not defined, will fallback to calling `_cmp` meta-function
             - If `_eq` and `_cmp` both do not exist, fall-back to reference-equality for `==`.
         - Keywords `is` and `is_not` added to check for reference-equality
-    - Added new user-implementable `_hash` meta function.
+    - Added new user-implementable `_hash` meta-function.
         - automatically called when `hash(obj)` is called.
         - If your custom class will be used as dictionary, you should implement a `_eq` and `_hash` function.
         - If `obj1 == obj2`, then `hash(obj1) == hash(obj2)` MUST be true.
