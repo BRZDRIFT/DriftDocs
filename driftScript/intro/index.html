@@ -1469,7 +1469,7 @@ to learn due to more learning material, and quicker feedback loops.</p>
 <li>Keywords <code>is</code> and <code>is_not</code> added to check for reference-equality</li>
 </ul>
 </li>
-<li>Added new user-implementable <code>_hash</code> meta-function.<ul>
+<li>Added new user-implementable <code>int _hash()</code> meta-function.<ul>
 <li>automatically called when <code>hash(obj)</code> is called.</li>
 <li>If your custom class will be used as dictionary, you should implement a <code>_eq</code> and <code>_hash</code> function.</li>
 <li>If <code>obj1 == obj2</code>, then <code>hash(obj1) == hash(obj2)</code> MUST be true.<ul>
@@ -1478,7 +1478,7 @@ to learn due to more learning material, and quicker feedback loops.</p>
 </li>
 </ul>
 </li>
-<li>Added function <code>object_id(obj)</code> to get object id for class instances, arrays, and dictionaries<ul>
+<li>Added function <code>int object_id(obj)</code> to get object id for class instances, arrays, and dictionaries<ul>
 <li>returns <code>0</code> for other types </li>
 </ul>
 </li>
