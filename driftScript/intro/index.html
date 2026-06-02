@@ -1461,15 +1461,15 @@ to learn due to more learning material, and quicker feedback loops.</p>
 <ul>
 <li>Comparison operators and dictionaries check for value-equality:<ul>
 <li><code>==</code> and <code>!=</code> check for value-equality! (not reference-equality, as-in squirrel)<ul>
-<li>In DriftScript, <code>==</code> and <code>!=</code> call the user-implemented <code>_eq</code> meta function.<ul>
-<li>If <code>_eq</code> is not defined, will fallback to calling <code>_cmp</code> meta function</li>
+<li>In DriftScript, <code>==</code> and <code>!=</code> call the user-implemented <code>_eq</code> meta-function.<ul>
+<li>If <code>_eq</code> is not defined, will fallback to calling <code>_cmp</code> meta-function</li>
 <li>If <code>_eq</code> and <code>_cmp</code> both do not exist, fall-back to reference-equality for <code>==</code>.</li>
 </ul>
 </li>
 <li>Keywords <code>is</code> and <code>is_not</code> added to check for reference-equality</li>
 </ul>
 </li>
-<li>Added new user-implementable <code>_hash</code> meta function.<ul>
+<li>Added new user-implementable <code>_hash</code> meta-function.<ul>
 <li>automatically called when <code>hash(obj)</code> is called.</li>
 <li>If your custom class will be used as dictionary, you should implement a <code>_eq</code> and <code>_hash</code> function.</li>
 <li>If <code>obj1 == obj2</code>, then <code>hash(obj1) == hash(obj2)</code> MUST be true.<ul>
