@@ -24,12 +24,12 @@ Major changes from Squirrel:
             - If `_eq` is not defined, will fallback to calling `_cmp` meta-function
             - If `_eq` and `_cmp` both do not exist, fall-back to reference-equality for `==`.
         - Keywords `is` and `is_not` added to check for reference-equality
-    - Added new user-implementable `_hash` meta-function.
+    - Added new user-implementable `int _hash()` meta-function.
         - automatically called when `hash(obj)` is called.
         - If your custom class will be used as dictionary, you should implement a `_eq` and `_hash` function.
         - If `obj1 == obj2`, then `hash(obj1) == hash(obj2)` MUST be true.
             - If this is not true, your class will not work properly when used as keys in dictionaries.
-    - Added function `object_id(obj)` to get object id for class instances, arrays, and dictionaries
+    - Added function `int object_id(obj)` to get object id for class instances, arrays, and dictionaries
         - returns `0` for other types 
     - `array.find(value)` modified to check for value-equality rather than reference-equality
         - `array.find_ref(value)` added to check for reference-equality
