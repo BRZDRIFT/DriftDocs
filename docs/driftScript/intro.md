@@ -11,15 +11,15 @@ visit [Python 3](https://www.python.org/downloads/) and learn `Python` first, as
 to learn due to more learning material, and quicker feedback loops.
 
 ## Technical
-`DriftScript` is a !!HEAVILY!! modified version of [Squirrel 3.2](http://squirrel-lang.org/squirreldoc/reference/language.html) language.
+`DriftScript` is a `!!HEAVILY!!` modified version of [Squirrel 3.2](http://squirrel-lang.org/squirreldoc/reference/language.html) language.
 
 Please refer to the language reference manual here:  
 [http://squirrel-lang.org/squirreldoc/reference/language.html](http://squirrel-lang.org/squirreldoc/reference/language.html)
 
 Major changes from Squirrel:
 
-- Comparison operators and dictionaries reworked:
-    - `==` and `!=` check for VALUE-EQUALITY! (not reference equality, as-in squirrel)
+- Comparison operators and dictionaries check for value-equality:
+    - `==` and `!=` check for value-equality! (not reference equality, as-in squirrel)
         - In DriftScript, `==` and `!=` call the user-implemented `_eq` meta function.
             - If `_eq` is not defined, will fallback to calling `_cmp` meta function
             - If `_eq` and `_cmp` both do not exist, fall-back to reference equality for `==`.
