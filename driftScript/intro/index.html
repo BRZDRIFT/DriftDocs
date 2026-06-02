@@ -1454,17 +1454,32 @@ It is intended for people who already have good knowledge of other scripting lan
 visit <a href="https://www.python.org/downloads/">Python 3</a> and learn <code>Python</code> first, as it is probably easier
 to learn due to more learning material, and quicker feedback loops.</p>
 <h2 id="technical">Technical</h2>
-<p><code>DriftScript</code> is a modified version of <a href="http://squirrel-lang.org/squirreldoc/reference/language.html">Squirrel 3.2</a> language.</p>
+<p><code>DriftScript</code> is a !!HEAVILY!! modified version of <a href="http://squirrel-lang.org/squirreldoc/reference/language.html">Squirrel 3.2</a> language.</p>
 <p>Please refer to the language reference manual here:<br />
 <a href="http://squirrel-lang.org/squirreldoc/reference/language.html">http://squirrel-lang.org/squirreldoc/reference/language.html</a></p>
 <p>Major changes from Squirrel:</p>
 <ul>
-<li>Comparison operator changes!<ul>
-<li><code>==</code> and <code>!=</code> changed to check for value-equality, unlike squirrel which checks for reference equality</li>
-<li><code>==</code> and <code>!=</code> operators now try to call the new <code>_eq</code> meta-function if exists, else relies on <code>_cmp</code></li>
-<li><code>==</code> and <code>!=</code> changed to recursively checks all child members of arrays and dictionaries for equality</li>
-<li>new keywords <code>is</code> and <code>is_not</code> added to check for reference-quality.<ul>
-<li>Equivalent to squirrel's <code>==</code> and <code>!=</code>.</li>
+<li>Comparison operators and dictionaries reworked:<ul>
+<li>Unlike squirrel, <code>==</code> and <code>!=</code> check for value-equality (not reference equality)<ul>
+<li>In DriftScript, <code>==</code> and <code>!=</code> call the user-implemented <code>_eq</code> function.<ul>
+<li>If <code>_eq</code> is not defined, will fallback to calling <code>_cmp</code> meta function</li>
+<li>If <code>_eq</code> and <code>_cmp</code> both do not exist, fall-back to reference equality for <code>==</code>.</li>
+</ul>
+</li>
+<li>Keywords <code>is</code> and <code>is_not</code> added to check for reference equality</li>
+</ul>
+</li>
+<li>Added new user-implementable <code>_hash</code> meta function.<ul>
+<li>automatically called when <code>hash(obj)</code> is called.</li>
+<li>If your custom class will be used as dictionary, you should implement a <code>_eq</code> and <code>_hash</code> function.</li>
+<li>If <code>obj1 == obj2</code>, then <code>hash(obj1) == hash(obj2)</code> MUST be true.<ul>
+<li>If this is not true, your class will not work properly when used as keys in dictionaries.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Added function <code>object_id(obj)</code> to get object id for class instances, arrays, and dictionaries<ul>
+<li>returns <code>0</code> for other types </li>
 </ul>
 </li>
 <li><code>array.find(value)</code> modified to check for value-equality rather than reference-equality<ul>
@@ -1473,13 +1488,8 @@ to learn due to more learning material, and quicker feedback loops.</p>
 </li>
 </ul>
 </li>
-<li>Dictionary changes:<ul>
-<li>Key types are restricted to <code>int</code>, <code>float</code>, <code>bool</code>, and <code>string</code></li>
-<li>Todo: may allow class instances as keys in future.</li>
-</ul>
-</li>
 <li>Type changes:<ul>
-<li><code>int</code> types are signed 64-bit</li>
+<li><code>int</code> types are signed 64-bit </li>
 <li><code>float</code> types modified to be a 64-bit <code>Q31.32</code> fixed point types</li>
 <li>more type information at <a href="/DriftDocs/driftScript/math/#scalar-types">scalar-types</a></li>
 </ul>
