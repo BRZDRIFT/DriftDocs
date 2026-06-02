@@ -1460,8 +1460,8 @@ to learn due to more learning material, and quicker feedback loops.</p>
 <p>Major changes from Squirrel:</p>
 <ul>
 <li>Comparison operators and dictionaries reworked:<ul>
-<li>Unlike squirrel, <code>==</code> and <code>!=</code> check for value-equality (not reference equality)<ul>
-<li>In DriftScript, <code>==</code> and <code>!=</code> call the user-implemented <code>_eq</code> function.<ul>
+<li><code>==</code> and <code>!=</code> check for VALUE-EQUALITY! (not reference equality, as-in squirrel)<ul>
+<li>In DriftScript, <code>==</code> and <code>!=</code> call the user-implemented <code>_eq</code> meta function.<ul>
 <li>If <code>_eq</code> is not defined, will fallback to calling <code>_cmp</code> meta function</li>
 <li>If <code>_eq</code> and <code>_cmp</code> both do not exist, fall-back to reference equality for <code>==</code>.</li>
 </ul>
