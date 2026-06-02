@@ -11,26 +11,30 @@ visit [Python 3](https://www.python.org/downloads/) and learn `Python` first, as
 to learn due to more learning material, and quicker feedback loops.
 
 ## Technical
-`DriftScript` is a modified version of [Squirrel 3.2](http://squirrel-lang.org/squirreldoc/reference/language.html) language.
+`DriftScript` is a !!HEAVILY!! modified version of [Squirrel 3.2](http://squirrel-lang.org/squirreldoc/reference/language.html) language.
 
 Please refer to the language reference manual here:  
 [http://squirrel-lang.org/squirreldoc/reference/language.html](http://squirrel-lang.org/squirreldoc/reference/language.html)
 
 Major changes from Squirrel:
 
-- Comparison operator changes!
-    - `==` and `!=` changed to check for value-equality, unlike squirrel which checks for reference equality
-    - `==` and `!=` operators now try to call the new `_eq` meta-function if exists, else relies on `_cmp`
-    - `==` and `!=` changed to recursively checks all child members of arrays and dictionaries for equality
-    - new keywords `is` and `is_not` added to check for reference-quality.
-        - Equivalent to squirrel's `==` and `!=`.
+- Comparison operators and dictionaries reworked:
+    - Unlike squirrel, `==` and `!=` check for value-equality (not reference equality)
+        - In DriftScript, `==` and `!=` call the user-implemented `_eq` function.
+            - If `_eq` is not defined, will fallback to calling `_cmp` meta function
+            - If `_eq` and `_cmp` both do not exist, fall-back to reference equality for `==`.
+        - Keywords `is` and `is_not` added to check for reference equality
+    - Added new user-implementable `_hash` meta function.
+        - automatically called when `hash(obj)` is called.
+        - If your custom class will be used as dictionary, you should implement a `_eq` and `_hash` function.
+        - If `obj1 == obj2`, then `hash(obj1) == hash(obj2)` MUST be true.
+            - If this is not true, your class will not work properly when used as keys in dictionaries.
+    - Added function `object_id(obj)` to get object id for class instances, arrays, and dictionaries
+        - returns `0` for other types 
     - `array.find(value)` modified to check for value-equality rather than reference-equality
         - `array.find_ref(value)` added to check for reference-equality
-- Dictionary changes:
-    - Key types are restricted to `int`, `float`, `bool`, and `string`
-    - Todo: may allow class instances as keys in future.
 - Type changes:
-    - `int` types are signed 64-bit
+    - `int` types are signed 64-bit 
     - `float` types modified to be a 64-bit `Q31.32` fixed point types
     - more type information at {{math("scalar-types")}}
 - Encoding `utf-8`
