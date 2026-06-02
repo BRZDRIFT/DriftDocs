@@ -20,7 +20,7 @@ Major changes from Squirrel:
 
 - Comparison operators and dictionaries reworked:
     - `==` and `!=` check for VALUE-EQUALITY! (not reference equality, as-in squirrel)
-        - In DriftScript, `==` and `!=` call the user-implemented `_eq` function.
+        - In DriftScript, `==` and `!=` call the user-implemented `_eq` meta function.
             - If `_eq` is not defined, will fallback to calling `_cmp` meta function
             - If `_eq` and `_cmp` both do not exist, fall-back to reference equality for `==`.
         - Keywords `is` and `is_not` added to check for reference equality
