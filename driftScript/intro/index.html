@@ -1486,7 +1486,7 @@ to learn due to more learning material, and quicker feedback loops.</p>
 </li>
 <li>Array and Dictionary <code>==</code>/<code>!=</code> operators invoke sub-object's <code>_eq</code>/<code>_cmp</code> meta-functions.<ul>
 <li>Once again, this is DIFFERENT than Squirrel that checks for reference-equality -- don't get me started on how brain-dead this is.</li>
-<li>Can always use <code>is</code> and <code>is_not</code> to compare if two arrays or dictionaries are the same object</li>
+<li>Can always use <code>is</code> and <code>is_not</code> to compare if two arrays or dictionaries are the same object (reference-equality)</li>
 </ul>
 </li>
 <li>Added function <code>int object_id(obj)</code> to get object id for class instances, arrays, and dictionaries<ul>
@@ -1503,29 +1503,31 @@ to learn due to more learning material, and quicker feedback loops.</p>
 <li>more type information at <a href="/DriftDocs/driftScript/math/#scalar-types">scalar-types</a></li>
 </ul>
 </li>
+<li>Removed all raw-pointer hashing, everything is deterministic!</li>
 <li>Encoding <code>utf-8</code></li>
-<li>
-<p><code>Squirrel Standard Library</code> is not supported.</p>
-<ul>
+<li><code>Squirrel Standard Library</code> is not supported.<ul>
 <li>Although, DriftScript provides many functions with identical behavior.</li>
 </ul>
 </li>
-<li>
-<p>Future TODOs:</p>
-<ul>
+<li>Future TODOs:<ul>
 <li>Want to relax some of Squirrel's lexing rules.<ul>
-<li><code>local = .1</code> is valid, but <code>local a = 0.1</code> is not.. wtf??<ul>
-<li>floats currently cannot have a leading <code>0</code></li>
+<li>floats currently cannot have a leading <code>0</code><ul>
+<li><code>local = .1</code> is valid, but <code>local a = 0.1</code> is not.. wtf??</li>
 </ul>
 </li>
-<li><code>local a = -1</code> and <code>local a = 1</code> are valid, but <code>local = +1</code> is not, WTF??<ul>
-<li>integers/floats currently cannot have a leading <code>+</code></li>
+<li>integers/floats currently cannot have a leading <code>+</code><ul>
+<li><code>local a = -1</code> and <code>local a = 1</code> are valid, but <code>local = +1</code> is not, WTF??</li>
 </ul>
 </li>
 <li>Various other little lexing quirks..</li>
 </ul>
 </li>
 <li>Better error-handling and compilation/runtime errors.</li>
+<li>Improved vscode syntax-highlighting, auto-complete, etc.<ul>
+<li>anyone who knows how to write such a plugin, let me know..</li>
+<li>possibly even add debugging features.. break-point and value-inspection.</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
