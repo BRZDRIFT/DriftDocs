@@ -38,7 +38,7 @@ Major changes from Squirrel:
         - Can always use `is` and `is_not` to compare if two arrays or dictionaries are the same object
     - Added function `int object_id(obj)` to get object id for class instances, arrays, and dictionaries
         - returns `0` for other types
-    - `array.find(value)` modified to check for value-equality (`_eq`/`_cmp`) rather than reference-equality
+    - `array.find(value)` modified to compare using `_eq`/`_cmp` rather than reference-equality
         - `array.find_ref(ref)` added to check for reference-equality (i.e. Squirrel's behavior)
 - Type changes:
     - `int` types are signed 64-bit 
