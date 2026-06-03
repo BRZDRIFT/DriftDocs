@@ -48,15 +48,17 @@ float gx_sim_ticks_to_seconds(int simTicks)
 ```
 
 - converts simTicks to seconds
-- equivalent to: `(simTicks.tofloat() / 20.0)`
+- equivalent to: `(simTicks / 20.0)`
+- note: simulation runs every 50ms (20 times/second)
 
 ## gx_seconds_to_sim_ticks
 ```sq
-float gx_seconds_to_sim_ticks(float seconds)
+int gx_seconds_to_sim_ticks(float seconds)
 ```
 
 - converts `seconds` to `simTicks`
-- equivalent to: `(seconds * 20.0).tointeger()`
+- equivalent to: `(seconds * 20).tointeger()`
+- note: simulation runs every 50ms (20 times/second)
 
 ## gx_get_seconds
 ```sq
