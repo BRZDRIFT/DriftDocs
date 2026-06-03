@@ -48,10 +48,12 @@ Major changes from Squirrel:
 - `Squirrel Standard Library` is not supported.
     - Although, DriftScript provides many functions with identical behavior.
 
+
 - Future TODOs:
     - Want to relax some of Squirrel's lexing rules.
-        - `local = .1` is valid but `local a = 0.1` is not.. wtf??
+        - `local = .1` is valid, but `local a = 0.1` is not.. wtf??
             - floats currently cannot have a leading `0`
-        - `local a = -1` and `local a = 1` are valid but `local = +1` is not, WTF??
+        - `local a = -1` and `local a = 1` are valid, but `local = +1` is not, WTF??
             - integers/floats currently cannot have a leading `+`
+        - Various other little lexing quirks..
     - Better error-handling and compilation/runtime errors.
