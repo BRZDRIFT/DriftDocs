@@ -1452,7 +1452,7 @@
 It is intended for people who already have good knowledge of other scripting languages such as <code>Python</code>.  </p>
 <p>If you are new to programming and want to start programming in <code>DriftScript</code>, it is recommended you
 visit <a href="https://www.python.org/downloads/">Python 3</a> and learn <code>Python</code> first, as it is probably easier
-to learn due to more learning material, and quicker feedback loops.</p>
+to learn due to more learning material.</p>
 <h2 id="technical">Technical</h2>
 <p><code>DriftScript</code> is a <code>!!HEAVILY!!</code> modified version of <a href="http://squirrel-lang.org/squirreldoc/reference/language.html">Squirrel 3.2</a> language.</p>
 <p>Please refer to the squirrel language reference manual here:<br />
@@ -1511,8 +1511,8 @@ to learn due to more learning material, and quicker feedback loops.</p>
 </li>
 <li>Future TODOs:<ul>
 <li>Want to relax some of Squirrel's lexing rules.<ul>
-<li>floats currently cannot have a leading <code>0</code><ul>
-<li><code>local = .1</code> is valid, but <code>local a = 0.1</code> is not.. wtf??</li>
+<li>floats cannot being with a <code>.</code>, must have a leading <code>0</code><ul>
+<li><code>local = 0.1</code> is valid, but <code>local a = .1</code> is not.. wtf??</li>
 </ul>
 </li>
 <li>integers/floats currently cannot have a leading <code>+</code><ul>
