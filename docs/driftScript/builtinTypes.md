@@ -8,6 +8,7 @@ class Vec2 {
     function _div((float|int|Vec2) other)   // returns Vec2
     function _unm(Vec2 other)               // returns Vec2
     function _cmp(other)                    // returns bool
+    function _hash()                        // returns int
     function _tostring()                    // returns string
     function IsZero(other)                  // returns bool
     function Dot(Vec2 other)                // returns float or int
@@ -40,6 +41,7 @@ class Vec3 {
     function _div((float|int|Vec3) other)   // returns Vec3
     function _unm(Vec3 other)               // returns Vec3
     function _cmp(other)                    // returns bool
+    function _hash()                        // returns int
     function _tostring()                    // returns string
     function IsZero(other)                  // returns bool
     function Dot(Vec3 other)                // returns float or int
@@ -74,6 +76,7 @@ class Vec4 {
     function _div((float|int|Vec4) other)   // returns Vec4
     function _unm(Vec4 other)               // returns Vec4
     function _cmp(other)                    // returns bool
+    function _hash()                        // returns int
     function _tostring()                    // returns string
     function IsZero(other)                  // returns bool
     function Dot(Vec4 other)                // returns float or int
@@ -114,6 +117,7 @@ class AABR {
     // Methods
     function _tostring()            // returns string
     function _cmp(other)            // returns bool
+    function _hash()                // returns int
     function _cloned(orig)
     function GetSize()              // returns Vec2<int|float>
     function GetTopLeft()           // returns Vec2<int|float>
@@ -148,6 +152,7 @@ class ComplexColor {
     constructor(ColorType colorType, Vec3<float> srgba)
     constructor(ColorType colorType, Vec4<float> srgba)
     function _cmp(other)
+    function _hash()
     function _cloned(orig)
 
     m_srgba = Vec4(1.0, 1.0, 1.0, 1.0)
