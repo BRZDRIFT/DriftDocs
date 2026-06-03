@@ -35,7 +35,7 @@ Major changes from Squirrel:
         - Note: This is DIFFERENT than Squirrel which just checks for reference equality.
     - Array and Dictionary `==`/`!=` operators invoke sub-object's `_eq`/`_cmp` meta-functions.
         - Once again, this is DIFFERENT than Squirrel that checks for reference-equality -- don't get me started on how brain-dead this is.
-        - Can always use `is` and `is_not` to compare if two arrays or dictionaries are the same object
+        - Can always use `is` and `is_not` to compare if two arrays or dictionaries are the same object (reference-equality)
     - Added function `int object_id(obj)` to get object id for class instances, arrays, and dictionaries
         - returns `0` for other types
     - `array.find(value)` modified to compare using `_eq`/`_cmp`
@@ -44,16 +44,18 @@ Major changes from Squirrel:
     - `int` types are signed 64-bit 
     - `float` types modified to be a 64-bit `Q31.32` fixed point types
     - more type information at {{math("scalar-types")}}
+- Removed all raw-pointer hashing, everything is deterministic!
 - Encoding `utf-8`
 - `Squirrel Standard Library` is not supported.
     - Although, DriftScript provides many functions with identical behavior.
-
-
 - Future TODOs:
     - Want to relax some of Squirrel's lexing rules.
-        - `local = .1` is valid, but `local a = 0.1` is not.. wtf??
-            - floats currently cannot have a leading `0`
-        - `local a = -1` and `local a = 1` are valid, but `local = +1` is not, WTF??
-            - integers/floats currently cannot have a leading `+`
+        - floats currently cannot have a leading `0`
+            - `local = .1` is valid, but `local a = 0.1` is not.. wtf??
+        - integers/floats currently cannot have a leading `+`
+            - `local a = -1` and `local a = 1` are valid, but `local = +1` is not, WTF??
         - Various other little lexing quirks..
     - Better error-handling and compilation/runtime errors.
+    - Improved vscode syntax-highlighting, auto-complete, etc.
+        - anyone who knows how to write such a plugin, let me know..
+        - possibly even add debugging features.. break-point and value-inspection.
