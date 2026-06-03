@@ -1470,7 +1470,7 @@ to learn due to more learning material, and quicker feedback loops.</p>
 <li>Keywords <code>is</code> and <code>is_not</code> added to check for reference-equality (i.e. Squirrel's behavior)</li>
 </ul>
 </li>
-<li>Added function <code>int hash(obj1, obj2, ..)</code> that hashes and combines objects/primitives</li>
+<li>Added function <code>int hash(obj1, obj2, ..)</code> that hashes objects/primitives</li>
 <li>Added user-implementable <code>int _hash()</code> meta-function.<ul>
 <li>Is invoked in calls to <code>hash(obj, ...)</code></li>
 <li>If your custom class will be used as dictionary, you should implement <code>_eq</code> and <code>_hash</code> functions.</li>
@@ -1484,7 +1484,7 @@ to learn due to more learning material, and quicker feedback loops.</p>
 <li>Note: This is DIFFERENT than Squirrel which just checks for reference equality.</li>
 </ul>
 </li>
-<li>Array and Dictionary <code>==</code>/<code>!=</code> operators invoke sub-object's <code>_eq</code>/<code>_cmp</code> meta-functions (recursively).<ul>
+<li>Array and Dictionary <code>==</code>/<code>!=</code> operators invoke sub-object's <code>_eq</code>/<code>_cmp</code> meta-functions.<ul>
 <li>Once again, this is DIFFERENT than Squirrel that checks for reference-equality.</li>
 <li>Can always use <code>is</code> and <code>is_not</code> to compare if two arrays or dictionaries are the same object</li>
 </ul>
@@ -1493,10 +1493,8 @@ to learn due to more learning material, and quicker feedback loops.</p>
 <li>returns <code>0</code> for other types</li>
 </ul>
 </li>
-<li><code>array.find(value)</code> modified to compare using <code>_eq</code>/<code>_cmp</code> rather than reference-equality<ul>
+<li><code>array.find(value)</code> modified to compare using <code>_eq</code>/<code>_cmp</code> rather than reference-equality</li>
 <li><code>array.find_ref(ref)</code> added to check for reference-equality (i.e. Squirrel's behavior)</li>
-</ul>
-</li>
 </ul>
 </li>
 <li>Type changes:<ul>
@@ -1506,8 +1504,27 @@ to learn due to more learning material, and quicker feedback loops.</p>
 </ul>
 </li>
 <li>Encoding <code>utf-8</code></li>
-<li><code>Squirrel Standard Library</code> is not supported.<ul>
+<li>
+<p><code>Squirrel Standard Library</code> is not supported.</p>
+<ul>
 <li>Although, DriftScript provides many functions with identical behavior.</li>
+</ul>
+</li>
+<li>
+<p>Future TODOs:</p>
+<ul>
+<li>Want to relax some of Squirrel's lexing rules.<ul>
+<li><code>local = .1</code> is valid but <code>local a = 0.1</code> is not.. wtf??<ul>
+<li>floats currently cannot have a leading <code>0</code></li>
+</ul>
+</li>
+<li><code>local a = -1</code> and <code>local a = 1</code> are valid but <code>local = +1</code> is not, WTF??<ul>
+<li>integers/floats currently cannot have a leading <code>+</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Better error-handling and compilation/runtime errors.</li>
 </ul>
 </li>
 </ul>
