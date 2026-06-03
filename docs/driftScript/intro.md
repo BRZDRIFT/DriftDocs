@@ -24,7 +24,7 @@ Major changes from Squirrel:
             - If `_eq` is not defined, will fallback to calling `_cmp` meta-function
             - If `_eq` and `_cmp` both do not exist, fall-back to reference-equality for `==`.
         - Note: This is DIFFERENT than Squirrel's `==` and `!=` which ALWAYS checks for reference-equality, even when `_cmp` is defined -- which is super unintuitive and RETARDED as *%@&!
-        - Keywords `is` and `is_not` added to check for reference-equality -- (i.e. Squirrel's `==`/`!=` behavior)
+        - Keywords `is` and `is_not` added to check for reference-equality -- (i.e. Squirrel's `==`/`!=` dumbass behavior)
     - Added function `int hash(obj1, obj2, ..)` that hashes objects/primitives
     - Added user-implementable `int _hash()` meta-function.
         - Is invoked in calls to `hash(obj, ...)`
@@ -39,7 +39,7 @@ Major changes from Squirrel:
     - Added function `int object_id(obj)` to get object id for class instances, arrays, and dictionaries
         - returns `0` for other types
     - `array.find(value)` modified to compare using `_eq`/`_cmp`
-    - `array.find_ref(ref)` added to check for reference-equality -- (i.e. Squirrel's dumbass behavior)
+    - `array.find_ref(ref)` added to check for reference-equality -- (i.e. Squirrel's LOL behavior)
 - Type changes:
     - `int` types are signed 64-bit 
     - `float` types modified to be a 64-bit `Q31.32` fixed point types
