@@ -1514,14 +1514,15 @@ to learn due to more learning material, and quicker feedback loops.</p>
 <p>Future TODOs:</p>
 <ul>
 <li>Want to relax some of Squirrel's lexing rules.<ul>
-<li><code>local = .1</code> is valid but <code>local a = 0.1</code> is not.. wtf??<ul>
+<li><code>local = .1</code> is valid, but <code>local a = 0.1</code> is not.. wtf??<ul>
 <li>floats currently cannot have a leading <code>0</code></li>
 </ul>
 </li>
-<li><code>local a = -1</code> and <code>local a = 1</code> are valid but <code>local = +1</code> is not, WTF??<ul>
+<li><code>local a = -1</code> and <code>local a = 1</code> are valid, but <code>local = +1</code> is not, WTF??<ul>
 <li>integers/floats currently cannot have a leading <code>+</code></li>
 </ul>
 </li>
+<li>Various other little lexing quirks..</li>
 </ul>
 </li>
 <li>Better error-handling and compilation/runtime errors.</li>
