@@ -39,7 +39,7 @@ Major changes from Squirrel:
     - Added function `int object_id(obj)` to get object id for class instances, arrays, and dictionaries
         - returns `0` for other types
     - `array.find(value)` modified to check for value-equality (`_eq`/`_cmp`) rather than reference-equality
-        - `array.find_ref(value)` added to check for reference-equality (i.e. Squirrel's behavior)
+        - `array.find_ref(ref)` added to check for reference-equality (i.e. Squirrel's behavior)
 - Type changes:
     - `int` types are signed 64-bit 
     - `float` types modified to be a 64-bit `Q31.32` fixed point types
