@@ -8,7 +8,7 @@ It is intended for people who already have good knowledge of other scripting lan
 
 If you are new to programming and want to start programming in `DriftScript`, it is recommended you
 visit [Python 3](https://www.python.org/downloads/) and learn `Python` first, as it is probably easier
-to learn due to more learning material, and quicker feedback loops.
+to learn due to more learning material.
 
 ## Technical
 `DriftScript` is a `!!HEAVILY!!` modified version of [Squirrel 3.2](http://squirrel-lang.org/squirreldoc/reference/language.html) language.
@@ -50,8 +50,8 @@ Major changes from Squirrel:
     - Although, DriftScript provides many functions with identical behavior.
 - Future TODOs:
     - Want to relax some of Squirrel's lexing rules.
-        - floats currently cannot have a leading `0`
-            - `local = .1` is valid, but `local a = 0.1` is not.. wtf??
+        - floats cannot being with a `.`, must have a leading `0`
+            - `local = 0.1` is valid, but `local a = .1` is not.. wtf??
         - integers/floats currently cannot have a leading `+`
             - `local a = -1` and `local a = 1` are valid, but `local = +1` is not, WTF??
         - Various other little lexing quirks..
