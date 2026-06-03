@@ -3713,14 +3713,16 @@
 </span></code></pre></div>
 <ul>
 <li>converts simTicks to seconds</li>
-<li>equivalent to: <code>(simTicks.tofloat() / 20.0)</code></li>
+<li>equivalent to: <code>(simTicks / 20.0)</code></li>
+<li>note: simulation runs every 50ms (20 times/second)</li>
 </ul>
 <h2 id="gx_seconds_to_sim_ticks">gx_seconds_to_sim_ticks</h2>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">float</span><span class="w"> </span><span class="n">gx_seconds_to_sim_ticks</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">seconds</span><span class="p">)</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">gx_seconds_to_sim_ticks</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">seconds</span><span class="p">)</span>
 </span></code></pre></div>
 <ul>
 <li>converts <code>seconds</code> to <code>simTicks</code></li>
-<li>equivalent to: <code>(seconds * 20.0).tointeger()</code></li>
+<li>equivalent to: <code>(seconds * 20).tointeger()</code></li>
+<li>note: simulation runs every 50ms (20 times/second)</li>
 </ul>
 <h2 id="gx_get_seconds">gx_get_seconds</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kt">float</span><span class="w"> </span><span class="n">gx_get_seconds</span><span class="p">()</span>

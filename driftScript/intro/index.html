@@ -1466,8 +1466,8 @@ to learn due to more learning material, and quicker feedback loops.</p>
 <li>If <code>_eq</code> and <code>_cmp</code> both do not exist, fall-back to reference-equality for <code>==</code>.</li>
 </ul>
 </li>
-<li>Note: This is DIFFERENT than Squirrel's <code>==</code> and <code>!=</code> which ALWAYS checks for reference equality.</li>
-<li>Keywords <code>is</code> and <code>is_not</code> added to check for reference-equality (i.e. Squirrel's behavior)</li>
+<li>Note: This is DIFFERENT than Squirrel's <code>==</code> and <code>!=</code> which ALWAYS checks for reference-equality, even when <code>_cmp</code> is defined -- which is super unintuitive and RETARDED as *%@&amp;!</li>
+<li>Keywords <code>is</code> and <code>is_not</code> added to check for reference-equality -- (i.e. Squirrel's <code>==</code>/<code>!=</code> behavior)</li>
 </ul>
 </li>
 <li>Added function <code>int hash(obj1, obj2, ..)</code> that hashes objects/primitives</li>
@@ -1485,7 +1485,7 @@ to learn due to more learning material, and quicker feedback loops.</p>
 </ul>
 </li>
 <li>Array and Dictionary <code>==</code>/<code>!=</code> operators invoke sub-object's <code>_eq</code>/<code>_cmp</code> meta-functions.<ul>
-<li>Once again, this is DIFFERENT than Squirrel that checks for reference-equality.</li>
+<li>Once again, this is DIFFERENT than Squirrel that checks for reference-equality -- don't get me started on how brain-dead this is.</li>
 <li>Can always use <code>is</code> and <code>is_not</code> to compare if two arrays or dictionaries are the same object</li>
 </ul>
 </li>
@@ -1493,8 +1493,8 @@ to learn due to more learning material, and quicker feedback loops.</p>
 <li>returns <code>0</code> for other types</li>
 </ul>
 </li>
-<li><code>array.find(value)</code> modified to compare using <code>_eq</code>/<code>_cmp</code> rather than reference-equality</li>
-<li><code>array.find_ref(ref)</code> added to check for reference-equality (i.e. Squirrel's behavior)</li>
+<li><code>array.find(value)</code> modified to compare using <code>_eq</code>/<code>_cmp</code></li>
+<li><code>array.find_ref(ref)</code> added to check for reference-equality -- (i.e. Squirrel's dumbass behavior)</li>
 </ul>
 </li>
 <li>Type changes:<ul>
