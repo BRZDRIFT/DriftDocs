@@ -3,10 +3,11 @@
 ## Introduction
 
 The `BG.ShaderToy.glsl` utilizes `DriftShader` to render the map and minimap background.
+
 - It is based-off of `ShaderToy`, which uses `GLSL` as the shading languageR.
 - Browse `https://www.shadertoy.com/` for documentation.
 
-Entry Function:
+## Entry Function
 ```
 void mainImage(out vec4 outSRGB, vec2 inPosition) {
   outSRGB = vec4(0, 1, 0, 1);
@@ -19,7 +20,7 @@ void mainImage(out vec4 outSRGB, vec2 inPosition) {
     - If you want to output in `linear`, you need to set the option under `Background` tab in the map editor.
 - There are other settings in the `Background` tab such as rotation, speed, enable dither, etc..
 
-`Global Uniform Values:`
+## Global Uniform Values
 
 ```
 uniform vec3      iResolution;           // think of it as resolution (sort-of) (can be shrunk/stretched via Background tab)
@@ -33,7 +34,7 @@ uniform sampler2D iChannel2;             // texture/sampler #2 (can be set via B
 uniform sampler2D iChannel3;             // texture/sampler #3 (can be set via Background tab)
 ```
 
-`gx_get_bg_shader_val`
+## gx_get_bg_shader_val
 
 ```
 float gx_get_bg_shader_val(int index)
@@ -43,7 +44,7 @@ float gx_get_bg_shader_val(int index)
 - the initial shader values can be set under `Background -> Shader Values` in the map editor
 - these values can be changed via `.DriftScript` using the `void gx_set_bg_shader_val(int index, float value)` function.
 
-`Color Conversion Functions`
+## Color Conversion Functions
 
 ```
 `float gx_linear_to_srgb(float linear)`
@@ -54,11 +55,11 @@ float gx_get_bg_shader_val(int index)
 `vec4 gx_srgb_to_linear(vec4 srgb)`
 ```
 
-`ShaderToy <--> DriftShader` functions
+## `ShaderToy <--> DriftShader` functions
 - Helpers to convert between `ShaderToy (OpenGL)` and `DriftShader (vulkan)` coordinate systems, etc
 - Usually you don't need to use these, but are provided for convenience.
 
-`gx_flip_uv`
+## `gx_flip_uv`
 ```
 vec2 gx_flip_uv(vec2 uv) {
     uv.y = 1.0 -= uv.y;
@@ -66,7 +67,7 @@ vec2 gx_flip_uv(vec2 uv) {
 }
 ```
 
-`gx_flip_frag_coord`
+## `gx_flip_frag_coord`
 ```
 vec2 gx_flip_frag_coord(vec2 fragCoord)
 {
@@ -75,6 +76,7 @@ vec2 gx_flip_frag_coord(vec2 fragCoord)
 }
 ```
 
+## Warning!!
 Differences between `DriftShader` and `ShaderToy`!!
 - `ShaderToy / WebGL` auto-initializes variables to `0`! `DriftShader` does not!!!
     - If you copy a `ShaderToy` shader and it is not working (or crashing), VERIFY all variables are manually initialized to `0` !
