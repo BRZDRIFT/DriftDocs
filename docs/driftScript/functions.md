@@ -68,20 +68,22 @@ float gx_get_seconds()
 - return game time in seconds
 - equivalent to: `gx_sim_ticks_to_seconds(gx_get_sim_tick())`
 
-## gx_get_bg_shader_val_float
+## gx_get_bg_shader_val
 ```sq
-float gx_get_bg_shader_val_float(int index);
+float gx_get_bg_shader_val(int index);
 ```
 
 - index must be between `[0-15]`
+- get float value that is being used by the background gpu shader
 
-## gx_get_bg_shader_val_float
+## gx_set_bg_shader_val
 ```sq
-float gx_set_bg_shader_val_float(int index, int val);
+float gx_set_bg_shader_val(int index, float val);
 ```
 
-- `index` must be between `[0-15]`
-- values set with this function can be obtained in Background ShaderToy shader via shader function `int gx_get_bg_shader_val_float(int index)`
+- index must be between `[0-15]`
+- set float value that can be used by the background gpu shader
+
 
 ## gx_get_distance_between_units
 ```sq
