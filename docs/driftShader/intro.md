@@ -23,14 +23,14 @@ void mainImage(out vec4 outSRGB, vec2 inPosition) {
 ## Global Uniform Values
 ```
 uniform vec3      iResolution;              // resolution (sort-of)
-uniform float     iTime;                    // game-time (in seconds)
+uniform float     iTime;                    // game-time (seconds)
 uniform int       iFrame;                   // not supported yet (always 0)
 uniform vec3      iChannelResolution[4];    // iChannel# texture resolution
-uniform vec4      iMouse;                   // not supported yet (always vec4(0,0,0,0))
-uniform sampler2D iChannel0;                // texture can be set via Background tab
-uniform sampler2D iChannel1;                // texture can be set via Background tab
-uniform sampler2D iChannel2;                // texture can be set via Background tab
-uniform sampler2D iChannel3;                // texture can be set via Background tab
+uniform vec4      iMouse;                   // not supported yet (vec4(0,0,0,0))
+uniform sampler2D iChannel0;                // can set via Background tab
+uniform sampler2D iChannel1;                // can be set via Background tab
+uniform sampler2D iChannel2;                // can be set via Background tab
+uniform sampler2D iChannel3;                // can be set via Background tab
 ```
 
 ## Color Conversion Functions
