@@ -1573,7 +1573,7 @@
 <h2 id="introduction">Introduction</h2>
 <p>The <code>BG.ShaderToy.glsl</code> utilizes <code>DriftShader</code> to render the map and minimap background.</p>
 <ul>
-<li>It is based-off of <code>ShaderToy</code>, which uses <code>GLSL</code> as the shading languageR.</li>
+<li>It is based-off of <code>ShaderToy</code>, which uses <code>GLSL</code> as the shading language.</li>
 <li>Browse <code>https://www.shadertoy.com/</code> for documentation.</li>
 </ul>
 <h2 id="entry-function">Entry Function</h2>
@@ -1610,25 +1610,25 @@
 <li>these values can be changed via <code>.DriftScript</code> using the <code>void gx_set_bg_shader_val(int index, float value)</code> function.</li>
 </ul>
 <h2 id="color-conversion-functions">Color Conversion Functions</h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>`float gx_linear_to_srgb(float linear)`
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>`vec3 gx_linear_to_srgb(vec3 linear)`
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>`vec4 gx_linear_to_srgb(vec4 linear)`
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>`float gx_srgb_to_linear(float srgb)`
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>`vec3 gx_srgb_to_linear(vec3 srgb)`
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>`vec4 gx_srgb_to_linear(vec4 srgb)`
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>float gx_linear_to_srgb(float linear)
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>vec3 gx_linear_to_srgb(vec3 linear)
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>vec4 gx_linear_to_srgb(vec4 linear)
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>float gx_srgb_to_linear(float srgb)
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>vec3 gx_srgb_to_linear(vec3 srgb)
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>vec4 gx_srgb_to_linear(vec4 srgb)
 </span></code></pre></div>
 <h2 id="shadertoy-driftshader-functions"><code>ShaderToy &lt;--&gt; DriftShader</code> functions</h2>
 <ul>
 <li>Helpers to convert between <code>ShaderToy (OpenGL)</code> and <code>DriftShader (vulkan)</code> coordinate systems, etc</li>
 <li>Usually you don't need to use these, but are provided for convenience.</li>
 </ul>
-<h2 id="gx_flip_uv"><code>gx_flip_uv</code></h2>
+<h2 id="gx_flip_uv">gx_flip_uv</h2>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>vec2 gx_flip_uv(vec2 uv) {
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    uv.y = 1.0 -= uv.y;
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    return uv;
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>}
 </span></code></pre></div>
-<h2 id="gx_flip_frag_coord"><code>gx_flip_frag_coord</code></h2>
+<h2 id="gx_flip_frag_coord">gx_flip_frag_coord</h2>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>vec2 gx_flip_frag_coord(vec2 fragCoord)
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>{
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    fragCoord.y = iResolution.y - uv.y;
