@@ -8,7 +8,7 @@ The `BG.ShaderToy.glsl` utilizes `DriftShader` to render the map and minimap bac
 - Browse `https://www.shadertoy.com/` for documentation.
 
 ## Entry Function
-```
+```glsl
 void mainImage(out vec4 outSRGB, vec2 inPosition) {
   outSRGB = vec4(0, 1, 0, 1);
 }
@@ -21,7 +21,7 @@ void mainImage(out vec4 outSRGB, vec2 inPosition) {
 - There are other settings in the `Background` tab such as rotation, speed, enable dither, etc..
 
 ## Global Uniform Values
-```
+```glsl
 uniform vec3      iResolution;              // resolution (sort-of)
 uniform float     iTime;                    // game-time (seconds)
 uniform int       iFrame;                   // not supported yet (always 0)
@@ -34,7 +34,7 @@ uniform sampler2D iChannel3;                // can be set via Background tab
 ```
 
 ## Color Conversion Functions
-```
+```glsl
 float gx_linear_to_srgb(float linear)
 vec3 gx_linear_to_srgb(vec3 linear)
 vec4 gx_linear_to_srgb(vec4 linear)
@@ -44,7 +44,7 @@ vec4 gx_srgb_to_linear(vec4 srgb)
 ```
 
 ## gx_get_bg_shader_val
-```
+```glsl
 float gx_get_bg_shader_val(int index)
 ```
 
@@ -53,7 +53,7 @@ float gx_get_bg_shader_val(int index)
 - these values can be changed via `.DriftScript` using the `void gx_set_bg_shader_val(int index, float value)` function.
 
 ## gx_flip_uv
-```
+```glsl
 vec2 gx_flip_uv(vec2 uv) {
     uv.y = 1.0 - uv.y;
     return uv;
@@ -64,7 +64,7 @@ vec2 gx_flip_uv(vec2 uv) {
 - (usually you don't need to use this, provided for convenience)
 
 ## gx_flip_frag_coord
-```
+```glsl
 vec2 gx_flip_frag_coord(vec2 fragCoord) {
     fragCoord.y = iResolution.y - uv.y;
     return fragCoord;
