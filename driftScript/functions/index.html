@@ -1219,18 +1219,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gx_get_bg_shader_val_float" class="md-nav__link">
+  <a href="#gx_get_bg_shader_val" class="md-nav__link">
     <span class="md-ellipsis">
-      gx_get_bg_shader_val_float
+      gx_get_bg_shader_val
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#gx_get_bg_shader_val_float_1" class="md-nav__link">
+  <a href="#gx_set_bg_shader_val" class="md-nav__link">
     <span class="md-ellipsis">
-      gx_get_bg_shader_val_float
+      gx_set_bg_shader_val
     </span>
   </a>
   
@@ -2576,18 +2576,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gx_get_bg_shader_val_float" class="md-nav__link">
+  <a href="#gx_get_bg_shader_val" class="md-nav__link">
     <span class="md-ellipsis">
-      gx_get_bg_shader_val_float
+      gx_get_bg_shader_val
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#gx_get_bg_shader_val_float_1" class="md-nav__link">
+  <a href="#gx_set_bg_shader_val" class="md-nav__link">
     <span class="md-ellipsis">
-      gx_get_bg_shader_val_float
+      gx_set_bg_shader_val
     </span>
   </a>
   
@@ -3731,18 +3731,19 @@
 <li>return game time in seconds</li>
 <li>equivalent to: <code>gx_sim_ticks_to_seconds(gx_get_sim_tick())</code></li>
 </ul>
-<h2 id="gx_get_bg_shader_val_float">gx_get_bg_shader_val_float</h2>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kt">float</span><span class="w"> </span><span class="nf">gx_get_bg_shader_val_float</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">);</span>
+<h2 id="gx_get_bg_shader_val">gx_get_bg_shader_val</h2>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kt">float</span><span class="w"> </span><span class="nf">gx_get_bg_shader_val</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">);</span>
 </span></code></pre></div>
 <ul>
 <li>index must be between <code>[0-15]</code></li>
+<li>get float value that is being used by the background gpu shader</li>
 </ul>
-<h2 id="gx_get_bg_shader_val_float_1">gx_get_bg_shader_val_float</h2>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kt">float</span><span class="w"> </span><span class="nf">gx_set_bg_shader_val_float</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">val</span><span class="p">);</span>
+<h2 id="gx_set_bg_shader_val">gx_set_bg_shader_val</h2>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kt">float</span><span class="w"> </span><span class="nf">gx_set_bg_shader_val</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">val</span><span class="p">);</span>
 </span></code></pre></div>
 <ul>
-<li><code>index</code> must be between <code>[0-15]</code></li>
-<li>values set with this function can be obtained in Background ShaderToy shader via shader function <code>int gx_get_bg_shader_val_float(int index)</code></li>
+<li>index must be between <code>[0-15]</code></li>
+<li>set float value that can be used by the background gpu shader</li>
 </ul>
 <h2 id="gx_get_distance_between_units">gx_get_distance_between_units</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kt">float</span><span class="w"> </span><span class="n">gx_get_distance_between_units</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unitID</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">otherUnitID</span><span class="p">)</span>

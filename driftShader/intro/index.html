@@ -1427,9 +1427,71 @@
 
 <h1 id="drift-shader">Drift Shader</h1>
 <h2 id="introduction">Introduction</h2>
+<p>The <code>BG.ShaderToy.glsl</code> utilizes <code>DriftShader</code> to render the map and minimap background.
+- It is based-off of <code>ShaderToy</code>, which uses <code>GLSL</code> as the shading languageR.
+- Browse <code>https://www.shadertoy.com/</code> for documentation.</p>
+<p>Entry Function:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>void mainImage(out vec4 outSRGB, vec2 inPosition) {
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  outSRGB = vec4(0, 1, 0, 1);
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>}
+</span></code></pre></div></p>
 <ul>
-<li>todo: add documentation</li>
+<li>You are required to set the output variable <code>outSRGB</code> to color you want the "pixel" to be.</li>
+<li><code>outSRGB</code> is expected to be in <code>sRGB</code><ul>
+<li>I would prefer the output to be in <code>linear</code>, but ShaderToy uses <code>sRGB</code> -- and I want to maintain as much similarity as possible.</li>
+<li>If you want to output in <code>linear</code>, you need to set the option under <code>Background</code> tab in the map editor.</li>
 </ul>
+</li>
+<li>There are other settings in the <code>Background</code> tab such as rotation, speed, enable dither, etc..</li>
+</ul>
+<p><code>Global Uniform Values:</code></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>uniform vec3      iResolution;           // think of it as resolution (sort-of) (can be shrunk/stretched via Background tab)
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>uniform float     iTime;                 // game-time (in seconds)
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>uniform int       iFrame;                // present but not supported yet (always 0)
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>uniform vec3      iChannelResolution[4]; // channel resolution (in pixels)
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>uniform vec4      iMouse;                // present but not supported yet (always vec4(0,0,0,0))
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>uniform sampler2D iChannel0;             // texture/sampler #0 (can be set via Background tab)
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>uniform sampler2D iChannel1;             // texture/sampler #1 (can be set via Background tab)
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>uniform sampler2D iChannel2;             // texture/sampler #2 (can be set via Background tab)
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>uniform sampler2D iChannel3;             // texture/sampler #3 (can be set via Background tab)
+</span></code></pre></div>
+<p><code>gx_get_bg_shader_val</code></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>float gx_get_bg_shader_val(int index)
+</span></code></pre></div>
+<ul>
+<li>retrieves the shader value at slot <code>index</code></li>
+<li>the initial shader values can be set under <code>Background -&gt; Shader Values</code> in the map editor</li>
+<li>these values can be changed via <code>.DriftScript</code> using the <code>void gx_set_bg_shader_val(int index, float value)</code> function.</li>
+</ul>
+<p><code>Color Conversion Functions</code></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>`float gx_linear_to_srgb(float linear)`
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>`vec3 gx_linear_to_srgb(vec3 linear)`
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>`vec4 gx_linear_to_srgb(vec4 linear)`
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>`float gx_srgb_to_linear(float srgb)`
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>`vec3 gx_srgb_to_linear(vec3 srgb)`
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>`vec4 gx_srgb_to_linear(vec4 srgb)`
+</span></code></pre></div>
+<p><code>ShaderToy &lt;--&gt; DriftShader</code> functions
+- Helpers to convert between <code>ShaderToy (OpenGL)</code> and <code>DriftShader (vulkan)</code> coordinate systems, etc
+- Usually you don't need to use these, but are provided for convenience.</p>
+<p><code>gx_flip_uv</code>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>vec2 gx_flip_uv(vec2 uv) {
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    uv.y = 1.0 -= uv.y;
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    return uv;
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>}
+</span></code></pre></div></p>
+<p><code>gx_flip_frag_coord</code>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>vec2 gx_flip_frag_coord(vec2 fragCoord)
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>{
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    fragCoord.y = iResolution.y - uv.y;
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    return fragCoord;
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>}
+</span></code></pre></div></p>
+<p>Differences between <code>DriftShader</code> and <code>ShaderToy</code>!!
+- <code>ShaderToy / WebGL</code> auto-initializes variables to <code>0</code>! <code>DriftShader</code> does not!!!
+    - If you copy a <code>ShaderToy</code> shader and it is not working (or crashing), VERIFY all variables are manually initialized to <code>0</code> !
+- <code>ShaderToy (OpenGL)</code> and <code>DriftShader (vulkan)</code> use different coordinate systems!
+    - If you copy a <code>ShaderToy</code> shader to <code>DriftShader</code>, it may render upside-down!</p>
 
 
 
