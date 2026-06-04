@@ -33,15 +33,6 @@ uniform sampler2D iChannel2;             // texture/sampler #2 (can be set via B
 uniform sampler2D iChannel3;             // texture/sampler #3 (can be set via Background tab)
 ```
 
-## gx_get_bg_shader_val
-```
-float gx_get_bg_shader_val(int index)
-```
-
-- retrieves the shader value at slot `index`
-- the initial shader values can be set under `Background -> Shader Values` in the map editor
-- these values can be changed via `.DriftScript` using the `void gx_set_bg_shader_val(int index, float value)` function.
-
 ## Color Conversion Functions
 ```
 float gx_linear_to_srgb(float linear)
@@ -52,9 +43,14 @@ vec3 gx_srgb_to_linear(vec3 srgb)
 vec4 gx_srgb_to_linear(vec4 srgb)
 ```
 
-## `ShaderToy <--> DriftShader` functions
-- Helpers to convert between `ShaderToy (OpenGL)` and `DriftShader (vulkan)` coordinate systems, etc
-- Usually you don't need to use these, but are provided for convenience.
+## gx_get_bg_shader_val
+```
+float gx_get_bg_shader_val(int index)
+```
+
+- retrieves the shader value at slot `index`
+- the initial shader values can be set under `Background -> Shader Values` in the map editor
+- these values can be changed via `.DriftScript` using the `void gx_set_bg_shader_val(int index, float value)` function.
 
 ## gx_flip_uv
 ```
@@ -64,6 +60,9 @@ vec2 gx_flip_uv(vec2 uv) {
 }
 ```
 
+- Helper to convert between `ShaderToy (OpenGL)` and `DriftShader (vulkan)` coordinate systems
+- (usually you don't need to use this, provided for convenience)
+
 ## gx_flip_frag_coord
 ```
 vec2 gx_flip_frag_coord(vec2 fragCoord)
@@ -72,6 +71,9 @@ vec2 gx_flip_frag_coord(vec2 fragCoord)
     return fragCoord;
 }
 ```
+
+- Helper to convert between `ShaderToy (OpenGL)` and `DriftShader (vulkan)` coordinate systems
+- (usually you don't need to use this, provided for convenience)
 
 ## Warning!!
 Differences between `DriftShader` and `ShaderToy`!!
