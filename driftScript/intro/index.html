@@ -1510,7 +1510,14 @@ to learn due to more learning material.</p>
 <li>However, this is valid Drift Script!</li>
 </ul>
 </li>
-<li>Modified some other lexing and parsing rules as well -- the changes are hard to put into words though.</li>
+<li>Modified some additional lexing and parsing rules as well..</li>
+</ul>
+</li>
+<li>Unicode changes:<ul>
+<li>Strings modified to be encoded in UTF8 because that's what Drift Wars internally uses.</li>
+<li>Side effect: Calling <code>.len()</code> on the string "😃" will return 4. (not 1).</li>
+<li>Similar effects happen for korean characters, each korean character will usually increase string length by 2.</li>
+<li>Possible FIXES in future: Can either store strings using <code>char16_t</code>, or provide unicode helper functions.</li>
 </ul>
 </li>
 <li>Type changes:<ul>
@@ -1519,7 +1526,6 @@ to learn due to more learning material.</p>
 <li>more type information at <a href="/DriftDocs/driftScript/math/#scalar-types">scalar-types</a></li>
 </ul>
 </li>
-<li>Encoding <code>utf-8</code></li>
 <li><code>Squirrel Standard Library</code> is not supported.<ul>
 <li>Although, DriftScript provides many functions with identical behavior.</li>
 </ul>
