@@ -55,7 +55,7 @@ float gx_get_bg_shader_val(int index)
 ## gx_flip_uv
 ```
 vec2 gx_flip_uv(vec2 uv) {
-    uv.y = 1.0 -= uv.y;
+    uv.y = 1.0 - uv.y;
     return uv;
 }
 ```
@@ -65,8 +65,7 @@ vec2 gx_flip_uv(vec2 uv) {
 
 ## gx_flip_frag_coord
 ```
-vec2 gx_flip_frag_coord(vec2 fragCoord)
-{
+vec2 gx_flip_frag_coord(vec2 fragCoord) {
     fragCoord.y = iResolution.y - uv.y;
     return fragCoord;
 }
