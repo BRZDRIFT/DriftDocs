@@ -7,6 +7,7 @@ class Vec2 {
     function _mul((float|int|Vec2) other)   // returns Vec2
     function _div((float|int|Vec2) other)   // returns Vec2
     function _unm(Vec2 other)               // returns Vec2
+    function _unp(Vec2 other)               // returns Vec2
     function _cmp(other)                    // returns bool
     function _hash()                        // returns int
     function _tostring()                    // returns string
@@ -40,6 +41,7 @@ class Vec3 {
     function _mul((float|int|Vec3) other)   // returns Vec3
     function _div((float|int|Vec3) other)   // returns Vec3
     function _unm(Vec3 other)               // returns Vec3
+    function _unp(Vec3 other)               // returns Vec3
     function _cmp(other)                    // returns bool
     function _hash()                        // returns int
     function _tostring()                    // returns string
@@ -75,6 +77,7 @@ class Vec4 {
     function _mul((float|int|Vec4) other)   // returns Vec4
     function _div((float|int|Vec4) other)   // returns Vec4
     function _unm(Vec4 other)               // returns Vec4
+    function _unp(Vec4 other)               // returns Vec4
     function _cmp(other)                    // returns bool
     function _hash()                        // returns int
     function _tostring()                    // returns string
