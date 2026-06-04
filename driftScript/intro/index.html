@@ -1466,8 +1466,8 @@ to learn due to more learning material.</p>
 <li>If <code>_eq</code> and <code>_cmp</code> both do not exist, fall-back to reference-equality for <code>==</code>.</li>
 </ul>
 </li>
-<li>Note: This is DIFFERENT than Squirrel's <code>==</code> and <code>!=</code> which ALWAYS checks for reference-equality, even when <code>_cmp</code> is defined -- which is super unintuitive and RETARDED as *%@&amp;!</li>
-<li>Keywords <code>is</code> and <code>is_not</code> added to check for reference-equality -- (i.e. Squirrel's <code>==</code>/<code>!=</code> dumbass behavior)</li>
+<li>Note: This is DIFFERENT than Squirrel's <code>==</code> and <code>!=</code> which ALWAYS checks for reference-equality, even when <code>_cmp</code> is defined.</li>
+<li>Keywords <code>is</code> and <code>is_not</code> added to check for reference-equality -- (i.e. Squirrel's <code>==</code>/<code>!=</code> behavior)</li>
 </ul>
 </li>
 <li>Added function <code>int hash(obj1, obj2, ..)</code> that hashes objects/primitives</li>
@@ -1485,7 +1485,7 @@ to learn due to more learning material.</p>
 </ul>
 </li>
 <li>Array and Dictionary <code>==</code>/<code>!=</code> operators invoke sub-object's <code>_eq</code>/<code>_cmp</code> meta-functions.<ul>
-<li>Once again, this is DIFFERENT than Squirrel that checks for reference-equality -- don't get me started on how brain-dead this is.</li>
+<li>Once again, this is DIFFERENT than Squirrel that checks for reference-equality.</li>
 <li>Can always use <code>is</code> and <code>is_not</code> to compare if two arrays or dictionaries are the same object (reference-equality)</li>
 </ul>
 </li>
@@ -1494,7 +1494,7 @@ to learn due to more learning material.</p>
 </ul>
 </li>
 <li><code>array.find(value)</code> modified to compare using <code>_eq</code>/<code>_cmp</code></li>
-<li><code>array.find_ref(ref)</code> added to check for reference-equality -- (i.e. Squirrel's LOL behavior)</li>
+<li><code>array.find_ref(ref)</code> added to check for reference-equality -- (i.e. Squirrel's behavior)</li>
 </ul>
 </li>
 <li>Type changes:<ul>
@@ -1512,11 +1512,11 @@ to learn due to more learning material.</p>
 <li>Future TODOs:<ul>
 <li>Want to relax some of Squirrel's lexing rules.<ul>
 <li>floats cannot being with a <code>.</code>, must have a leading <code>0</code><ul>
-<li><code>local = 0.1</code> is valid, but <code>local a = .1</code> is not.. wtf??</li>
+<li><code>local = 0.1</code> is valid, but <code>local a = .1</code> is not.. :(</li>
 </ul>
 </li>
 <li>integers/floats currently cannot have a leading <code>+</code><ul>
-<li><code>local a = -1</code> and <code>local a = 1</code> are valid, but <code>local = +1</code> is not, WTF??</li>
+<li><code>local a = -1</code> and <code>local a = 1</code> are valid, but <code>local = +1</code> is not :(</li>
 </ul>
 </li>
 <li>Various other little lexing quirks..</li>
