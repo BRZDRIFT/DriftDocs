@@ -75,8 +75,10 @@ vec2 gx_flip_frag_coord(vec2 fragCoord) {
 - (usually you don't need to use this, provided for convenience)
 
 ## Warning!!
-Differences between `DriftShader` and `ShaderToy`!!
+There are differences between `DriftShader` and `ShaderToy`!!
+
 - `ShaderToy / WebGL` auto-initializes variables to `0`! `DriftShader` does not!!!
     - If you copy a `ShaderToy` shader and it is not working (or crashing), VERIFY all variables are manually initialized to `0` !
 - `ShaderToy (OpenGL)` and `DriftShader (vulkan)` use different coordinate systems!
     - If you copy a `ShaderToy` shader to `DriftShader`, it may render upside-down!
+- `DriftShader` does not support all of `ShaderToy` inputs and features.
