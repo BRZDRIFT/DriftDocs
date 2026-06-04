@@ -1601,7 +1601,7 @@
 </ul>
 <h2 id="gx_flip_uv">gx_flip_uv</h2>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>vec2 gx_flip_uv(vec2 uv) {
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    uv.y = 1.0 -= uv.y;
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    uv.y = 1.0 - uv.y;
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    return uv;
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>}
 </span></code></pre></div>
@@ -1610,22 +1610,28 @@
 <li>(usually you don't need to use this, provided for convenience)</li>
 </ul>
 <h2 id="gx_flip_frag_coord">gx_flip_frag_coord</h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>vec2 gx_flip_frag_coord(vec2 fragCoord)
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>{
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    fragCoord.y = iResolution.y - uv.y;
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    return fragCoord;
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>}
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>vec2 gx_flip_frag_coord(vec2 fragCoord) {
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    fragCoord.y = iResolution.y - uv.y;
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    return fragCoord;
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>}
 </span></code></pre></div>
 <ul>
 <li>Helper to convert between <code>ShaderToy (OpenGL)</code> and <code>DriftShader (vulkan)</code> coordinate systems</li>
 <li>(usually you don't need to use this, provided for convenience)</li>
 </ul>
 <h2 id="warning">Warning!!</h2>
-<p>Differences between <code>DriftShader</code> and <code>ShaderToy</code>!!
-- <code>ShaderToy / WebGL</code> auto-initializes variables to <code>0</code>! <code>DriftShader</code> does not!!!
-    - If you copy a <code>ShaderToy</code> shader and it is not working (or crashing), VERIFY all variables are manually initialized to <code>0</code> !
-- <code>ShaderToy (OpenGL)</code> and <code>DriftShader (vulkan)</code> use different coordinate systems!
-    - If you copy a <code>ShaderToy</code> shader to <code>DriftShader</code>, it may render upside-down!</p>
+<p>There are differences between <code>DriftShader</code> and <code>ShaderToy</code>!!</p>
+<ul>
+<li><code>ShaderToy / WebGL</code> auto-initializes variables to <code>0</code>! <code>DriftShader</code> does not!!!<ul>
+<li>If you copy a <code>ShaderToy</code> shader and it is not working (or crashing), VERIFY all variables are manually initialized to <code>0</code> !</li>
+</ul>
+</li>
+<li><code>ShaderToy (OpenGL)</code> and <code>DriftShader (vulkan)</code> use different coordinate systems!<ul>
+<li>If you copy a <code>ShaderToy</code> shader to <code>DriftShader</code>, it may render upside-down!</li>
+</ul>
+</li>
+<li><code>DriftShader</code> does not support all of <code>ShaderToy</code> inputs and features.</li>
+</ul>
 
 
 
