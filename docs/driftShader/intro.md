@@ -22,15 +22,26 @@ void mainImage(out vec4 outSRGB, vec2 inPosition) {
 
 ## Global Uniform Values
 ```
-uniform vec3      iResolution;           // think of it as resolution (sort-of) (can be shrunk/stretched via Background tab)
-uniform float     iTime;                 // game-time (in seconds)
-uniform int       iFrame;                // present but not supported yet (always 0)
-uniform vec3      iChannelResolution[4]; // channel resolution (in pixels)
-uniform vec4      iMouse;                // present but not supported yet (always vec4(0,0,0,0))
-uniform sampler2D iChannel0;             // texture/sampler #0 (can be set via Background tab)
-uniform sampler2D iChannel1;             // texture/sampler #1 (can be set via Background tab)
-uniform sampler2D iChannel2;             // texture/sampler #2 (can be set via Background tab)
-uniform sampler2D iChannel3;             // texture/sampler #3 (can be set via Background tab)
+// think of this as resolution (sort-of) (can be shrunk/stretched via Background tab)
+uniform vec3      iResolution;
+
+// game-time (in seconds)
+uniform float     iTime; 
+
+// present but not supported yet (always 0)
+uniform int       iFrame;
+
+// channel resolution (in pixels)
+uniform vec3      iChannelResolution[4];
+
+// present but not supported yet (always vec4(0,0,0,0))
+uniform vec4      iMouse;
+
+// texture/samplers (can be set via Background tab)
+uniform sampler2D iChannel0;
+uniform sampler2D iChannel1;
+uniform sampler2D iChannel2;
+uniform sampler2D iChannel3;
 ```
 
 ## Color Conversion Functions
@@ -81,4 +92,5 @@ There are differences between `DriftShader` and `ShaderToy`!!
     - If you copy a `ShaderToy` shader and it is not working (or crashing), VERIFY all variables are manually initialized to `0` !
 - `ShaderToy (OpenGL)` and `DriftShader (vulkan)` use different coordinate systems!
     - If you copy a `ShaderToy` shader to `DriftShader`, it may render upside-down!
+    - May need to use `gx_flip_uv` and `gx_flip_frag_coord`.
 - `DriftShader` does not support all of `ShaderToy` inputs and features.
