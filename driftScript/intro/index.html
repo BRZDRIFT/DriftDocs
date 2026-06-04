@@ -1497,34 +1497,37 @@ to learn due to more learning material.</p>
 <li><code>array.find_ref(ref)</code> added to check for reference-equality -- (i.e. Squirrel's behavior)</li>
 </ul>
 </li>
+<li>Added user-implementable <code>_unp</code> (unary plus operator) meta-function<ul>
+<li>same as squirrel's <code>_unm</code> (unary minus operator) except for <code>+</code> instead of <code>-</code></li>
+</ul>
+</li>
+<li>Changed various lexing and parsing rules to be more intuitive<ul>
+<li><code>local a = .1</code> is invalid in squirrel because floats must begin with a digit: i.e. <code>0.1</code><ul>
+<li>However, this is valid Drift Script!</li>
+</ul>
+</li>
+<li><code>local a = +1</code> is invalid in squirrel because numbers cannot begin with <code>+</code>.<ul>
+<li>However, this is valid Drift Script!</li>
+</ul>
+</li>
+<li>Modified some other lexing and parsing rules as well -- the changes are hard to put into words though.</li>
+</ul>
+</li>
 <li>Type changes:<ul>
 <li><code>int</code> types are signed 64-bit </li>
 <li><code>float</code> types modified to be a 64-bit <code>Q31.32</code> fixed point types</li>
 <li>more type information at <a href="/DriftDocs/driftScript/math/#scalar-types">scalar-types</a></li>
 </ul>
 </li>
-<li>Removed all raw-pointer hashing, everything is deterministic!</li>
 <li>Encoding <code>utf-8</code></li>
 <li><code>Squirrel Standard Library</code> is not supported.<ul>
 <li>Although, DriftScript provides many functions with identical behavior.</li>
 </ul>
 </li>
 <li>Future TODOs:<ul>
-<li>Want to relax some of Squirrel's lexing rules.<ul>
-<li>floats cannot being with a <code>.</code>, must have a leading <code>0</code><ul>
-<li><code>local = 0.1</code> is valid, but <code>local a = .1</code> is not.. :(</li>
-</ul>
-</li>
-<li>integers/floats currently cannot have a leading <code>+</code><ul>
-<li><code>local a = -1</code> and <code>local a = 1</code> are valid, but <code>local = +1</code> is not :(</li>
-</ul>
-</li>
-<li>Various other little lexing quirks..</li>
-</ul>
-</li>
 <li>Better error-handling and compilation/runtime errors.</li>
 <li>Improved vscode syntax-highlighting, auto-complete, etc.<ul>
-<li>anyone who knows how to write such a plugin, let me know..</li>
+<li>anyone who knows how to write such a vscode plugin, let me know..</li>
 <li>possibly even add debugging features.. break-point and value-inspection.</li>
 </ul>
 </li>
