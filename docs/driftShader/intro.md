@@ -4,7 +4,7 @@
 
 The `BG.ShaderToy.glsl` utilizes `DriftShader` to render the map and minimap background.
 
-- It is based-off of `ShaderToy`, which uses `GLSL` as the shading languageR.
+- It is based-off of `ShaderToy`, which uses `GLSL` as the shading language.
 - Browse `https://www.shadertoy.com/` for documentation.
 
 ## Entry Function
@@ -21,7 +21,6 @@ void mainImage(out vec4 outSRGB, vec2 inPosition) {
 - There are other settings in the `Background` tab such as rotation, speed, enable dither, etc..
 
 ## Global Uniform Values
-
 ```
 uniform vec3      iResolution;           // think of it as resolution (sort-of) (can be shrunk/stretched via Background tab)
 uniform float     iTime;                 // game-time (in seconds)
@@ -35,7 +34,6 @@ uniform sampler2D iChannel3;             // texture/sampler #3 (can be set via B
 ```
 
 ## gx_get_bg_shader_val
-
 ```
 float gx_get_bg_shader_val(int index)
 ```
@@ -45,21 +43,20 @@ float gx_get_bg_shader_val(int index)
 - these values can be changed via `.DriftScript` using the `void gx_set_bg_shader_val(int index, float value)` function.
 
 ## Color Conversion Functions
-
 ```
-`float gx_linear_to_srgb(float linear)`
-`vec3 gx_linear_to_srgb(vec3 linear)`
-`vec4 gx_linear_to_srgb(vec4 linear)`
-`float gx_srgb_to_linear(float srgb)`
-`vec3 gx_srgb_to_linear(vec3 srgb)`
-`vec4 gx_srgb_to_linear(vec4 srgb)`
+float gx_linear_to_srgb(float linear)
+vec3 gx_linear_to_srgb(vec3 linear)
+vec4 gx_linear_to_srgb(vec4 linear)
+float gx_srgb_to_linear(float srgb)
+vec3 gx_srgb_to_linear(vec3 srgb)
+vec4 gx_srgb_to_linear(vec4 srgb)
 ```
 
 ## `ShaderToy <--> DriftShader` functions
 - Helpers to convert between `ShaderToy (OpenGL)` and `DriftShader (vulkan)` coordinate systems, etc
 - Usually you don't need to use these, but are provided for convenience.
 
-## `gx_flip_uv`
+## gx_flip_uv
 ```
 vec2 gx_flip_uv(vec2 uv) {
     uv.y = 1.0 -= uv.y;
@@ -67,7 +64,7 @@ vec2 gx_flip_uv(vec2 uv) {
 }
 ```
 
-## `gx_flip_frag_coord`
+## gx_flip_frag_coord
 ```
 vec2 gx_flip_frag_coord(vec2 fragCoord)
 {
