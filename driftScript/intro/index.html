@@ -1513,13 +1513,14 @@ to learn due to more learning material.</p>
 <li>Modified some additional lexing and parsing rules as well..</li>
 </ul>
 </li>
-<li>Unicode completely overhauled:<ul>
+<li>Unicode completely re-worked from Squirrel:<ul>
 <li>Drift Wars internally uses <code>utf8</code>, and so does <code>Drift Script</code>!</li>
 <li>However this adds some complexity to string operations, especially when dealing with emojis and korean characters<ul>
 <li>In <code>DriftScript</code>, <code>len("🤦🏼‍♂️") == 17</code>.</li>
-<li>See <code>https://hsivonen.fi/string-length/</code></li>
-<li>Handling strings is currently a work in progress, may remove or change available `string`` functions.<ul>
-<li>It is best not to use <code>operator[]</code> because it may be removed in the future.</li>
+<li>Most korean characters will report have length <code>3</code></li>
+<li>See <a href="http://squirrel-lang.org/squirreldoc/reference/language.html">https://hsivonen.fi/string-length/</a> if you think this is wrong.</li>
+<li>Handling strings is currently a work in progress, may remove or change available <code>string</code> functions.<ul>
+<li>It is best not to use string's <code>operator[]</code> because it may be removed in the future.</li>
 </ul>
 </li>
 </ul>
