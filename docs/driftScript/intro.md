@@ -49,7 +49,7 @@ Major changes from Squirrel:
         - However, this is valid Drift Script!
     - Modified some additional lexing and parsing rules as well..
 - Unicode completely overhauled:
-    - While Drift Wars internally uses `utf8`, `Drift Script` was heavily modified to use `utf32` on both windows and linux.
+    - While Drift Wars internally uses `utf8`, `Drift Script` is modified to use `utf32` on both windows and linux.
     - Each index in a `string` points to a whole 32-bit unicode codepoint 😀
     - Makes certain operations such as `.len()` and indexing more intuitive, especially when dealing with korean characters and emojis.
 - Type changes:
