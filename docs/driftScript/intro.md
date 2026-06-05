@@ -48,12 +48,12 @@ Major changes from Squirrel:
     - `local a = +1` is invalid in squirrel because numbers cannot begin with `+`.
         - However, this is valid Drift Script!
     - Modified some additional lexing and parsing rules as well..
-- Unicode completely overhauled:
+- Unicode completely re-worked from Squirrel:
     - Drift Wars internally uses `utf8`, and so does `Drift Script`!
     - However this adds some complexity to string operations, especially when dealing with emojis and korean characters
         - In `DriftScript`, `len("🤦🏼‍♂️") == 17`.
         - See `https://hsivonen.fi/string-length/`
-        - Handling strings is currently a work in progress, may remove or change available `string`` functions.
+        - Handling strings is currently a work in progress, may remove or change available `string` functions.
             - It is best not to use `operator[]` because it may be removed in the future.
 - Type changes:
     - `int` types are signed 64-bit 
