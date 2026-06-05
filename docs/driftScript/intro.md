@@ -53,8 +53,9 @@ Major changes from Squirrel:
     - However this adds some complexity to string operations, especially when dealing with emojis and korean characters
         - `"🤦🏼‍♂️".len() == 17`, and most korean characters have length `3`.
         - See [https://hsivonen.fi/string-length/](https://hsivonen.fi/string-length/) if you think this is wrong.
-        - Handling strings is currently a work in progress, may remove/modify available `string` functions.
-            - It is best to avoid string's `operator[]` because it may be removed in the future.
+        - string operators `operator[]`, `.slice`, `find`, and possibly some others are removed
+            - please rely on `gx_str_starts_with`, `gx_str_ends_with`, `gx_str_contains`, `gx_str_replace`, `gx_str_split`, etc..
+
 - Type changes:
     - `int` types are signed 64-bit 
     - `float` types modified to be a 64-bit `Q31.32` fixed point types
