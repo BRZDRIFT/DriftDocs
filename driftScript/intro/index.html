@@ -1514,9 +1514,16 @@ to learn due to more learning material.</p>
 </ul>
 </li>
 <li>Unicode completely overhauled:<ul>
-<li>While Drift Wars internally uses <code>utf8</code>, <code>Drift Script</code> was modified to use <code>utf32</code> on both windows and linux.</li>
-<li>Each index in a <code>string</code> points to a whole 32-bit unicode codepoint 😀</li>
-<li>Makes certain operations such as <code>.len()</code> and indexing more intuitive, especially when dealing with korean characters and emojis.</li>
+<li>Drift Wars internally uses <code>utf8</code>, and so does <code>Drift Script</code>!</li>
+<li>However this adds some complexity to string operations, especially when dealing with emojis and korean characters<ul>
+<li>In <code>DriftScript</code>, <code>len("🤦🏼‍♂️") == 17</code>.</li>
+<li>See <code>https://hsivonen.fi/string-length/</code></li>
+<li>Handling strings is currently a work in progress, may remove or change available `string`` functions.<ul>
+<li>It is best not to use <code>operator[]</code> because it may be removed in the future.</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>Type changes:<ul>
