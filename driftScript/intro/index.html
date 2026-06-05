@@ -1513,20 +1513,24 @@ to learn due to more learning material.</p>
 <li>Modified some additional lexing and parsing rules as well..</li>
 </ul>
 </li>
-<li>Unicode handling completely different from Squirrel:<ul>
+<li>
+<p>Unicode handling completely different from Squirrel:</p>
+<ul>
 <li>Drift Wars internally uses <code>utf8</code>, and so does <code>Drift Script</code>!</li>
 <li>However this adds some complexity to string operations, especially when dealing with emojis and korean characters<ul>
 <li><code>"🤦🏼‍♂️".len() == 17</code>, and most korean characters have length <code>3</code>.</li>
 <li>See <a href="https://hsivonen.fi/string-length/">https://hsivonen.fi/string-length/</a> if you think this is wrong.</li>
-<li>Handling strings is currently a work in progress, may remove/modify available <code>string</code> functions.<ul>
-<li>It is best to avoid string's <code>operator[]</code> because it may be removed in the future.</li>
+<li>string operators <code>operator[]</code>, <code>.slice</code>, <code>find</code>, and possibly some others are removed<ul>
+<li>please rely on <code>gx_str_starts_with</code>, <code>gx_str_ends_with</code>, <code>gx_str_contains</code>, <code>gx_str_replace</code>, <code>gx_str_split</code>, etc..</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Type changes:<ul>
+<li>
+<p>Type changes:</p>
+<ul>
 <li><code>int</code> types are signed 64-bit </li>
 <li><code>float</code> types modified to be a 64-bit <code>Q31.32</code> fixed point types</li>
 <li>more type information at <a href="/DriftDocs/driftScript/math/#scalar-types">scalar-types</a></li>
