@@ -1513,10 +1513,9 @@ to learn due to more learning material.</p>
 <li>Modified some additional lexing and parsing rules as well..</li>
 </ul>
 </li>
-<li>Unicode changes:<ul>
-<li>Strings modified to be encoded in UTF8 because that's what Drift Wars internally uses.</li>
-<li>Side effect: Calling <code>.len()</code> on the string "😃" will return 4. (not 1).</li>
-<li>Similar effects happen for korean characters, each korean character will usually increase string length by 3.</li>
+<li>Unicode completely overhauled:<ul>
+<li>While Drift Wars internally uses <code>utf8</code>, <code>Drift Script</code> is modified use <code>char32_t</code> on both windows and linux</li>
+<li>Makes certain operations such as <code>.len()</code> and indexing more obvious, especially when dealing with korean characters and emojis.</li>
 </ul>
 </li>
 <li>Type changes:<ul>
