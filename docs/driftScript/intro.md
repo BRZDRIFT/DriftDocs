@@ -62,4 +62,3 @@ Major changes from Squirrel:
     - Better error-handling and compilation/runtime errors.
     - Improved vscode syntax-highlighting, auto-complete, etc.
         - anyone who knows how to write such a vscode plugin, let me know..
-        - possibly even add debugging features.. break-point and value-inspection.
