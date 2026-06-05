@@ -51,10 +51,10 @@ Major changes from Squirrel:
 - Unicode completely re-worked from Squirrel:
     - Drift Wars internally uses `utf8`, and so does `Drift Script`!
     - However this adds some complexity to string operations, especially when dealing with emojis and korean characters
-        - In `DriftScript`, `len("🤦🏼‍♂️") == 17`, and most korean characters will have length `3`.
+        - `len("🤦🏼‍♂️") == 17`, and most korean characters are length `3`.
         - See [https://hsivonen.fi/string-length/](http://squirrel-lang.org/squirreldoc/reference/language.html) if you think this is wrong.
-        - Handling strings is currently a work in progress, may remove or change available `string` functions.
-            - It is best not to use string's `operator[]` because it may be removed in the future.
+        - Handling strings is currently a work in progress, may remove/modify available `string` functions.
+            - It is best to avoid string's `operator[]` because it may be removed in the future.
 - Type changes:
     - `int` types are signed 64-bit 
     - `float` types modified to be a 64-bit `Q31.32` fixed point types
