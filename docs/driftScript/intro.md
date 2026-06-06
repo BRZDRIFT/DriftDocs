@@ -49,7 +49,7 @@ Major changes from Squirrel:
         - However, this is valid Drift Script!
     - Improved lexing of unicode source files
     - Modified some additional lexing and parsing rules as well..
-- Real Unicode support - very different than in Squirrel.
+- Real Unicode support - very different from Squirrel.
     - Drift Wars internally uses `utf8`, and so does `Drift Script`!
     - However this adds some complexity to string operations, especially when dealing with emojis and korean characters
         - `"🤦🏼‍♂️".len() == 17`, and most korean characters have length `3`.
