@@ -4,7 +4,7 @@
 
 The `BG.ShaderToy.glsl` utilizes `DriftShader` to render the map and minimap background.
 
-- It is based-off of `ShaderToy`, which uses `GLSL` as the shading language.
+- It is inspired by `ShaderToy`, which uses `GLSL` as the shading language.
 - Browse [https://www.shadertoy.com/](https://www.shadertoy.com/) for documentation and examples.
 
 ## Entry Function
