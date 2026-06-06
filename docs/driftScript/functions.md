@@ -969,46 +969,11 @@ result = gx_modulo(-1, 5)   // 4 !! <-- DIFFERENT THAN % operator
 float gx_triangle_lerp(float begin, float end, float period, float x)
 ```
 
-## gx_str_starts_with
-```sq
-bool gx_str_starts_with(string str, string val)
-```
-
 - returns `true` if `str` starts with `val`
 - equivalent to squirrel's string library `startswith` function
 
-## gx_str_ends_with
-```sq
-bool gx_str_ends_with(string str, string val)
-```
-
-- returns `true` if `str` ends with `val`
-- equivalent to squirrel's string library `endswith` function
-
-## gx_str_split
-```sq
-string[] gx_str_split(string str, string separators, bool bSkipEmpty = false)
-```
-
 - splits `str` by any of the characters found in `separators`.
 - equivalent to squirrel's string library `split` function
-
-## gx_str_replace(str, find, replace)
-```
-string gx_str_replace(string str, string find, string replace)
-```
-
-## gx_str_contains
-```sq
-bool gx_str_contains(string str, string search)
-```
-
-- returns `true` if `str` contains `search`
-
-## gx_str_insert
-```sq
-string gx_str_insert(string str, string toInsert, int index)
-```
 
 - return a new string with `toInsert` inserted at position `index`
 

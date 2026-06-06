@@ -54,10 +54,10 @@ Major changes from Squirrel:
     - However this adds some complexity to string operations, especially when dealing with emojis and korean characters
         - `"🤦🏼‍♂️".len() == 17`, and most korean characters have length `3`.
         - See [https://hsivonen.fi/string-length/](https://hsivonen.fi/string-length/) if you think this is wrong.
-    - unsafe `utf-8` string operators removed:
+    - removed unsafe `utf-8` functions:
         - `.operator[]`, `.slice()`, `.find()`, `foreach` removed.
-    - added string functions:
-        -  `gx_str_starts_with`, `gx_str_ends_with`, `gx_str_contains`, `gx_str_replace`, `gx_str_split`, etc..
+    - added new string functions:
+        -  `.startswith(str)`, `.endswith(str)`, `.contains(str)`, `.replace(search, replace)`, `.split(str)`, and `gx_str_*` free functions
         - more string functions may be added later.
 - Type changes:
     - `int` types are signed 64-bit 
