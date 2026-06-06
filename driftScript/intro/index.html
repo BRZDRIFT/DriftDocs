@@ -1518,11 +1518,11 @@ to learn due to more learning material.</p>
 <li>Drift Wars internally uses <code>utf-8</code>, and so does <code>Drift Script</code>!</li>
 <li>However this adds some complexity to string operations, especially when dealing with emojis and korean characters<ul>
 <li><code>"🤦🏼‍♂️".len() == 17</code>, and most korean characters have length <code>3</code>.</li>
-<li>See <a href="https://hsivonen.fi/string-length/">https://hsivonen.fi/string-length/</a> if you think this is wrong.</li>
+<li>See <a href="https://hsivonen.fi/string-length/">https://hsivonen.fi/string-length/</a></li>
 </ul>
 </li>
-<li>removed unsafe <code>utf-8</code> functions:<ul>
-<li><code>.operator[]</code>, <code>.slice()</code>, <code>.find()</code>, <code>foreach</code> removed.</li>
+<li>removed functions that are unsafe for <code>utf-8</code>:<ul>
+<li><code>.operator[idx]</code>, <code>.slice(start, end)</code>, <code>.find(str)</code>, <code>foreach (c in string)</code> removed.</li>
 </ul>
 </li>
 <li>added new string functions:<ul>
