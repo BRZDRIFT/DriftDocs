@@ -1521,12 +1521,12 @@ to learn due to more learning material.</p>
 <li>See <a href="https://hsivonen.fi/string-length/">https://hsivonen.fi/string-length/</a> if you think this is wrong.</li>
 </ul>
 </li>
-<li>unsafe <code>utf-8</code> string operators removed:<ul>
+<li>removed unsafe <code>utf-8</code> functions:<ul>
 <li><code>.operator[]</code>, <code>.slice()</code>, <code>.find()</code>, <code>foreach</code> removed.</li>
 </ul>
 </li>
-<li>added string functions:<ul>
-<li><code>gx_str_starts_with</code>, <code>gx_str_ends_with</code>, <code>gx_str_contains</code>, <code>gx_str_replace</code>, <code>gx_str_split</code>, etc..</li>
+<li>added new string functions:<ul>
+<li><code>.startswith(str)</code>, <code>.endswith(str)</code>, <code>.contains(str)</code>, <code>.replace(search, replace)</code>, <code>.split(str)</code>, and <code>gx_str_*</code> free functions</li>
 <li>more string functions may be added later.</li>
 </ul>
 </li>
