@@ -53,9 +53,9 @@ Major changes from Squirrel:
     - Drift Wars internally uses `utf-8`, and so does `Drift Script`!
     - However this adds some complexity to string operations, especially when dealing with emojis and korean characters
         - `"🤦🏼‍♂️".len() == 17`, and most korean characters have length `3`.
-        - See [https://hsivonen.fi/string-length/](https://hsivonen.fi/string-length/) if you think this is wrong.
-    - removed unsafe `utf-8` functions:
-        - `.operator[]`, `.slice()`, `.find()`, `foreach` removed.
+        - See [https://hsivonen.fi/string-length/](https://hsivonen.fi/string-length/)
+    - removed functions that are unsafe for `utf-8`:
+        - `.operator[idx]`, `.slice(start, end)`, `.find(str)`, `foreach (c in string)` removed.
     - added new string functions:
         -  `.startswith(str)`, `.endswith(str)`, `.contains(str)`, `.replace(search, replace)`, `.split(str)`, and `gx_str_*` free functions
         - more string functions may be added later.

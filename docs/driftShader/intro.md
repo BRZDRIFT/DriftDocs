@@ -9,7 +9,7 @@ The `BG.ShaderToy.glsl` utilizes `DriftShader` to render the map and minimap bac
 
 ## Entry Function
 ```glsl
-void mainImage(out vec4 outSRGB, vec2 inPosition) {
+void mainImage(out vec4 outSRGB, vec2 fragCoord) {
   outSRGB = vec4(0, 1, 0, 1);
 }
 ```
