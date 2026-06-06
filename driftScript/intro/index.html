@@ -1510,18 +1510,23 @@ to learn due to more learning material.</p>
 <li>However, this is valid Drift Script!</li>
 </ul>
 </li>
+<li>Improved lexing of unicode source files</li>
 <li>Modified some additional lexing and parsing rules as well..</li>
 </ul>
 </li>
 <li>
-<p>Unicode handling completely different from Squirrel:</p>
+<p>Improved Unicode support - very different than in Squirrel.</p>
 <ul>
 <li>Drift Wars internally uses <code>utf8</code>, and so does <code>Drift Script</code>!</li>
 <li>However this adds some complexity to string operations, especially when dealing with emojis and korean characters<ul>
 <li><code>"🤦🏼‍♂️".len() == 17</code>, and most korean characters have length <code>3</code>.</li>
 <li>See <a href="https://hsivonen.fi/string-length/">https://hsivonen.fi/string-length/</a> if you think this is wrong.</li>
-<li>string operators <code>operator[]</code>, <code>.slice</code>, <code>find</code>, and possibly some others are removed<ul>
-<li>please rely on <code>gx_str_starts_with</code>, <code>gx_str_ends_with</code>, <code>gx_str_contains</code>, <code>gx_str_replace</code>, <code>gx_str_split</code>, etc..</li>
+<li>unsafe <code>utf-8</code> string operators removed:<ul>
+<li><code>.operator[]</code>, <code>.slice()</code>, <code>.find()</code>, <code>foreach</code> removed.</li>
+</ul>
+</li>
+<li>added string functions:<ul>
+<li><code>gx_str_starts_with</code>, <code>gx_str_ends_with</code>, <code>gx_str_contains</code>, <code>gx_str_replace</code>, <code>gx_str_split</code>, etc..</li>
 </ul>
 </li>
 </ul>
