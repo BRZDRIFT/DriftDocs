@@ -156,7 +156,7 @@ class ComplexColor {
     constructor(ColorType colorType, Vec4<float> srgba)
     function _eq(ComplexColor other)
     function _hash()
-    function _cloned(orig)
+    function _cloned(ComplexColor orig)
 
     m_srgba = Vec4(1.0, 1.0, 1.0, 1.0)
     m_type = ColorType.Normal
