@@ -2244,6 +2244,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#gx_add_resource_ui_item" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_add_resource_ui_item
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_clear_resource_ui_items" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_clear_resource_ui_items
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3542,6 +3560,24 @@
   <a href="#gx_clear_terrain_paint" class="md-nav__link">
     <span class="md-ellipsis">
       gx_clear_terrain_paint
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_add_resource_ui_item" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_add_resource_ui_item
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_clear_resource_ui_items" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_clear_resource_ui_items
     </span>
   </a>
   
@@ -4923,6 +4959,26 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 </span><span id="__span-177-2"><a id="__codelineno-177-2" name="__codelineno-177-2" href="#__codelineno-177-2"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_locations</span><span class="p">[],</span>
 </span><span id="__span-177-3"><a id="__codelineno-177-3" name="__codelineno-177-3" href="#__codelineno-177-3"></a><span class="w">    </span><span class="kt">AABR</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_aabrs</span><span class="p">[]</span>
 </span><span id="__span-177-4"><a id="__codelineno-177-4" name="__codelineno-177-4" href="#__codelineno-177-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<h1 id="gx_add_resource_ui_item">gx_add_resource_ui_item</h1>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-178-1"><a id="__codelineno-178-1" name="__codelineno-178-1" href="#__codelineno-178-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_add_resource_ui_item</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-179-1"><a id="__codelineno-179-1" name="__codelineno-179-1" href="#__codelineno-179-1"></a><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-179-2"><a id="__codelineno-179-2" name="__codelineno-179-2" href="#__codelineno-179-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_playerIDs</span><span class="p">[],</span>
+</span><span id="__span-179-3"><a id="__codelineno-179-3" name="__codelineno-179-3" href="#__codelineno-179-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_forceIDs</span><span class="p">[],</span>
+</span><span id="__span-179-4"><a id="__codelineno-179-4" name="__codelineno-179-4" href="#__codelineno-179-4"></a><span class="w">    </span><span class="n">DynVar</span><span class="o">&lt;</span><span class="n">Numeric</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_val</span><span class="p">,</span>
+</span><span id="__span-179-5"><a id="__codelineno-179-5" name="__codelineno-179-5" href="#__codelineno-179-5"></a><span class="w">    </span><span class="n">DynVar</span><span class="o">&lt;</span><span class="n">Numeric</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_max</span><span class="p">,</span>
+</span><span id="__span-179-6"><a id="__codelineno-179-6" name="__codelineno-179-6" href="#__codelineno-179-6"></a><span class="w">    </span><span class="n">DynVar</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_bDisplayRed</span><span class="p">,</span>
+</span><span id="__span-179-7"><a id="__codelineno-179-7" name="__codelineno-179-7" href="#__codelineno-179-7"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_img</span>
+</span><span id="__span-179-8"><a id="__codelineno-179-8" name="__codelineno-179-8" href="#__codelineno-179-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<h1 id="gx_clear_resource_ui_items">gx_clear_resource_ui_items</h1>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-180-1"><a id="__codelineno-180-1" name="__codelineno-180-1" href="#__codelineno-180-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_clear_resource_ui_items</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-181-1"><a id="__codelineno-181-1" name="__codelineno-181-1" href="#__codelineno-181-1"></a><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-181-2"><a id="__codelineno-181-2" name="__codelineno-181-2" href="#__codelineno-181-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_playerIDs</span><span class="p">[],</span>
+</span><span id="__span-181-3"><a id="__codelineno-181-3" name="__codelineno-181-3" href="#__codelineno-181-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_forceIDs</span><span class="p">[]</span>
+</span><span id="__span-181-4"><a id="__codelineno-181-4" name="__codelineno-181-4" href="#__codelineno-181-4"></a><span class="p">}</span>
 </span></code></pre></div>
 
 
