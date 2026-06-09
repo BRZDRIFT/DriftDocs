@@ -172,20 +172,19 @@ class ComplexColor {
 ## DynVar
 ```sq
 class DynVar {
-	constructor(DynVarType dynType, (float|string) dynVal)
+	constructor(DynVarType dynType, (float|int|bool|string) dynVal)
     function _tostring()
 	function _eq(other)
 	function _hash()
 
     m_type = null       # DynVarType
-	m_val = null        # float or string
+	m_val = null        # float|int|bool|string
 }
 ```
 
 Helper Create Functions:
 ```sq
 function CreateConstDynVar(dynVal)
-function CreateDynVar(dynType, dynVal)
 ```
 
 ## Future additions
