@@ -1603,7 +1603,7 @@ void gx_paint_terrain(table params)
 ```sq
 params = {
     string m_location,
-    AABR<Fixed> m_aabr,
+    AABR<float> m_aabr,
     string m_img,           # img to paint
     Vec4<Float> m_srgba     # srgb multiplier
 }
@@ -1620,6 +1620,6 @@ void gx_clear_terrain_paint(table params)
 ```sq
 params = {
     string m_locations[],
-    AABR<Fixed> m_aabrs[]
+    AABR<float> m_aabrs[]
 }
 ```

@@ -25,12 +25,18 @@ class Vec2 {
 }
 ```
 
+Helper Create Functions:
+```sq
+function Float2(x, y)
+function Int2(x, y)
+```
+
 - By default `Vec2` has scalar type of `float`.
 - However you can change scalar type to be `int` by passing integers into the constructor
     - (or by setting `m_x`, `m_y` to integers manually)
 - Assignment operator `=` will only copy reference (not create a new `Vec2`)
 - Use `clone` to make deep copy
-- Helper create functions: `function Float2(x, y)` and `function Int2(x, y)`;
+
 
 ## Vec3
 ```sq
@@ -163,8 +169,24 @@ class ComplexColor {
 }
 ```
 
-- Assignment operator `=` will only copy reference (not create a new `ComplexColor`)
-- Use `clone` to make deep copy
+## DynVar
+```sq
+class DynVar {
+	constructor(DynVarType dynType, (float|string) dynVal)
+    function _tostring()
+	function _eq(other)
+	function _hash()
+
+    m_type = null       # DynVarType
+	m_val = null        # float or string
+}
+```
+
+Helper Create Functions:
+```sq
+function CreateConstDynVar(dynVal)
+function CreateDynVar(dynType, dynVal)
+```
 
 ## Future additions
 - More types and member functions to be added later
