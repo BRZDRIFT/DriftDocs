@@ -892,7 +892,7 @@ local params = {
 
 ```sq
 // getters
-mixed gx_get_map_prop(MapProp prop)
+mixed gx_get_sim_prop(SimProp prop)
 mixed gx_get_force_prop(ForceProp prop, int force_id)
 mixed gx_get_player_prop(PlayerProp prop, int player_id)
 mixed gx_get_unit_prop(UnitProp prop, int unit_id)
@@ -900,7 +900,7 @@ mixed gx_get_location_prop(LocationProp prop, string location)
 mixed gx_get_decal_prop(DecalProp prop, int decal_id)
 
 // setters
-void gx_set_map_prop(MapProp prop, mixed val)
+void gx_set_sim_prop(SimProp prop, mixed val)
 void gx_set_force_prop(ForceProp prop, int force_id, mixed val)
 void gx_set_player_prop(PlayerProp prop, int player_id, mixed val)
 void gx_set_unit_prop(UnitProp prop, int unit_id, mixed val)
@@ -912,7 +912,7 @@ void gx_add_player_prop(PlayerProp prop, int player_id, mixed val)
 void gx_add_unit_prop(UnitProp prop, int unit_id, mixed val)
 ```
 
-- Please refer to {{enum("MapProp")}}, {{enum("ForceProp")}}, {{enum("PlayerProp")}}, {{enum("UnitProp")}}, {{enum("DecalProp")}}, and {{enum("LocationProp")}} for possibles values you can get/set (and their types).
+- Please refer to {{enum("SimProp")}}, {{enum("ForceProp")}}, {{enum("PlayerProp")}}, {{enum("UnitProp")}}, {{enum("DecalProp")}}, and {{enum("LocationProp")}} for possibles values you can get/set (and their types).
 - Properties that are `int` or `float` and are `Read-Write` can use the `gx_add_*` functions
 
 ## UserData Getters/Setters

@@ -152,9 +152,9 @@ enum SecondaryTerrainTypeNormal
 - Should only be used in conjunction with `TerrainType.Normal`
 
 
-## MapProp
+## SimProp
 ```sq
-enum MapProp
+enum SimProp
 {
 					    // Access		Type
 	Invalid,
