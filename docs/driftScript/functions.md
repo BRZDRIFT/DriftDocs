@@ -943,7 +943,8 @@ void gx_add_unit_var(int unit_id, string varName, mixed varValue)
 
 - Calling `gx_get_*` to retrieve a non-existing `varValue` will return `0` of type `int`
 - It is invalid to try and add a `string` to an existing `int`, `float`, `bool` type, and vice-versa.
-- If you are using `gx_add_*`, please pay attention to they types you are using.. and match them.
+- If you are using `gx_add_*`, please pay attention to the types you are using.. and match them.
+- `bool`+`bool`->`int`, `bool`+`int`->`int`, `bool`+`float`->`float`, `int`+`float`->`float`, etc..
 
 ## gx_modulo
 ```sq
