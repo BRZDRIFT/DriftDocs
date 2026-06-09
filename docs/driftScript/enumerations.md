@@ -72,6 +72,33 @@ enum ShapeType
 }
 ```
 
+## DynVarType
+```sq
+enum DynVarType
+{
+    Invalid = 0,
+    Constant = 1,
+    FromPlayerResearch = 2,
+    FromUnitResearch = 3,
+    FromGlobalVar = 4,
+    FromPlayerVar = 5,
+    FromForceVar = 6,
+    FromUnitVar = 7,
+    PlayerWeaponsUpgrade = 8,
+    PlayerArmorUpgrade = 9,
+    PlayerSpeedUpgrade = 10,
+    Gemstone = 11,
+    Fungus = 12,
+    Supply = 13,
+    MaxSupply = 14,
+	SupplyBlocked = 15
+}
+```
+
+- The Force `Neutral` (`id = -1`) is special and exists in every game.
+- The players `Neutral`, `Hostile`, and `Rescue` are automatically assigned to the `Neutral` Force
+- `Note:` Normal ForceIDs are positive integers
+
 ## TerrainType
 ```sq
 // Primary Terrain Types

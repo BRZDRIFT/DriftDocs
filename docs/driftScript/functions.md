@@ -916,26 +916,26 @@ void gx_add_unit_prop(UnitProp prop, int unit_id, mixed val)
 - Properties that are `int` or `float` and are `Read-Write` can use the `gx_add_*` functions
 
 ## UserData Getters/Setters
-- Allows you to get/set userdata integers for `simulation`, `forces`, `players`, and `units`, and other things for your own purposes
+- Allows you to get/set userdata values for `simulation`, `forces`, `players`, and `units`, and other things for your own purposes. These can be used in `DynVar`'s and other things.
 
 ```sq
 // getters
-int gx_get_sim_variable(string varName)
-int gx_get_force_variable(int force_id, string varName)
-int gx_get_player_variable(int player_id, string varName)
-int gx_get_unit_variable(int unit_id, string varName)
+int gx_get_sim_var(string varName)
+int gx_get_force_var(int force_id, string varName)
+int gx_get_player_var(int player_id, string varName)
+int gx_get_unit_var(int unit_id, string varName)
 
 // setters
-void gx_set_sim_variable(string varName, int varValue)
-void gx_set_force_variable(int force_id, string varName, int varValue)
-void gx_set_player_variable(int player_id, string varName, int varValue)
-void gx_set_unit_variable(int unit_id, string varName, int varValue)
+void gx_set_sim_var(string varName, int varValue)
+void gx_set_force_var(int force_id, string varName, int varValue)
+void gx_set_player_var(int player_id, string varName, int varValue)
+void gx_set_unit_var(int unit_id, string varName, int varValue)
 
 // adders
-void gx_add_sim_variable(string varName, int varValue)
-void gx_add_force_variable(int force_id, string varName, int varValue)
-void gx_add_player_variable(int player_id, string varName, int varValue)
-void gx_add_unit_variable(int unit_id, string varName, int varValue)
+void gx_add_sim_var(string varName, int varValue)
+void gx_add_force_var(int force_id, string varName, int varValue)
+void gx_add_player_var(int player_id, string varName, int varValue)
+void gx_add_unit_var(int unit_id, string varName, int varValue)
 ```
 
 - Calling `gx_get_*` to retrieve a non-existing `varValue` will return `0`.
