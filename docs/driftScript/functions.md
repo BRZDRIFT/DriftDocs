@@ -1623,3 +1623,31 @@ params = {
     AABR<float> m_aabrs[]
 }
 ```
+
+# gx_add_resource_ui_item
+```sq
+void gx_add_resource_ui_item(table params)
+```
+
+```sq
+params = {
+    int m_playerIDs[],
+    int m_forceIDs[],
+    DynVar<Numeric> m_val,
+    DynVar<Numeric> m_max,
+    DynVar<bool> m_bDisplayRed,
+    string m_img
+}
+```
+
+# gx_clear_resource_ui_items
+```sq
+void gx_clear_resource_ui_items(table params)
+```
+
+```sq
+params = {
+    int m_playerIDs[],
+    int m_forceIDs[]
+}
+```
