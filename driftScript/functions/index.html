@@ -4408,7 +4408,8 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <ul>
 <li>Calling <code>gx_get_*</code> to retrieve a non-existing <code>varValue</code> will return <code>0</code> of type <code>int</code></li>
 <li>It is invalid to try and add a <code>string</code> to an existing <code>int</code>, <code>float</code>, <code>bool</code> type, and vice-versa.</li>
-<li>If you are using <code>gx_add_*</code>, please pay attention to they types you are using.. and match them.</li>
+<li>If you are using <code>gx_add_*</code>, please pay attention to the types you are using.. and match them.</li>
+<li><code>bool</code>+<code>bool</code>-&gt;<code>int</code>, <code>bool</code>+<code>int</code>-&gt;<code>int</code>, <code>bool</code>+<code>float</code>-&gt;<code>float</code>, <code>int</code>+<code>float</code>-&gt;<code>float</code>, etc..</li>
 </ul>
 <h2 id="gx_modulo">gx_modulo</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-94-1"><a id="__codelineno-94-1" name="__codelineno-94-1" href="#__codelineno-94-1"></a><span class="kt">mixed</span><span class="w"> </span><span class="n">gx_modulo</span><span class="p">(</span><span class="kt">mixed</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">mixed</span><span class="w"> </span><span class="n">b</span><span class="p">)</span>
