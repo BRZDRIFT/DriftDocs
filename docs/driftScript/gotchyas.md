@@ -130,11 +130,9 @@ will be ignored by the compiler.
 local myDictionary = { "abc": 6, "def": 7 }     // create dictionary
 delete myDictionary["abc"]                  // delete "abc" from dictionary
 
-
 // check if key in dictionary
 local bResult = "def" in myDictionary
 print(bResult)	// true
-
 
 // arrays
 local myArray = ["my_string", 6, 1, 2]      // create array
@@ -198,7 +196,6 @@ foreach (val in myArray) {
 foreach (idx, val in myArray) {
 	print(idx + " -> " + val)
 }
-
 ```
 
 - Please note, single variable foreach loop with dictionary outputs `value` and not `key`.
