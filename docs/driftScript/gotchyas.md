@@ -7,15 +7,15 @@ function myFunction() {
 }
 
 local vals = myFunction()
-local val0 = vals[0]	// 123
-local val1 = vals[1]	// "second_return_value"
+print(vals[0])	// 123
+print(vals[1])	// "second_return_value"
 ```
 
 ## Can I retrieve a global function object via a string lookup ?
 - Yes, you can retrieve function object by accessing the root table
 
 ```sq
-local myFunction(a, b) {
+function myFunction(a, b) {
 	return a+b;
 }
 
@@ -130,6 +130,12 @@ will be ignored by the compiler.
 local myDictionary = { "abc": 6, "def": 7 }     // create dictionary
 delete myDictionary["abc"]                  // delete "abc" from dictionary
 
+
+// check if key in dictionary
+local bResult = "def" in myDictionary
+print(bResult)	// true
+
+
 // arrays
 local myArray = ["my_string", 6, 1, 2]      // create array
 print(myArray[0])                   // prints "my_string"
@@ -183,6 +189,16 @@ local myArray = [4, 6, "dog", 3]
 foreach (val in myArray) {
 	print(val)
 }
+
+// Output (array foreach iteration is ordered):
+// 0 -> 4
+// 1 -> 6
+// 2 -> dog
+// 3 -> 3
+foreach (idx, val in myArray) {
+	print(idx + " -> " + val)
+}
+
 ```
 
 - Please note, single variable foreach loop with dictionary outputs `value` and not `key`.
