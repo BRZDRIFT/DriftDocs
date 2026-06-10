@@ -1,3 +1,29 @@
+## How to return more than one value from a function?
+- You can return the values using an array
+
+```sq
+function myFunction() {
+	return [123, "second_return_value"];
+}
+
+local vals = myFunction()
+local val0 = vals[0]	// 123
+local val1 = vals[1]	// "second_return_value"
+```
+
+## Can I retrieve a global function object via a string lookup ?
+- Yes, you can retrieve function object by accessing the root table
+
+```sq
+local myFunction(a, b) {
+	return a+b;
+}
+
+local functionPtr = getroottable()["myFunction"];
+local result = functionPtr(3, 5);
+print(result)	// 8
+```
+
 ## Use `local` for defining variables
 - Variables must be defined using `local`
 ```sq
@@ -81,13 +107,6 @@ print("My Float Vector = " + Vec2(4, 5).ToFloat())
 
 // Prints: "My Float Vector = (4.00, 5.00)"
 print("My Float Vector = " + Vec2(4.0, 5.0))
-```
-
-## Write floats as `0.3`, NOT as `.3`
-- float numbers cannot begin with a `.`, see below example..
-```sq
-local a = .3		// ERROR
-local b = 0.3		// Correct
 ```
 
 ## Comments
