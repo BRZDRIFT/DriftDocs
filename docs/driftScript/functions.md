@@ -16,9 +16,11 @@ int gx_create_unit(int params)
 table params = {
     string m_unitType,              // Required
     int m_playerID,                 // Required
-    Vec2 m_pos,                     // Optional
-    string m_location,              // Optional
-    int m_level = 1                 // Optional, default unit level = 1
+    Vec2 m_pos,                     // Optional (position to create unit)
+    string m_location,              // Optional (location to create unit at)
+    int m_level,                    // Optional, default unit level = 1
+    bool m_bForceGhostMode,
+    bool m_bSieged,                 // Crate unit pre-sieged if supported
 }
 ```
 
@@ -29,6 +31,8 @@ local new_unit = gx_create_unit({ m_unitType = "Brute", m_playerID = 1, m_locati
 - Will create unit of type `m_unitType` at position `m_pos` or at location `m_location` for player `m_playerID`.
 - It is undefined behavior to have both `m_pos` and `m_location` set.
 - If neither `m_pos` nor `m_location` is set, unit will be created at `(0, 0)`
+- Units may not be placed at the exact center of `m_location`, if you need exact position use `m_pos`.
+- Setting `m_bForceGhostMode` is shortcut so u don't need to set `set_unit_prop(UnitProp.ForceGhostMode, ..)` after unit creation.
 - Refer to {{type("Vec2")}} if needed.
 
 ## gx_get_sim_tick
@@ -528,10 +532,11 @@ void gx_map_init_modify_ud_props(string unit_type, table params = {})
 ```sq
 table params = {
     string m_friendlyName,     // Optional, set unit's friendly name
-    int m_maxHealth,           // Optional, set max health
-    float m_maxSpeed,          // Optional, set max speed
-    int m_baseArmor,           // Optional, sets base armor
-    int m_size,                 // Optional, set unit size,
+    int m_maxHealth,
+    float m_maxSpeed,
+    int m_baseArmor,
+    ArmorType m_armorType,
+    int m_size,
     int m_gemstoneCost,
     int m_fungusCost,
     int m_supplyCost,
