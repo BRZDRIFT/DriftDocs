@@ -20,7 +20,7 @@ table params = {
     string m_location,              // Optional (location to create unit at)
     int m_level,                    // Optional, default unit level = 1
     bool m_bForceGhostMode,
-    bool m_bSieged,                 // Crate unit pre-sieged if supported
+    bool m_bSieged,                 // Create unit pre-sieged if supported
 }
 ```
 
