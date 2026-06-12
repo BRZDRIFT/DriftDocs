@@ -169,22 +169,66 @@ class ComplexColor {
 }
 ```
 
-## DynVar
+## Expr
 ```sq
-class DynVar {
-	constructor(DynVarType dynType, (float|int|bool|string) dynVal = null)
-    function _tostring()
-	function _eq(other)
-	function _hash()
+// Expr feature is work-in-progress.
+// Will become more useful over time (hopefully)
+// These are often used for setting requirements for units/spells/etc
+// or calculating values dynamically.
 
-    m_type = null       # DynVarType
-	m_val = null        # float|int|bool|string
+// Classes:
+
+Expr.Unary(Expr.UnaryOp op, Expr expr)                          // mixed
+Expr.Binary(Expr.BinaryOp op, Expr Expr0, Expr expr1)           // mixed
+Expr.DynVal(DynValType ty, Expr expr)                           // mixed
+Expr.HasUnit(string unitName)                                   // bool
+Expr.HasPlayerResearch(string playerResearch, int level = 1)    // bool
+Expr.HasUnitResearch(string unitResearch, int level = 1)        // bool
+
+// Enums:
+
+enum Expr.UnaryOp {
+    Invalid,
+    Not,
+    Negate
 }
-```
 
-Helper Create Functions:
-```sq
-function CreateConstDynVar(dynVal)
+enum Expr.BinaryOp {
+    Invalid,
+    Add,
+    Subtract,
+    Multiply,
+    Divide,
+    EQ,
+    NE,
+    LT,
+    GT,
+    LE,
+    GE,
+    Or,
+    And,
+}
+
+enum Expr.DynValType {
+	Invalid,
+	Constant,					// int|float|bool|string
+	PlayerResearch,				// int
+	UnitResearch,				// int
+	SimVar,						// int|float|bool|string
+	PlayerVar,					// int|float|bool|string
+	ForceVar,					// int|float|bool|string
+	UnitVar,					// int|float|bool|string
+	PlayerWeaponsUpgrade,		// int
+	PlayerArmorUpgrade,			// int
+	PlayerSpeedUpgrade,		    // int
+	Gemstone,					// float
+	Fungus,						// float
+	Supply,					    // int
+	MaxSupply,					// int
+	SupplyBlocked,				// bool
+	SiegedOrSieging,			// bool
+	UnsiegedOrUnsieging		    // bool
+}
 ```
 
 ## Future additions
