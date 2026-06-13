@@ -25,6 +25,7 @@ Major changes from Squirrel:
             - If `_eq` and `_cmp` both do not exist, fall-back to reference-equality for `==`.
         - Note: This is DIFFERENT than Squirrel's `==` and `!=` which ALWAYS checks for reference-equality, even when `_cmp` is defined.
         - Keywords `is` and `is_not` added to check for reference-equality -- (i.e. Squirrel's `==`/`!=` behavior)
+        - Keyword `not_in` added to complement existing `in` keyword for checking if key exists in dictionary.
     - Added function `int hash(obj1, obj2, ..)` that hashes objects/primitives
     - Added user-implementable `int _hash()` meta-function.
         - Is invoked in calls to `hash(obj, ...)`

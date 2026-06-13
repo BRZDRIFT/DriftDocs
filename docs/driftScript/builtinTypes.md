@@ -211,7 +211,6 @@ enum Expr.BinaryOp {
 
 enum Expr.DynValType {
 	Invalid,
-	Constant,					// int|float|bool|string
 	PlayerResearch,				// int
 	UnitResearch,				// int
 	SimVar,						// int|float|bool|string
