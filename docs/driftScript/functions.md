@@ -541,6 +541,9 @@ table params = {
     int m_fungusCost,
     int m_supplyCost,
     int m_buildTime
+    Expr<bool> m_req,
+    Expr<int> m_attackLevel,
+    Expr<int> m_armorLevel
 }
 ```
 
