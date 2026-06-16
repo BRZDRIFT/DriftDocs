@@ -2262,6 +2262,60 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#gx_get_common_uds" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_common_uds
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_get_ud_race" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_ud_race
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_get_ud_auto_attack_anims" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_ud_auto_attack_anims
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_get_num_attacks_in_ud_auto_attack_anim" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_num_attacks_in_ud_auto_attack_anim
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_clear_ud_auto_attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_clear_ud_auto_attacks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_add_ud_auto_attack" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_add_ud_auto_attack
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3583,6 +3637,60 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#gx_get_common_uds" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_common_uds
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_get_ud_race" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_ud_race
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_get_ud_auto_attack_anims" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_ud_auto_attack_anims
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_get_num_attacks_in_ud_auto_attack_anim" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_get_num_attacks_in_ud_auto_attack_anim
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_clear_ud_auto_attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_clear_ud_auto_attacks
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gx_add_ud_auto_attack" class="md-nav__link">
+    <span class="md-ellipsis">
+      gx_add_ud_auto_attack
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3616,9 +3724,10 @@
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="kt">Vec2</span><span class="w"> </span><span class="n">m_pos</span><span class="p">,</span><span class="w">                     </span><span class="c1">// Optional (position to create unit)</span>
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_location</span><span class="p">,</span><span class="w">              </span><span class="c1">// Optional (location to create unit at)</span>
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_level</span><span class="p">,</span><span class="w">                    </span><span class="c1">// Optional, default unit level = 1</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bForceGhostMode</span><span class="p">,</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bForceGhostMode</span><span class="p">,</span><span class="w">         </span><span class="c1">// Create unit in ghost mode (can walk through other units)</span>
 </span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bSieged</span><span class="p">,</span><span class="w">                 </span><span class="c1">// Create unit pre-sieged if supported</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">}</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bLiftedStructure</span><span class="w">         </span><span class="c1">// Create structure in lifted state if supported</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="p">}</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">local</span><span class="w"> </span><span class="n">new_unit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gx_create_unit</span><span class="p">({</span><span class="w"> </span><span class="n">m_unitType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Brute&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">m_playerID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">m_location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;my_cool_location&quot;</span><span class="w"> </span><span class="p">})</span>
 </span></code></pre></div>
@@ -4055,19 +4164,20 @@ It copies the existing definition of "Brute" to "User_BabyBrute".</p>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-54-2"><a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_friendlyName</span><span class="p">,</span><span class="w">     </span><span class="c1">// Optional, set unit&#39;s friendly name</span>
-</span><span id="__span-54-3"><a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_maxHealth</span><span class="p">,</span>
-</span><span id="__span-54-4"><a id="__codelineno-54-4" name="__codelineno-54-4" href="#__codelineno-54-4"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">m_maxSpeed</span><span class="p">,</span>
-</span><span id="__span-54-5"><a id="__codelineno-54-5" name="__codelineno-54-5" href="#__codelineno-54-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_baseArmor</span><span class="p">,</span>
-</span><span id="__span-54-6"><a id="__codelineno-54-6" name="__codelineno-54-6" href="#__codelineno-54-6"></a><span class="w">    </span><span class="n">ArmorType</span><span class="w"> </span><span class="n">m_armorType</span><span class="p">,</span>
-</span><span id="__span-54-7"><a id="__codelineno-54-7" name="__codelineno-54-7" href="#__codelineno-54-7"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_size</span><span class="p">,</span>
-</span><span id="__span-54-8"><a id="__codelineno-54-8" name="__codelineno-54-8" href="#__codelineno-54-8"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_gemstoneCost</span><span class="p">,</span>
-</span><span id="__span-54-9"><a id="__codelineno-54-9" name="__codelineno-54-9" href="#__codelineno-54-9"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_fungusCost</span><span class="p">,</span>
-</span><span id="__span-54-10"><a id="__codelineno-54-10" name="__codelineno-54-10" href="#__codelineno-54-10"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_supplyCost</span><span class="p">,</span>
-</span><span id="__span-54-11"><a id="__codelineno-54-11" name="__codelineno-54-11" href="#__codelineno-54-11"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_buildTime</span>
-</span><span id="__span-54-12"><a id="__codelineno-54-12" name="__codelineno-54-12" href="#__codelineno-54-12"></a><span class="w">    </span><span class="n">Expr</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_req</span><span class="p">,</span>
-</span><span id="__span-54-13"><a id="__codelineno-54-13" name="__codelineno-54-13" href="#__codelineno-54-13"></a><span class="w">    </span><span class="n">Expr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_attackLevel</span><span class="p">,</span>
-</span><span id="__span-54-14"><a id="__codelineno-54-14" name="__codelineno-54-14" href="#__codelineno-54-14"></a><span class="w">    </span><span class="n">Expr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_armorLevel</span>
-</span><span id="__span-54-15"><a id="__codelineno-54-15" name="__codelineno-54-15" href="#__codelineno-54-15"></a><span class="p">}</span>
+</span><span id="__span-54-3"><a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bHasHealth</span><span class="p">,</span>
+</span><span id="__span-54-4"><a id="__codelineno-54-4" name="__codelineno-54-4" href="#__codelineno-54-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_maxHealth</span><span class="p">,</span>
+</span><span id="__span-54-5"><a id="__codelineno-54-5" name="__codelineno-54-5" href="#__codelineno-54-5"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">m_maxSpeed</span><span class="p">,</span>
+</span><span id="__span-54-6"><a id="__codelineno-54-6" name="__codelineno-54-6" href="#__codelineno-54-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_baseArmor</span><span class="p">,</span>
+</span><span id="__span-54-7"><a id="__codelineno-54-7" name="__codelineno-54-7" href="#__codelineno-54-7"></a><span class="w">    </span><span class="n">ArmorType</span><span class="w"> </span><span class="n">m_armorType</span><span class="p">,</span>
+</span><span id="__span-54-8"><a id="__codelineno-54-8" name="__codelineno-54-8" href="#__codelineno-54-8"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_size</span><span class="p">,</span>
+</span><span id="__span-54-9"><a id="__codelineno-54-9" name="__codelineno-54-9" href="#__codelineno-54-9"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_gemstoneCost</span><span class="p">,</span>
+</span><span id="__span-54-10"><a id="__codelineno-54-10" name="__codelineno-54-10" href="#__codelineno-54-10"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_fungusCost</span><span class="p">,</span>
+</span><span id="__span-54-11"><a id="__codelineno-54-11" name="__codelineno-54-11" href="#__codelineno-54-11"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_supplyCost</span><span class="p">,</span>
+</span><span id="__span-54-12"><a id="__codelineno-54-12" name="__codelineno-54-12" href="#__codelineno-54-12"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_buildTime</span>
+</span><span id="__span-54-13"><a id="__codelineno-54-13" name="__codelineno-54-13" href="#__codelineno-54-13"></a><span class="w">    </span><span class="n">Expr</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_req</span><span class="p">,</span>
+</span><span id="__span-54-14"><a id="__codelineno-54-14" name="__codelineno-54-14" href="#__codelineno-54-14"></a><span class="w">    </span><span class="n">Expr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_attackLevel</span><span class="p">,</span>
+</span><span id="__span-54-15"><a id="__codelineno-54-15" name="__codelineno-54-15" href="#__codelineno-54-15"></a><span class="w">    </span><span class="n">Expr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_armorLevel</span>
+</span><span id="__span-54-16"><a id="__codelineno-54-16" name="__codelineno-54-16" href="#__codelineno-54-16"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>The example below creates a new type of unit called "User_BabyBrute".
 It copies the existing <code>unit_definition</code> of "Brute" to "User_BabyBrute". 
@@ -4991,6 +5101,49 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 </span><span id="__span-181-2"><a id="__codelineno-181-2" name="__codelineno-181-2" href="#__codelineno-181-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_playerIDs</span><span class="p">[],</span>
 </span><span id="__span-181-3"><a id="__codelineno-181-3" name="__codelineno-181-3" href="#__codelineno-181-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_forceIDs</span><span class="p">[]</span>
 </span><span id="__span-181-4"><a id="__codelineno-181-4" name="__codelineno-181-4" href="#__codelineno-181-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<h1 id="gx_get_common_uds">gx_get_common_uds</h1>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-182-1"><a id="__codelineno-182-1" name="__codelineno-182-1" href="#__codelineno-182-1"></a><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">gx_get_common_uds</span><span class="p">(</span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
+</span></code></pre></div>
+<h1 id="gx_get_ud_race">gx_get_ud_race</h1>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-183-1"><a id="__codelineno-183-1" name="__codelineno-183-1" href="#__codelineno-183-1"></a><span class="n">Race</span><span class="w"> </span><span class="n">gx_get_ud_race</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">unitType</span><span class="p">)</span>
+</span></code></pre></div>
+<h1 id="gx_get_ud_auto_attack_anims">gx_get_ud_auto_attack_anims</h1>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-184-1"><a id="__codelineno-184-1" name="__codelineno-184-1" href="#__codelineno-184-1"></a><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">gx_get_ud_auto_attack_anims</span><span class="p">(</span><span class="n">unitType</span><span class="p">)</span>
+</span></code></pre></div>
+<h1 id="gx_get_num_attacks_in_ud_auto_attack_anim">gx_get_num_attacks_in_ud_auto_attack_anim</h1>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-185-1"><a id="__codelineno-185-1" name="__codelineno-185-1" href="#__codelineno-185-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">gx_get_num_attacks_in_ud_auto_attack_anim</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">unitType</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">animName</span><span class="p">)</span>
+</span></code></pre></div>
+<h1 id="gx_clear_ud_auto_attacks">gx_clear_ud_auto_attacks</h1>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-186-1"><a id="__codelineno-186-1" name="__codelineno-186-1" href="#__codelineno-186-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_clear_ud_auto_attacks</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">unitType</span><span class="p">)</span>
+</span></code></pre></div>
+<h1 id="gx_add_ud_auto_attack">gx_add_ud_auto_attack</h1>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-187-1"><a id="__codelineno-187-1" name="__codelineno-187-1" href="#__codelineno-187-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_add_ud_auto_attack</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">unitType</span><span class="p">,</span><span class="w"> </span><span class="n">AutoAttackTable</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-188-1"><a id="__codelineno-188-1" name="__codelineno-188-1" href="#__codelineno-188-1"></a><span class="n">AutoAttackTable</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-188-2"><a id="__codelineno-188-2" name="__codelineno-188-2" href="#__codelineno-188-2"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">m_range</span><span class="p">,</span>
+</span><span id="__span-188-3"><a id="__codelineno-188-3" name="__codelineno-188-3" href="#__codelineno-188-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_animDuration</span><span class="p">,</span>
+</span><span id="__span-188-4"><a id="__codelineno-188-4" name="__codelineno-188-4" href="#__codelineno-188-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_cooldown</span><span class="p">,</span>
+</span><span id="__span-188-5"><a id="__codelineno-188-5" name="__codelineno-188-5" href="#__codelineno-188-5"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bMelee</span><span class="p">,</span>
+</span><span id="__span-188-6"><a id="__codelineno-188-6" name="__codelineno-188-6" href="#__codelineno-188-6"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bCanTargetAir</span><span class="p">,</span>
+</span><span id="__span-188-7"><a id="__codelineno-188-7" name="__codelineno-188-7" href="#__codelineno-188-7"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bCanTargetGround</span><span class="p">,</span>
+</span><span id="__span-188-8"><a id="__codelineno-188-8" name="__codelineno-188-8" href="#__codelineno-188-8"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_anim</span><span class="p">,</span>
+</span><span id="__span-188-9"><a id="__codelineno-188-9" name="__codelineno-188-9" href="#__codelineno-188-9"></a><span class="w">    </span><span class="n">Expr</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_req</span><span class="p">,</span>
+</span><span id="__span-188-10"><a id="__codelineno-188-10" name="__codelineno-188-10" href="#__codelineno-188-10"></a><span class="w">    </span><span class="n">AttackTable</span><span class="w"> </span><span class="n">m_attacks</span><span class="p">[]</span>
+</span><span id="__span-188-11"><a id="__codelineno-188-11" name="__codelineno-188-11" href="#__codelineno-188-11"></a><span class="p">}</span>
+</span><span id="__span-188-12"><a id="__codelineno-188-12" name="__codelineno-188-12" href="#__codelineno-188-12"></a>
+</span><span id="__span-188-13"><a id="__codelineno-188-13" name="__codelineno-188-13" href="#__codelineno-188-13"></a><span class="n">AttackTable</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-188-14"><a id="__codelineno-188-14" name="__codelineno-188-14" href="#__codelineno-188-14"></a><span class="w">    </span><span class="n">AttackType</span><span class="w"> </span><span class="n">m_type</span><span class="p">,</span>
+</span><span id="__span-188-15"><a id="__codelineno-188-15" name="__codelineno-188-15" href="#__codelineno-188-15"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">m_splashRadius</span><span class="p">,</span>
+</span><span id="__span-188-16"><a id="__codelineno-188-16" name="__codelineno-188-16" href="#__codelineno-188-16"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_dmg</span><span class="p">,</span>
+</span><span id="__span-188-17"><a id="__codelineno-188-17" name="__codelineno-188-17" href="#__codelineno-188-17"></a><span class="w">    </span><span class="n">DamageExtraTable</span><span class="w"> </span><span class="n">m_dmgExtra</span>
+</span><span id="__span-188-18"><a id="__codelineno-188-18" name="__codelineno-188-18" href="#__codelineno-188-18"></a><span class="p">}</span>
+</span><span id="__span-188-19"><a id="__codelineno-188-19" name="__codelineno-188-19" href="#__codelineno-188-19"></a>
+</span><span id="__span-188-20"><a id="__codelineno-188-20" name="__codelineno-188-20" href="#__codelineno-188-20"></a><span class="n">DamageExtraTable</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-188-21"><a id="__codelineno-188-21" name="__codelineno-188-21" href="#__codelineno-188-21"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_vsLight</span><span class="p">,</span>
+</span><span id="__span-188-22"><a id="__codelineno-188-22" name="__codelineno-188-22" href="#__codelineno-188-22"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_vsMedium</span><span class="p">,</span>
+</span><span id="__span-188-23"><a id="__codelineno-188-23" name="__codelineno-188-23" href="#__codelineno-188-23"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_vsHeavy</span>
+</span><span id="__span-188-24"><a id="__codelineno-188-24" name="__codelineno-188-24" href="#__codelineno-188-24"></a><span class="p">}</span>
 </span></code></pre></div>
 
 
