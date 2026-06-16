@@ -24,7 +24,14 @@ class SquirrelLexer(CppLexer):
             'AABR', 'BoundsCheck', 'function', 'void', 'local',
             'foreach', 'in', 'constructor', 'EventType', 'Event',
             'mixed', 'ComplexColor', 'ColorType', 'Float2', 'Float3',
-            'Float4', 'Int2', 'Int3', 'Int4', 'is', 'is_not'
+            'Float4', 'Int2', 'Int3', 'Int4', 'is', 'is_not', 'not_in',
+            'AttackType', 'DeathCause', 'ExplosionEventType', 'EffectType',
+            'CommandType', 'Unicode', 'GunShipState', 'Race', 'LocationProp',
+            'DecalProp', 'UnitProp', 'PlayerProp', 'ForceProp', 'SimProp',
+            'SecondaryTerrainTypeNormal', 'TerrainType', 'ArmorType',
+            'DynVarType', 'ShapeType', 'VictoryStatus', 'SpecialForce',
+            'SpecialPlayer'
+
     )
 
     def get_tokens_unprocessed(self, text, stack=('root',)):
