@@ -16,7 +16,7 @@ int gx_create_unit(int params)
 table params = {
     string m_unitType,              // Required
     int m_playerID,                 // Required
-    Vec2 m_pos,                     // Optional (position to create unit)
+    Float2 m_pos,                     // Optional (position to create unit)
     string m_location,              // Optional (location to create unit at)
     int m_level,                    // Optional, default unit level = 1
     bool m_bForceGhostMode,         // Create unit in ghost mode (can walk through other units)
@@ -173,7 +173,7 @@ void gx_create_explosion(table params)
 ```sq
 table params = {
     float m_size,                   // Optional, Diameter of explosion
-    Vec3 m_color = Vec3(1, 1, 0),   // Optional, ColorSRGB of explosion.
+    Float3 m_color = Float3(1, 1, 0),   // Optional, ColorSRGB of explosion.
     string m_location,              // Optional, Location for explosion
     bool m_bPlaySound = true,       // Optional, defualt true
     string m_sound,                 // Optional, Sound to play
@@ -188,7 +188,7 @@ table params = {
 Example:
 ```sq
 gx_create_explosion( {
-    m_color = Vec3(1, 0, .5),
+    m_color = Float3(1, 0, .5),
     m_location = "my_location"
 } )
 ```
@@ -197,7 +197,7 @@ gx_create_explosion( {
 - if `m_size` is not set and `m_location` is set, the resolved size will be the minimum width/height of `m_location`
 - if `m_size` is not set and `m_pos` is set, the resolved size will be `1`
 - Explosions are purely visual. They do not do any damage.
-- Default value for `m_color` is `Vec3(1,1,0)` aka `0xFFFF00` (yellow)
+- Default value for `m_color` is `Float3(1,1,0)` aka `0xFFFF00` (yellow)
 - Refer to {{type("Vec2")}} and {{type("Vec3")}} if needed.
 
 ## gx_kill_unit
@@ -297,11 +297,11 @@ bool gx_is_unit_alive(int unit_id)
 
 ## gx_get_unit_position
 ```sq
-Vec3<float> gx_get_unit_position(int unit_id)
+Float3 gx_get_unit_position(int unit_id)
 ```
 
 - returns position of unit
-- returns Vec3(0.0, 0.0, 0.0) if unit no longer exists
+- returns Float3(0.0, 0.0, 0.0) if unit no longer exists
 
 ## gx_set_unit_position
 ```sq
@@ -320,7 +320,7 @@ gx_set_unit_position(some_unit, { m_location = "location_to_teleport_to" } )
 ```
 
 - it is undefined to not set `m_location` 
-- if `m_location` does not exist, unit will be teleported to Vec2(0.0, 0.0)
+- if `m_location` does not exist, unit will be teleported to Float2(0.0, 0.0)
 
 
 ## gx_is_ground_unit
@@ -578,7 +578,7 @@ void gx_map_init_add_build_structure_item(string unitType, table params = {})
 ```
 table params = {
     string m_structure,    // name of structure to build, i.e. "Microwave"
-    Vec2 m_position,           // position in command card to place at, leaving empty will use default
+    Float2 m_position,           // position in command card to place at, leaving empty will use default
     bool bBuildAdvanced = false     // default is false, if set to True, will be placed in 'build advanced' tab
 }
 ```
@@ -602,7 +602,7 @@ void gx_map_init_add_build_item(string unitType, table params)
 table params = {
     string m_unitType,     // unit type to add
     string m_research,      // research to add
-    Vec2 m_position        // position in command card
+    Float2 m_position        // position in command card
 }
 ```
 
@@ -628,8 +628,8 @@ void gx_fling_unit(int unit_id, table params = {})
 
 ```sq
 table params = {
-    Vec2 m_dir2d,          // Optional, 2d direction to throw unit. Does not need to be normalized.
-    Vec3 m_dir3d,          // Optional, 3d direction to throw unit. Does not need to be normalized.
+    Float3 m_dir2d,          // Optional, 2d direction to throw unit. Does not need to be normalized.
+    Float3 m_dir3d,          // Optional, 3d direction to throw unit. Does not need to be normalized.
     float m_force = 1           // Optional, velocity to throw unit
     m_bFlingLookAtDir = false   // Optional, will fling unit in direction it is facing
     m_bFlingStructures = false  // Optional, if true, structures will be thrown
@@ -687,7 +687,7 @@ void gx_set_terrain_type(params = {})
 table params = {
     TerrainType m_type         // Required. The type of terrain to change to. See TerrainType enum. 
     int m_secondary = 0         // Secondary terrain type. (default = 0)
-    Vec2 m_index,          // 2d index of square to change terrain type of
+    Int2 m_index,          // 2d index of square to change terrain type of
     int m_index2,         // 0 or 1, 0 indicates bottom triangle, 1 indicates top.
                                 // If index2 is not defined, entire square specified by m_index
                                 // will be set to terrain type (i.e. both triangles, top and bottom).
@@ -763,7 +763,7 @@ table params = {
 
 ## gx_get_terrain_type
 ```
-Vec2<int> gx_get_terrain_type(Vec2 index, int index2 = 0)
+Int2 gx_get_terrain_type(Int2 index, int index2 = 0)
 ```
 
 - returns primary terrain type in `vec.m_x` and returns secondary terrain type in `vec.m_y`
@@ -817,7 +817,7 @@ gx_queue_command(int unit_ids[], CommandType command, table params = {}, bool bQ
 table params = {
     int m_unitID,            // unit to target
     string m_location,     // location to target
-    Vec2 m_pos,          // position to target
+    Float2 m_pos,          // position to target
 }
 ```
 
@@ -926,7 +926,7 @@ void gx_add_unit_prop(UnitProp prop, int unit_id, mixed val)
 - Properties that are `int` or `float` and are `Read-Write` can use the `gx_add_*` functions
 
 ## UserData Getters/Setters
-- Allows you to get/set userdata values for `simulation`, `forces`, `players`, and `units`, and other things for your own purposes. These can be used in `DynVar`'s and other things.
+- Allows you to get/set userdata values for `simulation`, `forces`, `players`, and `units`, and other things for your own purposes. These can be used in `Expr`'s and other things.
 
 ```sq
 
@@ -999,7 +999,7 @@ string gx_str_encode_color_id(int colorID)
 
 ## gx_str_encode_color
 ```sq
-string gx_str_encode_color(Vec3 color)
+string gx_str_encode_color(Float3 color)
 ```
 
 ## gx_str_encode_color_hex3
@@ -1132,8 +1132,8 @@ table params = {
     string m_soundPack,     // play random sound from soundpack
     int m_unitID,           // Optional, unit for sound to attach to
     bool m_bStopSoundOnUnitDeath,           // Optional, default true if m_unitID is set
-    Vec2 m_pos2d,           // Optional, 2d position for sound
-    Vec3 m_pos3d,           // Optional, 3d position for sound
+    Float2 m_pos2d,           // Optional, 2d position for sound
+    Float3 m_pos3d,           // Optional, 3d position for sound
     float m_radius = 0,     // Optional, sound radius, default = 0
     float m_volume = 1,     // Optional, volume multiplier (default = 1)
     float m_pitch = 1,      // Optional, pitch of sound (default = 1)
@@ -1166,8 +1166,8 @@ void gx_sound3d_modify(int soundID, table params = {})
 table params = {
     float m_volume,     // Optional, volume multiplier
     float m_pitch,      // Optional, pitch of sound
-    Vec2 m_pos2d,       // Optional
-    Vec3 m_pos3d        // Optional
+    Float2 m_pos2d,       // Optional
+    Float3 m_pos3d        // Optional
 }
 ```
 
@@ -1192,11 +1192,11 @@ table params = {
     int m_colorFn,
     bool m_bAlwaysDisplay,     // ignore fog of war checks
     bool m_bDisplayOnMinimap,
-    Vec4 m_color,              // srgb with alpha
-    Vec2 m_pos,
+    Float4 m_color,              // srgb with alpha
+    Float2 m_pos,
     float m_rotation,          // radians
     float m_size,
-    Vec2 m_size,               // size, can either be Vec2<float> or float
+    Float2 m_size,               // size, can either be Float2 or float
     string m_tag,
     string m_texture,          // icon to use
     float m_speedFactor = 1.0       // animation speed if m_texture is animated GIF
@@ -1218,8 +1218,8 @@ table params = {
     int m_colorFn,
     bool m_bAlwaysDisplay,          # ignore fog of war checks
     bool m_bDisplayOnMinimap,
-    Vec4 m_color,                   # srgb with alpha
-    Vec2 m_pos,
+    Float4 m_color,                   # srgb with alpha
+    Float2 m_pos,
     float m_rotation,               # radians
     float m_size,
     string m_tag,
@@ -1302,7 +1302,7 @@ void gx_set_terrain_glow_color(table params = {})
 table params = {
     int m_index,        // Glow index to change, required
     int m_hex,          // srgb hex3 code for color to set
-    Vec3<float> m_color // srgb color (each component [0.0-1.0]) for new color to set
+    Float3 m_color // srgb color (each component [0.0-1.0]) for new color to set
 }
 ```
 
@@ -1312,36 +1312,36 @@ table params = {
 
 ## gx_set_map_theme_color
 ```sq
-void gx_set_map_theme_color(Vec4<float> srgb)
+void gx_set_map_theme_color(Float4 srgb)
 ```
 
 ## gx_get_map_theme_color
 ```sq
-Vec4<float> gx_get_map_theme_color()
+Float4 gx_get_map_theme_color()
 ```
 
 ## gx_set_map_glow_color
 ```sq
-void gx_set_map_glow_color(Vec4<float> srgb)
+void gx_set_map_glow_color(Float4 srgb)
 ```
 
 ## gx_get_map_glow_color
 ```sq
-Vec4<float> gx_get_map_glow_color()
+Float4 gx_get_map_glow_color()
 ```
 
 ## gx_color_*
 
 ```sq
-Vec3<float> gx_color_hsv_to_srgb(Vec3 hsv)
-Vec3<float> gx_color_srgb_to_hsv(Vec3 srgb)
-Vec3<float> gx_color_hex3_to_srgb(int hex3)
-int gx_color_srgb_to_hex3(Vec3 srgb)
+Float3 gx_color_hsv_to_srgb(Float3 hsv)
+Float3 gx_color_srgb_to_hsv(Float3 srgb)
+Float3 gx_color_hex3_to_srgb(int hex3)
+int gx_color_srgb_to_hex3(Float3 srgb)
 
-Vec4<float> gx_color_hsva_to_srgba(Vec4 hsva)
-Vec4<float> gx_color_srgba_to_hsva(Vec4 srgba)
-Vec4<float> gx_color_hex4_to_srgba(int hex4)
-int gx_color_srgba_to_hex4(Vec4 srgba)
+Float4 gx_color_hsva_to_srgba(Float4 hsva)
+Float4 gx_color_srgba_to_hsva(Float4 srgba)
+Float4 gx_color_hex4_to_srgba(int hex4)
+int gx_color_srgba_to_hex4(Float4 srgba)
 
 int gx_color_hex3_to_hex4(int hex3, int alpha = 0xFF)
 int gx_color_hex4_to_hex3(int hex4)
@@ -1365,25 +1365,25 @@ int gx_rand_int(int min, int max)
 
 ## gx_rand_unit_vec*
 ```sq
-Vec2<float> gx_rand_unit_vec2()
-Vec3<float> gx_rand_unit_vec3()
-Vec4<float> gx_rand_unit_vec4()
+Float2 gx_rand_unit_vec2()
+Float3 gx_rand_unit_vec3()
+Float4 gx_rand_unit_vec4()
 ```
 
 ## gx_unit_vec_or_random
 ```sq
-Vec2<float> gx_unit_vec_or_random(Vec2 v)
-Vec3<float> gx_unit_vec_or_random(Vec3 v)
-Vec4<float> gx_unit_vec_or_random(Vec4 v)
+Float2 gx_unit_vec_or_random(Float2 v)
+Float3 gx_unit_vec_or_random(Float3 v)
+Float4 gx_unit_vec_or_random(Float4 v)
 ```
 - Computes the unit vector of `v`.
 - Will return random unit vector if `v` has magnitude of `0`.
 
 ## gx_unit_vec_or_zero
 ```sq
-Vec2<float> gx_unit_vec_or_zero(Vec2 v)
-Vec3<float> gx_unit_vec_or_zero(Vec3 v)
-Vec4<float> gx_unit_vec_or_zero(Vec4 v)
+Float2 gx_unit_vec_or_zero(Float2 v)
+Float3 gx_unit_vec_or_zero(Float3 v)
+Float4 gx_unit_vec_or_zero(Float4 v)
 ```
 
 - Computes the unit vector of `v`.
@@ -1391,7 +1391,7 @@ Vec4<float> gx_unit_vec_or_zero(Vec4 v)
 
 ## gx_terrain_offset_z_add
 ```sq
-void gx_terrain_offset_z_add(Vec2<int> vertexPos, float offset)
+void gx_terrain_offset_z_add(Int2 vertexPos, float offset)
 ```
 
 ## gx_terrain_offset_z_add_2
@@ -1402,14 +1402,14 @@ void gx_terrain_offset_z_add_2(table params)
 table params = {
     AABR<int> m_aabrs[],        # Optional
     string m_locations[],       # Optional
-    Vec2<int> m_vertices[],     # Optional
+    Int2 m_vertices[],     # Optional
     float m_val,                # Required
 }
 ```
 
 ## gx_terrain_offset_z_set
 ```sq
-void gx_terrain_offset_z_set(Vec2<int> vertexPos, float offset)
+void gx_terrain_offset_z_set(Int2 vertexPos, float offset)
 ```
 
 ## gx_terrain_offset_z_set_2
@@ -1420,24 +1420,24 @@ void gx_terrain_offset_z_set_2(table params)
 table params = {
     AABR<int> m_aabrs[],        # Optional
     string m_locations[],       # Optional
-    Vec2<int> m_vertices[],     # Optional
+    Int2 m_vertices[],     # Optional
     float m_val,                # Required
 }
 ```
 
 ## gx_terrain_offset_z_get
 ```sq
-float gx_terrain_offset_z_get(Vec2<int> vertexPos)
+float gx_terrain_offset_z_get(Int2 vertexPos)
 ```
 
 ## gx_aabr_contains
 ```sq
-bool gx_aabr_contains(AABR aabr, Vec2 pt)
+bool gx_aabr_contains(AABR aabr, Float2 pt)
 ```
 
 ## gx_aabr_contains_or_touching
 ```sq
-bool gx_aabr_contains_or_touching(AABR aabr, Vec2 pt)
+bool gx_aabr_contains_or_touching(AABR aabr, Float2 pt)
 ```
 
 ## gx_force_select_units
@@ -1455,9 +1455,9 @@ int gx_create_effect(table params)
 ```sq
 table params = {
     EffectType m_type,
-    Vec2<float> m_pos,
+    Float2 m_pos,
     int m_duration,
-    Vec4<float> m_color,    # srgb
+    Float4 m_color,    # srgb
     int m_playerID,
     int m_unitID
 }
@@ -1481,7 +1481,7 @@ int gx_create_nuke_unit(table params)
 table params = {
     float m_damage,
     int m_playerID,
-    Vec2<float> m_pos,
+    Float2 m_pos,
     float m_radius
 }
 ```
@@ -1620,7 +1620,7 @@ params = {
     string m_location,
     AABR<float> m_aabr,
     string m_img,           # img to paint
-    Vec4<Float> m_srgba     # srgb multiplier
+    Float4 m_srgba     # srgb multiplier
 }
 ```
 
@@ -1648,9 +1648,9 @@ void gx_add_resource_ui_item(table params)
 table params = {
     int m_playerIDs[],
     int m_forceIDs[],
-    DynVar<Numeric> m_val,
-    DynVar<Numeric> m_max,
-    DynVar<bool> m_bDisplayRed,
+    Expr<int> m_val,
+    Expr<int> m_max,
+    Expr<bool> m_bDisplayRed,
     string m_img
 }
 ```
