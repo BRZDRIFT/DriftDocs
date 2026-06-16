@@ -30,8 +30,9 @@ class SquirrelLexer(CppLexer):
             'DecalProp', 'UnitProp', 'PlayerProp', 'ForceProp', 'SimProp',
             'SecondaryTerrainTypeNormal', 'TerrainType', 'ArmorType',
             'DynVarType', 'ShapeType', 'VictoryStatus', 'SpecialForce',
-            'SpecialPlayer'
-
+            'SpecialPlayer', 'AutoAttackTable', 'AttackTable',
+            'DamageExtraTable', 'Expr', 'DynValType ', 'BinaryOp',
+            'UnaryOp'
     )
 
     def get_tokens_unprocessed(self, text, stack=('root',)):
