@@ -336,8 +336,7 @@ enum LocationProp
 ```sq
 enum Race
 {
-					// Access		Type
-	Invalid,
+	Invalid = 0,
 	Human,
     Robot,
     Monster
@@ -504,6 +503,7 @@ enum DeathCause
 ```
 
 ## AttackType
+```sq
 enum AttackType
 {
     Invalid = 0,
@@ -514,3 +514,4 @@ enum AttackType
     SiegeBlast,
     SmokeBlast,
 };
+```
