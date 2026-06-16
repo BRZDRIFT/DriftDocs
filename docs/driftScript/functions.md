@@ -415,7 +415,7 @@ void gx_modify_scoreboard(table params = {})
 ```
 
 ```sq
-local params = {
+table params = {
     bool m_bDisplay,
     bool m_bShowForceScores,
     bool m_bShowPlayerScores
@@ -774,7 +774,7 @@ void gx_set_player_camera_look_at(int player_id, table params)
 ```
 
 ```sq
-local params = {
+table params = {
     int m_unitID,
     string m_location
 }
@@ -789,7 +789,7 @@ void gx_lock_player_camera(int player_id, table params = {})
 ```
 
 ```sq
-local params = {
+table params = {
     int m_unitID,
     string m_location
 }
@@ -887,7 +887,7 @@ int gx_get_player_ammo_total(int player_id, string ammoName)
 - Returns how much `player ammo` of type `ammoName` the player has
 
 ```sq
-local params = {
+table params = {
     string m_tag,             // Required                                 (string)
     int m_player_id = 0        // Optional, used to Filter. Default = 0.   (int)
 }
@@ -1078,7 +1078,7 @@ int gx_sound2d_create(table params = {})
 ```
 
 ```sq
-params = {
+table params = {
     string m_sound,         // name of sound to play
     string m_soundPack,     // will play random sound from soundpack
     int m_forceIDs[],       // forceIDs that can hear the sound
@@ -1108,7 +1108,7 @@ void gx_sound2d_modify(int soundID, table params = {})
 ```
 
 ```sq
-params = {
+table params = {
     float m_volume,     // Optional, volume multiplier
     float m_pitch       // Optional, pitch of sound
 }
@@ -1127,7 +1127,7 @@ int gx_sound3d_create(table params = {})
 ```
 
 ```sq
-params = {
+table params = {
     string m_sound,         // name of sound to play
     string m_soundPack,     // play random sound from soundpack
     int m_unitID,           // Optional, unit for sound to attach to
@@ -1163,7 +1163,7 @@ void gx_sound3d_modify(int soundID, table params = {})
 ```
 
 ```sq
-params = {
+table params = {
     float m_volume,     // Optional, volume multiplier
     float m_pitch,      // Optional, pitch of sound
     Vec2 m_pos2d,       // Optional
@@ -1524,11 +1524,11 @@ Event gx_pop_event_from_queue()
 
 # gx_update_map_hints
 ```sq
-void gx_update_map_hints(local params)
+void gx_update_map_hints(table params)
 ```
 
 ```sq
-params = {
+table params = {
     int m_forceIDs[],
     int m_playerIDs[],
     string m_button,
@@ -1548,11 +1548,11 @@ void gx_add_event_message(string message)
 
 # gx_display_ui_elements
 ```sq
-void gx_display_ui_elements(local params = {})
+void gx_display_ui_elements(table params = {})
 ```
 
 ```sq
-params = {
+table params = {
     bool m_bAll,
     bool m_bArmyCount,
     bool m_bIdleWorkers,
@@ -1571,11 +1571,11 @@ params = {
 
 # gx_add_center_message
 ```sq
-int gx_add_center_message(local params = {})
+int gx_add_center_message(table params = {})
 ```
 
 ```sq
-params = {
+table params = {
     string m_msg,
     int m_forceIDs[],
     int m_playerIDs[],
@@ -1589,11 +1589,11 @@ params = {
 
 # gx_clear_center_messages
 ```sq
-void gx_clear_center_messages(local params = {})
+void gx_clear_center_messages(table params = {})
 ```
 
 ```sq
-params = {
+table params = {
     int m_forceIDs[],
     int m_playerIDs[]
 }
@@ -1633,7 +1633,7 @@ void gx_clear_terrain_paint(table params)
 ```
 
 ```sq
-params = {
+table params = {
     string m_locations[],
     AABR<float> m_aabrs[]
 }
@@ -1645,7 +1645,7 @@ void gx_add_resource_ui_item(table params)
 ```
 
 ```sq
-params = {
+table params = {
     int m_playerIDs[],
     int m_forceIDs[],
     DynVar<Numeric> m_val,
@@ -1661,7 +1661,7 @@ void gx_clear_resource_ui_items(table params)
 ```
 
 ```sq
-params = {
+table params = {
     int m_playerIDs[],
     int m_forceIDs[]
 }
