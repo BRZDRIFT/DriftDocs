@@ -19,8 +19,9 @@ table params = {
     Vec2 m_pos,                     // Optional (position to create unit)
     string m_location,              // Optional (location to create unit at)
     int m_level,                    // Optional, default unit level = 1
-    bool m_bForceGhostMode,
+    bool m_bForceGhostMode,         // Create unit in ghost mode (can walk through other units)
     bool m_bSieged,                 // Create unit pre-sieged if supported
+    bool m_bLiftedStructure         // Create structure in lifted state if supported
 }
 ```
 
@@ -532,6 +533,7 @@ void gx_map_init_modify_ud_props(string unit_type, table params = {})
 ```sq
 table params = {
     string m_friendlyName,     // Optional, set unit's friendly name
+    bool m_bHasHealth,
     int m_maxHealth,
     float m_maxSpeed,
     int m_baseArmor,
@@ -1662,5 +1664,62 @@ void gx_clear_resource_ui_items(table params)
 params = {
     int m_playerIDs[],
     int m_forceIDs[]
+}
+```
+
+# gx_get_common_uds
+```sq
+string[] gx_get_common_uds(params = {})
+```
+
+# gx_get_ud_race
+```sq
+Race gx_get_ud_race(string unitType)
+```
+
+# gx_get_ud_auto_attack_anims
+```sq
+string[] gx_get_ud_auto_attack_anims(unitType)
+```
+
+# gx_get_num_attacks_in_ud_auto_attack_anim
+```sq
+int gx_get_num_attacks_in_ud_auto_attack_anim(string unitType, string animName)
+```
+
+# gx_clear_ud_auto_attacks
+```sq
+void gx_clear_ud_auto_attacks(string unitType)
+```
+
+# gx_add_ud_auto_attack
+```sq
+void gx_add_ud_auto_attack(string unitType, AutoAttackTable params)
+```
+
+```sq
+AutoAttackTable {
+    float m_range,
+    int m_animDuration,
+    int m_cooldown,
+    bool m_bMelee,
+    bool m_bCanTargetAir,
+    bool m_bCanTargetGround,
+    string m_anim,
+    Expr<bool> m_req,
+    AttackTable m_attacks[]
+}
+
+AttackTable {
+    AttackType m_type,
+    float m_splashRadius,
+    int m_dmg,
+    DamageExtraTable m_dmgExtra
+}
+
+DamageExtraTable {
+    int m_vsLight,
+    int m_vsMedium,
+    int m_vsHeavy
 }
 ```

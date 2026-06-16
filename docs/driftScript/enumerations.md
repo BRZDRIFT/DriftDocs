@@ -4,7 +4,6 @@ Always use the enums and not hardcoded numeric values.
 Also DO NOT assume `Invalid` will always be equal to `0` or `-1`.
 
 ## BoundsCheck
-
 ```sq
 enum BoundsCheck
 {
@@ -76,28 +75,39 @@ enum ShapeType
 ```sq
 enum DynVarType
 {
-    Invalid = 0,
-    Constant = 1,
-    FromPlayerResearch = 2,
-    FromUnitResearch = 3,
-    FromGlobalVar = 4,
-    FromPlayerVar = 5,
-    FromForceVar = 6,
-    FromUnitVar = 7,
-    PlayerWeaponsUpgrade = 8,
-    PlayerArmorUpgrade = 9,
-    PlayerSpeedUpgrade = 10,
-    Gemstone = 11,
-    Fungus = 12,
-    Supply = 13,
-    MaxSupply = 14,
-	SupplyBlocked = 15
+    Invalid,
+    Constant,
+    FromPlayerResearch,
+    FromUnitResearch,
+    FromGlobalVar,
+    FromPlayerVar,
+    FromForceVar,
+    FromUnitVar,
+    PlayerWeaponsUpgrade,
+    PlayerArmorUpgrade,
+    PlayerSpeedUpgrade,
+    Gemstone,
+    Fungus,
+    Supply,
+    MaxSupply,
+	SupplyBlocked
 }
 ```
 
 - The Force `Neutral` (`id = -1`) is special and exists in every game.
 - The players `Neutral`, `Hostile`, and `Rescue` are automatically assigned to the `Neutral` Force
 - `Note:` Normal ForceIDs are positive integers
+
+## ArmorType
+```sq
+enum ArmorType
+{
+    Invalid,
+    Light,
+    Medium,
+    Heavy
+}
+```
 
 ## TerrainType
 ```sq
@@ -322,6 +332,18 @@ enum LocationProp
 
 - Primarily used in {{fn("property-getterssetters")}}
 
+## Race
+```sq
+enum Race
+{
+					// Access		Type
+	Invalid,
+	Human,
+    Robot,
+    Monster
+}
+```
+
 ## GunShipState 
 ```sq
 enum GunShipState
@@ -422,7 +444,6 @@ enum EffectType
 ```
 
 ## EventType
-
 ```sq
 enum EventType
 {
@@ -455,7 +476,6 @@ enum EventType
 ```
 
 ## ExplosionEventType
-
 ```sq
 enum ExplosionEventType
 {
@@ -466,7 +486,6 @@ enum ExplosionEventType
 ```
 
 ## DeathCause
-
 ```sq
 enum DeathCause
 {
@@ -483,3 +502,15 @@ enum DeathCause
 	Nuke
 };
 ```
+
+## AttackType
+enum AttackType
+{
+    Invalid = 0,
+    Laser,
+    Punch,
+    Missile,
+    Orb,
+    SiegeBlast,
+    SmokeBlast,
+};
