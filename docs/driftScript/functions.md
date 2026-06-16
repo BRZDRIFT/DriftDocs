@@ -1669,7 +1669,15 @@ table params = {
 
 # gx_get_common_uds
 ```sq
-string[] gx_get_common_uds(params = {})
+string[] gx_get_common_uds(table params = {})
+```
+
+```sq
+// used for filtering, optional.
+table params = {
+    bool m_bStructure,
+    Race m_race
+}
 ```
 
 # gx_get_ud_race
