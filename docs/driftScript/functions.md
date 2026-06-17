@@ -575,7 +575,7 @@ gx_map_init_modify_ud_props("User_BabyBrute", {
 void gx_map_init_add_build_structure_item(string unitType, table params = {})
 ```
 
-```
+```sq
 table params = {
     string m_structure,    // name of structure to build, i.e. "Microwave"
     Float2 m_position,           // position in command card to place at, leaving empty will use default
@@ -1583,7 +1583,7 @@ void gx_paint_terrain(table params)
 ```
 
 ```sq
-params = {
+table params = {
     string m_location,
     AABR<float> m_aabr,
     string m_img,           # img to paint

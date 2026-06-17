@@ -32,7 +32,7 @@ class SquirrelLexer(CppLexer):
             'DynVarType', 'ShapeType', 'VictoryStatus', 'SpecialForce',
             'SpecialPlayer', 'AutoAttackTable', 'AttackTable',
             'DamageExtraTable', 'Expr', 'DynValType ', 'BinaryOp',
-            'UnaryOp', 'Random'
+            'UnaryOp', 'Random', 'DynValType'
     )
 
     def get_tokens_unprocessed(self, text, stack=('root',)):
