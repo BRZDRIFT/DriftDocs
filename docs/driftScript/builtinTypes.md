@@ -27,8 +27,8 @@ class Vec2 {
 
 Helper Create Functions:
 ```sq
-function Float2(x, y)
-function Int2(x, y)
+Vec2 Float2(x, y)
+Vec2 Int2(x, y)
 ```
 
 - By default `Vec2` has scalar type of `float`.
@@ -67,12 +67,17 @@ class Vec3 {
 }
 ```
 
+Helper Create Functions:
+```sq
+Vec3 Float3(x, y, z)
+Vec3 Int3(x, y, z)
+```
+
 - By default `Vec3` has scalar type of `float`.
 - However you can change scalar type to be `int` by passing integers into the constructor
     - (or by setting `m_x`, `m_y`, `m_z` to integers manually)
 - Assignment operator `=` will only copy reference (not create a new `Vec3`)
 - Use `clone` to make deep copy
-- Helper create functions: `function Float3(x, y, z)` and `function Int3(x, y, z)`;
 
 ## Vec4
 ```sq
@@ -105,12 +110,17 @@ class Vec4 {
 }
 ```
 
+Helper Create Functions:
+```sq
+Vec4 Float4(x, y, z, w)
+Vec4 Int4(x, y, z, w)
+```
+
 - By default `Vec4` has scalar type of `float`.
 - However you can change scalar type to be `int` by passing integers into the constructor
     - (or by setting `m_x`, `m_y`, `m_z`, `m_w` to integers manually)
 - Assignment operator `=` will only copy reference (not create a new `Vec4`)
 - Use `clone` to make deep copy
-- Helper create functions: `function Float4(x, y, z, w)` and `function Int4(x, y, z, w)`;
 
 ## AABR
 Axis aligned bounding rectangle
@@ -143,6 +153,12 @@ class AABR {
     m_minPt = Vec2()
     m_maxPt = Vec2() 
 }
+```
+
+Helper Create Functions:
+```sq
+AABR AABR_float(x, y, z, w)
+AABR AABR_int(x, y, z, w)
 ```
 
 - By default `AABR` has scalar type of `float`.
@@ -182,6 +198,11 @@ class Random {
     function _cloned(Random orig)
 }
 ```
+
+- A deterministic random number generator.
+- Guaranteed to always generate the same random numbers (given same seed)
+    - will never change, even across game version updates in the future.
+- calling `SetSeed(seed)` will reset `Random` generator with new seed.
 
 ## Expr
 ```sq
@@ -224,16 +245,13 @@ enum Expr.BinaryOp {
 }
 
 enum Expr.DynValType {
-	Invalid,
+	Invalid,                    // return values below..
 	PlayerResearch,				// int
 	UnitResearch,				// int
 	SimVar,						// int|float|bool|string
 	PlayerVar,					// int|float|bool|string
 	ForceVar,					// int|float|bool|string
 	UnitVar,					// int|float|bool|string
-	PlayerWeaponsUpgrade,		// int
-	PlayerArmorUpgrade,			// int
-	PlayerSpeedUpgrade,		    // int
 	Gemstone,					// float
 	Fungus,						// float
 	Supply,					    // int

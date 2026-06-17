@@ -21,25 +21,44 @@
     - `1 / 4294967296` = `0.00000000023283064365...`
 
 ## Functions
-- `float sqrt(x)` - returns square root of x
-- `float sin(x)` - return sin of x
-- `float asin(x)` - arcsin of x
-- `float cos(x)` - return cos of x
-- `float acos(x)` - arccos of x
-- `float tan(x)` - return tan of x
-- `float atan(x)` - arctan of x
-- `float atan2(y, x)` - arctan2 of x
+- `float sqrt(float x)` - returns square root of x
+- `float sin(float x)` - return sin of x
+- `float asin(float x)` - arcsin of x
+- `float cos(float x)` - return cos of x
+- `float acos(float x)` - arccos of x
+- `float tan(float x)` - return tan of x
+- `float atan(float x)` - arctan of x
+- `float atan2(float y, float x)` - arctan2 of x
 - `int rand()` - return random integer from [0, RAND_MAX]
 - `int rand64()` - returns random integer from [INT_MIN, INT_MAX]
 - `int rand_int(int min, int max)` returns random integer from [min, max]
 - `float rand_float(float min, float max)` returns random float from [min, max]
-- `mixed abs(x)` - return absolute value of x.
-- `mixed min(x, y)` - returns the minimum of x and y.
-- `mixed max(x, y)` - returns the maximum of x and y.
-- `mixed clamp(val, min, max)` - clamps val to be between min and max
-- `float lerp(x, y, a)` - linearly interpolate x -> y based on a [0, 1]
-- `float floor(x)`
-- `float ceil(x)`
+- `mixed abs(mixed x)` - return absolute value of x.
+- `mixed min(mixed x, mixed y)` - returns the minimum of x and y.
+- `mixed max(mixed x, mixed y)` - returns the maximum of x and y.
+- `mixed clamp(mixed val, mixed min, mixed max)` - clamps val to be between min and max
+- `float lerp(float x, float y, float a)` - linearly interpolate x -> y based on a [0, 1]
+- `float floor(float x)`
+- `float ceil(float x)`
+- `mixed rem_euclid(mixed a, mixed b)` - simmilar to `%` operator, except result is always positive.
+
+## Integer Division
+- Integer division is trunucated (similar to C++ and rust, DIFFERENT than python)
+     - `3/2 == 1`
+     - `-3/2 == -1`
+
+## % Modulo Operator
+- result of `%` will have same sign as numerator (similar to c++/rust, DIFFERENT than python)
+    - `-7 % 4 == -3`
+    - `7 % -4 == 3`
+    - `-7 % -4 == -3`
+    - `-7.5 % 4.0 == -3.5`
+    - `7.5 % -4.0 == 3.5`
+    - you can use `rem_euclid` if you want the result to be positive
+        - `rem_euclid(-7.5, 4.0) == .5`
+        - `rem_euclid(7.5, -4.0) == 3.5`
+        - `rem_euclid(7, -4) == 3`
+        - `rem_euclid(-7, 4) == 1`
 
 ## Scalar Types
 - `int`: 64-bit integer

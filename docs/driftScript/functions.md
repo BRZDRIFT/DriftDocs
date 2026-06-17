@@ -1261,9 +1261,9 @@ void gx_draw_glow_image(table params)
 ```sq
 table params = {
     string m_img,                   // Required, Icon Name
-    AABR<int> m_aabr,               // AABR to draw to
+    AABR_int m_aabr,               // AABR to draw to
     string m_location,              // Location to draw to
-    AABR<int> m_excludeAABRs[],     // Optional, AABRs not to draw to
+    AABR_int m_excludeAABRs[],     // Optional, AABRs not to draw to
     string m_excludeLocations[],    // Optional, locations not to draw to
 }
 ```
@@ -1367,7 +1367,7 @@ void gx_terrain_offset_z_add_2(table params)
 ```
 ```sq
 table params = {
-    AABR<int> m_aabrs[],        # Optional
+    AABR_int m_aabrs[],        # Optional
     string m_locations[],       # Optional
     Int2 m_vertices[],     # Optional
     float m_val,                # Required
@@ -1385,7 +1385,7 @@ void gx_terrain_offset_z_set_2(table params)
 ```
 ```sq
 table params = {
-    AABR<int> m_aabrs[],        # Optional
+    AABR_int m_aabrs[],        # Optional
     string m_locations[],       # Optional
     Int2 m_vertices[],     # Optional
     float m_val,                # Required
@@ -1585,7 +1585,7 @@ void gx_paint_terrain(table params)
 ```sq
 table params = {
     string m_location,
-    AABR<float> m_aabr,
+    AABR_float m_aabr,
     string m_img,           # img to paint
     Float4 m_srgba     # srgb multiplier
 }
@@ -1602,7 +1602,7 @@ void gx_clear_terrain_paint(table params)
 ```sq
 table params = {
     string m_locations[],
-    AABR<float> m_aabrs[]
+    AABR_float m_aabrs[]
 }
 ```
 
