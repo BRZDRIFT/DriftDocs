@@ -29,15 +29,15 @@
 - `float tan(float x)` - return tan of x
 - `float atan(float x)` - arctan of x
 - `float atan2(float y, float x)` - arctan2 of x
-- `int rand()` - return random integer from [0, RAND_MAX]
-- `int rand64()` - returns random integer from [INT_MIN, INT_MAX]
-- `int rand_int(int min, int max)` returns random integer from [min, max]
-- `float rand_float(float min, float max)` returns random float from [min, max]
+- `int rand()` - return random integer from [`0`, `RAND_MAX`]
+- `int rand64()` - returns random integer from [`INT_MIN`, `INT_MAX`]
+- `int rand_int(int min, int max)` returns random integer from [`min`, `max`]
+- `float rand_float(float min, float max)` returns random float from [`min`, `max`]
 - `mixed abs(mixed x)` - return absolute value of x.
 - `mixed min(mixed x, mixed y)` - returns the minimum of x and y.
 - `mixed max(mixed x, mixed y)` - returns the maximum of x and y.
-- `mixed clamp(mixed val, mixed min, mixed max)` - clamps val to be between min and max
-- `float lerp(float x, float y, float a)` - linearly interpolate x -> y based on a [0, 1]
+- `mixed clamp(mixed val, mixed min, mixed max)` - clamps val to be between `min` and `max`
+- `float lerp(float x, float y, float a)` - linearly interpolate x -> y based on [0, 1]
 - `float floor(float x)`
 - `float ceil(float x)`
 - `mixed rem_euclid(mixed a, mixed b)` - similar to `%` operator, except result is always positive.
