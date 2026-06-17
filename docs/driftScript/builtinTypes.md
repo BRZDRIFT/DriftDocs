@@ -157,8 +157,8 @@ class AABR {
 
 Helper Create Functions:
 ```sq
-AABR AABR_float(x, y, z, w)
-AABR AABR_int(x, y, z, w)
+AABR AABR_float(minPt, maxPt)
+AABR AABR_int(minPt, maxPt)
 ```
 
 - By default `AABR` has scalar type of `float`.
