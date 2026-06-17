@@ -43,17 +43,17 @@
 - `mixed rem_euclid(mixed a, mixed b)` - similar to `%` operator, except result is always positive.
 
 ## Integer Division
-- Integer division is trunucated (similar to C++ and rust, DIFFERENT than python)
+- Integer division is floored (similar to Python! Different than C++..)
      - `3/2 == 1`
-     - `-3/2 == -1`
+     - `-3/2 == -2`
 
 ## % Modulo Operator
-- result of `%` will have same sign as numerator (similar to c++/rust, DIFFERENT than python)
-    - `-7 % 4 == -3`
-    - `7 % -4 == 3`
+- result of `%` will have same sign as denominator (similar to Python! Different than C++..)
+    - `-7 % 4 == 1`
+    - `7 % -4 == -1`
     - `-7 % -4 == -3`
-    - `-7.5 % 4.0 == -3.5`
-    - `7.5 % -4.0 == 3.5`
+    - `-7.5 % 4.0 == .5`
+    - `7.5 % -4.0 == -.5`
     - you can use `rem_euclid` if you want the result to be positive
         - `rem_euclid(-7.5, 4.0) == .5`
         - `rem_euclid(7.5, -4.0) == 3.5`
