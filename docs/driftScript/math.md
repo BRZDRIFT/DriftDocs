@@ -40,7 +40,7 @@
 - `float lerp(float x, float y, float a)` - linearly interpolate x -> y based on a [0, 1]
 - `float floor(float x)`
 - `float ceil(float x)`
-- `mixed rem_euclid(mixed a, mixed b)` - simmilar to `%` operator, except result is always positive.
+- `mixed rem_euclid(mixed a, mixed b)` - similar to `%` operator, except result is always positive.
 
 ## Integer Division
 - Integer division is trunucated (similar to C++ and rust, DIFFERENT than python)
