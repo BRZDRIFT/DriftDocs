@@ -45,6 +45,8 @@
 ## Integer Division
 - Integer division is floored (similar to Python! Different than C++..)
      - `3/2 == 1`
+     - `1/2 == 0`
+     - `-1/2 == -1`
      - `-3/2 == -2`
 
 ## % Modulo Operator
