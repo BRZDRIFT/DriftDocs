@@ -1532,6 +1532,9 @@
 <li><code>float atan(x)</code> - arctan of x</li>
 <li><code>float atan2(y, x)</code> - arctan2 of x</li>
 <li><code>int rand()</code> - return random integer from [0, RAND_MAX]</li>
+<li><code>int rand64()</code> - returns random integer from [INT_MIN, INT_MAX]</li>
+<li><code>int rand_int(int min, int max)</code> returns random integer from [min, max]</li>
+<li><code>float rand_float(float min, float max)</code> returns random float from [min, max]</li>
 <li><code>mixed abs(x)</code> - return absolute value of x.</li>
 <li><code>mixed min(x, y)</code> - returns the minimum of x and y.</li>
 <li><code>mixed max(x, y)</code> - returns the maximum of x and y.</li>
@@ -1539,7 +1542,6 @@
 <li><code>float lerp(x, y, a)</code> - linearly interpolate x -&gt; y based on a [0, 1]</li>
 <li><code>float floor(x)</code></li>
 <li><code>float ceil(x)</code></li>
-<li><code>float fmod(x, y)</code> - floating point modulo</li>
 </ul>
 <h2 id="scalar-types">Scalar Types</h2>
 <ul>
