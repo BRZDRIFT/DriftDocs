@@ -1582,20 +1582,20 @@
 </ul>
 <h2 id="integer-division">Integer Division</h2>
 <ul>
-<li>Integer division is trunucated (similar to C++ and rust, DIFFERENT than python)<ul>
+<li>Integer division is floored (similar to Python! Different than C++..)<ul>
 <li><code>3/2 == 1</code></li>
-<li><code>-3/2 == -1</code></li>
+<li><code>-3/2 == -2</code></li>
 </ul>
 </li>
 </ul>
 <h2 id="modulo-operator">% Modulo Operator</h2>
 <ul>
-<li>result of <code>%</code> will have same sign as numerator (similar to c++/rust, DIFFERENT than python)<ul>
-<li><code>-7 % 4 == -3</code></li>
-<li><code>7 % -4 == 3</code></li>
+<li>result of <code>%</code> will have same sign as denominator (similar to Python! Different than C++..)<ul>
+<li><code>-7 % 4 == 1</code></li>
+<li><code>7 % -4 == -1</code></li>
 <li><code>-7 % -4 == -3</code></li>
-<li><code>-7.5 % 4.0 == -3.5</code></li>
-<li><code>7.5 % -4.0 == 3.5</code></li>
+<li><code>-7.5 % 4.0 == .5</code></li>
+<li><code>7.5 % -4.0 == -.5</code></li>
 <li>you can use <code>rem_euclid</code> if you want the result to be positive<ul>
 <li><code>rem_euclid(-7.5, 4.0) == .5</code></li>
 <li><code>rem_euclid(7.5, -4.0) == 3.5</code></li>
