@@ -40,7 +40,6 @@
 - `float lerp(float x, float y, float a)` - linearly interpolate x -> y based on [0, 1]
 - `float floor(float x)`
 - `float ceil(float x)`
-- `mixed rem_euclid(mixed a, mixed b)` - similar to `%` operator, except result is always positive.
 
 ## Integer Division
 - Integer division is floored (similar to Python! Different than C++..)
@@ -56,11 +55,6 @@
     - `-7 % -4 == -3`
     - `-7.5 % 4.0 == .5`
     - `7.5 % -4.0 == -.5`
-    - you can use `rem_euclid` if you want the result to be positive
-        - `rem_euclid(-7.5, 4.0) == .5`
-        - `rem_euclid(7.5, -4.0) == 3.5`
-        - `rem_euclid(7, -4) == 3`
-        - `rem_euclid(-7, 4) == 1`
 
 ## Scalar Types
 - `int`: 64-bit integer
