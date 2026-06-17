@@ -2,7 +2,7 @@
 
 ## Constants
 - `RAND_MAX`: 
-    - Constant 64-bit int value of `0x7FFFFFFF`
+    - Constant 64-bit int value of `0x7FFFFFFF` (`2147483647`)
 - `PI`:
     - Constant float value for `PI` (`3.14159...`)
 - `TAU`:
