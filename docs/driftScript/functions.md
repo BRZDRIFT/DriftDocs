@@ -75,7 +75,7 @@ float gx_get_seconds()
 
 ## gx_get_bg_shader_val
 ```sq
-float gx_get_bg_shader_val(int index);
+float gx_get_bg_shader_val(int index)
 ```
 
 - index must be between `[0-15]`
@@ -83,7 +83,7 @@ float gx_get_bg_shader_val(int index);
 
 ## gx_set_bg_shader_val
 ```sq
-float gx_set_bg_shader_val(int index, float val);
+float gx_set_bg_shader_val(int index, float val)
 ```
 
 - index must be between `[0-15]`
@@ -1329,16 +1329,6 @@ int gx_color_hex4_to_hex3(int hex4)
 - `srgba`: `srgba.m_x` is red `[0-1]`, `srgba.m_y` is green `[0-1]`, `srgba.m_z` is blue `[0-1]`, `srgba.m_w` is alpha `[0-1]`
 - `hex4` is an integer with value `0xAARRGGBB` where AA is alpha, RR is red, GG is green, BB is blue
 - `hex3` is an integer with value `0x00RRGGBB` where RR is red, GG is green, BB is blue
-
-## gx_rand_float
-```sq
-float gx_rand_float(float min, float max)
-```
-
-## gx_rand_int
-```sq
-int gx_rand_int(int min, int max)
-```
 
 ## gx_rand_unit_vec*
 ```sq
