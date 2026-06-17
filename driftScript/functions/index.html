@@ -1984,24 +1984,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gx_rand_float" class="md-nav__link">
-    <span class="md-ellipsis">
-      gx_rand_float
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gx_rand_int" class="md-nav__link">
-    <span class="md-ellipsis">
-      gx_rand_int
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#gx_rand_unit_vec" class="md-nav__link">
     <span class="md-ellipsis">
       gx_rand_unit_vec*
@@ -3350,24 +3332,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gx_rand_float" class="md-nav__link">
-    <span class="md-ellipsis">
-      gx_rand_float
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#gx_rand_int" class="md-nav__link">
-    <span class="md-ellipsis">
-      gx_rand_int
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#gx_rand_unit_vec" class="md-nav__link">
     <span class="md-ellipsis">
       gx_rand_unit_vec*
@@ -3755,14 +3719,14 @@
 <li>equivalent to: <code>gx_sim_ticks_to_seconds(gx_get_sim_tick())</code></li>
 </ul>
 <h2 id="gx_get_bg_shader_val">gx_get_bg_shader_val</h2>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kt">float</span><span class="w"> </span><span class="nf">gx_get_bg_shader_val</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">);</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kt">float</span><span class="w"> </span><span class="n">gx_get_bg_shader_val</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">)</span>
 </span></code></pre></div>
 <ul>
 <li>index must be between <code>[0-15]</code></li>
 <li>get float value that is being used by the background gpu shader</li>
 </ul>
 <h2 id="gx_set_bg_shader_val">gx_set_bg_shader_val</h2>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kt">float</span><span class="w"> </span><span class="nf">gx_set_bg_shader_val</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">val</span><span class="p">);</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kt">float</span><span class="w"> </span><span class="n">gx_set_bg_shader_val</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">val</span><span class="p">)</span>
 </span></code></pre></div>
 <ul>
 <li>index must be between <code>[0-15]</code></li>
@@ -4823,109 +4787,103 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <li><code>hex4</code> is an integer with value <code>0xAARRGGBB</code> where AA is alpha, RR is red, GG is green, BB is blue</li>
 <li><code>hex3</code> is an integer with value <code>0x00RRGGBB</code> where RR is red, GG is green, BB is blue</li>
 </ul>
-<h2 id="gx_rand_float">gx_rand_float</h2>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-138-1"><a id="__codelineno-138-1" name="__codelineno-138-1" href="#__codelineno-138-1"></a><span class="kt">float</span><span class="w"> </span><span class="n">gx_rand_float</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">min</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">max</span><span class="p">)</span>
-</span></code></pre></div>
-<h2 id="gx_rand_int">gx_rand_int</h2>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-139-1"><a id="__codelineno-139-1" name="__codelineno-139-1" href="#__codelineno-139-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">gx_rand_int</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">min</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">max</span><span class="p">)</span>
-</span></code></pre></div>
 <h2 id="gx_rand_unit_vec">gx_rand_unit_vec*</h2>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-140-1"><a id="__codelineno-140-1" name="__codelineno-140-1" href="#__codelineno-140-1"></a><span class="kt">Float2</span><span class="w"> </span><span class="n">gx_rand_unit_vec2</span><span class="p">()</span>
-</span><span id="__span-140-2"><a id="__codelineno-140-2" name="__codelineno-140-2" href="#__codelineno-140-2"></a><span class="kt">Float3</span><span class="w"> </span><span class="n">gx_rand_unit_vec3</span><span class="p">()</span>
-</span><span id="__span-140-3"><a id="__codelineno-140-3" name="__codelineno-140-3" href="#__codelineno-140-3"></a><span class="kt">Float4</span><span class="w"> </span><span class="n">gx_rand_unit_vec4</span><span class="p">()</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-138-1"><a id="__codelineno-138-1" name="__codelineno-138-1" href="#__codelineno-138-1"></a><span class="kt">Float2</span><span class="w"> </span><span class="n">gx_rand_unit_vec2</span><span class="p">()</span>
+</span><span id="__span-138-2"><a id="__codelineno-138-2" name="__codelineno-138-2" href="#__codelineno-138-2"></a><span class="kt">Float3</span><span class="w"> </span><span class="n">gx_rand_unit_vec3</span><span class="p">()</span>
+</span><span id="__span-138-3"><a id="__codelineno-138-3" name="__codelineno-138-3" href="#__codelineno-138-3"></a><span class="kt">Float4</span><span class="w"> </span><span class="n">gx_rand_unit_vec4</span><span class="p">()</span>
 </span></code></pre></div>
 <h2 id="gx_unit_vec_or_random">gx_unit_vec_or_random</h2>
-<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-141-1"><a id="__codelineno-141-1" name="__codelineno-141-1" href="#__codelineno-141-1"></a><span class="kt">Float2</span><span class="w"> </span><span class="n">gx_unit_vec_or_random</span><span class="p">(</span><span class="kt">Float2</span><span class="w"> </span><span class="n">v</span><span class="p">)</span>
-</span><span id="__span-141-2"><a id="__codelineno-141-2" name="__codelineno-141-2" href="#__codelineno-141-2"></a><span class="kt">Float3</span><span class="w"> </span><span class="n">gx_unit_vec_or_random</span><span class="p">(</span><span class="kt">Float3</span><span class="w"> </span><span class="n">v</span><span class="p">)</span>
-</span><span id="__span-141-3"><a id="__codelineno-141-3" name="__codelineno-141-3" href="#__codelineno-141-3"></a><span class="kt">Float4</span><span class="w"> </span><span class="n">gx_unit_vec_or_random</span><span class="p">(</span><span class="kt">Float4</span><span class="w"> </span><span class="n">v</span><span class="p">)</span>
+<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-139-1"><a id="__codelineno-139-1" name="__codelineno-139-1" href="#__codelineno-139-1"></a><span class="kt">Float2</span><span class="w"> </span><span class="n">gx_unit_vec_or_random</span><span class="p">(</span><span class="kt">Float2</span><span class="w"> </span><span class="n">v</span><span class="p">)</span>
+</span><span id="__span-139-2"><a id="__codelineno-139-2" name="__codelineno-139-2" href="#__codelineno-139-2"></a><span class="kt">Float3</span><span class="w"> </span><span class="n">gx_unit_vec_or_random</span><span class="p">(</span><span class="kt">Float3</span><span class="w"> </span><span class="n">v</span><span class="p">)</span>
+</span><span id="__span-139-3"><a id="__codelineno-139-3" name="__codelineno-139-3" href="#__codelineno-139-3"></a><span class="kt">Float4</span><span class="w"> </span><span class="n">gx_unit_vec_or_random</span><span class="p">(</span><span class="kt">Float4</span><span class="w"> </span><span class="n">v</span><span class="p">)</span>
 </span></code></pre></div>
 - Computes the unit vector of <code>v</code>.
 - Will return random unit vector if <code>v</code> has magnitude of <code>0</code>.</p>
 <h2 id="gx_unit_vec_or_zero">gx_unit_vec_or_zero</h2>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-142-1"><a id="__codelineno-142-1" name="__codelineno-142-1" href="#__codelineno-142-1"></a><span class="kt">Float2</span><span class="w"> </span><span class="n">gx_unit_vec_or_zero</span><span class="p">(</span><span class="kt">Float2</span><span class="w"> </span><span class="n">v</span><span class="p">)</span>
-</span><span id="__span-142-2"><a id="__codelineno-142-2" name="__codelineno-142-2" href="#__codelineno-142-2"></a><span class="kt">Float3</span><span class="w"> </span><span class="n">gx_unit_vec_or_zero</span><span class="p">(</span><span class="kt">Float3</span><span class="w"> </span><span class="n">v</span><span class="p">)</span>
-</span><span id="__span-142-3"><a id="__codelineno-142-3" name="__codelineno-142-3" href="#__codelineno-142-3"></a><span class="kt">Float4</span><span class="w"> </span><span class="n">gx_unit_vec_or_zero</span><span class="p">(</span><span class="kt">Float4</span><span class="w"> </span><span class="n">v</span><span class="p">)</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-140-1"><a id="__codelineno-140-1" name="__codelineno-140-1" href="#__codelineno-140-1"></a><span class="kt">Float2</span><span class="w"> </span><span class="n">gx_unit_vec_or_zero</span><span class="p">(</span><span class="kt">Float2</span><span class="w"> </span><span class="n">v</span><span class="p">)</span>
+</span><span id="__span-140-2"><a id="__codelineno-140-2" name="__codelineno-140-2" href="#__codelineno-140-2"></a><span class="kt">Float3</span><span class="w"> </span><span class="n">gx_unit_vec_or_zero</span><span class="p">(</span><span class="kt">Float3</span><span class="w"> </span><span class="n">v</span><span class="p">)</span>
+</span><span id="__span-140-3"><a id="__codelineno-140-3" name="__codelineno-140-3" href="#__codelineno-140-3"></a><span class="kt">Float4</span><span class="w"> </span><span class="n">gx_unit_vec_or_zero</span><span class="p">(</span><span class="kt">Float4</span><span class="w"> </span><span class="n">v</span><span class="p">)</span>
 </span></code></pre></div>
 <ul>
 <li>Computes the unit vector of <code>v</code>.</li>
 <li>Will return zero-magnitude vector if unit vector <code>v</code> has magnitude of <code>0</code>.</li>
 </ul>
 <h2 id="gx_terrain_offset_z_add">gx_terrain_offset_z_add</h2>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-143-1"><a id="__codelineno-143-1" name="__codelineno-143-1" href="#__codelineno-143-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_terrain_offset_z_add</span><span class="p">(</span><span class="kt">Int2</span><span class="w"> </span><span class="n">vertexPos</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">offset</span><span class="p">)</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-141-1"><a id="__codelineno-141-1" name="__codelineno-141-1" href="#__codelineno-141-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_terrain_offset_z_add</span><span class="p">(</span><span class="kt">Int2</span><span class="w"> </span><span class="n">vertexPos</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">offset</span><span class="p">)</span>
 </span></code></pre></div>
 <h2 id="gx_terrain_offset_z_add_2">gx_terrain_offset_z_add_2</h2>
-<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-144-1"><a id="__codelineno-144-1" name="__codelineno-144-1" href="#__codelineno-144-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_terrain_offset_z_add_2</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
+<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-142-1"><a id="__codelineno-142-1" name="__codelineno-142-1" href="#__codelineno-142-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_terrain_offset_z_add_2</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
 </span></code></pre></div>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-145-1"><a id="__codelineno-145-1" name="__codelineno-145-1" href="#__codelineno-145-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-145-2"><a id="__codelineno-145-2" name="__codelineno-145-2" href="#__codelineno-145-2"></a><span class="w">    </span><span class="kt">AABR</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_aabrs</span><span class="p">[],</span><span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="n">Optional</span>
-</span><span id="__span-145-3"><a id="__codelineno-145-3" name="__codelineno-145-3" href="#__codelineno-145-3"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_locations</span><span class="p">[],</span><span class="w">       </span><span class="err">#</span><span class="w"> </span><span class="n">Optional</span>
-</span><span id="__span-145-4"><a id="__codelineno-145-4" name="__codelineno-145-4" href="#__codelineno-145-4"></a><span class="w">    </span><span class="kt">Int2</span><span class="w"> </span><span class="n">m_vertices</span><span class="p">[],</span><span class="w">     </span><span class="err">#</span><span class="w"> </span><span class="n">Optional</span>
-</span><span id="__span-145-5"><a id="__codelineno-145-5" name="__codelineno-145-5" href="#__codelineno-145-5"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">m_val</span><span class="p">,</span><span class="w">                </span><span class="err">#</span><span class="w"> </span><span class="n">Required</span>
-</span><span id="__span-145-6"><a id="__codelineno-145-6" name="__codelineno-145-6" href="#__codelineno-145-6"></a><span class="p">}</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-143-1"><a id="__codelineno-143-1" name="__codelineno-143-1" href="#__codelineno-143-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-143-2"><a id="__codelineno-143-2" name="__codelineno-143-2" href="#__codelineno-143-2"></a><span class="w">    </span><span class="kt">AABR</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_aabrs</span><span class="p">[],</span><span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="n">Optional</span>
+</span><span id="__span-143-3"><a id="__codelineno-143-3" name="__codelineno-143-3" href="#__codelineno-143-3"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_locations</span><span class="p">[],</span><span class="w">       </span><span class="err">#</span><span class="w"> </span><span class="n">Optional</span>
+</span><span id="__span-143-4"><a id="__codelineno-143-4" name="__codelineno-143-4" href="#__codelineno-143-4"></a><span class="w">    </span><span class="kt">Int2</span><span class="w"> </span><span class="n">m_vertices</span><span class="p">[],</span><span class="w">     </span><span class="err">#</span><span class="w"> </span><span class="n">Optional</span>
+</span><span id="__span-143-5"><a id="__codelineno-143-5" name="__codelineno-143-5" href="#__codelineno-143-5"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">m_val</span><span class="p">,</span><span class="w">                </span><span class="err">#</span><span class="w"> </span><span class="n">Required</span>
+</span><span id="__span-143-6"><a id="__codelineno-143-6" name="__codelineno-143-6" href="#__codelineno-143-6"></a><span class="p">}</span>
 </span></code></pre></div></p>
 <h2 id="gx_terrain_offset_z_set">gx_terrain_offset_z_set</h2>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-146-1"><a id="__codelineno-146-1" name="__codelineno-146-1" href="#__codelineno-146-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_terrain_offset_z_set</span><span class="p">(</span><span class="kt">Int2</span><span class="w"> </span><span class="n">vertexPos</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">offset</span><span class="p">)</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-144-1"><a id="__codelineno-144-1" name="__codelineno-144-1" href="#__codelineno-144-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_terrain_offset_z_set</span><span class="p">(</span><span class="kt">Int2</span><span class="w"> </span><span class="n">vertexPos</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">offset</span><span class="p">)</span>
 </span></code></pre></div>
 <h2 id="gx_terrain_offset_z_set_2">gx_terrain_offset_z_set_2</h2>
-<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-147-1"><a id="__codelineno-147-1" name="__codelineno-147-1" href="#__codelineno-147-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_terrain_offset_z_set_2</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
+<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-145-1"><a id="__codelineno-145-1" name="__codelineno-145-1" href="#__codelineno-145-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_terrain_offset_z_set_2</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
 </span></code></pre></div>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-148-1"><a id="__codelineno-148-1" name="__codelineno-148-1" href="#__codelineno-148-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-148-2"><a id="__codelineno-148-2" name="__codelineno-148-2" href="#__codelineno-148-2"></a><span class="w">    </span><span class="kt">AABR</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_aabrs</span><span class="p">[],</span><span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="n">Optional</span>
-</span><span id="__span-148-3"><a id="__codelineno-148-3" name="__codelineno-148-3" href="#__codelineno-148-3"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_locations</span><span class="p">[],</span><span class="w">       </span><span class="err">#</span><span class="w"> </span><span class="n">Optional</span>
-</span><span id="__span-148-4"><a id="__codelineno-148-4" name="__codelineno-148-4" href="#__codelineno-148-4"></a><span class="w">    </span><span class="kt">Int2</span><span class="w"> </span><span class="n">m_vertices</span><span class="p">[],</span><span class="w">     </span><span class="err">#</span><span class="w"> </span><span class="n">Optional</span>
-</span><span id="__span-148-5"><a id="__codelineno-148-5" name="__codelineno-148-5" href="#__codelineno-148-5"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">m_val</span><span class="p">,</span><span class="w">                </span><span class="err">#</span><span class="w"> </span><span class="n">Required</span>
-</span><span id="__span-148-6"><a id="__codelineno-148-6" name="__codelineno-148-6" href="#__codelineno-148-6"></a><span class="p">}</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-146-1"><a id="__codelineno-146-1" name="__codelineno-146-1" href="#__codelineno-146-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-146-2"><a id="__codelineno-146-2" name="__codelineno-146-2" href="#__codelineno-146-2"></a><span class="w">    </span><span class="kt">AABR</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_aabrs</span><span class="p">[],</span><span class="w">        </span><span class="err">#</span><span class="w"> </span><span class="n">Optional</span>
+</span><span id="__span-146-3"><a id="__codelineno-146-3" name="__codelineno-146-3" href="#__codelineno-146-3"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_locations</span><span class="p">[],</span><span class="w">       </span><span class="err">#</span><span class="w"> </span><span class="n">Optional</span>
+</span><span id="__span-146-4"><a id="__codelineno-146-4" name="__codelineno-146-4" href="#__codelineno-146-4"></a><span class="w">    </span><span class="kt">Int2</span><span class="w"> </span><span class="n">m_vertices</span><span class="p">[],</span><span class="w">     </span><span class="err">#</span><span class="w"> </span><span class="n">Optional</span>
+</span><span id="__span-146-5"><a id="__codelineno-146-5" name="__codelineno-146-5" href="#__codelineno-146-5"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">m_val</span><span class="p">,</span><span class="w">                </span><span class="err">#</span><span class="w"> </span><span class="n">Required</span>
+</span><span id="__span-146-6"><a id="__codelineno-146-6" name="__codelineno-146-6" href="#__codelineno-146-6"></a><span class="p">}</span>
 </span></code></pre></div></p>
 <h2 id="gx_terrain_offset_z_get">gx_terrain_offset_z_get</h2>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-149-1"><a id="__codelineno-149-1" name="__codelineno-149-1" href="#__codelineno-149-1"></a><span class="kt">float</span><span class="w"> </span><span class="n">gx_terrain_offset_z_get</span><span class="p">(</span><span class="kt">Int2</span><span class="w"> </span><span class="n">vertexPos</span><span class="p">)</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-147-1"><a id="__codelineno-147-1" name="__codelineno-147-1" href="#__codelineno-147-1"></a><span class="kt">float</span><span class="w"> </span><span class="n">gx_terrain_offset_z_get</span><span class="p">(</span><span class="kt">Int2</span><span class="w"> </span><span class="n">vertexPos</span><span class="p">)</span>
 </span></code></pre></div>
 <h2 id="gx_aabr_contains">gx_aabr_contains</h2>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-150-1"><a id="__codelineno-150-1" name="__codelineno-150-1" href="#__codelineno-150-1"></a><span class="kt">bool</span><span class="w"> </span><span class="n">gx_aabr_contains</span><span class="p">(</span><span class="kt">AABR</span><span class="w"> </span><span class="n">aabr</span><span class="p">,</span><span class="w"> </span><span class="kt">Float2</span><span class="w"> </span><span class="n">pt</span><span class="p">)</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-148-1"><a id="__codelineno-148-1" name="__codelineno-148-1" href="#__codelineno-148-1"></a><span class="kt">bool</span><span class="w"> </span><span class="n">gx_aabr_contains</span><span class="p">(</span><span class="kt">AABR</span><span class="w"> </span><span class="n">aabr</span><span class="p">,</span><span class="w"> </span><span class="kt">Float2</span><span class="w"> </span><span class="n">pt</span><span class="p">)</span>
 </span></code></pre></div>
 <h2 id="gx_aabr_contains_or_touching">gx_aabr_contains_or_touching</h2>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-151-1"><a id="__codelineno-151-1" name="__codelineno-151-1" href="#__codelineno-151-1"></a><span class="kt">bool</span><span class="w"> </span><span class="n">gx_aabr_contains_or_touching</span><span class="p">(</span><span class="kt">AABR</span><span class="w"> </span><span class="n">aabr</span><span class="p">,</span><span class="w"> </span><span class="kt">Float2</span><span class="w"> </span><span class="n">pt</span><span class="p">)</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-149-1"><a id="__codelineno-149-1" name="__codelineno-149-1" href="#__codelineno-149-1"></a><span class="kt">bool</span><span class="w"> </span><span class="n">gx_aabr_contains_or_touching</span><span class="p">(</span><span class="kt">AABR</span><span class="w"> </span><span class="n">aabr</span><span class="p">,</span><span class="w"> </span><span class="kt">Float2</span><span class="w"> </span><span class="n">pt</span><span class="p">)</span>
 </span></code></pre></div>
 <h2 id="gx_force_select_units">gx_force_select_units</h2>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-152-1"><a id="__codelineno-152-1" name="__codelineno-152-1" href="#__codelineno-152-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_force_select_units</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">playerID</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">unitIDs</span><span class="p">[])</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-150-1"><a id="__codelineno-150-1" name="__codelineno-150-1" href="#__codelineno-150-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_force_select_units</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">playerID</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">unitIDs</span><span class="p">[])</span>
 </span></code></pre></div>
 <ul>
 <li>clears player's unit selection, and sets unitIDs as new selection</li>
 </ul>
 <h2 id="gx_create_effect">gx_create_effect</h2>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-153-1"><a id="__codelineno-153-1" name="__codelineno-153-1" href="#__codelineno-153-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">gx_create_effect</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-151-1"><a id="__codelineno-151-1" name="__codelineno-151-1" href="#__codelineno-151-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">gx_create_effect</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
 </span></code></pre></div>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-154-1"><a id="__codelineno-154-1" name="__codelineno-154-1" href="#__codelineno-154-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-154-2"><a id="__codelineno-154-2" name="__codelineno-154-2" href="#__codelineno-154-2"></a><span class="w">    </span><span class="kt">EffectType</span><span class="w"> </span><span class="n">m_type</span><span class="p">,</span>
-</span><span id="__span-154-3"><a id="__codelineno-154-3" name="__codelineno-154-3" href="#__codelineno-154-3"></a><span class="w">    </span><span class="kt">Float2</span><span class="w"> </span><span class="n">m_pos</span><span class="p">,</span>
-</span><span id="__span-154-4"><a id="__codelineno-154-4" name="__codelineno-154-4" href="#__codelineno-154-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_duration</span><span class="p">,</span>
-</span><span id="__span-154-5"><a id="__codelineno-154-5" name="__codelineno-154-5" href="#__codelineno-154-5"></a><span class="w">    </span><span class="kt">Float4</span><span class="w"> </span><span class="n">m_color</span><span class="p">,</span><span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="n">srgb</span>
-</span><span id="__span-154-6"><a id="__codelineno-154-6" name="__codelineno-154-6" href="#__codelineno-154-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_playerID</span><span class="p">,</span>
-</span><span id="__span-154-7"><a id="__codelineno-154-7" name="__codelineno-154-7" href="#__codelineno-154-7"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_unitID</span>
-</span><span id="__span-154-8"><a id="__codelineno-154-8" name="__codelineno-154-8" href="#__codelineno-154-8"></a><span class="p">}</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-152-1"><a id="__codelineno-152-1" name="__codelineno-152-1" href="#__codelineno-152-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-152-2"><a id="__codelineno-152-2" name="__codelineno-152-2" href="#__codelineno-152-2"></a><span class="w">    </span><span class="kt">EffectType</span><span class="w"> </span><span class="n">m_type</span><span class="p">,</span>
+</span><span id="__span-152-3"><a id="__codelineno-152-3" name="__codelineno-152-3" href="#__codelineno-152-3"></a><span class="w">    </span><span class="kt">Float2</span><span class="w"> </span><span class="n">m_pos</span><span class="p">,</span>
+</span><span id="__span-152-4"><a id="__codelineno-152-4" name="__codelineno-152-4" href="#__codelineno-152-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_duration</span><span class="p">,</span>
+</span><span id="__span-152-5"><a id="__codelineno-152-5" name="__codelineno-152-5" href="#__codelineno-152-5"></a><span class="w">    </span><span class="kt">Float4</span><span class="w"> </span><span class="n">m_color</span><span class="p">,</span><span class="w">    </span><span class="err">#</span><span class="w"> </span><span class="n">srgb</span>
+</span><span id="__span-152-6"><a id="__codelineno-152-6" name="__codelineno-152-6" href="#__codelineno-152-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_playerID</span><span class="p">,</span>
+</span><span id="__span-152-7"><a id="__codelineno-152-7" name="__codelineno-152-7" href="#__codelineno-152-7"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_unitID</span>
+</span><span id="__span-152-8"><a id="__codelineno-152-8" name="__codelineno-152-8" href="#__codelineno-152-8"></a><span class="p">}</span>
 </span></code></pre></div>
 <ul>
 <li>Creates the Effect of type <code>m_type</code> and returns the Effect ID</li>
 <li>See <a href="/DriftDocs/driftScript/enumerations/#effecttype">EffectType</a> for effects</li>
 </ul>
 <h2 id="gx_destroy_effect">gx_destroy_effect</h2>
-<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-155-1"><a id="__codelineno-155-1" name="__codelineno-155-1" href="#__codelineno-155-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_destroy_effect</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">effectID</span><span class="p">)</span>
+<p><div class="language-sq highlight"><pre><span></span><code><span id="__span-153-1"><a id="__codelineno-153-1" name="__codelineno-153-1" href="#__codelineno-153-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_destroy_effect</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">effectID</span><span class="p">)</span>
 </span></code></pre></div>
 - Destroys effect if it can be removed</p>
 <h2 id="gx_create_nuke_unit">gx_create_nuke_unit</h2>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-156-1"><a id="__codelineno-156-1" name="__codelineno-156-1" href="#__codelineno-156-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">gx_create_nuke_unit</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-154-1"><a id="__codelineno-154-1" name="__codelineno-154-1" href="#__codelineno-154-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">gx_create_nuke_unit</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
 </span></code></pre></div>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-157-1"><a id="__codelineno-157-1" name="__codelineno-157-1" href="#__codelineno-157-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-157-2"><a id="__codelineno-157-2" name="__codelineno-157-2" href="#__codelineno-157-2"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">m_damage</span><span class="p">,</span>
-</span><span id="__span-157-3"><a id="__codelineno-157-3" name="__codelineno-157-3" href="#__codelineno-157-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_playerID</span><span class="p">,</span>
-</span><span id="__span-157-4"><a id="__codelineno-157-4" name="__codelineno-157-4" href="#__codelineno-157-4"></a><span class="w">    </span><span class="kt">Float2</span><span class="w"> </span><span class="n">m_pos</span><span class="p">,</span>
-</span><span id="__span-157-5"><a id="__codelineno-157-5" name="__codelineno-157-5" href="#__codelineno-157-5"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">m_radius</span>
-</span><span id="__span-157-6"><a id="__codelineno-157-6" name="__codelineno-157-6" href="#__codelineno-157-6"></a><span class="p">}</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-155-1"><a id="__codelineno-155-1" name="__codelineno-155-1" href="#__codelineno-155-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-155-2"><a id="__codelineno-155-2" name="__codelineno-155-2" href="#__codelineno-155-2"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">m_damage</span><span class="p">,</span>
+</span><span id="__span-155-3"><a id="__codelineno-155-3" name="__codelineno-155-3" href="#__codelineno-155-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_playerID</span><span class="p">,</span>
+</span><span id="__span-155-4"><a id="__codelineno-155-4" name="__codelineno-155-4" href="#__codelineno-155-4"></a><span class="w">    </span><span class="kt">Float2</span><span class="w"> </span><span class="n">m_pos</span><span class="p">,</span>
+</span><span id="__span-155-5"><a id="__codelineno-155-5" name="__codelineno-155-5" href="#__codelineno-155-5"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">m_radius</span>
+</span><span id="__span-155-6"><a id="__codelineno-155-6" name="__codelineno-155-6" href="#__codelineno-155-6"></a><span class="p">}</span>
 </span></code></pre></div>
 <ul>
 <li>Creates a nuke unit</li>
 </ul>
 <h2 id="gx_register_for_location_events">gx_register_for_location_events</h2>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-158-1"><a id="__codelineno-158-1" name="__codelineno-158-1" href="#__codelineno-158-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_register_for_location_events</span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">bEnable</span><span class="p">,</span><span class="w"> </span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-156-1"><a id="__codelineno-156-1" name="__codelineno-156-1" href="#__codelineno-156-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_register_for_location_events</span><span class="p">(</span><span class="kt">bool</span><span class="w"> </span><span class="n">bEnable</span><span class="p">,</span><span class="w"> </span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
 </span></code></pre></div>
 <ul>
 <li>Register to receive <code>UnitEnteredLocation</code> and <code>UnitExitedLocation</code> events</li>
@@ -4934,71 +4892,71 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <li>See <a href="/DriftDocs/driftScript/enumerations/#eventtype">EventType</a> and <a href="/DriftDocs/driftScript/eventQueue/#event_queue">Event Queue</a> for more information</li>
 </ul>
 <h2 id="gx_triangle_lerp_1">gx_triangle_lerp</h2>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-159-1"><a id="__codelineno-159-1" name="__codelineno-159-1" href="#__codelineno-159-1"></a><span class="kt">float</span><span class="w"> </span><span class="n">gx_triangle_lerp</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">begin</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">end</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">period</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-157-1"><a id="__codelineno-157-1" name="__codelineno-157-1" href="#__codelineno-157-1"></a><span class="kt">float</span><span class="w"> </span><span class="n">gx_triangle_lerp</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">begin</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">end</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">period</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
 </span></code></pre></div>
 <ul>
 <li>Lerp function</li>
 </ul>
 <h2 id="gx_is_event_queue_empty">gx_is_event_queue_empty</h2>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-160-1"><a id="__codelineno-160-1" name="__codelineno-160-1" href="#__codelineno-160-1"></a><span class="kt">bool</span><span class="w"> </span><span class="n">gx_is_event_queue_empty</span><span class="p">()</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-158-1"><a id="__codelineno-158-1" name="__codelineno-158-1" href="#__codelineno-158-1"></a><span class="kt">bool</span><span class="w"> </span><span class="n">gx_is_event_queue_empty</span><span class="p">()</span>
 </span></code></pre></div>
 <ul>
 <li>Check if event queue is empty.</li>
 <li>See <a href="/DriftDocs/driftScript/eventQueue/#event_queue">Event Queue</a></li>
 </ul>
 <h2 id="gx_pop_event_from_queue">gx_pop_event_from_queue</h2>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-161-1"><a id="__codelineno-161-1" name="__codelineno-161-1" href="#__codelineno-161-1"></a><span class="kt">Event</span><span class="w"> </span><span class="n">gx_pop_event_from_queue</span><span class="p">()</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-159-1"><a id="__codelineno-159-1" name="__codelineno-159-1" href="#__codelineno-159-1"></a><span class="kt">Event</span><span class="w"> </span><span class="n">gx_pop_event_from_queue</span><span class="p">()</span>
 </span></code></pre></div>
 <ul>
 <li>Pop event from event queue.</li>
 <li>See <a href="/DriftDocs/driftScript/eventQueue/#event_queue">Event Queue</a></li>
 </ul>
 <h1 id="gx_update_map_hints">gx_update_map_hints</h1>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-162-1"><a id="__codelineno-162-1" name="__codelineno-162-1" href="#__codelineno-162-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_update_map_hints</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-160-1"><a id="__codelineno-160-1" name="__codelineno-160-1" href="#__codelineno-160-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_update_map_hints</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
 </span></code></pre></div>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-163-1"><a id="__codelineno-163-1" name="__codelineno-163-1" href="#__codelineno-163-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-163-2"><a id="__codelineno-163-2" name="__codelineno-163-2" href="#__codelineno-163-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_forceIDs</span><span class="p">[],</span>
-</span><span id="__span-163-3"><a id="__codelineno-163-3" name="__codelineno-163-3" href="#__codelineno-163-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_playerIDs</span><span class="p">[],</span>
-</span><span id="__span-163-4"><a id="__codelineno-163-4" name="__codelineno-163-4" href="#__codelineno-163-4"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_button</span><span class="p">,</span>
-</span><span id="__span-163-5"><a id="__codelineno-163-5" name="__codelineno-163-5" href="#__codelineno-163-5"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_description</span><span class="p">,</span>
-</span><span id="__span-163-6"><a id="__codelineno-163-6" name="__codelineno-163-6" href="#__codelineno-163-6"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_hover</span><span class="p">,</span>
-</span><span id="__span-163-7"><a id="__codelineno-163-7" name="__codelineno-163-7" href="#__codelineno-163-7"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bDisplay</span>
-</span><span id="__span-163-8"><a id="__codelineno-163-8" name="__codelineno-163-8" href="#__codelineno-163-8"></a><span class="p">}</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-161-1"><a id="__codelineno-161-1" name="__codelineno-161-1" href="#__codelineno-161-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-161-2"><a id="__codelineno-161-2" name="__codelineno-161-2" href="#__codelineno-161-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_forceIDs</span><span class="p">[],</span>
+</span><span id="__span-161-3"><a id="__codelineno-161-3" name="__codelineno-161-3" href="#__codelineno-161-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_playerIDs</span><span class="p">[],</span>
+</span><span id="__span-161-4"><a id="__codelineno-161-4" name="__codelineno-161-4" href="#__codelineno-161-4"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_button</span><span class="p">,</span>
+</span><span id="__span-161-5"><a id="__codelineno-161-5" name="__codelineno-161-5" href="#__codelineno-161-5"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_description</span><span class="p">,</span>
+</span><span id="__span-161-6"><a id="__codelineno-161-6" name="__codelineno-161-6" href="#__codelineno-161-6"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_hover</span><span class="p">,</span>
+</span><span id="__span-161-7"><a id="__codelineno-161-7" name="__codelineno-161-7" href="#__codelineno-161-7"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bDisplay</span>
+</span><span id="__span-161-8"><a id="__codelineno-161-8" name="__codelineno-161-8" href="#__codelineno-161-8"></a><span class="p">}</span>
 </span></code></pre></div>
 <h1 id="gx_add_event_message">gx_add_event_message</h1>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-164-1"><a id="__codelineno-164-1" name="__codelineno-164-1" href="#__codelineno-164-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_add_event_message</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">message</span><span class="p">)</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-162-1"><a id="__codelineno-162-1" name="__codelineno-162-1" href="#__codelineno-162-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_add_event_message</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">message</span><span class="p">)</span>
 </span></code></pre></div>
 <ul>
 <li>Adds an event message visibly by all players on left side of screen</li>
 </ul>
 <h1 id="gx_display_ui_elements">gx_display_ui_elements</h1>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-165-1"><a id="__codelineno-165-1" name="__codelineno-165-1" href="#__codelineno-165-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_display_ui_elements</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-163-1"><a id="__codelineno-163-1" name="__codelineno-163-1" href="#__codelineno-163-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_display_ui_elements</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
 </span></code></pre></div>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-166-1"><a id="__codelineno-166-1" name="__codelineno-166-1" href="#__codelineno-166-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-166-2"><a id="__codelineno-166-2" name="__codelineno-166-2" href="#__codelineno-166-2"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bAll</span><span class="p">,</span>
-</span><span id="__span-166-3"><a id="__codelineno-166-3" name="__codelineno-166-3" href="#__codelineno-166-3"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bArmyCount</span><span class="p">,</span>
-</span><span id="__span-166-4"><a id="__codelineno-166-4" name="__codelineno-166-4" href="#__codelineno-166-4"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bIdleWorkers</span><span class="p">,</span>
-</span><span id="__span-166-5"><a id="__codelineno-166-5" name="__codelineno-166-5" href="#__codelineno-166-5"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bNumJeeps</span><span class="p">,</span>
-</span><span id="__span-166-6"><a id="__codelineno-166-6" name="__codelineno-166-6" href="#__codelineno-166-6"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bNotEnoughSupply</span><span class="p">,</span>
-</span><span id="__span-166-7"><a id="__codelineno-166-7" name="__codelineno-166-7" href="#__codelineno-166-7"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bResources</span><span class="p">,</span>
-</span><span id="__span-166-8"><a id="__codelineno-166-8" name="__codelineno-166-8" href="#__codelineno-166-8"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bClock</span><span class="p">,</span>
-</span><span id="__span-166-9"><a id="__codelineno-166-9" name="__codelineno-166-9" href="#__codelineno-166-9"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_forceIDs</span><span class="p">[],</span>
-</span><span id="__span-166-10"><a id="__codelineno-166-10" name="__codelineno-166-10" href="#__codelineno-166-10"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_playerIDs</span><span class="p">[]</span>
-</span><span id="__span-166-11"><a id="__codelineno-166-11" name="__codelineno-166-11" href="#__codelineno-166-11"></a><span class="p">}</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-164-1"><a id="__codelineno-164-1" name="__codelineno-164-1" href="#__codelineno-164-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-164-2"><a id="__codelineno-164-2" name="__codelineno-164-2" href="#__codelineno-164-2"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bAll</span><span class="p">,</span>
+</span><span id="__span-164-3"><a id="__codelineno-164-3" name="__codelineno-164-3" href="#__codelineno-164-3"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bArmyCount</span><span class="p">,</span>
+</span><span id="__span-164-4"><a id="__codelineno-164-4" name="__codelineno-164-4" href="#__codelineno-164-4"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bIdleWorkers</span><span class="p">,</span>
+</span><span id="__span-164-5"><a id="__codelineno-164-5" name="__codelineno-164-5" href="#__codelineno-164-5"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bNumJeeps</span><span class="p">,</span>
+</span><span id="__span-164-6"><a id="__codelineno-164-6" name="__codelineno-164-6" href="#__codelineno-164-6"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bNotEnoughSupply</span><span class="p">,</span>
+</span><span id="__span-164-7"><a id="__codelineno-164-7" name="__codelineno-164-7" href="#__codelineno-164-7"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bResources</span><span class="p">,</span>
+</span><span id="__span-164-8"><a id="__codelineno-164-8" name="__codelineno-164-8" href="#__codelineno-164-8"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bClock</span><span class="p">,</span>
+</span><span id="__span-164-9"><a id="__codelineno-164-9" name="__codelineno-164-9" href="#__codelineno-164-9"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_forceIDs</span><span class="p">[],</span>
+</span><span id="__span-164-10"><a id="__codelineno-164-10" name="__codelineno-164-10" href="#__codelineno-164-10"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_playerIDs</span><span class="p">[]</span>
+</span><span id="__span-164-11"><a id="__codelineno-164-11" name="__codelineno-164-11" href="#__codelineno-164-11"></a><span class="p">}</span>
 </span></code></pre></div>
 <ul>
 <li>controls which UI elements are display for players matching <code>m_forceIDs</code> and <code>m_playerIDs</code></li>
 <li>if both <code>m_forceIDs</code> and <code>m_playerIDs</code> are unset, function will affect all players </li>
 </ul>
 <h1 id="gx_add_center_message">gx_add_center_message</h1>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-167-1"><a id="__codelineno-167-1" name="__codelineno-167-1" href="#__codelineno-167-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">gx_add_center_message</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-165-1"><a id="__codelineno-165-1" name="__codelineno-165-1" href="#__codelineno-165-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">gx_add_center_message</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
 </span></code></pre></div>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-168-1"><a id="__codelineno-168-1" name="__codelineno-168-1" href="#__codelineno-168-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-168-2"><a id="__codelineno-168-2" name="__codelineno-168-2" href="#__codelineno-168-2"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_msg</span><span class="p">,</span>
-</span><span id="__span-168-3"><a id="__codelineno-168-3" name="__codelineno-168-3" href="#__codelineno-168-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_forceIDs</span><span class="p">[],</span>
-</span><span id="__span-168-4"><a id="__codelineno-168-4" name="__codelineno-168-4" href="#__codelineno-168-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_playerIDs</span><span class="p">[],</span>
-</span><span id="__span-168-5"><a id="__codelineno-168-5" name="__codelineno-168-5" href="#__codelineno-168-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="c1">// 5 seconds</span>
-</span><span id="__span-168-6"><a id="__codelineno-168-6" name="__codelineno-168-6" href="#__codelineno-168-6"></a><span class="p">}</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-166-1"><a id="__codelineno-166-1" name="__codelineno-166-1" href="#__codelineno-166-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-166-2"><a id="__codelineno-166-2" name="__codelineno-166-2" href="#__codelineno-166-2"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_msg</span><span class="p">,</span>
+</span><span id="__span-166-3"><a id="__codelineno-166-3" name="__codelineno-166-3" href="#__codelineno-166-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_forceIDs</span><span class="p">[],</span>
+</span><span id="__span-166-4"><a id="__codelineno-166-4" name="__codelineno-166-4" href="#__codelineno-166-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_playerIDs</span><span class="p">[],</span>
+</span><span id="__span-166-5"><a id="__codelineno-166-5" name="__codelineno-166-5" href="#__codelineno-166-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_duration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="c1">// 5 seconds</span>
+</span><span id="__span-166-6"><a id="__codelineno-166-6" name="__codelineno-166-6" href="#__codelineno-166-6"></a><span class="p">}</span>
 </span></code></pre></div>
 <ul>
 <li>displays a player event message for player in middle of their screen for matching players</li>
@@ -5006,112 +4964,112 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <li>returns <code>msgID</code> that can be used by <code>gx_clear_center_message_by_id</code> if needed.</li>
 </ul>
 <h1 id="gx_clear_center_messages">gx_clear_center_messages</h1>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-169-1"><a id="__codelineno-169-1" name="__codelineno-169-1" href="#__codelineno-169-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_clear_center_messages</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-167-1"><a id="__codelineno-167-1" name="__codelineno-167-1" href="#__codelineno-167-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_clear_center_messages</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
 </span></code></pre></div>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-170-1"><a id="__codelineno-170-1" name="__codelineno-170-1" href="#__codelineno-170-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-170-2"><a id="__codelineno-170-2" name="__codelineno-170-2" href="#__codelineno-170-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_forceIDs</span><span class="p">[],</span>
-</span><span id="__span-170-3"><a id="__codelineno-170-3" name="__codelineno-170-3" href="#__codelineno-170-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_playerIDs</span><span class="p">[]</span>
-</span><span id="__span-170-4"><a id="__codelineno-170-4" name="__codelineno-170-4" href="#__codelineno-170-4"></a><span class="p">}</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-168-1"><a id="__codelineno-168-1" name="__codelineno-168-1" href="#__codelineno-168-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-168-2"><a id="__codelineno-168-2" name="__codelineno-168-2" href="#__codelineno-168-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_forceIDs</span><span class="p">[],</span>
+</span><span id="__span-168-3"><a id="__codelineno-168-3" name="__codelineno-168-3" href="#__codelineno-168-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_playerIDs</span><span class="p">[]</span>
+</span><span id="__span-168-4"><a id="__codelineno-168-4" name="__codelineno-168-4" href="#__codelineno-168-4"></a><span class="p">}</span>
 </span></code></pre></div>
 <ul>
 <li>clears all messages for players match params</li>
 <li>if both <code>m_forceIDs</code> and <code>m_playerIDs</code> are empty, messages will be cleared for all players</li>
 </ul>
 <h1 id="gx_clear_center_message_by_id">gx_clear_center_message_by_id</h1>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-171-1"><a id="__codelineno-171-1" name="__codelineno-171-1" href="#__codelineno-171-1"></a><span class="err">`</span><span class="kt">void</span><span class="w"> </span><span class="n">gx_clear_center_message_by_id</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">msgID</span><span class="p">)</span><span class="err">`</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-169-1"><a id="__codelineno-169-1" name="__codelineno-169-1" href="#__codelineno-169-1"></a><span class="err">`</span><span class="kt">void</span><span class="w"> </span><span class="n">gx_clear_center_message_by_id</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">msgID</span><span class="p">)</span><span class="err">`</span>
 </span></code></pre></div>
 <ul>
 <li>clear message with msgID <code>msgID</code></li>
 </ul>
 <h1 id="gx_paint_terrain">gx_paint_terrain</h1>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-172-1"><a id="__codelineno-172-1" name="__codelineno-172-1" href="#__codelineno-172-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_paint_terrain</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-170-1"><a id="__codelineno-170-1" name="__codelineno-170-1" href="#__codelineno-170-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_paint_terrain</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
 </span></code></pre></div>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-173-1"><a id="__codelineno-173-1" name="__codelineno-173-1" href="#__codelineno-173-1"></a><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-173-2"><a id="__codelineno-173-2" name="__codelineno-173-2" href="#__codelineno-173-2"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_location</span><span class="p">,</span>
-</span><span id="__span-173-3"><a id="__codelineno-173-3" name="__codelineno-173-3" href="#__codelineno-173-3"></a><span class="w">    </span><span class="kt">AABR</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_aabr</span><span class="p">,</span>
-</span><span id="__span-173-4"><a id="__codelineno-173-4" name="__codelineno-173-4" href="#__codelineno-173-4"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_img</span><span class="p">,</span><span class="w">           </span><span class="err">#</span><span class="w"> </span><span class="n">img</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">paint</span>
-</span><span id="__span-173-5"><a id="__codelineno-173-5" name="__codelineno-173-5" href="#__codelineno-173-5"></a><span class="w">    </span><span class="kt">Float4</span><span class="w"> </span><span class="n">m_srgba</span><span class="w">     </span><span class="err">#</span><span class="w"> </span><span class="n">srgb</span><span class="w"> </span><span class="n">multiplier</span>
-</span><span id="__span-173-6"><a id="__codelineno-173-6" name="__codelineno-173-6" href="#__codelineno-173-6"></a><span class="p">}</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-171-1"><a id="__codelineno-171-1" name="__codelineno-171-1" href="#__codelineno-171-1"></a><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-171-2"><a id="__codelineno-171-2" name="__codelineno-171-2" href="#__codelineno-171-2"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_location</span><span class="p">,</span>
+</span><span id="__span-171-3"><a id="__codelineno-171-3" name="__codelineno-171-3" href="#__codelineno-171-3"></a><span class="w">    </span><span class="kt">AABR</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_aabr</span><span class="p">,</span>
+</span><span id="__span-171-4"><a id="__codelineno-171-4" name="__codelineno-171-4" href="#__codelineno-171-4"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_img</span><span class="p">,</span><span class="w">           </span><span class="err">#</span><span class="w"> </span><span class="n">img</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">paint</span>
+</span><span id="__span-171-5"><a id="__codelineno-171-5" name="__codelineno-171-5" href="#__codelineno-171-5"></a><span class="w">    </span><span class="kt">Float4</span><span class="w"> </span><span class="n">m_srgba</span><span class="w">     </span><span class="err">#</span><span class="w"> </span><span class="n">srgb</span><span class="w"> </span><span class="n">multiplier</span>
+</span><span id="__span-171-6"><a id="__codelineno-171-6" name="__codelineno-171-6" href="#__codelineno-171-6"></a><span class="p">}</span>
 </span></code></pre></div>
 <ul>
 <li>only one of <code>m_location</code> or <code>m_aabr</code> should be set.</li>
 </ul>
 <h1 id="gx_clear_terrain_paint">gx_clear_terrain_paint</h1>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-174-1"><a id="__codelineno-174-1" name="__codelineno-174-1" href="#__codelineno-174-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_clear_terrain_paint</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-172-1"><a id="__codelineno-172-1" name="__codelineno-172-1" href="#__codelineno-172-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_clear_terrain_paint</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
 </span></code></pre></div>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-175-1"><a id="__codelineno-175-1" name="__codelineno-175-1" href="#__codelineno-175-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-175-2"><a id="__codelineno-175-2" name="__codelineno-175-2" href="#__codelineno-175-2"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_locations</span><span class="p">[],</span>
-</span><span id="__span-175-3"><a id="__codelineno-175-3" name="__codelineno-175-3" href="#__codelineno-175-3"></a><span class="w">    </span><span class="kt">AABR</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_aabrs</span><span class="p">[]</span>
-</span><span id="__span-175-4"><a id="__codelineno-175-4" name="__codelineno-175-4" href="#__codelineno-175-4"></a><span class="p">}</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-173-1"><a id="__codelineno-173-1" name="__codelineno-173-1" href="#__codelineno-173-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-173-2"><a id="__codelineno-173-2" name="__codelineno-173-2" href="#__codelineno-173-2"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_locations</span><span class="p">[],</span>
+</span><span id="__span-173-3"><a id="__codelineno-173-3" name="__codelineno-173-3" href="#__codelineno-173-3"></a><span class="w">    </span><span class="kt">AABR</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_aabrs</span><span class="p">[]</span>
+</span><span id="__span-173-4"><a id="__codelineno-173-4" name="__codelineno-173-4" href="#__codelineno-173-4"></a><span class="p">}</span>
 </span></code></pre></div>
 <h1 id="gx_add_resource_ui_item">gx_add_resource_ui_item</h1>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-176-1"><a id="__codelineno-176-1" name="__codelineno-176-1" href="#__codelineno-176-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_add_resource_ui_item</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-174-1"><a id="__codelineno-174-1" name="__codelineno-174-1" href="#__codelineno-174-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_add_resource_ui_item</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-175-1"><a id="__codelineno-175-1" name="__codelineno-175-1" href="#__codelineno-175-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-175-2"><a id="__codelineno-175-2" name="__codelineno-175-2" href="#__codelineno-175-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_playerIDs</span><span class="p">[],</span>
+</span><span id="__span-175-3"><a id="__codelineno-175-3" name="__codelineno-175-3" href="#__codelineno-175-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_forceIDs</span><span class="p">[],</span>
+</span><span id="__span-175-4"><a id="__codelineno-175-4" name="__codelineno-175-4" href="#__codelineno-175-4"></a><span class="w">    </span><span class="kt">Expr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_val</span><span class="p">,</span>
+</span><span id="__span-175-5"><a id="__codelineno-175-5" name="__codelineno-175-5" href="#__codelineno-175-5"></a><span class="w">    </span><span class="kt">Expr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_max</span><span class="p">,</span>
+</span><span id="__span-175-6"><a id="__codelineno-175-6" name="__codelineno-175-6" href="#__codelineno-175-6"></a><span class="w">    </span><span class="kt">Expr</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_bDisplayRed</span><span class="p">,</span>
+</span><span id="__span-175-7"><a id="__codelineno-175-7" name="__codelineno-175-7" href="#__codelineno-175-7"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_img</span>
+</span><span id="__span-175-8"><a id="__codelineno-175-8" name="__codelineno-175-8" href="#__codelineno-175-8"></a><span class="p">}</span>
+</span></code></pre></div>
+<h1 id="gx_clear_resource_ui_items">gx_clear_resource_ui_items</h1>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-176-1"><a id="__codelineno-176-1" name="__codelineno-176-1" href="#__codelineno-176-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_clear_resource_ui_items</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-177-1"><a id="__codelineno-177-1" name="__codelineno-177-1" href="#__codelineno-177-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-177-2"><a id="__codelineno-177-2" name="__codelineno-177-2" href="#__codelineno-177-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_playerIDs</span><span class="p">[],</span>
-</span><span id="__span-177-3"><a id="__codelineno-177-3" name="__codelineno-177-3" href="#__codelineno-177-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_forceIDs</span><span class="p">[],</span>
-</span><span id="__span-177-4"><a id="__codelineno-177-4" name="__codelineno-177-4" href="#__codelineno-177-4"></a><span class="w">    </span><span class="kt">Expr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_val</span><span class="p">,</span>
-</span><span id="__span-177-5"><a id="__codelineno-177-5" name="__codelineno-177-5" href="#__codelineno-177-5"></a><span class="w">    </span><span class="kt">Expr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_max</span><span class="p">,</span>
-</span><span id="__span-177-6"><a id="__codelineno-177-6" name="__codelineno-177-6" href="#__codelineno-177-6"></a><span class="w">    </span><span class="kt">Expr</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_bDisplayRed</span><span class="p">,</span>
-</span><span id="__span-177-7"><a id="__codelineno-177-7" name="__codelineno-177-7" href="#__codelineno-177-7"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_img</span>
-</span><span id="__span-177-8"><a id="__codelineno-177-8" name="__codelineno-177-8" href="#__codelineno-177-8"></a><span class="p">}</span>
-</span></code></pre></div>
-<h1 id="gx_clear_resource_ui_items">gx_clear_resource_ui_items</h1>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-178-1"><a id="__codelineno-178-1" name="__codelineno-178-1" href="#__codelineno-178-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_clear_resource_ui_items</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
-</span></code></pre></div>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-179-1"><a id="__codelineno-179-1" name="__codelineno-179-1" href="#__codelineno-179-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-179-2"><a id="__codelineno-179-2" name="__codelineno-179-2" href="#__codelineno-179-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_playerIDs</span><span class="p">[],</span>
-</span><span id="__span-179-3"><a id="__codelineno-179-3" name="__codelineno-179-3" href="#__codelineno-179-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_forceIDs</span><span class="p">[]</span>
-</span><span id="__span-179-4"><a id="__codelineno-179-4" name="__codelineno-179-4" href="#__codelineno-179-4"></a><span class="p">}</span>
+</span><span id="__span-177-3"><a id="__codelineno-177-3" name="__codelineno-177-3" href="#__codelineno-177-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_forceIDs</span><span class="p">[]</span>
+</span><span id="__span-177-4"><a id="__codelineno-177-4" name="__codelineno-177-4" href="#__codelineno-177-4"></a><span class="p">}</span>
 </span></code></pre></div>
 <h1 id="gx_get_common_uds">gx_get_common_uds</h1>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-180-1"><a id="__codelineno-180-1" name="__codelineno-180-1" href="#__codelineno-180-1"></a><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">gx_get_common_uds</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-178-1"><a id="__codelineno-178-1" name="__codelineno-178-1" href="#__codelineno-178-1"></a><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">gx_get_common_uds</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
 </span></code></pre></div>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-181-1"><a id="__codelineno-181-1" name="__codelineno-181-1" href="#__codelineno-181-1"></a><span class="c1">// used for filtering, optional.</span>
-</span><span id="__span-181-2"><a id="__codelineno-181-2" name="__codelineno-181-2" href="#__codelineno-181-2"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-181-3"><a id="__codelineno-181-3" name="__codelineno-181-3" href="#__codelineno-181-3"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bStructure</span><span class="p">,</span>
-</span><span id="__span-181-4"><a id="__codelineno-181-4" name="__codelineno-181-4" href="#__codelineno-181-4"></a><span class="w">    </span><span class="kt">Race</span><span class="w"> </span><span class="n">m_race</span>
-</span><span id="__span-181-5"><a id="__codelineno-181-5" name="__codelineno-181-5" href="#__codelineno-181-5"></a><span class="p">}</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-179-1"><a id="__codelineno-179-1" name="__codelineno-179-1" href="#__codelineno-179-1"></a><span class="c1">// used for filtering, optional.</span>
+</span><span id="__span-179-2"><a id="__codelineno-179-2" name="__codelineno-179-2" href="#__codelineno-179-2"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-179-3"><a id="__codelineno-179-3" name="__codelineno-179-3" href="#__codelineno-179-3"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bStructure</span><span class="p">,</span>
+</span><span id="__span-179-4"><a id="__codelineno-179-4" name="__codelineno-179-4" href="#__codelineno-179-4"></a><span class="w">    </span><span class="kt">Race</span><span class="w"> </span><span class="n">m_race</span>
+</span><span id="__span-179-5"><a id="__codelineno-179-5" name="__codelineno-179-5" href="#__codelineno-179-5"></a><span class="p">}</span>
 </span></code></pre></div>
 <h1 id="gx_get_ud_race">gx_get_ud_race</h1>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-182-1"><a id="__codelineno-182-1" name="__codelineno-182-1" href="#__codelineno-182-1"></a><span class="kt">Race</span><span class="w"> </span><span class="n">gx_get_ud_race</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">unitType</span><span class="p">)</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-180-1"><a id="__codelineno-180-1" name="__codelineno-180-1" href="#__codelineno-180-1"></a><span class="kt">Race</span><span class="w"> </span><span class="n">gx_get_ud_race</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">unitType</span><span class="p">)</span>
 </span></code></pre></div>
 <h1 id="gx_get_ud_auto_attack_anims">gx_get_ud_auto_attack_anims</h1>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-183-1"><a id="__codelineno-183-1" name="__codelineno-183-1" href="#__codelineno-183-1"></a><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">gx_get_ud_auto_attack_anims</span><span class="p">(</span><span class="n">unitType</span><span class="p">)</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-181-1"><a id="__codelineno-181-1" name="__codelineno-181-1" href="#__codelineno-181-1"></a><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">gx_get_ud_auto_attack_anims</span><span class="p">(</span><span class="n">unitType</span><span class="p">)</span>
 </span></code></pre></div>
 <h1 id="gx_get_num_attacks_in_ud_auto_attack_anim">gx_get_num_attacks_in_ud_auto_attack_anim</h1>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-184-1"><a id="__codelineno-184-1" name="__codelineno-184-1" href="#__codelineno-184-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">gx_get_num_attacks_in_ud_auto_attack_anim</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">unitType</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">animName</span><span class="p">)</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-182-1"><a id="__codelineno-182-1" name="__codelineno-182-1" href="#__codelineno-182-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">gx_get_num_attacks_in_ud_auto_attack_anim</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">unitType</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">animName</span><span class="p">)</span>
 </span></code></pre></div>
 <h1 id="gx_clear_ud_auto_attacks">gx_clear_ud_auto_attacks</h1>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-185-1"><a id="__codelineno-185-1" name="__codelineno-185-1" href="#__codelineno-185-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_clear_ud_auto_attacks</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">unitType</span><span class="p">)</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-183-1"><a id="__codelineno-183-1" name="__codelineno-183-1" href="#__codelineno-183-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_clear_ud_auto_attacks</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">unitType</span><span class="p">)</span>
 </span></code></pre></div>
 <h1 id="gx_add_ud_auto_attack">gx_add_ud_auto_attack</h1>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-186-1"><a id="__codelineno-186-1" name="__codelineno-186-1" href="#__codelineno-186-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_add_ud_auto_attack</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">unitType</span><span class="p">,</span><span class="w"> </span><span class="kt">AutoAttackTable</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-184-1"><a id="__codelineno-184-1" name="__codelineno-184-1" href="#__codelineno-184-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_add_ud_auto_attack</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">unitType</span><span class="p">,</span><span class="w"> </span><span class="kt">AutoAttackTable</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
 </span></code></pre></div>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-187-1"><a id="__codelineno-187-1" name="__codelineno-187-1" href="#__codelineno-187-1"></a><span class="kt">AutoAttackTable</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-187-2"><a id="__codelineno-187-2" name="__codelineno-187-2" href="#__codelineno-187-2"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">m_range</span><span class="p">,</span>
-</span><span id="__span-187-3"><a id="__codelineno-187-3" name="__codelineno-187-3" href="#__codelineno-187-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_animDuration</span><span class="p">,</span>
-</span><span id="__span-187-4"><a id="__codelineno-187-4" name="__codelineno-187-4" href="#__codelineno-187-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_cooldown</span><span class="p">,</span>
-</span><span id="__span-187-5"><a id="__codelineno-187-5" name="__codelineno-187-5" href="#__codelineno-187-5"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bMelee</span><span class="p">,</span>
-</span><span id="__span-187-6"><a id="__codelineno-187-6" name="__codelineno-187-6" href="#__codelineno-187-6"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bCanTargetAir</span><span class="p">,</span>
-</span><span id="__span-187-7"><a id="__codelineno-187-7" name="__codelineno-187-7" href="#__codelineno-187-7"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bCanTargetGround</span><span class="p">,</span>
-</span><span id="__span-187-8"><a id="__codelineno-187-8" name="__codelineno-187-8" href="#__codelineno-187-8"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_anim</span><span class="p">,</span>
-</span><span id="__span-187-9"><a id="__codelineno-187-9" name="__codelineno-187-9" href="#__codelineno-187-9"></a><span class="w">    </span><span class="kt">Expr</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_req</span><span class="p">,</span>
-</span><span id="__span-187-10"><a id="__codelineno-187-10" name="__codelineno-187-10" href="#__codelineno-187-10"></a><span class="w">    </span><span class="kt">AttackTable</span><span class="w"> </span><span class="n">m_attacks</span><span class="p">[]</span>
-</span><span id="__span-187-11"><a id="__codelineno-187-11" name="__codelineno-187-11" href="#__codelineno-187-11"></a><span class="p">}</span>
-</span><span id="__span-187-12"><a id="__codelineno-187-12" name="__codelineno-187-12" href="#__codelineno-187-12"></a>
-</span><span id="__span-187-13"><a id="__codelineno-187-13" name="__codelineno-187-13" href="#__codelineno-187-13"></a><span class="kt">AttackTable</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-187-14"><a id="__codelineno-187-14" name="__codelineno-187-14" href="#__codelineno-187-14"></a><span class="w">    </span><span class="kt">AttackType</span><span class="w"> </span><span class="n">m_type</span><span class="p">,</span>
-</span><span id="__span-187-15"><a id="__codelineno-187-15" name="__codelineno-187-15" href="#__codelineno-187-15"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">m_splashRadius</span><span class="p">,</span>
-</span><span id="__span-187-16"><a id="__codelineno-187-16" name="__codelineno-187-16" href="#__codelineno-187-16"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_dmg</span><span class="p">,</span>
-</span><span id="__span-187-17"><a id="__codelineno-187-17" name="__codelineno-187-17" href="#__codelineno-187-17"></a><span class="w">    </span><span class="kt">DamageExtraTable</span><span class="w"> </span><span class="n">m_dmgExtra</span>
-</span><span id="__span-187-18"><a id="__codelineno-187-18" name="__codelineno-187-18" href="#__codelineno-187-18"></a><span class="p">}</span>
-</span><span id="__span-187-19"><a id="__codelineno-187-19" name="__codelineno-187-19" href="#__codelineno-187-19"></a>
-</span><span id="__span-187-20"><a id="__codelineno-187-20" name="__codelineno-187-20" href="#__codelineno-187-20"></a><span class="kt">DamageExtraTable</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-187-21"><a id="__codelineno-187-21" name="__codelineno-187-21" href="#__codelineno-187-21"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_vsLight</span><span class="p">,</span>
-</span><span id="__span-187-22"><a id="__codelineno-187-22" name="__codelineno-187-22" href="#__codelineno-187-22"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_vsMedium</span><span class="p">,</span>
-</span><span id="__span-187-23"><a id="__codelineno-187-23" name="__codelineno-187-23" href="#__codelineno-187-23"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_vsHeavy</span>
-</span><span id="__span-187-24"><a id="__codelineno-187-24" name="__codelineno-187-24" href="#__codelineno-187-24"></a><span class="p">}</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-185-1"><a id="__codelineno-185-1" name="__codelineno-185-1" href="#__codelineno-185-1"></a><span class="kt">AutoAttackTable</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-185-2"><a id="__codelineno-185-2" name="__codelineno-185-2" href="#__codelineno-185-2"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">m_range</span><span class="p">,</span>
+</span><span id="__span-185-3"><a id="__codelineno-185-3" name="__codelineno-185-3" href="#__codelineno-185-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_animDuration</span><span class="p">,</span>
+</span><span id="__span-185-4"><a id="__codelineno-185-4" name="__codelineno-185-4" href="#__codelineno-185-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_cooldown</span><span class="p">,</span>
+</span><span id="__span-185-5"><a id="__codelineno-185-5" name="__codelineno-185-5" href="#__codelineno-185-5"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bMelee</span><span class="p">,</span>
+</span><span id="__span-185-6"><a id="__codelineno-185-6" name="__codelineno-185-6" href="#__codelineno-185-6"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bCanTargetAir</span><span class="p">,</span>
+</span><span id="__span-185-7"><a id="__codelineno-185-7" name="__codelineno-185-7" href="#__codelineno-185-7"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bCanTargetGround</span><span class="p">,</span>
+</span><span id="__span-185-8"><a id="__codelineno-185-8" name="__codelineno-185-8" href="#__codelineno-185-8"></a><span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">m_anim</span><span class="p">,</span>
+</span><span id="__span-185-9"><a id="__codelineno-185-9" name="__codelineno-185-9" href="#__codelineno-185-9"></a><span class="w">    </span><span class="kt">Expr</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m_req</span><span class="p">,</span>
+</span><span id="__span-185-10"><a id="__codelineno-185-10" name="__codelineno-185-10" href="#__codelineno-185-10"></a><span class="w">    </span><span class="kt">AttackTable</span><span class="w"> </span><span class="n">m_attacks</span><span class="p">[]</span>
+</span><span id="__span-185-11"><a id="__codelineno-185-11" name="__codelineno-185-11" href="#__codelineno-185-11"></a><span class="p">}</span>
+</span><span id="__span-185-12"><a id="__codelineno-185-12" name="__codelineno-185-12" href="#__codelineno-185-12"></a>
+</span><span id="__span-185-13"><a id="__codelineno-185-13" name="__codelineno-185-13" href="#__codelineno-185-13"></a><span class="kt">AttackTable</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-185-14"><a id="__codelineno-185-14" name="__codelineno-185-14" href="#__codelineno-185-14"></a><span class="w">    </span><span class="kt">AttackType</span><span class="w"> </span><span class="n">m_type</span><span class="p">,</span>
+</span><span id="__span-185-15"><a id="__codelineno-185-15" name="__codelineno-185-15" href="#__codelineno-185-15"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">m_splashRadius</span><span class="p">,</span>
+</span><span id="__span-185-16"><a id="__codelineno-185-16" name="__codelineno-185-16" href="#__codelineno-185-16"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_dmg</span><span class="p">,</span>
+</span><span id="__span-185-17"><a id="__codelineno-185-17" name="__codelineno-185-17" href="#__codelineno-185-17"></a><span class="w">    </span><span class="kt">DamageExtraTable</span><span class="w"> </span><span class="n">m_dmgExtra</span>
+</span><span id="__span-185-18"><a id="__codelineno-185-18" name="__codelineno-185-18" href="#__codelineno-185-18"></a><span class="p">}</span>
+</span><span id="__span-185-19"><a id="__codelineno-185-19" name="__codelineno-185-19" href="#__codelineno-185-19"></a>
+</span><span id="__span-185-20"><a id="__codelineno-185-20" name="__codelineno-185-20" href="#__codelineno-185-20"></a><span class="kt">DamageExtraTable</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-185-21"><a id="__codelineno-185-21" name="__codelineno-185-21" href="#__codelineno-185-21"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_vsLight</span><span class="p">,</span>
+</span><span id="__span-185-22"><a id="__codelineno-185-22" name="__codelineno-185-22" href="#__codelineno-185-22"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_vsMedium</span><span class="p">,</span>
+</span><span id="__span-185-23"><a id="__codelineno-185-23" name="__codelineno-185-23" href="#__codelineno-185-23"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_vsHeavy</span>
+</span><span id="__span-185-24"><a id="__codelineno-185-24" name="__codelineno-185-24" href="#__codelineno-185-24"></a><span class="p">}</span>
 </span></code></pre></div>
 
 
