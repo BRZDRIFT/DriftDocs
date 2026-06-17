@@ -360,6 +360,7 @@ table params = {
 	bool m_bPlayerMustBeInGame = true;          # filter, default true
 }
 ```
+
 - Function is used to query and/or filter playerIDs based on simple coonditions
 - If neither m_forceIDs[] nor m_playerIDs[] is set, then will consider all players
 - If `m_allowedVictoryStates` is not set, any victory state will be considered
