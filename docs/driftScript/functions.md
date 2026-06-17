@@ -956,29 +956,6 @@ void gx_add_unit_var(int unit_id, string varName, mixed varValue)
 - If you are using `gx_add_*`, please pay attention to the types you are using.. and match them.
 - `bool`+`bool`->`int`, `bool`+`int`->`int`, `bool`+`float`->`float`, `int`+`float`->`float`, etc..
 
-## gx_modulo
-```sq
-mixed gx_modulo(mixed a, mixed b)
-```
-
-- function for wrapping `a` around `b`
-- If both `a` and `b` are integer, the result will be integer
-- If at least one `a` or `b` is a float, result will be float
-- The return value will have same sign as `b`
-- differs from the `%` operator for negative numbers
-
-```sq
-local result = 0
-result = 2 % 5              // 2
-result = gx_modulo(2, 5)    // 2
-result = 5 % 5              // 0
-result = gx_modulo(5, 5)    // 0
-result = 6 % 5              // 1
-result = gx_modulo(6, 5)    // 1
-result = -1 % 5             // -1
-result = gx_modulo(-1, 5)   // 4 !! <-- DIFFERENT THAN % operator
-```
-
 ## gx_triangle_lerp
 ```sq
 float gx_triangle_lerp(float begin, float end, float period, float x)

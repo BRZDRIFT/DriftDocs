@@ -30,6 +30,9 @@
 - `float atan(x)` - arctan of x
 - `float atan2(y, x)` - arctan2 of x
 - `int rand()` - return random integer from [0, RAND_MAX]
+- `int rand64()` - returns random integer from [INT_MIN, INT_MAX]
+- `int rand_int(int min, int max)` returns random integer from [min, max]
+- `float rand_float(float min, float max)` returns random float from [min, max]
 - `mixed abs(x)` - return absolute value of x.
 - `mixed min(x, y)` - returns the minimum of x and y.
 - `mixed max(x, y)` - returns the maximum of x and y.
@@ -37,7 +40,6 @@
 - `float lerp(x, y, a)` - linearly interpolate x -> y based on a [0, 1]
 - `float floor(x)`
 - `float ceil(x)`
-- `float fmod(x, y)` - floating point modulo
 
 ## Scalar Types
 - `int`: 64-bit integer

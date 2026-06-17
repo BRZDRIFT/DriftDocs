@@ -169,6 +169,20 @@ class ComplexColor {
 }
 ```
 
+## Random
+```sq
+class Random {
+    constructor(int seed = 0)
+    void SetSeed(int seed)
+    int GetSeed()
+    int Rand()                              // returns integer between [0, RAND_MAX]
+    int Rand64()                            // returns integer between [INT_MIN, INT_MAX]
+    int RandInt(int min, int max)           // returns integer between [min, max]
+    float RandFloat(float min, float max)   // returns float between [min, max]
+    function _cloned(Random orig)
+}
+```
+
 ## Expr
 ```sq
 // Expr feature is work-in-progress.
