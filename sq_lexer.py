@@ -17,21 +17,17 @@ import copy
 __all__ = ['SquirrelLexer']
 
 class MyCppLexer(CppLexer):
-    tokens = copy.deepcopy(CppLexer.tokens)
+    tokens = CppLexer.tokens.copy()
 
-    tokens['root'] = [
-        # 1) make #... a single-line comment
-        (r'#.*?$', Comment.Single),
+    def get_tokens_unprocessed(self, text):
+        return super().get_tokens_unprocessed(text)
 
-        # 2) treat // as an operator (must come BEFORE anything else that could match)
-        (r'//', Operator),
-
-        # 3) then include the rest of CppLexer rules EXCEPT the original // comment rule
-        # we reuse everything else from original root except problematic entries
-        *[
-            rule for rule in CppLexer.tokens['root']
-            if not (isinstance(rule[1], type(Comment.Single)) and rule[0].startswith(r'//'))
-        ],
+    tokens["root"] = [
+        (r"#.*?$", Comment.Single),
+        (r"//", Operator),
+    ] + [
+        r for r in CppLexer.tokens["root"]
+        if isinstance(r, tuple) and r[0] != r"//.*?$"
     ]
 
 class SquirrelLexer(MyCppLexer):
