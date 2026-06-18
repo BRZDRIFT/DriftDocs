@@ -13,27 +13,28 @@ from pygments.token import Comment, Name, Keyword
 from pygments.lexer import RegexLexer, include, bygroups, using, \
     this, inherit, default, words
 import copy
+from pygments.token import Comment, Operator
 
 __all__ = ['SquirrelLexer']
 
-from pygments.token import Comment, Operator
 
 class MyCppLexer(CppLexer):
-    tokens = dict(CppLexer.tokens)
+
+    tokens = CppLexer.tokens.copy()
 
     tokens["root"] = [
-        # # always comment
-        (r'#.*$', Comment.Single),
+        # 1) FORCE line-start # comment (highest priority)
+        (r'^\s*#.*$', Comment.Single),
 
-        # // becomes operator
+        # 2) treat // as operator (ONLY literal //)
         (r'//', Operator),
+
     ] + [
         rule
         for rule in CppLexer.tokens["root"]
         if isinstance(rule, tuple)
         and isinstance(rule[0], str)
-        and rule[0] != r'//.*?$'
-        and not rule[0].lstrip().startswith('#')
+        and rule[0] != r'//.*?$'      # remove original comment rule
     ]
 
 class SquirrelLexer(MyCppLexer):
