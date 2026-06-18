@@ -17,15 +17,26 @@ import copy
 __all__ = ['SquirrelLexer']
 
 class MyCppLexer(CppLexer):
-    tokens = {
-        'statements': [
-            # treat #... as a single-line comment
-            (r'#.*?$', Comment.Single),
+    tokens = copy.deepcopy(CppLexer.tokens)
 
-           # keep all normal C++ rules
-            inherit,
-        ]
-    }
+    new_root = []
+
+    for rule in tokens["root"]:
+        pattern = rule[0]
+
+        # remove preprocessor rule (#...)
+        if isinstance(pattern, str) and pattern.strip().startswith("#"):
+            continue
+
+        new_root.append(rule)
+
+    # replace #... with comment
+    new_root.insert(0, (r'#.*$', Comment.Single))
+
+    # add // as operator (optional if you also modified it)
+    new_root.insert(1, (r'//', Operator))
+
+    tokens["root"] = new_root
 
 class SquirrelLexer(MyCppLexer):
     name = 'SquirrelLexer'
