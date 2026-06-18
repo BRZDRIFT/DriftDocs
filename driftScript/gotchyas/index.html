@@ -1594,8 +1594,8 @@
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="err">}</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="err">local vals = myFunction()</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="err">print(vals[0])  </span><span class="c1"># 123</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="err">print(vals[1])  </span><span class="c1"># &quot;second_return_value&quot;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="err">print(vals[0])  # 123</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="err">print(vals[1])  # &quot;second_return_value&quot;</span>
 </span></code></pre></div>
 <h2 id="can-i-retrieve-a-global-function-object-via-a-string-lookup">Can I retrieve a global function object via a string lookup ?</h2>
 <ul>
@@ -1607,37 +1607,37 @@
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="err">local functionPtr = getroottable()[&quot;myFunction&quot;];</span>
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="err">local result = functionPtr(3, 5);</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="err">print(result)   </span><span class="c1"># 8</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="err">print(result)   # 8</span>
 </span></code></pre></div>
 <h2 id="use-local-for-defining-variables">Use <code>local</code> for defining variables</h2>
 <ul>
 <li>Variables must be defined using <code>local</code>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="err">local myVariable = 7    </span><span class="c1"># good!</span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="err">local myVariable = 7    # good!</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="err">myVariable2 = 8         </span><span class="c1"># script-error! Forgot local keyword.</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="err">myVariable2 = 8         # script-error! Forgot local keyword.</span>
 </span></code></pre></div></li>
 </ul>
 <h2 id="must-use-operator-to-add-new-keyvalue-to-dictionary">Must use <code>&lt;-</code> operator to add new key/value to dictionary</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># need to use &lt;- to add new key/value to dictionary</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="err">local myDictionary = {}</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="err">myDictionary[&quot;abc&quot;] &lt;- 7        </span><span class="c1"># works</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="err">myDictionary[&quot;def&quot;] = 9         </span><span class="c1"># script error! key &quot;def&quot; does not exist!</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="err">myDictionary[&quot;abc&quot;] &lt;- 7        # works</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="err">myDictionary[&quot;def&quot;] = 9         # script error! key &quot;def&quot; does not exist!</span>
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1"># however, you can use = to modify existing value</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="err">myDictionary[&quot;abc&quot;] = 10        </span><span class="c1"># works, since key &quot;abc&quot; already exists</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="err">myDictionary[&quot;abc&quot;] &lt;- 12       </span><span class="c1"># also works</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="err">myDictionary[&quot;abc&quot;] = 10        # works, since key &quot;abc&quot; already exists</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="err">myDictionary[&quot;abc&quot;] &lt;- 12       # also works</span>
 </span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
 </span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1"># note: can also create dictionaries in-place</span>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="err">local myNewDictionary = { abc = 6, def = 9}   </span><span class="c1"># no quotes for in-place string keys</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="err">myNewDictionary[15] &lt;- &quot;some string&quot;        </span><span class="c1"># keys can also be integers</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="err">local myNewDictionary = { abc = 6, def = 9}   # no quotes for in-place string keys</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="err">myNewDictionary[15] &lt;- &quot;some string&quot;        # keys can also be integers</span>
 </span></code></pre></div>
 <h2 id="assignment-operator-copies-reference-not-value-for-custom-types"><code>=</code> assignment operator copies reference, not value! (for custom types)</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="err">local a = Vec2(2.0, 6.0)</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="err">local b = a         </span><span class="c1"># reference copy</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="err">local c = clone a   </span><span class="c1"># value copy</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="err">print(a is b)       </span><span class="c1"># true, a and b reference same object</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="err">print(a is c)       </span><span class="c1"># false, a and c reference different objects</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="err">print(a == c)   </span><span class="c1"># true</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="err">local b = a         # reference copy</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="err">local c = clone a   # value copy</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="err">print(a is b)       # true, a and b reference same object</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="err">print(a is c)       # false, a and c reference different objects</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="err">print(a == c)   # true</span>
 </span></code></pre></div>
 <ul>
 <li>this behavior is only for non-primitive types (not <code>int</code>, <code>float</code>, <code>bool</code>, <code>string</code>)</li>
@@ -1646,32 +1646,32 @@
 <li>If you make your own types, it might be a good idea to create your own <code>._cloned(other)</code> function.</li>
 </ul>
 <h2 id="casting-ints-floats-strings-etc">Casting, ints, floats, strings, etc...</h2>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="err">local a = 5     </span><span class="c1"># a is type &#39;integer&#39; of value 5</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="err">print(a)        </span><span class="c1"># prints &#39;5&#39;</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="err">print(a / 2)    </span><span class="c1"># prints &#39;2&#39;,   # integer division is truncated </span>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="err">local a = 5     # a is type &#39;integer&#39; of value 5</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="err">print(a)        # prints &#39;5&#39;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="err">print(a / 2)    # prints &#39;2&#39;,   # integer division is truncated </span>
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="err">local b = 5.0   </span><span class="c1"># a is type &#39;float&#39; of value 5.0</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="err">print(b)        </span><span class="c1"># prints &#39;5.00&#39;,    # floats always outputs to 2 decimals</span>
-</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="err">print(b / 2)    </span><span class="c1"># prints &#39;2.50&#39;,    # float division acts as normal</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="err">local b = 5.0   # a is type &#39;float&#39; of value 5.0</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="err">print(b)        # prints &#39;5.00&#39;,    # floats always outputs to 2 decimals</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="err">print(b / 2)    # prints &#39;2.50&#39;,    # float division acts as normal</span>
 </span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
 </span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="c1"># You can cast an integer to float or float to integer</span>
 </span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1"># using the .tointeger() and .tofloat() functions</span>
 </span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="err">local c = b.tointeger()     </span><span class="c1"># &#39;c&#39; is now an integer with value 5</span>
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="err">local d = a.tofloat()       </span><span class="c1"># &#39;d&#39; is now a float with value 5.0</span>
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="err">local e = a.tointeger()     </span><span class="c1"># .tointeger() acts a dummy functions</span>
-</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="err">                            </span><span class="c1"># for casting from &#39;int&#39; -&gt; &#39;int&#39;</span>
-</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="err">local f = b.tofloat()       </span><span class="c1"># .tofloat() acts a dummy functions</span>
-</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="err">                            </span><span class="c1"># for casting from &#39;float&#39; -&gt; &#39;float&#39;</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="err">local c = b.tointeger()     # &#39;c&#39; is now an integer with value 5</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="err">local d = a.tofloat()       # &#39;d&#39; is now a float with value 5.0</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="err">local e = a.tointeger()     # .tointeger() acts a dummy functions</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="c1">                            # for casting from &#39;int&#39; -&gt; &#39;int&#39;</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="err">local f = b.tofloat()       # .tofloat() acts a dummy functions</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="c1">                            # for casting from &#39;float&#39; -&gt; &#39;float&#39;</span>
 </span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>
 </span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="err">local myString1 = e.tostring()</span>
-</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="err">print(myString1)                    </span><span class="c1"># prints &#39;5&#39;</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="err">print(myString1)                    # prints &#39;5&#39;</span>
 </span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>
 </span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="err">local myString2 = f.tostring()</span>
-</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="err">print(myString2)                    </span><span class="c1"># prints &#39;5.00&#39;</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="err">print(myString2)                    # prints &#39;5.00&#39;</span>
 </span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>
 </span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="c1"># number to string conversions happen automatically</span>
-</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="err">print(&quot;abc &quot; + a)                   </span><span class="c1"># prints &quot;abc 5&quot;             </span>
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="err">print(&quot;abc &quot; + a)                   # prints &quot;abc 5&quot;             </span>
 </span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>
 </span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="c1"># Warning!</span>
 </span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="c1"># You are not allowed to cast using &#39;(int) expr&#39; and &#39;(float) expr&#39;</span>
@@ -1706,19 +1706,19 @@
 </ul>
 <h2 id="common-dictionary-and-array-tasks">Common dictionary and array tasks</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># deleting from dictionary</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="err">local myDictionary = { &quot;abc&quot;: 6, &quot;def&quot;: 7 }     </span><span class="c1"># create dictionary</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="err">delete myDictionary[&quot;abc&quot;]                  </span><span class="c1"># delete &quot;abc&quot; from dictionary</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="err">local myDictionary = { &quot;abc&quot;: 6, &quot;def&quot;: 7 }     # create dictionary</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="err">delete myDictionary[&quot;abc&quot;]                  # delete &quot;abc&quot; from dictionary</span>
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
 </span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c1"># check if key in dictionary</span>
 </span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="err">local bResult = &quot;def&quot; in myDictionary</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="err">print(bResult)  </span><span class="c1"># true</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="err">print(bResult)  # true</span>
 </span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
 </span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="c1"># arrays</span>
-</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="err">local myArray = [&quot;my_string&quot;, 6, 1, 2]      </span><span class="c1"># create array</span>
-</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="err">print(myArray[0])                   </span><span class="c1"># prints &quot;my_string&quot;</span>
-</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="err">myArray.append(7)                   </span><span class="c1"># myArray:  [&quot;my_string&quot;, 6, 1, 2, 7]</span>
-</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="err">print(myArray[4])                   </span><span class="c1"># prints 7</span>
-</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="err">myArray.remove(1)           </span><span class="c1"># remove at index 1, myArray: [&quot;my_string&quot;, 1, 2, 7]</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="err">local myArray = [&quot;my_string&quot;, 6, 1, 2]      # create array</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="err">print(myArray[0])                   # prints &quot;my_string&quot;</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="err">myArray.append(7)                   # myArray:  [&quot;my_string&quot;, 6, 1, 2, 7]</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="err">print(myArray[4])                   # prints 7</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="err">myArray.remove(1)           # remove at index 1, myArray: [&quot;my_string&quot;, 1, 2, 7]</span>
 </span></code></pre></div>
 <ul>
 <li>See <a href="http:#squirrel-lang.org/squirreldoc/reference/language.html">http:#squirrel-lang.org/squirreldoc/reference/language.html</a> for more language features.</li>

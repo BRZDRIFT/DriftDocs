@@ -3665,14 +3665,14 @@
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="err">int gx_create_unit(int params)</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="err">table params = {</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="err">    string m_unitType,              </span><span class="c1"># Required</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="err">    int m_playerID,                 </span><span class="c1"># Required</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="err">    Float2 m_pos,                   </span><span class="c1"># Optional (position to create unit)</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="err">    string m_location,              </span><span class="c1"># Optional (location to create unit at)</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="err">    int m_level,                    </span><span class="c1"># Optional, default unit level = 1</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="err">    bool m_bForceGhostMode,         </span><span class="c1"># Create unit in ghost mode (can walk through other units)</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="err">    bool m_bSieged,                 </span><span class="c1"># Create unit pre-sieged if supported</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="err">    bool m_bLiftedStructure         </span><span class="c1"># Create structure in lifted state if supported</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="err">    string m_unitType,              # Required</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="err">    int m_playerID,                 # Required</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="err">    Float2 m_pos,                   # Optional (position to create unit)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="err">    string m_location,              # Optional (location to create unit at)</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="err">    int m_level,                    # Optional, default unit level = 1</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="err">    bool m_bForceGhostMode,         # Create unit in ghost mode (can walk through other units)</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="err">    bool m_bSieged,                 # Create unit pre-sieged if supported</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="err">    bool m_bLiftedStructure         # Create structure in lifted state if supported</span>
 </span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="err">}</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="err">local new_unit = gx_create_unit({ m_unitType = &quot;Brute&quot;, m_playerID = 1, m_location = &quot;my_cool_location&quot; })</span>
@@ -3750,17 +3750,17 @@
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="err">int gx_get_nearby_units_count(table params)</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="err">table params = {</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="err">    int m_unitID,                                   </span><span class="c1"># unit_id to center search on</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="err">    float m_radius,                                 </span><span class="c1"># search radius around unit</span>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="err">    int m_playerIDs[],                              </span><span class="c1"># Optional, Filter for player_id</span>
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="err">    int m_forceIDs[],                               </span><span class="c1"># Optional, Filter for force_id</span>
-</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="err">    string m_unitTypes[],                           </span><span class="c1"># Optional, Filter for certain unit types</span>
-</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="err">    string m_exceptUnitTypes[],                     </span><span class="c1"># Optional, ignore certain unit types</span>
-</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="err">    bool m_bIncludeAirUnits = true,                 </span><span class="c1"># Optional, Set to false if you want to exclude air units</span>
-</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="err">    bool m_bIncludeGroundUnits = true               </span><span class="c1"># Optional, set to false if you want to exclude ground units</span>
-</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="err">    bool m_bIncludeKilledUnits = false,             </span><span class="c1"># Optional, Set to true if you want to include killed units</span>
-</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="err">    bool m_bIncludeRemovedUnits = false             </span><span class="c1"># Optional, set to true if you want to include removed units</span>
-</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="err">    bool m_bIncludeProjectiles = false              </span><span class="c1"># Optional, include projectiles (default: false)</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="err">    int m_unitID,                                   # unit_id to center search on</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="err">    float m_radius,                                 # search radius around unit</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="err">    int m_playerIDs[],                              # Optional, Filter for player_id</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="err">    int m_forceIDs[],                               # Optional, Filter for force_id</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="err">    string m_unitTypes[],                           # Optional, Filter for certain unit types</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="err">    string m_exceptUnitTypes[],                     # Optional, ignore certain unit types</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="err">    bool m_bIncludeAirUnits = true,                 # Optional, Set to false if you want to exclude air units</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="err">    bool m_bIncludeGroundUnits = true               # Optional, set to false if you want to exclude ground units</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="err">    bool m_bIncludeKilledUnits = false,             # Optional, Set to true if you want to include killed units</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="err">    bool m_bIncludeRemovedUnits = false             # Optional, set to true if you want to include removed units</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="err">    bool m_bIncludeProjectiles = false              # Optional, include projectiles (default: false)</span>
 </span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="err">}</span>
 </span></code></pre></div>
 <ul>
@@ -3774,19 +3774,19 @@
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="err">int gx_get_units_count(table params)</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="err">table params = {</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="err">    string m_locations[],                           </span><span class="c1"># Optional</span>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="err">    string m_aabrs[],                               </span><span class="c1"># Optional</span>
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="err">    string m_tags[],                                </span><span class="c1"># Optional, Filter for unit tags</span>
-</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="err">    BoundsCheck m_boundsCheck                       </span><span class="c1"># Default: BoundsCheck.Center</span>
-</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="err">    int m_playerIDs[],                              </span><span class="c1"># Optional, Filter for player_id</span>
-</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="err">    int m_forceIDs[],                               </span><span class="c1"># Optional, Filter for force_id</span>
-</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="err">    string m_unitTypes[],                           </span><span class="c1"># Optional, Filter for certain unit types</span>
-</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="err">    string m_exceptUnitTypes[],                     </span><span class="c1"># Optional, ignore certain unit types</span>
-</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="err">    bool m_bIncludeAirUnits = true,                 </span><span class="c1"># Optional, Set to false if you want to exclude air units</span>
-</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="err">    bool m_bIncludeGroundUnits = true               </span><span class="c1"># Optional, set to false if you want to exclude ground units</span>
-</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="err">    bool m_bIncludeKilledUnits = false,             </span><span class="c1"># Optional, Set to true if you want to include killed units</span>
-</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="err">    bool m_bIncludeRemovedUnits = false             </span><span class="c1"># Optional, set to true if you want to include removed units</span>
-</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="err">    bool m_bIncludeProjectiles = false              </span><span class="c1"># Optional, include projectiles (default: false)</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="err">    string m_locations[],                           # Optional</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="err">    string m_aabrs[],                               # Optional</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="err">    string m_tags[],                                # Optional, Filter for unit tags</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="err">    BoundsCheck m_boundsCheck                       # Default: BoundsCheck.Center</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="err">    int m_playerIDs[],                              # Optional, Filter for player_id</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="err">    int m_forceIDs[],                               # Optional, Filter for force_id</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="err">    string m_unitTypes[],                           # Optional, Filter for certain unit types</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="err">    string m_exceptUnitTypes[],                     # Optional, ignore certain unit types</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="err">    bool m_bIncludeAirUnits = true,                 # Optional, Set to false if you want to exclude air units</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="err">    bool m_bIncludeGroundUnits = true               # Optional, set to false if you want to exclude ground units</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="err">    bool m_bIncludeKilledUnits = false,             # Optional, Set to true if you want to include killed units</span>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="err">    bool m_bIncludeRemovedUnits = false             # Optional, set to true if you want to include removed units</span>
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="err">    bool m_bIncludeProjectiles = false              # Optional, include projectiles (default: false)</span>
 </span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="err">}</span>
 </span></code></pre></div>
 <ul>
@@ -3808,12 +3808,12 @@
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="err">void gx_create_explosion(table params)</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="err">table params = {</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="err">    float m_size,                   </span><span class="c1"># Optional, Diameter of explosion</span>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="err">    Float3 m_color = Float3(1, 1, 0),   </span><span class="c1"># Optional, ColorSRGB of explosion.</span>
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="err">    string m_location,              </span><span class="c1"># Optional, Location for explosion</span>
-</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="err">    bool m_bPlaySound = true,       </span><span class="c1"># Optional, defualt true</span>
-</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="err">    string m_sound,                 </span><span class="c1"># Optional, Sound to play</span>
-</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="err">    string m_soundPack,             </span><span class="c1"># Optional, Play random sound from soundpack</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="err">    float m_size,                   # Optional, Diameter of explosion</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="err">    Float3 m_color = Float3(1, 1, 0),   # Optional, ColorSRGB of explosion.</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="err">    string m_location,              # Optional, Location for explosion</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="err">    bool m_bPlaySound = true,       # Optional, defualt true</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="err">    string m_sound,                 # Optional, Sound to play</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="err">    string m_soundPack,             # Optional, Play random sound from soundpack</span>
 </span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="err">}</span>
 </span></code></pre></div>
 <ul>
@@ -3846,8 +3846,8 @@
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="err">void gx_kill_all_units(table params = {})</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="err">table params = { </span>
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="err">    int m_playerIDs[],      </span><span class="c1"># Optional</span>
-</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="err">    int m_forceIDs[],       </span><span class="c1"># Optional</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="err">    int m_playerIDs[],      # Optional</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="err">    int m_forceIDs[],       # Optional</span>
 </span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="err">}</span>
 </span></code></pre></div>
 <ul>
@@ -3927,7 +3927,7 @@
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="err">void gx_set_unit_position(int unit_id, table params)</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="err">table params = {</span>
-</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="err">    string m_location,     </span><span class="c1"># Optional, location to put unit</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="err">    string m_location,     # Optional, location to put unit</span>
 </span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="err">}</span>
 </span></code></pre></div>
 <p>Example:
@@ -3959,14 +3959,14 @@
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="err">int[] gx_get_players(table params = {})</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="err">table params = {</span>
-</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="err">    int m_forceIDs[],   </span><span class="c1"># Optional if set, only consider players part of these forces</span>
-</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="err">    int m_playerIDs[],  </span><span class="c1"># Optional, if set, only consider these players</span>
-</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="err">    VictoryStatus m_allowedVictoryStates[]      </span><span class="c1"># filter</span>
-</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="err">    bool m_bIncludeNormalPlayers = true;        </span><span class="c1"># filter, default true</span>
-</span><span id="__span-37-6"><a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a><span class="err">    bool m_bIncludeNeutralPlayer = false;       </span><span class="c1"># filter, default false</span>
-</span><span id="__span-37-7"><a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a><span class="err">    bool m_bIncludeRescuePlayer = false;        </span><span class="c1"># filter, default false</span>
-</span><span id="__span-37-8"><a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a><span class="err">    bool m_bIncludeHostilePlayer = false;       </span><span class="c1"># filter, default false</span>
-</span><span id="__span-37-9"><a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a><span class="err">    bool m_bPlayerMustBeInGame = true;          </span><span class="c1"># filter, default true</span>
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="err">    int m_forceIDs[],   # Optional if set, only consider players part of these forces</span>
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="err">    int m_playerIDs[],  # Optional, if set, only consider these players</span>
+</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="err">    VictoryStatus m_allowedVictoryStates[]      # filter</span>
+</span><span id="__span-37-5"><a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="err">    bool m_bIncludeNormalPlayers = true;        # filter, default true</span>
+</span><span id="__span-37-6"><a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a><span class="err">    bool m_bIncludeNeutralPlayer = false;       # filter, default false</span>
+</span><span id="__span-37-7"><a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a><span class="err">    bool m_bIncludeRescuePlayer = false;        # filter, default false</span>
+</span><span id="__span-37-8"><a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a><span class="err">    bool m_bIncludeHostilePlayer = false;       # filter, default false</span>
+</span><span id="__span-37-9"><a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a><span class="err">    bool m_bPlayerMustBeInGame = true;          # filter, default true</span>
 </span><span id="__span-37-10"><a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a><span class="err">}</span>
 </span></code></pre></div>
 <ul>
@@ -3984,11 +3984,11 @@
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="err">void gx_print(string message, table params = {})</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="err">table params = {</span>
-</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="err">    int m_forceIDs[],           </span><span class="c1"># Optional, send message to only force_id</span>
-</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="err">    int m_playerIDs[],          </span><span class="c1"># Optional, send message to only player_id</span>
-</span><span id="__span-40-4"><a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a><span class="err">    bool m_bPlaySound = true,   </span><span class="c1"># Optional, default true</span>
-</span><span id="__span-40-5"><a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a><span class="err">    string m_sound,             </span><span class="c1"># Optional, sound to play,</span>
-</span><span id="__span-40-6"><a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a><span class="err">    string m_soundPack          </span><span class="c1"># Optional, play random sound from soundPack</span>
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="err">    int m_forceIDs[],           # Optional, send message to only force_id</span>
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="err">    int m_playerIDs[],          # Optional, send message to only player_id</span>
+</span><span id="__span-40-4"><a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a><span class="err">    bool m_bPlaySound = true,   # Optional, default true</span>
+</span><span id="__span-40-5"><a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a><span class="err">    string m_sound,             # Optional, sound to play,</span>
+</span><span id="__span-40-6"><a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a><span class="err">    string m_soundPack          # Optional, play random sound from soundPack</span>
 </span><span id="__span-40-7"><a id="__codelineno-40-7" name="__codelineno-40-7" href="#__codelineno-40-7"></a><span class="err">}</span>
 </span></code></pre></div>
 <ul>
@@ -4042,25 +4042,25 @@
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="err">void gx_set_victory_status(table params)</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="err">table params = {</span>
-</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a><span class="err">    int m_status = VictoryStatus.Victory,   </span><span class="c1"># Optional</span>
-</span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a><span class="err">                                            </span><span class="c1"># Valid options: VictoryStatus.Victory or VictoryStatus.Defeat</span>
-</span><span id="__span-46-4"><a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a><span class="err">                                            </span><span class="c1"># Default: VictoryStatus.Victory</span>
-</span><span id="__span-46-5"><a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a><span class="err">    int m_playerIDs[],              </span><span class="c1"># Optional</span>
-</span><span id="__span-46-6"><a id="__codelineno-46-6" name="__codelineno-46-6" href="#__codelineno-46-6"></a><span class="err">    int m_forceIDs[],               </span><span class="c1"># Optional</span>
-</span><span id="__span-46-7"><a id="__codelineno-46-7" name="__codelineno-46-7" href="#__codelineno-46-7"></a><span class="err">    bool m_bAllPlayers = false,     </span><span class="c1"># Optional, (default: false)</span>
-</span><span id="__span-46-8"><a id="__codelineno-46-8" name="__codelineno-46-8" href="#__codelineno-46-8"></a><span class="err">    bool m_bAllForces = false,      </span><span class="c1"># Optional, (default: false)</span>
-</span><span id="__span-46-9"><a id="__codelineno-46-9" name="__codelineno-46-9" href="#__codelineno-46-9"></a><span class="err">    bool m_bKillAllUnits,           </span><span class="c1"># Optional</span>
-</span><span id="__span-46-10"><a id="__codelineno-46-10" name="__codelineno-46-10" href="#__codelineno-46-10"></a><span class="err">                                    </span><span class="c1"># if (m_status == VictoryStatus.Victory)</span>
-</span><span id="__span-46-11"><a id="__codelineno-46-11" name="__codelineno-46-11" href="#__codelineno-46-11"></a><span class="err">                                    </span><span class="c1">#      default: false</span>
-</span><span id="__span-46-12"><a id="__codelineno-46-12" name="__codelineno-46-12" href="#__codelineno-46-12"></a><span class="err">                                    </span><span class="c1"># if (m_status == VictoryStatus.Defeat)</span>
-</span><span id="__span-46-13"><a id="__codelineno-46-13" name="__codelineno-46-13" href="#__codelineno-46-13"></a><span class="err">                                    </span><span class="c1">#      default: true</span>
-</span><span id="__span-46-14"><a id="__codelineno-46-14" name="__codelineno-46-14" href="#__codelineno-46-14"></a><span class="err">    string m_img,                   </span><span class="c1"># Optional, (image to show)</span>
-</span><span id="__span-46-15"><a id="__codelineno-46-15" name="__codelineno-46-15" href="#__codelineno-46-15"></a><span class="err">    float m_imgSpeedFactor = 1,     </span><span class="c1"># Optional, speed if m_img is animated gif</span>
-</span><span id="__span-46-16"><a id="__codelineno-46-16" name="__codelineno-46-16" href="#__codelineno-46-16"></a><span class="err">    string m_sound,                 </span><span class="c1"># Optional, (sound to play)</span>
-</span><span id="__span-46-17"><a id="__codelineno-46-17" name="__codelineno-46-17" href="#__codelineno-46-17"></a><span class="err">    float m_volume = 1,             </span><span class="c1"># Optional, (default: 1)</span>
-</span><span id="__span-46-18"><a id="__codelineno-46-18" name="__codelineno-46-18" href="#__codelineno-46-18"></a><span class="err">    float m_pitch = 1,              </span><span class="c1"># Optional, (default: 1)</span>
-</span><span id="__span-46-19"><a id="__codelineno-46-19" name="__codelineno-46-19" href="#__codelineno-46-19"></a><span class="err">    ComplexColor m_color,           </span><span class="c1"># Optional, ComplexColor for m_img</span>
-</span><span id="__span-46-20"><a id="__codelineno-46-20" name="__codelineno-46-20" href="#__codelineno-46-20"></a><span class="err">    ComplexColor m_bgColor,         </span><span class="c1"># Optional, Background ComplexColor</span>
+</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a><span class="err">    int m_status = VictoryStatus.Victory,   # Optional</span>
+</span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a><span class="c1">                                            # Valid options: VictoryStatus.Victory or VictoryStatus.Defeat</span>
+</span><span id="__span-46-4"><a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a><span class="c1">                                            # Default: VictoryStatus.Victory</span>
+</span><span id="__span-46-5"><a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a><span class="err">    int m_playerIDs[],              # Optional</span>
+</span><span id="__span-46-6"><a id="__codelineno-46-6" name="__codelineno-46-6" href="#__codelineno-46-6"></a><span class="err">    int m_forceIDs[],               # Optional</span>
+</span><span id="__span-46-7"><a id="__codelineno-46-7" name="__codelineno-46-7" href="#__codelineno-46-7"></a><span class="err">    bool m_bAllPlayers = false,     # Optional, (default: false)</span>
+</span><span id="__span-46-8"><a id="__codelineno-46-8" name="__codelineno-46-8" href="#__codelineno-46-8"></a><span class="err">    bool m_bAllForces = false,      # Optional, (default: false)</span>
+</span><span id="__span-46-9"><a id="__codelineno-46-9" name="__codelineno-46-9" href="#__codelineno-46-9"></a><span class="err">    bool m_bKillAllUnits,           # Optional</span>
+</span><span id="__span-46-10"><a id="__codelineno-46-10" name="__codelineno-46-10" href="#__codelineno-46-10"></a><span class="c1">                                    # if (m_status == VictoryStatus.Victory)</span>
+</span><span id="__span-46-11"><a id="__codelineno-46-11" name="__codelineno-46-11" href="#__codelineno-46-11"></a><span class="c1">                                    #      default: false</span>
+</span><span id="__span-46-12"><a id="__codelineno-46-12" name="__codelineno-46-12" href="#__codelineno-46-12"></a><span class="c1">                                    # if (m_status == VictoryStatus.Defeat)</span>
+</span><span id="__span-46-13"><a id="__codelineno-46-13" name="__codelineno-46-13" href="#__codelineno-46-13"></a><span class="c1">                                    #      default: true</span>
+</span><span id="__span-46-14"><a id="__codelineno-46-14" name="__codelineno-46-14" href="#__codelineno-46-14"></a><span class="err">    string m_img,                   # Optional, (image to show)</span>
+</span><span id="__span-46-15"><a id="__codelineno-46-15" name="__codelineno-46-15" href="#__codelineno-46-15"></a><span class="err">    float m_imgSpeedFactor = 1,     # Optional, speed if m_img is animated gif</span>
+</span><span id="__span-46-16"><a id="__codelineno-46-16" name="__codelineno-46-16" href="#__codelineno-46-16"></a><span class="err">    string m_sound,                 # Optional, (sound to play)</span>
+</span><span id="__span-46-17"><a id="__codelineno-46-17" name="__codelineno-46-17" href="#__codelineno-46-17"></a><span class="err">    float m_volume = 1,             # Optional, (default: 1)</span>
+</span><span id="__span-46-18"><a id="__codelineno-46-18" name="__codelineno-46-18" href="#__codelineno-46-18"></a><span class="err">    float m_pitch = 1,              # Optional, (default: 1)</span>
+</span><span id="__span-46-19"><a id="__codelineno-46-19" name="__codelineno-46-19" href="#__codelineno-46-19"></a><span class="err">    ComplexColor m_color,           # Optional, ComplexColor for m_img</span>
+</span><span id="__span-46-20"><a id="__codelineno-46-20" name="__codelineno-46-20" href="#__codelineno-46-20"></a><span class="err">    ComplexColor m_bgColor,         # Optional, Background ComplexColor</span>
 </span><span id="__span-46-21"><a id="__codelineno-46-21" name="__codelineno-46-21" href="#__codelineno-46-21"></a><span class="err">}</span>
 </span></code></pre></div>
 <ul>
@@ -4111,7 +4111,7 @@ It copies the existing definition of "Brute" to "User_BabyBrute".</p>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="err">void gx_map_init_modify_ud_props(string unit_type, table params = {})</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="err">table params = {</span>
-</span><span id="__span-54-2"><a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a><span class="err">    string m_friendlyName,     </span><span class="c1"># Optional, set unit&#39;s friendly name</span>
+</span><span id="__span-54-2"><a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a><span class="err">    string m_friendlyName,     # Optional, set unit&#39;s friendly name</span>
 </span><span id="__span-54-3"><a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a><span class="err">    bool m_bHasHealth,</span>
 </span><span id="__span-54-4"><a id="__codelineno-54-4" name="__codelineno-54-4" href="#__codelineno-54-4"></a><span class="err">    int m_maxHealth,</span>
 </span><span id="__span-54-5"><a id="__codelineno-54-5" name="__codelineno-54-5" href="#__codelineno-54-5"></a><span class="err">    float m_maxSpeed,</span>
@@ -4149,9 +4149,9 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a><span class="err">void gx_map_init_add_build_structure_item(string unitType, table params = {})</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="err">table params = {</span>
-</span><span id="__span-57-2"><a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a><span class="err">    string m_structure,    </span><span class="c1"># name of structure to build, i.e. &quot;Microwave&quot;</span>
-</span><span id="__span-57-3"><a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a><span class="err">    Float2 m_position,           </span><span class="c1"># position in command card to place at, leaving empty will use default</span>
-</span><span id="__span-57-4"><a id="__codelineno-57-4" name="__codelineno-57-4" href="#__codelineno-57-4"></a><span class="err">    bool bBuildAdvanced = false     </span><span class="c1"># default is false, if set to True, will be placed in &#39;build advanced&#39; tab</span>
+</span><span id="__span-57-2"><a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a><span class="err">    string m_structure,    # name of structure to build, i.e. &quot;Microwave&quot;</span>
+</span><span id="__span-57-3"><a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a><span class="err">    Float2 m_position,           # position in command card to place at, leaving empty will use default</span>
+</span><span id="__span-57-4"><a id="__codelineno-57-4" name="__codelineno-57-4" href="#__codelineno-57-4"></a><span class="err">    bool bBuildAdvanced = false     # default is false, if set to True, will be placed in &#39;build advanced&#39; tab</span>
 </span><span id="__span-57-5"><a id="__codelineno-57-5" name="__codelineno-57-5" href="#__codelineno-57-5"></a><span class="err">}</span>
 </span></code></pre></div>
 <ul>
@@ -4168,9 +4168,9 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a><span class="err">void gx_map_init_add_build_item(string unitType, table params)</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a><span class="err">table params = {</span>
-</span><span id="__span-60-2"><a id="__codelineno-60-2" name="__codelineno-60-2" href="#__codelineno-60-2"></a><span class="err">    string m_unitType,     </span><span class="c1"># unit type to add</span>
-</span><span id="__span-60-3"><a id="__codelineno-60-3" name="__codelineno-60-3" href="#__codelineno-60-3"></a><span class="err">    string m_research,      </span><span class="c1"># research to add</span>
-</span><span id="__span-60-4"><a id="__codelineno-60-4" name="__codelineno-60-4" href="#__codelineno-60-4"></a><span class="err">    Float2 m_position        </span><span class="c1"># position in command card</span>
+</span><span id="__span-60-2"><a id="__codelineno-60-2" name="__codelineno-60-2" href="#__codelineno-60-2"></a><span class="err">    string m_unitType,     # unit type to add</span>
+</span><span id="__span-60-3"><a id="__codelineno-60-3" name="__codelineno-60-3" href="#__codelineno-60-3"></a><span class="err">    string m_research,      # research to add</span>
+</span><span id="__span-60-4"><a id="__codelineno-60-4" name="__codelineno-60-4" href="#__codelineno-60-4"></a><span class="err">    Float2 m_position        # position in command card</span>
 </span><span id="__span-60-5"><a id="__codelineno-60-5" name="__codelineno-60-5" href="#__codelineno-60-5"></a><span class="err">}</span>
 </span></code></pre></div>
 <ul>
@@ -4190,11 +4190,11 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-62-1"><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a><span class="err">void gx_fling_unit(int unit_id, table params = {})</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-63-1"><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a><span class="err">table params = {</span>
-</span><span id="__span-63-2"><a id="__codelineno-63-2" name="__codelineno-63-2" href="#__codelineno-63-2"></a><span class="err">    Float3 m_dir2d,          </span><span class="c1"># Optional, 2d direction to throw unit. Does not need to be normalized.</span>
-</span><span id="__span-63-3"><a id="__codelineno-63-3" name="__codelineno-63-3" href="#__codelineno-63-3"></a><span class="err">    Float3 m_dir3d,          </span><span class="c1"># Optional, 3d direction to throw unit. Does not need to be normalized.</span>
-</span><span id="__span-63-4"><a id="__codelineno-63-4" name="__codelineno-63-4" href="#__codelineno-63-4"></a><span class="err">    float m_force = 1           </span><span class="c1"># Optional, velocity to throw unit</span>
-</span><span id="__span-63-5"><a id="__codelineno-63-5" name="__codelineno-63-5" href="#__codelineno-63-5"></a><span class="err">    m_bFlingLookAtDir = false   </span><span class="c1"># Optional, will fling unit in direction it is facing</span>
-</span><span id="__span-63-6"><a id="__codelineno-63-6" name="__codelineno-63-6" href="#__codelineno-63-6"></a><span class="err">    m_bFlingStructures = false  </span><span class="c1"># Optional, if true, structures will be thrown</span>
+</span><span id="__span-63-2"><a id="__codelineno-63-2" name="__codelineno-63-2" href="#__codelineno-63-2"></a><span class="err">    Float3 m_dir2d,          # Optional, 2d direction to throw unit. Does not need to be normalized.</span>
+</span><span id="__span-63-3"><a id="__codelineno-63-3" name="__codelineno-63-3" href="#__codelineno-63-3"></a><span class="err">    Float3 m_dir3d,          # Optional, 3d direction to throw unit. Does not need to be normalized.</span>
+</span><span id="__span-63-4"><a id="__codelineno-63-4" name="__codelineno-63-4" href="#__codelineno-63-4"></a><span class="err">    float m_force = 1           # Optional, velocity to throw unit</span>
+</span><span id="__span-63-5"><a id="__codelineno-63-5" name="__codelineno-63-5" href="#__codelineno-63-5"></a><span class="err">    m_bFlingLookAtDir = false   # Optional, will fling unit in direction it is facing</span>
+</span><span id="__span-63-6"><a id="__codelineno-63-6" name="__codelineno-63-6" href="#__codelineno-63-6"></a><span class="err">    m_bFlingStructures = false  # Optional, if true, structures will be thrown</span>
 </span><span id="__span-63-7"><a id="__codelineno-63-7" name="__codelineno-63-7" href="#__codelineno-63-7"></a><span class="err">}</span>
 </span></code></pre></div>
 <ul>
@@ -4206,10 +4206,10 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-64-1"><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a><span class="err">void gx_set_area_vision(int player_id, table params)</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-65-1"><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a><span class="err">table params = {</span>
-</span><span id="__span-65-2"><a id="__codelineno-65-2" name="__codelineno-65-2" href="#__codelineno-65-2"></a><span class="err">    string m_location,         </span><span class="c1"># location to give or take away vision of (depending on m_bSet)</span>
-</span><span id="__span-65-3"><a id="__codelineno-65-3" name="__codelineno-65-3" href="#__codelineno-65-3"></a><span class="err">    string m_triangleGroup,    </span><span class="c1"># triangle group to give or take away vision of (depending on m_bSet)</span>
-</span><span id="__span-65-4"><a id="__codelineno-65-4" name="__codelineno-65-4" href="#__codelineno-65-4"></a><span class="err">    bool m_bFullMapVision,      </span><span class="c1"># If set to true, will give or take away vision of entire map (depending on m_bSet)</span>
-</span><span id="__span-65-5"><a id="__codelineno-65-5" name="__codelineno-65-5" href="#__codelineno-65-5"></a><span class="err">    bool m_bSet = true              </span><span class="c1"># If true gives vision, else takes away vision. (default: true)</span>
+</span><span id="__span-65-2"><a id="__codelineno-65-2" name="__codelineno-65-2" href="#__codelineno-65-2"></a><span class="err">    string m_location,         # location to give or take away vision of (depending on m_bSet)</span>
+</span><span id="__span-65-3"><a id="__codelineno-65-3" name="__codelineno-65-3" href="#__codelineno-65-3"></a><span class="err">    string m_triangleGroup,    # triangle group to give or take away vision of (depending on m_bSet)</span>
+</span><span id="__span-65-4"><a id="__codelineno-65-4" name="__codelineno-65-4" href="#__codelineno-65-4"></a><span class="err">    bool m_bFullMapVision,      # If set to true, will give or take away vision of entire map (depending on m_bSet)</span>
+</span><span id="__span-65-5"><a id="__codelineno-65-5" name="__codelineno-65-5" href="#__codelineno-65-5"></a><span class="err">    bool m_bSet = true              # If true gives vision, else takes away vision. (default: true)</span>
 </span><span id="__span-65-6"><a id="__codelineno-65-6" name="__codelineno-65-6" href="#__codelineno-65-6"></a><span class="err">}</span>
 </span></code></pre></div>
 <ul>
@@ -4224,9 +4224,9 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-66-1"><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a><span class="err">bool gx_get_area_vision(int player_id, table params)</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-67-1"><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a><span class="err">table params = {</span>
-</span><span id="__span-67-2"><a id="__codelineno-67-2" name="__codelineno-67-2" href="#__codelineno-67-2"></a><span class="err">    string m_location,         </span><span class="c1"># location to query vision for</span>
-</span><span id="__span-67-3"><a id="__codelineno-67-3" name="__codelineno-67-3" href="#__codelineno-67-3"></a><span class="err">    string m_triangleGroup,    </span><span class="c1"># triangle group to query vision for</span>
-</span><span id="__span-67-4"><a id="__codelineno-67-4" name="__codelineno-67-4" href="#__codelineno-67-4"></a><span class="err">    bool m_bFullMapVision      </span><span class="c1"># If set to true, queries if player has full map vision</span>
+</span><span id="__span-67-2"><a id="__codelineno-67-2" name="__codelineno-67-2" href="#__codelineno-67-2"></a><span class="err">    string m_location,         # location to query vision for</span>
+</span><span id="__span-67-3"><a id="__codelineno-67-3" name="__codelineno-67-3" href="#__codelineno-67-3"></a><span class="err">    string m_triangleGroup,    # triangle group to query vision for</span>
+</span><span id="__span-67-4"><a id="__codelineno-67-4" name="__codelineno-67-4" href="#__codelineno-67-4"></a><span class="err">    bool m_bFullMapVision      # If set to true, queries if player has full map vision</span>
 </span><span id="__span-67-5"><a id="__codelineno-67-5" name="__codelineno-67-5" href="#__codelineno-67-5"></a><span class="err">}</span>
 </span></code></pre></div>
 <ul>
@@ -4238,15 +4238,15 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-68-1"><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a><span class="err">void gx_set_terrain_type(params = {})</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-69-1"><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a><span class="err">table params = {</span>
-</span><span id="__span-69-2"><a id="__codelineno-69-2" name="__codelineno-69-2" href="#__codelineno-69-2"></a><span class="err">    TerrainType m_type         </span><span class="c1"># Required. The type of terrain to change to. See TerrainType enum. </span>
-</span><span id="__span-69-3"><a id="__codelineno-69-3" name="__codelineno-69-3" href="#__codelineno-69-3"></a><span class="err">    int m_secondary = 0         </span><span class="c1"># Secondary terrain type. (default = 0)</span>
-</span><span id="__span-69-4"><a id="__codelineno-69-4" name="__codelineno-69-4" href="#__codelineno-69-4"></a><span class="err">    Int2 m_index,          </span><span class="c1"># 2d index of square to change terrain type of</span>
-</span><span id="__span-69-5"><a id="__codelineno-69-5" name="__codelineno-69-5" href="#__codelineno-69-5"></a><span class="err">    int m_index2,         </span><span class="c1"># 0 or 1, 0 indicates bottom triangle, 1 indicates top.</span>
-</span><span id="__span-69-6"><a id="__codelineno-69-6" name="__codelineno-69-6" href="#__codelineno-69-6"></a><span class="err">                                </span><span class="c1"># If index2 is not defined, entire square specified by m_index</span>
-</span><span id="__span-69-7"><a id="__codelineno-69-7" name="__codelineno-69-7" href="#__codelineno-69-7"></a><span class="err">                                </span><span class="c1"># will be set to terrain type (i.e. both triangles, top and bottom).</span>
-</span><span id="__span-69-8"><a id="__codelineno-69-8" name="__codelineno-69-8" href="#__codelineno-69-8"></a><span class="err">                                </span><span class="c1"># m_index and index2 are ignored if m_location is set.</span>
-</span><span id="__span-69-9"><a id="__codelineno-69-9" name="__codelineno-69-9" href="#__codelineno-69-9"></a><span class="err">    string m_location,          </span><span class="c1"># location to set terrain tile types.,</span>
-</span><span id="__span-69-10"><a id="__codelineno-69-10" name="__codelineno-69-10" href="#__codelineno-69-10"></a><span class="err">    string m_triangleGroup       </span><span class="c1"># triangle group to set terrian tile stype</span>
+</span><span id="__span-69-2"><a id="__codelineno-69-2" name="__codelineno-69-2" href="#__codelineno-69-2"></a><span class="err">    TerrainType m_type         # Required. The type of terrain to change to. See TerrainType enum. </span>
+</span><span id="__span-69-3"><a id="__codelineno-69-3" name="__codelineno-69-3" href="#__codelineno-69-3"></a><span class="err">    int m_secondary = 0         # Secondary terrain type. (default = 0)</span>
+</span><span id="__span-69-4"><a id="__codelineno-69-4" name="__codelineno-69-4" href="#__codelineno-69-4"></a><span class="err">    Int2 m_index,          # 2d index of square to change terrain type of</span>
+</span><span id="__span-69-5"><a id="__codelineno-69-5" name="__codelineno-69-5" href="#__codelineno-69-5"></a><span class="err">    int m_index2,         # 0 or 1, 0 indicates bottom triangle, 1 indicates top.</span>
+</span><span id="__span-69-6"><a id="__codelineno-69-6" name="__codelineno-69-6" href="#__codelineno-69-6"></a><span class="c1">                                # If index2 is not defined, entire square specified by m_index</span>
+</span><span id="__span-69-7"><a id="__codelineno-69-7" name="__codelineno-69-7" href="#__codelineno-69-7"></a><span class="c1">                                # will be set to terrain type (i.e. both triangles, top and bottom).</span>
+</span><span id="__span-69-8"><a id="__codelineno-69-8" name="__codelineno-69-8" href="#__codelineno-69-8"></a><span class="c1">                                # m_index and index2 are ignored if m_location is set.</span>
+</span><span id="__span-69-9"><a id="__codelineno-69-9" name="__codelineno-69-9" href="#__codelineno-69-9"></a><span class="err">    string m_location,          # location to set terrain tile types.,</span>
+</span><span id="__span-69-10"><a id="__codelineno-69-10" name="__codelineno-69-10" href="#__codelineno-69-10"></a><span class="err">    string m_triangleGroup       # triangle group to set terrian tile stype</span>
 </span><span id="__span-69-11"><a id="__codelineno-69-11" name="__codelineno-69-11" href="#__codelineno-69-11"></a><span class="err">}</span>
 </span></code></pre></div>
 <p>Example that sets terrain at location <code>my_location</code> to Pacifist type:
@@ -4271,12 +4271,12 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-71-1"><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a><span class="err">void gx_set_terrain_type_2(params = {})</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-72-1"><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a><span class="err">table params = {</span>
-</span><span id="__span-72-2"><a id="__codelineno-72-2" name="__codelineno-72-2" href="#__codelineno-72-2"></a><span class="err">    TerrainType m_type              </span><span class="c1"># Required. The type of terrain to change to. See TerrainType enum. </span>
-</span><span id="__span-72-3"><a id="__codelineno-72-3" name="__codelineno-72-3" href="#__codelineno-72-3"></a><span class="err">    int m_secondary = 0             </span><span class="c1"># Secondary terrain type. (default = 0)</span>
-</span><span id="__span-72-4"><a id="__codelineno-72-4" name="__codelineno-72-4" href="#__codelineno-72-4"></a><span class="err">    string m_locations[],           </span><span class="c1"># location to set terrain tile types.,</span>
-</span><span id="__span-72-5"><a id="__codelineno-72-5" name="__codelineno-72-5" href="#__codelineno-72-5"></a><span class="err">    AABR m_aabrs[],                 </span><span class="c1"># aabrs to set terrain tile type</span>
-</span><span id="__span-72-6"><a id="__codelineno-72-6" name="__codelineno-72-6" href="#__codelineno-72-6"></a><span class="err">    string m_excludeLocations[],    </span><span class="c1"># location to NOT set terrain tile types.,</span>
-</span><span id="__span-72-7"><a id="__codelineno-72-7" name="__codelineno-72-7" href="#__codelineno-72-7"></a><span class="err">    AABR m_excludeAABRs[]           </span><span class="c1"># aabrs to NOT set terrian tile stype</span>
+</span><span id="__span-72-2"><a id="__codelineno-72-2" name="__codelineno-72-2" href="#__codelineno-72-2"></a><span class="err">    TerrainType m_type              # Required. The type of terrain to change to. See TerrainType enum. </span>
+</span><span id="__span-72-3"><a id="__codelineno-72-3" name="__codelineno-72-3" href="#__codelineno-72-3"></a><span class="err">    int m_secondary = 0             # Secondary terrain type. (default = 0)</span>
+</span><span id="__span-72-4"><a id="__codelineno-72-4" name="__codelineno-72-4" href="#__codelineno-72-4"></a><span class="err">    string m_locations[],           # location to set terrain tile types.,</span>
+</span><span id="__span-72-5"><a id="__codelineno-72-5" name="__codelineno-72-5" href="#__codelineno-72-5"></a><span class="err">    AABR m_aabrs[],                 # aabrs to set terrain tile type</span>
+</span><span id="__span-72-6"><a id="__codelineno-72-6" name="__codelineno-72-6" href="#__codelineno-72-6"></a><span class="err">    string m_excludeLocations[],    # location to NOT set terrain tile types.,</span>
+</span><span id="__span-72-7"><a id="__codelineno-72-7" name="__codelineno-72-7" href="#__codelineno-72-7"></a><span class="err">    AABR m_excludeAABRs[]           # aabrs to NOT set terrian tile stype</span>
 </span><span id="__span-72-8"><a id="__codelineno-72-8" name="__codelineno-72-8" href="#__codelineno-72-8"></a><span class="err">}</span>
 </span></code></pre></div>
 <h2 id="gx_set_terrain_type_3">gx_set_terrain_type_3</h2>
@@ -4295,12 +4295,12 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <li>This function should be used if you are using barrels for 'destroying' terrain and making them space, or other terrain..</li>
 </ul>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-75-1"><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a><span class="err">table params = {</span>
-</span><span id="__span-75-2"><a id="__codelineno-75-2" name="__codelineno-75-2" href="#__codelineno-75-2"></a><span class="err">    TerrainType m_type              </span><span class="c1"># Required. The type of terrain to change to. See TerrainType enum. </span>
-</span><span id="__span-75-3"><a id="__codelineno-75-3" name="__codelineno-75-3" href="#__codelineno-75-3"></a><span class="err">    int m_secondary = 0             </span><span class="c1"># Secondary terrain type. (default = 0)</span>
-</span><span id="__span-75-4"><a id="__codelineno-75-4" name="__codelineno-75-4" href="#__codelineno-75-4"></a><span class="err">    string m_locations[],           </span><span class="c1"># location to set terrain tile types.,</span>
-</span><span id="__span-75-5"><a id="__codelineno-75-5" name="__codelineno-75-5" href="#__codelineno-75-5"></a><span class="err">    AABR m_aabrs[],                 </span><span class="c1"># aabrs to set terrain tile type</span>
-</span><span id="__span-75-6"><a id="__codelineno-75-6" name="__codelineno-75-6" href="#__codelineno-75-6"></a><span class="err">    string m_excludeLocations[],    </span><span class="c1"># location to NOT set terrain tile types.,</span>
-</span><span id="__span-75-7"><a id="__codelineno-75-7" name="__codelineno-75-7" href="#__codelineno-75-7"></a><span class="err">    AABR m_excludeAABRs[]           </span><span class="c1"># aabrs to NOT set terrian tile stype</span>
+</span><span id="__span-75-2"><a id="__codelineno-75-2" name="__codelineno-75-2" href="#__codelineno-75-2"></a><span class="err">    TerrainType m_type              # Required. The type of terrain to change to. See TerrainType enum. </span>
+</span><span id="__span-75-3"><a id="__codelineno-75-3" name="__codelineno-75-3" href="#__codelineno-75-3"></a><span class="err">    int m_secondary = 0             # Secondary terrain type. (default = 0)</span>
+</span><span id="__span-75-4"><a id="__codelineno-75-4" name="__codelineno-75-4" href="#__codelineno-75-4"></a><span class="err">    string m_locations[],           # location to set terrain tile types.,</span>
+</span><span id="__span-75-5"><a id="__codelineno-75-5" name="__codelineno-75-5" href="#__codelineno-75-5"></a><span class="err">    AABR m_aabrs[],                 # aabrs to set terrain tile type</span>
+</span><span id="__span-75-6"><a id="__codelineno-75-6" name="__codelineno-75-6" href="#__codelineno-75-6"></a><span class="err">    string m_excludeLocations[],    # location to NOT set terrain tile types.,</span>
+</span><span id="__span-75-7"><a id="__codelineno-75-7" name="__codelineno-75-7" href="#__codelineno-75-7"></a><span class="err">    AABR m_excludeAABRs[]           # aabrs to NOT set terrian tile stype</span>
 </span><span id="__span-75-8"><a id="__codelineno-75-8" name="__codelineno-75-8" href="#__codelineno-75-8"></a><span class="err">}</span>
 </span></code></pre></div>
 <h2 id="gx_get_terrain_type">gx_get_terrain_type</h2>
@@ -4346,9 +4346,9 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-82-1"><a id="__codelineno-82-1" name="__codelineno-82-1" href="#__codelineno-82-1"></a><span class="err">gx_queue_command(int unit_ids[], CommandType command, table params = {}, bool bQueueCommand = false)</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-83-1"><a id="__codelineno-83-1" name="__codelineno-83-1" href="#__codelineno-83-1"></a><span class="err">table params = {</span>
-</span><span id="__span-83-2"><a id="__codelineno-83-2" name="__codelineno-83-2" href="#__codelineno-83-2"></a><span class="err">    int m_unitID,            </span><span class="c1"># unit to target</span>
-</span><span id="__span-83-3"><a id="__codelineno-83-3" name="__codelineno-83-3" href="#__codelineno-83-3"></a><span class="err">    string m_location,     </span><span class="c1"># location to target</span>
-</span><span id="__span-83-4"><a id="__codelineno-83-4" name="__codelineno-83-4" href="#__codelineno-83-4"></a><span class="err">    Float2 m_pos,          </span><span class="c1"># position to target</span>
+</span><span id="__span-83-2"><a id="__codelineno-83-2" name="__codelineno-83-2" href="#__codelineno-83-2"></a><span class="err">    int m_unitID,            # unit to target</span>
+</span><span id="__span-83-3"><a id="__codelineno-83-3" name="__codelineno-83-3" href="#__codelineno-83-3"></a><span class="err">    string m_location,     # location to target</span>
+</span><span id="__span-83-4"><a id="__codelineno-83-4" name="__codelineno-83-4" href="#__codelineno-83-4"></a><span class="err">    Float2 m_pos,          # position to target</span>
 </span><span id="__span-83-5"><a id="__codelineno-83-5" name="__codelineno-83-5" href="#__codelineno-83-5"></a><span class="err">}</span>
 </span></code></pre></div>
 <ul>
@@ -4363,10 +4363,10 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-84-1"><a id="__codelineno-84-1" name="__codelineno-84-1" href="#__codelineno-84-1"></a><span class="err">int gx_set_speech_bubble(int unit_id, table params = {})</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-85-1"><a id="__codelineno-85-1" name="__codelineno-85-1" href="#__codelineno-85-1"></a><span class="err">table params = {</span>
-</span><span id="__span-85-2"><a id="__codelineno-85-2" name="__codelineno-85-2" href="#__codelineno-85-2"></a><span class="err">    string m_text,          </span><span class="c1"># Speech Bubble text to display</span>
-</span><span id="__span-85-3"><a id="__codelineno-85-3" name="__codelineno-85-3" href="#__codelineno-85-3"></a><span class="err">    int m_duration = 60     </span><span class="c1"># duration to display in ticks </span>
-</span><span id="__span-85-4"><a id="__codelineno-85-4" name="__codelineno-85-4" href="#__codelineno-85-4"></a><span class="err">                            </span><span class="c1"># set to -1 to make it last forever</span>
-</span><span id="__span-85-5"><a id="__codelineno-85-5" name="__codelineno-85-5" href="#__codelineno-85-5"></a><span class="err">                            </span><span class="c1"># default: 60 ticks (3 seconds)</span>
+</span><span id="__span-85-2"><a id="__codelineno-85-2" name="__codelineno-85-2" href="#__codelineno-85-2"></a><span class="err">    string m_text,          # Speech Bubble text to display</span>
+</span><span id="__span-85-3"><a id="__codelineno-85-3" name="__codelineno-85-3" href="#__codelineno-85-3"></a><span class="err">    int m_duration = 60     # duration to display in ticks </span>
+</span><span id="__span-85-4"><a id="__codelineno-85-4" name="__codelineno-85-4" href="#__codelineno-85-4"></a><span class="c1">                            # set to -1 to make it last forever</span>
+</span><span id="__span-85-5"><a id="__codelineno-85-5" name="__codelineno-85-5" href="#__codelineno-85-5"></a><span class="c1">                            # default: 60 ticks (3 seconds)</span>
 </span><span id="__span-85-6"><a id="__codelineno-85-6" name="__codelineno-85-6" href="#__codelineno-85-6"></a><span class="err">}</span>
 </span></code></pre></div>
 <ul>
@@ -4410,8 +4410,8 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <li>Returns how much <code>player ammo</code> of type <code>ammoName</code> the player has</li>
 </ul>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-91-1"><a id="__codelineno-91-1" name="__codelineno-91-1" href="#__codelineno-91-1"></a><span class="err">table params = {</span>
-</span><span id="__span-91-2"><a id="__codelineno-91-2" name="__codelineno-91-2" href="#__codelineno-91-2"></a><span class="err">    string m_tag,             </span><span class="c1"># Required                                 (string)</span>
-</span><span id="__span-91-3"><a id="__codelineno-91-3" name="__codelineno-91-3" href="#__codelineno-91-3"></a><span class="err">    int m_player_id = 0        </span><span class="c1"># Optional, used to Filter. Default = 0.   (int)</span>
+</span><span id="__span-91-2"><a id="__codelineno-91-2" name="__codelineno-91-2" href="#__codelineno-91-2"></a><span class="err">    string m_tag,             # Required                                 (string)</span>
+</span><span id="__span-91-3"><a id="__codelineno-91-3" name="__codelineno-91-3" href="#__codelineno-91-3"></a><span class="err">    int m_player_id = 0        # Optional, used to Filter. Default = 0.   (int)</span>
 </span><span id="__span-91-4"><a id="__codelineno-91-4" name="__codelineno-91-4" href="#__codelineno-91-4"></a><span class="err">}</span>
 </span></code></pre></div>
 <ul>
@@ -4559,13 +4559,13 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-107-1"><a id="__codelineno-107-1" name="__codelineno-107-1" href="#__codelineno-107-1"></a><span class="err">int gx_sound2d_create(table params = {})</span>
 </span></code></pre></div>
 <p><div class="language-sq highlight"><pre><span></span><code><span id="__span-108-1"><a id="__codelineno-108-1" name="__codelineno-108-1" href="#__codelineno-108-1"></a><span class="err">table params = {</span>
-</span><span id="__span-108-2"><a id="__codelineno-108-2" name="__codelineno-108-2" href="#__codelineno-108-2"></a><span class="err">    string m_sound,         </span><span class="c1"># name of sound to play</span>
-</span><span id="__span-108-3"><a id="__codelineno-108-3" name="__codelineno-108-3" href="#__codelineno-108-3"></a><span class="err">    string m_soundPack,     </span><span class="c1"># will play random sound from soundpack</span>
-</span><span id="__span-108-4"><a id="__codelineno-108-4" name="__codelineno-108-4" href="#__codelineno-108-4"></a><span class="err">    int m_forceIDs[],       </span><span class="c1"># forceIDs that can hear the sound</span>
-</span><span id="__span-108-5"><a id="__codelineno-108-5" name="__codelineno-108-5" href="#__codelineno-108-5"></a><span class="err">    int m_playerIDs[],      </span><span class="c1"># playerIDs that can hear the sound</span>
-</span><span id="__span-108-6"><a id="__codelineno-108-6" name="__codelineno-108-6" href="#__codelineno-108-6"></a><span class="err">    float m_volume = 1,     </span><span class="c1"># Optional, volume multiplier (default = 1)</span>
-</span><span id="__span-108-7"><a id="__codelineno-108-7" name="__codelineno-108-7" href="#__codelineno-108-7"></a><span class="err">    float m_pitch = 1,      </span><span class="c1"># Optional, pitch of sound (default = 1)</span>
-</span><span id="__span-108-8"><a id="__codelineno-108-8" name="__codelineno-108-8" href="#__codelineno-108-8"></a><span class="err">    bool m_bLoop = false    </span><span class="c1"># Optional, controls if sound should loop</span>
+</span><span id="__span-108-2"><a id="__codelineno-108-2" name="__codelineno-108-2" href="#__codelineno-108-2"></a><span class="err">    string m_sound,         # name of sound to play</span>
+</span><span id="__span-108-3"><a id="__codelineno-108-3" name="__codelineno-108-3" href="#__codelineno-108-3"></a><span class="err">    string m_soundPack,     # will play random sound from soundpack</span>
+</span><span id="__span-108-4"><a id="__codelineno-108-4" name="__codelineno-108-4" href="#__codelineno-108-4"></a><span class="err">    int m_forceIDs[],       # forceIDs that can hear the sound</span>
+</span><span id="__span-108-5"><a id="__codelineno-108-5" name="__codelineno-108-5" href="#__codelineno-108-5"></a><span class="err">    int m_playerIDs[],      # playerIDs that can hear the sound</span>
+</span><span id="__span-108-6"><a id="__codelineno-108-6" name="__codelineno-108-6" href="#__codelineno-108-6"></a><span class="err">    float m_volume = 1,     # Optional, volume multiplier (default = 1)</span>
+</span><span id="__span-108-7"><a id="__codelineno-108-7" name="__codelineno-108-7" href="#__codelineno-108-7"></a><span class="err">    float m_pitch = 1,      # Optional, pitch of sound (default = 1)</span>
+</span><span id="__span-108-8"><a id="__codelineno-108-8" name="__codelineno-108-8" href="#__codelineno-108-8"></a><span class="err">    bool m_bLoop = false    # Optional, controls if sound should loop</span>
 </span><span id="__span-108-9"><a id="__codelineno-108-9" name="__codelineno-108-9" href="#__codelineno-108-9"></a><span class="err">}</span>
 </span></code></pre></div>
 - You are required to set either <code>m_sound</code> or <code>m_soundPack</code> (but not both).
@@ -4584,8 +4584,8 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-110-1"><a id="__codelineno-110-1" name="__codelineno-110-1" href="#__codelineno-110-1"></a><span class="err">void gx_sound2d_modify(int soundID, table params = {})</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-111-1"><a id="__codelineno-111-1" name="__codelineno-111-1" href="#__codelineno-111-1"></a><span class="err">table params = {</span>
-</span><span id="__span-111-2"><a id="__codelineno-111-2" name="__codelineno-111-2" href="#__codelineno-111-2"></a><span class="err">    float m_volume,     </span><span class="c1"># Optional, volume multiplier</span>
-</span><span id="__span-111-3"><a id="__codelineno-111-3" name="__codelineno-111-3" href="#__codelineno-111-3"></a><span class="err">    float m_pitch       </span><span class="c1"># Optional, pitch of sound</span>
+</span><span id="__span-111-2"><a id="__codelineno-111-2" name="__codelineno-111-2" href="#__codelineno-111-2"></a><span class="err">    float m_volume,     # Optional, volume multiplier</span>
+</span><span id="__span-111-3"><a id="__codelineno-111-3" name="__codelineno-111-3" href="#__codelineno-111-3"></a><span class="err">    float m_pitch       # Optional, pitch of sound</span>
 </span><span id="__span-111-4"><a id="__codelineno-111-4" name="__codelineno-111-4" href="#__codelineno-111-4"></a><span class="err">}</span>
 </span></code></pre></div>
 <h2 id="gx_sound2d_is_playing">gx_sound2d_is_playing</h2>
@@ -4598,17 +4598,17 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-113-1"><a id="__codelineno-113-1" name="__codelineno-113-1" href="#__codelineno-113-1"></a><span class="err">int gx_sound3d_create(table params = {})</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-114-1"><a id="__codelineno-114-1" name="__codelineno-114-1" href="#__codelineno-114-1"></a><span class="err">table params = {</span>
-</span><span id="__span-114-2"><a id="__codelineno-114-2" name="__codelineno-114-2" href="#__codelineno-114-2"></a><span class="err">    string m_sound,         </span><span class="c1"># name of sound to play</span>
-</span><span id="__span-114-3"><a id="__codelineno-114-3" name="__codelineno-114-3" href="#__codelineno-114-3"></a><span class="err">    string m_soundPack,     </span><span class="c1"># play random sound from soundpack</span>
-</span><span id="__span-114-4"><a id="__codelineno-114-4" name="__codelineno-114-4" href="#__codelineno-114-4"></a><span class="err">    int m_unitID,           </span><span class="c1"># Optional, unit for sound to attach to</span>
-</span><span id="__span-114-5"><a id="__codelineno-114-5" name="__codelineno-114-5" href="#__codelineno-114-5"></a><span class="err">    bool m_bStopSoundOnUnitDeath,           </span><span class="c1"># Optional, default true if m_unitID is set</span>
-</span><span id="__span-114-6"><a id="__codelineno-114-6" name="__codelineno-114-6" href="#__codelineno-114-6"></a><span class="err">    Float2 m_pos2d,           </span><span class="c1"># Optional, 2d position for sound</span>
-</span><span id="__span-114-7"><a id="__codelineno-114-7" name="__codelineno-114-7" href="#__codelineno-114-7"></a><span class="err">    Float3 m_pos3d,           </span><span class="c1"># Optional, 3d position for sound</span>
-</span><span id="__span-114-8"><a id="__codelineno-114-8" name="__codelineno-114-8" href="#__codelineno-114-8"></a><span class="err">    float m_radius = 0,     </span><span class="c1"># Optional, sound radius, default = 0</span>
-</span><span id="__span-114-9"><a id="__codelineno-114-9" name="__codelineno-114-9" href="#__codelineno-114-9"></a><span class="err">    float m_volume = 1,     </span><span class="c1"># Optional, volume multiplier (default = 1)</span>
-</span><span id="__span-114-10"><a id="__codelineno-114-10" name="__codelineno-114-10" href="#__codelineno-114-10"></a><span class="err">    float m_pitch = 1,      </span><span class="c1"># Optional, pitch of sound (default = 1)</span>
-</span><span id="__span-114-11"><a id="__codelineno-114-11" name="__codelineno-114-11" href="#__codelineno-114-11"></a><span class="err">    bool m_bLoop = false                    </span><span class="c1"># Optional, controls if sound should loop</span>
-</span><span id="__span-114-12"><a id="__codelineno-114-12" name="__codelineno-114-12" href="#__codelineno-114-12"></a><span class="err">    bool m_bRandomLoopStartTime = false     </span><span class="c1"># Optional</span>
+</span><span id="__span-114-2"><a id="__codelineno-114-2" name="__codelineno-114-2" href="#__codelineno-114-2"></a><span class="err">    string m_sound,         # name of sound to play</span>
+</span><span id="__span-114-3"><a id="__codelineno-114-3" name="__codelineno-114-3" href="#__codelineno-114-3"></a><span class="err">    string m_soundPack,     # play random sound from soundpack</span>
+</span><span id="__span-114-4"><a id="__codelineno-114-4" name="__codelineno-114-4" href="#__codelineno-114-4"></a><span class="err">    int m_unitID,           # Optional, unit for sound to attach to</span>
+</span><span id="__span-114-5"><a id="__codelineno-114-5" name="__codelineno-114-5" href="#__codelineno-114-5"></a><span class="err">    bool m_bStopSoundOnUnitDeath,           # Optional, default true if m_unitID is set</span>
+</span><span id="__span-114-6"><a id="__codelineno-114-6" name="__codelineno-114-6" href="#__codelineno-114-6"></a><span class="err">    Float2 m_pos2d,           # Optional, 2d position for sound</span>
+</span><span id="__span-114-7"><a id="__codelineno-114-7" name="__codelineno-114-7" href="#__codelineno-114-7"></a><span class="err">    Float3 m_pos3d,           # Optional, 3d position for sound</span>
+</span><span id="__span-114-8"><a id="__codelineno-114-8" name="__codelineno-114-8" href="#__codelineno-114-8"></a><span class="err">    float m_radius = 0,     # Optional, sound radius, default = 0</span>
+</span><span id="__span-114-9"><a id="__codelineno-114-9" name="__codelineno-114-9" href="#__codelineno-114-9"></a><span class="err">    float m_volume = 1,     # Optional, volume multiplier (default = 1)</span>
+</span><span id="__span-114-10"><a id="__codelineno-114-10" name="__codelineno-114-10" href="#__codelineno-114-10"></a><span class="err">    float m_pitch = 1,      # Optional, pitch of sound (default = 1)</span>
+</span><span id="__span-114-11"><a id="__codelineno-114-11" name="__codelineno-114-11" href="#__codelineno-114-11"></a><span class="err">    bool m_bLoop = false                    # Optional, controls if sound should loop</span>
+</span><span id="__span-114-12"><a id="__codelineno-114-12" name="__codelineno-114-12" href="#__codelineno-114-12"></a><span class="err">    bool m_bRandomLoopStartTime = false     # Optional</span>
 </span><span id="__span-114-13"><a id="__codelineno-114-13" name="__codelineno-114-13" href="#__codelineno-114-13"></a><span class="err">}</span>
 </span></code></pre></div>
 <ul>
@@ -4630,10 +4630,10 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-116-1"><a id="__codelineno-116-1" name="__codelineno-116-1" href="#__codelineno-116-1"></a><span class="err">void gx_sound3d_modify(int soundID, table params = {})</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-117-1"><a id="__codelineno-117-1" name="__codelineno-117-1" href="#__codelineno-117-1"></a><span class="err">table params = {</span>
-</span><span id="__span-117-2"><a id="__codelineno-117-2" name="__codelineno-117-2" href="#__codelineno-117-2"></a><span class="err">    float m_volume,     </span><span class="c1"># Optional, volume multiplier</span>
-</span><span id="__span-117-3"><a id="__codelineno-117-3" name="__codelineno-117-3" href="#__codelineno-117-3"></a><span class="err">    float m_pitch,      </span><span class="c1"># Optional, pitch of sound</span>
-</span><span id="__span-117-4"><a id="__codelineno-117-4" name="__codelineno-117-4" href="#__codelineno-117-4"></a><span class="err">    Float2 m_pos2d,       </span><span class="c1"># Optional</span>
-</span><span id="__span-117-5"><a id="__codelineno-117-5" name="__codelineno-117-5" href="#__codelineno-117-5"></a><span class="err">    Float3 m_pos3d        </span><span class="c1"># Optional</span>
+</span><span id="__span-117-2"><a id="__codelineno-117-2" name="__codelineno-117-2" href="#__codelineno-117-2"></a><span class="err">    float m_volume,     # Optional, volume multiplier</span>
+</span><span id="__span-117-3"><a id="__codelineno-117-3" name="__codelineno-117-3" href="#__codelineno-117-3"></a><span class="err">    float m_pitch,      # Optional, pitch of sound</span>
+</span><span id="__span-117-4"><a id="__codelineno-117-4" name="__codelineno-117-4" href="#__codelineno-117-4"></a><span class="err">    Float2 m_pos2d,       # Optional</span>
+</span><span id="__span-117-5"><a id="__codelineno-117-5" name="__codelineno-117-5" href="#__codelineno-117-5"></a><span class="err">    Float3 m_pos3d        # Optional</span>
 </span><span id="__span-117-6"><a id="__codelineno-117-6" name="__codelineno-117-6" href="#__codelineno-117-6"></a><span class="err">}</span>
 </span></code></pre></div>
 <ul>
@@ -4649,19 +4649,19 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-119-1"><a id="__codelineno-119-1" name="__codelineno-119-1" href="#__codelineno-119-1"></a><span class="err">int gx_decal_create(table params)</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-120-1"><a id="__codelineno-120-1" name="__codelineno-120-1" href="#__codelineno-120-1"></a><span class="err">table params = {</span>
-</span><span id="__span-120-2"><a id="__codelineno-120-2" name="__codelineno-120-2" href="#__codelineno-120-2"></a><span class="err">    string m_preset,           </span><span class="c1"># decal preset</span>
+</span><span id="__span-120-2"><a id="__codelineno-120-2" name="__codelineno-120-2" href="#__codelineno-120-2"></a><span class="err">    string m_preset,           # decal preset</span>
 </span><span id="__span-120-3"><a id="__codelineno-120-3" name="__codelineno-120-3" href="#__codelineno-120-3"></a><span class="err">    int m_alphaFn,</span>
 </span><span id="__span-120-4"><a id="__codelineno-120-4" name="__codelineno-120-4" href="#__codelineno-120-4"></a><span class="err">    int m_colorFn,</span>
-</span><span id="__span-120-5"><a id="__codelineno-120-5" name="__codelineno-120-5" href="#__codelineno-120-5"></a><span class="err">    bool m_bAlwaysDisplay,     </span><span class="c1"># ignore fog of war checks</span>
+</span><span id="__span-120-5"><a id="__codelineno-120-5" name="__codelineno-120-5" href="#__codelineno-120-5"></a><span class="err">    bool m_bAlwaysDisplay,     # ignore fog of war checks</span>
 </span><span id="__span-120-6"><a id="__codelineno-120-6" name="__codelineno-120-6" href="#__codelineno-120-6"></a><span class="err">    bool m_bDisplayOnMinimap,</span>
-</span><span id="__span-120-7"><a id="__codelineno-120-7" name="__codelineno-120-7" href="#__codelineno-120-7"></a><span class="err">    Float4 m_color,              </span><span class="c1"># srgb with alpha</span>
+</span><span id="__span-120-7"><a id="__codelineno-120-7" name="__codelineno-120-7" href="#__codelineno-120-7"></a><span class="err">    Float4 m_color,              # srgb with alpha</span>
 </span><span id="__span-120-8"><a id="__codelineno-120-8" name="__codelineno-120-8" href="#__codelineno-120-8"></a><span class="err">    Float2 m_pos,</span>
-</span><span id="__span-120-9"><a id="__codelineno-120-9" name="__codelineno-120-9" href="#__codelineno-120-9"></a><span class="err">    float m_rotation,          </span><span class="c1"># radians</span>
+</span><span id="__span-120-9"><a id="__codelineno-120-9" name="__codelineno-120-9" href="#__codelineno-120-9"></a><span class="err">    float m_rotation,          # radians</span>
 </span><span id="__span-120-10"><a id="__codelineno-120-10" name="__codelineno-120-10" href="#__codelineno-120-10"></a><span class="err">    float m_size,</span>
-</span><span id="__span-120-11"><a id="__codelineno-120-11" name="__codelineno-120-11" href="#__codelineno-120-11"></a><span class="err">    Float2 m_size,               </span><span class="c1"># size, can either be Float2 or float</span>
+</span><span id="__span-120-11"><a id="__codelineno-120-11" name="__codelineno-120-11" href="#__codelineno-120-11"></a><span class="err">    Float2 m_size,               # size, can either be Float2 or float</span>
 </span><span id="__span-120-12"><a id="__codelineno-120-12" name="__codelineno-120-12" href="#__codelineno-120-12"></a><span class="err">    string m_tag,</span>
-</span><span id="__span-120-13"><a id="__codelineno-120-13" name="__codelineno-120-13" href="#__codelineno-120-13"></a><span class="err">    string m_texture,          </span><span class="c1"># icon to use</span>
-</span><span id="__span-120-14"><a id="__codelineno-120-14" name="__codelineno-120-14" href="#__codelineno-120-14"></a><span class="err">    float m_speedFactor = 1.0       </span><span class="c1"># animation speed if m_texture is animated GIF</span>
+</span><span id="__span-120-13"><a id="__codelineno-120-13" name="__codelineno-120-13" href="#__codelineno-120-13"></a><span class="err">    string m_texture,          # icon to use</span>
+</span><span id="__span-120-14"><a id="__codelineno-120-14" name="__codelineno-120-14" href="#__codelineno-120-14"></a><span class="err">    float m_speedFactor = 1.0       # animation speed if m_texture is animated GIF</span>
 </span><span id="__span-120-15"><a id="__codelineno-120-15" name="__codelineno-120-15" href="#__codelineno-120-15"></a><span class="err">}</span>
 </span></code></pre></div>
 <ul>
@@ -4672,17 +4672,17 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-121-1"><a id="__codelineno-121-1" name="__codelineno-121-1" href="#__codelineno-121-1"></a><span class="err">void gx_decal_modify(int decalID, table params)</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-122-1"><a id="__codelineno-122-1" name="__codelineno-122-1" href="#__codelineno-122-1"></a><span class="err">table params = {</span>
-</span><span id="__span-122-2"><a id="__codelineno-122-2" name="__codelineno-122-2" href="#__codelineno-122-2"></a><span class="err">    string m_preset,                </span><span class="c1"># decal preset</span>
+</span><span id="__span-122-2"><a id="__codelineno-122-2" name="__codelineno-122-2" href="#__codelineno-122-2"></a><span class="err">    string m_preset,                # decal preset</span>
 </span><span id="__span-122-3"><a id="__codelineno-122-3" name="__codelineno-122-3" href="#__codelineno-122-3"></a><span class="err">    int m_alphaFn,</span>
 </span><span id="__span-122-4"><a id="__codelineno-122-4" name="__codelineno-122-4" href="#__codelineno-122-4"></a><span class="err">    int m_colorFn,</span>
-</span><span id="__span-122-5"><a id="__codelineno-122-5" name="__codelineno-122-5" href="#__codelineno-122-5"></a><span class="err">    bool m_bAlwaysDisplay,          </span><span class="c1"># ignore fog of war checks</span>
+</span><span id="__span-122-5"><a id="__codelineno-122-5" name="__codelineno-122-5" href="#__codelineno-122-5"></a><span class="err">    bool m_bAlwaysDisplay,          # ignore fog of war checks</span>
 </span><span id="__span-122-6"><a id="__codelineno-122-6" name="__codelineno-122-6" href="#__codelineno-122-6"></a><span class="err">    bool m_bDisplayOnMinimap,</span>
-</span><span id="__span-122-7"><a id="__codelineno-122-7" name="__codelineno-122-7" href="#__codelineno-122-7"></a><span class="err">    Float4 m_color,                   </span><span class="c1"># srgb with alpha</span>
+</span><span id="__span-122-7"><a id="__codelineno-122-7" name="__codelineno-122-7" href="#__codelineno-122-7"></a><span class="err">    Float4 m_color,                   # srgb with alpha</span>
 </span><span id="__span-122-8"><a id="__codelineno-122-8" name="__codelineno-122-8" href="#__codelineno-122-8"></a><span class="err">    Float2 m_pos,</span>
-</span><span id="__span-122-9"><a id="__codelineno-122-9" name="__codelineno-122-9" href="#__codelineno-122-9"></a><span class="err">    float m_rotation,               </span><span class="c1"># radians</span>
+</span><span id="__span-122-9"><a id="__codelineno-122-9" name="__codelineno-122-9" href="#__codelineno-122-9"></a><span class="err">    float m_rotation,               # radians</span>
 </span><span id="__span-122-10"><a id="__codelineno-122-10" name="__codelineno-122-10" href="#__codelineno-122-10"></a><span class="err">    float m_size,</span>
 </span><span id="__span-122-11"><a id="__codelineno-122-11" name="__codelineno-122-11" href="#__codelineno-122-11"></a><span class="err">    string m_tag,</span>
-</span><span id="__span-122-12"><a id="__codelineno-122-12" name="__codelineno-122-12" href="#__codelineno-122-12"></a><span class="err">    string m_texture,               </span><span class="c1"># icon to use</span>
+</span><span id="__span-122-12"><a id="__codelineno-122-12" name="__codelineno-122-12" href="#__codelineno-122-12"></a><span class="err">    string m_texture,               # icon to use</span>
 </span><span id="__span-122-13"><a id="__codelineno-122-13" name="__codelineno-122-13" href="#__codelineno-122-13"></a><span class="err">    float m_speedFactor = 1.0       animation speed if m_texture is animated GIF</span>
 </span><span id="__span-122-14"><a id="__codelineno-122-14" name="__codelineno-122-14" href="#__codelineno-122-14"></a><span class="err">}</span>
 </span></code></pre></div>
@@ -4706,9 +4706,9 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-125-1"><a id="__codelineno-125-1" name="__codelineno-125-1" href="#__codelineno-125-1"></a><span class="err">int[] gx_decal_query(table params)</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-126-1"><a id="__codelineno-126-1" name="__codelineno-126-1" href="#__codelineno-126-1"></a><span class="err">table params = {</span>
-</span><span id="__span-126-2"><a id="__codelineno-126-2" name="__codelineno-126-2" href="#__codelineno-126-2"></a><span class="err">    AABR m_aabrs[],             </span><span class="c1"># Optional</span>
-</span><span id="__span-126-3"><a id="__codelineno-126-3" name="__codelineno-126-3" href="#__codelineno-126-3"></a><span class="err">    string m_locations[],       </span><span class="c1"># Optional</span>
-</span><span id="__span-126-4"><a id="__codelineno-126-4" name="__codelineno-126-4" href="#__codelineno-126-4"></a><span class="err">    bool m_bAll = false         </span><span class="c1"># Optional, default false</span>
+</span><span id="__span-126-2"><a id="__codelineno-126-2" name="__codelineno-126-2" href="#__codelineno-126-2"></a><span class="err">    AABR m_aabrs[],             # Optional</span>
+</span><span id="__span-126-3"><a id="__codelineno-126-3" name="__codelineno-126-3" href="#__codelineno-126-3"></a><span class="err">    string m_locations[],       # Optional</span>
+</span><span id="__span-126-4"><a id="__codelineno-126-4" name="__codelineno-126-4" href="#__codelineno-126-4"></a><span class="err">    bool m_bAll = false         # Optional, default false</span>
 </span><span id="__span-126-5"><a id="__codelineno-126-5" name="__codelineno-126-5" href="#__codelineno-126-5"></a><span class="err">}</span>
 </span></code></pre></div>
 <ul>
@@ -4720,7 +4720,7 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-127-1"><a id="__codelineno-127-1" name="__codelineno-127-1" href="#__codelineno-127-1"></a><span class="err">int[] gx_get_sim_image_colors(table params)</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-128-1"><a id="__codelineno-128-1" name="__codelineno-128-1" href="#__codelineno-128-1"></a><span class="err">table params = {</span>
-</span><span id="__span-128-2"><a id="__codelineno-128-2" name="__codelineno-128-2" href="#__codelineno-128-2"></a><span class="err">    string m_img                   </span><span class="c1"># Required, Icon Name</span>
+</span><span id="__span-128-2"><a id="__codelineno-128-2" name="__codelineno-128-2" href="#__codelineno-128-2"></a><span class="err">    string m_img                   # Required, Icon Name</span>
 </span><span id="__span-128-3"><a id="__codelineno-128-3" name="__codelineno-128-3" href="#__codelineno-128-3"></a><span class="err">}</span>
 </span></code></pre></div>
 <ul>
@@ -4731,11 +4731,11 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-129-1"><a id="__codelineno-129-1" name="__codelineno-129-1" href="#__codelineno-129-1"></a><span class="err">void gx_draw_glow_image(table params)</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-130-1"><a id="__codelineno-130-1" name="__codelineno-130-1" href="#__codelineno-130-1"></a><span class="err">table params = {</span>
-</span><span id="__span-130-2"><a id="__codelineno-130-2" name="__codelineno-130-2" href="#__codelineno-130-2"></a><span class="err">    string m_img,                   </span><span class="c1"># Required, Icon Name</span>
-</span><span id="__span-130-3"><a id="__codelineno-130-3" name="__codelineno-130-3" href="#__codelineno-130-3"></a><span class="err">    AABR_int m_aabr,               </span><span class="c1"># AABR to draw to</span>
-</span><span id="__span-130-4"><a id="__codelineno-130-4" name="__codelineno-130-4" href="#__codelineno-130-4"></a><span class="err">    string m_location,              </span><span class="c1"># Location to draw to</span>
-</span><span id="__span-130-5"><a id="__codelineno-130-5" name="__codelineno-130-5" href="#__codelineno-130-5"></a><span class="err">    AABR_int m_excludeAABRs[],     </span><span class="c1"># Optional, AABRs not to draw to</span>
-</span><span id="__span-130-6"><a id="__codelineno-130-6" name="__codelineno-130-6" href="#__codelineno-130-6"></a><span class="err">    string m_excludeLocations[],    </span><span class="c1"># Optional, locations not to draw to</span>
+</span><span id="__span-130-2"><a id="__codelineno-130-2" name="__codelineno-130-2" href="#__codelineno-130-2"></a><span class="err">    string m_img,                   # Required, Icon Name</span>
+</span><span id="__span-130-3"><a id="__codelineno-130-3" name="__codelineno-130-3" href="#__codelineno-130-3"></a><span class="err">    AABR_int m_aabr,               # AABR to draw to</span>
+</span><span id="__span-130-4"><a id="__codelineno-130-4" name="__codelineno-130-4" href="#__codelineno-130-4"></a><span class="err">    string m_location,              # Location to draw to</span>
+</span><span id="__span-130-5"><a id="__codelineno-130-5" name="__codelineno-130-5" href="#__codelineno-130-5"></a><span class="err">    AABR_int m_excludeAABRs[],     # Optional, AABRs not to draw to</span>
+</span><span id="__span-130-6"><a id="__codelineno-130-6" name="__codelineno-130-6" href="#__codelineno-130-6"></a><span class="err">    string m_excludeLocations[],    # Optional, locations not to draw to</span>
 </span><span id="__span-130-7"><a id="__codelineno-130-7" name="__codelineno-130-7" href="#__codelineno-130-7"></a><span class="err">}</span>
 </span></code></pre></div>
 <ul>
@@ -4746,9 +4746,9 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <p><div class="language-sq highlight"><pre><span></span><code><span id="__span-131-1"><a id="__codelineno-131-1" name="__codelineno-131-1" href="#__codelineno-131-1"></a><span class="err">void gx_set_terrain_glow_color(table params = {})</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-132-1"><a id="__codelineno-132-1" name="__codelineno-132-1" href="#__codelineno-132-1"></a><span class="err">table params = {</span>
-</span><span id="__span-132-2"><a id="__codelineno-132-2" name="__codelineno-132-2" href="#__codelineno-132-2"></a><span class="err">    int m_index,        </span><span class="c1"># Glow index to change, required</span>
-</span><span id="__span-132-3"><a id="__codelineno-132-3" name="__codelineno-132-3" href="#__codelineno-132-3"></a><span class="err">    int m_hex,          </span><span class="c1"># srgb hex3 code for color to set</span>
-</span><span id="__span-132-4"><a id="__codelineno-132-4" name="__codelineno-132-4" href="#__codelineno-132-4"></a><span class="err">    Float3 m_color </span><span class="c1"># srgb color (each component [0.0-1.0]) for new color to set</span>
+</span><span id="__span-132-2"><a id="__codelineno-132-2" name="__codelineno-132-2" href="#__codelineno-132-2"></a><span class="err">    int m_index,        # Glow index to change, required</span>
+</span><span id="__span-132-3"><a id="__codelineno-132-3" name="__codelineno-132-3" href="#__codelineno-132-3"></a><span class="err">    int m_hex,          # srgb hex3 code for color to set</span>
+</span><span id="__span-132-4"><a id="__codelineno-132-4" name="__codelineno-132-4" href="#__codelineno-132-4"></a><span class="err">    Float3 m_color # srgb color (each component [0.0-1.0]) for new color to set</span>
 </span><span id="__span-132-5"><a id="__codelineno-132-5" name="__codelineno-132-5" href="#__codelineno-132-5"></a><span class="err">}</span>
 </span></code></pre></div></p>
 <ul>
@@ -4817,10 +4817,10 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <p><div class="language-sq highlight"><pre><span></span><code><span id="__span-142-1"><a id="__codelineno-142-1" name="__codelineno-142-1" href="#__codelineno-142-1"></a><span class="err">void gx_terrain_offset_z_add_2(table params)</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-143-1"><a id="__codelineno-143-1" name="__codelineno-143-1" href="#__codelineno-143-1"></a><span class="err">table params = {</span>
-</span><span id="__span-143-2"><a id="__codelineno-143-2" name="__codelineno-143-2" href="#__codelineno-143-2"></a><span class="err">    AABR_int m_aabrs[],        </span><span class="c1"># Optional</span>
-</span><span id="__span-143-3"><a id="__codelineno-143-3" name="__codelineno-143-3" href="#__codelineno-143-3"></a><span class="err">    string m_locations[],       </span><span class="c1"># Optional</span>
-</span><span id="__span-143-4"><a id="__codelineno-143-4" name="__codelineno-143-4" href="#__codelineno-143-4"></a><span class="err">    Int2 m_vertices[],     </span><span class="c1"># Optional</span>
-</span><span id="__span-143-5"><a id="__codelineno-143-5" name="__codelineno-143-5" href="#__codelineno-143-5"></a><span class="err">    float m_val,                </span><span class="c1"># Required</span>
+</span><span id="__span-143-2"><a id="__codelineno-143-2" name="__codelineno-143-2" href="#__codelineno-143-2"></a><span class="err">    AABR_int m_aabrs[],        # Optional</span>
+</span><span id="__span-143-3"><a id="__codelineno-143-3" name="__codelineno-143-3" href="#__codelineno-143-3"></a><span class="err">    string m_locations[],       # Optional</span>
+</span><span id="__span-143-4"><a id="__codelineno-143-4" name="__codelineno-143-4" href="#__codelineno-143-4"></a><span class="err">    Int2 m_vertices[],     # Optional</span>
+</span><span id="__span-143-5"><a id="__codelineno-143-5" name="__codelineno-143-5" href="#__codelineno-143-5"></a><span class="err">    float m_val,                # Required</span>
 </span><span id="__span-143-6"><a id="__codelineno-143-6" name="__codelineno-143-6" href="#__codelineno-143-6"></a><span class="err">}</span>
 </span></code></pre></div></p>
 <h2 id="gx_terrain_offset_z_set">gx_terrain_offset_z_set</h2>
@@ -4830,10 +4830,10 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <p><div class="language-sq highlight"><pre><span></span><code><span id="__span-145-1"><a id="__codelineno-145-1" name="__codelineno-145-1" href="#__codelineno-145-1"></a><span class="err">void gx_terrain_offset_z_set_2(table params)</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-146-1"><a id="__codelineno-146-1" name="__codelineno-146-1" href="#__codelineno-146-1"></a><span class="err">table params = {</span>
-</span><span id="__span-146-2"><a id="__codelineno-146-2" name="__codelineno-146-2" href="#__codelineno-146-2"></a><span class="err">    AABR_int m_aabrs[],        </span><span class="c1"># Optional</span>
-</span><span id="__span-146-3"><a id="__codelineno-146-3" name="__codelineno-146-3" href="#__codelineno-146-3"></a><span class="err">    string m_locations[],       </span><span class="c1"># Optional</span>
-</span><span id="__span-146-4"><a id="__codelineno-146-4" name="__codelineno-146-4" href="#__codelineno-146-4"></a><span class="err">    Int2 m_vertices[],     </span><span class="c1"># Optional</span>
-</span><span id="__span-146-5"><a id="__codelineno-146-5" name="__codelineno-146-5" href="#__codelineno-146-5"></a><span class="err">    float m_val,                </span><span class="c1"># Required</span>
+</span><span id="__span-146-2"><a id="__codelineno-146-2" name="__codelineno-146-2" href="#__codelineno-146-2"></a><span class="err">    AABR_int m_aabrs[],        # Optional</span>
+</span><span id="__span-146-3"><a id="__codelineno-146-3" name="__codelineno-146-3" href="#__codelineno-146-3"></a><span class="err">    string m_locations[],       # Optional</span>
+</span><span id="__span-146-4"><a id="__codelineno-146-4" name="__codelineno-146-4" href="#__codelineno-146-4"></a><span class="err">    Int2 m_vertices[],     # Optional</span>
+</span><span id="__span-146-5"><a id="__codelineno-146-5" name="__codelineno-146-5" href="#__codelineno-146-5"></a><span class="err">    float m_val,                # Required</span>
 </span><span id="__span-146-6"><a id="__codelineno-146-6" name="__codelineno-146-6" href="#__codelineno-146-6"></a><span class="err">}</span>
 </span></code></pre></div></p>
 <h2 id="gx_terrain_offset_z_get">gx_terrain_offset_z_get</h2>
@@ -4858,7 +4858,7 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 </span><span id="__span-152-2"><a id="__codelineno-152-2" name="__codelineno-152-2" href="#__codelineno-152-2"></a><span class="err">    EffectType m_type,</span>
 </span><span id="__span-152-3"><a id="__codelineno-152-3" name="__codelineno-152-3" href="#__codelineno-152-3"></a><span class="err">    Float2 m_pos,</span>
 </span><span id="__span-152-4"><a id="__codelineno-152-4" name="__codelineno-152-4" href="#__codelineno-152-4"></a><span class="err">    int m_duration,</span>
-</span><span id="__span-152-5"><a id="__codelineno-152-5" name="__codelineno-152-5" href="#__codelineno-152-5"></a><span class="err">    Float4 m_color,    </span><span class="c1"># srgb</span>
+</span><span id="__span-152-5"><a id="__codelineno-152-5" name="__codelineno-152-5" href="#__codelineno-152-5"></a><span class="err">    Float4 m_color,    # srgb</span>
 </span><span id="__span-152-6"><a id="__codelineno-152-6" name="__codelineno-152-6" href="#__codelineno-152-6"></a><span class="err">    int m_playerID,</span>
 </span><span id="__span-152-7"><a id="__codelineno-152-7" name="__codelineno-152-7" href="#__codelineno-152-7"></a><span class="err">    int m_unitID</span>
 </span><span id="__span-152-8"><a id="__codelineno-152-8" name="__codelineno-152-8" href="#__codelineno-152-8"></a><span class="err">}</span>
@@ -4957,7 +4957,7 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 </span><span id="__span-166-2"><a id="__codelineno-166-2" name="__codelineno-166-2" href="#__codelineno-166-2"></a><span class="err">    string m_msg,</span>
 </span><span id="__span-166-3"><a id="__codelineno-166-3" name="__codelineno-166-3" href="#__codelineno-166-3"></a><span class="err">    int m_forceIDs[],</span>
 </span><span id="__span-166-4"><a id="__codelineno-166-4" name="__codelineno-166-4" href="#__codelineno-166-4"></a><span class="err">    int m_playerIDs[],</span>
-</span><span id="__span-166-5"><a id="__codelineno-166-5" name="__codelineno-166-5" href="#__codelineno-166-5"></a><span class="err">    int m_duration = 100, </span><span class="c1"># 5 seconds</span>
+</span><span id="__span-166-5"><a id="__codelineno-166-5" name="__codelineno-166-5" href="#__codelineno-166-5"></a><span class="err">    int m_duration = 100, # 5 seconds</span>
 </span><span id="__span-166-6"><a id="__codelineno-166-6" name="__codelineno-166-6" href="#__codelineno-166-6"></a><span class="err">}</span>
 </span></code></pre></div>
 <ul>
@@ -4989,8 +4989,8 @@ It then sets properties such as friendly name, maxHealth, baseArmor, and size.</
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-171-1"><a id="__codelineno-171-1" name="__codelineno-171-1" href="#__codelineno-171-1"></a><span class="err">table params = {</span>
 </span><span id="__span-171-2"><a id="__codelineno-171-2" name="__codelineno-171-2" href="#__codelineno-171-2"></a><span class="err">    string m_location,</span>
 </span><span id="__span-171-3"><a id="__codelineno-171-3" name="__codelineno-171-3" href="#__codelineno-171-3"></a><span class="err">    AABR_float m_aabr,</span>
-</span><span id="__span-171-4"><a id="__codelineno-171-4" name="__codelineno-171-4" href="#__codelineno-171-4"></a><span class="err">    string m_img,           </span><span class="c1"># img to paint</span>
-</span><span id="__span-171-5"><a id="__codelineno-171-5" name="__codelineno-171-5" href="#__codelineno-171-5"></a><span class="err">    Float4 m_srgba     </span><span class="c1"># srgb multiplier</span>
+</span><span id="__span-171-4"><a id="__codelineno-171-4" name="__codelineno-171-4" href="#__codelineno-171-4"></a><span class="err">    string m_img,           # img to paint</span>
+</span><span id="__span-171-5"><a id="__codelineno-171-5" name="__codelineno-171-5" href="#__codelineno-171-5"></a><span class="err">    Float4 m_srgba     # srgb multiplier</span>
 </span><span id="__span-171-6"><a id="__codelineno-171-6" name="__codelineno-171-6" href="#__codelineno-171-6"></a><span class="err">}</span>
 </span></code></pre></div>
 <ul>
