@@ -8,9 +8,9 @@ Also DO NOT assume `Invalid` will always be equal to `0` or `-1`.
 enum BoundsCheck
 {
 	Invalid,
-    Center,     // Unit's center position is in location
-    Touching,   // Unit is fully inside or touching location
-    Inside      // Unit fully inside a location
+    Center,     # Unit's center position is in location
+    Touching,   # Unit is fully inside or touching location
+    Inside      # Unit fully inside a location
 }
 ```
 
@@ -111,32 +111,32 @@ enum ArmorType
 
 ## TerrainType
 ```sq
-// Primary Terrain Types
+# Primary Terrain Types
 enum TerrainType
 {
 	Invalid,
 	
-    Normal,         // See SecondaryTerrainTypeNormal
-					// for valid secondary types
+    Normal,         # See SecondaryTerrainTypeNormal
+					# for valid secondary types
 
-	Water,          // valid secondary types are [0 - 3]
-	Lava,           // valid secondary types are [0 - 3]
-	Diamond,        // valid secondary types is just 0
-    Transparent,    // valid secondary types are [0 - 15]
-    Glow,           // valid secondary types are [0 - 31]
-	PlayerColor,    // valid secondary types are player_id, i.e. [1-16]
+	Water,          # valid secondary types are [0 - 3]
+	Lava,           # valid secondary types are [0 - 3]
+	Diamond,        # valid secondary types is just 0
+    Transparent,    # valid secondary types are [0 - 15]
+    Glow,           # valid secondary types are [0 - 31]
+	PlayerColor,    # valid secondary types are player_id, i.e. [1-16]
 
-	Unpassable,     // !! Not a dynamic terrain type!
-					// Cannot dynamically change or be set to!
-                    // valid secondary type is just 0 (currently)
+	Unpassable,     # !! Not a dynamic terrain type!
+					# Cannot dynamically change or be set to!
+                    # valid secondary type is just 0 (currently)
 
-	Space,          // valid secondary type is just 0
+	Space,          # valid secondary type is just 0
 
-	CliffClosed,    // !! Not a dynamic terrain type!
-					// Cannot dynamically change or be set to!
+	CliffClosed,    # !! Not a dynamic terrain type!
+					# Cannot dynamically change or be set to!
 
-	CliffBorder     // !! Not a dynamic terrain type!
-					// Cannot dynamically change or be set to!
+	CliffBorder     # !! Not a dynamic terrain type!
+					# Cannot dynamically change or be set to!
 }
 ```
 
@@ -147,14 +147,14 @@ enum TerrainType
 enum SecondaryTerrainTypeNormal
 {
 	Invalid,
-	Normal,         // Units are normal on this type (no effects)
-	Speed,          // Units move faster on this type
-	AttackRate,     // Units have faster attack rate on this type
-	Heal,           // Units heal faster on this type
-	Forbidden,      // Units insta-die on this type
-	Sniper,         // Units have increased range on this type
-	MeleeOnly,      // Units have decreased range on this type
-	Pacifist        // Units are unable to attack on this type
+	Normal,         # Units are normal on this type (no effects)
+	Speed,          # Units move faster on this type
+	AttackRate,     # Units have faster attack rate on this type
+	Heal,           # Units heal faster on this type
+	Forbidden,      # Units insta-die on this type
+	Sniper,         # Units have increased range on this type
+	MeleeOnly,      # Units have decreased range on this type
+	Pacifist        # Units are unable to attack on this type
 }
 ```
 
@@ -166,13 +166,13 @@ enum SecondaryTerrainTypeNormal
 ```sq
 enum SimProp
 {
-					    // Access		Type
+					    # Access		Type
 	Invalid,
-	ThemeColor,		        	// Read-Write	(Vec4<float>)
-	GlowColor,			         // Read-Write	(Vec4<float>)
-    EnableChatMessageEvents,     // Read-Write  (bool)
-	EnableUnitDeathEvents, 		// Read-Write	(bool)
-	Timer,						// Read-Write		(int)
+	ThemeColor,		        	# Read-Write	(Vec4<float>)
+	GlowColor,			         # Read-Write	(Vec4<float>)
+    EnableChatMessageEvents,     # Read-Write  (bool)
+	EnableUnitDeathEvents, 		# Read-Write	(bool)
+	Timer,						# Read-Write		(int)
 }
 ```
 
@@ -180,11 +180,11 @@ enum SimProp
 ```sq
 enum ForceProp
 {
-					// Access		Type
+					# Access		Type
 	Invalid,
-	Score,			// Read-Write	(int)
-	Name			// Read-Write	(string)
-	VictoryStatus	// Read-Write	(VictoryStatus)
+	Score,			# Read-Write	(int)
+	Name			# Read-Write	(string)
+	VictoryStatus	# Read-Write	(VictoryStatus)
 }
 ```
 
@@ -195,59 +195,59 @@ enum ForceProp
 ```sq
 enum PlayerProp
 {
-							// Access			Type
+							# Access			Type
 	Invalid,
-	Fungus,                 // Read-Write     	(float)
-	Gemstone,               // Read-Write     	(float)
-	Supply,                 // Read        		(int)
-	MaxSupply,              // Read        		(int)
-	NumKills,               // Read        		(int)
-	NumDeaths,              // Read        		(int)
+	Fungus,                 # Read-Write     	(float)
+	Gemstone,               # Read-Write     	(float)
+	Supply,                 # Read        		(int)
+	MaxSupply,              # Read        		(int)
+	NumKills,               # Read        		(int)
+	NumDeaths,              # Read        		(int)
 
-    PlayerName,             // Read-Write  		(string)
-							// Is Write-Enabled only for computer players
+    PlayerName,             # Read-Write  		(string)
+							# Is Write-Enabled only for computer players
 
-    FullMapVision,          // Read-Write     	(bool)
-                            // When set to true, player
-							// is given vision of entire map
+    FullMapVision,          # Read-Write     	(bool)
+                            # When set to true, player
+							# is given vision of entire map
 
-    NumUnitsProduced,       // Read        		(int)
-    TagID,                  // Read        		(int)
-    ChoseRandom,            // Read        		(bool)
-    Race,                   // Read        		(int)
-    WeaponsLevel,           // Read-Write       (int)
-    ArmorLevel,             // Read-Write       (int)
+    NumUnitsProduced,       # Read        		(int)
+    TagID,                  # Read        		(int)
+    ChoseRandom,            # Read        		(bool)
+    Race,                   # Read        		(int)
+    WeaponsLevel,           # Read-Write       (int)
+    ArmorLevel,             # Read-Write       (int)
 
-    SpeedLevel,             // Read-Write       (int)
-	 						// (not implemented atm)
+    SpeedLevel,             # Read-Write       (int)
+	 						# (not implemented atm)
 							
-    StartLocationPosition,  // Read         	(Vec2)
-	Score,					// Read-Write		(int)
-    IsNormalPlayer, 		// Read				(bool)
-    IsHumanPlayer, 			// Read				(bool)
-    IsComputerPlayer,		// Read				(bool)
-    IsHostilePlayer,		// Read				(bool)
-    IsNeutralPlayer,		// Read				(bool)
-    IsRescueablePlayer,		// Read				(bool)
-	IsInGame,				// Read				(bool)
-	VictoryStatus,			// Read-Write		(VictoryStatus),
-	AlliedVictory,			// Read-Write		(bool)
-	Color,					// Read-Write		(Vec3)
-	ForceID					// Read				(int)
-	PlayerNameColorDesc		// Read-Write		(int) (i.e. ColorDesc)
-							// Is Write-Enabled only for computer players
+    StartLocationPosition,  # Read         	(Vec2)
+	Score,					# Read-Write		(int)
+    IsNormalPlayer, 		# Read				(bool)
+    IsHumanPlayer, 			# Read				(bool)
+    IsComputerPlayer,		# Read				(bool)
+    IsHostilePlayer,		# Read				(bool)
+    IsNeutralPlayer,		# Read				(bool)
+    IsRescueablePlayer,		# Read				(bool)
+	IsInGame,				# Read				(bool)
+	VictoryStatus,			# Read-Write		(VictoryStatus),
+	AlliedVictory,			# Read-Write		(bool)
+	Color,					# Read-Write		(Vec3)
+	ForceID					# Read				(int)
+	PlayerNameColorDesc		# Read-Write		(int) (i.e. ColorDesc)
+							# Is Write-Enabled only for computer players
 							
-	ColoredPlayerName		// Read 			(string)
-							// Equivalent to:
-							// gx_get_player_prop(PlayerProp.PlayerNameColorDesc, playerID)
-							// + PlayerName
+	ColoredPlayerName		# Read 			(string)
+							# Equivalent to:
+							# gx_get_player_prop(PlayerProp.PlayerNameColorDesc, playerID)
+							# + PlayerName
 
-	ColoredPlayerName2		// Read				(string)
-							// Equivalent to:
-                            // gx_str_encode_color_id(ColorID.PushColor)
-                            // + gx_get_player_prop(PlayerProp.ColoredPlayerName, playerID)
-							// + PlayerName
-							// + gx_str_encode_color_id(ColorID.PopColor)
+	ColoredPlayerName2		# Read				(string)
+							# Equivalent to:
+                            # gx_str_encode_color_id(ColorID.PushColor)
+                            # + gx_get_player_prop(PlayerProp.ColoredPlayerName, playerID)
+							# + PlayerName
+							# + gx_str_encode_color_id(ColorID.PopColor)
 }
 ```
 
@@ -258,41 +258,41 @@ enum PlayerProp
 ```sq
 enum UnitProp
 {
-							// Access			Type
+							# Access			Type
 	Invalid,
-	MaxHealth,            	// Read      		(int)
-	Health,                 // Read-Write     	(float)
-	MaxSpeed,               // Read	        	(float)
-	Size,                   // Read        		(float)
-	UnitType,               // Read        		(string)
-    IsOnFire,               // Read        		(bool)
-    ParentJeep,             // Read-Write       (int)
-	ParentDropship,         // Read-Write       (int)
-	ParentStarShip,         // Read-Write       (int)
-    ParentBunker,           // Read-Write       (int)
-    GunShipState,           // Read-Write       (GunShipState)
-	Level,					// Read-Write		(int)
-    Tag,             		// Read-Write       (string)
-    PlayerID,               // Read-Write       (int)
+	MaxHealth,            	# Read      		(int)
+	Health,                 # Read-Write     	(float)
+	MaxSpeed,               # Read	        	(float)
+	Size,                   # Read        		(float)
+	UnitType,               # Read        		(string)
+    IsOnFire,               # Read        		(bool)
+    ParentJeep,             # Read-Write       (int)
+	ParentDropship,         # Read-Write       (int)
+	ParentStarShip,         # Read-Write       (int)
+    ParentBunker,           # Read-Write       (int)
+    GunShipState,           # Read-Write       (GunShipState)
+	Level,					# Read-Write		(int)
+    Tag,             		# Read-Write       (string)
+    PlayerID,               # Read-Write       (int)
 	
-	ForceGhostMode,			// Read-Write		(bool)
-							// Ghost mode allows units to walk through
-							// other units (similar to workers harvesting
-							// resources)
+	ForceGhostMode,			# Read-Write		(bool)
+							# Ghost mode allows units to walk through
+							# other units (similar to workers harvesting
+							# resources)
 
-	FriendlyName,			// Read-Write		(string)
-							// Allows you to override unit friendly name
-							// on a per-unit basis.
+	FriendlyName,			# Read-Write		(string)
+							# Allows you to override unit friendly name
+							# on a per-unit basis.
 
-	ForceInvulnerable,		// Read-Write		(bool)
-    LookAtDirection,     	// Read-Write		(Float2)
-    DriftMode,            	// Read-Write		(bool)
-    IsCritter,     	        // Read	        	(bool)
-    CritterFlag,       	    // Read-Write		(bool)
-    IsSpeechBubbleActive,	// Read             (bool)
-    Position,            	// Read-Write		(Float2)
-    LockUnitToJeep,         // Read-Write       (bool)
-	QuadDamageTicksRemaining, // Read-Write		(int)
+	ForceInvulnerable,		# Read-Write		(bool)
+    LookAtDirection,     	# Read-Write		(Float2)
+    DriftMode,            	# Read-Write		(bool)
+    IsCritter,     	        # Read	        	(bool)
+    CritterFlag,       	    # Read-Write		(bool)
+    IsSpeechBubbleActive,	# Read             (bool)
+    Position,            	# Read-Write		(Float2)
+    LockUnitToJeep,         # Read-Write       (bool)
+	QuadDamageTicksRemaining, # Read-Write		(int)
 }
 ```
 
@@ -303,14 +303,14 @@ enum UnitProp
 ```sq
 enum DecalProp
 {
-					        // Access	    Type
+					        # Access	    Type
     Invalid,
-    Position,               // Read/Write   Vec2<float>
-    Rotation,               // Read/Write   float
-    Size,                   // Read/Write   Vec2<float>
-    Tag,                    // Read/Write   string
-    InterpolateTransforms,  // Read/Write   bool
-    RestrictToSpace         // Read/Write   bool
+    Position,               # Read/Write   Vec2<float>
+    Rotation,               # Read/Write   float
+    Size,                   # Read/Write   Vec2<float>
+    Tag,                    # Read/Write   string
+    InterpolateTransforms,  # Read/Write   bool
+    RestrictToSpace         # Read/Write   bool
 }
 ```
 
@@ -318,15 +318,15 @@ enum DecalProp
 ```sq
 enum LocationProp
 {
-					// Access		Type
+					# Access		Type
 	Invalid,
-	TopLeft,        // Read 		(Vec2)
-	TopRight,       // Read 		(Vec2)
-	BottomLeft,     // Read 		(Vec2)
-	BottomRight,    // Read 		(Vec2)
-	Center,         // Read 		(Vec2)
-	Size            // Read 		(Vec2)
-    AABR,           // Read         (AABR)
+	TopLeft,        # Read 		(Vec2)
+	TopRight,       # Read 		(Vec2)
+	BottomLeft,     # Read 		(Vec2)
+	BottomRight,    # Read 		(Vec2)
+	Center,         # Read 		(Vec2)
+	Size            # Read 		(Vec2)
+    AABR,           # Read         (AABR)
 }
 ```
 
@@ -418,12 +418,12 @@ enum Unicode
 enum CommandType
 {
 	Invalid,
-    Attack,             // valid params: [m_unitID, m_location, m_pos]
-    Move,               // valid params: [m_unitID, m_location, m_pos]
-    Hold,               // valid params: []
-    Stop,               // valid params: []
-    RightClick,         // valid params: [m_unitID, m_location, m_pos]
-    Patrol              // valid params: [m_location, m_pos]
+    Attack,             # valid params: [m_unitID, m_location, m_pos]
+    Move,               # valid params: [m_unitID, m_location, m_pos]
+    Hold,               # valid params: []
+    Stop,               # valid params: []
+    RightClick,         # valid params: [m_unitID, m_location, m_pos]
+    Patrol              # valid params: [m_location, m_pos]
 }
 ```
 
@@ -446,30 +446,30 @@ enum EffectType
 ```sq
 enum EventType
 {
-    Invalid,           	 	// Invalid Event
+    Invalid,           	 	# Invalid Event
 
-    PlayerNameChanged,  	// Populates m_playerID, m_playerName, m_oldPlayerName,
-							// m_playerName2, m_oldPlayerName2,
-							// m_playerNameColor, m_oldPlayerNameColor
+    PlayerNameChanged,  	# Populates m_playerID, m_playerName, m_oldPlayerName,
+							# m_playerName2, m_oldPlayerName2,
+							# m_playerNameColor, m_oldPlayerNameColor
 
-	PlayerNameColorChanged,	// Populates m_playerID, m_playerName, m_oldPlayerName,
-							// m_playerName2, m_oldPlayerName2,
-							// m_playerNameColor, m_oldPlayerNameColor
+	PlayerNameColorChanged,	# Populates m_playerID, m_playerName, m_oldPlayerName,
+							# m_playerName2, m_oldPlayerName2,
+							# m_playerNameColor, m_oldPlayerNameColor
 
-    PlayerLeftGame,     	// Populates m_playerID, m_playerName, m_playerName2,
-    TextCommand             // Populates m_playerID, m_playerName, m_playerName2, m_cmd
-	UnitEnteredLocation,	// Populates m_unitID, m_location
-    UnitExitedLocation,		// Populates m_unitID, m_location
-	Sound2dDestroyed,		// Populates m_soundID
-	Sound3dDestroyed		// Populates m_soundID
-    SwitchEvent,            // Populates m_playerID, m_unitID
-    UnitPlayerChanged,      // Populates m_oldPlayerID, m_playerID, m_unitID
-    ButtonPushed,           // Populates m_playerID, m_unitID
-    Explosion               // Populates m_radius, m_pos, m_explosionEventType
-    ChatMessage,            // Populates m_playerID, m_playerName, m_playerName2, m_text
-    ItemPickup,             // Populates m_playerID, m_unitID, m_pos, m_itemUnitType, m_itemTag
-	CustomSpellEvent,		// Populates m_playerID, m_unitID, m_pos, m_customSpellEventTag
-	UnitDeath,				// Populates m_unitID, m_unitType, m_unitTag, m_playerID, m_killerPlayerID, m_deathCause
+    PlayerLeftGame,     	# Populates m_playerID, m_playerName, m_playerName2,
+    TextCommand             # Populates m_playerID, m_playerName, m_playerName2, m_cmd
+	UnitEnteredLocation,	# Populates m_unitID, m_location
+    UnitExitedLocation,		# Populates m_unitID, m_location
+	Sound2dDestroyed,		# Populates m_soundID
+	Sound3dDestroyed		# Populates m_soundID
+    SwitchEvent,            # Populates m_playerID, m_unitID
+    UnitPlayerChanged,      # Populates m_oldPlayerID, m_playerID, m_unitID
+    ButtonPushed,           # Populates m_playerID, m_unitID
+    Explosion               # Populates m_radius, m_pos, m_explosionEventType
+    ChatMessage,            # Populates m_playerID, m_playerName, m_playerName2, m_text
+    ItemPickup,             # Populates m_playerID, m_unitID, m_pos, m_itemUnitType, m_itemTag
+	CustomSpellEvent,		# Populates m_playerID, m_unitID, m_pos, m_customSpellEventTag
+	UnitDeath,				# Populates m_unitID, m_unitType, m_unitTag, m_playerID, m_killerPlayerID, m_deathCause
 	TimerExpired,
 }
 ```

@@ -5,7 +5,7 @@ Your script code has 3 entry points.
 ## gx_map_init
 ```sq
 function gx_map_init() {
-    // your code here
+    # your code here
 }
 ```
 
@@ -19,7 +19,7 @@ function gx_map_init() {
 ## gx_sim_init
 ```sq
 function gx_sim_init() {
-    // your code here
+    # your code here
 }
 ```
 
@@ -33,7 +33,7 @@ function gx_sim_init() {
 ## gx_sim_update
 ```sq
 function gx_sim_update() {
-    // your code here
+    # your code here
 }
 ```
 

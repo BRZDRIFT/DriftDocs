@@ -14,14 +14,14 @@ int gx_create_unit(int params)
 
 ```sq
 table params = {
-    string m_unitType,              // Required
-    int m_playerID,                 // Required
-    Float2 m_pos,                     // Optional (position to create unit)
-    string m_location,              // Optional (location to create unit at)
-    int m_level,                    // Optional, default unit level = 1
-    bool m_bForceGhostMode,         // Create unit in ghost mode (can walk through other units)
-    bool m_bSieged,                 // Create unit pre-sieged if supported
-    bool m_bLiftedStructure         // Create structure in lifted state if supported
+    string m_unitType,              # Required
+    int m_playerID,                 # Required
+    Float2 m_pos,                   # Optional (position to create unit)
+    string m_location,              # Optional (location to create unit at)
+    int m_level,                    # Optional, default unit level = 1
+    bool m_bForceGhostMode,         # Create unit in ghost mode (can walk through other units)
+    bool m_bSieged,                 # Create unit pre-sieged if supported
+    bool m_bLiftedStructure         # Create structure in lifted state if supported
 }
 ```
 
@@ -114,17 +114,17 @@ int gx_get_nearby_units_count(table params)
 
 ```sq
 table params = {
-    int m_unitID,                                   // unit_id to center search on
-    float m_radius,                                 // search radius around unit
-    int m_playerIDs[],                              // Optional, Filter for player_id
-    int m_forceIDs[],                               // Optional, Filter for force_id
-    string m_unitTypes[],                           // Optional, Filter for certain unit types
-    string m_exceptUnitTypes[],                     // Optional, ignore certain unit types
-    bool m_bIncludeAirUnits = true,                 // Optional, Set to false if you want to exclude air units
-    bool m_bIncludeGroundUnits = true               // Optional, set to false if you want to exclude ground units
-    bool m_bIncludeKilledUnits = false,             // Optional, Set to true if you want to include killed units
-    bool m_bIncludeRemovedUnits = false             // Optional, set to true if you want to include removed units
-    bool m_bIncludeProjectiles = false              // Optional, include projectiles (default: false)
+    int m_unitID,                                   # unit_id to center search on
+    float m_radius,                                 # search radius around unit
+    int m_playerIDs[],                              # Optional, Filter for player_id
+    int m_forceIDs[],                               # Optional, Filter for force_id
+    string m_unitTypes[],                           # Optional, Filter for certain unit types
+    string m_exceptUnitTypes[],                     # Optional, ignore certain unit types
+    bool m_bIncludeAirUnits = true,                 # Optional, Set to false if you want to exclude air units
+    bool m_bIncludeGroundUnits = true               # Optional, set to false if you want to exclude ground units
+    bool m_bIncludeKilledUnits = false,             # Optional, Set to true if you want to include killed units
+    bool m_bIncludeRemovedUnits = false             # Optional, set to true if you want to include removed units
+    bool m_bIncludeProjectiles = false              # Optional, include projectiles (default: false)
 }
 ```
 
@@ -141,19 +141,19 @@ int gx_get_units_count(table params)
 
 ```sq
 table params = {
-    string m_locations[],                           // Optional
-    string m_aabrs[],                               // Optional
-    string m_tags[],                                // Optional, Filter for unit tags
-    BoundsCheck m_boundsCheck                       // Default: BoundsCheck.Center
-    int m_playerIDs[],                              // Optional, Filter for player_id
-    int m_forceIDs[],                               // Optional, Filter for force_id
-    string m_unitTypes[],                           // Optional, Filter for certain unit types
-    string m_exceptUnitTypes[],                     // Optional, ignore certain unit types
-    bool m_bIncludeAirUnits = true,                 // Optional, Set to false if you want to exclude air units
-    bool m_bIncludeGroundUnits = true               // Optional, set to false if you want to exclude ground units
-    bool m_bIncludeKilledUnits = false,             // Optional, Set to true if you want to include killed units
-    bool m_bIncludeRemovedUnits = false             // Optional, set to true if you want to include removed units
-    bool m_bIncludeProjectiles = false              // Optional, include projectiles (default: false)
+    string m_locations[],                           # Optional
+    string m_aabrs[],                               # Optional
+    string m_tags[],                                # Optional, Filter for unit tags
+    BoundsCheck m_boundsCheck                       # Default: BoundsCheck.Center
+    int m_playerIDs[],                              # Optional, Filter for player_id
+    int m_forceIDs[],                               # Optional, Filter for force_id
+    string m_unitTypes[],                           # Optional, Filter for certain unit types
+    string m_exceptUnitTypes[],                     # Optional, ignore certain unit types
+    bool m_bIncludeAirUnits = true,                 # Optional, Set to false if you want to exclude air units
+    bool m_bIncludeGroundUnits = true               # Optional, set to false if you want to exclude ground units
+    bool m_bIncludeKilledUnits = false,             # Optional, Set to true if you want to include killed units
+    bool m_bIncludeRemovedUnits = false             # Optional, set to true if you want to include removed units
+    bool m_bIncludeProjectiles = false              # Optional, include projectiles (default: false)
 }
 ```
 
@@ -172,12 +172,12 @@ void gx_create_explosion(table params)
 
 ```sq
 table params = {
-    float m_size,                   // Optional, Diameter of explosion
-    Float3 m_color = Float3(1, 1, 0),   // Optional, ColorSRGB of explosion.
-    string m_location,              // Optional, Location for explosion
-    bool m_bPlaySound = true,       // Optional, defualt true
-    string m_sound,                 // Optional, Sound to play
-    string m_soundPack,             // Optional, Play random sound from soundpack
+    float m_size,                   # Optional, Diameter of explosion
+    Float3 m_color = Float3(1, 1, 0),   # Optional, ColorSRGB of explosion.
+    string m_location,              # Optional, Location for explosion
+    bool m_bPlaySound = true,       # Optional, defualt true
+    string m_sound,                 # Optional, Sound to play
+    string m_soundPack,             # Optional, Play random sound from soundpack
 }
 ```
 
@@ -215,8 +215,8 @@ void gx_kill_all_units(table params = {})
 
 ```sq
 table params = { 
-    int m_playerIDs[],      // Optional
-    int m_forceIDs[],       // Optional
+    int m_playerIDs[],      # Optional
+    int m_forceIDs[],       # Optional
 }
 ```
 
@@ -310,7 +310,7 @@ void gx_set_unit_position(int unit_id, table params)
 
 ```sq
 table params = {
-    string m_location,     // Optional, location to put unit
+    string m_location,     # Optional, location to put unit
 }
 ```
 
@@ -380,11 +380,11 @@ void gx_print(string message, table params = {})
 
 ```sq
 table params = {
-    int m_forceIDs[],           // Optional, send message to only force_id
-    int m_playerIDs[],          // Optional, send message to only player_id
-    bool m_bPlaySound = true,   // Optional, default true
-    string m_sound,             // Optional, sound to play,
-    string m_soundPack          // Optional, play random sound from soundPack
+    int m_forceIDs[],           # Optional, send message to only force_id
+    int m_playerIDs[],          # Optional, send message to only player_id
+    bool m_bPlaySound = true,   # Optional, default true
+    string m_sound,             # Optional, sound to play,
+    string m_soundPack          # Optional, play random sound from soundPack
 }
 ```
 
@@ -392,16 +392,16 @@ table params = {
 
 Example
 ```sq
-// display chat message 'Hello World!' to player 3
+# display chat message 'Hello World!' to player 3
 gx_print("Hello World!", { m_playerID = 3 } )
 
-// display chat message 'Hello World!' to everyone in force 2
+# display chat message 'Hello World!' to everyone in force 2
 gx_print("Hello World!", { m_forceID = 2 } )
 
-// display chat message 'Hello World!' to everyone
+# display chat message 'Hello World!' to everyone
 gx_print("Hello World!")
 
-// equivalent to above, display chat message 'Hello World!' to everyone
+# equivalent to above, display chat message 'Hello World!' to everyone
 gx_print("Hello World!", {})
 ```
 
@@ -436,7 +436,7 @@ gx_modify_scoreboard({
     m_bShowForceScores = false
 })
 
-// Set score for 'Player 3' to 7
+# Set score for 'Player 3' to 7
 gx_set_player_prop(PlayerProp.Score, 3, 7)
 ```
 
@@ -447,25 +447,25 @@ void gx_set_victory_status(table params)
 
 ```sq
 table params = {
-    int m_status = VictoryStatus.Victory,   // Optional
-                                            // Valid options: VictoryStatus.Victory or VictoryStatus.Defeat
-                                            // Default: VictoryStatus.Victory
-    int m_playerIDs[],              // Optional
-    int m_forceIDs[],               // Optional
-    bool m_bAllPlayers = false,     // Optional, (default: false)
-    bool m_bAllForces = false,      // Optional, (default: false)
-    bool m_bKillAllUnits,           // Optional
-                                    // if (m_status == VictoryStatus.Victory)
-                                    //      default: false
-                                    // if (m_status == VictoryStatus.Defeat)
-                                    //      default: true
-    string m_img,                   // Optional, (image to show)
-    float m_imgSpeedFactor = 1,     // Optional, speed if m_img is animated gif
-    string m_sound,                 // Optional, (sound to play)
-    float m_volume = 1,             // Optional, (default: 1)
-    float m_pitch = 1,              // Optional, (default: 1)
-    ComplexColor m_color,           // Optional, ComplexColor for m_img
-    ComplexColor m_bgColor,         // Optional, Background ComplexColor
+    int m_status = VictoryStatus.Victory,   # Optional
+                                            # Valid options: VictoryStatus.Victory or VictoryStatus.Defeat
+                                            # Default: VictoryStatus.Victory
+    int m_playerIDs[],              # Optional
+    int m_forceIDs[],               # Optional
+    bool m_bAllPlayers = false,     # Optional, (default: false)
+    bool m_bAllForces = false,      # Optional, (default: false)
+    bool m_bKillAllUnits,           # Optional
+                                    # if (m_status == VictoryStatus.Victory)
+                                    #      default: false
+                                    # if (m_status == VictoryStatus.Defeat)
+                                    #      default: true
+    string m_img,                   # Optional, (image to show)
+    float m_imgSpeedFactor = 1,     # Optional, speed if m_img is animated gif
+    string m_sound,                 # Optional, (sound to play)
+    float m_volume = 1,             # Optional, (default: 1)
+    float m_pitch = 1,              # Optional, (default: 1)
+    ComplexColor m_color,           # Optional, ComplexColor for m_img
+    ComplexColor m_bgColor,         # Optional, Background ComplexColor
 }
 ```
 
@@ -533,7 +533,7 @@ void gx_map_init_modify_ud_props(string unit_type, table params = {})
 
 ```sq
 table params = {
-    string m_friendlyName,     // Optional, set unit's friendly name
+    string m_friendlyName,     # Optional, set unit's friendly name
     bool m_bHasHealth,
     int m_maxHealth,
     float m_maxSpeed,
@@ -578,9 +578,9 @@ void gx_map_init_add_build_structure_item(string unitType, table params = {})
 
 ```sq
 table params = {
-    string m_structure,    // name of structure to build, i.e. "Microwave"
-    Float2 m_position,           // position in command card to place at, leaving empty will use default
-    bool bBuildAdvanced = false     // default is false, if set to True, will be placed in 'build advanced' tab
+    string m_structure,    # name of structure to build, i.e. "Microwave"
+    Float2 m_position,           # position in command card to place at, leaving empty will use default
+    bool bBuildAdvanced = false     # default is false, if set to True, will be placed in 'build advanced' tab
 }
 ```
 
@@ -601,9 +601,9 @@ void gx_map_init_add_build_item(string unitType, table params)
 
 ```sq
 table params = {
-    string m_unitType,     // unit type to add
-    string m_research,      // research to add
-    Float2 m_position        // position in command card
+    string m_unitType,     # unit type to add
+    string m_research,      # research to add
+    Float2 m_position        # position in command card
 }
 ```
 
@@ -629,11 +629,11 @@ void gx_fling_unit(int unit_id, table params = {})
 
 ```sq
 table params = {
-    Float3 m_dir2d,          // Optional, 2d direction to throw unit. Does not need to be normalized.
-    Float3 m_dir3d,          // Optional, 3d direction to throw unit. Does not need to be normalized.
-    float m_force = 1           // Optional, velocity to throw unit
-    m_bFlingLookAtDir = false   // Optional, will fling unit in direction it is facing
-    m_bFlingStructures = false  // Optional, if true, structures will be thrown
+    Float3 m_dir2d,          # Optional, 2d direction to throw unit. Does not need to be normalized.
+    Float3 m_dir3d,          # Optional, 3d direction to throw unit. Does not need to be normalized.
+    float m_force = 1           # Optional, velocity to throw unit
+    m_bFlingLookAtDir = false   # Optional, will fling unit in direction it is facing
+    m_bFlingStructures = false  # Optional, if true, structures will be thrown
 }
 ```
 
@@ -648,10 +648,10 @@ void gx_set_area_vision(int player_id, table params)
 
 ```sq
 table params = {
-    string m_location,         // location to give or take away vision of (depending on m_bSet)
-    string m_triangleGroup,    // triangle group to give or take away vision of (depending on m_bSet)
-    bool m_bFullMapVision,      // If set to true, will give or take away vision of entire map (depending on m_bSet)
-    bool m_bSet = true              // If true gives vision, else takes away vision. (default: true)
+    string m_location,         # location to give or take away vision of (depending on m_bSet)
+    string m_triangleGroup,    # triangle group to give or take away vision of (depending on m_bSet)
+    bool m_bFullMapVision,      # If set to true, will give or take away vision of entire map (depending on m_bSet)
+    bool m_bSet = true              # If true gives vision, else takes away vision. (default: true)
 }
 ```
 
@@ -669,9 +669,9 @@ bool gx_get_area_vision(int player_id, table params)
 
 ```sq
 table params = {
-    string m_location,         // location to query vision for
-    string m_triangleGroup,    // triangle group to query vision for
-    bool m_bFullMapVision      // If set to true, queries if player has full map vision
+    string m_location,         # location to query vision for
+    string m_triangleGroup,    # triangle group to query vision for
+    bool m_bFullMapVision      # If set to true, queries if player has full map vision
 }
 ```
 
@@ -686,15 +686,15 @@ void gx_set_terrain_type(params = {})
 
 ```sq
 table params = {
-    TerrainType m_type         // Required. The type of terrain to change to. See TerrainType enum. 
-    int m_secondary = 0         // Secondary terrain type. (default = 0)
-    Int2 m_index,          // 2d index of square to change terrain type of
-    int m_index2,         // 0 or 1, 0 indicates bottom triangle, 1 indicates top.
-                                // If index2 is not defined, entire square specified by m_index
-                                // will be set to terrain type (i.e. both triangles, top and bottom).
-                                // m_index and index2 are ignored if m_location is set.
-    string m_location,          // location to set terrain tile types.,
-    string m_triangleGroup       // triangle group to set terrian tile stype
+    TerrainType m_type         # Required. The type of terrain to change to. See TerrainType enum. 
+    int m_secondary = 0         # Secondary terrain type. (default = 0)
+    Int2 m_index,          # 2d index of square to change terrain type of
+    int m_index2,         # 0 or 1, 0 indicates bottom triangle, 1 indicates top.
+                                # If index2 is not defined, entire square specified by m_index
+                                # will be set to terrain type (i.e. both triangles, top and bottom).
+                                # m_index and index2 are ignored if m_location is set.
+    string m_location,          # location to set terrain tile types.,
+    string m_triangleGroup       # triangle group to set terrian tile stype
 }
 ```
 
@@ -724,12 +724,12 @@ void gx_set_terrain_type_2(params = {})
 
 ```sq
 table params = {
-    TerrainType m_type              // Required. The type of terrain to change to. See TerrainType enum. 
-    int m_secondary = 0             // Secondary terrain type. (default = 0)
-    string m_locations[],           // location to set terrain tile types.,
-    AABR m_aabrs[],                 // aabrs to set terrain tile type
-    string m_excludeLocations[],    // location to NOT set terrain tile types.,
-    AABR m_excludeAABRs[]           // aabrs to NOT set terrian tile stype
+    TerrainType m_type              # Required. The type of terrain to change to. See TerrainType enum. 
+    int m_secondary = 0             # Secondary terrain type. (default = 0)
+    string m_locations[],           # location to set terrain tile types.,
+    AABR m_aabrs[],                 # aabrs to set terrain tile type
+    string m_excludeLocations[],    # location to NOT set terrain tile types.,
+    AABR m_excludeAABRs[]           # aabrs to NOT set terrian tile stype
 }
 ```
 
@@ -753,12 +753,12 @@ table params = {
 
 ```sq
 table params = {
-    TerrainType m_type              // Required. The type of terrain to change to. See TerrainType enum. 
-    int m_secondary = 0             // Secondary terrain type. (default = 0)
-    string m_locations[],           // location to set terrain tile types.,
-    AABR m_aabrs[],                 // aabrs to set terrain tile type
-    string m_excludeLocations[],    // location to NOT set terrain tile types.,
-    AABR m_excludeAABRs[]           // aabrs to NOT set terrian tile stype
+    TerrainType m_type              # Required. The type of terrain to change to. See TerrainType enum. 
+    int m_secondary = 0             # Secondary terrain type. (default = 0)
+    string m_locations[],           # location to set terrain tile types.,
+    AABR m_aabrs[],                 # aabrs to set terrain tile type
+    string m_excludeLocations[],    # location to NOT set terrain tile types.,
+    AABR m_excludeAABRs[]           # aabrs to NOT set terrian tile stype
 }
 ```
 
@@ -816,9 +816,9 @@ gx_queue_command(int unit_ids[], CommandType command, table params = {}, bool bQ
 
 ```sq
 table params = {
-    int m_unitID,            // unit to target
-    string m_location,     // location to target
-    Float2 m_pos,          // position to target
+    int m_unitID,            # unit to target
+    string m_location,     # location to target
+    Float2 m_pos,          # position to target
 }
 ```
 
@@ -836,10 +836,10 @@ int gx_set_speech_bubble(int unit_id, table params = {})
 
 ```sq
 table params = {
-    string m_text,          // Speech Bubble text to display
-    int m_duration = 60     // duration to display in ticks 
-                            // set to -1 to make it last forever
-                            // default: 60 ticks (3 seconds)
+    string m_text,          # Speech Bubble text to display
+    int m_duration = 60     # duration to display in ticks 
+                            # set to -1 to make it last forever
+                            # default: 60 ticks (3 seconds)
 }
 ```
 
@@ -889,8 +889,8 @@ int gx_get_player_ammo_total(int player_id, string ammoName)
 
 ```sq
 table params = {
-    string m_tag,             // Required                                 (string)
-    int m_player_id = 0        // Optional, used to Filter. Default = 0.   (int)
+    string m_tag,             # Required                                 (string)
+    int m_player_id = 0        # Optional, used to Filter. Default = 0.   (int)
 }
 ```
 
@@ -902,7 +902,7 @@ table params = {
 - Allows you to get/set certain properties for `simulation`, `forces`, `players`, and `units`, and other things
 
 ```sq
-// getters
+# getters
 mixed gx_get_sim_prop(SimProp prop)
 mixed gx_get_force_prop(ForceProp prop, int force_id)
 mixed gx_get_player_prop(PlayerProp prop, int player_id)
@@ -910,14 +910,14 @@ mixed gx_get_unit_prop(UnitProp prop, int unit_id)
 mixed gx_get_location_prop(LocationProp prop, string location)
 mixed gx_get_decal_prop(DecalProp prop, int decal_id)
 
-// setters
+# setters
 void gx_set_sim_prop(SimProp prop, mixed val)
 void gx_set_force_prop(ForceProp prop, int force_id, mixed val)
 void gx_set_player_prop(PlayerProp prop, int player_id, mixed val)
 void gx_set_unit_prop(UnitProp prop, int unit_id, mixed val)
 void gx_set_decal_prop(DecalProp prop, int decal_id, mixed val)
 
-// adders
+# adders
 void gx_add_force_prop(ForceProp prop, int force_id, mixed val)
 void gx_add_player_prop(PlayerProp prop, int player_id, mixed val)
 void gx_add_unit_prop(UnitProp prop, int unit_id, mixed val)
@@ -931,21 +931,21 @@ void gx_add_unit_prop(UnitProp prop, int unit_id, mixed val)
 
 ```sq
 
-// mixed = integer, bool, float, string
+# mixed = integer, bool, float, string
 
-// getters
+# getters
 mixed gx_get_sim_var(string varName)
 mixed gx_get_force_var(int force_id, string varName)
 mixed gx_get_player_var(int player_id, string varName)
 mixed gx_get_unit_var(int unit_id, string varName)
 
-// setters
+# setters
 void gx_set_sim_var(string varName, mixed varValue)
 void gx_set_force_var(int force_id, string varName, mixed varValue)
 void gx_set_player_var(int player_id, string varName, mixed varValue)
 void gx_set_unit_var(int unit_id, string varName, mixed varValue)
 
-// adders
+# adders
 void gx_add_sim_var(string varName, mixed varValue)
 void gx_add_force_var(int force_id, string varName, mixed varValue)
 void gx_add_player_var(int player_id, string varName, mixed varValue)
@@ -1057,13 +1057,13 @@ int gx_sound2d_create(table params = {})
 
 ```sq
 table params = {
-    string m_sound,         // name of sound to play
-    string m_soundPack,     // will play random sound from soundpack
-    int m_forceIDs[],       // forceIDs that can hear the sound
-    int m_playerIDs[],      // playerIDs that can hear the sound
-    float m_volume = 1,     // Optional, volume multiplier (default = 1)
-    float m_pitch = 1,      // Optional, pitch of sound (default = 1)
-    bool m_bLoop = false    // Optional, controls if sound should loop
+    string m_sound,         # name of sound to play
+    string m_soundPack,     # will play random sound from soundpack
+    int m_forceIDs[],       # forceIDs that can hear the sound
+    int m_playerIDs[],      # playerIDs that can hear the sound
+    float m_volume = 1,     # Optional, volume multiplier (default = 1)
+    float m_pitch = 1,      # Optional, pitch of sound (default = 1)
+    bool m_bLoop = false    # Optional, controls if sound should loop
 }
 ```
 - You are required to set either `m_sound` or `m_soundPack` (but not both).
@@ -1087,8 +1087,8 @@ void gx_sound2d_modify(int soundID, table params = {})
 
 ```sq
 table params = {
-    float m_volume,     // Optional, volume multiplier
-    float m_pitch       // Optional, pitch of sound
+    float m_volume,     # Optional, volume multiplier
+    float m_pitch       # Optional, pitch of sound
 }
 ```
 
@@ -1106,17 +1106,17 @@ int gx_sound3d_create(table params = {})
 
 ```sq
 table params = {
-    string m_sound,         // name of sound to play
-    string m_soundPack,     // play random sound from soundpack
-    int m_unitID,           // Optional, unit for sound to attach to
-    bool m_bStopSoundOnUnitDeath,           // Optional, default true if m_unitID is set
-    Float2 m_pos2d,           // Optional, 2d position for sound
-    Float3 m_pos3d,           // Optional, 3d position for sound
-    float m_radius = 0,     // Optional, sound radius, default = 0
-    float m_volume = 1,     // Optional, volume multiplier (default = 1)
-    float m_pitch = 1,      // Optional, pitch of sound (default = 1)
-    bool m_bLoop = false                    // Optional, controls if sound should loop
-    bool m_bRandomLoopStartTime = false     // Optional
+    string m_sound,         # name of sound to play
+    string m_soundPack,     # play random sound from soundpack
+    int m_unitID,           # Optional, unit for sound to attach to
+    bool m_bStopSoundOnUnitDeath,           # Optional, default true if m_unitID is set
+    Float2 m_pos2d,           # Optional, 2d position for sound
+    Float3 m_pos3d,           # Optional, 3d position for sound
+    float m_radius = 0,     # Optional, sound radius, default = 0
+    float m_volume = 1,     # Optional, volume multiplier (default = 1)
+    float m_pitch = 1,      # Optional, pitch of sound (default = 1)
+    bool m_bLoop = false                    # Optional, controls if sound should loop
+    bool m_bRandomLoopStartTime = false     # Optional
 }
 ```
 
@@ -1142,10 +1142,10 @@ void gx_sound3d_modify(int soundID, table params = {})
 
 ```sq
 table params = {
-    float m_volume,     // Optional, volume multiplier
-    float m_pitch,      // Optional, pitch of sound
-    Float2 m_pos2d,       // Optional
-    Float3 m_pos3d        // Optional
+    float m_volume,     # Optional, volume multiplier
+    float m_pitch,      # Optional, pitch of sound
+    Float2 m_pos2d,       # Optional
+    Float3 m_pos3d        # Optional
 }
 ```
 
@@ -1165,19 +1165,19 @@ int gx_decal_create(table params)
 
 ```sq
 table params = {
-    string m_preset,           // decal preset
+    string m_preset,           # decal preset
     int m_alphaFn,
     int m_colorFn,
-    bool m_bAlwaysDisplay,     // ignore fog of war checks
+    bool m_bAlwaysDisplay,     # ignore fog of war checks
     bool m_bDisplayOnMinimap,
-    Float4 m_color,              // srgb with alpha
+    Float4 m_color,              # srgb with alpha
     Float2 m_pos,
-    float m_rotation,          // radians
+    float m_rotation,          # radians
     float m_size,
-    Float2 m_size,               // size, can either be Float2 or float
+    Float2 m_size,               # size, can either be Float2 or float
     string m_tag,
-    string m_texture,          // icon to use
-    float m_speedFactor = 1.0       // animation speed if m_texture is animated GIF
+    string m_texture,          # icon to use
+    float m_speedFactor = 1.0       # animation speed if m_texture is animated GIF
 }
 ```
 
@@ -1247,7 +1247,7 @@ int[] gx_get_sim_image_colors(table params)
 
 ```sq
 table params = {
-    string m_img                   // Required, Icon Name
+    string m_img                   # Required, Icon Name
 }
 ```
 
@@ -1261,11 +1261,11 @@ void gx_draw_glow_image(table params)
 
 ```sq
 table params = {
-    string m_img,                   // Required, Icon Name
-    AABR_int m_aabr,               // AABR to draw to
-    string m_location,              // Location to draw to
-    AABR_int m_excludeAABRs[],     // Optional, AABRs not to draw to
-    string m_excludeLocations[],    // Optional, locations not to draw to
+    string m_img,                   # Required, Icon Name
+    AABR_int m_aabr,               # AABR to draw to
+    string m_location,              # Location to draw to
+    AABR_int m_excludeAABRs[],     # Optional, AABRs not to draw to
+    string m_excludeLocations[],    # Optional, locations not to draw to
 }
 ```
 
@@ -1278,9 +1278,9 @@ void gx_set_terrain_glow_color(table params = {})
 ```
 ```sq
 table params = {
-    int m_index,        // Glow index to change, required
-    int m_hex,          // srgb hex3 code for color to set
-    Float3 m_color // srgb color (each component [0.0-1.0]) for new color to set
+    int m_index,        # Glow index to change, required
+    int m_hex,          # srgb hex3 code for color to set
+    Float3 m_color # srgb color (each component [0.0-1.0]) for new color to set
 }
 ```
 
@@ -1547,7 +1547,7 @@ table params = {
     string m_msg,
     int m_forceIDs[],
     int m_playerIDs[],
-    int m_duration = 100, // 5 seconds
+    int m_duration = 100, # 5 seconds
 }
 ```
 
@@ -1641,7 +1641,7 @@ string[] gx_get_common_uds(table params = {})
 ```
 
 ```sq
-// used for filtering, optional.
+# used for filtering, optional.
 table params = {
     bool m_bStructure,
     Race m_race

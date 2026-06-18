@@ -54,7 +54,7 @@ function gx_sim_update()
         }
     }
 
-    // do rest of game logic
+    # do rest of game logic
 }
 ```
 

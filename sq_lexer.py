@@ -12,19 +12,42 @@ from pygments.lexers.c_cpp import CppLexer
 from pygments.token import Comment, Name, Keyword
 from pygments.lexer import RegexLexer, include, bygroups, using, \
     this, inherit, default, words
+import copy
 
 __all__ = ['SquirrelLexer']
 
-class MyCppLexer(CppLexer):
-    tokens = {
-        'statements': [
-            # treat #... as a single-line comment
-            (r'#.*?$', Comment.Single),
+#class MyCppLexer(CppLexer):
+#    tokens = {
+#        'statements': [
+#            # treat #... as a single-line comment
+#            (r'#.*?$', Comment.Single),
 
             # keep all normal C++ rules
-            inherit,
-        ]
-    }
+#            inherit,
+#        ]
+#    }
+
+class MyCppLexer(CppLexer):
+    tokens = copy.deepcopy(CppLexer.tokens)
+
+    # rebuild statements state
+    new_statements = []
+
+    for rule in tokens["statements"]:
+        pattern = rule[0]
+
+        # skip the C++ // comment rule
+        # exact regex may differ by pygments version
+        if isinstance(pattern, str) and "//" in pattern:
+            continue
+
+        new_statements.append(rule)
+
+    # add our own rules first
+    new_statements.insert(0, (r'#.*?$', Comment.Single))
+    new_statements.insert(1, (r'//', Operator))
+
+    tokens["statements"] = new_statements
 
 class SquirrelLexer(MyCppLexer):
     name = 'SquirrelLexer'
