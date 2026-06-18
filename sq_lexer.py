@@ -20,21 +20,21 @@ __all__ = ['SquirrelLexer']
 
 class MyCppLexer(CppLexer):
 
-    tokens = CppLexer.tokens.copy()
+    def get_tokens_unprocessed(self, text):
+        return super().get_tokens_unprocessed(text)
 
+    tokens = dict(CppLexer.tokens)
+
+    # IMPORTANT: only modify root minimally
     tokens["root"] = [
-        # 1) FORCE line-start # comment (highest priority)
+        # 1) # is ALWAYS a comment (highest priority)
         (r'^\s*#.*$', Comment.Single),
 
-        # 2) treat // as operator (ONLY literal //)
+        # 2) // is operator (override before C++ rules see it)
         (r'//', Operator),
 
-    ] + [
-        rule
-        for rule in CppLexer.tokens["root"]
-        if isinstance(rule, tuple)
-        and isinstance(rule[0], str)
-        and rule[0] != r'//.*?$'      # remove original comment rule
+        # then fall back to original root rules
+        ("inherit",),
     ]
 
 class SquirrelLexer(MyCppLexer):
