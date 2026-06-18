@@ -15,7 +15,18 @@ from pygments.lexer import RegexLexer, include, bygroups, using, \
 
 __all__ = ['SquirrelLexer']
 
-class SquirrelLexer(CppLexer):
+class MyCppLexer(CppLexer):
+    tokens = {
+        'statements': [
+            # treat #... as a single-line comment
+            (r'#.*?$', Comment.Single),
+
+            # keep all normal C++ rules
+            inherit,
+        ]
+    }
+
+class SquirrelLexer(MyCppLexer):
     name = 'SquirrelLexer'
     aliases = ['squirrel', 'sq']
     filenames = ['*.nut', '*.sq']
@@ -37,7 +48,7 @@ class SquirrelLexer(CppLexer):
 
     def get_tokens_unprocessed(self, text, stack=('root',)):
         for index, token, value in \
-                CppLexer.get_tokens_unprocessed(self, text, stack):
+                MyCppLexer.get_tokens_unprocessed(self, text, stack):
             if token is Name:
                 if value in self.EXTRA_TYPES:
                     token = Keyword.Type
