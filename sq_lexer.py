@@ -16,33 +16,22 @@ import copy
 
 __all__ = ['SquirrelLexer']
 
-#class MyCppLexer(CppLexer):
-#    tokens = {
-#        'statements': [
-#            # treat #... as a single-line comment
-#            (r'#.*?$', Comment.Single),
-
-            # keep all normal C++ rules
-#            inherit,
-#        ]
-#    }
-
-from pygments.lexers.c_cpp import CppLexer
-from pygments.token import Comment
-
 class MyCppLexer(CppLexer):
-    tokens = CppLexer.tokens.copy()
+    tokens = copy.deepcopy(CppLexer.tokens)
 
-    # prepend new rule
-    tokens["statements"] = [
+    tokens['root'] = [
+        # 1) make #... a single-line comment
         (r'#.*?$', Comment.Single),
-    ] + [
-        rule for rule in CppLexer.tokens["statements"]
-        if not (
-            isinstance(rule, tuple)
-            and len(rule) > 0
-            and "//" in str(rule[0])   # remove // comment rule
-        )
+
+        # 2) treat // as an operator (must come BEFORE anything else that could match)
+        (r'//', Operator),
+
+        # 3) then include the rest of CppLexer rules EXCEPT the original // comment rule
+        # we reuse everything else from original root except problematic entries
+        *[
+            rule for rule in CppLexer.tokens['root']
+            if not (isinstance(rule[1], type(Comment.Single)) and rule[0].startswith(r'//'))
+        ],
     ]
 
 class SquirrelLexer(MyCppLexer):
