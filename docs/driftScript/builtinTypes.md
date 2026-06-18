@@ -2,8 +2,8 @@
 ```sq
 class Vec2 {
     constructor(x=0.0, y=0.0)
-    function _add(Vec2 other)               // returns Vec2
-    function _sub(Vec2 other)               // returns Vec2
+    function _add(Vec2 other)               # returns Vec2
+    function _sub(Vec2 other)               # returns Vec2
     function _mul((float|int|Vec2) other)   // returns Vec2
     function _div((float|int|Vec2) other)   // returns Vec2
     function _unm(Vec2 other)               // returns Vec2
