@@ -27,27 +27,23 @@ __all__ = ['SquirrelLexer']
 #        ]
 #    }
 
+from pygments.lexers.c_cpp import CppLexer
+from pygments.token import Comment
+
 class MyCppLexer(CppLexer):
-    tokens = copy.deepcopy(CppLexer.tokens)
+    tokens = CppLexer.tokens.copy()
 
-    # rebuild statements state
-    new_statements = []
-
-    for rule in tokens["statements"]:
-        pattern = rule[0]
-
-        # skip the C++ // comment rule
-        # exact regex may differ by pygments version
-        if isinstance(pattern, str) and "//" in pattern:
-            continue
-
-        new_statements.append(rule)
-
-    # add our own rules first
-    new_statements.insert(0, (r'#.*?$', Comment.Single))
-    new_statements.insert(1, (r'//', Operator))
-
-    tokens["statements"] = new_statements
+    # prepend new rule
+    tokens["statements"] = [
+        (r'#.*?$', Comment.Single),
+    ] + [
+        rule for rule in CppLexer.tokens["statements"]
+        if not (
+            isinstance(rule, tuple)
+            and len(rule) > 0
+            and "//" in str(rule[0])   # remove // comment rule
+        )
+    ]
 
 class SquirrelLexer(MyCppLexer):
     name = 'SquirrelLexer'
