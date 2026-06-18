@@ -17,17 +17,23 @@ import copy
 __all__ = ['SquirrelLexer']
 
 class MyCppLexer(CppLexer):
-    tokens = CppLexer.tokens.copy()
+    tokens = dict(CppLexer.tokens)
 
-    def get_tokens_unprocessed(self, text):
-        return super().get_tokens_unprocessed(text)
-
+    # Override root rules safely
     tokens["root"] = [
-        (r"#.*?$", Comment.Single),
-        (r"//", Operator),
+        # 1) Make # ALWAYS a comment (highest priority)
+        (r'#.*$', Comment.Single),
+
+        # 2) Make // an operator (must come before anything that would treat it as comment)
+        (r'//', Operator),
+
     ] + [
-        r for r in CppLexer.tokens["root"]
-        if isinstance(r, tuple) and r[0] != r"//.*?$"
+        rule
+        for rule in CppLexer.tokens["root"]
+        # remove original C++ single-line comment rule
+        if not (isinstance(rule, tuple) and rule[0] == r'//.*?$')
+        # optionally remove preprocessor rule handling
+        and not (isinstance(rule, tuple) and rule[0].lstrip().startswith('#'))
     ]
 
 class SquirrelLexer(MyCppLexer):
