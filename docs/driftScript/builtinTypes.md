@@ -4,22 +4,22 @@ class Vec2 {
     constructor(x=0.0, y=0.0)
     function _add(Vec2 other)               # returns Vec2
     function _sub(Vec2 other)               # returns Vec2
-    function _mul((float|int|Vec2) other)   // returns Vec2
-    function _div((float|int|Vec2) other)   // returns Vec2
-    function _unm(Vec2 other)               // returns Vec2
-    function _unp(Vec2 other)               // returns Vec2
-    function _eq(Vec2 other)                // returns bool
-    function _hash()                        // returns int
-    function _tostring()                    // returns string
-    function IsZero(other)                  // returns bool
-    function Dot(Vec2 other)                // returns float or int
-    function Length()                       // returns float
-    function LengthSquared()                // returns float or int
-    function UnitVecOrZero()                // returns Vec2<float>
-    function UnitVecOrRandom()              // returns Vec2<float>
-    function NumComponents()                // returns 2
-    function ToInt()                        // returns a copy as Vec2<int>
-    function ToFloat()                      // returns a copy as Vec2<float>
+    function _mul((float|int|Vec2) other)   # returns Vec2
+    function _div((float|int|Vec2) other)   # returns Vec2
+    function _unm(Vec2 other)               # returns Vec2
+    function _unp(Vec2 other)               # returns Vec2
+    function _eq(Vec2 other)                # returns bool
+    function _hash()                        # returns int
+    function _tostring()                    # returns string
+    function IsZero(other)                  # returns bool
+    function Dot(Vec2 other)                # returns float or int
+    function Length()                       # returns float
+    function LengthSquared()                # returns float or int
+    function UnitVecOrZero()                # returns Vec2<float>
+    function UnitVecOrRandom()              # returns Vec2<float>
+    function NumComponents()                # returns 2
+    function ToInt()                        # returns a copy as Vec2<int>
+    function ToFloat()                      # returns a copy as Vec2<float>
     m_x = 0.0
     m_y = 0.0
 }
@@ -42,25 +42,25 @@ Vec2 Int2(x, y)
 ```sq
 class Vec3 {
     constructor(x=0.0, y=0.0, z=0.0)
-    function _add(Vec3 other)               // returns Vec3
-    function _sub(Vec3 other)               // returns Vec3
-    function _mul((float|int|Vec3) other)   // returns Vec3
-    function _div((float|int|Vec3) other)   // returns Vec3
-    function _unm(Vec3 other)               // returns Vec3
-    function _unp(Vec3 other)               // returns Vec3
-    function _eq(Vec3 other)                // returns bool
-    function _hash()                        // returns int
-    function _tostring()                    // returns string
-    function IsZero(other)                  // returns bool
-    function Dot(Vec3 other)                // returns float or int
-    function Length()                       // returns float
-    function LengthSquared()                // returns float or int
-    function UnitVecOrZero()                // returns Vec3<float>
-    function UnitVecOrRandom()              // returns Vec3<float>
-    function NumComponents()                // returns 3
-    function xy()                           // returns Vec2(m_x, m_y)
-    function ToInt()                        // returns a copy as Vec3<int>
-    function ToFloat()                      // returns a copy as Vec3<float>
+    function _add(Vec3 other)               # returns Vec3
+    function _sub(Vec3 other)               # returns Vec3
+    function _mul((float|int|Vec3) other)   # returns Vec3
+    function _div((float|int|Vec3) other)   # returns Vec3
+    function _unm(Vec3 other)               # returns Vec3
+    function _unp(Vec3 other)               # returns Vec3
+    function _eq(Vec3 other)                # returns bool
+    function _hash()                        # returns int
+    function _tostring()                    # returns string
+    function IsZero(other)                  # returns bool
+    function Dot(Vec3 other)                # returns float or int
+    function Length()                       # returns float
+    function LengthSquared()                # returns float or int
+    function UnitVecOrZero()                # returns Vec3<float>
+    function UnitVecOrRandom()              # returns Vec3<float>
+    function NumComponents()                # returns 3
+    function xy()                           # returns Vec2(m_x, m_y)
+    function ToInt()                        # returns a copy as Vec3<int>
+    function ToFloat()                      # returns a copy as Vec3<float>
     m_x = 0.0
     m_y = 0.0
     m_z = 0.0
@@ -83,26 +83,26 @@ Vec3 Int3(x, y, z)
 ```sq
 class Vec4 {
     constructor(x=0.0, y=0.0, z=0.0, w=0.0)
-    function _add(Vec4 other)               // returns Vec4
-    function _sub(Vec4 other)               // returns Vec4
-    function _mul((float|int|Vec4) other)   // returns Vec4
-    function _div((float|int|Vec4) other)   // returns Vec4
-    function _unm(Vec4 other)               // returns Vec4
-    function _unp(Vec4 other)               // returns Vec4
-    function _eq(Vec4 other)                // returns bool
-    function _hash()                        // returns int
-    function _tostring()                    // returns string
-    function IsZero(other)                  // returns bool
-    function Dot(Vec4 other)                // returns float or int
-    function Length()                       // returns float
-    function LengthSquared()                // returns float or int
-    function UnitVecOrZero()                // returns Vec4<float>
-    function UnitVecOrRandom()              // returns Vec4<float>
-    function NumComponents()                // returns 4
-    function xy()                           // returns Vec2(m_x, m_y)
-    function xyz()                          // returns Vec3(m_x, m_y, m_z)
-    function ToInt()                        // returns a copy as Vec4<int>
-    function ToFloat()                      // returns a copy as Vec4<float>
+    function _add(Vec4 other)               # returns Vec4
+    function _sub(Vec4 other)               # returns Vec4
+    function _mul((float|int|Vec4) other)   # returns Vec4
+    function _div((float|int|Vec4) other)   # returns Vec4
+    function _unm(Vec4 other)               # returns Vec4
+    function _unp(Vec4 other)               # returns Vec4
+    function _eq(Vec4 other)                # returns bool
+    function _hash()                        # returns int
+    function _tostring()                    # returns string
+    function IsZero(other)                  # returns bool
+    function Dot(Vec4 other)                # returns float or int
+    function Length()                       # returns float
+    function LengthSquared()                # returns float or int
+    function UnitVecOrZero()                # returns Vec4<float>
+    function UnitVecOrRandom()              # returns Vec4<float>
+    function NumComponents()                # returns 4
+    function xy()                           # returns Vec2(m_x, m_y)
+    function xyz()                          # returns Vec3(m_x, m_y, m_z)
+    function ToInt()                        # returns a copy as Vec4<int>
+    function ToFloat()                      # returns a copy as Vec4<float>
     m_x = 0.0
     m_y = 0.0
     m_z = 0.0
@@ -126,30 +126,30 @@ Vec4 Int4(x, y, z, w)
 Axis aligned bounding rectangle
 ```sq
 class AABR {
-    // Create an AABR given minPt and maxPt
+    # Create an AABR given minPt and maxPt
     constructor(minPt = Vec2(), maxPt = Vec2())
 
-    // Creates an AABR given any two points
-    // Internally determines m_minPt and m_maxPt
+    # Creates an AABR given any two points
+    # Internally determines m_minPt and m_maxPt
     static function CreateFromPoints(Vec2 pt0, Vec2 pt1)
     
-    // Methods
-    function _tostring()            // returns string
-    function _eq(AABR other)        // returns bool
-    function _hash()                // returns int
+    # Methods
+    function _tostring()            # returns string
+    function _eq(AABR other)        # returns bool
+    function _hash()                # returns int
     function _cloned(AABR orig)
-    function GetSize()              // returns Vec2<int|float>
-    function GetTopLeft()           // returns Vec2<int|float>
-    function GetTopRight()          // returns Vec2<int|float>
-    function GetBottomLeft()        // returns Vec2<int|float>
-    function GetBottomRight()       // returns Vec2<int|float>
-    function GetCenter()            // returns Vec2<float>
-    function Contains(Vec2 pt)                  // returns true if pt is inside AABR
-    function ContainsOrTouching(Vec2 pt)        // returns true if pt is inside or on edge of AABR
-    function ToInt()                // returns a copy as AABR<int>
-    function ToFloat()              // returns a copy as AABR<float>
+    function GetSize()              # returns Vec2<int|float>
+    function GetTopLeft()           # returns Vec2<int|float>
+    function GetTopRight()          # returns Vec2<int|float>
+    function GetBottomLeft()        # returns Vec2<int|float>
+    function GetBottomRight()       # returns Vec2<int|float>
+    function GetCenter()            # returns Vec2<float>
+    function Contains(Vec2 pt)                  # returns true if pt is inside AABR
+    function ContainsOrTouching(Vec2 pt)        # returns true if pt is inside or on edge of AABR
+    function ToInt()                # returns a copy as AABR<int>
+    function ToFloat()              # returns a copy as AABR<float>
 
-    // Variables
+    # Variables
     m_minPt = Vec2()
     m_maxPt = Vec2() 
 }
@@ -191,10 +191,10 @@ class Random {
     constructor(int seed = 0)
     void SetSeed(int seed)
     int GetSeed()
-    int Rand()                              // returns integer between [0, RAND_MAX]
-    int Rand64()                            // returns integer between [INT_MIN, INT_MAX]
-    int RandInt(int min, int max)           // returns integer between [min, max]
-    float RandFloat(float min, float max)   // returns float between [min, max]
+    int Rand()                              # returns integer between [0, RAND_MAX]
+    int Rand64()                            # returns integer between [INT_MIN, INT_MAX]
+    int RandInt(int min, int max)           # returns integer between [min, max]
+    float RandFloat(float min, float max)   # returns float between [min, max]
     function _cloned(Random orig)
 }
 ```
@@ -206,21 +206,21 @@ class Random {
 
 ## Expr
 ```sq
-// Expr feature is work-in-progress.
-// Will become more useful over time (hopefully)
-// These are often used for setting requirements for units/spells/etc
-// or calculating values dynamically.
+# Expr feature is work-in-progress.
+# Will become more useful over time (hopefully)
+# These are often used for setting requirements for units/spells/etc
+# or calculating values dynamically.
 
-// Classes:
+# Classes:
 
-Expr.Unary(Expr.UnaryOp op, Expr expr)                          // mixed
-Expr.Binary(Expr.BinaryOp op, Expr Expr0, Expr expr1)           // mixed
-Expr.DynVal(DynValType ty, Expr expr)                           // mixed
-Expr.HasUnit(string unitName)                                   // bool
-Expr.HasPlayerResearch(string playerResearch, int level = 1)    // bool
-Expr.HasUnitResearch(string unitResearch, int level = 1)        // bool
+Expr.Unary(Expr.UnaryOp op, Expr expr)                          # mixed
+Expr.Binary(Expr.BinaryOp op, Expr Expr0, Expr expr1)           # mixed
+Expr.DynVal(DynValType ty, Expr expr)                           # mixed
+Expr.HasUnit(string unitName)                                   # bool
+Expr.HasPlayerResearch(string playerResearch, int level = 1)    # bool
+Expr.HasUnitResearch(string unitResearch, int level = 1)        # bool
 
-// Enums:
+# Enums:
 
 enum Expr.UnaryOp {
     Invalid,
@@ -245,20 +245,20 @@ enum Expr.BinaryOp {
 }
 
 enum Expr.DynValType {
-	Invalid,                    // return values below..
-	PlayerResearch,				// int
-	UnitResearch,				// int
-	SimVar,						// int|float|bool|string
-	PlayerVar,					// int|float|bool|string
-	ForceVar,					// int|float|bool|string
-	UnitVar,					// int|float|bool|string
-	Gemstone,					// float
-	Fungus,						// float
-	Supply,					    // int
-	MaxSupply,					// int
-	SupplyBlocked,				// bool
-	SiegedOrSieging,			// bool
-	UnsiegedOrUnsieging		    // bool
+	Invalid,                    # return values below..
+	PlayerResearch,				# int
+	UnitResearch,				# int
+	SimVar,						# int|float|bool|string
+	PlayerVar,					# int|float|bool|string
+	ForceVar,					# int|float|bool|string
+	UnitVar,					# int|float|bool|string
+	Gemstone,					# float
+	Fungus,						# float
+	Supply,					    # int
+	MaxSupply,					# int
+	SupplyBlocked,				# bool
+	SiegedOrSieging,			# bool
+	UnsiegedOrUnsieging		    # bool
 }
 ```
 
