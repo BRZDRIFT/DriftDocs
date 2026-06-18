@@ -16,7 +16,7 @@ import copy
 
 __all__ = ['SquirrelLexer']
 
-class MathCppLexer(CppLexer):
+class MyCppLexer(CppLexer):
     """
     C++-like lexer where `//` is a math operator and `#` is always a
     single-line comment.
@@ -65,6 +65,7 @@ class MathCppLexer(CppLexer):
         ],
     
         }
+
 class SquirrelLexer(MyCppLexer):
     name = 'SquirrelLexer'
     aliases = ['squirrel', 'sq']
