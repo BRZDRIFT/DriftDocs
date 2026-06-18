@@ -16,24 +16,24 @@ import copy
 
 __all__ = ['SquirrelLexer']
 
+from pygments.token import Comment, Operator
+
 class MyCppLexer(CppLexer):
     tokens = dict(CppLexer.tokens)
 
-    # Override root rules safely
     tokens["root"] = [
-        # 1) Make # ALWAYS a comment (highest priority)
+        # # always comment
         (r'#.*$', Comment.Single),
 
-        # 2) Make // an operator (must come before anything that would treat it as comment)
+        # // becomes operator
         (r'//', Operator),
-
     ] + [
         rule
         for rule in CppLexer.tokens["root"]
-        # remove original C++ single-line comment rule
-        if not (isinstance(rule, tuple) and rule[0] == r'//.*?$')
-        # optionally remove preprocessor rule handling
-        and not (isinstance(rule, tuple) and rule[0].lstrip().startswith('#'))
+        if isinstance(rule, tuple)
+        and isinstance(rule[0], str)
+        and rule[0] != r'//.*?$'
+        and not rule[0].lstrip().startswith('#')
     ]
 
 class SquirrelLexer(MyCppLexer):
