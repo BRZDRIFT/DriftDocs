@@ -1182,71 +1182,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#expr-feature-is-work-in-progress" class="md-nav__link">
-    <span class="md-ellipsis">
-      Expr feature is work-in-progress.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#will-become-more-useful-over-time-hopefully" class="md-nav__link">
-    <span class="md-ellipsis">
-      Will become more useful over time (hopefully)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#these-are-often-used-for-setting-requirements-for-unitsspellsetc" class="md-nav__link">
-    <span class="md-ellipsis">
-      These are often used for setting requirements for units/spells/etc
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#or-calculating-values-dynamically" class="md-nav__link">
-    <span class="md-ellipsis">
-      or calculating values dynamically.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#classes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Classes:
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#enums" class="md-nav__link">
-    <span class="md-ellipsis">
-      Enums:
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Enums:">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#future-additions" class="md-nav__link">
     <span class="md-ellipsis">
       Future additions
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1583,71 +1523,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#expr-feature-is-work-in-progress" class="md-nav__link">
-    <span class="md-ellipsis">
-      Expr feature is work-in-progress.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#will-become-more-useful-over-time-hopefully" class="md-nav__link">
-    <span class="md-ellipsis">
-      Will become more useful over time (hopefully)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#these-are-often-used-for-setting-requirements-for-unitsspellsetc" class="md-nav__link">
-    <span class="md-ellipsis">
-      These are often used for setting requirements for units/spells/etc
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#or-calculating-values-dynamically" class="md-nav__link">
-    <span class="md-ellipsis">
-      or calculating values dynamically.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#classes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Classes:
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#enums" class="md-nav__link">
-    <span class="md-ellipsis">
-      Enums:
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Enums:">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#future-additions" class="md-nav__link">
     <span class="md-ellipsis">
       Future additions
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1667,35 +1547,37 @@
 
 
 
+  <h1>Built-in Types</h1>
+
 <h2 id="vec2">Vec2</h2>
-<p><code>sq
-class Vec2 {
-    constructor(x=0.0, y=0.0)
-    function _add(Vec2 other)               # returns Vec2
-    function _sub(Vec2 other)               # returns Vec2
-    function _mul((float|int|Vec2) other)   # returns Vec2
-    function _div((float|int|Vec2) other)   # returns Vec2
-    function _unm(Vec2 other)               # returns Vec2
-    function _unp(Vec2 other)               # returns Vec2
-    function _eq(Vec2 other)                # returns bool
-    function _hash()                        # returns int
-    function _tostring()                    # returns string
-    function IsZero(other)                  # returns bool
-    function Dot(Vec2 other)                # returns float or int
-    function Length()                       # returns float
-    function LengthSquared()                # returns float or int
-    function UnitVecOrZero()                # returns Vec2&lt;float&gt;
-    function UnitVecOrRandom()              # returns Vec2&lt;float&gt;
-    function NumComponents()                # returns 2
-    function ToInt()                        # returns a copy as Vec2&lt;int&gt;
-    function ToFloat()                      # returns a copy as Vec2&lt;float&gt;
-    m_x = 0.0
-    m_y = 0.0
-}</code></p>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="err">class Vec2 {</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="err">    constructor(x=0.0, y=0.0)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="err">    function _add(Vec2 other)               </span><span class="c1"># returns Vec2</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="err">    function _sub(Vec2 other)               </span><span class="c1"># returns Vec2</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="err">    function _mul((float|int|Vec2) other)   </span><span class="c1"># returns Vec2</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="err">    function _div((float|int|Vec2) other)   </span><span class="c1"># returns Vec2</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="err">    function _unm(Vec2 other)               </span><span class="c1"># returns Vec2</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="err">    function _unp(Vec2 other)               </span><span class="c1"># returns Vec2</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="err">    function _eq(Vec2 other)                </span><span class="c1"># returns bool</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="err">    function _hash()                        </span><span class="c1"># returns int</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="err">    function _tostring()                    </span><span class="c1"># returns string</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="err">    function IsZero(other)                  </span><span class="c1"># returns bool</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="err">    function Dot(Vec2 other)                </span><span class="c1"># returns float or int</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="err">    function Length()                       </span><span class="c1"># returns float</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="err">    function LengthSquared()                </span><span class="c1"># returns float or int</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="err">    function UnitVecOrZero()                </span><span class="c1"># returns Vec2&lt;float&gt;</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="err">    function UnitVecOrRandom()              </span><span class="c1"># returns Vec2&lt;float&gt;</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="err">    function NumComponents()                </span><span class="c1"># returns 2</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="err">    function ToInt()                        </span><span class="c1"># returns a copy as Vec2&lt;int&gt;</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="err">    function ToFloat()                      </span><span class="c1"># returns a copy as Vec2&lt;float&gt;</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="err">    m_x = 0.0</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="err">    m_y = 0.0</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="err">}</span>
+</span></code></pre></div>
 <p>Helper Create Functions:
-<code>sq
-Vec2 Float2(x, y)
-Vec2 Int2(x, y)</code></p>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="err">Vec2 Float2(x, y)</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="err">Vec2 Int2(x, y)</span>
+</span></code></pre></div></p>
 <ul>
 <li>By default <code>Vec2</code> has scalar type of <code>float</code>.</li>
 <li>However you can change scalar type to be <code>int</code> by passing integers into the constructor<ul>
@@ -1706,36 +1588,36 @@ Vec2 Int2(x, y)</code></p>
 <li>Use <code>clone</code> to make deep copy</li>
 </ul>
 <h2 id="vec3">Vec3</h2>
-<p><code>sq
-class Vec3 {
-    constructor(x=0.0, y=0.0, z=0.0)
-    function _add(Vec3 other)               # returns Vec3
-    function _sub(Vec3 other)               # returns Vec3
-    function _mul((float|int|Vec3) other)   # returns Vec3
-    function _div((float|int|Vec3) other)   # returns Vec3
-    function _unm(Vec3 other)               # returns Vec3
-    function _unp(Vec3 other)               # returns Vec3
-    function _eq(Vec3 other)                # returns bool
-    function _hash()                        # returns int
-    function _tostring()                    # returns string
-    function IsZero(other)                  # returns bool
-    function Dot(Vec3 other)                # returns float or int
-    function Length()                       # returns float
-    function LengthSquared()                # returns float or int
-    function UnitVecOrZero()                # returns Vec3&lt;float&gt;
-    function UnitVecOrRandom()              # returns Vec3&lt;float&gt;
-    function NumComponents()                # returns 3
-    function xy()                           # returns Vec2(m_x, m_y)
-    function ToInt()                        # returns a copy as Vec3&lt;int&gt;
-    function ToFloat()                      # returns a copy as Vec3&lt;float&gt;
-    m_x = 0.0
-    m_y = 0.0
-    m_z = 0.0
-}</code></p>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="err">class Vec3 {</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="err">    constructor(x=0.0, y=0.0, z=0.0)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="err">    function _add(Vec3 other)               </span><span class="c1"># returns Vec3</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="err">    function _sub(Vec3 other)               </span><span class="c1"># returns Vec3</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="err">    function _mul((float|int|Vec3) other)   </span><span class="c1"># returns Vec3</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="err">    function _div((float|int|Vec3) other)   </span><span class="c1"># returns Vec3</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="err">    function _unm(Vec3 other)               </span><span class="c1"># returns Vec3</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="err">    function _unp(Vec3 other)               </span><span class="c1"># returns Vec3</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="err">    function _eq(Vec3 other)                </span><span class="c1"># returns bool</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="err">    function _hash()                        </span><span class="c1"># returns int</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="err">    function _tostring()                    </span><span class="c1"># returns string</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="err">    function IsZero(other)                  </span><span class="c1"># returns bool</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="err">    function Dot(Vec3 other)                </span><span class="c1"># returns float or int</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="err">    function Length()                       </span><span class="c1"># returns float</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="err">    function LengthSquared()                </span><span class="c1"># returns float or int</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="err">    function UnitVecOrZero()                </span><span class="c1"># returns Vec3&lt;float&gt;</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="err">    function UnitVecOrRandom()              </span><span class="c1"># returns Vec3&lt;float&gt;</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="err">    function NumComponents()                </span><span class="c1"># returns 3</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="err">    function xy()                           </span><span class="c1"># returns Vec2(m_x, m_y)</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="err">    function ToInt()                        </span><span class="c1"># returns a copy as Vec3&lt;int&gt;</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="err">    function ToFloat()                      </span><span class="c1"># returns a copy as Vec3&lt;float&gt;</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="err">    m_x = 0.0</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="err">    m_y = 0.0</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="err">    m_z = 0.0</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="err">}</span>
+</span></code></pre></div>
 <p>Helper Create Functions:
-<code>sq
-Vec3 Float3(x, y, z)
-Vec3 Int3(x, y, z)</code></p>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="err">Vec3 Float3(x, y, z)</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="err">Vec3 Int3(x, y, z)</span>
+</span></code></pre></div></p>
 <ul>
 <li>By default <code>Vec3</code> has scalar type of <code>float</code>.</li>
 <li>However you can change scalar type to be <code>int</code> by passing integers into the constructor<ul>
@@ -1746,38 +1628,38 @@ Vec3 Int3(x, y, z)</code></p>
 <li>Use <code>clone</code> to make deep copy</li>
 </ul>
 <h2 id="vec4">Vec4</h2>
-<p><code>sq
-class Vec4 {
-    constructor(x=0.0, y=0.0, z=0.0, w=0.0)
-    function _add(Vec4 other)               # returns Vec4
-    function _sub(Vec4 other)               # returns Vec4
-    function _mul((float|int|Vec4) other)   # returns Vec4
-    function _div((float|int|Vec4) other)   # returns Vec4
-    function _unm(Vec4 other)               # returns Vec4
-    function _unp(Vec4 other)               # returns Vec4
-    function _eq(Vec4 other)                # returns bool
-    function _hash()                        # returns int
-    function _tostring()                    # returns string
-    function IsZero(other)                  # returns bool
-    function Dot(Vec4 other)                # returns float or int
-    function Length()                       # returns float
-    function LengthSquared()                # returns float or int
-    function UnitVecOrZero()                # returns Vec4&lt;float&gt;
-    function UnitVecOrRandom()              # returns Vec4&lt;float&gt;
-    function NumComponents()                # returns 4
-    function xy()                           # returns Vec2(m_x, m_y)
-    function xyz()                          # returns Vec3(m_x, m_y, m_z)
-    function ToInt()                        # returns a copy as Vec4&lt;int&gt;
-    function ToFloat()                      # returns a copy as Vec4&lt;float&gt;
-    m_x = 0.0
-    m_y = 0.0
-    m_z = 0.0
-    m_w = 0.0
-}</code></p>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="err">class Vec4 {</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="err">    constructor(x=0.0, y=0.0, z=0.0, w=0.0)</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="err">    function _add(Vec4 other)               </span><span class="c1"># returns Vec4</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="err">    function _sub(Vec4 other)               </span><span class="c1"># returns Vec4</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="err">    function _mul((float|int|Vec4) other)   </span><span class="c1"># returns Vec4</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="err">    function _div((float|int|Vec4) other)   </span><span class="c1"># returns Vec4</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="err">    function _unm(Vec4 other)               </span><span class="c1"># returns Vec4</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="err">    function _unp(Vec4 other)               </span><span class="c1"># returns Vec4</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="err">    function _eq(Vec4 other)                </span><span class="c1"># returns bool</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="err">    function _hash()                        </span><span class="c1"># returns int</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="err">    function _tostring()                    </span><span class="c1"># returns string</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="err">    function IsZero(other)                  </span><span class="c1"># returns bool</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="err">    function Dot(Vec4 other)                </span><span class="c1"># returns float or int</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="err">    function Length()                       </span><span class="c1"># returns float</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="err">    function LengthSquared()                </span><span class="c1"># returns float or int</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="err">    function UnitVecOrZero()                </span><span class="c1"># returns Vec4&lt;float&gt;</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="err">    function UnitVecOrRandom()              </span><span class="c1"># returns Vec4&lt;float&gt;</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="err">    function NumComponents()                </span><span class="c1"># returns 4</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="err">    function xy()                           </span><span class="c1"># returns Vec2(m_x, m_y)</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="err">    function xyz()                          </span><span class="c1"># returns Vec3(m_x, m_y, m_z)</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="err">    function ToInt()                        </span><span class="c1"># returns a copy as Vec4&lt;int&gt;</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="err">    function ToFloat()                      </span><span class="c1"># returns a copy as Vec4&lt;float&gt;</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="err">    m_x = 0.0</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="err">    m_y = 0.0</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="err">    m_z = 0.0</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="err">    m_w = 0.0</span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="err">}</span>
+</span></code></pre></div>
 <p>Helper Create Functions:
-<code>sq
-Vec4 Float4(x, y, z, w)
-Vec4 Int4(x, y, z, w)</code></p>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="err">Vec4 Float4(x, y, z, w)</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="err">Vec4 Int4(x, y, z, w)</span>
+</span></code></pre></div></p>
 <ul>
 <li>By default <code>Vec4</code> has scalar type of <code>float</code>.</li>
 <li>However you can change scalar type to be <code>int</code> by passing integers into the constructor<ul>
@@ -1789,40 +1671,39 @@ Vec4 Int4(x, y, z, w)</code></p>
 </ul>
 <h2 id="aabr">AABR</h2>
 <p>Axis aligned bounding rectangle
-```sq
-class AABR {
-    # Create an AABR given minPt and maxPt
-    constructor(minPt = Vec2(), maxPt = Vec2())</p>
-<div class="language-text highlight"><pre><span></span><code># Creates an AABR given any two points
-# Internally determines m_minPt and m_maxPt
-static function CreateFromPoints(Vec2 pt0, Vec2 pt1)
-
-# Methods
-function _tostring()            # returns string
-function _eq(AABR other)        # returns bool
-function _hash()                # returns int
-function _cloned(AABR orig)
-function GetSize()              # returns Vec2&lt;int|float&gt;
-function GetTopLeft()           # returns Vec2&lt;int|float&gt;
-function GetTopRight()          # returns Vec2&lt;int|float&gt;
-function GetBottomLeft()        # returns Vec2&lt;int|float&gt;
-function GetBottomRight()       # returns Vec2&lt;int|float&gt;
-function GetCenter()            # returns Vec2&lt;float&gt;
-function Contains(Vec2 pt)                  # returns true if pt is inside AABR
-function ContainsOrTouching(Vec2 pt)        # returns true if pt is inside or on edge of AABR
-function ToInt()                # returns a copy as AABR&lt;int&gt;
-function ToFloat()              # returns a copy as AABR&lt;float&gt;
-
-# Variables
-m_minPt = Vec2()
-m_maxPt = Vec2()
-</code></pre></div>
-<p>}
-```</p>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="err">class AABR {</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="err">    </span><span class="c1"># Create an AABR given minPt and maxPt</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="err">    constructor(minPt = Vec2(), maxPt = Vec2())</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="err">    </span><span class="c1"># Creates an AABR given any two points</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="err">    </span><span class="c1"># Internally determines m_minPt and m_maxPt</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="err">    static function CreateFromPoints(Vec2 pt0, Vec2 pt1)</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="err">    </span><span class="c1"># Methods</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="err">    function _tostring()            </span><span class="c1"># returns string</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="err">    function _eq(AABR other)        </span><span class="c1"># returns bool</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="err">    function _hash()                </span><span class="c1"># returns int</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="err">    function _cloned(AABR orig)</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="err">    function GetSize()              </span><span class="c1"># returns Vec2&lt;int|float&gt;</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="err">    function GetTopLeft()           </span><span class="c1"># returns Vec2&lt;int|float&gt;</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="err">    function GetTopRight()          </span><span class="c1"># returns Vec2&lt;int|float&gt;</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="err">    function GetBottomLeft()        </span><span class="c1"># returns Vec2&lt;int|float&gt;</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="err">    function GetBottomRight()       </span><span class="c1"># returns Vec2&lt;int|float&gt;</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="err">    function GetCenter()            </span><span class="c1"># returns Vec2&lt;float&gt;</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="err">    function Contains(Vec2 pt)                  </span><span class="c1"># returns true if pt is inside AABR</span>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="err">    function ContainsOrTouching(Vec2 pt)        </span><span class="c1"># returns true if pt is inside or on edge of AABR</span>
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="err">    function ToInt()                </span><span class="c1"># returns a copy as AABR&lt;int&gt;</span>
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="err">    function ToFloat()              </span><span class="c1"># returns a copy as AABR&lt;float&gt;</span>
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="err">    </span><span class="c1"># Variables</span>
+</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="err">    m_minPt = Vec2()</span>
+</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="err">    m_maxPt = Vec2() </span>
+</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a><span class="err">}</span>
+</span></code></pre></div></p>
 <p>Helper Create Functions:
-<code>sq
-AABR AABR_float(minPt, maxPt)
-AABR AABR_int(minPt, maxPt)</code></p>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="err">AABR AABR_float(minPt, maxPt)</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="err">AABR AABR_int(minPt, maxPt)</span>
+</span></code></pre></div></p>
 <ul>
 <li>By default <code>AABR</code> has scalar type of <code>float</code>.</li>
 <li>However you can change scalar type to be <code>int</code> by passing <code>Vec2&lt;int&gt;</code>'s into the constructor<ul>
@@ -1833,34 +1714,33 @@ AABR AABR_int(minPt, maxPt)</code></p>
 <li>Use <code>clone</code> to make deep copy</li>
 </ul>
 <h2 id="complexcolor">ComplexColor</h2>
-<p>```sq
-class ComplexColor {
-    constructor()
-    constructor(Vec3<float> srgba)
-    constructor(Vec4<float> srgba)
-    constructor(ColorType colorType)
-    constructor(ColorType colorType, Vec3<float> srgba)
-    constructor(ColorType colorType, Vec4<float> srgba)
-    function _eq(ComplexColor other)
-    function _hash()
-    function _cloned(ComplexColor orig)</p>
-<div class="language-text highlight"><pre><span></span><code>m_srgba = Vec4(1.0, 1.0, 1.0, 1.0)
-m_type = ColorType.Normal
-</code></pre></div>
-<p>}
-```</p>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="err">class ComplexColor {</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="err">    constructor()</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="err">    constructor(Vec3&lt;float&gt; srgba)</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="err">    constructor(Vec4&lt;float&gt; srgba)</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="err">    constructor(ColorType colorType)</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="err">    constructor(ColorType colorType, Vec3&lt;float&gt; srgba)</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="err">    constructor(ColorType colorType, Vec4&lt;float&gt; srgba)</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="err">    function _eq(ComplexColor other)</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="err">    function _hash()</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="err">    function _cloned(ComplexColor orig)</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="err">    m_srgba = Vec4(1.0, 1.0, 1.0, 1.0)</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="err">    m_type = ColorType.Normal</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="err">}</span>
+</span></code></pre></div>
 <h2 id="random">Random</h2>
-<p><code>sq
-class Random {
-    constructor(int seed = 0)
-    void SetSeed(int seed)
-    int GetSeed()
-    int Rand()                              # returns integer between [0, RAND_MAX]
-    int Rand64()                            # returns integer between [INT_MIN, INT_MAX]
-    int RandInt(int min, int max)           # returns integer between [min, max]
-    float RandFloat(float min, float max)   # returns float between [min, max]
-    function _cloned(Random orig)
-}</code></p>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="err">class Random {</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="err">    constructor(int seed = 0)</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="err">    void SetSeed(int seed)</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="err">    int GetSeed()</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="err">    int Rand()                              </span><span class="c1"># returns integer between [0, RAND_MAX]</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="err">    int Rand64()                            </span><span class="c1"># returns integer between [INT_MIN, INT_MAX]</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="err">    int RandInt(int min, int max)           </span><span class="c1"># returns integer between [min, max]</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="err">    float RandFloat(float min, float max)   </span><span class="c1"># returns float between [min, max]</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="err">    function _cloned(Random orig)</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="err">}</span>
+</span></code></pre></div>
 <ul>
 <li>A deterministic random number generator.</li>
 <li>Guaranteed to always generate the same random numbers (given same seed)<ul>
@@ -1870,56 +1750,61 @@ class Random {
 <li>calling <code>SetSeed(seed)</code> will reset <code>Random</code> generator with new seed.</li>
 </ul>
 <h2 id="expr">Expr</h2>
-<p>```sq</p>
-<h1 id="expr-feature-is-work-in-progress">Expr feature is work-in-progress.</h1>
-<h1 id="will-become-more-useful-over-time-hopefully">Will become more useful over time (hopefully)</h1>
-<h1 id="these-are-often-used-for-setting-requirements-for-unitsspellsetc">These are often used for setting requirements for units/spells/etc</h1>
-<h1 id="or-calculating-values-dynamically">or calculating values dynamically.</h1>
-<h1 id="classes">Classes:</h1>
-<p>Expr.Unary(Expr.UnaryOp op, Expr expr)                          # mixed
-Expr.Binary(Expr.BinaryOp op, Expr Expr0, Expr expr1)           # mixed
-Expr.DynVal(DynValType ty, Expr expr)                           # mixed
-Expr.HasUnit(string unitName)                                   # bool
-Expr.HasPlayerResearch(string playerResearch, int level = 1)    # bool
-Expr.HasUnitResearch(string unitResearch, int level = 1)        # bool</p>
-<h1 id="enums">Enums:</h1>
-<p>enum Expr.UnaryOp {
-    Invalid,
-    Not,
-    Negate
-}</p>
-<p>enum Expr.BinaryOp {
-    Invalid,
-    Add,
-    Subtract,
-    Multiply,
-    Divide,
-    EQ,
-    NE,
-    LT,
-    GT,
-    LE,
-    GE,
-    Or,
-    And,
-}</p>
-<p>enum Expr.DynValType {
-    Invalid,                    # return values below..
-    PlayerResearch,             # int
-    UnitResearch,               # int
-    SimVar,                     # int|float|bool|string
-    PlayerVar,                  # int|float|bool|string
-    ForceVar,                   # int|float|bool|string
-    UnitVar,                    # int|float|bool|string
-    Gemstone,                   # float
-    Fungus,                     # float
-    Supply,                     # int
-    MaxSupply,                  # int
-    SupplyBlocked,              # bool
-    SiegedOrSieging,            # bool
-    UnsiegedOrUnsieging         # bool
-}
-```</p>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Expr feature is work-in-progress.</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="c1"># Will become more useful over time (hopefully)</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1"># These are often used for setting requirements for units/spells/etc</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1"># or calculating values dynamically.</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="c1"># Classes:</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="err">Expr.Unary(Expr.UnaryOp op, Expr expr)                          </span><span class="c1"># mixed</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="err">Expr.Binary(Expr.BinaryOp op, Expr Expr0, Expr expr1)           </span><span class="c1"># mixed</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="err">Expr.DynVal(DynValType ty, Expr expr)                           </span><span class="c1"># mixed</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="err">Expr.HasUnit(string unitName)                                   </span><span class="c1"># bool</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="err">Expr.HasPlayerResearch(string playerResearch, int level = 1)    </span><span class="c1"># bool</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="err">Expr.HasUnitResearch(string unitResearch, int level = 1)        </span><span class="c1"># bool</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="c1"># Enums:</span>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="err">enum Expr.UnaryOp {</span>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="err">    Invalid,</span>
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="err">    Not,</span>
+</span><span id="__span-10-20"><a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="err">    Negate</span>
+</span><span id="__span-10-21"><a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="err">}</span>
+</span><span id="__span-10-22"><a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>
+</span><span id="__span-10-23"><a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="err">enum Expr.BinaryOp {</span>
+</span><span id="__span-10-24"><a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="err">    Invalid,</span>
+</span><span id="__span-10-25"><a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a><span class="err">    Add,</span>
+</span><span id="__span-10-26"><a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a><span class="err">    Subtract,</span>
+</span><span id="__span-10-27"><a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a><span class="err">    Multiply,</span>
+</span><span id="__span-10-28"><a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a><span class="err">    Divide,</span>
+</span><span id="__span-10-29"><a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a><span class="err">    EQ,</span>
+</span><span id="__span-10-30"><a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a><span class="err">    NE,</span>
+</span><span id="__span-10-31"><a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a><span class="err">    LT,</span>
+</span><span id="__span-10-32"><a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a><span class="err">    GT,</span>
+</span><span id="__span-10-33"><a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a><span class="err">    LE,</span>
+</span><span id="__span-10-34"><a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a><span class="err">    GE,</span>
+</span><span id="__span-10-35"><a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a><span class="err">    Or,</span>
+</span><span id="__span-10-36"><a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a><span class="err">    And,</span>
+</span><span id="__span-10-37"><a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a><span class="err">}</span>
+</span><span id="__span-10-38"><a id="__codelineno-10-38" name="__codelineno-10-38" href="#__codelineno-10-38"></a>
+</span><span id="__span-10-39"><a id="__codelineno-10-39" name="__codelineno-10-39" href="#__codelineno-10-39"></a><span class="err">enum Expr.DynValType {</span>
+</span><span id="__span-10-40"><a id="__codelineno-10-40" name="__codelineno-10-40" href="#__codelineno-10-40"></a><span class="err">    Invalid,                    </span><span class="c1"># return values below..</span>
+</span><span id="__span-10-41"><a id="__codelineno-10-41" name="__codelineno-10-41" href="#__codelineno-10-41"></a><span class="err">    PlayerResearch,             </span><span class="c1"># int</span>
+</span><span id="__span-10-42"><a id="__codelineno-10-42" name="__codelineno-10-42" href="#__codelineno-10-42"></a><span class="err">    UnitResearch,               </span><span class="c1"># int</span>
+</span><span id="__span-10-43"><a id="__codelineno-10-43" name="__codelineno-10-43" href="#__codelineno-10-43"></a><span class="err">    SimVar,                     </span><span class="c1"># int|float|bool|string</span>
+</span><span id="__span-10-44"><a id="__codelineno-10-44" name="__codelineno-10-44" href="#__codelineno-10-44"></a><span class="err">    PlayerVar,                  </span><span class="c1"># int|float|bool|string</span>
+</span><span id="__span-10-45"><a id="__codelineno-10-45" name="__codelineno-10-45" href="#__codelineno-10-45"></a><span class="err">    ForceVar,                   </span><span class="c1"># int|float|bool|string</span>
+</span><span id="__span-10-46"><a id="__codelineno-10-46" name="__codelineno-10-46" href="#__codelineno-10-46"></a><span class="err">    UnitVar,                    </span><span class="c1"># int|float|bool|string</span>
+</span><span id="__span-10-47"><a id="__codelineno-10-47" name="__codelineno-10-47" href="#__codelineno-10-47"></a><span class="err">    Gemstone,                   </span><span class="c1"># float</span>
+</span><span id="__span-10-48"><a id="__codelineno-10-48" name="__codelineno-10-48" href="#__codelineno-10-48"></a><span class="err">    Fungus,                     </span><span class="c1"># float</span>
+</span><span id="__span-10-49"><a id="__codelineno-10-49" name="__codelineno-10-49" href="#__codelineno-10-49"></a><span class="err">    Supply,                     </span><span class="c1"># int</span>
+</span><span id="__span-10-50"><a id="__codelineno-10-50" name="__codelineno-10-50" href="#__codelineno-10-50"></a><span class="err">    MaxSupply,                  </span><span class="c1"># int</span>
+</span><span id="__span-10-51"><a id="__codelineno-10-51" name="__codelineno-10-51" href="#__codelineno-10-51"></a><span class="err">    SupplyBlocked,              </span><span class="c1"># bool</span>
+</span><span id="__span-10-52"><a id="__codelineno-10-52" name="__codelineno-10-52" href="#__codelineno-10-52"></a><span class="err">    SiegedOrSieging,            </span><span class="c1"># bool</span>
+</span><span id="__span-10-53"><a id="__codelineno-10-53" name="__codelineno-10-53" href="#__codelineno-10-53"></a><span class="err">    UnsiegedOrUnsieging         </span><span class="c1"># bool</span>
+</span><span id="__span-10-54"><a id="__codelineno-10-54" name="__codelineno-10-54" href="#__codelineno-10-54"></a><span class="err">}</span>
+</span></code></pre></div>
 <h2 id="future-additions">Future additions</h2>
 <ul>
 <li>More types and member functions to be added later</li>
