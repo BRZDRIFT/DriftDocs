@@ -16,28 +16,55 @@ import copy
 
 __all__ = ['SquirrelLexer']
 
-class MyCppLexer(CppLexer):
-    tokens = copy.deepcopy(CppLexer.tokens)
-
-    new_root = []
-
-    for rule in tokens["root"]:
-        pattern = rule[0]
-
-        # remove preprocessor rule (#...)
-        if isinstance(pattern, str) and pattern.strip().startswith("#"):
-            continue
-
-        new_root.append(rule)
-
-    # replace #... with comment
-    new_root.insert(0, (r'#.*$', Comment.Single))
-
-    # add // as operator (optional if you also modified it)
-    new_root.insert(1, (r'//', Operator))
-
-    tokens["root"] = new_root
-
+class MathCppLexer(CppLexer):
+    """
+    C++-like lexer where `//` is a math operator and `#` is always a
+    single-line comment.
+    """
+    name = 'C++ (math // , comment #)'
+    aliases = ['cpp-math']
+    filenames = []  # don't hijack *.cpp by default; opt in explicitly
+    mimetypes = []
+ 
+    # Re-use identifier regex already defined on the base class.
+    _ident = CppLexer._ident
+ 
+    tokens = {
+        'whitespace': [
+            # `#` -> always a single-line comment, anywhere it appears.
+            # (Original lexer only special-cased '^#' for preprocessor
+            # directives / #if 0 blocks -- that's all gone now.)
+            (r'#.*', Comment.Single),
+ 
+            # Keep the original "label:" detection (e.g. `done:` before a
+            # goto target). Remove this block if you don't need it.
+            (r'(^[ \t]*)'
+             r'(?!(?:public|private|protected|default)\b)'
+             r'(' + _ident + r')(\s*)(:)(?!:)',
+             bygroups(Whitespace, Name.Label, Whitespace, Punctuation)),
+ 
+            (r'\n', Whitespace),
+            (r'[^\S\n]+', Whitespace),
+            (r'\\\n', Whitespace),  # line continuation
+ 
+            # NOTE: the original `//...\n` single-line-comment rule is
+            # intentionally NOT included here. `//` is now handled as an
+            # Operator token in the 'statements' state below.
+ 
+            # /* ... */ multi-line comments still work as normal.
+            (r'/(?:\\\n)?[*](?:[^*]|[*](?!(?:\\\n)?/))*[*](?:\\\n)?/',
+             Comment.Multiline),
+            # Unterminated /* comment running to EOF.
+            (r'/(\\\n)?[*][\w\W]*', Comment.Multiline),
+        ],
+        'statements': [
+            # Must come before the inherited single-char operator rule
+            # (which would otherwise just match one `/` at a time).
+            (r'//', Operator),
+            inherit,
+        ],
+    
+        }
 class SquirrelLexer(MyCppLexer):
     name = 'SquirrelLexer'
     aliases = ['squirrel', 'sq']
