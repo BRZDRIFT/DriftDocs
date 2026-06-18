@@ -13,29 +13,19 @@ from pygments.token import Comment, Name, Keyword
 from pygments.lexer import RegexLexer, include, bygroups, using, \
     this, inherit, default, words
 import copy
-from pygments.token import Comment, Operator
 
 __all__ = ['SquirrelLexer']
 
-
 class MyCppLexer(CppLexer):
+    tokens = {
+        'statements': [
+            # treat #... as a single-line comment
+            (r'#.*?$', Comment.Single),
 
-    def get_tokens_unprocessed(self, text):
-        return super().get_tokens_unprocessed(text)
-
-    tokens = dict(CppLexer.tokens)
-
-    # IMPORTANT: only modify root minimally
-    tokens["root"] = [
-        # 1) # is ALWAYS a comment (highest priority)
-        (r'^\s*#.*$', Comment.Single),
-
-        # 2) // is operator (override before C++ rules see it)
-        (r'//', Operator),
-
-        # then fall back to original root rules
-        ("inherit",),
-    ]
+           # keep all normal C++ rules
+            inherit,
+        ]
+    }
 
 class SquirrelLexer(MyCppLexer):
     name = 'SquirrelLexer'
