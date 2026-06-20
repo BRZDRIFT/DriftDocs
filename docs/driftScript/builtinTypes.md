@@ -213,22 +213,22 @@ class Random {
 
 # Classes:
 
-Expr.Unary(Expr.UnaryOp op, Expr expr)                          # mixed
-Expr.Binary(Expr.BinaryOp op, Expr Expr0, Expr expr1)           # mixed
-Expr.DynVal(DynValType ty, Expr expr)                           # mixed
-Expr.HasUnit(string unitName)                                   # bool
-Expr.HasPlayerResearch(string playerResearch, int level = 1)    # bool
-Expr.HasUnitResearch(string unitResearch, int level = 1)        # bool
+Expr_Unary(Expr_UnaryOp op, Expr expr)                          # mixed
+Expr_Binary(Expr_BinaryOp op, Expr Expr0, Expr expr1)           # mixed
+Expr_DynVal(DynValType ty, Expr expr)                           # mixed
+Expr_HasUnit(string unitName)                                   # bool
+Expr_HasPlayerResearch(string playerResearch, int level = 1)    # bool
+Expr_HasUnitResearch(string unitResearch, int level = 1)        # bool
 
 # Enums:
 
-enum Expr.UnaryOp {
+enum Expr_UnaryOp {
     Invalid,
     Not,
     Negate
 }
 
-enum Expr.BinaryOp {
+enum Expr_BinaryOp {
     Invalid,
     Add,
     Subtract,
@@ -244,7 +244,7 @@ enum Expr.BinaryOp {
     And,
 }
 
-enum Expr.DynValType {
+enum Expr_DynValType {
 	Invalid,                    # return values below..
 	PlayerResearch,				# int
 	UnitResearch,				# int

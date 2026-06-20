@@ -9,7 +9,7 @@ void gx_include(string filename)
 
 ## gx_create_unit
 ```sq
-int gx_create_unit(int params)
+int gx_create_unit(table params)
 ```
 
 ```sq
