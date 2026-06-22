@@ -5,9 +5,9 @@
 3. Enable Auto Update..
 4. Done!
 
-## Tips
+## About
 
-- Provides auto-complete, help hints, and syntax higlighting.
+- Provides auto-complete, help hints, and syntax highlighting.
 - You can comment/uncomment multiple selected lines with `Ctrl+/`
 - More improvements and better syntax highlighting to come!
 
