@@ -8,7 +8,7 @@
 
 - The `DriftScript` language extension searches these directories for `DriftLibs`
     - system environment variable `GX_DRIFT_LIBS_DIR`
-    - `%ProgramFiles(x86)%\Steam\steamapps\common\DriftWarsRTS\Dev\DriftLibs`
     - `%ProgramFiles(x86)%\Steam\steamapps\common\DriftWarsBeta\Dev\DriftLibs`
-    - `~/.local/share/Steam/steamapps/common/DriftWarsRTS/Dev/DriftLibs`
+    - `%ProgramFiles(x86)%\Steam\steamapps\common\DriftWarsRTS\Dev\DriftLibs`
     - `~/.local/share/Steam/steamapps/common/DriftWarsBeta/Dev/DriftLibs`
+    - `~/.local/share/Steam/steamapps/common/DriftWarsRTS/Dev/DriftLibs`
