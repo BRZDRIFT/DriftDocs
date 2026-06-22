@@ -7,8 +7,8 @@
 
 ## Tips
 
-- This extension supports commenting and uncommenting multiple selected lines with `Ctrl+/`
-- More improvements to come!
+- You can comment/uncomment multiple selected lines with `Ctrl+/`
+- More improvements and better syntax highlighting to come!
 
 ## DriftLibs detection
 
