@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#install-squirrel-language-support" class="md-skip">
+        <a href="#install-driftscript-language-support" class="md-skip">
           Skip to content
         </a>
       
@@ -1234,18 +1234,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install-squirrel-language-support" class="md-nav__link">
+  <a href="#install-driftscript-language-support" class="md-nav__link">
     <span class="md-ellipsis">
-      Install Squirrel Language Support
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Notes
+      Install DriftScript Language Support
     </span>
   </a>
   
@@ -1406,18 +1397,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#install-squirrel-language-support" class="md-nav__link">
+  <a href="#install-driftscript-language-support" class="md-nav__link">
     <span class="md-ellipsis">
-      Install Squirrel Language Support
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Notes
+      Install DriftScript Language Support
     </span>
   </a>
   
@@ -1441,24 +1423,24 @@
 
   <h1>VSCode Syntax Highlighting</h1>
 
-<h2 id="install-squirrel-language-support">Install Squirrel Language Support</h2>
-<p>Go to visual studio extensions:<br />
+<h2 id="install-driftscript-language-support">Install DriftScript Language Support</h2>
+<p>Go to vscode extensions:<br />
 Search and install:  </p>
 <ul>
-<li><code>Squirrel Language Supports</code> by marcinbar</li>
-<li><code>Squirrel Language Linter</code> by marcinbar</li>
-</ul>
-<p>Then modify settings to associate <code>.DriftScript</code> extension with <code>squirrel</code> language</p>
+<li><code>DriftScript</code> by BRZDRIFT</li>
+<li>
+<p>Restart VSCode</p>
+</li>
+<li>
+<p><code>DriftScript</code> extension searches these directories for <code>DriftLibs</code></p>
 <ul>
-<li>Go to <code>Preferences</code> --&gt; <code>Settings</code></li>
-<li>Search for setting: <code>Files: Associations</code></li>
-<li>Add new item: <code>Item</code>: <code>DriftScript</code>, <code>Value</code>: <code>squirrel</code></li>
-<li>Restart VSCode</li>
+<li>system environment variable <code>GX_DRIFT_LIBS_DIR</code></li>
+<li><code>%programfiles(x86)%\Steam\steamapps\common\DriftWarsRTS\Dev\DriftLibs</code>    (windows)</li>
+<li><code>%programfiles(x86)%\Steam\steamapps\common\DriftWarsBeta\Dev\DriftLibs</code>   (windows)</li>
+<li><code>~/.local/share/Steam/steamapps/common/DriftWarsRTS/Dev/DriftLibs</code>    (linux)</li>
+<li><code>~/.local/share/Steam/steamapps/common/DriftWarsBeta/Dev/DriftLibs</code>   (linux)</li>
 </ul>
-<h2 id="notes">Notes</h2>
-<ul>
-<li>There are future plans for a custom VSCode extension for <code>.DriftScript</code> which should
-allow for improved syntax highlighting and function completion.</li>
+</li>
 </ul>
 
 
