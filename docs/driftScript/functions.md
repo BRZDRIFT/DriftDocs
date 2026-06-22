@@ -1165,19 +1165,21 @@ int gx_decal_create(table params)
 
 ```sq
 table params = {
-    string m_preset,           # decal preset
+    string m_preset,              # decal preset
     int m_alphaFn,
     int m_colorFn,
-    bool m_bAlwaysDisplay,     # ignore fog of war checks
+    bool m_bAlwaysDisplay,        # ignore fog of war checks
     bool m_bDisplayOnMinimap,
-    Float4 m_color,              # srgb with alpha
+    Float4 m_color,               # srgb with alpha
     Float2 m_pos,
-    float m_rotation,          # radians
+    float m_rotation,             # radians
     float m_size,
-    Float2 m_size,               # size, can either be Float2 or float
+    Float2 m_size,                # size, can either be Float2 or float
     string m_tag,
-    string m_texture,          # icon to use
-    float m_speedFactor = 1.0       # animation speed if m_texture is animated GIF
+    string m_texture,             # icon to use
+    float m_speedFactor,          # animation speed if m_texture is animated GIF
+    bool m_bOverlayOnSpace,
+    bool m_bOverlayOnNormalTerrain
 }
 ```
 
@@ -1191,18 +1193,20 @@ void gx_decal_modify(int decalID, table params)
 
 ```sq
 table params = {
-    string m_preset,                # decal preset
     int m_alphaFn,
     int m_colorFn,
-    bool m_bAlwaysDisplay,          # ignore fog of war checks
+    bool m_bAlwaysDisplay,        # ignore fog of war checks
     bool m_bDisplayOnMinimap,
-    Float4 m_color,                   # srgb with alpha
+    Float4 m_color,               # srgb with alpha
     Float2 m_pos,
-    float m_rotation,               # radians
+    float m_rotation,             # radians
     float m_size,
+    Float2 m_size,                # size, can either be Float2 or float
     string m_tag,
-    string m_texture,               # icon to use
-    float m_speedFactor = 1.0       animation speed if m_texture is animated GIF
+    string m_texture,             # icon to use
+    float m_speedFactor,          # animation speed if m_texture is animated GIF
+    bool m_bOverlayOnSpace,
+    bool m_bOverlayOnNormalTerrain
 }
 ```
 
