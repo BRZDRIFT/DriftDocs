@@ -2,8 +2,8 @@
 
 1. In vscode, go to extensions..
 2. Search and install: `DriftScript` by BRZDRIFT
-3. Enable Auto Update.. (still being worked on)
-4. Done!
+3. Enable Auto Update..
+4. Note: More improvements to come!
 
 ## DriftLibs detection
 
