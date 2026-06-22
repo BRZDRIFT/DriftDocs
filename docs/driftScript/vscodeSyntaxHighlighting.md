@@ -1,8 +1,8 @@
 ## Install DriftScript Language Support
 
-1) In vscode, go to extensions..
-2) Search and install: `DriftScript` by BRZDRIFT
-3) Done!
+1. In vscode, go to extensions..
+2. Search and install: `DriftScript` by BRZDRIFT
+3. Done! Enjoy the auto-complete!
 
 - The `DriftScript` language extension searches these directories for `DriftLibs`
     - system environment variable `GX_DRIFT_LIBS_DIR`
