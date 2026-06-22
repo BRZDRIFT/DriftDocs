@@ -848,7 +848,7 @@ table params = {
 
 ## gx_remove_speech_bubble
 ```sq
-int gx_remove_speech_bubble(int unit_id, int speechBubbleID)
+void gx_remove_speech_bubble(int unit_id, int speechBubbleID)
 ```
 
 - setting `speechBubbleID` to `0` will remove current speech bubble
@@ -856,7 +856,7 @@ int gx_remove_speech_bubble(int unit_id, int speechBubbleID)
 
 ## gx_remove_current_speech_bubble
 ```sq
-gx_remove_current_speech_bubble(int unit_id)
+void gx_remove_current_speech_bubble(int unit_id)
 ```
 
 - Equivalent to calling `gx_remove_speech_bubble(unit_id, 0)`
@@ -1541,7 +1541,7 @@ table params = {
 - if both `m_forceIDs` and `m_playerIDs` are unset, function will affect all players 
 
 
-# gx_add_center_message
+## gx_add_center_message
 ```sq
 int gx_add_center_message(table params = {})
 ```
@@ -1559,7 +1559,7 @@ table params = {
 - if `m_duration` is `-1` message will be displayed forever until `gx_clear_center_messages` or `gx_clear_center_message_by_id` is called.
 - returns `msgID` that can be used by `gx_clear_center_message_by_id` if needed.
 
-# gx_clear_center_messages
+## gx_clear_center_messages
 ```sq
 void gx_clear_center_messages(table params = {})
 ```
@@ -1574,15 +1574,15 @@ table params = {
 - clears all messages for players match params
 - if both `m_forceIDs` and `m_playerIDs` are empty, messages will be cleared for all players
 
-# gx_clear_center_message_by_id
+## gx_clear_center_message_by_id
 ```sq
-`void gx_clear_center_message_by_id(int msgID)`
+void gx_clear_center_message_by_id(int msgID)
 ```
 
 - clear message with msgID `msgID`
 
 
-# gx_paint_terrain
+## gx_paint_terrain
 ```sq
 void gx_paint_terrain(table params)
 ```
@@ -1599,7 +1599,7 @@ table params = {
 - only one of `m_location` or `m_aabr` should be set.
 
 
-# gx_clear_terrain_paint
+## gx_clear_terrain_paint
 ```sq
 void gx_clear_terrain_paint(table params)
 ```
@@ -1611,7 +1611,7 @@ table params = {
 }
 ```
 
-# gx_add_resource_ui_item
+## gx_add_resource_ui_item
 ```sq
 void gx_add_resource_ui_item(table params)
 ```
@@ -1627,7 +1627,7 @@ table params = {
 }
 ```
 
-# gx_clear_resource_ui_items
+## gx_clear_resource_ui_items
 ```sq
 void gx_clear_resource_ui_items(table params)
 ```
@@ -1639,7 +1639,7 @@ table params = {
 }
 ```
 
-# gx_get_common_uds
+## gx_get_common_uds
 ```sq
 string[] gx_get_common_uds(table params = {})
 ```
@@ -1652,27 +1652,27 @@ table params = {
 }
 ```
 
-# gx_get_ud_race
+## gx_get_ud_race
 ```sq
 Race gx_get_ud_race(string unitType)
 ```
 
-# gx_get_ud_auto_attack_anims
+## gx_get_ud_auto_attack_anims
 ```sq
 string[] gx_get_ud_auto_attack_anims(unitType)
 ```
 
-# gx_get_num_attacks_in_ud_auto_attack_anim
+## gx_get_num_attacks_in_ud_auto_attack_anim
 ```sq
 int gx_get_num_attacks_in_ud_auto_attack_anim(string unitType, string animName)
 ```
 
-# gx_clear_ud_auto_attacks
+## gx_clear_ud_auto_attacks
 ```sq
 void gx_clear_ud_auto_attacks(string unitType)
 ```
 
-# gx_add_ud_auto_attack
+## gx_add_ud_auto_attack
 ```sq
 void gx_add_ud_auto_attack(string unitType, AutoAttackTable params)
 ```
