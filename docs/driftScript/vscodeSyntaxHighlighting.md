@@ -2,7 +2,9 @@
 
 1. In vscode, go to extensions..
 2. Search and install: `DriftScript` by BRZDRIFT
-3. Done! Enjoy the auto-complete!
+3. Done!
+
+## DriftLibs detection
 
 - The `DriftScript` language extension searches these directories for `DriftLibs`
     - system environment variable `GX_DRIFT_LIBS_DIR`
