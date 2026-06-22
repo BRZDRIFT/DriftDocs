@@ -7,6 +7,7 @@
 
 ## Tips
 
+- Provides auto-complete, help hints, and syntax higlighting.
 - You can comment/uncomment multiple selected lines with `Ctrl+/`
 - More improvements and better syntax highlighting to come!
 
