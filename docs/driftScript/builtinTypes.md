@@ -244,7 +244,7 @@ enum Expr.BinaryOp {
     And,
 }
 
-enum Expr_DynValType {
+enum Expr.DynValType {
 	Invalid,                    # return values below..
 	PlayerResearch,				# int
 	UnitResearch,				# int
