@@ -65,13 +65,17 @@ print(a == c)	# true
 
 ## Casting, ints, floats, strings, etc...
 ```sq
-local a = 5     # a is type 'integer' of value 5
-print(a)        # prints '5'
-print(a / 2)    # prints '2',  	# integer division is truncated 
+local a = 5       # a is type 'integer' of value 5
+print(a)          # prints '5'
+print(a / 2)      # prints '2.50',   # normal division always returns float 
+print(a // 2)     # prints '2',   # floor division operator
+print(a // -2)    # prints '-3', # floor division operator 
+print(a // 2.0)   # prints '2.00',   # floor division operator
+print(a // -2.0)  # prints '-3.00', # floor division operator 
 
-local b = 5.0   # a is type 'float' of value 5.0
-print(b)        # prints '5.00', 	# floats always outputs to 2 decimals
-print(b / 2)    # prints '2.50',  	# float division acts as normal
+local b = 5.0     # a is type 'float' of value 5.0
+print(b)          # prints '5.00',    # floats always outputs to 2 decimals
+print(b / 2)      # prints '2.50',    # float division acts as normal
 
 # You can cast an integer to float or float to integer
 # using the .tointeger() and .tofloat() functions
@@ -79,9 +83,9 @@ print(b / 2)    # prints '2.50',  	# float division acts as normal
 local c = b.tointeger()     # 'c' is now an integer with value 5
 local d = a.tofloat()       # 'd' is now a float with value 5.0
 local e = a.tointeger()     # .tointeger() acts a dummy functions
-							# for casting from 'int' -> 'int'
+                            # for casting from 'int' -> 'int'
 local f = b.tofloat()       # .tofloat() acts a dummy functions
-							# for casting from 'float' -> 'float'
+                            # for casting from 'float' -> 'float'
 
 local myString1 = e.tostring()
 print(myString1)                    # prints '5'
@@ -90,7 +94,7 @@ local myString2 = f.tostring()
 print(myString2)                    # prints '5.00'
 
 # number to string conversions happen automatically
-print("abc " + a)           		# prints "abc 5"             
+print("abc " + a)                   # prints "abc 5"             
 
 # Warning!
 # You are not allowed to cast using '(int) expr' and '(float) expr'
@@ -111,17 +115,11 @@ print("My Float Vector = " + Vec2(4.0, 5.0))
 
 ## Comments
 - You can write single-line comments by using `#` or `#`
-- You can write multi-line comments by using `/* multi-lines */`
+- Currently cannot write multi-line comment..
 ```sq
 # this is a single line comment
 
 # this is also a comment :)
-
-/*
-this is multiple lines
-of comments. this text
-will be ignored by the compiler.
-*/
 ```
 
 ## Common dictionary and array tasks
