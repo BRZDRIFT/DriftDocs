@@ -1,18 +1,14 @@
-## Install Squirrel Language Support
+## Install DriftScript Language Support
 
-Go to visual studio extensions:  
+Go to vscode extensions:  
 Search and install:  
 
-- `Squirrel Language Supports` by marcinbar
-- `Squirrel Language Linter` by marcinbar
-
-Then modify settings to associate `.DriftScript` extension with `squirrel` language
-
-- Go to `Preferences` --> `Settings`
-- Search for setting: `Files: Associations`
-- Add new item: `Item`: `DriftScript`, `Value`: `squirrel`
+- `DriftScript` by BRZDRIFT
 - Restart VSCode
 
-## Notes
-- There are future plans for a custom VSCode extension for `.DriftScript` which should
-allow for improved syntax highlighting and function completion.
+- `DriftScript` extension searches these directories for `DriftLibs`
+    - system environment variable `GX_DRIFT_LIBS_DIR`
+    - `%programfiles(x86)%\Steam\steamapps\common\DriftWarsRTS\Dev\DriftLibs`    (windows)
+    - `%programfiles(x86)%\Steam\steamapps\common\DriftWarsBeta\Dev\DriftLibs`   (windows)
+    - `~/.local/share/Steam/steamapps/common/DriftWarsRTS/Dev/DriftLibs`    (linux)
+    - `~/.local/share/Steam/steamapps/common/DriftWarsBeta/Dev/DriftLibs`   (linux)
