@@ -114,12 +114,17 @@ print("My Float Vector = " + Vec2(4.0, 5.0))
 ```
 
 ## Comments
-- You can write single-line comments by using `#` or `#`
-- Currently cannot write multi-line comment..
+- You can write single-line comments by using `#`
+- You can use `/*` and `*/` for multi-line block comments
 ```sq
 # this is a single line comment
 
 # this is also a comment :)
+
+/*
+multi-line comment
+cOOool...
+*/
 ```
 
 ## Common dictionary and array tasks
