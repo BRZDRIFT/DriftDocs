@@ -1,13 +1,8 @@
-Probably the best way to figure out `.DriftScript` is by looking at examples and experimenting. Please have a look at the maps below:
+Probably the best way to figure out `.DriftScript` is by looking at examples and experimenting.
 
-- `/Dev/Maps/Custom/(16) CaptureTheFlag.DriftMap`
-- `/Dev/Maps/Custom/(16) DriftWarsMovie.DriftMap`
-- `/Dev/Maps/Custom/(16) LevelUpBound.DriftMap`
-- `/Dev/Maps/Custom/(16) PictureWarz.DriftMap`
-- `/Dev/Maps/Custom/(16) SalmonRun.DriftMap`
-- `/Dev/Maps/Custom/(16) TheMaze.DriftMap`
+Make sure to look at the maps under `/Dev/Maps/Custom/`
 
-Feel free to look at the scripting code by opening them up in the map editor and going to: 
+Feel free to open them up in the map editor and going to: 
   
 `Top Bar Menu --> Other --> Script --> /MapInit.DriftScript`  
 and  

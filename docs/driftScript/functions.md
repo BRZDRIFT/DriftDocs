@@ -681,20 +681,20 @@ table params = {
 
 ## gx_set_terrain_type
 ```sq
-void gx_set_terrain_type(params = {})
+void gx_set_terrain_type(table params = {})
 ```
 
 ```sq
 table params = {
-    TerrainType m_type         # Required. The type of terrain to change to. See TerrainType enum. 
+    TerrainType m_type          # Required. The type of terrain to change to. See TerrainType enum. 
     int m_secondary = 0         # Secondary terrain type. (default = 0)
-    Int2 m_index,          # 2d index of square to change terrain type of
-    int m_index2,         # 0 or 1, 0 indicates bottom triangle, 1 indicates top.
+    Int2 m_index,               # 2d index of square to change terrain type of
+    int m_index2,               # 0 or 1, 0 indicates bottom triangle, 1 indicates top.
                                 # If index2 is not defined, entire square specified by m_index
                                 # will be set to terrain type (i.e. both triangles, top and bottom).
                                 # m_index and index2 are ignored if m_location is set.
     string m_location,          # location to set terrain tile types.,
-    string m_triangleGroup       # triangle group to set terrian tile stype
+    string m_triangleGroup      # triangle group to set terrian tile stype
 }
 ```
 

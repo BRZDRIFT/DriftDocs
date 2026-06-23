@@ -41,6 +41,7 @@
 - `float lerp(float x, float y, float a)` - linearly interpolate x -> y based on [0, 1]
 - `float floor(float x)`
 - `float ceil(float x)`
+- `float pow(float val, int exponent)`
 
 ## Division operators
 - `/` = normal division, result is always float
