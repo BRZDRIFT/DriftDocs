@@ -39,7 +39,7 @@ nav:
         - 'Enumerations': 'driftScript/enumerations.md'
         - 'Event Queue': 'driftScript/eventQueue.md'
         - 'VSCode Language Support': 'driftScript/vscodeSyntaxHighlighting.md'
-        - 'Examples and Gotchyas': 'driftScript/gotchyas.md'
+        - 'Tips and Gotchyas': 'driftScript/gotchyas.md'
         - 'More Examples..': 'driftScript/examples.md'
     - 'Drift Shader':
         - 'Introduction': 'driftShader/intro.md'
