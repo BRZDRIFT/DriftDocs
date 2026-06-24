@@ -1,73 +1,3 @@
-## ColorType
-```sq
-enum ColorType
-{
-    Invalid = -1,
-    Normal,
-    Rainbow,
-    Water,
-    Lava,
-}
-```
-
-
-## Expr.DynValType
-```sq
-enum Expr.DynValType
-{
-    Invalid = 0,
-    PlayerResearch,	# int
-    UnitResearch,	# int
-    SimVar,	# int|float|bool|string
-    PlayerVar,	# int|float|bool|string
-    ForceVar,	# int|float|bool|string
-    UnitVar,	# int|float|bool|string
-    PlayerWeaponsUpgrade,	# int
-    PlayerArmorUpgrade,	# int
-    PlayerSpeedUpgrade,	# int
-    Gemstone,	# float
-    Fungus,	# float
-    Supply,	# int
-    MaxSupply,	# int
-    SupplyBlocked,	# bool
-    SiegedOrSieging,	# bool
-    UnsiegedOrUnsieging,	# bool
-}
-```
-
-
-## Expr.BinaryOp
-```sq
-enum Expr.BinaryOp
-{
-    Invalid = 0,
-    Add,
-    Subtract,
-    Multiply,
-    Divide,
-    EQ,
-    NE,
-    LT,
-    GT,
-    LE,
-    GE,
-    Or,
-    And,
-}
-```
-
-
-## Expr.UnaryOp
-```sq
-enum Expr.UnaryOp
-{
-    Invalid = 0,
-    Not,
-    Negate,
-}
-```
-
-
 ## Race
 ```sq
 enum Race
@@ -503,3 +433,73 @@ enum Unicode
 - `Special_PushInvisible` and `Special_PopInvisible` are also special
 	- All characters after `Special_PushInvisible` will be invisible unless highlighted until a corresponding `Special_PopInvisible` is reached.
 - The `Color_*` unicode characters control text colors for all characters after
+## ColorType
+```sq
+enum ColorType
+{
+    Invalid = -1,
+    Normal,
+    Rainbow,
+    Water,
+    Lava,
+}
+```
+
+
+## Expr.DynValType
+```sq
+enum Expr.DynValType
+{
+    Invalid = 0,
+    PlayerResearch,	# int
+    UnitResearch,	# int
+    SimVar,	# int|float|bool|string
+    PlayerVar,	# int|float|bool|string
+    ForceVar,	# int|float|bool|string
+    UnitVar,	# int|float|bool|string
+    PlayerWeaponsUpgrade,	# int
+    PlayerArmorUpgrade,	# int
+    PlayerSpeedUpgrade,	# int
+    Gemstone,	# float
+    Fungus,	# float
+    Supply,	# int
+    MaxSupply,	# int
+    SupplyBlocked,	# bool
+    SiegedOrSieging,	# bool
+    UnsiegedOrUnsieging,	# bool
+}
+```
+
+
+## Expr.BinaryOp
+```sq
+enum Expr.BinaryOp
+{
+    Invalid = 0,
+    Add,
+    Subtract,
+    Multiply,
+    Divide,
+    EQ,
+    NE,
+    LT,
+    GT,
+    LE,
+    GE,
+    Or,
+    And,
+}
+```
+
+
+## Expr.UnaryOp
+```sq
+enum Expr.UnaryOp
+{
+    Invalid = 0,
+    Not,
+    Negate,
+}
+```
+
+

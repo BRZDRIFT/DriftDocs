@@ -5,18 +5,20 @@ g_driftLibs = 'C:/Users/mpo4/Dropbox/codename/binaries/Dev/DriftLibs/'
 g_output = 'C:/GX/DriftDocs/docs/driftScript/'
 g_functionInfos = []
 g_enumInfos = []
-g_driftFiles = os.listdir(g_driftLibs)
 
-g_files = [ 'Functions.DriftScript',
-            'stubs.DriftScript',
-            'builtin.DriftScript',
-            'ComplexColor.DriftScript',
-            'Expr.DriftScript',
-            'Random.DriftScript',
-            'Vec2.DriftScript',
-            'Vec3.DriftScript',
-            'Vec4.DriftScript',
-            'AABR.DriftScript'
+# g_driftFiles = os.listdir(g_driftLibs)
+
+g_driftFiles = [
+    'Functions.DriftScript',
+    'stubs.DriftScript',
+    'builtin.DriftScript',
+    'ComplexColor.DriftScript',
+    'Expr.DriftScript',
+    'Random.DriftScript',
+    'Vec2.DriftScript',
+    'Vec3.DriftScript',
+    'Vec4.DriftScript',
+    'AABR.DriftScript'
 ]
 
 print(g_driftFiles)

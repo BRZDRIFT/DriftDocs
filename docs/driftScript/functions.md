@@ -1692,48 +1692,6 @@ void gx_add_force_prop(ForceProp prop, int forceID, mixed val)
 ```
 
 
-## AABR_float
-```sq
-AABR AABR_float(Vec2 minPt, Vec2 maxPt)
-```
-
-- Helper function to make AABR
-## AABR_int
-```sq
-AABR AABR_int(Vec2 minPt, Vec2 maxPt)
-```
-
-- Helper function to make AABR
-## min
-```sq
-mixed min(mixed x, mixed y)
-```
-
-- returns the minimum of x and y
-## max
-```sq
-mixed max(mixed x, mixed y)
-```
-
-- returns the maximum of x and y
-## abs
-```sq
-mixed abs(mixed value)
-```
-
-- return absolute value of x
-## clamp
-```sq
-mixed clamp(mixed value, mixed minValue, mixed maxValue)
-```
-
-- clamps val to be between `min` and `max`
-## pow
-```sq
-float pow(float val, int exponent)
-```
-
-
 ## hash
 ```sq
 int hash(mixed object, ...)
@@ -1918,6 +1876,36 @@ void dummy()
 ```
 
 - function that does nothing
+## min
+```sq
+mixed min(mixed x, mixed y)
+```
+
+- returns the minimum of x and y
+## max
+```sq
+mixed max(mixed x, mixed y)
+```
+
+- returns the maximum of x and y
+## abs
+```sq
+mixed abs(mixed value)
+```
+
+- return absolute value of x
+## clamp
+```sq
+mixed clamp(mixed value, mixed minValue, mixed maxValue)
+```
+
+- clamps val to be between `min` and `max`
+## pow
+```sq
+float pow(float val, int exponent)
+```
+
+
 ## Float2
 ```sq
 Vec2 Float2(mixed x, mixed y)
@@ -1954,3 +1942,15 @@ Vec4 Int4(mixed x, mixed y, mixed z, mixed w)
 ```
 
 - Helper function to create a `Vec4`
+## AABR_float
+```sq
+AABR AABR_float(Vec2 minPt, Vec2 maxPt)
+```
+
+- Helper function to make AABR
+## AABR_int
+```sq
+AABR AABR_int(Vec2 minPt, Vec2 maxPt)
+```
+
+- Helper function to make AABR
