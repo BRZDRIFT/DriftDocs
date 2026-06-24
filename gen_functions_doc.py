@@ -59,44 +59,7 @@ def GetEnumMemberInfos(lines, idx):
             continue
         if bSkip:
             continue
-        line = lines[idx].strip()
-        if line == '':
-            continue
-        if (line.split('#')[0] == ''):
-            continue
-
-        enumMemberName = line.split('=')[0].strip().split(',')[0]
-        enumMemberVal = None
-        splitted = line.split('=')
-        if (len(splitted) > 1):
-            enumMemberVal = splitted[1].split(',')[0].strip()
-        bDisplayVal = (enumMemberVal != None) and ((enumMemberName == 'Invalid') or (enumMemberName == 'Unknown'))
-        if bDisplayVal:
-            enumMemberName += ' = ' + enumMemberVal
-        
-        enumMemberComments = ''
-        idx2 = idx
-        cmts = []
-        while True:
-            strippedLines = lines[idx2].strip()
-            if (len(strippedLines) == 0):
-                break
-            if (strippedLines[0] == '}'):
-                break
-            if (idx2 == idx):
-                zz = strippedLines.split('#')
-                if (len(zz) == 2):
-                    cmts.append(zz[1].strip())
-                else:
-                    break
-            else:
-                if (strippedLines[0] == '#'):
-                    zz = strippedLines.split('#')
-                    cmts.append(zz[1].strip())
-                else:
-                    break
-            idx2 += 1
-        outputLines.append([enumMemberName, cmts])
+        outputLines.append(lines[idx])
     return outputLines
 
 def ParseFuncton(lines, i):
@@ -140,7 +103,7 @@ def AnalyzeEnum(lines, i):
     enumComment = GetCommentsAbove(lines, i)
     enumName = lines[i].split(' ')[1].split('{')[0]
     memberInfos = GetEnumMemberInfos(lines, i)
-    g_enumInfos.append([enumName, memberInfos, theLines])
+    g_enumInfos.append([enumName, memberInfos])
 
 def Analyze(fnFile):
     lines = open(fnFile).readlines();
@@ -182,12 +145,7 @@ def OutputEnums():
         finalOutput += '```sq\n'
         finalOutput += 'enum ' + enumInfo[0] + '\n{\n'
         for member in enumInfo[1]:
-            finalOutput += '    ' + member[0] + ','
-            if (len(member[1]) > 0):
-                for cmt in member[1]:
-                    finalOutput += '\t# ' + cmt + '\n'
-            else:
-                finalOutput += '\n'
+            finalOutput += member + '\n'
         finalOutput += '}\n'
         finalOutput += '```\n\n'
         finalOutput += '\n'.join(enumInfo[2])
