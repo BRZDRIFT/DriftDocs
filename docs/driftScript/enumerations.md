@@ -213,7 +213,7 @@ enum GunShipState
 enum UnitProp
 {
     Invalid = 0,                    # Access/Type
-    MaxHealth = 1,  	            # Read (int)
+    MaxHealth = 1,                  # Read (int)
     Health = 2,                     # Read-Write (float)
     MaxSpeed = 3,                   # Read (float)
     Size = 4,                       # Read (float)
@@ -301,7 +301,7 @@ enum PlayerProp
     AlliedVictory = 26,         # Read-Write (bool)
     Color = 27,                 # Read-Write (Vec3)
     ForceID = 28,               # Read (int)
-    PlayerNameColor = 29,       # Read-Write		(int) (i.e. ColorDesc)
+    PlayerNameColor = 29,       # Read-Write        (int) (i.e. ColorDesc)
                                 # Is Write-Enabled only for computer players
     ColoredPlayerName = 30,     # Read (string)
                                 # Equivalent to:
@@ -413,7 +413,7 @@ enum Unicode
     - `Special_PopColor` pops a color off, and sets current text color to it
     - Allows you to save the current arbitrary color, and then re-use it later.
 - `Special_PushInvisible` and `Special_PopInvisible` are also special
-	- All characters after `Special_PushInvisible` will be invisible unless highlighted until a corresponding `Special_PopInvisible` is reached.
+    - All characters after `Special_PushInvisible` will be invisible unless highlighted until a corresponding `Special_PopInvisible` is reached.
 - The `Color_*` unicode characters control text colors for all characters after
 ## ColorType
 ```sq
@@ -432,23 +432,23 @@ enum ColorType
 ```sq
 enum Expr.DynValType
 {
-	Invalid = 0,
-	PlayerResearch = 2,				# int
-	UnitResearch = 3,				# int
-	SimVar = 4,						# int|float|bool|string
-	PlayerVar = 5,					# int|float|bool|string
-	ForceVar = 6,					# int|float|bool|string
-	UnitVar = 7,					# int|float|bool|string
-	PlayerWeaponsUpgrade = 8,		# int
-	PlayerArmorUpgrade = 9,			# int
-	PlayerSpeedUpgrade = 10,		# int
-	Gemstone = 11,					# float
-	Fungus = 12,					# float
-	Supply = 13,					# int
-	MaxSupply = 14,					# int
-	SupplyBlocked = 15,				# bool
-	SiegedOrSieging = 16,			# bool
-	UnsiegedOrUnsieging = 17		# bool
+    Invalid = 0,
+    PlayerResearch = 2,         # int
+    UnitResearch = 3,           # int
+    SimVar = 4,                 # int|float|bool|string
+    PlayerVar = 5,              # int|float|bool|string
+    ForceVar = 6,               # int|float|bool|string
+    UnitVar = 7,                # int|float|bool|string
+    PlayerWeaponsUpgrade = 8,   # int
+    PlayerArmorUpgrade = 9,     # int
+    PlayerSpeedUpgrade = 10,    # int
+    Gemstone = 11,              # float
+    Fungus = 12,                # float
+    Supply = 13,                # int
+    MaxSupply = 14,             # int
+    SupplyBlocked = 15,         # bool
+    SiegedOrSieging = 16,       # bool
+    UnsiegedOrUnsieging = 17    # bool
 }
 ```
 
