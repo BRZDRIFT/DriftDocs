@@ -3,9 +3,9 @@
 enum Race
 {
     Invalid = 0,
-    Human,
-    Robot,
-    Monster,
+    Human = 1,
+    Robot = 2,
+    Monster = 3
 }
 ```
 
@@ -15,16 +15,16 @@ enum Race
 enum DeathCause
 {
     Unknown = 0,
-    FellIntoSpace,
-    AutoAttack,
-    Barrel,
-    Railgun,
-    Grenade,
-    PlasmaGun,
-    LightningGun,
-    Rocket,
-    SeekingRocket,
-    Nuke,
+    FellIntoSpace = 1,
+    AutoAttack = 2,
+    Barrel = 3,
+    Railgun = 4,
+    Grenade = 5,
+    PlasmaGun = 6,
+    LightningGun = 7,
+    Rocket = 8,
+    SeekingRocket = 9,
+    Nuke = 10
 }
 ```
 
@@ -34,9 +34,9 @@ enum DeathCause
 enum EffectType
 {
     Invalid = 0,
-    BlackHole,
-    Visual_QuadDamage,
-    Visual_DefMatrix,
+    BlackHole = 1,
+    Visual_QuadDamage = 2,
+    Visual_DefMatrix = 3
 }
 ```
 
@@ -46,15 +46,15 @@ enum EffectType
 enum AttackType
 {
     Invalid = 0,
-    Laser,
-    Punch,
-    Missile,
-    Orb,
-    SiegeBlast,
-    SmokeBlast,
-    ShortLaser,
-    Shotgun,
-    Grenade,
+    Laser = 1,
+    Punch = 2,
+    Missile = 3,
+    Orb = 4,
+    SiegeBlast = 5,
+    SmokeBlast = 6,
+    ShortLaser = 7,
+    Shotgun = 8,
+    Grenade = 9
 }
 ```
 
@@ -64,10 +64,10 @@ enum AttackType
 enum VictoryStatus
 {
     Invalid = -1,
-    Pending,
-    Victory,
-    Defeat,
-    Draw,
+    Pending = 0,
+    Victory = 1,
+    Defeat = 2,
+    Draw = 3
 }
 ```
 
@@ -78,9 +78,9 @@ enum VictoryStatus
 enum SpecialPlayer
 {
     Invalid = 0,
-    Neutral,
-    Hostile,
-    Rescue,
+    Neutral = -1,
+    Hostile = -2,
+    Rescue = -3
 }
 ```
 
@@ -93,7 +93,7 @@ enum SpecialPlayer
 enum SpecialForce
 {
     Invalid = 0,
-    Neutral,
+    Neutral = -1
 }
 ```
 
@@ -105,12 +105,12 @@ enum SpecialForce
 enum CommandType
 {
     Invalid = "",
-    Attack,	# valid params: [m_unitID, m_location, m_pos]
-    Hold,	# valid params: []
-    Stop,	# valid params: []
-    Move,	# valid params: [m_unitID, m_location, m_pos]
-    RightClick,	# valid params: [m_unitID, m_location, m_pos]
-    Patrol,	# valid params: [m_location, m_pos]
+    Attack = "Attack",          # valid params: [m_unitID, m_location, m_pos]
+    Hold = "Hold",              # valid params: []
+    Stop = "Stop",              # valid params: []
+    Move = "Move",              # valid params: [m_unitID, m_location, m_pos]
+    RightClick = "RightClick",  # valid params: [m_unitID, m_location, m_pos]
+    Patrol = "Patrol"           # valid params: [m_location, m_pos]
 }
 ```
 
@@ -121,27 +121,23 @@ enum CommandType
 enum EventType
 {
     Invalid = 0,
-    PlayerNameChanged,	# Populates m_playerID, m_playerName, m_oldPlayerName,
-	# m_playerName2, m_oldPlayerName2,
-	# m_playerNameColor, m_oldPlayerNameColor
-    PlayerNameColorChanged,	# Populates m_playerID, m_playerName, m_oldPlayerName,
-	# m_playerName2, m_oldPlayerName2,
-	# m_playerNameColor, m_oldPlayerNameColor
-    PlayerLeftGame,	# Populates m_playerID, m_playerName, m_playerName2,
-    TextCommand,	# Populates m_playerID, m_playerName, m_playerName2, m_cmd
-    UnitEnteredLocation,	# Populates m_unitID, m_location
-    UnitExitedLocation,	# Populates m_unitID, m_location
-    Sound2dDestroyed,	# Populates m_soundID
-    Sound3dDestroyed,	# Populates m_soundID
-    SwitchEvent,	# Populates m_playerID, m_unitID
-    UnitPlayerChanged,	# Populates m_oldPlayerID, m_playerID, m_unitID
-    ButtonPushed,	# Populates m_playerID, m_unitID
-    Explosion,	# Populates m_radius, m_pos, m_explosionEventType
-    ChatMessage,	# Populates m_playerID, m_playerName, m_playerName2, m_text
-    ItemPickup,	# Populates m_playerID, m_unitID, m_pos, m_itemUnitType, m_itemTag
-    CustomSpellEvent,	# Populates m_playerID, m_unitID, m_pos, m_customSpellEventTag
-    UnitDeath,	# Populates m_unitID, m_unitType, m_unitTag, m_playerID, m_killerPlayerID, m_deathCause
-    TimerExpired,
+    PlayerNameChanged = 1,
+    PlayerNameColorChanged = 2,
+    PlayerLeftGame = 3,         # Populates m_playerID, m_playerName, m_playerName2,
+    TextCommand = 4,            # Populates m_playerID, m_playerName, m_playerName2, m_cmd
+    UnitEnteredLocation = 5,    # Populates m_unitID, m_location
+    UnitExitedLocation = 6,     # Populates m_unitID, m_location
+    Sound2dDestroyed = 7,       # Populates m_soundID
+    Sound3dDestroyed = 8,       # Populates m_soundID
+    SwitchEvent = 9,            # Populates m_playerID, m_unitID
+    UnitPlayerChanged = 10,     # Populates m_oldPlayerID, m_playerID, m_unitID
+    ButtonPushed = 11,          # Populates m_playerID, m_unitID
+    Explosion = 12,             # Populates m_radius, m_pos, m_explosionEventType
+    ChatMessage = 13,           # Populates m_playerID, m_playerName, m_playerName2, m_text
+    ItemPickup = 14,            # Populates m_playerID, m_unitID, m_pos, m_itemUnitType, m_itemTag
+    CustomSpellEvent = 15,      # Populates m_playerID, m_unitID, m_pos, m_customSpellEventTag
+    UnitDeath = 16,             # Populates m_unitID, m_unitType, m_unitTag, m_playerID, m_killerPlayerID, m_deathCause
+    TimerExpired = 17
 }
 ```
 
@@ -151,8 +147,8 @@ enum EventType
 enum ExplosionEventType
 {
     Invalid = 0,
-    Nuke,
-    Barrel,
+    Nuke = 1,
+    Barrel = 2
 }
 ```
 
@@ -162,9 +158,9 @@ enum ExplosionEventType
 enum ShapeType
 {
     Invalid = 0,
-    Circle,
-    Square,
-    Rectangle,
+    Circle = 1,
+    Square = 2,
+    Rectangle = 3
 }
 ```
 
@@ -174,9 +170,9 @@ enum ShapeType
 enum BoundsCheck
 {
     Invalid = 0,
-    Center,	# Unit's center position is in location
-    Touching,	# Unit is fully inside or touching location
-    Inside,	# Unit fully inside a location
+    Center = 1,     # Unit's center position is in location
+    Touching = 2,   # Unit is fully inside or touching location
+    Inside = 3      # Unit fully inside a location
 }
 ```
 
@@ -185,14 +181,14 @@ enum BoundsCheck
 ```sq
 enum LocationProp
 {
-    Invalid = 0,	# Access/Type
-    TopLeft,	# Read (Vec2)
-    TopRight,	# Read (Vec2)
-    BottomLeft,	# Read (Vec2)
-    BottomRight,	# Read (Vec2)
-    Center,	# Read (Vec2)
-    Size,	# Read (Vec2)
-    AABR,	# Read (AABR)
+    Invalid = 0,        # Access/Type
+    TopLeft = 1,        # Read (Vec2)
+    TopRight = 2,       # Read (Vec2)
+    BottomLeft = 3,     # Read (Vec2)
+    BottomRight = 4,    # Read (Vec2)
+    Center = 5,         # Read (Vec2)
+    Size = 6,           # Read (Vec2)
+    AABR = 7            # Read (AABR)
 }
 ```
 
@@ -202,12 +198,12 @@ enum LocationProp
 enum GunShipState
 {
     Invalid = -1,
-    Normal,
-    StarShot,
-    BigGunLevel1,
-    BigGunLevel2,
-    ChainGunLevel1,
-    ChainGunLevel2,
+    Normal = 0,
+    StarShot = 1,
+    BigGunLevel1 = 2
+    BigGunLevel2 = 3,
+    ChainGunLevel1 = 4,
+    ChainGunLevel2 = 5
 }
 ```
 
@@ -216,38 +212,32 @@ enum GunShipState
 ```sq
 enum UnitProp
 {
-    Invalid = 0,	# Access/Type
-    MaxHealth,	# Read (int)
-    Health,	# Read-Write (float)
-    MaxSpeed,	# Read (float)
-    Size,	# Read (float)
-    UnitType,	# Read (string)
-    IsOnFire,	# Read (bool)
-    ParentJeep,	# Read-Write (int)
-    ParentDropship,	# Read-Write (int)
-    ParentStarShip,	# Read-Write (int)
-    UNUSED,
-    ParentBunker,	# Read-Write (int)
-    GunShipState,	# Read-Write (GunShipState)
-    Level,	# Read-Write (int)
-    Tag,	# Read-Write (string)
-    PlayerID,	# Read-Write (int)
-    ForceGhostMode,	# Read-Write (bool)
-	# Ghost mode allows units to walk through
-	# other units (similar to workers harvesting
-	# resources)
-    FriendlyName,	# Read-Write (string)
-	# Allows you to override unit friendly name
-	# on a per-unit basis.
-    ForceInvulnerable,	# Read-Write (bool)
-    LookAtDirection,	# Read-Write (Vec2)
-    DriftMode,	# Read-Write (bool)
-    IsCritter,	# Read (bool)
-    CritterFlag,	# Read-Write (bool)
-    IsSpeechBubbleActive,	# Read (bool)
-    Position,	# Read-Write (Vec2)
-    LockUnitToJeep,	# Read-Write (bool)
-    QuadDamageTicksRemaining,	# Read-Write (int)
+    Invalid = 0,                    # Access/Type
+    MaxHealth = 1,  	            # Read (int)
+    Health = 2,                     # Read-Write (float)
+    MaxSpeed = 3,                   # Read (float)
+    Size = 4,                       # Read (float)
+    UnitType = 5,                   # Read (string)
+    IsOnFire = 6,                   # Read (bool)
+    ParentJeep = 7,                 # Read-Write (int)
+    ParentDropship = 8,             # Read-Write (int)
+    ParentStarShip = 9,             # Read-Write (int)
+    ParentBunker = 11,              # Read-Write (int)
+    GunShipState = 12,              # Read-Write (GunShipState)
+    Level = 13,                     # Read-Write (int)
+    Tag = 14,                       # Read-Write (string)
+    PlayerID = 15,                  # Read-Write (int)
+    ForceGhostMode = 16,            # Read-Write (bool)
+    FriendlyName = 17,              # Read-Write (string)
+    ForceInvulnerable = 18,         # Read-Write (bool)
+    LookAtDirection = 19,           # Read-Write (Vec2)
+    DriftMode = 20,                 # Read-Write (bool)
+    IsCritter = 21,                 # Read (bool)
+    CritterFlag = 22,               # Read-Write (bool)
+    IsSpeechBubbleActive = 23,      # Read (bool)
+    Position = 24,                  # Read-Write (Vec2)
+    LockUnitToJeep = 25,            # Read-Write (bool)
+    QuadDamageTicksRemaining = 26   # Read-Write (int)
 }
 ```
 
@@ -257,11 +247,11 @@ enum UnitProp
 enum SimProp
 {
     Invalid = 0,
-    ThemeColor,	# Read-Write (Vec4)
-    GlowColor,	# Read-Write (Vec4)
-    EnableChatMessageEvents,	# Read-Write (bool)
-    EnableUnitDeathEvents,	# Read-Write (bool)
-    Timer,	# Read-Write (int)
+    ThemeColor = 1,                 # Read-Write (Vec4)
+    GlowColor = 2,                  # Read-Write (Vec4)
+    EnableChatMessageEvents = 3,    # Read-Write (bool)
+    EnableUnitDeathEvents = 4,      # Read-Write (bool)
+    Timer = 5                       # Read-Write (int)
 }
 ```
 
@@ -270,13 +260,13 @@ enum SimProp
 ```sq
 enum DecalProp
 {
-    Invalid = 0,	# Access/Type
-    Position,	# Read-Write (Vec2)
-    Rotation,	# Read-Write (float)
-    Size,	# Read-Write (Vec2)
-    Tag,	# Read-Write (string)
-    InterpolateTransforms,	# Read-Write (bool)
-    RestrictToSpace,	# Read-Write (bool)
+    Invalid = 0,                # Access/Type
+    Position = 1,               # Read-Write (Vec2)
+    Rotation = 2,               # Read-Write (float)
+    Size = 3,                   # Read-Write (Vec2)
+    Tag = 4,                    # Read-Write (string)
+    InterpolateTransforms = 5,  # Read-Write (bool)
+    RestrictToSpace = 6         # Read-Write (bool)
 }
 ```
 
@@ -285,47 +275,44 @@ enum DecalProp
 ```sq
 enum PlayerProp
 {
-    Invalid = 0,	# Access/Type
-    Fungus,	# Read-Write (float)
-    Gemstone,	# Read-Write (float)
-    Supply,	# Read (int)
-    MaxSupply,	# Read (int)
-    NumKills,	# Read (int)
-    NumDeaths,	# Read (int)
-    PlayerName,	# Read-Write (string)
-	# Is Write-Enabled only for computer players
-    FullMapVision,	# Read-Write (bool)
-	# When set to true, player
-	# is given vision of entire map
-    NumUnitsProduced,	# Read (int)
-    TagID,	# Read (int)
-    ChoseRandom,	# Read (bool)
-    Race,	# Read (int)
-    StartLocationPosition,	# Read-Write (int)
-    Score,	# Read-Write (int)
-    IsNormalPlayer,	# Read (bool)
-    IsHumanPlayer,	# Read (bool)
-    IsComputerPlayer,	# Read (bool)
-    IsHostilePlayer,	# Read (bool)
-    IsNeutralPlayer,	# Read (bool)
-    IsRescueablePlayer,	# Read (bool)
-    IsInGame,	# Read (bool)
-    VictoryStatus,	# Read-Write (VictoryStatus)
-    AlliedVictory,	# Read-Write (bool)
-    Color,	# Read-Write (Vec3)
-    ForceID,	# Read (int)
-    PlayerNameColor,	# Read-Write		(int) (i.e. ColorDesc)
-	# Is Write-Enabled only for computer players
-    ColoredPlayerName,	# Read (string)
-	# Equivalent to:
-	# gx_get_player_prop(PlayerProp.PlayerNameColorDesc, playerID)
-	# + PlayerName
-    ColoredPlayerName2,	# Read (string)
-	# Equivalent to:
-	# gx_str_encode_color_id(ColorID.PushColor)
-	# + gx_get_player_prop(PlayerProp.ColoredPlayerName, playerID)
-	# + PlayerName
-	# + gx_str_encode_color_id(ColorID.PopColor)
+    Invalid = 0,                # Access/Type
+    Fungus = 1,                 # Read-Write (float)
+    Gemstone = 2,               # Read-Write (float)
+    Supply = 3,                 # Read (int)
+    MaxSupply = 4,              # Read (int)
+    NumKills = 5,               # Read (int)
+    NumDeaths = 6,              # Read (int)
+    PlayerName = 7,             # Read-Write (string)
+    FullMapVision = 8,          # Read-Write (bool)
+    NumUnitsProduced = 9,       # Read (int)
+    TagID = 10,                 # Read (int)
+    ChoseRandom = 11,           # Read (bool)
+    Race = 12,                  # Read (int)
+    StartLocationPosition = 16, # Read-Write (int)
+    Score = 17,                 # Read-Write (int)
+    IsNormalPlayer = 18,        # Read (bool)
+    IsHumanPlayer = 19,         # Read (bool)
+    IsComputerPlayer = 20,      # Read (bool)
+    IsHostilePlayer = 21,       # Read (bool)
+    IsNeutralPlayer = 22,       # Read (bool)
+    IsRescueablePlayer = 23,    # Read (bool)
+    IsInGame = 24               # Read (bool)
+    VictoryStatus = 25,         # Read-Write (VictoryStatus)
+    AlliedVictory = 26,         # Read-Write (bool)
+    Color = 27,                 # Read-Write (Vec3)
+    ForceID = 28,               # Read (int)
+    PlayerNameColor = 29,       # Read-Write		(int) (i.e. ColorDesc)
+                                # Is Write-Enabled only for computer players
+    ColoredPlayerName = 30,     # Read (string)
+                                # Equivalent to:
+                                # gx_get_player_prop(PlayerProp.PlayerNameColorDesc, playerID)
+                                # + PlayerName
+    ColoredPlayerName2 = 31     # Read (string)
+                                # Equivalent to:
+                                # gx_str_encode_color_id(ColorID.PushColor)
+                                # + gx_get_player_prop(PlayerProp.ColoredPlayerName, playerID)
+                                # + PlayerName
+                                # + gx_str_encode_color_id(ColorID.PopColor)
 }
 ```
 
@@ -337,7 +324,7 @@ enum ArmorType
     Invalid = 0,
     Light,
     Medium,
-    Heavy,
+    Heavy
 }
 ```
 
@@ -346,10 +333,10 @@ enum ArmorType
 ```sq
 enum ForceProp
 {
-    Invalid = 0,	# Access/Type
-    Score,	# Read-Write (int)
-    Name,	# Read-Write (string)
-    VictoryStatus,	# Read-Write (VictoryStatus)
+    Invalid = 0,        # Access/Type
+    Score = 1,          # Read-Write (int)
+    Name = 2,           # Read-Write (string)
+    VictoryStatus = 3   # Read-Write (VictoryStatus)
 }
 ```
 
@@ -359,22 +346,17 @@ enum ForceProp
 enum TerrainType
 {
     Invalid = -1,
-    Normal,	# See SecondaryTerrainTypeNormal
-	# for valid secondary types
-    Water,	# valid secondary types are [0 - 3]
-    Lava,	# valid secondary types are [0 - 3]
-    Diamond,	# valid secondary types is just 0
-    Transparent,	# valid secondary types are [0 - 15]
-    Glow,	# valid secondary types are [0 - 31]
-    PlayerColor,	# valid secondary types are player_id, i.e. [1-16]
-    Unpassable,	# !! Not a dynamic terrain type!
-	# Cannot dynamically change or be set to!
-	# valid secondary type is just 0 (currently)
-    Space,	# valid secondary type is just 0
-    CliffClosed,	# !! Not a dynamic terrain type!
-	# Cannot dynamically change or be set to!
-    CliffBorder,	# !! Not a dynamic terrain type!
-	# Cannot dynamically change or be set to!
+    Normal = 0,
+    Water = 2,          # valid secondary types are [0 - 3]
+    Lava = 3,           # valid secondary types are [0 - 3]
+    Diamond = 4,        # valid secondary types is just 0
+    Transparent = 5,    # valid secondary types are [0 - 15]
+    Glow = 6,           # valid secondary types are [0 - 31]
+    PlayerColor = 8,    # valid secondary types are player_id, i.e. [1-16]
+    Unpassable = 9,     # !! Not a dynamic terrain type!
+    Space = 10,         # valid secondary type is just 0
+    CliffClosed = 14,   # !! Not a dynamic terrain type!
+    CliffBorder = 15    # !! Not a dynamic terrain type!
 }
 ```
 
@@ -384,14 +366,14 @@ enum TerrainType
 enum SecondaryTerrainTypeNormal
 {
     Invalid = -1,
-    Normal,	# Units are normal on this type (no effects)
-    Speed,	# Units move faster on this type
-    AttackRate,	# Units have faster attack rate on this type
-    Heal,	# Units heal faster on this type
-    Forbidden,	# Units insta-die on this type
-    Sniper,	# Units have increased range on this type
-    MeleeOnly,	# Units have decreased range on this type
-    Pacifist,	# Units are unable to attack on this type
+    Normal = 0,     # Units are normal on this type (no effects)
+    Speed = 1,      # Units move faster on this type
+    AttackRate = 2, # Units have faster attack rate on this type
+    Heal = 3,       # Units heal faster on this type
+    Forbidden = 4,  # Units insta-die on this type
+    Sniper = 5,     # Units have increased range on this type
+    MeleeOnly = 6,  # Units have decreased range on this type
+    Pacifist = 7    # Units are unable to attack on this type
 }
 ```
 
@@ -421,7 +403,7 @@ enum Unicode
     Color_Blue,
     Color_Purple,
     Color_Pink,
-    Emoji_GrinningFace,
+    Emoji_GrinningFace
 }
 ```
 
@@ -437,11 +419,11 @@ enum Unicode
 ```sq
 enum ColorType
 {
-    Invalid = -1,
-    Normal,
-    Rainbow,
-    Water,
-    Lava,
+    Invalid = -1
+    Normal = 0,
+    Rainbow = 1,
+    Water = 2,
+    Lava = 3
 }
 ```
 
@@ -450,23 +432,23 @@ enum ColorType
 ```sq
 enum Expr.DynValType
 {
-    Invalid = 0,
-    PlayerResearch,	# int
-    UnitResearch,	# int
-    SimVar,	# int|float|bool|string
-    PlayerVar,	# int|float|bool|string
-    ForceVar,	# int|float|bool|string
-    UnitVar,	# int|float|bool|string
-    PlayerWeaponsUpgrade,	# int
-    PlayerArmorUpgrade,	# int
-    PlayerSpeedUpgrade,	# int
-    Gemstone,	# float
-    Fungus,	# float
-    Supply,	# int
-    MaxSupply,	# int
-    SupplyBlocked,	# bool
-    SiegedOrSieging,	# bool
-    UnsiegedOrUnsieging,	# bool
+	Invalid = 0,
+	PlayerResearch = 2,				# int
+	UnitResearch = 3,				# int
+	SimVar = 4,						# int|float|bool|string
+	PlayerVar = 5,					# int|float|bool|string
+	ForceVar = 6,					# int|float|bool|string
+	UnitVar = 7,					# int|float|bool|string
+	PlayerWeaponsUpgrade = 8,		# int
+	PlayerArmorUpgrade = 9,			# int
+	PlayerSpeedUpgrade = 10,		# int
+	Gemstone = 11,					# float
+	Fungus = 12,					# float
+	Supply = 13,					# int
+	MaxSupply = 14,					# int
+	SupplyBlocked = 15,				# bool
+	SiegedOrSieging = 16,			# bool
+	UnsiegedOrUnsieging = 17		# bool
 }
 ```
 
@@ -476,18 +458,18 @@ enum Expr.DynValType
 enum Expr.BinaryOp
 {
     Invalid = 0,
-    Add,
-    Subtract,
-    Multiply,
-    Divide,
-    EQ,
-    NE,
-    LT,
-    GT,
-    LE,
-    GE,
-    Or,
-    And,
+    Add = 1,
+    Subtract = 2,
+    Multiply = 3,
+    Divide = 4,
+    EQ = 5,
+    NE = 6,
+    LT = 7,
+    GT = 8,
+    LE = 9,
+    GE = 10,
+    Or = 11,
+    And = 12
 }
 ```
 
@@ -497,8 +479,8 @@ enum Expr.BinaryOp
 enum Expr.UnaryOp
 {
     Invalid = 0,
-    Not,
-    Negate,
+    Not = 1,
+    Negate = 2
 }
 ```
 

@@ -103,7 +103,7 @@ def AnalyzeEnum(lines, i):
     enumComment = GetCommentsAbove(lines, i)
     enumName = lines[i].split(' ')[1].split('{')[0]
     memberInfos = GetEnumMemberInfos(lines, i)
-    g_enumInfos.append([enumName, memberInfos])
+    g_enumInfos.append([enumName, memberInfos, theLines])
 
 def Analyze(fnFile):
     lines = open(fnFile).readlines();
