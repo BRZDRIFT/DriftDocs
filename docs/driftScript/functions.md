@@ -1944,6 +1944,12 @@ table.values()
 
 # delete item:
 delete table[key]
+
+# check key in table:
+key in table
+
+# check key not in table:
+key not_in table
 ```
 
 ## string
