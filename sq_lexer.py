@@ -84,7 +84,7 @@ class SquirrelLexer(MyCppLexer):
             'SpecialPlayer', 'AutoAttackTable', 'AttackTable',
             'DamageExtraTable', 'Expr', 'DynValType ', 'BinaryOp',
             'UnaryOp', 'Random', 'DynValType', 'AABR_int', 'AABR_float',
-            'array', 'delete'
+            'array', 'delete', 'print'
     )
 
     def get_tokens_unprocessed(self, text, stack=('root',)):
