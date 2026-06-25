@@ -145,7 +145,7 @@ print(myArray[4])                   # prints 7
 myArray.remove(1)           # remove at index 1, myArray: ["my_string", 1, 2, 7]
 ```
 
-- See [http:#squirrel-lang.org/squirreldoc/reference/language.html](http:#squirrel-lang.org/squirreldoc/reference/language.html) for more language features.
+- See [http://squirrel-lang.org/squirreldoc/reference/language.html](http://squirrel-lang.org/squirreldoc/reference/language.html) for more language features.
 
 ## Table and array foreach loops
 ```sq
