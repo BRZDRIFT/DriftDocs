@@ -32,20 +32,20 @@ local myVariable = 7    # good!
 myVariable2 = 8         # script-error! Forgot local keyword.
 ```
 
-## Must use `<-` operator to add new key/value to dictionary
+## Must use `<-` operator to add new key/value to table
 ```sq
-# need to use <- to add new key/value to dictionary
-local myDictionary = {}
-myDictionary["abc"] <- 7        # works
-myDictionary["def"] = 9         # script error! key "def" does not exist!
+# need to use <- to add new key/value to table
+local myTable = {}
+myTable["abc"] <- 7        # works
+myTable["def"] = 9         # script error! key "def" does not exist!
 
 # however, you can use = to modify existing value
-myDictionary["abc"] = 10        # works, since key "abc" already exists
-myDictionary["abc"] <- 12       # also works
+myTable["abc"] = 10        # works, since key "abc" already exists
+myTable["abc"] <- 12       # also works
 
-# note: can also create dictionaries in-place
-local myNewDictionary = { abc = 6, def = 9}   # no quotes for in-place string keys
-myNewDictionary[15] <- "some string"        # keys can also be integers
+# note: can also create tables in-place
+local myNewTable = { abc = 6, def = 9}   # no quotes for in-place string keys
+myNewTable[15] <- "some string"        # keys can also be integers
 ```
 
 ## `=` assignment operator copies reference, not value! (for custom types)
@@ -127,14 +127,14 @@ cOOool...
 */
 ```
 
-## Common dictionary and array tasks
+## Common table and array tasks
 ```sq
-# deleting from dictionary
-local myDictionary = { "abc": 6, "def": 7 }     # create dictionary
-delete myDictionary["abc"]                  # delete "abc" from dictionary
+# deleting from table
+local myTable = { "abc": 6, "def": 7 }     # create table
+delete myTable["abc"]                  # delete "abc" from table
 
-# check if key in dictionary
-local bResult = "def" in myDictionary
+# check if key in table
+local bResult = "def" in myTable
 print(bResult)	# true
 
 # arrays
@@ -147,36 +147,36 @@ myArray.remove(1)           # remove at index 1, myArray: ["my_string", 1, 2, 7]
 
 - See [http:#squirrel-lang.org/squirreldoc/reference/language.html](http:#squirrel-lang.org/squirreldoc/reference/language.html) for more language features.
 
-## Dictionary and array foreach loops
+## Table and array foreach loops
 ```sq
-# dictionary initializer syntax #1: { key = val }
-# Possible Output (dictionary iteration order is unspecified):
+# table initializer syntax #1: { key = val }
+# Possible Output (table iteration order is unspecified):
 # a -> 5
 # c -> dog
 # b -> 2
-local myDict1 = { a = 5, b = 2, c = "dog"}
-foreach (key, val in myDict1) {
+local myTable1 = { a = 5, b = 2, c = "dog"}
+foreach (key, val in myTable1) {
 	print(key + " -> " + val)
 }
 
-# dictionary initializer syntax #2: { "key": val }
-# Possible Output (dictionary iteration order is unspecified):
+# table initializer syntax #2: { "key": val }
+# Possible Output (table iteration order is unspecified):
 # a -> 5
 # c -> dog
 # b -> 2
-local myDict2 = { "a": 5, "b": 2, "c": "dog"}
-foreach (key, val in myDict2) {
+local myTable2 = { "a": 5, "b": 2, "c": "dog"}
+foreach (key, val in myTable2) {
 	print(key + " : " + val)
 }
 
-# dictionary single variable iteration..
+# table single variable iteration..
 # NOTE: this syntax outputs value, not key as in languages like python
-# Possible Output (dictionary iteration order is unspecified):
+# Possible Output (table iteration order is unspecified):
 # 5
 # dog
 # 2
-local myDict3 = { "a": 5, "b": 2, "c": "dog"}
-foreach (val in myDict3) {
+local myTable3 = { "a": 5, "b": 2, "c": "dog"}
+foreach (val in myTable3) {
 	print(val)
 }
 
@@ -201,9 +201,9 @@ foreach (idx, val in myArray) {
 }
 ```
 
-- Please note, single variable foreach loop with dictionary outputs `value` and not `key`.
+- Please note, single variable foreach loop with table outputs `value` and not `key`.
     - This is different from other languages like `Python`.
-- dictionary foreach iteration order is `unspecified` (which is different than random)
+- table foreach iteration order is `unspecified` (which is different than random)
 
 ## Other
 - semicolons `;` at the end of lines are optional, similar to `Python`

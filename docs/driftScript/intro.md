@@ -18,26 +18,26 @@ Please refer to the squirrel language reference manual here:
 
 Major changes from Squirrel:
 
-- Comparison operators and dictionaries reworked to use `_eq`, `_cmp`, and `_hash`
+- Comparison operators and tables reworked to use `_eq`, `_cmp`, and `_hash`
     - Added user-implementable `bool _eq(other)` meta-function.
         - Is invoked during `==` and `!=` comparisons
             - If `_eq` is not defined, will fallback to calling `_cmp` meta-function
             - If `_eq` and `_cmp` both do not exist, fall-back to reference-equality for `==`.
         - Note: This is DIFFERENT than Squirrel's `==` and `!=` which ALWAYS checks for reference-equality, even when `_cmp` is defined.
         - Keywords `is` and `is_not` added to check for reference-equality -- (i.e. Squirrel's `==`/`!=` behavior)
-        - Keyword `not_in` added to complement existing `in` keyword for checking if key exists in dictionary.
+        - Keyword `not_in` added to complement existing `in` keyword for checking if key exists in table.
     - Added function `int hash(obj1, obj2, ..)` that hashes objects/primitives
     - Added user-implementable `int _hash()` meta-function.
         - Is invoked in calls to `hash(obj, ...)`
-        - If your custom class will be used as dictionary, you should implement `_eq` and `_hash` functions.
+        - If your custom class will be used as table, you should implement `_eq` and `_hash` functions.
         - If `obj1 == obj2`, then `hash(obj1) == hash(obj2)` MUST be true.
-            - If this is not true, your class will not work properly when used as keys in dictionaries.
-    - Dictionaries now invoke `_hash` and `_eq`/`_cmp` for keys
+            - If this is not true, your class will not work properly when used as keys in tables.
+    - Tables now invoke `_hash` and `_eq`/`_cmp` for keys
         - Note: This is DIFFERENT than Squirrel which just checks for reference equality.
-    - Array and Dictionary `==`/`!=` operators invoke sub-object's `_eq`/`_cmp` meta-functions.
+    - Array and Table `==`/`!=` operators invoke sub-object's `_eq`/`_cmp` meta-functions.
         - Once again, this is DIFFERENT than Squirrel that checks for reference-equality.
-        - Can always use `is` and `is_not` to compare if two arrays or dictionaries are the same object (reference-equality)
-    - Added function `int object_id(obj)` to get object id for class instances, arrays, and dictionaries
+        - Can always use `is` and `is_not` to compare if two arrays or tables are the same object (reference-equality)
+    - Added function `int object_id(obj)` to get object id for class instances, arrays, and tables
         - returns `0` for other types
     - `array.find(value)` modified to compare using `_eq`/`_cmp`
     - `array.find_ref(ref)` added to check for reference-equality -- (i.e. Squirrel's behavior)
