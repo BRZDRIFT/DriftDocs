@@ -43,6 +43,8 @@ Major changes from Squirrel:
     - `array.find_ref(ref)` added to check for reference-equality -- (i.e. Squirrel's behavior)
 - Added user-implementable `_unp` (unary plus operator) meta-function
     - same as squirrel's `_unm` (unary minus operator) except for `+` instead of `-`
+- Normal division operator `/` always returns float now.
+- Added floor division operator `//`.
 - Changed various lexing and parsing rules to be more intuitive
     - `local a = .1` is invalid in squirrel because floats must begin with a digit: i.e. `0.1`
         - However, this is valid Drift Script!
@@ -64,9 +66,12 @@ Major changes from Squirrel:
     - `int` types are signed 64-bit 
     - `float` types modified to be a 64-bit `Q31.32` fixed point types
     - more type information at {{math("scalar-types")}}
+- Enums and enum scopes reworked
+- Function scopes reworked
+- Various base library changes
+- Bunch of other stuff..
 - `Squirrel Standard Library` is not supported.
     - Although, DriftScript provides many functions with identical behavior.
 - Future TODOs:
     - Better error-handling and compilation/runtime errors.
     - Improved vscode syntax-highlighting, auto-complete, etc.
-        - anyone who knows how to write such a vscode plugin, let me know..
