@@ -5350,7 +5350,6 @@
 <li>Searches for units on entire map</li>
 </ul>
 </li>
-<li>Refer to <a href="/DriftDocs/driftScript/enumerations/#boundscheck">BoundsCheck </a> if needed.</li>
 </ul>
 <h2 id="gx_get_units_count">gx_get_units_count</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">gx_get_units_count</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{})</span>
@@ -5384,7 +5383,6 @@
 <li>Searches for units on entire map</li>
 </ul>
 </li>
-<li>Refer to <a href="/DriftDocs/driftScript/enumerations/#boundscheck">BoundsCheck </a> if needed.</li>
 </ul>
 <h2 id="gx_units_touching">gx_units_touching</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">gx_units_touching</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u0</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">u1</span><span class="p">)</span>
@@ -5525,7 +5523,6 @@
 <ul>
 <li>If neither <code>m_dir2d</code> nor <code>m_dir3d</code> is set, unit will be thrown in random direction</li>
 <li>Only <code>m_dir2d</code> or <code>m_dir3d</code> should be set. Setting both is undefined behavior.</li>
-<li>Refer to <a href="/DriftDocs/driftScript/builtinTypes/#vec2">Vec2</a> and <a href="/DriftDocs/driftScript/builtinTypes/#vec3">Vec3</a> if needed.</li>
 </ul>
 <h2 id="gx_set_victory_status">gx_set_victory_status</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_set_victory_status</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
@@ -5687,7 +5684,7 @@
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-62-1"><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_unlock_player_camera</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">playerID</span><span class="p">)</span>
 </span></code></pre></div>
 <ul>
-<li>unlocks <code>player_id</code> camera position set by <a href="/DriftDocs/driftScript/functions/#gx_lock_player_camera">gx_lock_player_camera</a></li>
+<li>unlocks <code>player_id</code> camera position set by <code>gx_lock_player_camera</code></li>
 <li>equivalent to calling <code>gx_lock_player_camera(player_id, {})</code></li>
 </ul>
 <h2 id="gx_get_kills">gx_get_kills</h2>
@@ -5875,7 +5872,6 @@
 <li>Register to receive <code>UnitEnteredLocation</code> and <code>UnitExitedLocation</code> events</li>
 <li>no optional parameters currently</li>
 <li>Usually you will want to only call this one time time in the <code>gx_sim_init</code> function</li>
-<li>See <a href="/DriftDocs/driftScript/enumerations/#eventtype">EventType</a> and <a href="/DriftDocs/driftScript/eventQueue/#event_queue">Event Queue</a> for more information</li>
 </ul>
 <h2 id="gx_str_color_username">gx_str_color_username</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-106-1"><a id="__codelineno-106-1" name="__codelineno-106-1" href="#__codelineno-106-1"></a><span class="kt">string</span><span class="w"> </span><span class="n">gx_str_color_username</span><span class="p">(</span><span class="kt">ComplexColor</span><span class="w"> </span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">username</span><span class="p">)</span>
@@ -6251,7 +6247,6 @@
 </span></code></pre></div>
 <ul>
 <li>Creates the Effect of type <code>m_type</code> and returns the Effect ID</li>
-<li>See <a href="/DriftDocs/driftScript/enumerations/#effecttype">EffectType</a> for effects</li>
 </ul>
 <h2 id="gx_destroy_effect">gx_destroy_effect</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-171-1"><a id="__codelineno-171-1" name="__codelineno-171-1" href="#__codelineno-171-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_destroy_effect</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">effectID</span><span class="p">)</span>
@@ -6291,7 +6286,6 @@
 <li>(i.e., a spell that can only target units cannot target a <code>m_pos</code> or <code>m_location</code>)</li>
 <li><code>CommandType</code> can also be a spell identifier</li>
 <li>if <code>bQueueCommand</code> is <code>true</code>, appends the command in the unit's command queue, otherwise command queue beforehand</li>
-<li>See <a href="/DriftDocs/driftScript/enumerations/#commandtype">CommandType</a> for possible command values</li>
 </ul>
 <h2 id="gx_force_select_units">gx_force_select_units</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-177-1"><a id="__codelineno-177-1" name="__codelineno-177-1" href="#__codelineno-177-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">gx_force_select_units</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">playerID</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">unitIDs</span><span class="p">[])</span>
