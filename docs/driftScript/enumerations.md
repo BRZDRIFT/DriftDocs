@@ -121,8 +121,12 @@ enum CommandType
 enum EventType
 {
     Invalid = 0,
-    PlayerNameChanged = 1,
-    PlayerNameColorChanged = 2,
+    PlayerNameChanged = 1,      # Populates: m_playerID, m_playerName, m_oldPlayerName,
+                                # m_playerName2, m_oldPlayerName2,
+                                # m_playerNameColor, m_oldPlayerNameColor
+    PlayerNameColorChanged = 2, # Populates m_playerID, m_playerName, m_oldPlayerName,
+                                # m_playerName2, m_oldPlayerName2,
+                                # m_playerNameColor, m_oldPlayerNameColor
     PlayerLeftGame = 3,         # Populates m_playerID, m_playerName, m_playerName2,
     TextCommand = 4,            # Populates m_playerID, m_playerName, m_playerName2, m_cmd
     UnitEnteredLocation = 5,    # Populates m_unitID, m_location
