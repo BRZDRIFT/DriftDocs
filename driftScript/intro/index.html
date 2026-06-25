@@ -1459,7 +1459,7 @@ to learn due to more learning material.</p>
 <a href="http://squirrel-lang.org/squirreldoc/reference/language.html">http://squirrel-lang.org/squirreldoc/reference/language.html</a></p>
 <p>Major changes from Squirrel:</p>
 <ul>
-<li>Comparison operators and dictionaries reworked to use <code>_eq</code>, <code>_cmp</code>, and <code>_hash</code><ul>
+<li>Comparison operators and tables reworked to use <code>_eq</code>, <code>_cmp</code>, and <code>_hash</code><ul>
 <li>Added user-implementable <code>bool _eq(other)</code> meta-function.<ul>
 <li>Is invoked during <code>==</code> and <code>!=</code> comparisons<ul>
 <li>If <code>_eq</code> is not defined, will fallback to calling <code>_cmp</code> meta-function</li>
@@ -1468,29 +1468,29 @@ to learn due to more learning material.</p>
 </li>
 <li>Note: This is DIFFERENT than Squirrel's <code>==</code> and <code>!=</code> which ALWAYS checks for reference-equality, even when <code>_cmp</code> is defined.</li>
 <li>Keywords <code>is</code> and <code>is_not</code> added to check for reference-equality -- (i.e. Squirrel's <code>==</code>/<code>!=</code> behavior)</li>
-<li>Keyword <code>not_in</code> added to complement existing <code>in</code> keyword for checking if key exists in dictionary.</li>
+<li>Keyword <code>not_in</code> added to complement existing <code>in</code> keyword for checking if key exists in table.</li>
 </ul>
 </li>
 <li>Added function <code>int hash(obj1, obj2, ..)</code> that hashes objects/primitives</li>
 <li>Added user-implementable <code>int _hash()</code> meta-function.<ul>
 <li>Is invoked in calls to <code>hash(obj, ...)</code></li>
-<li>If your custom class will be used as dictionary, you should implement <code>_eq</code> and <code>_hash</code> functions.</li>
+<li>If your custom class will be used as table, you should implement <code>_eq</code> and <code>_hash</code> functions.</li>
 <li>If <code>obj1 == obj2</code>, then <code>hash(obj1) == hash(obj2)</code> MUST be true.<ul>
-<li>If this is not true, your class will not work properly when used as keys in dictionaries.</li>
+<li>If this is not true, your class will not work properly when used as keys in tables.</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Dictionaries now invoke <code>_hash</code> and <code>_eq</code>/<code>_cmp</code> for keys<ul>
+<li>Tables now invoke <code>_hash</code> and <code>_eq</code>/<code>_cmp</code> for keys<ul>
 <li>Note: This is DIFFERENT than Squirrel which just checks for reference equality.</li>
 </ul>
 </li>
-<li>Array and Dictionary <code>==</code>/<code>!=</code> operators invoke sub-object's <code>_eq</code>/<code>_cmp</code> meta-functions.<ul>
+<li>Array and Table <code>==</code>/<code>!=</code> operators invoke sub-object's <code>_eq</code>/<code>_cmp</code> meta-functions.<ul>
 <li>Once again, this is DIFFERENT than Squirrel that checks for reference-equality.</li>
-<li>Can always use <code>is</code> and <code>is_not</code> to compare if two arrays or dictionaries are the same object (reference-equality)</li>
+<li>Can always use <code>is</code> and <code>is_not</code> to compare if two arrays or tables are the same object (reference-equality)</li>
 </ul>
 </li>
-<li>Added function <code>int object_id(obj)</code> to get object id for class instances, arrays, and dictionaries<ul>
+<li>Added function <code>int object_id(obj)</code> to get object id for class instances, arrays, and tables<ul>
 <li>returns <code>0</code> for other types</li>
 </ul>
 </li>

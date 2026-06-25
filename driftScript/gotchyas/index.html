@@ -1284,9 +1284,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#must-use-operator-to-add-new-keyvalue-to-dictionary" class="md-nav__link">
+  <a href="#must-use-operator-to-add-new-keyvalue-to-table" class="md-nav__link">
     <span class="md-ellipsis">
-      Must use &lt;- operator to add new key/value to dictionary
+      Must use &lt;- operator to add new key/value to table
     </span>
   </a>
   
@@ -1320,18 +1320,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-dictionary-and-array-tasks" class="md-nav__link">
+  <a href="#common-table-and-array-tasks" class="md-nav__link">
     <span class="md-ellipsis">
-      Common dictionary and array tasks
+      Common table and array tasks
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#dictionary-and-array-foreach-loops" class="md-nav__link">
+  <a href="#table-and-array-foreach-loops" class="md-nav__link">
     <span class="md-ellipsis">
-      Dictionary and array foreach loops
+      Table and array foreach loops
     </span>
   </a>
   
@@ -1505,9 +1505,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#must-use-operator-to-add-new-keyvalue-to-dictionary" class="md-nav__link">
+  <a href="#must-use-operator-to-add-new-keyvalue-to-table" class="md-nav__link">
     <span class="md-ellipsis">
-      Must use &lt;- operator to add new key/value to dictionary
+      Must use &lt;- operator to add new key/value to table
     </span>
   </a>
   
@@ -1541,18 +1541,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-dictionary-and-array-tasks" class="md-nav__link">
+  <a href="#common-table-and-array-tasks" class="md-nav__link">
     <span class="md-ellipsis">
-      Common dictionary and array tasks
+      Common table and array tasks
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#dictionary-and-array-foreach-loops" class="md-nav__link">
+  <a href="#table-and-array-foreach-loops" class="md-nav__link">
     <span class="md-ellipsis">
-      Dictionary and array foreach loops
+      Table and array foreach loops
     </span>
   </a>
   
@@ -1617,19 +1617,19 @@
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">myVariable2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="w">         </span><span class="c1"># script-error! Forgot local keyword.</span>
 </span></code></pre></div></li>
 </ul>
-<h2 id="must-use-operator-to-add-new-keyvalue-to-dictionary">Must use <code>&lt;-</code> operator to add new key/value to dictionary</h2>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># need to use &lt;- to add new key/value to dictionary</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kt">local</span><span class="w"> </span><span class="n">myDictionary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">myDictionary</span><span class="p">[</span><span class="s">&quot;abc&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="mi">7</span><span class="w">        </span><span class="c1"># works</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">myDictionary</span><span class="p">[</span><span class="s">&quot;def&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="w">         </span><span class="c1"># script error! key &quot;def&quot; does not exist!</span>
+<h2 id="must-use-operator-to-add-new-keyvalue-to-table">Must use <code>&lt;-</code> operator to add new key/value to table</h2>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># need to use &lt;- to add new key/value to table</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kt">local</span><span class="w"> </span><span class="n">myTable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">myTable</span><span class="p">[</span><span class="s">&quot;abc&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="mi">7</span><span class="w">        </span><span class="c1"># works</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">myTable</span><span class="p">[</span><span class="s">&quot;def&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="w">         </span><span class="c1"># script error! key &quot;def&quot; does not exist!</span>
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1"># however, you can use = to modify existing value</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">myDictionary</span><span class="p">[</span><span class="s">&quot;abc&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w">        </span><span class="c1"># works, since key &quot;abc&quot; already exists</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">myDictionary</span><span class="p">[</span><span class="s">&quot;abc&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="mi">12</span><span class="w">       </span><span class="c1"># also works</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">myTable</span><span class="p">[</span><span class="s">&quot;abc&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="w">        </span><span class="c1"># works, since key &quot;abc&quot; already exists</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">myTable</span><span class="p">[</span><span class="s">&quot;abc&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="mi">12</span><span class="w">       </span><span class="c1"># also works</span>
 </span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1"># note: can also create dictionaries in-place</span>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="kt">local</span><span class="w"> </span><span class="n">myNewDictionary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">abc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="n">def</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">}</span><span class="w">   </span><span class="c1"># no quotes for in-place string keys</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="n">myNewDictionary</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;some string&quot;</span><span class="w">        </span><span class="c1"># keys can also be integers</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1"># note: can also create tables in-place</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="kt">local</span><span class="w"> </span><span class="n">myNewTable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">abc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="n">def</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">}</span><span class="w">   </span><span class="c1"># no quotes for in-place string keys</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="n">myNewTable</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;some string&quot;</span><span class="w">        </span><span class="c1"># keys can also be integers</span>
 </span></code></pre></div>
 <h2 id="assignment-operator-copies-reference-not-value-for-custom-types"><code>=</code> assignment operator copies reference, not value! (for custom types)</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">local</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">Vec2</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">6.0</span><span class="p">)</span>
@@ -1707,13 +1707,13 @@
 </span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="cm">*/</span>
 </span></code></pre></div></li>
 </ul>
-<h2 id="common-dictionary-and-array-tasks">Common dictionary and array tasks</h2>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># deleting from dictionary</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kt">local</span><span class="w"> </span><span class="n">myDictionary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="o">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;def&quot;</span><span class="o">:</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="p">}</span><span class="w">     </span><span class="c1"># create dictionary</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">delete</span><span class="w"> </span><span class="n">myDictionary</span><span class="p">[</span><span class="s">&quot;abc&quot;</span><span class="p">]</span><span class="w">                  </span><span class="c1"># delete &quot;abc&quot; from dictionary</span>
+<h2 id="common-table-and-array-tasks">Common table and array tasks</h2>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># deleting from table</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kt">local</span><span class="w"> </span><span class="n">myTable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="o">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;def&quot;</span><span class="o">:</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="p">}</span><span class="w">     </span><span class="c1"># create table</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">delete</span><span class="w"> </span><span class="n">myTable</span><span class="p">[</span><span class="s">&quot;abc&quot;</span><span class="p">]</span><span class="w">                  </span><span class="c1"># delete &quot;abc&quot; from table</span>
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c1"># check if key in dictionary</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="kt">local</span><span class="w"> </span><span class="n">bResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;def&quot;</span><span class="w"> </span><span class="kt">in</span><span class="w"> </span><span class="n">myDictionary</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c1"># check if key in table</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="kt">local</span><span class="w"> </span><span class="n">bResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;def&quot;</span><span class="w"> </span><span class="kt">in</span><span class="w"> </span><span class="n">myTable</span>
 </span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">print</span><span class="p">(</span><span class="n">bResult</span><span class="p">)</span><span class="w">  </span><span class="c1"># true</span>
 </span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
 </span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="c1"># arrays</span>
@@ -1726,35 +1726,35 @@
 <ul>
 <li>See <a href="http:#squirrel-lang.org/squirreldoc/reference/language.html">http:#squirrel-lang.org/squirreldoc/reference/language.html</a> for more language features.</li>
 </ul>
-<h2 id="dictionary-and-array-foreach-loops">Dictionary and array foreach loops</h2>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># dictionary initializer syntax #1: { key = val }</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1"># Possible Output (dictionary iteration order is unspecified):</span>
+<h2 id="table-and-array-foreach-loops">Table and array foreach loops</h2>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># table initializer syntax #1: { key = val }</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1"># Possible Output (table iteration order is unspecified):</span>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1"># a -&gt; 5</span>
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># c -&gt; dog</span>
 </span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="c1"># b -&gt; 2</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="kt">local</span><span class="w"> </span><span class="n">myDict1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;dog&quot;</span><span class="p">}</span>
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="kt">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="kt">in</span><span class="w"> </span><span class="n">myDict1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="kt">local</span><span class="w"> </span><span class="n">myTable1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;dog&quot;</span><span class="p">}</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="kt">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="kt">in</span><span class="w"> </span><span class="n">myTable1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="n">key</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; -&gt; &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">val</span><span class="p">)</span>
 </span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="p">}</span>
 </span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
-</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="c1"># dictionary initializer syntax #2: { &quot;key&quot;: val }</span>
-</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="c1"># Possible Output (dictionary iteration order is unspecified):</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="c1"># table initializer syntax #2: { &quot;key&quot;: val }</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="c1"># Possible Output (table iteration order is unspecified):</span>
 </span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="c1"># a -&gt; 5</span>
 </span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="c1"># c -&gt; dog</span>
 </span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="c1"># b -&gt; 2</span>
-</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="kt">local</span><span class="w"> </span><span class="n">myDict2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;a&quot;</span><span class="o">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="o">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;dog&quot;</span><span class="p">}</span>
-</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="kt">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="kt">in</span><span class="w"> </span><span class="n">myDict2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="kt">local</span><span class="w"> </span><span class="n">myTable2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;a&quot;</span><span class="o">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="o">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;dog&quot;</span><span class="p">}</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="kt">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="kt">in</span><span class="w"> </span><span class="n">myTable2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="n">key</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; : &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">val</span><span class="p">)</span>
 </span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="p">}</span>
 </span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>
-</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="c1"># dictionary single variable iteration..</span>
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="c1"># table single variable iteration..</span>
 </span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="c1"># NOTE: this syntax outputs value, not key as in languages like python</span>
-</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="c1"># Possible Output (dictionary iteration order is unspecified):</span>
+</span><span id="__span-8-23"><a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="c1"># Possible Output (table iteration order is unspecified):</span>
 </span><span id="__span-8-24"><a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="c1"># 5</span>
 </span><span id="__span-8-25"><a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="c1"># dog</span>
 </span><span id="__span-8-26"><a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="c1"># 2</span>
-</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="kt">local</span><span class="w"> </span><span class="n">myDict3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;a&quot;</span><span class="o">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="o">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;dog&quot;</span><span class="p">}</span>
-</span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a><span class="kt">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">val</span><span class="w"> </span><span class="kt">in</span><span class="w"> </span><span class="n">myDict3</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-27"><a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="kt">local</span><span class="w"> </span><span class="n">myTable3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;a&quot;</span><span class="o">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="o">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;dog&quot;</span><span class="p">}</span>
+</span><span id="__span-8-28"><a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a><span class="kt">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">val</span><span class="w"> </span><span class="kt">in</span><span class="w"> </span><span class="n">myTable3</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-8-29"><a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="w">    </span><span class="n">print</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
 </span><span id="__span-8-30"><a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a><span class="p">}</span>
 </span><span id="__span-8-31"><a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a>
@@ -1779,11 +1779,11 @@
 </span><span id="__span-8-50"><a id="__codelineno-8-50" name="__codelineno-8-50" href="#__codelineno-8-50"></a><span class="p">}</span>
 </span></code></pre></div>
 <ul>
-<li>Please note, single variable foreach loop with dictionary outputs <code>value</code> and not <code>key</code>.<ul>
+<li>Please note, single variable foreach loop with table outputs <code>value</code> and not <code>key</code>.<ul>
 <li>This is different from other languages like <code>Python</code>.</li>
 </ul>
 </li>
-<li>dictionary foreach iteration order is <code>unspecified</code> (which is different than random)</li>
+<li>table foreach iteration order is <code>unspecified</code> (which is different than random)</li>
 </ul>
 <h2 id="other">Other</h2>
 <ul>
