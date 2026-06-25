@@ -1502,6 +1502,8 @@ to learn due to more learning material.</p>
 <li>same as squirrel's <code>_unm</code> (unary minus operator) except for <code>+</code> instead of <code>-</code></li>
 </ul>
 </li>
+<li>Normal division operator <code>/</code> always returns float now.</li>
+<li>Added floor division operator <code>//</code>.</li>
 <li>Changed various lexing and parsing rules to be more intuitive<ul>
 <li><code>local a = .1</code> is invalid in squirrel because floats must begin with a digit: i.e. <code>0.1</code><ul>
 <li>However, this is valid Drift Script!</li>
@@ -1539,16 +1541,17 @@ to learn due to more learning material.</p>
 <li>more type information at <a href="/DriftDocs/driftScript/math/#scalar-types">scalar-types</a></li>
 </ul>
 </li>
+<li>Enums and enum scopes reworked</li>
+<li>Function scopes reworked</li>
+<li>Various base library changes</li>
+<li>Bunch of other stuff..</li>
 <li><code>Squirrel Standard Library</code> is not supported.<ul>
 <li>Although, DriftScript provides many functions with identical behavior.</li>
 </ul>
 </li>
 <li>Future TODOs:<ul>
 <li>Better error-handling and compilation/runtime errors.</li>
-<li>Improved vscode syntax-highlighting, auto-complete, etc.<ul>
-<li>anyone who knows how to write such a vscode plugin, let me know..</li>
-</ul>
-</li>
+<li>Improved vscode syntax-highlighting, auto-complete, etc.</li>
 </ul>
 </li>
 </ul>
