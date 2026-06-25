@@ -178,7 +178,6 @@ table params = {
     - Searches at `m_aabrs` for units
 - If `m_locations` and `m_aabrs` is not defined:
     - Searches for units on entire map
-- Refer to {{enum("BoundsCheck ")}} if needed.
 ## gx_get_units_count
 ```sq
 int gx_get_units_count(table params = {})
@@ -208,7 +207,6 @@ table params = {
     - Searches at `m_aabrs` for units
 - If `m_locations` and `m_aabrs` is not defined:
     - Searches for units on entire map
-- Refer to {{enum("BoundsCheck ")}} if needed.
 ## gx_units_touching
 ```sq
 int[] gx_units_touching(int u0, int u1)
@@ -358,7 +356,6 @@ table params = {
 
 - If neither `m_dir2d` nor `m_dir3d` is set, unit will be thrown in random direction
 - Only `m_dir2d` or `m_dir3d` should be set. Setting both is undefined behavior.
-- Refer to {{type("Vec2")}} and {{type("Vec3")}} if needed.
 ## gx_set_victory_status
 ```sq
 void gx_set_victory_status(table params)
@@ -556,7 +553,7 @@ table params = {
 void gx_unlock_player_camera(int playerID)
 ```
 
-- unlocks `player_id` camera position set by {{fn("gx_lock_player_camera")}}
+- unlocks `player_id` camera position set by `gx_lock_player_camera`
 - equivalent to calling `gx_lock_player_camera(player_id, {})`
 ## gx_get_kills
 ```sq
@@ -844,7 +841,6 @@ void gx_register_for_location_events(bool bEnable, table params = {})
 - Register to receive `UnitEnteredLocation` and `UnitExitedLocation` events
 - no optional parameters currently
 - Usually you will want to only call this one time time in the `gx_sim_init` function
-- See {{enum("EventType")}} and {{eventQueue()}} for more information
 ## gx_str_color_username
 ```sq
 string gx_str_color_username(ComplexColor color, string username)
@@ -1327,7 +1323,6 @@ table params = {
 ```
 
 - Creates the Effect of type `m_type` and returns the Effect ID
-- See {{enum("EffectType")}} for effects
 ## gx_destroy_effect
 ```sq
 void gx_destroy_effect(int effectID)
@@ -1373,7 +1368,6 @@ table params = {
 - (i.e., a spell that can only target units cannot target a `m_pos` or `m_location`)
 - `CommandType` can also be a spell identifier
 - if `bQueueCommand` is `true`, appends the command in the unit's command queue, otherwise command queue beforehand
-- See {{enum("CommandType")}} for possible command values
 ## gx_force_select_units
 ```sq
 void gx_force_select_units(int playerID, int unitIDs[])
