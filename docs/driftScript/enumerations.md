@@ -305,18 +305,9 @@ enum PlayerProp
     AlliedVictory = 26,         # Read-Write (bool)
     Color = 27,                 # Read-Write (Vec3)
     ForceID = 28,               # Read (int)
-    PlayerNameColor = 29,       # Read-Write        (int) (i.e. ColorDesc)
-                                # Is Write-Enabled only for computer players
+    PlayerNameColor = 29,       # Read-Write (int) (i.e. ColorDesc)
     ColoredPlayerName = 30,     # Read (string)
-                                # Equivalent to:
-                                # gx_get_player_prop(PlayerProp.PlayerNameColorDesc, playerID)
-                                # + PlayerName
     ColoredPlayerName2 = 31     # Read (string)
-                                # Equivalent to:
-                                # gx_str_encode_color_id(ColorID.PushColor)
-                                # + gx_get_player_prop(PlayerProp.ColoredPlayerName, playerID)
-                                # + PlayerName
-                                # + gx_str_encode_color_id(ColorID.PopColor)
 }
 ```
 
