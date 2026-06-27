@@ -10,6 +10,20 @@ enum Race
 ```
 
 
+## BuildItemType
+```sq
+enum BuildItemType
+{
+    Invalid = 0,
+    Unit = 1,
+    PlayerResearch = 2,
+    UnitResearch = 3
+    PlayerAmmo = 4,
+    UnitAmmo = 5
+}
+```
+
+
 ## DeathCause
 ```sq
 enum DeathCause
@@ -275,6 +289,17 @@ enum DecalProp
 ```
 
 
+## UdProp
+```sq
+enum UdProp
+{
+    Invalid = 0,        # Access/Type
+    FriendlyName = 1,   # Read-Write
+}
+```
+
+UnitData Property
+- Properties can only be modified during the `gx_map_init` stage
 ## PlayerProp
 ```sq
 enum PlayerProp

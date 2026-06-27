@@ -581,53 +581,44 @@ table params = {
     int m_buildTime
     Expr<bool> m_req,
     Expr<int> m_attackLevel,
-    Expr<int> m_armorLevel
+    Expr<int> m_armorLevel,
+    string m_spells[],
+    BuildItemTable m_buildItems[],
+    BuildStructureItemTable m_buildStructuresBasic[],
+    BuildStructureItemTable m_buildStructuresAdv[],
+    table<string, int> m_startingAmmo,
+    int m_fungusHarvestAmount,
+    int m_gemstoneHarvestAmount,
+    bool m_bDisableHarvest,
+    bool m_bDisableTransport,
+    bool m_bEnableMove,
+    bool m_bEnableCanRepair,
+    bool m_bStructureUnit,
+    bool m_bAirUnit,
 }
 ```
 
+```sq
+BuildItemTable = {
+    BuildItemType m_type,
+    string m_name,
+    Int2 m_pos
+}
+
+BuildStructureItemTable = {
+    string m_name,
+    Int2 m_pos
+}
+```
+
+- Feel free to request `BRZDRIFT` to add more modifiable properties
+- Setting either `m_fungusHarvestAmount` or `m_gemstoneHarvestAmount` will enable harvesting (unless `m_bDisableHarvest` is `true`)
+    - Note: Allowing harvesting will change attack priority and few other things
 ## gx_map_init_copy_ud
 ```sq
 void gx_map_init_copy_ud(string name, string newName)
 ```
 
-
-## gx_map_init_remove_all_build_structure_items
-```sq
-void gx_map_init_remove_all_build_structure_items(string name)
-```
-
-
-## gx_map_init_add_build_structure_item
-```sq
-void gx_map_init_add_build_structure_item(string unitType, table params = {})
-```
-
-```sq
-table params = {
-    string m_structure,             # name of structure to build, i.e. "Microwave"
-    Float2 m_position,              # position in command card to place at, leaving empty will use default
-    bool bBuildAdvanced = false     # default is false, if set to True, will be placed in 'build advanced' tab
-}
-```
-
-## gx_map_init_remove_all_build_items
-```sq
-void gx_map_init_remove_all_build_items(string unitType)
-```
-
-
-## gx_map_init_add_build_item
-```sq
-void gx_map_init_add_build_item(string unitType, table params)
-```
-
-```sq
-table params = {
-    string m_unitType,      # unit type to add
-    string m_research,      # research to add
-    Float2 m_position       # position in command card
-}
-```
 
 ## gx_modify_scoreboard
 ```sq
@@ -817,7 +808,7 @@ bool gx_is_players_mutually_allied(table params)
 table params = {
     int m_forceIDs[],
     int m_playerIDs[],
-    m_bCheckAlliedVictory = true
+    bool m_bCheckAlliedVictory = true
 }
 ```
 
@@ -1248,6 +1239,12 @@ Float4 gx_unit_vec_or_zero(Float4 val)
 
 - Computes the unit vector of `v`.
 - Will return zero-magnitude vector if unit vector `v` has magnitude of `0`.
+## gx_shuffle_array
+```sq
+void gx_shuffle_array(object vals[], Random r)
+```
+
+- Shuffles/randomizes items in array using the passed in `Random` object
 ## gx_terrain_offset_z_add
 ```sq
 void gx_terrain_offset_z_add(Int2 vertexPos, float offset)
@@ -1576,6 +1573,8 @@ DamageExtraTable {
 }
 ```
 
+- it is recommended to just set `m_animDuration` instead of both `m_animDuration` and `m_cooldown`.
+    - the real cooldown will be calculated as `max(m_animDuration, m_cooldown)`
 ## gx_is_event_queue_empty
 ```sq
 void gx_is_event_queue_empty()
@@ -1626,6 +1625,18 @@ void gx_add_unit_prop(UnitProp prop, int unitID, mixed val)
 ```
 
 
+## gx_get_ud_prop
+```sq
+mixed gx_get_ud_prop(UnitProp prop, string udName)
+```
+
+- Get unit data property
+## gx_set_ud_prop
+```sq
+void gx_set_ud_prop(UnitProp prop, string udName, mixed val)
+```
+
+- Set unit data property
 ## gx_get_location_prop
 ```sq
 mixed gx_get_location_prop(LocationProp prop, string locationName)
@@ -1966,6 +1977,12 @@ string.toupper()
 string.weakref()
 ```
 
+## is_numeric
+```sq
+bool is_numeric(object obj)
+```
+
+- returns `true` is `obj` is `int` or `float`
 ## Float2
 ```sq
 Vec2 Float2(mixed x, mixed y)
