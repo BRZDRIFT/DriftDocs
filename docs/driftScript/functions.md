@@ -578,7 +578,7 @@ table params = {
     int m_gemstoneCost,
     int m_fungusCost,
     int m_supplyCost,
-    int m_buildTime
+    int m_buildTime,
     Expr<bool> m_req,
     Expr<int> m_attackLevel,
     Expr<int> m_armorLevel,
@@ -642,10 +642,13 @@ DamageExtraTable {
     - Note: Allowing harvesting will change attack priority and few other things
 ## gx_map_init_copy_ud
 ```sq
-void gx_map_init_copy_ud(string name, string newName)
+string gx_map_init_copy_ud(string name, string newName)
 ```
 
-
+- returns `newName` on success, returns empty string on failure
+- `newName` must being with `User_`
+- `newName` must not already be a unit data
+- `name` must be an existing unit data
 ## gx_modify_scoreboard
 ```sq
 void gx_modify_scoreboard(table params = {})
@@ -1561,6 +1564,12 @@ int gx_get_num_attacks_in_ud_auto_attack_anim(string unitType, string animName)
 ```
 
 
+## gx_is_attack_anim_for_siege_mode
+```sq
+bool gx_is_attack_anim_for_siege_mode(string unitType, string animName)
+```
+
+
 ## gx_is_event_queue_empty
 ```sq
 void gx_is_event_queue_empty()
@@ -1773,7 +1782,7 @@ float atan(float x)
 float atan2(float y, float x)
 ```
 
-- arctan2 of x
+- Computes the arc tangent of `y / x` using the signs of arguments to determine the correct quadrant
 ## lerp
 ```sq
 float lerp(float x0, float x1, float t)

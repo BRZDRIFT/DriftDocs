@@ -12,9 +12,6 @@ to learn due to more learning material.
 
 ## Technical
 `DriftScript` is a `!!HEAVILY!!` modified version of [Squirrel 3.2](http://squirrel-lang.org/squirreldoc/reference/language.html) language.
-- Most of the changes made to make it more similar to other languages such as `Python 1.3`
-- New custom `_eq` and `_hash` operators, `//` floor divison, other changes..
-- `==` reworked to call `_eq` and _`cmp` instead of compare references
 
 Please refer to the squirrel language reference manual here:  
 [http://squirrel-lang.org/squirreldoc/reference/language.html](http://squirrel-lang.org/squirreldoc/reference/language.html)

@@ -293,8 +293,9 @@ enum DecalProp
 ```sq
 enum UdProp
 {
-    Invalid = 0,        # Access/Type
-    FriendlyName = 1,   # Read-Write
+    Invalid = 0,            # Access/Type
+    FriendlyName = 1,       # Read-Write
+    SupportsSiegeMode = 2   # Read
 }
 ```
 
