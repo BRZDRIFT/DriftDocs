@@ -140,9 +140,11 @@ def OutputFunctions():
 
 def OutputEnums():
     finalOutput = ''
-    finalOutput += '⚠️ **Warning** \n\n'
-    finalOutput += '- Do not rely on enum values staying the same!'
-    finalOutput += '- Always use the fully qualified name. i.e. `Race.Human`, not `1`!\n\n'
+    finalOutput += '> [!WARNING]\n'
+    finalOutput += '> Do not rely on enum values staying the same!\n'
+    finalOutput += '> Always use the fully qualified name. i.e. `Race.Human`, not `1`!\n'
+    finalOutput += '\n'
+    
 
     for enumInfo in g_enumInfos:
         finalOutput += '## ' + enumInfo[0] + '\n'
