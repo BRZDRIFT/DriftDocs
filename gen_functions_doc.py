@@ -141,7 +141,7 @@ def OutputFunctions():
 def OutputEnums():
     finalOutput = ''
     finalOutput += '!!! warning\n'
-    finalOutput += '    Do not rely on enum values staying the same!\n'
+    finalOutput += '    Do not rely on enum values staying the same!  \n'
     finalOutput += '    Always use the fully qualified name. i.e. `Race.Human`, not `1`!\n'
     finalOutput += '\n'
 
