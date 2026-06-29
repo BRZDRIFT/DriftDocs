@@ -1627,13 +1627,13 @@ void gx_add_unit_prop(UnitProp prop, int unitID, mixed val)
 
 ## gx_get_ud_prop
 ```sq
-mixed gx_get_ud_prop(UnitProp prop, string udName)
+mixed gx_get_ud_prop(UdProp prop, string udName)
 ```
 
 - Get unit data property
 ## gx_set_ud_prop
 ```sq
-void gx_set_ud_prop(UnitProp prop, string udName, mixed val)
+void gx_set_ud_prop(UdProp prop, string udName, mixed val)
 ```
 
 - Set unit data property
