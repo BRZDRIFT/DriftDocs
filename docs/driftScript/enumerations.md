@@ -1,3 +1,5 @@
+- Other than Enum Members named `Invalid` or `Unknown`, do not rely on their values staying the same across versions!
+
 ## Race
 ```sq
 enum Race

@@ -46,7 +46,7 @@
 ## Division operators
 - `/` = normal division, result is always float
 - `//` floored division, result is either float or int
-- Essentially, the same as `Python 1.3`
+- Essentially, the same as `Python 3`
 - Examples:
      - `3/2 == 1.5`
      - `3//2 == 1`
