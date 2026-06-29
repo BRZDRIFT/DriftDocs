@@ -586,6 +586,7 @@ table params = {
     BuildItemTable m_buildItems[],
     BuildStructureItemTable m_buildStructuresBasic[],
     BuildStructureItemTable m_buildStructuresAdv[],
+    AutoAttackTable m_autoAttacks[],
     table<string, int> m_startingAmmo,
     int m_fungusHarvestAmount,
     int m_gemstoneHarvestAmount,
@@ -608,6 +609,31 @@ BuildItemTable = {
 BuildStructureItemTable = {
     string m_name,
     Int2 m_pos
+}
+
+AutoAttackTable {
+    float m_range,
+    int m_animDuration,
+    int m_cooldown,
+    bool m_bMelee,
+    bool m_bCanTargetAir,
+    bool m_bCanTargetGround,
+    string m_anim,
+    Expr<bool> m_req,
+    AttackTable m_attacks[]
+}
+
+AttackTable {
+    AttackType m_type,
+    float m_splashRadius,
+    int m_dmg,
+    DamageExtraTable m_dmgExtra
+}
+
+DamageExtraTable {
+    int m_vsLight,
+    int m_vsMedium,
+    int m_vsHeavy
 }
 ```
 
@@ -1535,46 +1561,6 @@ int gx_get_num_attacks_in_ud_auto_attack_anim(string unitType, string animName)
 ```
 
 
-## gx_clear_ud_auto_attacks
-```sq
-void gx_clear_ud_auto_attacks(string unitType)
-```
-
-
-## gx_add_ud_auto_attack
-```sq
-void gx_add_ud_auto_attack(string unitType, AutoAttackTable params)
-```
-
-```sq
-AutoAttackTable {
-    float m_range,
-    int m_animDuration,
-    int m_cooldown,
-    bool m_bMelee,
-    bool m_bCanTargetAir,
-    bool m_bCanTargetGround,
-    string m_anim,
-    Expr<bool> m_req,
-    AttackTable m_attacks[]
-}
-
-AttackTable {
-    AttackType m_type,
-    float m_splashRadius,
-    int m_dmg,
-    DamageExtraTable m_dmgExtra
-}
-
-DamageExtraTable {
-    int m_vsLight,
-    int m_vsMedium,
-    int m_vsHeavy
-}
-```
-
-- it is recommended to just set `m_animDuration` instead of both `m_animDuration` and `m_cooldown`.
-    - the real cooldown will be calculated as `max(m_animDuration, m_cooldown)`
 ## gx_is_event_queue_empty
 ```sq
 void gx_is_event_queue_empty()
