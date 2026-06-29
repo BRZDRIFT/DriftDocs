@@ -1,6 +1,6 @@
-> [!WARNING]
-> Do not rely on enum values staying the same!
-> Always use the fully qualified name. i.e. `Race.Human`, not `1`!
+> [!WARNING]  
+> Do not rely on enum values staying the same!  
+> Always use the fully qualified name. i.e. `Race.Human`, not `1`!  
 
 ## Race
 ```sq
