@@ -4,7 +4,7 @@ Event Structure:
 ```sq
 table Event
 {
-    EventType m_type = ScriptEventType::Invalid;
+    EventType m_type = EventType::Invalid;
     ComplexColor m_oldPlayerNameColor;
     string m_oldPlayerName;
     string m_oldPlayerName2;
@@ -18,10 +18,10 @@ table Event
     int m_unitID;
     int m_itemPickupUnitID;
     string m_location;
-    string m_itemUnitType;
+    string m_itemUd;
     string m_itemTag;
     string m_customSpellEventTag;
-    string m_unitType;
+    string m_ud;
     string m_unitTag;
     DeathCause m_deathCause;
     int m_killerPlayerID;
@@ -46,11 +46,11 @@ function gx_sim_update()
         local ev = gx_pop_event_from_queue()
         if (ev.m_type == EventType.PlayerLeftGame)
         {
-            gx_print("Player " + ev.m_playerID + " has left the game!")
+            print("Player " + ev.m_playerID + " has left the game!")
         }
         else if (ev.m_type == EventType.PlayerNameChanged)
         {
-            gx_print(ev.m_oldPlayerName + " changed name to " + ev.m_playerName)
+            print(ev.m_oldPlayerName + " changed name to " + ev.m_playerName)
         }
     }
 
