@@ -140,8 +140,8 @@ def OutputFunctions():
 
 def OutputEnums():
     finalOutput = ''
-    finalOutput ='# Important!\n\n'
-    finalOutput ='- Other than Enum Members named `Invalid` or `Unknown`, do not rely on their values staying the same across versions!\n\n'
+    finalOutput += '# Important!\n\n'
+    finalOutput += '- Other than Enum Members named `Invalid` or `Unknown`, do not rely on their values staying the same!\n\n'
     for enumInfo in g_enumInfos:
         finalOutput += '## ' + enumInfo[0] + '\n'
         finalOutput += '```sq\n'
