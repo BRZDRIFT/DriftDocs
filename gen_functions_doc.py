@@ -144,7 +144,6 @@ def OutputEnums():
     finalOutput += '> Do not rely on enum values staying the same!\n'
     finalOutput += '> Always use the fully qualified name. i.e. `Race.Human`, not `1`!\n'
     finalOutput += '\n'
-    
 
     for enumInfo in g_enumInfos:
         finalOutput += '## ' + enumInfo[0] + '\n'
