@@ -152,9 +152,9 @@ enum EventType
     ButtonPushed = 11,          # Populates m_playerID, m_unitID
     Explosion = 12,             # Populates m_radius, m_pos, m_explosionEventType
     ChatMessage = 13,           # Populates m_playerID, m_playerName, m_playerName2, m_text
-    ItemPickup = 14,            # Populates m_playerID, m_unitID, m_pos, m_itemUnitType, m_itemTag
+    ItemPickup = 14,            # Populates m_playerID, m_unitID, m_pos, m_itemUd, m_itemTag
     CustomSpellEvent = 15,      # Populates m_playerID, m_unitID, m_pos, m_customSpellEventTag
-    UnitDeath = 16,             # Populates m_unitID, m_unitType, m_unitTag, m_playerID, m_killerPlayerID, m_deathCause
+    UnitDeath = 16,             # Populates m_unitID, m_ud, m_unitTag, m_playerID, m_killerPlayerID, m_deathCause
     TimerExpired = 17
 }
 ```
@@ -235,7 +235,7 @@ enum UnitProp
     Health = 2,                     # Read-Write (float)
     MaxSpeed = 3,                   # Read (float)
     Size = 4,                       # Read (float)
-    UnitType = 5,                   # Read (string)
+    UdName = 5,                   # Read (string)
     IsOnFire = 6,                   # Read (bool)
     ParentJeep = 7,                 # Read-Write (int)
     ParentDropship = 8,             # Read-Write (int)
@@ -294,8 +294,8 @@ enum DecalProp
 enum UdProp
 {
     Invalid = 0,            # Access/Type
-    FriendlyName = 1,       # Read-Write
-    SupportsSiegeMode = 2   # Read
+    FriendlyName = 1,       # Read-Write (string)
+    SupportsSiegeMode = 2   # Read (bool)
 }
 ```
 

@@ -76,7 +76,7 @@ int gx_create_unit(table params)
 
 ```sq
 table params = {
-    string m_unitType,  # required
+    string m_ud,  # required
     int m_playerID,     # required
     Float2 m_pos,
     string m_location,
@@ -87,7 +87,7 @@ table params = {
 }
 ```
 
-- Will create unit of type `m_unitType` at position `m_pos` or at location `m_location` for player `m_playerID`.
+- Will create unit of type `m_ud` at position `m_pos` or at location `m_location` for player `m_playerID`.
 - It is undefined behavior to have both `m_pos` and `m_location` set.
 - If neither `m_pos` nor `m_location` is set, unit will be created at `(0, 0)`
 - Units may not be placed at the exact center of `m_location`, if you need exact position use `m_pos`.
@@ -110,8 +110,8 @@ table params = {
     float m_radius,                         # search radius around unit
     int m_playerIDs[],                      # Optional, Filter for player_id
     int m_forceIDs[],                       # Optional, Filter for force_id
-    string m_unitTypes[],                   # Optional, Filter for certain unit types
-    string m_exceptUnitTypes[],             # Optional, ignore certain unit types
+    string m_uds[],                         # Optional, Filter for certain unit types
+    string m_exceptUds[],                   # Optional, ignore certain unit types
     bool m_bIncludeAirUnits = true,         # Optional, Set to false if you want to exclude air units
     bool m_bIncludeGroundUnits = true,      # Optional, set to false if you want to exclude ground units
     bool m_bIncludeKilledUnits = false,     # Optional, Set to true if you want to include killed units
@@ -135,8 +135,8 @@ table params = {
     float m_radius,                         # search radius around unit
     int m_playerIDs[],                      # Optional, Filter for player_id
     int m_forceIDs[],                       # Optional, Filter for force_id
-    string m_unitTypes[],                   # Optional, Filter for certain unit types
-    string m_exceptUnitTypes[],             # Optional, ignore certain unit types
+    string m_uds[],                   # Optional, Filter for certain unit types
+    string m_exceptUds[],             # Optional, ignore certain unit types
     bool m_bIncludeAirUnits = true,         # Optional, Set to false if you want to exclude air units
     bool m_bIncludeGroundUnits = true,      # Optional, set to false if you want to exclude ground units
     bool m_bIncludeKilledUnits = false,     # Optional, Set to true if you want to include killed units
@@ -162,8 +162,8 @@ table params = {
     BoundsCheck m_boundsCheck               # Default: BoundsCheck.Center
     int m_playerIDs[],                      # Optional, Filter for player_id
     int m_forceIDs[],                       # Optional, Filter for force_id
-    string m_unitTypes[],                   # Optional, Filter for certain unit types
-    string m_exceptUnitTypes[],             # Optional, ignore certain unit types
+    string m_uds[],                   # Optional, Filter for certain unit types
+    string m_exceptUds[],             # Optional, ignore certain unit types
     bool m_bIncludeAirUnits = true,         # Optional, Set to false if you want to exclude air units
     bool m_bIncludeGroundUnits = true,      # Optional, set to false if you want to exclude ground units
     bool m_bIncludeKilledUnits = false,     # Optional, Set to true if you want to include killed units
@@ -191,8 +191,8 @@ table params = {
     BoundsCheck m_boundsCheck               # Default: BoundsCheck.Center
     int m_playerIDs[],                      # Optional, Filter for player_id
     int m_forceIDs[],                       # Optional, Filter for force_id
-    string m_unitTypes[],                   # Optional, Filter for certain unit types
-    string m_exceptUnitTypes[],             # Optional, ignore certain unit types
+    string m_uds[],                   # Optional, Filter for certain unit types
+    string m_exceptUds[],             # Optional, ignore certain unit types
     bool m_bIncludeAirUnits = true,         # Optional, Set to false if you want to exclude air units
     bool m_bIncludeGroundUnits = true,      # Optional, set to false if you want to exclude ground units
     bool m_bIncludeKilledUnits = false,     # Optional, Set to true if you want to include killed units
@@ -1548,25 +1548,25 @@ table params = {
 
 ## gx_get_ud_race
 ```sq
-Race gx_get_ud_race(string unitType)
+Race gx_get_ud_race(string udName)
 ```
 
 
 ## gx_get_ud_auto_attack_anims
 ```sq
-string[] gx_get_ud_auto_attack_anims(string unitType)
+string[] gx_get_ud_auto_attack_anims(string udName)
 ```
 
 
 ## gx_get_num_attacks_in_ud_auto_attack_anim
 ```sq
-int gx_get_num_attacks_in_ud_auto_attack_anim(string unitType, string animName)
+int gx_get_num_attacks_in_ud_auto_attack_anim(string udName, string animName)
 ```
 
 
-## gx_is_attack_anim_for_siege_mode
+## gx_is_ud_auto_attack_anim_for_siege_mode
 ```sq
-bool gx_is_attack_anim_for_siege_mode(string unitType, string animName)
+bool gx_is_ud_auto_attack_anim_for_siege_mode(string udName, string animName)
 ```
 
 
