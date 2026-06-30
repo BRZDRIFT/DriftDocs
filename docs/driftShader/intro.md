@@ -36,11 +36,15 @@ uniform sampler2D iChannel3;                // can be set via Background tab
 ## Color Conversion Functions
 ```glsl
 float gx_linear_to_srgb(float linear)
+float gx_srgb_to_linear(float srgb)
 vec3 gx_linear_to_srgb(vec3 linear)
 vec4 gx_linear_to_srgb(vec4 linear)
-float gx_srgb_to_linear(float srgb)
 vec3 gx_srgb_to_linear(vec3 srgb)
 vec4 gx_srgb_to_linear(vec4 srgb)
+vec3 gx_hsv_to_srgb(vec3 hsv);
+vec4 gx_hsv_to_srgb(vec4 hsva);
+vec3 gx_srgb_to_hsv(vec3 srgb);
+vec4 gx_srgb_to_hsv(vec4 srgba);
 ```
 
 ## gx_get_bg_shader_val
