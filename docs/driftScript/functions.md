@@ -625,6 +625,7 @@ AutoAttackTable {
 
 AttackTable {
     AttackType m_type,
+    bool m_bSplashDamage,
     float m_splashRadius,
     int m_dmg,
     DamageExtraTable m_dmgExtra
@@ -646,7 +647,7 @@ string gx_map_init_copy_ud(string name, string newName)
 ```
 
 - returns `newName` on success, returns empty string on failure
-- `newName` must being with `User_`
+- `newName` must begin with `User_`
 - `newName` must not already be a unit data
 - `name` must be an existing unit data
 ## gx_modify_scoreboard
