@@ -5731,16 +5731,17 @@
 </span><span id="__span-66-23"><a id="__codelineno-66-23" name="__codelineno-66-23" href="#__codelineno-66-23"></a>
 </span><span id="__span-66-24"><a id="__codelineno-66-24" name="__codelineno-66-24" href="#__codelineno-66-24"></a><span class="kt">AttackTable</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-66-25"><a id="__codelineno-66-25" name="__codelineno-66-25" href="#__codelineno-66-25"></a><span class="w">    </span><span class="kt">AttackType</span><span class="w"> </span><span class="n">m_type</span><span class="p">,</span>
-</span><span id="__span-66-26"><a id="__codelineno-66-26" name="__codelineno-66-26" href="#__codelineno-66-26"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">m_splashRadius</span><span class="p">,</span>
-</span><span id="__span-66-27"><a id="__codelineno-66-27" name="__codelineno-66-27" href="#__codelineno-66-27"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_dmg</span><span class="p">,</span>
-</span><span id="__span-66-28"><a id="__codelineno-66-28" name="__codelineno-66-28" href="#__codelineno-66-28"></a><span class="w">    </span><span class="kt">DamageExtraTable</span><span class="w"> </span><span class="n">m_dmgExtra</span>
-</span><span id="__span-66-29"><a id="__codelineno-66-29" name="__codelineno-66-29" href="#__codelineno-66-29"></a><span class="p">}</span>
-</span><span id="__span-66-30"><a id="__codelineno-66-30" name="__codelineno-66-30" href="#__codelineno-66-30"></a>
-</span><span id="__span-66-31"><a id="__codelineno-66-31" name="__codelineno-66-31" href="#__codelineno-66-31"></a><span class="kt">DamageExtraTable</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-66-32"><a id="__codelineno-66-32" name="__codelineno-66-32" href="#__codelineno-66-32"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_vsLight</span><span class="p">,</span>
-</span><span id="__span-66-33"><a id="__codelineno-66-33" name="__codelineno-66-33" href="#__codelineno-66-33"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_vsMedium</span><span class="p">,</span>
-</span><span id="__span-66-34"><a id="__codelineno-66-34" name="__codelineno-66-34" href="#__codelineno-66-34"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_vsHeavy</span>
-</span><span id="__span-66-35"><a id="__codelineno-66-35" name="__codelineno-66-35" href="#__codelineno-66-35"></a><span class="p">}</span>
+</span><span id="__span-66-26"><a id="__codelineno-66-26" name="__codelineno-66-26" href="#__codelineno-66-26"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bSplashDamage</span><span class="p">,</span>
+</span><span id="__span-66-27"><a id="__codelineno-66-27" name="__codelineno-66-27" href="#__codelineno-66-27"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">m_splashRadius</span><span class="p">,</span>
+</span><span id="__span-66-28"><a id="__codelineno-66-28" name="__codelineno-66-28" href="#__codelineno-66-28"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_dmg</span><span class="p">,</span>
+</span><span id="__span-66-29"><a id="__codelineno-66-29" name="__codelineno-66-29" href="#__codelineno-66-29"></a><span class="w">    </span><span class="kt">DamageExtraTable</span><span class="w"> </span><span class="n">m_dmgExtra</span>
+</span><span id="__span-66-30"><a id="__codelineno-66-30" name="__codelineno-66-30" href="#__codelineno-66-30"></a><span class="p">}</span>
+</span><span id="__span-66-31"><a id="__codelineno-66-31" name="__codelineno-66-31" href="#__codelineno-66-31"></a>
+</span><span id="__span-66-32"><a id="__codelineno-66-32" name="__codelineno-66-32" href="#__codelineno-66-32"></a><span class="kt">DamageExtraTable</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-66-33"><a id="__codelineno-66-33" name="__codelineno-66-33" href="#__codelineno-66-33"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_vsLight</span><span class="p">,</span>
+</span><span id="__span-66-34"><a id="__codelineno-66-34" name="__codelineno-66-34" href="#__codelineno-66-34"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_vsMedium</span><span class="p">,</span>
+</span><span id="__span-66-35"><a id="__codelineno-66-35" name="__codelineno-66-35" href="#__codelineno-66-35"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_vsHeavy</span>
+</span><span id="__span-66-36"><a id="__codelineno-66-36" name="__codelineno-66-36" href="#__codelineno-66-36"></a><span class="p">}</span>
 </span></code></pre></div>
 <ul>
 <li>Feel free to request <code>BRZDRIFT</code> to add more modifiable properties</li>
@@ -5754,7 +5755,7 @@
 </span></code></pre></div>
 <ul>
 <li>returns <code>newName</code> on success, returns empty string on failure</li>
-<li><code>newName</code> must being with <code>User_</code></li>
+<li><code>newName</code> must begin with <code>User_</code></li>
 <li><code>newName</code> must not already be a unit data</li>
 <li><code>name</code> must be an existing unit data</li>
 </ul>
