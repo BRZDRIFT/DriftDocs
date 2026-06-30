@@ -1213,18 +1213,6 @@ table params = {
 - Searches inside all of the provided aabrs and locations for decals
 - Query for decals inside `m_aabrs` and `m_locations`.
 - Setting `m_bAll` to true will return all decals on the map
-## gx_rand_float
-```sq
-float gx_rand_float(float min, float max)
-```
-
-
-## gx_rand_int
-```sq
-int gx_rand_int(int min, int max)
-```
-
-
 ## gx_rand_unit_vec2
 ```sq
 Float2 gx_rand_unit_vec2()
@@ -1693,6 +1681,18 @@ void gx_add_force_prop(ForceProp prop, int forceID, mixed val)
 ```
 
 
+## gx_is_map_init
+```sq
+bool gx_is_map_init()
+```
+
+- returns `true` if in `gx_map_init` stage of script
+## gx_get_common_seed
+```sq
+int gx_get_common_seed()
+```
+
+- returns a common random int that is the same in `gx_map_init` and `gx_sim_*` stages.
 ## hash
 ```sq
 int hash(mixed object, ...)
