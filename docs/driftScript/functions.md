@@ -596,6 +596,7 @@ table params = {
     bool m_bEnableCanRepair,
     bool m_bStructureUnit,
     bool m_bAirUnit,
+    AuraTable m_aura,
 }
 ```
 
@@ -635,6 +636,13 @@ DamageExtraTable {
     int m_vsLight,
     int m_vsMedium,
     int m_vsHeavy
+}
+
+AuraTable {
+    float m_radiusMultiplier = 4,
+    bool m_bAttackSpeedIncrease = false,
+    bool m_bSpeedIncrease = false,
+    bool m_bHitReduce = false
 }
 ```
 
