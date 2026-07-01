@@ -5704,7 +5704,8 @@
 </span><span id="__span-65-27"><a id="__codelineno-65-27" name="__codelineno-65-27" href="#__codelineno-65-27"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bEnableCanRepair</span><span class="p">,</span>
 </span><span id="__span-65-28"><a id="__codelineno-65-28" name="__codelineno-65-28" href="#__codelineno-65-28"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bStructureUnit</span><span class="p">,</span>
 </span><span id="__span-65-29"><a id="__codelineno-65-29" name="__codelineno-65-29" href="#__codelineno-65-29"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bAirUnit</span><span class="p">,</span>
-</span><span id="__span-65-30"><a id="__codelineno-65-30" name="__codelineno-65-30" href="#__codelineno-65-30"></a><span class="p">}</span>
+</span><span id="__span-65-30"><a id="__codelineno-65-30" name="__codelineno-65-30" href="#__codelineno-65-30"></a><span class="w">    </span><span class="kt">AuraTable</span><span class="w"> </span><span class="n">m_aura</span><span class="p">,</span>
+</span><span id="__span-65-31"><a id="__codelineno-65-31" name="__codelineno-65-31" href="#__codelineno-65-31"></a><span class="p">}</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-66-1"><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a><span class="kt">BuildItemTable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-66-2"><a id="__codelineno-66-2" name="__codelineno-66-2" href="#__codelineno-66-2"></a><span class="w">    </span><span class="kt">BuildItemType</span><span class="w"> </span><span class="n">m_type</span><span class="p">,</span>
@@ -5742,6 +5743,13 @@
 </span><span id="__span-66-34"><a id="__codelineno-66-34" name="__codelineno-66-34" href="#__codelineno-66-34"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_vsMedium</span><span class="p">,</span>
 </span><span id="__span-66-35"><a id="__codelineno-66-35" name="__codelineno-66-35" href="#__codelineno-66-35"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_vsHeavy</span>
 </span><span id="__span-66-36"><a id="__codelineno-66-36" name="__codelineno-66-36" href="#__codelineno-66-36"></a><span class="p">}</span>
+</span><span id="__span-66-37"><a id="__codelineno-66-37" name="__codelineno-66-37" href="#__codelineno-66-37"></a>
+</span><span id="__span-66-38"><a id="__codelineno-66-38" name="__codelineno-66-38" href="#__codelineno-66-38"></a><span class="kt">AuraTable</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-66-39"><a id="__codelineno-66-39" name="__codelineno-66-39" href="#__codelineno-66-39"></a><span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">m_radiusMultiplier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+</span><span id="__span-66-40"><a id="__codelineno-66-40" name="__codelineno-66-40" href="#__codelineno-66-40"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bAttackSpeedIncrease</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">,</span>
+</span><span id="__span-66-41"><a id="__codelineno-66-41" name="__codelineno-66-41" href="#__codelineno-66-41"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bSpeedIncrease</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">,</span>
+</span><span id="__span-66-42"><a id="__codelineno-66-42" name="__codelineno-66-42" href="#__codelineno-66-42"></a><span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">m_bHitReduce</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span>
+</span><span id="__span-66-43"><a id="__codelineno-66-43" name="__codelineno-66-43" href="#__codelineno-66-43"></a><span class="p">}</span>
 </span></code></pre></div>
 <ul>
 <li>Feel free to request <code>BRZDRIFT</code> to add more modifiable properties</li>
