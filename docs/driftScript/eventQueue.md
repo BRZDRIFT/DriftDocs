@@ -39,11 +39,11 @@ table Event
 Example of reading events from queue
 
 ```sq
-function dw_sim_update()
+function gx_sim_update()
 {
-    while (!dw_is_event_queue_empty())
+    while (!gx_is_event_queue_empty())
     {
-        local ev = dw_pop_event_from_queue()
+        local ev = gx_pop_event_from_queue()
         if (ev.m_type == EventType.PlayerLeftGame)
         {
             print("Player " + ev.m_playerID + " has left the game!")
@@ -60,9 +60,9 @@ function dw_sim_update()
 
 Functions that operate on event queue:
 
-- {{fn("dw_is_event_queue_empty")}}
-- {{fn("dw_pop_event_from_queue")}}
+- {{fn("gx_is_event_queue_empty")}}
+- {{fn("gx_pop_event_from_queue")}}
 
 Note:
 
-- Any unpopped events are automatically popped off of queue after each {{entry("dw_sim_update")}} call.
+- Any unpopped events are automatically popped off of queue after each {{entry("gx_sim_update")}} call.

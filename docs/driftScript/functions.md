@@ -1,77 +1,77 @@
-## dw_get_bg_shader_val
+## gx_get_bg_shader_val
 ```sq
-float dw_get_bg_shader_val(int index)
+float gx_get_bg_shader_val(int index)
 ```
 
 - index must be between `[0-15]`
 - get float value that is being used by the background gpu shader
-## dw_set_bg_shader_val
+## gx_set_bg_shader_val
 ```sq
-void dw_set_bg_shader_val(int index, float val)
+void gx_set_bg_shader_val(int index, float val)
 ```
 
 - index must be between `[0-15]`
 - set float value that can be used by the background gpu shader
-## dw_sim_ticks_to_seconds
+## gx_sim_ticks_to_seconds
 ```sq
-float dw_sim_ticks_to_seconds(int ticks)
+float gx_sim_ticks_to_seconds(int ticks)
 ```
 
 - converts simTicks to seconds
 - equivalent to: `(simTicks / 20.0)`
 - note: simulation runs every 50ms (20 times/second)
-## dw_seconds_to_sim_ticks
+## gx_seconds_to_sim_ticks
 ```sq
-int dw_seconds_to_sim_ticks(float seconds)
+int gx_seconds_to_sim_ticks(float seconds)
 ```
 
 - converts `seconds` to `simTicks`
 - equivalent to: `(seconds * 20).tointeger()`
 - note: simulation runs every 50ms (20 times/second)
-## dw_get_seconds
+## gx_get_seconds
 ```sq
-float dw_get_seconds()
+float gx_get_seconds()
 ```
 
 - return game time in seconds
-- equivalent to: `dw_sim_ticks_to_seconds(dw_get_sim_tick())`
-## dw_str_encode_color_id
+- equivalent to: `gx_sim_ticks_to_seconds(gx_get_sim_tick())`
+## gx_str_encode_color_id
 ```sq
-string dw_str_encode_color_id(int colorID)
+string gx_str_encode_color_id(int colorID)
 ```
 
 
-## dw_str_encode_color
+## gx_str_encode_color
 ```sq
-string dw_str_encode_color(Float3 color)
+string gx_str_encode_color(Float3 color)
 ```
 
 
-## dw_str_encode_complex_color
+## gx_str_encode_complex_color
 ```sq
-string dw_str_encode_complex_color(ComplexColor color)
+string gx_str_encode_complex_color(ComplexColor color)
 ```
 
 
-## dw_str_encode_color_hex3
+## gx_str_encode_color_hex3
 ```sq
-string dw_str_encode_color_hex3(int hex)
+string gx_str_encode_color_hex3(int hex)
 ```
 
 
-## dw_get_sim_tick
+## gx_get_sim_tick
 ```sq
-int dw_get_sim_tick()
+int gx_get_sim_tick()
 ```
 
 - Returns the current sim tick number in simulation.
-- The `dw_sim_init()` call will have `tick = 0`
-- The first `dw_sim_update()` call will have `tick = 1`
-- The second `dw_sim_update()` call will have `tick = 2`, etc..
+- The `gx_sim_init()` call will have `tick = 0`
+- The first `gx_sim_update()` call will have `tick = 1`
+- The second `gx_sim_update()` call will have `tick = 2`, etc..
 - every tick corresponds to 50ms real time
-## dw_create_unit
+## gx_create_unit
 ```sq
-int dw_create_unit(table params)
+int gx_create_unit(table params)
 ```
 
 ```sq
@@ -92,16 +92,16 @@ table params = {
 - If neither `m_pos` nor `m_location` is set, unit will be created at `(0, 0)`
 - Units may not be placed at the exact center of `m_location`, if you need exact position use `m_pos`.
 - Setting `m_bForceGhostMode` is shortcut so u don't need to set `set_unit_prop(UnitProp.ForceGhostMode, ..)` after unit creation.
-## dw_get_distance_between_units
+## gx_get_distance_between_units
 ```sq
-float dw_get_distance_between_units(int unit0, int unit1)
+float gx_get_distance_between_units(int unit0, int unit1)
 ```
 
 - returns the distance between the edges of two units
 - will return 0 if one or both of the units do not exist
-## dw_get_nearby_units
+## gx_get_nearby_units
 ```sq
-int[] dw_get_nearby_units(table params = {})
+int[] gx_get_nearby_units(table params = {})
 ```
 
 ```sq
@@ -124,9 +124,9 @@ table params = {
 - `m_radius` required to be set
 - returns units whos outer edges have a distance equal/less than `m_radius` from `m_unitID`.
 - `note:` `m_unitID` will be included in part of query result
-## dw_get_nearby_units_count
+## gx_get_nearby_units_count
 ```sq
-int dw_get_nearby_units_count(table params = {})
+int gx_get_nearby_units_count(table params = {})
 ```
 
 ```sq
@@ -149,9 +149,9 @@ table params = {
 - `m_radius` required to be set
 - returns units whos outer edges have a distance equal/less than `m_radius` from `m_unitID`.
 - `note:` `m_unitID` will be included in part of query result
-## dw_get_units
+## gx_get_units
 ```sq
-int[] dw_get_units(table params = {})
+int[] gx_get_units(table params = {})
 ```
 
 ```sq
@@ -178,9 +178,9 @@ table params = {
     - Searches at `m_aabrs` for units
 - If `m_locations` and `m_aabrs` is not defined:
     - Searches for units on entire map
-## dw_get_units_count
+## gx_get_units_count
 ```sq
-int dw_get_units_count(table params = {})
+int gx_get_units_count(table params = {})
 ```
 
 ```sq
@@ -207,15 +207,15 @@ table params = {
     - Searches at `m_aabrs` for units
 - If `m_locations` and `m_aabrs` is not defined:
     - Searches for units on entire map
-## dw_units_touching
+## gx_units_touching
 ```sq
-int[] dw_units_touching(int u0, int u1)
+int[] gx_units_touching(int u0, int u1)
 ```
 
 - Returns `true` if the two units are "touching" (nearby eachother)
-## dw_create_explosion
+## gx_create_explosion
 ```sq
-void dw_create_explosion(table params)
+void gx_create_explosion(table params)
 ```
 
 ```sq
@@ -234,92 +234,92 @@ table params = {
 
 Example:
 ```sq
-dw_create_explosion( {
+gx_create_explosion( {
     m_color = Float3(1, 0, .5),
     m_location = "my_location"
 } )
 ```
 
-## dw_kill_unit
+## gx_kill_unit
 ```sq
-void dw_kill_unit(int unitID)
+void gx_kill_unit(int unitID)
 ```
 
 - kills the unit `unit_id`.
 - It is safe to call this function on already killed units
-## dw_unit_exists
+## gx_unit_exists
 ```sq
-bool dw_unit_exists(int unitID)
+bool gx_unit_exists(int unitID)
 ```
 
 - checks if unit still exists in the game
-## dw_remove_unit
+## gx_remove_unit
 ```sq
-bool dw_remove_unit(int unitID)
+bool gx_remove_unit(int unitID)
 ```
 
 - marks the unit to be removed by game
-- `unit_id` will be removed from game before the next `dw_sim_update` call
+- `unit_id` will be removed from game before the next `gx_sim_update` call
 - It is safe to call this function on already killed or removed units
-## dw_is_unit_alive_and_constructed
+## gx_is_unit_alive_and_constructed
 ```sq
-bool dw_is_unit_alive_and_constructed(int unitID)
+bool gx_is_unit_alive_and_constructed(int unitID)
 ```
 
 - returns `true` if unit is alive and constructed
 - returns `false` if unit_id is invalid or unit no longer exists in game
-## dw_is_unit_alive
+## gx_is_unit_alive
 ```sq
-bool dw_is_unit_alive(int unitID)
+bool gx_is_unit_alive(int unitID)
 ```
 
 - returns `true` if unit is alive
 - returns `false` if unit_id is invalid or unit no longer exists in game
 - Note: This function still returns `true` if unit is not yet fully constructed
-- equivalent to calling `!dw_is_unit_killed(unit_id)`
-## dw_is_unit_killed
+- equivalent to calling `!gx_is_unit_killed(unit_id)`
+## gx_is_unit_killed
 ```sq
-bool dw_is_unit_killed(int unitID)
+bool gx_is_unit_killed(int unitID)
 ```
 
 - returns `true` if the unit `unit_id` is killed
 - returns `true` if unit does not exist
-- equivalent to calling `!dw_is_unit_alive(unit_id)`
-## dw_get_unit_position
+- equivalent to calling `!gx_is_unit_alive(unit_id)`
+## gx_get_unit_position
 ```sq
-Float3 dw_get_unit_position(int unitID)
+Float3 gx_get_unit_position(int unitID)
 ```
 
 - returns position of unit
 - returns Float3(0.0, 0.0, 0.0) if unit no longer exists
-## dw_is_ground_unit
+## gx_is_ground_unit
 ```sq
-bool dw_is_ground_unit(int unitID)
+bool gx_is_ground_unit(int unitID)
 ```
 
 - returns if unit is currently a `ground` unit
 - units are always in either the `ground` or `air` state
 - note: knock-back effect can cause `ground` units to temporarily become `air` units
-- equivalent to calling `!dw_is_air_unit(unit_id)`
-## dw_is_air_unit
+- equivalent to calling `!gx_is_air_unit(unit_id)`
+## gx_is_air_unit
 ```sq
-bool dw_is_air_unit(int unitID)
+bool gx_is_air_unit(int unitID)
 ```
 
 - returns if unit is currently an `air` unit
 - units are always in either the `ground` or `air` state
 - note: knock-back effect can cause `ground` units to temporarily become `air` units
-- equivalent to calling `!dw_is_ground_unit(unit_id)`
-## dw_get_player
+- equivalent to calling `!gx_is_ground_unit(unit_id)`
+## gx_get_player
 ```sq
-int dw_get_player(int unitID)
+int gx_get_player(int unitID)
 ```
 
 - returns the `player_id` for unit `unit_id`
 - if unit does not exist, will return 0
-## dw_get_players
+## gx_get_players
 ```sq
-int[] dw_get_players(table params = {})
+int[] gx_get_players(table params = {})
 ```
 
 ```sq
@@ -339,9 +339,9 @@ table params = {
 - If neither m_forceIDs[] nor m_playerIDs[] is set, then will consider all players
 - If `m_allowedVictoryStates` is not set, any victory state will be considered
 - It is valid to have both `m_forceIDs` and `m_playerIDs` set -- the players from `m_forceIDs` and `m_playerIDs` will be merged.
-## dw_fling_unit
+## gx_fling_unit
 ```sq
-void dw_fling_unit(int unitID, table params = {})
+void gx_fling_unit(int unitID, table params = {})
 ```
 
 ```sq
@@ -356,9 +356,9 @@ table params = {
 
 - If neither `m_dir2d` nor `m_dir3d` is set, unit will be thrown in random direction
 - Only `m_dir2d` or `m_dir3d` should be set. Setting both is undefined behavior.
-## dw_set_victory_status
+## gx_set_victory_status
 ```sq
-void dw_set_victory_status(table params)
+void gx_set_victory_status(table params)
 ```
 
 ```sq
@@ -385,9 +385,9 @@ table params = {
 }
 ```
 
-## dw_print
+## gx_print
 ```sq
-void dw_print(string msg, table params = {})
+void gx_print(string msg, table params = {})
 ```
 
 ```sq
@@ -401,16 +401,16 @@ table params = {
 ```
 
 - If both m_forceIDs and m_playerIDs are undefined, message will be sent to all players
-## dw_is_unit_removed
+## gx_is_unit_removed
 ```sq
-bool dw_is_unit_removed(int unitID)
+bool gx_is_unit_removed(int unitID)
 ```
 
 - returns if unit is marked to be removed
 - will still return `true` if unit_id does not exist
-## dw_set_unit_position
+## gx_set_unit_position
 ```sq
-void dw_set_unit_position(int unitID, table params)
+void gx_set_unit_position(int unitID, table params)
 ```
 
 ```sq
@@ -421,14 +421,14 @@ table params = {
 
 Example:
 ```sq
-dw_set_unit_position(some_unit, { m_location = "location_to_teleport_to" } )
+gx_set_unit_position(some_unit, { m_location = "location_to_teleport_to" } )
 ```
 
 - it is undefined to not set `m_location`
 - if `m_location` does not exist, unit will be teleported to Float2(0.0, 0.0)
-## dw_set_terrain_type
+## gx_set_terrain_type
 ```sq
-void dw_set_terrain_type(table params = {})
+void gx_set_terrain_type(table params = {})
 ```
 
 ```sq
@@ -448,16 +448,16 @@ table params = {
 
 Example that sets terrain at location `my_location` to Pacifist type:
 ```sq
-dw_set_terrain_type({
+gx_set_terrain_type({
     m_type = TerrainType.Normal,
     m_secondary = SecondaryTerrainTypeNormal.Pacifist,
     m_location = "my_location"
 })
 ```
 
-## dw_set_terrain_type_2
+## gx_set_terrain_type_2
 ```sq
-void dw_set_terrain_type_2(table params = {})
+void gx_set_terrain_type_2(table params = {})
 ```
 
 ```sq
@@ -471,9 +471,9 @@ table params = {
 }
 ```
 
-## dw_set_terrain_type_3
+## gx_set_terrain_type_3
 ```sq
-void dw_set_terrain_type_3(table params = {})
+void gx_set_terrain_type_3(table params = {})
 ```
 
 ```sq
@@ -499,27 +499,27 @@ table params = {
 }
 ```
 
-## dw_get_terrain_type
+## gx_get_terrain_type
 ```sq
-Int2 dw_get_terrain_type(int index, int index2 = 0)
+Int2 gx_get_terrain_type(int index, int index2 = 0)
 ```
 
 - returns primary terrain type in `vec.m_x` and returns secondary terrain type in `vec.m_y`
-## dw_get_area_vision
+## gx_get_area_vision
 ```sq
-bool dw_get_area_vision(int playerID, table params)
+bool gx_get_area_vision(int playerID, table params)
 ```
 
 
-## dw_set_area_vision
+## gx_set_area_vision
 ```sq
-void dw_set_area_vision(int playerID, table params)
+void gx_set_area_vision(int playerID, table params)
 ```
 
 
-## dw_set_player_camera_look_at
+## gx_set_player_camera_look_at
 ```sq
-void dw_set_player_camera_look_at(int playerID, table params)
+void gx_set_player_camera_look_at(int playerID, table params)
 ```
 
 ```sq
@@ -532,9 +532,9 @@ table params = {
 
 - Moves camera of `player_id` to look at `m_unit` or `m_location`
 - One of `m_unit` or `m_location` should be set. Not both.
-## dw_lock_player_camera
+## gx_lock_player_camera
 ```sq
-void dw_lock_player_camera(int playerID, table params = {})
+void gx_lock_player_camera(int playerID, table params = {})
 ```
 
 ```sq
@@ -546,24 +546,24 @@ table params = {
 
 - locks `player_id` camera to look at `m_unitID` or `m_location`.
 - camera will follow `m_unitID` or `m_location` until `m_unitID` is removed from game
-- can unlock camera by calling `dw_unlock_player_camera(player_id)`
+- can unlock camera by calling `gx_unlock_player_camera(player_id)`
 - passing empty args for `params` will unlock the camera for `player_id`.
-## dw_unlock_player_camera
+## gx_unlock_player_camera
 ```sq
-void dw_unlock_player_camera(int playerID)
+void gx_unlock_player_camera(int playerID)
 ```
 
-- unlocks `player_id` camera position set by `dw_lock_player_camera`
-- equivalent to calling `dw_lock_player_camera(player_id, {})`
-## dw_get_kills
+- unlocks `player_id` camera position set by `gx_lock_player_camera`
+- equivalent to calling `gx_lock_player_camera(player_id, {})`
+## gx_get_kills
 ```sq
-int dw_get_kills(int playerID, table params = {})
+int gx_get_kills(int playerID, table params = {})
 ```
 
 
-## dw_map_init_modify_ud_props
+## gx_map_init_modify_ud_props
 ```sq
-void dw_map_init_modify_ud_props(string unitName, table params)
+void gx_map_init_modify_ud_props(string unitName, table params)
 ```
 
 ```sq
@@ -649,18 +649,18 @@ AuraTable {
 - Feel free to request `BRZDRIFT` to add more modifiable properties
 - Setting either `m_fungusHarvestAmount` or `m_gemstoneHarvestAmount` will enable harvesting (unless `m_bDisableHarvest` is `true`)
     - Note: Allowing harvesting will change attack priority and few other things
-## dw_map_init_copy_ud
+## gx_map_init_copy_ud
 ```sq
-string dw_map_init_copy_ud(string name, string newName)
+string gx_map_init_copy_ud(string name, string newName)
 ```
 
 - returns `newName` on success, returns empty string on failure
 - `newName` must begin with `User_`
 - `newName` must not already be a unit data
 - `name` must be an existing unit data
-## dw_modify_scoreboard
+## gx_modify_scoreboard
 ```sq
-void dw_modify_scoreboard(table params = {})
+void gx_modify_scoreboard(table params = {})
 ```
 
 ```sq
@@ -671,9 +671,9 @@ table params = {
 }
 ```
 
-## dw_set_speech_bubble
+## gx_set_speech_bubble
 ```sq
-int dw_set_speech_bubble(int unit_id, table params = {})
+int gx_set_speech_bubble(int unit_id, table params = {})
 ```
 
 ```sq
@@ -687,131 +687,131 @@ table params = {
 
 - set a speech bubble for unit_id
 - returns an integer id for the speech bubble
-## dw_remove_speech_bubble
+## gx_remove_speech_bubble
 ```sq
-void dw_remove_speech_bubble(int unit_id, int speechBubbleID)
+void gx_remove_speech_bubble(int unit_id, int speechBubbleID)
 ```
 
 - setting `speechBubbleID` to `0` will remove current speech bubble
 - Remove speech bubble for unit if current speech bubble ID matches `speechBubbleID`
-## dw_remove_current_speech_bubble
+## gx_remove_current_speech_bubble
 ```sq
-void dw_remove_current_speech_bubble(int unit_id)
+void gx_remove_current_speech_bubble(int unit_id)
 ```
 
-- Equivalent to calling `dw_remove_speech_bubble(unit_id, 0)`
+- Equivalent to calling `gx_remove_speech_bubble(unit_id, 0)`
 - Remove speech bubble for unit
-## dw_get_sim_var
+## gx_get_sim_var
 ```sq
-mixed dw_get_sim_var(string varName)
+mixed gx_get_sim_var(string varName)
 ```
 
 
-## dw_set_sim_var
+## gx_set_sim_var
 ```sq
-void dw_set_sim_var(string varName, mixed varValue)
+void gx_set_sim_var(string varName, mixed varValue)
 ```
 
 
-## dw_add_sim_var
+## gx_add_sim_var
 ```sq
-void dw_add_sim_var(string varName, mixed varValue)
+void gx_add_sim_var(string varName, mixed varValue)
 ```
 
 
-## dw_get_force_var
+## gx_get_force_var
 ```sq
-mixed dw_get_force_var(int force_id, string varName)
+mixed gx_get_force_var(int force_id, string varName)
 ```
 
 
-## dw_set_force_var
+## gx_set_force_var
 ```sq
-void dw_set_force_var(int force_id, string varName, mixed varValue)
+void gx_set_force_var(int force_id, string varName, mixed varValue)
 ```
 
 
-## dw_add_force_var
+## gx_add_force_var
 ```sq
-void dw_add_force_var(int force_id, string varName, mixed varValue)
+void gx_add_force_var(int force_id, string varName, mixed varValue)
 ```
 
 
-## dw_get_player_var
+## gx_get_player_var
 ```sq
-mixed dw_get_player_var(int player_id, string varName)
+mixed gx_get_player_var(int player_id, string varName)
 ```
 
 
-## dw_set_player_var
+## gx_set_player_var
 ```sq
-void dw_set_player_var(int player_id, string varName, mixed varValue)
+void gx_set_player_var(int player_id, string varName, mixed varValue)
 ```
 
 
-## dw_add_player_var
+## gx_add_player_var
 ```sq
-void dw_add_player_var(int player_id, string varName, mixed varValue)
+void gx_add_player_var(int player_id, string varName, mixed varValue)
 ```
 
 
-## dw_get_unit_var
+## gx_get_unit_var
 ```sq
-mixed dw_get_unit_var(int unit_id, string varName)
+mixed gx_get_unit_var(int unit_id, string varName)
 ```
 
 
-## dw_set_unit_var
+## gx_set_unit_var
 ```sq
-void dw_set_unit_var(int unit_id, string varName, mixed varValue)
+void gx_set_unit_var(int unit_id, string varName, mixed varValue)
 ```
 
 
-## dw_add_unit_var
+## gx_add_unit_var
 ```sq
-void dw_add_unit_var(int unit_id, string varName, mixed varValue)
+void gx_add_unit_var(int unit_id, string varName, mixed varValue)
 ```
 
 
-## dw_set_unit_ammo
+## gx_set_unit_ammo
 ```sq
-void dw_set_unit_ammo(int unit_id, string ammoName, int count)
+void gx_set_unit_ammo(int unit_id, string ammoName, int count)
 ```
 
 
-## dw_get_unit_ammo
+## gx_get_unit_ammo
 ```sq
-int dw_get_unit_ammo(int unit_id, string ammoName)
+int gx_get_unit_ammo(int unit_id, string ammoName)
 ```
 
 
-## dw_add_unit_ammo
+## gx_add_unit_ammo
 ```sq
-void dw_add_unit_ammo(int unit_id, string ammoName, int count)
+void gx_add_unit_ammo(int unit_id, string ammoName, int count)
 ```
 
 
-## dw_set_player_ammo_in_unit
+## gx_set_player_ammo_in_unit
 ```sq
-void dw_set_player_ammo_in_unit(int unit_id, string ammoName, int count)
+void gx_set_player_ammo_in_unit(int unit_id, string ammoName, int count)
 ```
 
 
-## dw_get_player_ammo_in_unit
+## gx_get_player_ammo_in_unit
 ```sq
-int dw_get_player_ammo_in_unit(int unit_id, string ammoName)
+int gx_get_player_ammo_in_unit(int unit_id, string ammoName)
 ```
 
 
-## dw_add_player_ammo_in_unit
+## gx_add_player_ammo_in_unit
 ```sq
-void dw_add_player_ammo_in_unit(int unit_id, string ammoName, int count)
+void gx_add_player_ammo_in_unit(int unit_id, string ammoName, int count)
 ```
 
 
-## dw_get_player_ammo_total
+## gx_get_player_ammo_total
 ```sq
-int dw_get_player_ammo_total(int player_id, string ammoName)
+int gx_get_player_ammo_total(int player_id, string ammoName)
 ```
 
 ```sq
@@ -825,9 +825,9 @@ table params = {
 - returns unit_id with the given `m_name` or
 - unit name can be set in map editor.
 - if multiple units have the same name, the first will be returned.
-## dw_kill_all_units
+## gx_kill_all_units
 ```sq
-void dw_kill_all_units(table params = {})
+void gx_kill_all_units(table params = {})
 ```
 
 ```sq
@@ -837,9 +837,9 @@ table params = {
 }
 ```
 
-## dw_is_players_mutually_allied
+## gx_is_players_mutually_allied
 ```sq
-bool dw_is_players_mutually_allied(table params)
+bool gx_is_players_mutually_allied(table params)
 ```
 
 ```sq
@@ -850,57 +850,57 @@ table params = {
 }
 ```
 
-## dw_is_player_allied_to
+## gx_is_player_allied_to
 ```sq
-bool dw_is_player_allied_to(int playerID, int otherPlayerID)
+bool gx_is_player_allied_to(int playerID, int otherPlayerID)
 ```
 
 
-## dw_set_player_allied_to
+## gx_set_player_allied_to
 ```sq
-void dw_set_player_allied_to(int playerID, int otherPlayerID, bool bAlly)
+void gx_set_player_allied_to(int playerID, int otherPlayerID, bool bAlly)
 ```
 
 
-## dw_register_for_location_events
+## gx_register_for_location_events
 ```sq
-void dw_register_for_location_events(bool bEnable, table params = {})
+void gx_register_for_location_events(bool bEnable, table params = {})
 ```
 
 - Register to receive `UnitEnteredLocation` and `UnitExitedLocation` events
 - no optional parameters currently
-- Usually you will want to only call this one time time in the `dw_sim_init` function
-## dw_str_color_username
+- Usually you will want to only call this one time time in the `gx_sim_init` function
+## gx_str_color_username
 ```sq
-string dw_str_color_username(ComplexColor color, string username)
+string gx_str_color_username(ComplexColor color, string username)
 ```
 
 Equivalent To / Implementation:
 ```sq
-function dw_str_color_username(ComplexColor color, string username)
+function gx_str_color_username(ComplexColor color, string username)
 {
-    return dw_str_encode_complex_color(color) + username
+    return gx_str_encode_complex_color(color) + username
 }
 ```
 
-## dw_str_color_username_2
+## gx_str_color_username_2
 ```sq
-string dw_str_color_username_2(ComplexColor complexColor, string username)
+string gx_str_color_username_2(ComplexColor complexColor, string username)
 ```
 
 Equivalent To / Implementation:
 ```sq
-function dw_str_color_username_2(ComplexColor complexColor, string username)
+function gx_str_color_username_2(ComplexColor complexColor, string username)
 {
     return Unicode.Special_PushColor
-    + dw_str_color_username(complexColor, username)
+    + gx_str_color_username(complexColor, username)
     + Unicode.Special_PopColor
 }
 ```
 
-## dw_sound2d_create
+## gx_sound2d_create
 ```sq
-int dw_sound2d_create(table params = {})
+int gx_sound2d_create(table params = {})
 ```
 
 ```sq
@@ -918,18 +918,18 @@ table params = {
 - You are required to set either `m_sound` or `m_soundPack` (but not both).
 - If neither `m_forceIDs` nor `m_playerIDs` are set, sound will be heard by all players
 - returns the `soundID`
-## dw_sound2d_destroy
+## gx_sound2d_destroy
 ```sq
-void dw_sound2d_destroy(int soundID)
+void gx_sound2d_destroy(int soundID)
 ```
 
 - Will force a sound to stop and then be destroyed
 - This is the only way to stop a sound that is looping (`m_bLoop = true`)
-- After calling this, `dw_sound2d_is_playing` will return `false`
+- After calling this, `gx_sound2d_is_playing` will return `false`
 - It is not required to call this. Sound will automatically be destroyed when it is finished playing (assuming not looping).
-## dw_sound2d_modify
+## gx_sound2d_modify
 ```sq
-void dw_sound2d_modify(int soundID, table params = {})
+void gx_sound2d_modify(int soundID, table params = {})
 ```
 
 ```sq
@@ -939,15 +939,15 @@ table params = {
 }
 ```
 
-## dw_sound2d_is_playing
+## gx_sound2d_is_playing
 ```sq
-bool dw_sound2d_is_playing(int soundID)
+bool gx_sound2d_is_playing(int soundID)
 ```
 
 - returns `true` if sound is currently playing
-## dw_sound3d_create
+## gx_sound3d_create
 ```sq
-int dw_sound3d_create(table params = {})
+int gx_sound3d_create(table params = {})
 ```
 
 ```sq
@@ -970,18 +970,18 @@ table params = {
 - Only one of `m_sound` or `m_soundPack` should be set
 - Sound will only be played if current player has vision of circle created by the position of the sound and `m_radius`
 - returns the `soundID`
-## dw_sound3d_destroy
+## gx_sound3d_destroy
 ```sq
-void dw_sound3d_destroy(int soundID)
+void gx_sound3d_destroy(int soundID)
 ```
 
 - Will force a sound to stop and then be destroyed
 - This is the only way to stop a sound that is looping (`m_bLoop = true`)
-- After calling this, `dw_sound3d_is_playing` will return `false`
+- After calling this, `gx_sound3d_is_playing` will return `false`
 - It is not required to call this. Sound will automatically be destroyed when it is finished playing (assuming not looping).
-## dw_sound3d_modify
+## gx_sound3d_modify
 ```sq
-void dw_sound3d_modify(int soundID, table params = {})
+void gx_sound3d_modify(int soundID, table params = {})
 ```
 
 ```sq
@@ -994,103 +994,103 @@ table params = {
 ```
 
 - `m_pos2d` and `m_pos3d` will be ignored if sound is attached to a unit
-## dw_sound3d_is_playing
+## gx_sound3d_is_playing
 ```sq
-bool dw_sound3d_is_playing(int soundID)
+bool gx_sound3d_is_playing(int soundID)
 ```
 
 - returns `true` if sound is currently playing
-## dw_str_parse_command
+## gx_str_parse_command
 ```sq
-string[] dw_str_parse_command(string cmd)
+string[] gx_str_parse_command(string cmd)
 ```
 
 - splits a string based whitespace and handles quotes properly
 - useful when handling the `EventType.TextCommand` event
-## dw_convert_to_str
+## gx_convert_to_str
 ```sq
-string dw_convert_to_str(mixed val)
+string gx_convert_to_str(mixed val)
 ```
 
 - Safe function to convert a value to string
 - returns `""` on failure
-## dw_convert_to_int
+## gx_convert_to_int
 ```sq
-int dw_convert_to_int(mixed val)
+int gx_convert_to_int(mixed val)
 ```
 
 - Safe function to convert a value to integer
 - returns `0` on failure
-## dw_convert_to_float
+## gx_convert_to_float
 ```sq
-float dw_convert_to_float(mixed val)
+float gx_convert_to_float(mixed val)
 ```
 
 - Safe function to convert a value to float
 - returns `0.0` on failure
-## dw_color_srgba_to_hex4
+## gx_color_srgba_to_hex4
 ```sq
-int dw_color_srgba_to_hex4(Float4 srgba)
+int gx_color_srgba_to_hex4(Float4 srgba)
 ```
 
 
-## dw_color_srgb_to_hex3
+## gx_color_srgb_to_hex3
 ```sq
-int dw_color_srgb_to_hex3(Float3 srgb)
+int gx_color_srgb_to_hex3(Float3 srgb)
 ```
 
 
-## dw_color_hsva_to_srgba
+## gx_color_hsva_to_srgba
 ```sq
-Float4 dw_color_hsva_to_srgba(Float4 hsva)
+Float4 gx_color_hsva_to_srgba(Float4 hsva)
 ```
 
 
-## dw_color_srgba_to_hsva
+## gx_color_srgba_to_hsva
 ```sq
-Float4 dw_color_srgba_to_hsva(Float4 srgba)
+Float4 gx_color_srgba_to_hsva(Float4 srgba)
 ```
 
 
-## dw_color_hsv_to_srgb
+## gx_color_hsv_to_srgb
 ```sq
-Float3 dw_color_hsv_to_srgb(Float3 hsv)
+Float3 gx_color_hsv_to_srgb(Float3 hsv)
 ```
 
 
-## dw_color_srgb_to_hsv
+## gx_color_srgb_to_hsv
 ```sq
-Float3 dw_color_srgb_to_hsv(Float3 srgb)
+Float3 gx_color_srgb_to_hsv(Float3 srgb)
 ```
 
 
-## dw_color_hex3_to_hex4
+## gx_color_hex3_to_hex4
 ```sq
-int dw_color_hex3_to_hex4(int hex3, int alpha = 0xFF)
+int gx_color_hex3_to_hex4(int hex3, int alpha = 0xFF)
 ```
 
 
-## dw_color_hex4_to_hex3
+## gx_color_hex4_to_hex3
 ```sq
-int dw_color_hex4_to_hex3(int hex4)
+int gx_color_hex4_to_hex3(int hex4)
 ```
 
 
-## dw_color_hex4_to_srgba
+## gx_color_hex4_to_srgba
 ```sq
-Float4 dw_color_hex4_to_srgba(int hex4)
+Float4 gx_color_hex4_to_srgba(int hex4)
 ```
 
 
-## dw_color_hex3_to_srgb
+## gx_color_hex3_to_srgb
 ```sq
-Float3 dw_color_hex3_to_srgb(int hex3)
+Float3 gx_color_hex3_to_srgb(int hex3)
 ```
 
 
-## dw_draw_glow_image
+## gx_draw_glow_image
 ```sq
-void dw_draw_glow_image(table params)
+void gx_draw_glow_image(table params)
 ```
 
 ```sq
@@ -1105,9 +1105,9 @@ table params = {
 
 - `m_img` must be set
 - Exactly one of `m_abbr` or `m_location` must be set
-## dw_get_sim_image_colors
+## gx_get_sim_image_colors
 ```sq
-int[] dw_get_sim_image_colors(table params)
+int[] gx_get_sim_image_colors(table params)
 ```
 
 ```sq
@@ -1118,9 +1118,9 @@ table params = {
 
 - Returns all the pixels in the image in hex3 format
 - Alpha channel is ignored and not returned
-## dw_decal_create
+## gx_decal_create
 ```sq
-int dw_decal_create(table params)
+int gx_decal_create(table params)
 ```
 
 ```sq
@@ -1145,9 +1145,9 @@ table params = {
 
 - create decal with properties, all fields are optional
 - only one (or zero) of `m_size` or `m_size2d` should be set
-## dw_decal_modify
+## gx_decal_modify
 ```sq
-void dw_decal_modify(int decalID, table params)
+void gx_decal_modify(int decalID, table params)
 ```
 
 ```sq
@@ -1171,27 +1171,27 @@ table params = {
 
 - modify/overwrite decal properties, all fields are optional
 - only one (or zero) of `m_size` or `m_size2d` should be set
-## dw_decal_destroy
+## gx_decal_destroy
 ```sq
-void dw_decal_destroy(int decalID)
+void gx_decal_destroy(int decalID)
 ```
 
 - remove the decal from game
-## dw_decal_get_all_by_tag
+## gx_decal_get_all_by_tag
 ```sq
-int[] dw_decal_get_all_by_tag(string decalTag)
+int[] gx_decal_get_all_by_tag(string decalTag)
 ```
 
 - return all decalIDs that have their `m_tag` set to `tag`
-## dw_decal_get_by_tag
+## gx_decal_get_by_tag
 ```sq
-int dw_decal_get_by_tag(string decalTag)
+int gx_decal_get_by_tag(string decalTag)
 ```
 
 
-## dw_decal_query
+## gx_decal_query
 ```sq
-int[] dw_decal_query(table params)
+int[] gx_decal_query(table params)
 ```
 
 ```sq
@@ -1205,91 +1205,77 @@ table params = {
 - Searches inside all of the provided aabrs and locations for decals
 - Query for decals inside `m_aabrs` and `m_locations`.
 - Setting `m_bAll` to true will return all decals on the map
-## dw_rand_unit_vec2
+## gx_rand_unit_vec2
 ```sq
-Float2 dw_rand_unit_vec2()
+Float2 gx_rand_unit_vec2()
 ```
 
 
-## dw_rand_unit_vec3
+## gx_rand_unit_vec3
 ```sq
-Float3 dw_rand_unit_vec3()
+Float3 gx_rand_unit_vec3()
 ```
 
 
-## dw_rand_unit_vec4
+## gx_rand_unit_vec4
 ```sq
-Float3 dw_rand_unit_vec4()
+Float3 gx_rand_unit_vec4()
 ```
 
 
-## dw_unit_vec_or_random
+## gx_unit_vec_or_random
 ```sq
-FloatN dw_unit_vec_or_random(FloatN val)
+FloatN gx_unit_vec_or_random(FloatN val)
 ```
 
 ```sq
-Float2 dw_unit_vec_or_random(Float2 val)
-Float3 dw_unit_vec_or_random(Float3 val)
-Float4 dw_unit_vec_or_random(Float4 val)
+Float2 gx_unit_vec_or_random(Float2 val)
+Float3 gx_unit_vec_or_random(Float3 val)
+Float4 gx_unit_vec_or_random(Float4 val)
 ```
 
 - Computes the unit vector of `v`.
 - Will return random unit vector if `v` has magnitude of `0`.
-## dw_unit_vec_or_zero
+## gx_unit_vec_or_zero
 ```sq
-FloatN dw_unit_vec_or_zero(FloatN val)
+FloatN gx_unit_vec_or_zero(FloatN val)
 ```
 
 ```sq
-Float2 dw_unit_vec_or_zero(Float2 val)
-Float3 dw_unit_vec_or_zero(Float3 val)
-Float4 dw_unit_vec_or_zero(Float4 val)
+Float2 gx_unit_vec_or_zero(Float2 val)
+Float3 gx_unit_vec_or_zero(Float3 val)
+Float4 gx_unit_vec_or_zero(Float4 val)
 ```
 
 - Computes the unit vector of `v`.
 - Will return zero-magnitude vector if unit vector `v` has magnitude of `0`.
-## dw_shuffle_array
+## gx_shuffle_array
 ```sq
-void dw_shuffle_array(object vals[], Random r)
+void gx_shuffle_array(object vals[], Random r)
 ```
 
 - Shuffles/randomizes items in array using the passed in `Random` object
-## dw_terrain_offset_z_add
+## gx_terrain_offset_z_add
 ```sq
-void dw_terrain_offset_z_add(Int2 vertexPos, float offset)
+void gx_terrain_offset_z_add(Int2 vertexPos, float offset)
 ```
 
 
-## dw_terrain_offset_z_set
+## gx_terrain_offset_z_set
 ```sq
-void dw_terrain_offset_z_set(Int2 vertexPos, float offset)
+void gx_terrain_offset_z_set(Int2 vertexPos, float offset)
 ```
 
 
-## dw_terrain_offset_z_get
+## gx_terrain_offset_z_get
 ```sq
-float dw_terrain_offset_z_get(Int2 vertexPos)
+float gx_terrain_offset_z_get(Int2 vertexPos)
 ```
 
 
-## dw_terrain_offset_z_add_2
+## gx_terrain_offset_z_add_2
 ```sq
-void dw_terrain_offset_z_add_2(table params)
-```
-
-```sq
-table params = {
-    AABR_int m_aabrs[],     # Optional
-    string m_locations[],   # Optional
-    Int2 m_vertices[],      # Optional
-    float m_val,            # Required
-}
-```
-
-## dw_terrain_offset_z_set_2
-```sq
-void dw_terrain_offset_z_set_2(table params)
+void gx_terrain_offset_z_add_2(table params)
 ```
 
 ```sq
@@ -1301,21 +1287,35 @@ table params = {
 }
 ```
 
-## dw_aabr_contains
+## gx_terrain_offset_z_set_2
 ```sq
-bool dw_aabr_contains(AABR aabr, Float2 pt)
+void gx_terrain_offset_z_set_2(table params)
+```
+
+```sq
+table params = {
+    AABR_int m_aabrs[],     # Optional
+    string m_locations[],   # Optional
+    Int2 m_vertices[],      # Optional
+    float m_val,            # Required
+}
+```
+
+## gx_aabr_contains
+```sq
+bool gx_aabr_contains(AABR aabr, Float2 pt)
 ```
 
 
-## dw_aabr_contains_or_touching
+## gx_aabr_contains_or_touching
 ```sq
-bool dw_aabr_contains_or_touching(AABR aabr, Float2 pt)
+bool gx_aabr_contains_or_touching(AABR aabr, Float2 pt)
 ```
 
 
-## dw_create_effect
+## gx_create_effect
 ```sq
-int dw_create_effect(table params)
+int gx_create_effect(table params)
 ```
 
 ```sq
@@ -1330,15 +1330,15 @@ table params = {
 ```
 
 - Creates the Effect of type `m_type` and returns the Effect ID
-## dw_destroy_effect
+## gx_destroy_effect
 ```sq
-void dw_destroy_effect(int effectID)
+void gx_destroy_effect(int effectID)
 ```
 
 - Destroys effect if it can be removed
-## dw_create_nuke_unit
+## gx_create_nuke_unit
 ```sq
-int dw_create_nuke_unit(table params)
+int gx_create_nuke_unit(table params)
 ```
 
 ```sq
@@ -1351,15 +1351,15 @@ table params = {
 - Creates a nuke unit
 ```
 
-## dw_triangle_lerp
+## gx_triangle_lerp
 ```sq
-float dw_triangle_lerp(float begin, float end, float period, float x)
+float gx_triangle_lerp(float begin, float end, float period, float x)
 ```
 
 - Lerp function
-## dw_queue_command
+## gx_queue_command
 ```sq
-void dw_queue_command(int unit_ids[], CommandType command, table params = {}, bool bQueueCommand = false)
+void gx_queue_command(int unit_ids[], CommandType command, table params = {}, bool bQueueCommand = false)
 ```
 
 ```sq
@@ -1375,21 +1375,21 @@ table params = {
 - (i.e., a spell that can only target units cannot target a `m_pos` or `m_location`)
 - `CommandType` can also be a spell identifier
 - if `bQueueCommand` is `true`, appends the command in the unit's command queue, otherwise command queue beforehand
-## dw_force_select_units
+## gx_force_select_units
 ```sq
-void dw_force_select_units(int playerID, int unitIDs[])
+void gx_force_select_units(int playerID, int unitIDs[])
 ```
 
 - clears player's unit selection, and sets unitIDs as new selection
-## dw_add_event_message
+## gx_add_event_message
 ```sq
-void dw_add_event_message(string message)
+void gx_add_event_message(string message)
 ```
 
 - Adds an event message visibly by all players on left side of screen
-## dw_display_ui_elements
+## gx_display_ui_elements
 ```sq
-void dw_display_ui_elements(table params = {})
+void gx_display_ui_elements(table params = {})
 ```
 
 ```sq
@@ -1406,9 +1406,9 @@ table params = {
 }
 ```
 
-## dw_add_center_message
+## gx_add_center_message
 ```sq
-int dw_add_center_message(table params = {})
+int gx_add_center_message(table params = {})
 ```
 
 ```sq
@@ -1421,11 +1421,11 @@ table params = {
 ```
 
 - displays a player event message for player in middle of their screen for matching players
-- if `m_duration` is `-1` message will be displayed forever until `dw_clear_center_messages` or `dw_clear_center_message_by_id` is called.
-- returns `msgID` that can be used by `dw_clear_center_message_by_id` if needed.
-## dw_clear_center_messages
+- if `m_duration` is `-1` message will be displayed forever until `gx_clear_center_messages` or `gx_clear_center_message_by_id` is called.
+- returns `msgID` that can be used by `gx_clear_center_message_by_id` if needed.
+## gx_clear_center_messages
 ```sq
-void dw_clear_center_messages(table params = {})
+void gx_clear_center_messages(table params = {})
 ```
 
 ```sq
@@ -1437,9 +1437,9 @@ table params = {
 
 - clears all messages for players match params
 - if both `m_forceIDs` and `m_playerIDs` are empty, messages will be cleared for all players
-## dw_update_map_hints
+## gx_update_map_hints
 ```sq
-void dw_update_map_hints(table params)
+void gx_update_map_hints(table params)
 ```
 
 ```sq
@@ -1453,15 +1453,15 @@ table params = {
 }
 ```
 
-## dw_clear_center_message_by_id
+## gx_clear_center_message_by_id
 ```sq
-void dw_clear_center_message_by_id(int msgID)
+void gx_clear_center_message_by_id(int msgID)
 ```
 
 - clear message with msgID `msgID`
-## dw_clear_terrain_paint
+## gx_clear_terrain_paint
 ```sq
-void dw_clear_terrain_paint(table params)
+void gx_clear_terrain_paint(table params)
 ```
 
 ```sq
@@ -1471,9 +1471,9 @@ table params = {
 }
 ```
 
-## dw_paint_terrain
+## gx_paint_terrain
 ```sq
-void dw_paint_terrain(table params)
+void gx_paint_terrain(table params)
 ```
 
 ```sq
@@ -1486,9 +1486,9 @@ table params = {
 ```
 
 - only one of `m_location` or `m_aabr` should be set.
-## dw_clear_resource_ui_items
+## gx_clear_resource_ui_items
 ```sq
-void dw_clear_resource_ui_items(table params = {})
+void gx_clear_resource_ui_items(table params = {})
 ```
 
 ```sq
@@ -1498,9 +1498,9 @@ table params = {
 }
 ```
 
-## dw_add_resource_ui_item
+## gx_add_resource_ui_item
 ```sq
-void dw_add_resource_ui_item(table params = {})
+void gx_add_resource_ui_item(table params = {})
 ```
 
 ```sq
@@ -1514,9 +1514,9 @@ table params = {
 }
 ```
 
-## dw_get_common_uds
+## gx_get_common_uds
 ```sq
-string[] dw_get_common_uds(table params = {})
+string[] gx_get_common_uds(table params = {})
 ```
 
 ```sq
@@ -1527,63 +1527,63 @@ table params = {
 }
 ```
 
-## dw_get_ud_race
+## gx_get_ud_race
 ```sq
-Race dw_get_ud_race(string udName)
+Race gx_get_ud_race(string udName)
 ```
 
 
-## dw_get_ud_auto_attack_anims
+## gx_get_ud_auto_attack_anims
 ```sq
-string[] dw_get_ud_auto_attack_anims(string udName)
+string[] gx_get_ud_auto_attack_anims(string udName)
 ```
 
 
-## dw_get_num_attacks_in_ud_auto_attack_anim
+## gx_get_num_attacks_in_ud_auto_attack_anim
 ```sq
-int dw_get_num_attacks_in_ud_auto_attack_anim(string udName, string animName)
+int gx_get_num_attacks_in_ud_auto_attack_anim(string udName, string animName)
 ```
 
 
-## dw_is_ud_auto_attack_anim_for_siege_mode
+## gx_is_ud_auto_attack_anim_for_siege_mode
 ```sq
-bool dw_is_ud_auto_attack_anim_for_siege_mode(string udName, string animName)
+bool gx_is_ud_auto_attack_anim_for_siege_mode(string udName, string animName)
 ```
 
 
-## dw_set_terrain_unpassable_color
+## gx_set_terrain_unpassable_color
 ```sq
-void dw_set_terrain_unpassable_color(int slot, Float3 colorSRGB)
-```
-
-- slot should be `[0-15]`
-## dw_get_terrain_unpassable_color
-```sq
-Float3 dw_get_terrain_unpassable_color(int slot)
+void gx_set_terrain_unpassable_color(int slot, Float3 colorSRGB)
 ```
 
 - slot should be `[0-15]`
-## dw_set_terrain_transparent_color
+## gx_get_terrain_unpassable_color
 ```sq
-void dw_set_terrain_transparent_color(int slot, Float4 colorSRGB)
+Float3 gx_get_terrain_unpassable_color(int slot)
 ```
 
 - slot should be `[0-15]`
-## dw_get_terrain_transparent_color
+## gx_set_terrain_transparent_color
 ```sq
-Float4 dw_get_terrain_transparent_color(int slot)
+void gx_set_terrain_transparent_color(int slot, Float4 colorSRGB)
 ```
 
 - slot should be `[0-15]`
-## dw_set_terrain_glow_color
+## gx_get_terrain_transparent_color
 ```sq
-void dw_set_terrain_glow_color(int slot, Float3 colorSRGB)
+Float4 gx_get_terrain_transparent_color(int slot)
+```
+
+- slot should be `[0-15]`
+## gx_set_terrain_glow_color
+```sq
+void gx_set_terrain_glow_color(int slot, Float3 colorSRGB)
 ```
 
 - slot should be `[0-31]`
-## dw_set_terrain_glow_color_2
+## gx_set_terrain_glow_color_2
 ```sq
-void dw_set_terrain_glow_color_2(table params = {})
+void gx_set_terrain_glow_color_2(table params = {})
 ```
 
 ```sq
@@ -1598,146 +1598,32 @@ table params = {
 - `m_index` should be `[0-31]`
 - Internally, `m_hex` is converted to `m_color`.
 - `m_hex` parameter is only given for convenience.
-## dw_get_terrain_glow_color
+## gx_get_terrain_glow_color
 ```sq
-Float3 dw_get_terrain_glow_color(int slot)
+Float3 gx_get_terrain_glow_color(int slot)
 ```
 
 - slot should be `[0-31]`
-## dw_is_event_queue_empty
+## gx_is_event_queue_empty
 ```sq
-void dw_is_event_queue_empty()
+void gx_is_event_queue_empty()
 ```
 
 - Check if event queue is empty.
-## dw_pop_event_from_queue
+## gx_pop_event_from_queue
 ```sq
-Event dw_pop_event_from_queue()
+Event gx_pop_event_from_queue()
 ```
 
 - Pop event from event queue.
-## dw_include
+## gx_include
 ```sq
-void dw_include(string filepath)
+void gx_include(string filepath)
 ```
 
 - Includes filename in current compilation.
-- A file is only included once by dw_include; subsequent calls are ignored.
+- A file is only included once by gx_include; subsequent calls are ignored.
 - Typically called at the top of your drift script file.
-## dw_set_sim_prop
-```sq
-void dw_set_sim_prop(SimProp prop, mixed val)
-```
-
-
-## dw_get_sim_prop
-```sq
-mixed dw_get_sim_prop(SimProp prop)
-```
-
-
-## dw_get_unit_prop
-```sq
-mixed dw_get_unit_prop(UnitProp prop, int unitID)
-```
-
-
-## dw_set_unit_prop
-```sq
-void dw_set_unit_prop(UnitProp prop, int unitID, mixed val)
-```
-
-
-## dw_add_unit_prop
-```sq
-void dw_add_unit_prop(UnitProp prop, int unitID, mixed val)
-```
-
-
-## dw_get_ud_prop
-```sq
-mixed dw_get_ud_prop(UdProp prop, string udName)
-```
-
-- Get unit data property
-## dw_set_ud_prop
-```sq
-void dw_set_ud_prop(UdProp prop, string udName, mixed val)
-```
-
-- Set unit data property
-## dw_get_location_prop
-```sq
-mixed dw_get_location_prop(LocationProp prop, string locationName)
-```
-
-
-## dw_set_location_prop
-```sq
-void dw_set_location_prop(LocationProp prop, string locationName, mixed val)
-```
-
-
-## dw_get_player_prop
-```sq
-mixed dw_get_player_prop(PlayerProp prop, int playerID)
-```
-
-
-## dw_set_player_prop
-```sq
-void dw_set_player_prop(PlayerProp prop, int playerID, mixed val)
-```
-
-
-## dw_add_player_prop
-```sq
-void dw_add_player_prop(PlayerProp prop, int playerID, mixed val)
-```
-
-
-## dw_get_decal_prop
-```sq
-mixed dw_get_decal_prop(DecalProp prop, int decalID)
-```
-
-
-## dw_set_decal_prop
-```sq
-void dw_set_decal_prop(DecalProp prop, int decalID, mixed val)
-```
-
-
-## dw_get_force_prop
-```sq
-mixed dw_get_force_prop(ForceProp prop, int forceID)
-```
-
-
-## dw_set_force_prop
-```sq
-void dw_set_force_prop(ForceProp prop, int forceID, mixed val)
-```
-
-
-## dw_add_force_prop
-```sq
-void dw_add_force_prop(ForceProp prop, int forceID, mixed val)
-```
-
-
-## dw_is_map_init
-```sq
-bool dw_is_map_init()
-```
-
-- returns `true` if in `dw_map_init` stage of script
-## dw_get_common_seed
-```sq
-int dw_get_common_seed()
-```
-
-- returns a common random int that is the same in `dw_map_init` and `dw_sim_*` stages.
 ## hash
 ```sq
 int hash(mixed object, ...)
@@ -1853,6 +1739,120 @@ float fmod(float val, float divisor)
 ```
 
 - return value will have same sign as `val`
+## gx_set_sim_prop
+```sq
+void gx_set_sim_prop(SimProp prop, mixed val)
+```
+
+
+## gx_get_sim_prop
+```sq
+mixed gx_get_sim_prop(SimProp prop)
+```
+
+
+## gx_get_unit_prop
+```sq
+mixed gx_get_unit_prop(UnitProp prop, int unitID)
+```
+
+
+## gx_set_unit_prop
+```sq
+void gx_set_unit_prop(UnitProp prop, int unitID, mixed val)
+```
+
+
+## gx_add_unit_prop
+```sq
+void gx_add_unit_prop(UnitProp prop, int unitID, mixed val)
+```
+
+
+## gx_get_ud_prop
+```sq
+mixed gx_get_ud_prop(UdProp prop, string udName)
+```
+
+- Get unit data property
+## gx_set_ud_prop
+```sq
+void gx_set_ud_prop(UdProp prop, string udName, mixed val)
+```
+
+- Set unit data property
+## gx_get_location_prop
+```sq
+mixed gx_get_location_prop(LocationProp prop, string locationName)
+```
+
+
+## gx_set_location_prop
+```sq
+void gx_set_location_prop(LocationProp prop, string locationName, mixed val)
+```
+
+
+## gx_get_player_prop
+```sq
+mixed gx_get_player_prop(PlayerProp prop, int playerID)
+```
+
+
+## gx_set_player_prop
+```sq
+void gx_set_player_prop(PlayerProp prop, int playerID, mixed val)
+```
+
+
+## gx_add_player_prop
+```sq
+void gx_add_player_prop(PlayerProp prop, int playerID, mixed val)
+```
+
+
+## gx_get_decal_prop
+```sq
+mixed gx_get_decal_prop(DecalProp prop, int decalID)
+```
+
+
+## gx_set_decal_prop
+```sq
+void gx_set_decal_prop(DecalProp prop, int decalID, mixed val)
+```
+
+
+## gx_get_force_prop
+```sq
+mixed gx_get_force_prop(ForceProp prop, int forceID)
+```
+
+
+## gx_set_force_prop
+```sq
+void gx_set_force_prop(ForceProp prop, int forceID, mixed val)
+```
+
+
+## gx_add_force_prop
+```sq
+void gx_add_force_prop(ForceProp prop, int forceID, mixed val)
+```
+
+
+## gx_is_map_init
+```sq
+bool gx_is_map_init()
+```
+
+- returns `true` if in `gx_map_init` stage of script
+## gx_get_common_seed
+```sq
+int gx_get_common_seed()
+```
+
+- returns a common random int that is the same in `gx_map_init` and `gx_sim_*` stages.
 ## getroottable
 ```sq
 table getroottable()
@@ -1879,7 +1879,7 @@ void print(string msg)
 
 - print message to all players in game
 - also outputs to console in map editor
-- see `dw_print` for more functionality
+- see `gx_print` for more functionality
 ## compilestring
 ```sq
 function compilestring(string str)
