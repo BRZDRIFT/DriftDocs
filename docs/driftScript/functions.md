@@ -1604,26 +1604,140 @@ Float3 dw_get_terrain_glow_color(int slot)
 ```
 
 - slot should be `[0-31]`
-## gx_is_event_queue_empty
+## dw_is_event_queue_empty
 ```sq
-void gx_is_event_queue_empty()
+void dw_is_event_queue_empty()
 ```
 
 - Check if event queue is empty.
-## gx_pop_event_from_queue
+## dw_pop_event_from_queue
 ```sq
-Event gx_pop_event_from_queue()
+Event dw_pop_event_from_queue()
 ```
 
 - Pop event from event queue.
-## gx_include
+## dw_include
 ```sq
-void gx_include(string filepath)
+void dw_include(string filepath)
 ```
 
 - Includes filename in current compilation.
-- A file is only included once by gx_include; subsequent calls are ignored.
+- A file is only included once by dw_include; subsequent calls are ignored.
 - Typically called at the top of your drift script file.
+## dw_set_sim_prop
+```sq
+void dw_set_sim_prop(SimProp prop, mixed val)
+```
+
+
+## dw_get_sim_prop
+```sq
+mixed dw_get_sim_prop(SimProp prop)
+```
+
+
+## dw_get_unit_prop
+```sq
+mixed dw_get_unit_prop(UnitProp prop, int unitID)
+```
+
+
+## dw_set_unit_prop
+```sq
+void dw_set_unit_prop(UnitProp prop, int unitID, mixed val)
+```
+
+
+## dw_add_unit_prop
+```sq
+void dw_add_unit_prop(UnitProp prop, int unitID, mixed val)
+```
+
+
+## dw_get_ud_prop
+```sq
+mixed dw_get_ud_prop(UdProp prop, string udName)
+```
+
+- Get unit data property
+## dw_set_ud_prop
+```sq
+void dw_set_ud_prop(UdProp prop, string udName, mixed val)
+```
+
+- Set unit data property
+## dw_get_location_prop
+```sq
+mixed dw_get_location_prop(LocationProp prop, string locationName)
+```
+
+
+## dw_set_location_prop
+```sq
+void dw_set_location_prop(LocationProp prop, string locationName, mixed val)
+```
+
+
+## dw_get_player_prop
+```sq
+mixed dw_get_player_prop(PlayerProp prop, int playerID)
+```
+
+
+## dw_set_player_prop
+```sq
+void dw_set_player_prop(PlayerProp prop, int playerID, mixed val)
+```
+
+
+## dw_add_player_prop
+```sq
+void dw_add_player_prop(PlayerProp prop, int playerID, mixed val)
+```
+
+
+## dw_get_decal_prop
+```sq
+mixed dw_get_decal_prop(DecalProp prop, int decalID)
+```
+
+
+## dw_set_decal_prop
+```sq
+void dw_set_decal_prop(DecalProp prop, int decalID, mixed val)
+```
+
+
+## dw_get_force_prop
+```sq
+mixed dw_get_force_prop(ForceProp prop, int forceID)
+```
+
+
+## dw_set_force_prop
+```sq
+void dw_set_force_prop(ForceProp prop, int forceID, mixed val)
+```
+
+
+## dw_add_force_prop
+```sq
+void dw_add_force_prop(ForceProp prop, int forceID, mixed val)
+```
+
+
+## dw_is_map_init
+```sq
+bool dw_is_map_init()
+```
+
+- returns `true` if in `dw_map_init` stage of script
+## dw_get_common_seed
+```sq
+int dw_get_common_seed()
+```
+
+- returns a common random int that is the same in `dw_map_init` and `dw_sim_*` stages.
 ## hash
 ```sq
 int hash(mixed object, ...)
@@ -1739,120 +1853,6 @@ float fmod(float val, float divisor)
 ```
 
 - return value will have same sign as `val`
-## gx_set_sim_prop
-```sq
-void gx_set_sim_prop(SimProp prop, mixed val)
-```
-
-
-## gx_get_sim_prop
-```sq
-mixed gx_get_sim_prop(SimProp prop)
-```
-
-
-## gx_get_unit_prop
-```sq
-mixed gx_get_unit_prop(UnitProp prop, int unitID)
-```
-
-
-## gx_set_unit_prop
-```sq
-void gx_set_unit_prop(UnitProp prop, int unitID, mixed val)
-```
-
-
-## gx_add_unit_prop
-```sq
-void gx_add_unit_prop(UnitProp prop, int unitID, mixed val)
-```
-
-
-## gx_get_ud_prop
-```sq
-mixed gx_get_ud_prop(UdProp prop, string udName)
-```
-
-- Get unit data property
-## gx_set_ud_prop
-```sq
-void gx_set_ud_prop(UdProp prop, string udName, mixed val)
-```
-
-- Set unit data property
-## gx_get_location_prop
-```sq
-mixed gx_get_location_prop(LocationProp prop, string locationName)
-```
-
-
-## gx_set_location_prop
-```sq
-void gx_set_location_prop(LocationProp prop, string locationName, mixed val)
-```
-
-
-## gx_get_player_prop
-```sq
-mixed gx_get_player_prop(PlayerProp prop, int playerID)
-```
-
-
-## gx_set_player_prop
-```sq
-void gx_set_player_prop(PlayerProp prop, int playerID, mixed val)
-```
-
-
-## gx_add_player_prop
-```sq
-void gx_add_player_prop(PlayerProp prop, int playerID, mixed val)
-```
-
-
-## gx_get_decal_prop
-```sq
-mixed gx_get_decal_prop(DecalProp prop, int decalID)
-```
-
-
-## gx_set_decal_prop
-```sq
-void gx_set_decal_prop(DecalProp prop, int decalID, mixed val)
-```
-
-
-## gx_get_force_prop
-```sq
-mixed gx_get_force_prop(ForceProp prop, int forceID)
-```
-
-
-## gx_set_force_prop
-```sq
-void gx_set_force_prop(ForceProp prop, int forceID, mixed val)
-```
-
-
-## gx_add_force_prop
-```sq
-void gx_add_force_prop(ForceProp prop, int forceID, mixed val)
-```
-
-
-## gx_is_map_init
-```sq
-bool gx_is_map_init()
-```
-
-- returns `true` if in `gx_map_init` stage of script
-## gx_get_common_seed
-```sq
-int gx_get_common_seed()
-```
-
-- returns a common random int that is the same in `gx_map_init` and `gx_sim_*` stages.
 ## getroottable
 ```sq
 table getroottable()
@@ -1879,7 +1879,7 @@ void print(string msg)
 
 - print message to all players in game
 - also outputs to console in map editor
-- see `gx_print` for more functionality
+- see `dw_print` for more functionality
 ## compilestring
 ```sq
 function compilestring(string str)
