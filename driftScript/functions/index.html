@@ -5543,7 +5543,7 @@
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="kt">bool</span><span class="w"> </span><span class="n">gx_is_unit_killed</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unitID</span><span class="p">)</span>
 </span></code></pre></div>
 <ul>
-<li>returns if the unit <code>unit_id</code> is killed</li>
+<li>returns <code>true</code> if the unit <code>unit_id</code> is killed</li>
 <li>returns <code>true</code> if unit does not exist</li>
 <li>equivalent to calling <code>!gx_is_unit_alive(unit_id)</code></li>
 </ul>
@@ -6583,10 +6583,10 @@
 </span><span id="__span-200-3"><a id="__codelineno-200-3" name="__codelineno-200-3" href="#__codelineno-200-3"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">m_hex</span><span class="p">,</span><span class="w">        </span><span class="c1"># srgb hex3 code for color to set</span>
 </span><span id="__span-200-4"><a id="__codelineno-200-4" name="__codelineno-200-4" href="#__codelineno-200-4"></a><span class="w">  </span><span class="kt">Float3</span><span class="w"> </span><span class="n">m_color</span><span class="w">    </span><span class="c1"># srgb color (each component [0.0-1.0]) for new color to set</span>
 </span><span id="__span-200-5"><a id="__codelineno-200-5" name="__codelineno-200-5" href="#__codelineno-200-5"></a><span class="p">}</span>
-</span><span id="__span-200-6"><a id="__codelineno-200-6" name="__codelineno-200-6" href="#__codelineno-200-6"></a><span class="o">-</span><span class="w"> </span><span class="err">`</span><span class="n">m_index</span><span class="err">`</span><span class="w"> </span><span class="n">should</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="err">`</span><span class="p">[</span><span class="mi">0-31</span><span class="p">]</span><span class="err">`</span>
 </span></code></pre></div>
 <ul>
 <li>Only one <code>m_hex</code> or <code>m_color</code> should be set, not both.</li>
+<li><code>m_index</code> should be <code>[0-31]</code></li>
 <li>Internally, <code>m_hex</code> is converted to <code>m_color</code>.</li>
 <li><code>m_hex</code> parameter is only given for convenience.</li>
 </ul>
