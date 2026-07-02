@@ -1563,21 +1563,21 @@ Float3 gx_get_terrain_unpassable_color(int slot)
 ```
 
 - slot should be `[0-15]`
-## gx_set_unpassable_terrain_color
+## gx_set_terrain_transparent_color
 ```sq
-void gx_set_unpassable_terrain_color(int slot, Float4 colorSRGB)
+void gx_set_terrain_transparent_color(int slot, Float4 colorSRGB)
 ```
 
 - slot should be `[0-15]`
-## gx_get_unpassable_terrain_color
+## gx_get_terrain_transparent_color
 ```sq
-Float4 gx_get_unpassable_terrain_color(int slot)
+Float4 gx_get_terrain_transparent_color(int slot)
 ```
 
 - slot should be `[0-15]`
 ## gx_set_terrain_glow_color
 ```sq
-void gx_set_terrain_glow_color(int slot, Vec3 colorSRGB)
+void gx_set_terrain_glow_color(int slot, Float3 colorSRGB)
 ```
 
 - slot should be `[0-31]`
