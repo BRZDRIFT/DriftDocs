@@ -1577,10 +1577,10 @@ Float4 gx_get_unpassable_terrain_color(int slot)
 - slot should be `[0-15]`
 ## gx_set_terrain_glow_color
 ```sq
-void gx_set_terrain_glow_color(int slotIdx, Vec3 colorSRGB)
+void gx_set_terrain_glow_color(int slot, Vec3 colorSRGB)
 ```
 
-
+- slot should be `[0-31]`
 ## gx_set_terrain_glow_color_2
 ```sq
 void gx_set_terrain_glow_color_2(table params = {})
@@ -1592,17 +1592,18 @@ table params = {
   int m_hex,        # srgb hex3 code for color to set
   Float3 m_color    # srgb color (each component [0.0-1.0]) for new color to set
 }
+- `m_index` should be `[0-31]`
 ```
 
 - Only one `m_hex` or `m_color` should be set, not both.
 - Internally, `m_hex` is converted to `m_color`.
 - `m_hex` parameter is only given for convenience.
-## gx_get_terrain_unpassable_color
+## gx_get_terrain_glow_color
 ```sq
-Float3 gx_get_terrain_unpassable_color(int slot)
+Float3 gx_get_terrain_glow_color(int slot)
 ```
 
-- slot should be `[0-15]`
+- slot should be `[0-31]`
 ## gx_is_event_queue_empty
 ```sq
 void gx_is_event_queue_empty()
