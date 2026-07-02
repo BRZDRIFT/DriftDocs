@@ -1386,27 +1386,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gx_get_bg_shader_val" class="md-nav__link">
+  <a href="#dw_get_bg_shader_val" class="md-nav__link">
     <span class="md-ellipsis">
-      gx_get_bg_shader_val
+      dw_get_bg_shader_val
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#gx_flip_uv" class="md-nav__link">
+  <a href="#dw_flip_uv" class="md-nav__link">
     <span class="md-ellipsis">
-      gx_flip_uv
+      dw_flip_uv
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#gx_flip_frag_coord" class="md-nav__link">
+  <a href="#dw_flip_frag_coord" class="md-nav__link">
     <span class="md-ellipsis">
-      gx_flip_frag_coord
+      dw_flip_frag_coord
     </span>
   </a>
   
@@ -1500,27 +1500,27 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gx_get_bg_shader_val" class="md-nav__link">
+  <a href="#dw_get_bg_shader_val" class="md-nav__link">
     <span class="md-ellipsis">
-      gx_get_bg_shader_val
+      dw_get_bg_shader_val
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#gx_flip_uv" class="md-nav__link">
+  <a href="#dw_flip_uv" class="md-nav__link">
     <span class="md-ellipsis">
-      gx_flip_uv
+      dw_flip_uv
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#gx_flip_frag_coord" class="md-nav__link">
+  <a href="#dw_flip_frag_coord" class="md-nav__link">
     <span class="md-ellipsis">
-      gx_flip_frag_coord
+      dw_flip_frag_coord
     </span>
   </a>
   
@@ -1584,27 +1584,27 @@
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="k">uniform</span><span class="w"> </span><span class="kt">sampler2D</span><span class="w"> </span><span class="n">iChannel3</span><span class="p">;</span><span class="w">                </span><span class="c1">// can be set via Background tab</span>
 </span></code></pre></div>
 <h2 id="color-conversion-functions">Color Conversion Functions</h2>
-<div class="language-glsl highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">float</span><span class="w"> </span><span class="n">gx_linear_to_srgb</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">linear</span><span class="p">)</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kt">float</span><span class="w"> </span><span class="n">gx_srgb_to_linear</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">srgb</span><span class="p">)</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kt">vec3</span><span class="w"> </span><span class="n">gx_linear_to_srgb</span><span class="p">(</span><span class="kt">vec3</span><span class="w"> </span><span class="n">linear</span><span class="p">)</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kt">vec4</span><span class="w"> </span><span class="n">gx_linear_to_srgb</span><span class="p">(</span><span class="kt">vec4</span><span class="w"> </span><span class="n">linear</span><span class="p">)</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kt">vec3</span><span class="w"> </span><span class="n">gx_srgb_to_linear</span><span class="p">(</span><span class="kt">vec3</span><span class="w"> </span><span class="n">srgb</span><span class="p">)</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="kt">vec4</span><span class="w"> </span><span class="n">gx_srgb_to_linear</span><span class="p">(</span><span class="kt">vec4</span><span class="w"> </span><span class="n">srgb</span><span class="p">)</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="kt">vec3</span><span class="w"> </span><span class="n">gx_hsv_to_srgb</span><span class="p">(</span><span class="kt">vec3</span><span class="w"> </span><span class="n">hsv</span><span class="p">);</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="kt">vec4</span><span class="w"> </span><span class="n">gx_hsv_to_srgb</span><span class="p">(</span><span class="kt">vec4</span><span class="w"> </span><span class="n">hsva</span><span class="p">);</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="kt">vec3</span><span class="w"> </span><span class="n">gx_srgb_to_hsv</span><span class="p">(</span><span class="kt">vec3</span><span class="w"> </span><span class="n">srgb</span><span class="p">);</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="kt">vec4</span><span class="w"> </span><span class="n">gx_srgb_to_hsv</span><span class="p">(</span><span class="kt">vec4</span><span class="w"> </span><span class="n">srgba</span><span class="p">);</span>
+<div class="language-glsl highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">float</span><span class="w"> </span><span class="n">dw_linear_to_srgb</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">linear</span><span class="p">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kt">float</span><span class="w"> </span><span class="n">dw_srgb_to_linear</span><span class="p">(</span><span class="kt">float</span><span class="w"> </span><span class="n">srgb</span><span class="p">)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kt">vec3</span><span class="w"> </span><span class="n">dw_linear_to_srgb</span><span class="p">(</span><span class="kt">vec3</span><span class="w"> </span><span class="n">linear</span><span class="p">)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kt">vec4</span><span class="w"> </span><span class="n">dw_linear_to_srgb</span><span class="p">(</span><span class="kt">vec4</span><span class="w"> </span><span class="n">linear</span><span class="p">)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kt">vec3</span><span class="w"> </span><span class="n">dw_srgb_to_linear</span><span class="p">(</span><span class="kt">vec3</span><span class="w"> </span><span class="n">srgb</span><span class="p">)</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="kt">vec4</span><span class="w"> </span><span class="n">dw_srgb_to_linear</span><span class="p">(</span><span class="kt">vec4</span><span class="w"> </span><span class="n">srgb</span><span class="p">)</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="kt">vec3</span><span class="w"> </span><span class="n">dw_hsv_to_srgb</span><span class="p">(</span><span class="kt">vec3</span><span class="w"> </span><span class="n">hsv</span><span class="p">);</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="kt">vec4</span><span class="w"> </span><span class="n">dw_hsv_to_srgb</span><span class="p">(</span><span class="kt">vec4</span><span class="w"> </span><span class="n">hsva</span><span class="p">);</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="kt">vec3</span><span class="w"> </span><span class="n">dw_srgb_to_hsv</span><span class="p">(</span><span class="kt">vec3</span><span class="w"> </span><span class="n">srgb</span><span class="p">);</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="kt">vec4</span><span class="w"> </span><span class="n">dw_srgb_to_hsv</span><span class="p">(</span><span class="kt">vec4</span><span class="w"> </span><span class="n">srgba</span><span class="p">);</span>
 </span></code></pre></div>
-<h2 id="gx_get_bg_shader_val">gx_get_bg_shader_val</h2>
-<div class="language-glsl highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">float</span><span class="w"> </span><span class="n">gx_get_bg_shader_val</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">)</span>
+<h2 id="dw_get_bg_shader_val">dw_get_bg_shader_val</h2>
+<div class="language-glsl highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">float</span><span class="w"> </span><span class="n">dw_get_bg_shader_val</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="p">)</span>
 </span></code></pre></div>
 <ul>
 <li>retrieves the shader value at slot <code>index</code></li>
 <li>the initial shader values can be set under <code>Background -&gt; Shader Values</code> in the map editor</li>
-<li>these values can be changed via <code>.DriftScript</code> using the <code>void gx_set_bg_shader_val(int index, float value)</code> function.</li>
+<li>these values can be changed via <code>.DriftScript</code> using the <code>void dw_set_bg_shader_val(int index, float value)</code> function.</li>
 </ul>
-<h2 id="gx_flip_uv">gx_flip_uv</h2>
-<div class="language-glsl highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">vec2</span><span class="w"> </span><span class="n">gx_flip_uv</span><span class="p">(</span><span class="kt">vec2</span><span class="w"> </span><span class="n">uv</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<h2 id="dw_flip_uv">dw_flip_uv</h2>
+<div class="language-glsl highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">vec2</span><span class="w"> </span><span class="n">dw_flip_uv</span><span class="p">(</span><span class="kt">vec2</span><span class="w"> </span><span class="n">uv</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="n">uv</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">uv</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">uv</span><span class="p">;</span>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">}</span>
@@ -1613,8 +1613,8 @@
 <li>Helper to convert between <code>ShaderToy (OpenGL)</code> and <code>DriftShader (vulkan)</code> coordinate systems</li>
 <li>(usually you don't need to use this, provided for convenience)</li>
 </ul>
-<h2 id="gx_flip_frag_coord">gx_flip_frag_coord</h2>
-<div class="language-glsl highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">vec2</span><span class="w"> </span><span class="n">gx_flip_frag_coord</span><span class="p">(</span><span class="kt">vec2</span><span class="w"> </span><span class="n">fragCoord</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<h2 id="dw_flip_frag_coord">dw_flip_frag_coord</h2>
+<div class="language-glsl highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">vec2</span><span class="w"> </span><span class="n">dw_flip_frag_coord</span><span class="p">(</span><span class="kt">vec2</span><span class="w"> </span><span class="n">fragCoord</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="n">fragCoord</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iResolution</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">uv</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">fragCoord</span><span class="p">;</span>
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">}</span>
@@ -1632,7 +1632,7 @@
 </li>
 <li><code>ShaderToy (OpenGL)</code> and <code>DriftShader (vulkan)</code> use different coordinate systems!<ul>
 <li>If you copy a <code>ShaderToy</code> shader to <code>DriftShader</code>, it may render upside-down!</li>
-<li>May need to use <code>gx_flip_uv</code> and <code>gx_flip_frag_coord</code>.</li>
+<li>May need to use <code>dw_flip_uv</code> and <code>dw_flip_frag_coord</code>.</li>
 </ul>
 </li>
 <li><code>DriftShader</code> does not support all of <code>ShaderToy</code> inputs and features.</li>
