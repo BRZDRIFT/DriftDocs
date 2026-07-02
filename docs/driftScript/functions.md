@@ -1852,7 +1852,26 @@ float ceil(float x)
 float fmod(float val, float divisor)
 ```
 
-- return value will have same sign as `val`
+- floating-point remainder function
+- this is slighly different than the `%` operator
+    - `fmod` follows truncated division semantics (Similar to `C`)
+        - Sign will always be same as numerator
+    - `%` follows floor division semantics (Similar to `Python 3`)
+        - Sign will always be same as denominator
+```sq
+# fmod function:
+fmod(5, 3)          # +2.0
+fmod(-5, 3)         # -2.0
+fmod(5, -3)         # +2.0
+fmod(-5, -3)        # -2.0
+
+# % Operator:
+5.0 % 3.0           # +2.0
+-5.0 % 3.0          # +1.0
+5.0 % -3.0          # -1.0
+-5.0 % -3.0         # -2.0
+```
+
 ## getroottable
 ```sq
 table getroottable()
@@ -1860,6 +1879,14 @@ table getroottable()
 
 - get DriftScript's internal "root" table
 - this table contains all of the global functions and constants
+```sq
+local rt = getroottable();
+foreach (key, val in rt)
+{
+    print(key + ": " + val)
+}
+```
+
 ## getstackinfos
 ```sq
 table getstackinfos(int level)
