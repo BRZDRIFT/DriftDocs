@@ -1,11 +1,14 @@
 # Drift Shader
 
 ## Introduction
-
 The `BG.ShaderToy.glsl` utilizes `DriftShader` to render the map and minimap background.
 
 - It is inspired by `ShaderToy`, which uses `GLSL` as the shading language.
 - Browse [https://www.shadertoy.com/](https://www.shadertoy.com/) for documentation and examples.
+
+## VSCode Extension
+- Recommend either `WebGL GLSL Editor` or `GLSL Lint` vscode extensions (or any, really..)
+- There is no driftwars specific extension yet
 
 ## Entry Function
 ```glsl
