@@ -35,30 +35,30 @@ uniform sampler2D iChannel3;                // can be set via Background tab
 
 ## Color Conversion Functions
 ```glsl
-float gx_linear_to_srgb(float linear)
-float gx_srgb_to_linear(float srgb)
-vec3 gx_linear_to_srgb(vec3 linear)
-vec4 gx_linear_to_srgb(vec4 linear)
-vec3 gx_srgb_to_linear(vec3 srgb)
-vec4 gx_srgb_to_linear(vec4 srgb)
-vec3 gx_hsv_to_srgb(vec3 hsv);
-vec4 gx_hsv_to_srgb(vec4 hsva);
-vec3 gx_srgb_to_hsv(vec3 srgb);
-vec4 gx_srgb_to_hsv(vec4 srgba);
+float dw_linear_to_srgb(float linear)
+float dw_srgb_to_linear(float srgb)
+vec3 dw_linear_to_srgb(vec3 linear)
+vec4 dw_linear_to_srgb(vec4 linear)
+vec3 dw_srgb_to_linear(vec3 srgb)
+vec4 dw_srgb_to_linear(vec4 srgb)
+vec3 dw_hsv_to_srgb(vec3 hsv);
+vec4 dw_hsv_to_srgb(vec4 hsva);
+vec3 dw_srgb_to_hsv(vec3 srgb);
+vec4 dw_srgb_to_hsv(vec4 srgba);
 ```
 
-## gx_get_bg_shader_val
+## dw_get_bg_shader_val
 ```glsl
-float gx_get_bg_shader_val(int index)
+float dw_get_bg_shader_val(int index)
 ```
 
 - retrieves the shader value at slot `index`
 - the initial shader values can be set under `Background -> Shader Values` in the map editor
-- these values can be changed via `.DriftScript` using the `void gx_set_bg_shader_val(int index, float value)` function.
+- these values can be changed via `.DriftScript` using the `void dw_set_bg_shader_val(int index, float value)` function.
 
-## gx_flip_uv
+## dw_flip_uv
 ```glsl
-vec2 gx_flip_uv(vec2 uv) {
+vec2 dw_flip_uv(vec2 uv) {
     uv.y = 1.0 - uv.y;
     return uv;
 }
@@ -67,9 +67,9 @@ vec2 gx_flip_uv(vec2 uv) {
 - Helper to convert between `ShaderToy (OpenGL)` and `DriftShader (vulkan)` coordinate systems
 - (usually you don't need to use this, provided for convenience)
 
-## gx_flip_frag_coord
+## dw_flip_frag_coord
 ```glsl
-vec2 gx_flip_frag_coord(vec2 fragCoord) {
+vec2 dw_flip_frag_coord(vec2 fragCoord) {
     fragCoord.y = iResolution.y - uv.y;
     return fragCoord;
 }
@@ -85,5 +85,5 @@ There are differences between `DriftShader` and `ShaderToy`!!
     - If you copy a `ShaderToy` shader and it is not working (or crashing), VERIFY all variables are manually initialized to `0` !
 - `ShaderToy (OpenGL)` and `DriftShader (vulkan)` use different coordinate systems!
     - If you copy a `ShaderToy` shader to `DriftShader`, it may render upside-down!
-    - May need to use `gx_flip_uv` and `gx_flip_frag_coord`.
+    - May need to use `dw_flip_uv` and `dw_flip_frag_coord`.
 - `DriftShader` does not support all of `ShaderToy` inputs and features.

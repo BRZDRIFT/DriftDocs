@@ -130,10 +130,10 @@ def GetFunctionText(fnInfo):
 def OutputFunctions():
     finalOutput = ''
     for fnInfo in g_functionInfos:
-        if fnInfo[2].startswith('gx_'):
+        if fnInfo[2].startswith('dw_'):
             finalOutput += GetFunctionText(fnInfo)
     for fnInfo in g_functionInfos:
-        if not fnInfo[2].startswith('gx_'):
+        if not fnInfo[2].startswith('dw_'):
             finalOutput += GetFunctionText(fnInfo)
     fp = open(g_output + 'functions.md', 'w')
     fp.write(finalOutput)

@@ -60,7 +60,7 @@ Major changes from Squirrel:
     - removed functions that are unsafe for `utf-8`:
         - `.operator[idx]`, `.slice(start, end)`, `.find(str)`, `foreach (c in string)` removed.
     - added new string functions:
-        -  `.startswith(str)`, `.endswith(str)`, `.contains(str)`, `.replace(search, replace)`, `.split(str)`, and `gx_str_*` free functions
+        -  `.startswith(str)`, `.endswith(str)`, `.contains(str)`, `.replace(search, replace)`, `.split(str)`, and `dw_str_*` free functions
         - more string functions may be added later.
 - Type changes:
     - `int` types are signed 64-bit 

@@ -304,7 +304,7 @@ enum UdProp
 ```
 
 UnitData Property
-- Properties can only be modified during the `gx_map_init` stage
+- Properties can only be modified during the `dw_map_init` stage
 ## PlayerProp
 ```sq
 enum PlayerProp
