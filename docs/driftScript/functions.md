@@ -1858,6 +1858,7 @@ float fmod(float val, float divisor)
         - Sign will always be same as numerator
     - `%` follows floor division semantics (Similar to `Python 3`)
         - Sign will always be same as denominator
+
 ```sq
 # fmod function:
 fmod(5, 3)          # +2.0
