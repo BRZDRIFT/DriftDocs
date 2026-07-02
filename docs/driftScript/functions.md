@@ -1118,22 +1118,6 @@ table params = {
 
 - Returns all the pixels in the image in hex3 format
 - Alpha channel is ignored and not returned
-## gx_set_terrain_glow_color
-```sq
-void gx_set_terrain_glow_color(table params = {})
-```
-
-```sq
-table params = {
-  int m_index,      # Glow index to change, required
-  int m_hex,        # srgb hex3 code for color to set
-  Float3 m_color    # srgb color (each component [0.0-1.0]) for new color to set
-}
-```
-
-- Only one `m_hex` or `m_color` should be set, not both.
-- Internally, `m_hex` is converted to `m_color`.
-- `m_hex` parameter is only given for convenience.
 ## gx_decal_create
 ```sq
 int gx_decal_create(table params)
@@ -1567,6 +1551,58 @@ bool gx_is_ud_auto_attack_anim_for_siege_mode(string udName, string animName)
 ```
 
 
+## gx_set_terrain_unpassable_color
+```sq
+void gx_set_terrain_unpassable_color(int slot, Float3 colorSRGB)
+```
+
+- slot should be `[0-15]`
+## gx_get_terrain_unpassable_color
+```sq
+Float3 gx_get_terrain_unpassable_color(int slot)
+```
+
+- slot should be `[0-15]`
+## gx_set_unpassable_terrain_color
+```sq
+void gx_set_unpassable_terrain_color(int slot, Float4 colorSRGB)
+```
+
+- slot should be `[0-15]`
+## gx_get_unpassable_terrain_color
+```sq
+Float4 gx_get_unpassable_terrain_color(int slot)
+```
+
+- slot should be `[0-15]`
+## gx_set_terrain_glow_color
+```sq
+void gx_set_terrain_glow_color(int slotIdx, Vec3 colorSRGB)
+```
+
+
+## gx_set_terrain_glow_color_2
+```sq
+void gx_set_terrain_glow_color_2(table params = {})
+```
+
+```sq
+table params = {
+  int m_index,      # Glow index to change, required
+  int m_hex,        # srgb hex3 code for color to set
+  Float3 m_color    # srgb color (each component [0.0-1.0]) for new color to set
+}
+```
+
+- Only one `m_hex` or `m_color` should be set, not both.
+- Internally, `m_hex` is converted to `m_color`.
+- `m_hex` parameter is only given for convenience.
+## gx_get_terrain_unpassable_color
+```sq
+Float3 gx_get_terrain_unpassable_color(int slot)
+```
+
+- slot should be `[0-15]`
 ## gx_is_event_queue_empty
 ```sq
 void gx_is_event_queue_empty()
