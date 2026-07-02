@@ -1880,6 +1880,7 @@ table getroottable()
 
 - get DriftScript's internal "root" table
 - this table contains all of the global functions and constants
+
 ```sq
 local rt = getroottable();
 foreach (key, val in rt)
