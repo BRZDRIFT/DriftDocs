@@ -282,7 +282,7 @@ bool gx_is_unit_alive(int unitID)
 bool gx_is_unit_killed(int unitID)
 ```
 
-- returns if the unit `unit_id` is killed
+- returns `true` if the unit `unit_id` is killed
 - returns `true` if unit does not exist
 - equivalent to calling `!gx_is_unit_alive(unit_id)`
 ## gx_get_unit_position
@@ -1592,10 +1592,10 @@ table params = {
   int m_hex,        # srgb hex3 code for color to set
   Float3 m_color    # srgb color (each component [0.0-1.0]) for new color to set
 }
-- `m_index` should be `[0-31]`
 ```
 
 - Only one `m_hex` or `m_color` should be set, not both.
+- `m_index` should be `[0-31]`
 - Internally, `m_hex` is converted to `m_color`.
 - `m_hex` parameter is only given for convenience.
 ## gx_get_terrain_glow_color
