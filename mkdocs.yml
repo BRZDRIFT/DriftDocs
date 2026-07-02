@@ -46,6 +46,8 @@ nav:
 
 theme:
     name: material
+    logo: assets/icon.png
+    favicon: assets/icon.png
     highlightjs: false  # disable highlight.js
     palette:
       # Palette toggle for light mode
