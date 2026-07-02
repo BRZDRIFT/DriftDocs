@@ -6,10 +6,6 @@ The `BG.ShaderToy.glsl` utilizes `DriftShader` to render the map and minimap bac
 - It is inspired by `ShaderToy`, which uses `GLSL` as the shading language.
 - Browse [https://www.shadertoy.com/](https://www.shadertoy.com/) for documentation and examples.
 
-## VSCode Extension
-- Recommend either `WebGL GLSL Editor` or `GLSL Lint` vscode extensions (or any, really..)
-- There is no driftwars specific extension yet
-
 ## Entry Function
 ```glsl
 void mainImage(out vec4 outSRGB, vec2 fragCoord) {
@@ -80,6 +76,10 @@ vec2 gx_flip_frag_coord(vec2 fragCoord) {
 
 - Helper to convert between `ShaderToy (OpenGL)` and `DriftShader (vulkan)` coordinate systems
 - (usually you don't need to use this, provided for convenience)
+
+## VSCode Extension
+- `WebGL GLSL Editor` or `GLSL Lint` vscode extensions (or any, really..)
+- There is no driftwars specific extension yet
 
 ## Warning!!
 There are differences between `DriftShader` and `ShaderToy`!!
