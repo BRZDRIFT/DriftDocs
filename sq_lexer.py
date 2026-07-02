@@ -85,7 +85,8 @@ class SquirrelLexer(MyCppLexer):
             'DamageExtraTable', 'Expr', 'DynValType ', 'BinaryOp',
             'UnaryOp', 'Random', 'DynValType', 'AABR_int', 'AABR_float',
             'array', 'delete', 'print', 'object', 'BuildStructureItemTable',
-            'BuildItemTable', 'BuildItemType', 'UdProp', 'null', 'AuraTable'
+            'BuildItemTable', 'BuildItemType', 'UdProp', 'null', 'AuraTable',
+            'clone'
     )
 
     def get_tokens_unprocessed(self, text, stack=('root',)):
