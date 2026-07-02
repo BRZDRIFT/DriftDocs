@@ -1077,27 +1077,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dw_map_init" class="md-nav__link">
+  <a href="#gx_map_init" class="md-nav__link">
     <span class="md-ellipsis">
-      dw_map_init
+      gx_map_init
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#dw_sim_init" class="md-nav__link">
+  <a href="#gx_sim_init" class="md-nav__link">
     <span class="md-ellipsis">
-      dw_sim_init
+      gx_sim_init
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#dw_sim_update" class="md-nav__link">
+  <a href="#gx_sim_update" class="md-nav__link">
     <span class="md-ellipsis">
-      dw_sim_update
+      gx_sim_update
     </span>
   </a>
   
@@ -1421,27 +1421,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dw_map_init" class="md-nav__link">
+  <a href="#gx_map_init" class="md-nav__link">
     <span class="md-ellipsis">
-      dw_map_init
+      gx_map_init
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#dw_sim_init" class="md-nav__link">
+  <a href="#gx_sim_init" class="md-nav__link">
     <span class="md-ellipsis">
-      dw_sim_init
+      gx_sim_init
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#dw_sim_update" class="md-nav__link">
+  <a href="#gx_sim_update" class="md-nav__link">
     <span class="md-ellipsis">
-      dw_sim_update
+      gx_sim_update
     </span>
   </a>
   
@@ -1465,8 +1465,8 @@
 
 <h1 id="entry-points">Entry Points</h1>
 <p>Your script code has 3 entry points.</p>
-<h2 id="dw_map_init">dw_map_init</h2>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">function</span><span class="w"> </span><span class="nf">dw_map_init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<h2 id="gx_map_init">gx_map_init</h2>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">function</span><span class="w"> </span><span class="nf">gx_map_init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="c1"># your code here</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">}</span>
 </span></code></pre></div>
@@ -1477,11 +1477,11 @@
 </li>
 <li>This is the only place you are allowed to modify/copy unit datas (i.e. make your own units).</li>
 <li>This function is only called once.</li>
-<li>Global variables defined in this script are not accessible from the <code>dw_sim_*</code> functions</li>
+<li>Global variables defined in this script are not accessible from the <code>gx_sim_*</code> functions</li>
 <li>Should be defined in <code>/MapInit.DriftScript</code></li>
 </ul>
-<h2 id="dw_sim_init">dw_sim_init</h2>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">function</span><span class="w"> </span><span class="nf">dw_sim_init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<h2 id="gx_sim_init">gx_sim_init</h2>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">function</span><span class="w"> </span><span class="nf">gx_sim_init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="c1"># your code here</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">}</span>
 </span></code></pre></div>
@@ -1489,23 +1489,23 @@
 <li>Called when game simulation is setup and ready.</li>
 <li>This is where your initialization code goes.</li>
 <li>This function is only called once.</li>
-<li>Global variables defined here are accessible to <code>dw_sim_update</code></li>
-<li>At this point, <a href="/DriftDocs/driftScript/functions/#dw_get_sim_tick">dw_get_sim_tick</a> will return 0.</li>
+<li>Global variables defined here are accessible to <code>gx_sim_update</code></li>
+<li>At this point, <a href="/DriftDocs/driftScript/functions/#gx_get_sim_tick">gx_get_sim_tick</a> will return 0.</li>
 <li>Should be defined in <code>/SimUpdate.DriftScript</code></li>
 </ul>
-<h2 id="dw_sim_update">dw_sim_update</h2>
-<div class="language-sq highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">function</span><span class="w"> </span><span class="nf">dw_sim_update</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<h2 id="gx_sim_update">gx_sim_update</h2>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">function</span><span class="w"> </span><span class="nf">gx_sim_update</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="c1"># your code here</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">}</span>
 </span></code></pre></div>
 <ul>
 <li>Called once every simulation update (roughly every 50ms).</li>
-<li>On first invocation, <a href="/DriftDocs/driftScript/functions/#dw_get_sim_tick">dw_get_sim_tick</a> will return 1.<ul>
-<li>On second invocation, <a href="/DriftDocs/driftScript/functions/#dw_get_sim_tick">dw_get_sim_tick</a> will return 2, and so on..</li>
+<li>On first invocation, <a href="/DriftDocs/driftScript/functions/#gx_get_sim_tick">gx_get_sim_tick</a> will return 1.<ul>
+<li>On second invocation, <a href="/DriftDocs/driftScript/functions/#gx_get_sim_tick">gx_get_sim_tick</a> will return 2, and so on..</li>
 </ul>
 </li>
 <li>This is where your main script code goes.</li>
-<li>Global variables persist across <code>dw_sim_update</code> calls.</li>
+<li>Global variables persist across <code>gx_sim_update</code> calls.</li>
 <li>Should be defined in <code>/SimUpdate.DriftScript</code></li>
 </ul>
 
