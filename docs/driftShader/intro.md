@@ -80,7 +80,7 @@ vec2 gx_flip_frag_coord(vec2 fragCoord) {
 
 ## VSCode Extension
 - `WebGL GLSL Editor` or `GLSL Lint` vscode extensions (or any, really..)
-- There is no driftwars specific extension yet
+- There is no `DriftShader` specific extension yet
 
 ## Warning!!
 There are differences between `DriftShader` and `ShaderToy`!!
