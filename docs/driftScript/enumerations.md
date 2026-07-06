@@ -273,7 +273,9 @@ enum SimProp
     GlowColor = 2,                  # Read-Write (Vec4)
     EnableChatMessageEvents = 3,    # Read-Write (bool)
     EnableUnitDeathEvents = 4,      # Read-Write (bool)
-    Timer = 5                       # Read-Write (int)
+    Timer = 5,                      # Read-Write (int)
+    PlayableMapSize = 6,            # Read (Int2)
+    MapSize = 7                     # Read (Int2)
 }
 ```
 
@@ -322,7 +324,7 @@ enum PlayerProp
     TagID = 10,                 # Read (int)
     ChoseRandom = 11,           # Read (bool)
     Race = 12,                  # Read (int)
-    StartLocationPosition = 16, # Read-Write (int)
+    StartLocationPosition = 16, # Read (Vec2)
     Score = 17,                 # Read-Write (int)
     IsNormalPlayer = 18,        # Read (bool)
     IsHumanPlayer = 19,         # Read (bool)
@@ -378,10 +380,10 @@ enum TerrainType
     Transparent = 5,    # valid secondary types are [0 - 15]
     Glow = 6,           # valid secondary types are [0 - 31]
     PlayerColor = 8,    # valid secondary types are player_id, i.e. [1-16]
-    Unpassable = 9,     # !! Not a dynamic terrain type!
+    Unpassable = 9,     # valid secondary types are [0 - 15]
     Space = 10,         # valid secondary type is just 0
-    CliffClosed = 14,   # !! Not a dynamic terrain type!
-    CliffBorder = 15    # !! Not a dynamic terrain type!
+    CliffClosed = 14,   # !! Not a dynamic terrain type! Cannot modify!
+    CliffBorder = 15    # !! Not a dynamic terrain type! Cannot modify!
 }
 ```
 

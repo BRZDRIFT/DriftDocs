@@ -592,10 +592,12 @@ table params = {
     int m_gemstoneHarvestAmount,
     bool m_bDisableHarvest,
     bool m_bDisableTransport,
-    bool m_bEnableMove,
+    bool m_bDisableMove,
     bool m_bEnableCanRepair,
     bool m_bStructureUnit,
     bool m_bAirUnit,
+    bool m_bFish,
+    bool m_bCritterFlag,
     AuraTable m_aura,
 }
 ```
@@ -1581,23 +1583,6 @@ void gx_set_terrain_glow_color(int slot, Float3 colorSRGB)
 ```
 
 - slot should be `[0-31]`
-## gx_set_terrain_glow_color_2
-```sq
-void gx_set_terrain_glow_color_2(table params = {})
-```
-
-```sq
-table params = {
-  int m_index,      # Glow index to change, required
-  int m_hex,        # srgb hex3 code for color to set
-  Float3 m_color    # srgb color (each component [0.0-1.0]) for new color to set
-}
-```
-
-- Only one `m_hex` or `m_color` should be set, not both.
-- `m_index` should be `[0-31]`
-- Internally, `m_hex` is converted to `m_color`.
-- `m_hex` parameter is only given for convenience.
 ## gx_get_terrain_glow_color
 ```sq
 Float3 gx_get_terrain_glow_color(int slot)
