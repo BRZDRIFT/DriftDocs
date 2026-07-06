@@ -603,6 +603,9 @@ table params = {
     int m_sizeInJeep,
     int m_sizeInTransport,
     int m_sizeInBunker,
+    Expr<bool> m_waterImmunity,
+    Expr<bool> m_lavaImmunity,
+    Expr<bool> m_terrainImmunity,
     AuraTable m_aura,
 }
 ```
