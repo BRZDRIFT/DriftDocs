@@ -599,6 +599,10 @@ table params = {
     bool m_bFish,
     bool m_bCritterFlag,
     bool m_bCanBeCarriedByProbe,
+    Expr<bool> m_canRideJeepReq,
+    int m_sizeInJeep,
+    int m_sizeInTransport,
+    int m_sizeInBunker,
     AuraTable m_aura,
 }
 ```
