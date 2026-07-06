@@ -1,9 +1,10 @@
 # Drift Shader
 
 ## Introduction
-The `BG.ShaderToy.glsl` utilizes `DriftShader` to render the map and minimap background.
+`DriftShader` is responsible for rendering the background of maps.
 
 - It is inspired by `ShaderToy`, which uses `GLSL` as the shading language.
+- `BG.ShaderToy.glsl` is compiled to a shader and used to render the map and minimap background.
 - Browse [https://www.shadertoy.com/](https://www.shadertoy.com/) for documentation and examples.
 
 ## Entry Function
