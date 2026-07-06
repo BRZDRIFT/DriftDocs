@@ -598,6 +598,7 @@ table params = {
     bool m_bAirUnit,
     bool m_bFish,
     bool m_bCritterFlag,
+    bool m_bCanBeCarriedByProbe,
     AuraTable m_aura,
 }
 ```
