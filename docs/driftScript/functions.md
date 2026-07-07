@@ -1391,12 +1391,20 @@ void gx_force_select_units(int playerID, int unitIDs[])
 ```
 
 - clears player's unit selection, and sets unitIDs as new selection
-## gx_add_event_message
+## gx_add_left_side_message
 ```sq
-void gx_add_event_message(string message)
+void gx_add_left_side_message(string msg, table params = {})
 ```
 
-- Adds an event message visibly by all players on left side of screen
+```sq
+table params = {
+    int m_forceIDs[],
+    int m_playerIDs[],
+    int m_duration = 100,   # 5 seconds
+}
+```
+
+- Adds an event message visible on left side of screen
 ## gx_display_ui_elements
 ```sq
 void gx_display_ui_elements(table params = {})
@@ -1418,12 +1426,11 @@ table params = {
 
 ## gx_add_center_message
 ```sq
-int gx_add_center_message(table params = {})
+int gx_add_center_message(string msg, table params = {})
 ```
 
 ```sq
 table params = {
-    string m_msg,
     int m_forceIDs[],
     int m_playerIDs[],
     int m_duration = 100,   # 5 seconds
