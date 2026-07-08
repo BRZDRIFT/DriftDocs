@@ -1444,16 +1444,17 @@
 </li>
 <li><code>Player Color</code><ul>
 <li>Increases unit speed for associated player</li>
+<li>Secodary style matches player id, <code>[1-16]</code></li>
 </ul>
 </li>
 <li><code>Water</code><ul>
 <li>Decreases unit speed</li>
-<li>The different secondary styles just slightly change the visual look</li>
+<li>The different secondary styles just slightly change the visual look, <code>[0-3]</code></li>
 </ul>
 </li>
 <li><code>Lava</code><ul>
 <li>Does damage over time to units</li>
-<li>The different secondary styles just slightly change the visual look</li>
+<li>The different secondary styles just slightly change the visual look, <code>[0-3]</code></li>
 </ul>
 </li>
 <li><code>Diamond</code><ul>
@@ -1463,14 +1464,16 @@
 <li><code>Unpassable</code><ul>
 <li>Units cannot pass through this terrain type</li>
 <li>This style is <code>permanent</code>. Cannot be changed through game nor scripting.</li>
+<li>Only the secondary style can be changed via scripting. Valid values: <code>[0-15]</code>.</li>
 </ul>
 </li>
 <li><code>Space</code><ul>
 <li>units will fall to their death if they ever walk or touch this terrain</li>
+<li>only valid secondary is <code>0</code>.</li>
 </ul>
 </li>
 <li><code>Glow</code><ul>
-<li>32 secondary styles, each style can be configured to show a different color</li>
+<li>32 secondary styles, each style can be configured to show a different color, <code>[0-31]</code></li>
 <li>Units gain health regen and speed increase when on this triangle type</li>
 </ul>
 </li>
