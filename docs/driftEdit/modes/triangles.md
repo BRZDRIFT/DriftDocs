@@ -15,19 +15,22 @@
     - `Pacifist`: units are unable to attack when on this type
 -  `Player Color`
     - Increases unit speed for associated player
+    - Secodary style matches player id, `[1-16]`
 - `Water`
     - Decreases unit speed
-    - The different secondary styles just slightly change the visual look
+    - The different secondary styles just slightly change the visual look, `[0-3]`
 - `Lava`
     - Does damage over time to units
-    - The different secondary styles just slightly change the visual look
+    - The different secondary styles just slightly change the visual look, `[0-3]`
 - `Diamond`
     - "cracks" when units walk on it
 - `Unpassable`
     - Units cannot pass through this terrain type
     - This style is `permanent`. Cannot be changed through game nor scripting.
+    - Only the secondary style can be changed via scripting. Valid values: `[0-15]`.
 - `Space`
     - units will fall to their death if they ever walk or touch this terrain
+    - only valid secondary is `0`.
 - `Glow`
-    - 32 secondary styles, each style can be configured to show a different color
+    - 32 secondary styles, each style can be configured to show a different color, `[0-31]`
     - Units gain health regen and speed increase when on this triangle type

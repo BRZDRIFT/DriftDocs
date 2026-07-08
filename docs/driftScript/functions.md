@@ -668,6 +668,12 @@ string gx_map_init_copy_ud(string name, string newName)
 - `newName` must begin with `User_`
 - `newName` must not already be a unit data
 - `name` must be an existing unit data
+## gx_ud_exists
+```sq
+bool gx_ud_exists(string ud)
+```
+
+- Checks if the unit data `ud` exists
 ## gx_modify_scoreboard
 ```sq
 void gx_modify_scoreboard(table params = {})
@@ -1400,7 +1406,7 @@ void gx_add_left_side_message(string msg, table params = {})
 table params = {
     int m_forceIDs[],
     int m_playerIDs[],
-    int m_duration = 100,   # 5 seconds
+    int m_duration,     # default: 100, (5 seconds)
 }
 ```
 
@@ -1433,7 +1439,7 @@ int gx_add_center_message(string msg, table params = {})
 table params = {
     int m_forceIDs[],
     int m_playerIDs[],
-    int m_duration = 100,   # 5 seconds
+    int m_duration,     # default: 100, (5 seconds)
 }
 ```
 
@@ -1604,6 +1610,12 @@ Float3 gx_get_terrain_glow_color(int slot)
 ```
 
 - slot should be `[0-31]`
+## abort
+```sq
+void abort(string msg = "")
+```
+
+- essentially: `assert(false, msg)`
 ## gx_is_event_queue_empty
 ```sq
 void gx_is_event_queue_empty()

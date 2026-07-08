@@ -6,11 +6,13 @@ class Vec2 {
     function _sub(Vec2 other)               # returns Vec2
     function _mul((float|int|Vec2) other)   # returns Vec2
     function _div((float|int|Vec2) other)   # returns Vec2
+    function _floor_div((float|int|Vec2) other)      # returns Vec2
     function _unm(Vec2 other)               # returns Vec2
     function _unp(Vec2 other)               # returns Vec2
     function _eq(Vec2 other)                # returns bool
     function _hash()                        # returns int
     function _tostring()                    # returns string
+    function _typeof()                      # returns string
     function IsZero(other)                  # returns bool
     function Dot(Vec2 other)                # returns float or int
     function Length()                       # returns float
@@ -46,11 +48,13 @@ class Vec3 {
     function _sub(Vec3 other)               # returns Vec3
     function _mul((float|int|Vec3) other)   # returns Vec3
     function _div((float|int|Vec3) other)   # returns Vec3
+    function _floor_div((float|int|Vec3) other)      # returns Vec3
     function _unm(Vec3 other)               # returns Vec3
     function _unp(Vec3 other)               # returns Vec3
     function _eq(Vec3 other)                # returns bool
     function _hash()                        # returns int
     function _tostring()                    # returns string
+    function _typeof()                      # returns string
     function IsZero(other)                  # returns bool
     function Dot(Vec3 other)                # returns float or int
     function Length()                       # returns float
@@ -87,11 +91,13 @@ class Vec4 {
     function _sub(Vec4 other)               # returns Vec4
     function _mul((float|int|Vec4) other)   # returns Vec4
     function _div((float|int|Vec4) other)   # returns Vec4
+    function _floor_div((float|int|Vec4) other)      # returns Vec4
     function _unm(Vec4 other)               # returns Vec4
     function _unp(Vec4 other)               # returns Vec4
     function _eq(Vec4 other)                # returns bool
     function _hash()                        # returns int
     function _tostring()                    # returns string
+    function _typeof()                      # returns string
     function IsZero(other)                  # returns bool
     function Dot(Vec4 other)                # returns float or int
     function Length()                       # returns float
@@ -138,6 +144,8 @@ class AABR {
     function _eq(AABR other)        # returns bool
     function _hash()                # returns int
     function _cloned(AABR orig)
+    function _typeof()              # returns string
+    function _tostring()            # returns string
     function GetSize()              # returns Vec2<int|float>
     function GetTopLeft()           # returns Vec2<int|float>
     function GetTopRight()          # returns Vec2<int|float>
@@ -179,6 +187,8 @@ class ComplexColor {
     function _eq(ComplexColor other)
     function _hash()
     function _cloned(ComplexColor orig)
+    function _typeof()
+    function _tostring()
 
     m_srgba = Vec4(1.0, 1.0, 1.0, 1.0)
     m_type = ColorType.Normal
@@ -196,6 +206,7 @@ class Random {
     int RandInt(int min, int max)           # returns integer between [min, max]
     float RandFloat(float min, float max)   # returns float between [min, max]
     function _cloned(Random orig)
+    function _typeof()
 }
 ```
 
