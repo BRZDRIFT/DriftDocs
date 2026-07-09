@@ -72,7 +72,8 @@ enum AttackType
     SmokeBlast = 6,
     ShortLaser = 7,
     Shotgun = 8,
-    Grenade = 9
+    Grenade = 9,
+    Spikes = 10
 }
 ```
 

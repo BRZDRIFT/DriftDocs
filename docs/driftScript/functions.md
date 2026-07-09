@@ -579,6 +579,7 @@ table params = {
     int m_fungusCost,
     int m_supplyCost,
     int m_buildTime,
+    bool m_bDriftMode,
     Expr<bool> m_req,
     Expr<int> m_attackLevel,
     Expr<int> m_armorLevel,
@@ -1948,6 +1949,7 @@ mixed suspend(mixed val, ...)
 array.len()
 array.append(val)
 array.extend(array)
+array.empty()
 array.push(val)
 array.pop()
 array.top()
@@ -2023,6 +2025,7 @@ float pow(float val, int exponent)
 
 ```sq
 table.len()
+table.empty()
 table.tostring()
 table.clear()
 table.filter(func(key, val))
@@ -2046,6 +2049,7 @@ string string(text = "")
 
 ```sq
 string.len()
+string.empty()
 string.tointeger([base])
 string.tofloat()
 string.tostring()
@@ -2056,6 +2060,7 @@ string.endswith(search)
 string.split(sep)
 string.tolower()
 string.toupper()
+string.normalchars()
 string.weakref()
 ```
 
