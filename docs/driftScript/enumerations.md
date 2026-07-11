@@ -9,7 +9,8 @@ enum Race
     Invalid = 0,
     Human = 1,
     Robot = 2,
-    Monster = 3
+    Monster = 3,
+    Other = 4
 }
 ```
 
@@ -54,7 +55,8 @@ enum EffectType
     Invalid = 0,
     BlackHole = 1,
     Visual_QuadDamage = 2,
-    Visual_DefMatrix = 3
+    Visual_DefMatrix = 3,
+    DisruptionCylinder = 4,
 }
 ```
 
