@@ -1612,12 +1612,6 @@ Float3 gx_get_terrain_glow_color(int slot)
 ```
 
 - slot should be `[0-31]`
-## abort
-```sq
-void abort(string msg = "")
-```
-
-- essentially: `assert(false, msg)`
 ## gx_is_event_queue_empty
 ```sq
 void gx_is_event_queue_empty()
@@ -1995,6 +1989,12 @@ void dummy()
 ```
 
 - function that does nothing
+## abort
+```sq
+void abort(string msg = "")
+```
+
+- essentially: `assert(false, msg)`
 ## min
 ```sq
 mixed min(mixed x, mixed y)
