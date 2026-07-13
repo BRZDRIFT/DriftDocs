@@ -46,12 +46,9 @@ nav:
         - 'Introduction': 'driftShader/intro.md'
 
 copyright: >
-  <img src="https://brzdrift.github.io/DriftDocs/assets/icon.gif" style="height: 32px; vertical-align: middle; margin-right: 4px;">
-  Drift Wars.. For Gosus, by Gosus..
-
-extra:
-    generator: false
-
+      <img src="https://brzdrift.github.io/DriftDocs/assets/icon.gif" style="height: 20px; vertical-align: middle; margin-right: 2px;">
+      Drift Wars.. For Gosus, by Gosus..
+      
 theme:
     name: material
     logo: assets/icon.gif
