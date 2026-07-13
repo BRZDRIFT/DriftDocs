@@ -72,6 +72,9 @@ Major changes from Squirrel:
 - Bunch of other stuff..
 - `Squirrel Standard Library` is not supported.
     - Although, DriftScript provides many functions with identical behavior.
-- Future TODOs:
-    - Better error-handling and compilation/runtime errors.
-    - Improved vscode syntax-highlighting, auto-complete, etc.
+
+## Future TODOs
+- May add `global` keyword for defining global variables easier
+- May add some form of `_destruct` meta function for classes
+- Better error-handling and compilation/runtime errors.
+- Improved vscode syntax-highlighting, auto-complete, etc.

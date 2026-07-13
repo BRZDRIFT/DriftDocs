@@ -83,7 +83,8 @@ table params = {
     int m_level,
     bool m_bForceGhostMode,
     bool m_bSieged,
-    bool m_bLiftedStructure
+    bool m_bLiftedStructure,
+    bool m_bBurrowed
 }
 ```
 
