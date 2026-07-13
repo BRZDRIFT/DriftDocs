@@ -580,6 +580,7 @@ table params = {
     int m_supplyCost,
     int m_buildTime,
     bool m_bDriftMode,
+    bool m_bVisionBlocker,
     Expr<bool> m_req,
     Expr<int> m_attackLevel,
     Expr<int> m_armorLevel,
@@ -1791,6 +1792,12 @@ int rand_signed()
 ## rand64
 ```sq
 int rand64()
+```
+
+- returns random number from `[0, +9223372036854775807]`
+## rand64_signed
+```sq
+int rand64_signed()
 ```
 
 - returns random number from `[-9223372036854775808, +9223372036854775807]`

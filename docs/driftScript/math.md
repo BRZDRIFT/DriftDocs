@@ -31,7 +31,8 @@
 - `float atan2(float y, float x)` - arctan2 of x
 - `int rand()` - return random integer from [`0`, `2147483647`]
 - `int rand_signed()` - return random integer from [`-2147483648`, `2147483647`]
-- `int rand64()` - returns random integer from [`INT_MIN`, `INT_MAX`]
+- `int rand64()` - returns random integer from [`0`, `INT_MAX`]
+- `int rand64_signed()` - returns random integer from [`INT_MIN`, `INT_MAX`]
 - `int rand_int(int min, int max)` returns random integer from [`min`, `max`]
 - `float rand_float(float min, float max)` returns random float from [`min`, `max`]
 - `mixed abs(mixed x)` - return absolute value of x.
