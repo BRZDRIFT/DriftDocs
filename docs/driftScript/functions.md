@@ -1154,8 +1154,8 @@ table params = {
     float m_size,
     Float2 m_size,                  # size, can either be Float2 or float
     string m_tag,
-    string m_texture,               # icon to use
-    float m_speedFactor,            # animation speed if m_texture is animated GIF
+    string m_img,                   # icon to use
+    float m_speedFactor,            # animation speed if m_img is animated GIF
     bool m_bOverlayOnSpace,
     bool m_bOverlayOnNormalTerrain
 }
@@ -1180,8 +1180,8 @@ table params = {
     float m_size,
     Float2 m_size,              # size, can either be Float2 or float
     string m_tag,
-    string m_texture,           # icon to use
-    float m_speedFactor,        # animation speed if m_texture is animated GIF
+    string m_img,               # icon to use
+    float m_speedFactor,        # animation speed if m_img is animated GIF
     bool m_bOverlayOnSpace,
     bool m_bOverlayOnNormalTerrain
 }
