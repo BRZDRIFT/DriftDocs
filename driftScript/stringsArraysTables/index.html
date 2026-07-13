@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../scriptEntryPoints/">
+        <link rel="prev" href="../builtinTypes/">
       
       
-        <link rel="next" href="../builtinTypes/">
+        <link rel="next" href="../math/">
       
       
       <link rel="icon" href="../../assets/icon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Identifiers - Drift Docs</title>
+        <title>Strings/Arrays/Tables - Drift Docs</title>
       
     
     
@@ -71,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#string" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -102,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Identifiers
+              Strings/Arrays/Tables
             
           </span>
         </div>
@@ -1040,17 +1045,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../identifiers/" class="md-nav__link">
         
   
   
@@ -1061,7 +1059,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1094,10 +1091,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../stringsArraysTables/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Strings/Arrays/Tables
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1108,6 +1125,51 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    <span class="md-ellipsis">
+      string
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#array" class="md-nav__link">
+    <span class="md-ellipsis">
+      array
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table" class="md-nav__link">
+    <span class="md-ellipsis">
+      table
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1367,6 +1429,41 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#string" class="md-nav__link">
+    <span class="md-ellipsis">
+      string
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#array" class="md-nav__link">
+    <span class="md-ellipsis">
+      array
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table" class="md-nav__link">
+    <span class="md-ellipsis">
+      table
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1381,14 +1478,66 @@
 
 
 
-  <h1>Identifiers</h1>
+  <h1>Strings/Arrays/Tables</h1>
 
-<ul>
-<li>Integer IDs are used to represent <code>Units</code>, <code>Players</code>, <code>Forces</code>, and other things..</li>
-<li>Invalid Integer IDs are equal to 0.</li>
-<li>String identifiers are used to represent <code>Locations</code>, <code>TriangleGroups</code>, <code>UnitDatas</code>, <code>UnitGroups</code> and other things..</li>
-<li>Invalid string identifiers are equal to empty string <code>""</code>.</li>
-</ul>
+<h2 id="string">string</h2>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">string</span><span class="p">.</span><span class="n">len</span><span class="p">()</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kt">string</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kt">string</span><span class="p">.</span><span class="n">tointeger</span><span class="p">([</span><span class="n">base</span><span class="p">])</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kt">string</span><span class="p">.</span><span class="n">tofloat</span><span class="p">()</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kt">string</span><span class="p">.</span><span class="n">tostring</span><span class="p">()</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="kt">string</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="n">search</span><span class="p">,</span><span class="w"> </span><span class="n">replace</span><span class="p">)</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="kt">string</span><span class="p">.</span><span class="n">contains</span><span class="p">(</span><span class="n">search</span><span class="p">)</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="kt">string</span><span class="p">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">search</span><span class="p">)</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="kt">string</span><span class="p">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">search</span><span class="p">)</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="kt">string</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="n">sep</span><span class="p">)</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="kt">string</span><span class="p">.</span><span class="n">tolower</span><span class="p">()</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="kt">string</span><span class="p">.</span><span class="n">toupper</span><span class="p">()</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="kt">string</span><span class="p">.</span><span class="n">normalchars</span><span class="p">()</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="kt">string</span><span class="p">.</span><span class="n">weakref</span><span class="p">()</span>
+</span></code></pre></div>
+<h2 id="array">array</h2>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">array</span><span class="p">.</span><span class="n">len</span><span class="p">()</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kt">array</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kt">array</span><span class="p">.</span><span class="n">extend</span><span class="p">(</span><span class="kt">array</span><span class="p">)</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kt">array</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="kt">array</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="kt">array</span><span class="p">.</span><span class="n">pop</span><span class="p">()</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="kt">array</span><span class="p">.</span><span class="n">top</span><span class="p">()</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="kt">array</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">)</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="kt">array</span><span class="p">.</span><span class="n">remove</span><span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="kt">array</span><span class="p">.</span><span class="n">resize</span><span class="p">([</span><span class="n">size</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="n">fill</span><span class="p">])</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="kt">array</span><span class="p">.</span><span class="n">reverse</span><span class="p">()</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="kt">array</span><span class="p">.</span><span class="n">sort</span><span class="p">([</span><span class="n">compare_func</span><span class="p">])</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="kt">array</span><span class="p">.</span><span class="n">slice</span><span class="p">(</span><span class="n">start</span><span class="p">[,</span><span class="w"> </span><span class="n">end</span><span class="p">])</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="kt">array</span><span class="p">.</span><span class="n">weakref</span><span class="p">()</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="kt">array</span><span class="p">.</span><span class="n">tostring</span><span class="p">()</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="kt">array</span><span class="p">.</span><span class="n">clear</span><span class="p">()</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="kt">array</span><span class="p">.</span><span class="n">map</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">item_value</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">item_index</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="n">array_ref</span><span class="p">]))</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="kt">array</span><span class="p">.</span><span class="n">apply</span><span class="p">(</span><span class="n">func</span><span class="p">([</span><span class="n">item_value</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">item_index</span><span class="p">],</span><span class="w"> </span><span class="p">[</span><span class="n">array_ref</span><span class="p">]))</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="kt">array</span><span class="p">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">prevval</span><span class="p">,</span><span class="w"> </span><span class="n">curval</span><span class="p">)[,</span><span class="w"> </span><span class="n">initializer</span><span class="p">])</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="kt">array</span><span class="p">.</span><span class="n">filter</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">index</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">))</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="kt">array</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="kt">array</span><span class="p">.</span><span class="n">find_ref</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="table">table</h2>
+<div class="language-sq highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">table</span><span class="p">.</span><span class="n">len</span><span class="p">()</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kt">table</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kt">table</span><span class="p">.</span><span class="n">tostring</span><span class="p">()</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kt">table</span><span class="p">.</span><span class="n">clear</span><span class="p">()</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kt">table</span><span class="p">.</span><span class="n">filter</span><span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">))</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="kt">table</span><span class="p">.</span><span class="n">keys</span><span class="p">()</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="kt">table</span><span class="p">.</span><span class="n">values</span><span class="p">()</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="c1"># delete item:</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="k">delete</span><span class="w"> </span><span class="kt">table</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="c1"># check key in table:</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="n">key</span><span class="w"> </span><span class="kt">in</span><span class="w"> </span><span class="kt">table</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="c1"># check key not in table:</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="n">key</span><span class="w"> </span><span class="kt">not_in</span><span class="w"> </span><span class="kt">table</span>
+</span></code></pre></div>
 
 
 
