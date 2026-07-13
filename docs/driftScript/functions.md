@@ -1152,8 +1152,7 @@ table params = {
     Float4 m_color,                 # srgb with alpha
     Float2 m_pos,
     float m_rotation,               # radians
-    float m_size,
-    Float2 m_size,                  # size, can either be Float2 or float
+    Float2|float m_size,            # size, can either be float or Float2
     string m_tag,
     string m_img,                   # icon to use
     float m_speedFactor,            # animation speed if m_img is animated GIF

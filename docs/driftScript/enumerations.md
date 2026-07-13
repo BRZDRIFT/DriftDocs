@@ -242,7 +242,7 @@ enum UnitProp
     Health = 2,                     # Read-Write (float)
     MaxSpeed = 3,                   # Read (float)
     Size = 4,                       # Read (float)
-    UdName = 5,                   # Read (string)
+    UdName = 5,                     # Read (string)
     IsOnFire = 6,                   # Read (bool)
     ParentJeep = 7,                 # Read-Write (int)
     ParentDropship = 8,             # Read-Write (int)
@@ -276,9 +276,10 @@ enum SimProp
     GlowColor = 2,                  # Read-Write (Vec4)
     EnableChatMessageEvents = 3,    # Read-Write (bool)
     EnableUnitDeathEvents = 4,      # Read-Write (bool)
-    Timer = 5,                      # Read-Write (int)
-    PlayableMapSize = 6,            # Read (Int2)
-    MapSize = 7                     # Read (Int2)
+    EnableLocationEvents = 5,       # Read-Write (bool)
+    Timer = 6,                      # Read-Write (int)
+    PlayableMapSize = 7,            # Read (Int2)
+    MapSize = 8                     # Read (Int2)
 }
 ```
 
@@ -297,7 +298,8 @@ enum DecalProp
 }
 ```
 
-
+This enum is to be used by `gx_get_decal_prop` and `gx_set_decal_prop`.
+See `gx_decal_modify` for more ways to modify decals.
 ## UdProp
 ```sq
 enum UdProp
