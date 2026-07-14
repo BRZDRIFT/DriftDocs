@@ -610,6 +610,9 @@ table params = {
     Expr<bool> m_lavaImmunity,
     Expr<bool> m_terrainImmunity,
     AuraTable m_aura,
+    float m_barrelExplodeDamage,
+    float m_barrelExplodeRadius,
+    float m_barrelExplodeThrowForce
 }
 ```
 
@@ -881,14 +884,6 @@ void gx_set_player_allied_to(int playerID, int otherPlayerID, bool bAlly)
 ```
 
 
-## gx_register_for_location_events
-```sq
-void gx_register_for_location_events(bool bEnable, table params = {})
-```
-
-- Register to receive `UnitEnteredLocation` and `UnitExitedLocation` events
-- no optional parameters currently
-- Usually you will want to only call this one time time in the `gx_sim_init` function
 ## gx_str_color_username
 ```sq
 string gx_str_color_username(ComplexColor color, string username)
@@ -1573,6 +1568,18 @@ int gx_get_num_attacks_in_ud_auto_attack_anim(string udName, string animName)
 ## gx_is_ud_auto_attack_anim_for_siege_mode
 ```sq
 bool gx_is_ud_auto_attack_anim_for_siege_mode(string udName, string animName)
+```
+
+
+## gx_is_ud_auto_attack_anim_for_burrow
+```sq
+bool gx_is_ud_auto_attack_anim_for_burrow(string udName, string animName)
+```
+
+
+## gx_is_ud_auto_attack_anim_for_normal
+```sq
+bool gx_is_ud_auto_attack_anim_for_normal(string udName, string animName)
 ```
 
 

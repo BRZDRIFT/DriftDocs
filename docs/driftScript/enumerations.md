@@ -57,6 +57,7 @@ enum EffectType
     Visual_QuadDamage = 2,
     Visual_DefMatrix = 3,
     DisruptionCylinder = 4,
+    FogOfWarVision = 5,
 }
 ```
 
@@ -92,7 +93,7 @@ enum VictoryStatus
 }
 ```
 
-- A `VictoryStatus::Pending` indicates the player is not yet assigned Victory/Defeat, usually meaning the player is still playing.
+- A `VictoryStatus.Pending` indicates the player is not yet assigned Victory/Defeat, usually meaning the player is still playing.
 - `Draw` or `Tie` is not yet supported.
 ## SpecialPlayer
 ```sq
