@@ -299,19 +299,20 @@ enum DecalProp
 }
 ```
 
-This enum is to be used by `gx_get_decal_prop` and `gx_set_decal_prop`.
-See `gx_decal_modify` for more ways to modify decals.
+- This enum is to be used by `gx_get_decal_prop` and `gx_set_decal_prop`.
+- See `gx_decal_modify` for more ways to modify decals.
 ## UdProp
 ```sq
 enum UdProp
 {
     Invalid = 0,            # Access/Type
     FriendlyName = 1,       # Read-Write (string)
-    SupportsSiegeMode = 2   # Read (bool)
+    SupportsSiegeMode = 2,  # Read (bool)
+    SupportsBurrowed = 3    # Read (bool)
 }
 ```
 
-UnitData Property
+- UnitData Property
 - Properties can only be modified during the `gx_map_init` stage
 ## PlayerProp
 ```sq
@@ -411,6 +412,17 @@ enum SecondaryTerrainTypeNormal
 ```
 
 - Should only be used in conjunction with `TerrainType.Normal`
+## ExplosionType
+```sq
+enum ExplosionType
+{
+    Invalid = 0,
+    Normal = 1,
+    Splash = 2
+}
+```
+
+
 ## Unicode
 ```sq
 enum Unicode

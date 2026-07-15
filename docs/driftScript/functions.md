@@ -222,7 +222,8 @@ void gx_create_explosion(table params)
 ```sq
 table params = {
     float m_size,
-    Float3 m_color = Float3(1, 1, 0),
+    Float3 m_color,
+    ExplosionType m_type,
     string m_location,
     bool m_bPlaySound,
     string m_sound,
@@ -1619,6 +1620,15 @@ Float3 gx_get_terrain_glow_color(int slot)
 ```
 
 - slot should be `[0-31]`
+## gx_to_debug_string
+```sq
+string gx_to_debug_string(object obj, bool bVerbose = false)
+```
+
+- can use this for debugging
+- returns string for table/array/object
+- do not rely on output staying the same
+- output may differ depending on game version
 ## gx_is_event_queue_empty
 ```sq
 void gx_is_event_queue_empty()
