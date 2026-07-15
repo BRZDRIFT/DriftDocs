@@ -1478,7 +1478,11 @@
 </span></code></pre></div></p>
 <ul>
 <li>Look at the comments in the definition of <a href="/DriftDocs/driftScript/enumerations/#eventtype">EventType</a> to see which fields each <code>EventType</code> populates.</li>
-<li>TODO: Better explain which fields are populated depending on <code>m_type</code></li>
+<li>TODO: Better explain which fields are populated depending on <code>m_type</code><ul>
+<li>Until then, you can use the <code>gx_to_debug_string</code> function to output the fields/values</li>
+<li>example: <code>print(gx_to_debug_string(ev, true))</code></li>
+</ul>
+</li>
 </ul>
 <p>Example of reading events from queue</p>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">function</span><span class="w"> </span><span class="nf">gx_sim_update</span><span class="p">()</span>
