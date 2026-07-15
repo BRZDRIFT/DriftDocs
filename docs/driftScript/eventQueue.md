@@ -35,6 +35,8 @@ table Event
 
 - Look at the comments in the definition of {{enum("EventType")}} to see which fields each `EventType` populates.
 - TODO: Better explain which fields are populated depending on `m_type`
+    - Until then, you can use the `gx_to_debug_string` function to output the fields/values
+    - example: `print(gx_to_debug_string(ev, true))`
 
 Example of reading events from queue
 
