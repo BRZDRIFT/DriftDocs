@@ -1478,6 +1478,10 @@
 </span></code></pre></div></p>
 <ul>
 <li>Look at the comments in the definition of <a href="/DriftDocs/driftScript/enumerations/#eventtype">EventType</a> to see which fields each <code>EventType</code> populates.</li>
+<li><code>m_playerName2</code> has color information already encoded into the string, which is what you usually want to use.<ul>
+<li>equivalent to: <code>Unicode.Special_PushColor + gx_str_encode_complex_color(m_playerNameColor) + m_playerName + Unicode.Special_PopColor</code></li>
+</ul>
+</li>
 <li>TODO: Better explain which fields are populated depending on <code>m_type</code><ul>
 <li>Until then, you can use the <code>gx_to_debug_string</code> function to output the fields/values</li>
 <li>example: <code>print(gx_to_debug_string(ev, true))</code></li>
