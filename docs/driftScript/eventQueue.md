@@ -34,6 +34,8 @@ table Event
 ```
 
 - Look at the comments in the definition of {{enum("EventType")}} to see which fields each `EventType` populates.
+- `m_playerName2` has color information already encoded into the string, which is what you usually want to use.
+    - equivalent to: `Unicode.Special_PushColor + gx_str_encode_complex_color(m_playerNameColor) + m_playerName + Unicode.Special_PopColor`
 - TODO: Better explain which fields are populated depending on `m_type`
     - Until then, you can use the `gx_to_debug_string` function to output the fields/values
     - example: `print(gx_to_debug_string(ev, true))`
