@@ -76,7 +76,8 @@ enum AttackType
     ShortLaser = 7,
     Shotgun = 8,
     Grenade = 9,
-    Spikes = 10
+    Spikes = 10,
+    DungBeatle = 11
 }
 ```
 
