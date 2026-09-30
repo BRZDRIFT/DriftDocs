@@ -398,10 +398,12 @@ int gx_melee_trigger(table params)
 table params = {
     int m_playerID,
     int m_townHallID,
-    int m_numWorkersToCreate = 9,
-    int m_gemstones = 50,
-    int m_fungus = 0
+    int m_numWorkersToCreate,   # optional, will set to default
+    int m_gemstones,            # optional, will set to default
+    int m_fungus                # optional, will set to default
 }
+```
+
 - Will create workers for `m_townHallID` and begin automining for all nearby workers to nearby gemstones.
 - One of `m_playerID` or `m_townHallID` must be set. If both are set, the townhall's player_id will be used.
 - if `m_townHallID` is unset or 0, a townhall will automatically be created for player `m_playerID` at their starting location.
@@ -410,8 +412,6 @@ table params = {
 - Function will also auto-start building a worker for player
 - returns `unit_id` of townhall (either the one created, or the one passed in)
 - will return `0` on error
-```
-
 ## gx_print
 ```sq
 void gx_print(string msg, table params = {})
