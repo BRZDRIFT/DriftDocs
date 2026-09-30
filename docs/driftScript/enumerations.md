@@ -419,11 +419,14 @@ enum ExplosionType
 {
     Invalid = 0,
     Normal = 1,
-    Splash = 2
+    Blood = 2,
+    Plasma = 3,
+    Plasma2 = 4,
+    Plasma3 = 5
 }
 ```
 
-
+- Enums for explosion types
 ## Unicode
 ```sq
 enum Unicode

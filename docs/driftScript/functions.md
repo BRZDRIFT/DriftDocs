@@ -222,8 +222,11 @@ void gx_create_explosion(table params)
 ```sq
 table params = {
     float m_size,
-    Float3 m_color,
+    float m_hue,
+    float m_hueShift,
+    float m_brightness,
     ExplosionType m_type,
+    bool m_bRadial,
     string m_location,
     bool m_bPlaySound,
     string m_sound,
@@ -237,7 +240,6 @@ table params = {
 Example:
 ```sq
 gx_create_explosion( {
-    m_color = Float3(1, 0, .5),
     m_location = "my_location"
 } )
 ```
@@ -385,6 +387,29 @@ table params = {
     ComplexColor m_color,           # Optional, ComplexColor for m_img
     ComplexColor m_bgColor,         # Optional, Background ComplexColor
 }
+```
+
+## gx_melee_trigger
+```sq
+int gx_melee_trigger(table params)
+```
+
+```sq
+table params = {
+    int m_playerID,
+    int m_townHallID,
+    int m_numWorkersToCreate = 9,
+    int m_gemstones = 50,
+    int m_fungus = 0
+}
+- Will create workers for `m_townHallID` and begin automining for all nearby workers to nearby gemstones.
+- One of `m_playerID` or `m_townHallID` must be set. If both are set, the townhall's player_id will be used.
+- if `m_townHallID` is unset or 0, a townhall will automatically be created for player `m_playerID` at their starting location.
+- All nearby workers to townhall will begin automining nearby minerals
+- Usually you should call this in `gx_sim_init` function
+- Function will also auto-start building a worker for player
+- returns `unit_id` of townhall (either the one created, or the one passed in)
+- will return `0` on error
 ```
 
 ## gx_print
@@ -571,6 +596,7 @@ void gx_map_init_modify_ud_props(string unitName, table params)
 ```sq
 table params = {
     string m_friendlyName,
+    string m_description,
     bool m_bHasHealth,
     int m_maxHealth,
     float m_maxSpeed,
@@ -584,7 +610,8 @@ table params = {
     bool m_bDriftMode,
     bool m_bVisionBlocker,
     Expr<bool> m_req,
-    Expr<int> m_attackLevel,
+    Expr<int> m_healthLevel,
+    Expr<int> m_speedLevel,
     Expr<int> m_armorLevel,
     string m_spells[],
     BuildItemTable m_buildItems[],
@@ -607,6 +634,7 @@ table params = {
     int m_sizeInJeep,
     int m_sizeInTransport,
     int m_sizeInBunker,
+    Expr<bool> m_ghostMode,
     Expr<bool> m_waterImmunity,
     Expr<bool> m_lavaImmunity,
     Expr<bool> m_terrainImmunity,
@@ -638,6 +666,9 @@ AutoAttackTable {
     bool m_bCanTargetGround,
     string m_anim,
     Expr<bool> m_req,
+    Expr<int> m_rangeLevel,
+    float m_rangePerLevel,
+    Expr<int> m_attackLevel,
     AttackTable m_attacks[]
 }
 
@@ -882,6 +913,30 @@ bool gx_is_player_allied_to(int playerID, int otherPlayerID)
 ## gx_set_player_allied_to
 ```sq
 void gx_set_player_allied_to(int playerID, int otherPlayerID, bool bAlly)
+```
+
+
+## gx_set_player_vision_to
+```sq
+void gx_set_player_vision_to(int playerID, int otherPlayerID, bool bVision)
+```
+
+
+## gx_is_player_vision_to
+```sq
+bool gx_is_player_vision_to(int playerID, int otherPlayerID)
+```
+
+
+## gx_set_player_allied_victory
+```sq
+void gx_set_player_allied_victory(int playerID, bool bAlliedVictory)
+```
+
+
+## gx_is_player_allied_victory
+```sq
+bool gx_is_player_allied_victory(int playerID)
 ```
 
 
