@@ -167,6 +167,8 @@ table params = {
     string m_exceptUds[],             # Optional, ignore certain unit types
     bool m_bIncludeAirUnits = true,         # Optional, Set to false if you want to exclude air units
     bool m_bIncludeGroundUnits = true,      # Optional, set to false if you want to exclude ground units
+    bool m_bIncludeCompletedUnits = true,    # Optional, include units fully constructed
+    bool m_bIncludeNotCompletedUnits = false # Optional, include units not yet fully constructed
     bool m_bIncludeKilledUnits = false,     # Optional, Set to true if you want to include killed units
     bool m_bIncludeRemovedUnits = false,    # Optional, set to true if you want to include removed units
     bool m_bIncludeProjectiles = false      # Optional, include projectiles (default: false)
@@ -196,6 +198,8 @@ table params = {
     string m_exceptUds[],             # Optional, ignore certain unit types
     bool m_bIncludeAirUnits = true,         # Optional, Set to false if you want to exclude air units
     bool m_bIncludeGroundUnits = true,      # Optional, set to false if you want to exclude ground units
+    bool m_bIncludeCompletedUnits = true,    # Optional, include units fully constructed
+    bool m_bIncludeNotCompletedUnits = false # Optional, include units not yet fully constructed
     bool m_bIncludeKilledUnits = false,     # Optional, Set to true if you want to include killed units
     bool m_bIncludeRemovedUnits = false,    # Optional, set to true if you want to include removed units
     bool m_bIncludeProjectiles = false      # Optional, include projectiles (default: false)
@@ -587,6 +591,124 @@ void gx_unlock_player_camera(int playerID)
 int gx_get_kills(int playerID, table params = {})
 ```
 
+
+## gx_set_objective_status
+```sq
+void gx_set_objective_status(table params)
+```
+
+```sq
+table params = {
+    string m_name,                                          # required
+    ObjectiveStatus m_status = ObjectiveStatus.Complete,    # required, default Complete
+    int m_forceIDs[],
+    int m_playerIDs[]
+```
+
+## gx_add_objective
+```sq
+void gx_add_objective(table params)
+```
+
+```sq
+table params = {
+    string m_name,          # required
+    string m_category,      # required, category to add objective to
+    string m_desc,          # description
+    int m_forceIDs[],
+    int m_playerIDs[]
+```
+
+## gx_add_objective_category
+```sq
+void gx_add_objective_category(table params)
+```
+
+```sq
+table params = {
+    string m_name,          # required, category name
+    string m_desc,          # category description
+    int m_forceIDs[],
+    int m_playerIDs[]
+```
+
+## gx_map_init_set_unit_research_num_levels
+```sq
+void gx_map_init_set_unit_research_num_levels(string research, int numLevels)
+```
+
+
+## gx_map_init_set_player_research_num_levels
+```sq
+void gx_map_init_set_player_research_num_levels(string research, int numLevels)
+```
+
+
+## gx_map_init_modify_player_research_props
+```sq
+void gx_map_init_modify_player_research_props(table params)
+```
+
+```sq
+table params = {
+    string m_research,      # required
+    int m_level,            # required, default 1
+    string m_friendlyName,
+    string m_description,
+    int m_gemstones,
+    int m_fungus,
+    int m_supply,
+    int m_time,
+    Expr<bool> m_req,
+    int m_gemstoneIncreasePerLevel,
+    int m_fungusIncreasePerLevel,
+    int m_timeIncreasePerLevel
+}
+```
+
+## gx_map_init_modify_unit_research_props
+```sq
+void gx_map_init_modify_unit_research_props(table params)
+```
+
+```sq
+table params = {
+    string m_research,      # required
+    int m_level,            # required, default 1
+    string m_friendlyName,
+    string m_description,
+    int m_gemstones,
+    int m_fungus,
+    int m_supply,
+    int m_time,
+    Expr<bool> m_req,
+    int m_gemstoneIncreasePerLevel,
+    int m_fungusIncreasePerLevel,
+    int m_timeIncreasePerLevel
+}
+```
+
+## gx_map_init_modify_player_research_props
+```sq
+void gx_map_init_modify_player_research_props(table params)
+```
+
+```sq
+table params = {
+    string m_research,      # required
+    int m_level,            # required, default 1
+    string m_friendlyName,
+    string m_description,
+    int m_gemstones,
+    int m_fungus,
+    int m_supply,
+    int m_time,
+    Expr<bool> m_req,
+    int m_gemstoneIncreasePerLevel,
+    int m_fungusIncreasePerLevel,
+    int m_timeIncreasePerLevel
+}
+```
 
 ## gx_map_init_modify_ud_props
 ```sq

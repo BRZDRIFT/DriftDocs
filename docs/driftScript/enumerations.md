@@ -2,6 +2,17 @@
     Do not rely on enum values staying the same!  
     Always use the fully qualified name. i.e. `Race.Human`, not `1`!
 
+## ObjectiveStatus
+```sq
+enum ObjectiveStatus
+{
+    Pending = 0,
+    Complete = 1,
+    Failed = 2
+}
+```
+
+
 ## Race
 ```sq
 enum Race
