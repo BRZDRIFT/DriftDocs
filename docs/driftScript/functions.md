@@ -325,6 +325,13 @@ int gx_get_player(int unitID)
 
 - returns the `player_id` for unit `unit_id`
 - if unit does not exist, will return 0
+## gx_set_achievement_for_player
+```sq
+void gx_set_achievement_for_player(int playerID, string achievementID)
+```
+
+- This function only works for 'official' maps.
+- Calling this function on a non-official user map will result in a no-op.
 ## gx_get_players
 ```sq
 int[] gx_get_players(table params = {})
@@ -416,6 +423,13 @@ table params = {
 - Function will also auto-start building a worker for player
 - returns `unit_id` of townhall (either the one created, or the one passed in)
 - will return `0` on error
+## gx_melee_has_structures
+```sq
+bool gx_melee_has_structures(int playerID)
+```
+
+- returns true if player has at least one structure
+- same condition used in 1v1 games for defeat condition
 ## gx_print
 ```sq
 void gx_print(string msg, table params = {})
@@ -662,7 +676,8 @@ table params = {
     Expr<bool> m_req,
     int m_gemstoneIncreasePerLevel,
     int m_fungusIncreasePerLevel,
-    int m_timeIncreasePerLevel
+    int m_timeIncreasePerLevel,
+    string m_onFinishedCallbackName
 }
 ```
 
@@ -684,7 +699,8 @@ table params = {
     Expr<bool> m_req,
     int m_gemstoneIncreasePerLevel,
     int m_fungusIncreasePerLevel,
-    int m_timeIncreasePerLevel
+    int m_timeIncreasePerLevel,
+    string m_onFinishedCallbackName
 }
 ```
 
@@ -1410,7 +1426,7 @@ Float3 gx_rand_unit_vec3()
 
 ## gx_rand_unit_vec4
 ```sq
-Float3 gx_rand_unit_vec4()
+Float4 gx_rand_unit_vec4()
 ```
 
 
@@ -1806,6 +1822,24 @@ string gx_to_debug_string(object obj, bool bVerbose = false)
 - returns string for table/array/object
 - do not rely on output staying the same
 - output may differ depending on game version
+## gx_callback_gunship_starshot
+```sq
+void gx_callback_gunship_starshot(int gunshipID, string researchName, int researchLevel)
+```
+
+- Default callback that is used when Gunship researches the "StarShot" upgrade
+## gx_callback_unit_research_gunship_big_gun
+```sq
+void gx_callback_unit_research_gunship_big_gun(int gunshipID, string researchName, int researchLevel)
+```
+
+- Default callback that is used when Gunship researches the "Sniper" upgrade
+## gx_callback_unit_research_gunship_chaingun
+```sq
+void gx_callback_unit_research_gunship_chaingun(int gunshipID, string researchName, int researchLevel)
+```
+
+- Default callback that is used when Gunship researches the "ChainGun" upgrade
 ## gx_is_event_queue_empty
 ```sq
 void gx_is_event_queue_empty()
@@ -2265,6 +2299,12 @@ string.normalchars()
 string.weakref()
 ```
 
+## print_debug
+```sq
+void print_debug(object msg)
+```
+
+- Message will only be visible is Map/Script debugging is enabled.
 ## is_numeric
 ```sq
 bool is_numeric(object obj)

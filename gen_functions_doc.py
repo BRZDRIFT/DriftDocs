@@ -10,6 +10,7 @@ g_enumInfos = []
 
 g_driftFiles = [
     'Functions.DriftScript',
+    'Callbacks.DriftScript',
     'stubs.DriftScript',
     'builtin.DriftScript',
     'ComplexColor.DriftScript',
