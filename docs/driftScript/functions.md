@@ -749,8 +749,15 @@ table params = {
     bool m_bVisionBlocker,
     Expr<bool> m_req,
     Expr<int> m_healthLevel,
+    int m_healthPerLevel,
     Expr<int> m_speedLevel,
+    float m_speedPerLevel,
     Expr<int> m_armorLevel,
+    int m_armorPerLevel,
+    Expr<int> m_armorExtraLevel,
+    int m_armorExtraPerLevel,
+    Expr<int> m_visionLevel,
+    int m_visionPerLevel,
     string m_spells[],
     BuildItemTable m_buildItems[],
     BuildStructureItemTable m_buildStructuresBasic[],
@@ -1840,6 +1847,12 @@ void gx_callback_unit_research_gunship_chaingun(int gunshipID, string researchNa
 ```
 
 - Default callback that is used when Gunship researches the "ChainGun" upgrade
+## gx_callback_player_research_brute_health
+```sq
+void gx_callback_player_research_brute_health(int playerID, string researchName, int researchLevel)
+```
+
+- Default callback that is used when "BruteArmorUpgrade" is researched
 ## gx_is_event_queue_empty
 ```sq
 void gx_is_event_queue_empty()
