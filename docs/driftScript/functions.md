@@ -600,6 +600,30 @@ void gx_unlock_player_camera(int playerID)
 
 - unlocks `player_id` camera position set by `gx_lock_player_camera`
 - equivalent to calling `gx_lock_player_camera(player_id, {})`
+## gx_set_player_research_level
+```sq
+void gx_set_player_research_level(int playerID, string researchName, int researchLevel)
+```
+
+
+## gx_get_player_research_level
+```sq
+int gx_get_player_research_level(int playerID, string researchName)
+```
+
+
+## gx_set_unit_research_level
+```sq
+void gx_set_unit_research_level(int unitID, string researchName, int researchLevel)
+```
+
+
+## gx_get_unit_research_level
+```sq
+int gx_get_unit_research_level(int unitID, string researchName)
+```
+
+
 ## gx_get_kills
 ```sq
 int gx_get_kills(int playerID, table params = {})
@@ -758,6 +782,10 @@ table params = {
     int m_armorExtraPerLevel,
     Expr<int> m_visionLevel,
     int m_visionPerLevel,
+    float m_healthRegen,
+    float m_healthRegenPerLevel,
+    Expr<int> m_healthRegenLevel,
+    int m_maxPlayerCanHave,
     string m_spells[],
     BuildItemTable m_buildItems[],
     BuildStructureItemTable m_buildStructuresBasic[],
@@ -1829,9 +1857,9 @@ string gx_to_debug_string(object obj, bool bVerbose = false)
 - returns string for table/array/object
 - do not rely on output staying the same
 - output may differ depending on game version
-## gx_callback_gunship_starshot
+## gx_callback_unit_research_gunship_starshot
 ```sq
-void gx_callback_gunship_starshot(int gunshipID, string researchName, int researchLevel)
+void gx_callback_unit_research_gunship_starshot(int gunshipID, string researchName, int researchLevel)
 ```
 
 - Default callback that is used when Gunship researches the "StarShot" upgrade
