@@ -1637,8 +1637,9 @@ table params = {
 ```
 
 - Adds an event message visible on left side of screen
+- Message will be visible to all players that match `m_forceIDs` or `m_playerIDs`. If both `m_forceIDs` and `m_playerIDs` are both unset, message will be displayed to all players
 - Set `m_duration` to `-1` to have the message last forever. You must call `gx_delete_left_side_message` or `gx_delete_all_left_side_messages` to remove messages with infinite duration.
-- Returns the msgID of the message
+- Returns the `msgID` of the message
 ## gx_edit_left_side_message
 ```sq
 void gx_edit_left_side_message(int msgID, table params)
