@@ -1633,6 +1633,7 @@ table params = {
     int m_forceIDs[],
     int m_playerIDs[],
     int m_duration,     # default: 100, (5 seconds)
+    float m_fontSize    # default: 30
 }
 ```
 
