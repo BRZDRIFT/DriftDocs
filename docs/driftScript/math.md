@@ -19,6 +19,8 @@
     - `-9223372036854775808 / 4294967296` = `-2147483648`
 - `FLOAT_SMALLEST`:
     - `1 / 4294967296` = `0.00000000023283064365...`
+- `TICKS_PER_SECOND`:
+    - Number of game ticks per second: `20`
 
 ## Functions
 - `float sqrt(float x)` - returns square root of x
