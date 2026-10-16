@@ -1625,7 +1625,7 @@ void gx_force_select_units(int playerID, int unitIDs[])
 - clears player's unit selection, and sets unitIDs as new selection
 ## gx_add_left_side_message
 ```sq
-void gx_add_left_side_message(string msg, table params = {})
+int gx_add_left_side_message(string msg, table params = {})
 ```
 
 ```sq
@@ -1637,6 +1637,30 @@ table params = {
 ```
 
 - Adds an event message visible on left side of screen
+- Returns the ID of the message
+## gx_edit_left_side_message
+```sq
+void gx_edit_left_side_message(int msgID, table params)
+```
+
+```sq
+table params = {
+    string m_msg
+}
+```
+
+## gx_delete_left_side_message
+```sq
+void gx_delete_left_side_message(int m_id)
+```
+
+
+## gx_delete_all_left_side_messages
+```sq
+void gx_delete_all_left_side_messages()
+```
+
+
 ## gx_display_ui_elements
 ```sq
 void gx_display_ui_elements(table params = {})
