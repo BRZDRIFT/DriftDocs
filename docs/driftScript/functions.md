@@ -1637,7 +1637,8 @@ table params = {
 ```
 
 - Adds an event message visible on left side of screen
-- Returns the ID of the message
+- Set `m_duration` to `-1` to have the message last forever. You must call `gx_delete_left_side_message` or `gx_delete_all_left_side_messages` to remove messages with infinite duration.
+- Returns the msgID of the message
 ## gx_edit_left_side_message
 ```sq
 void gx_edit_left_side_message(int msgID, table params)
@@ -1649,18 +1650,19 @@ table params = {
 }
 ```
 
+- Edits the left side message that has `msgID`
 ## gx_delete_left_side_message
 ```sq
-void gx_delete_left_side_message(int m_id)
+void gx_delete_left_side_message(int msgID)
 ```
 
-
+- Deletes the left side message that has `msgID`
 ## gx_delete_all_left_side_messages
 ```sq
 void gx_delete_all_left_side_messages()
 ```
 
-
+- Deletes all left side messages
 ## gx_display_ui_elements
 ```sq
 void gx_display_ui_elements(table params = {})
