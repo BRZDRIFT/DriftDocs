@@ -1,8 +1,5 @@
 ## OnBuildItemComplete Callback
 
-- Called when a build item completes in a production unit.
-- Must set `m_onBuildItemCompleteCallbackName` via `gx_map_init_modify_ud_props` to enable this callback
-
 ```sq
 void on_build_item_complete_callback(table params)
 ```
@@ -17,6 +14,9 @@ table params = {
     int m_createdUnitID
 }
 ```
+
+- Called when a build item completes in a production unit.
+- Must set `m_onBuildItemCompleteCallbackName` via `gx_map_init_modify_ud_props` to enable this callback
 
 ## OnResearchComplete Callback
 
