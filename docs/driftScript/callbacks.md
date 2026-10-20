@@ -3,7 +3,9 @@
 - Called when a build item completes in a production unit.
 - Must set `m_onBuildItemCompleteCallbackName` via `gx_map_init_modify_ud_props` to enable this callback
 
-`void on_build_item_complete_callback(table params)`
+```sq
+void on_build_item_complete_callback(table params)
+```
 
 ```sq
 table params = {
@@ -18,7 +20,9 @@ table params = {
 
 ## OnResearchComplete Callback
 
-`void on_research_complete_callback(int unitID, string researchName, int researchLevel [, table extra])`
+```sq
+void on_research_complete_callback(int unitID, string researchName, int researchLevel [, table extra])
+```
 
 ```sq
 table extra = {
