@@ -788,6 +788,7 @@ table params = {
     int m_maxPlayerCanHave,
     string m_spells[],
     BuildItemTable m_buildItems[],
+    string m_onBuildItemCompleteCallbackName,
     BuildStructureItemTable m_buildStructuresBasic[],
     BuildStructureItemTable m_buildStructuresAdv[],
     AutoAttackTable m_autoAttacks[],

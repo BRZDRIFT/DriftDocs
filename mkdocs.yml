@@ -38,6 +38,7 @@ nav:
         - 'Table Constructors': 'driftScript/tableConstructors.md'
         - 'Math Library': 'driftScript/math.md'
         - 'Functions': 'driftScript/functions.md'
+        - 'Callbacks': 'driftScript/callbacks.md' 
         - 'Enumerations': 'driftScript/enumerations.md'
         - 'Event Queue': 'driftScript/eventQueue.md'
         - 'VSCode Language Support': 'driftScript/vscodeSyntaxHighlighting.md'
