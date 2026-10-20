@@ -1,7 +1,7 @@
 ## Syntaxes
 There are 3 different syntaxes to construct tables.
 
-- Default Syntax: `{ key = value, ... }`
+- Standard Syntax: `{ key = value, ... }`
 - Expression Syntax: `{ [expression] = value, ... }`
 - JSON Syntax: `{ "key": value, ... }`
 
@@ -11,7 +11,7 @@ local a = { cat = "dog", "abc": "def", [1+4] = "some number" }
 # Creates: { "cat": "dog", "abc": "def", 5: "some number" }
 ```
 
-## Default Syntax
+## Standard Syntax
 - Key must be a string literal without quotes. String cannot start with a number.
 - Format: `{ key = value, ... }`
 
@@ -49,7 +49,7 @@ local myTable = { "myKey": 6 }      # Creates: { "myKey": 6 }
 ```sq
 local a = { [3] = "abc" }           # Creates: { 3: "abc" }
 
-# local b = { 3 = "abc" }           # invalid syntax, in Default Syntax,
+# local b = { 3 = "abc" }           # invalid syntax, in Standard Syntax,
                                     # key must not started with a number
 
 # local c = { 3: "abc" }            # invalid syntax, in JSON Syntax,
@@ -57,7 +57,7 @@ local a = { [3] = "abc" }           # Creates: { 3: "abc" }
 
 local d = { "3": "abc" }            # Creates: { "3": "abc" }
 
-# local e = { "3" = "abc" }         # invalid syntax, in Default Syntax,
+# local e = { "3" = "abc" }         # invalid syntax, in Standard Syntax,
                                     # string key must not have quotes
 
 local myKey = "dog"
