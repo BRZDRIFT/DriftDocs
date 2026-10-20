@@ -7,7 +7,7 @@ There are 3 different syntaxes to construct tables.
 - Expression Syntax: `{ [expression] = value, ... }`
 - JSON Syntax: `{ "key": value, ... }`
 
-You are free to mix and match the different syntaxes in the same table construction:
+You are free to mix and match the different syntaxes in the same table constructor:
 ```sq
 local a = { cat = "dog", "abc": "def", [1+4] = "some number" }
 # Creates: { "cat": "dog", "abc": "def", 5: "some number" }
