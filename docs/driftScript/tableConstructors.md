@@ -2,6 +2,7 @@
 
 ### Syntaxes
 There are 3 different syntaxes to construct tables.
+
 - Default Syntax, `{ key = value }`
 - Expression Syntax, `{ [expression] = value }`
 - JSON Syntax, `{ "key": value }`
@@ -33,7 +34,7 @@ local myTable = { [myKey]: 6 }      # Creates: { "dog": 6 }
 
 ### JSON Syntax
 - The key must be a string literal. Cannot use a variable or number for the key.
-- Format: `{ "string": value }`
+- Format: `{ "key": value }`
 
 ```sq
 # Example:
@@ -62,7 +63,7 @@ local f = { myKey = "test" }        # { "myKey": "test" }
 local g = { [myKey] = "test" }      # { "dog": "test" }
 
 # local h = { myKey: 4 }            # invalid syntax, in JSON Syntax,
-                                    #key must be a "string"
-                                    
-local i = { "myKey": "test" }      # { "myKey": "test" }
+                                    # key must be a "string"
+
+local i = { "myKey": "test" }       # { "myKey": "test" }
 ```
