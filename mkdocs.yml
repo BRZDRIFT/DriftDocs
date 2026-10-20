@@ -35,6 +35,7 @@ nav:
         - 'Identifiers': 'driftScript/identifiers.md'
         - 'Built-in Types': 'driftScript/builtinTypes.md'
         - 'Strings/Arrays/Tables': 'driftScript/stringsArraysTables.md'
+        - 'Table Constructors': 'driftScript/tableConstructors.md'
         - 'Math Library': 'driftScript/math.md'
         - 'Functions': 'driftScript/functions.md'
         - 'Enumerations': 'driftScript/enumerations.md'
