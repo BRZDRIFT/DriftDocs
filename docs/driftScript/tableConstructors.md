@@ -13,7 +13,7 @@ There are 3 different syntaxes to construct tables.
 
 ```sq
 # Example:
-local myTable = { myKey: 6 }    # Creates: { "myKey": 6 }
+local myTable = { myKey = 6 }   # Creates: { "myKey": 6 }
                                 # Note: It does not matter if `myKey` is
                                 # also the name of a variable, the
                                 # key will still be string literal "myKey"
@@ -25,11 +25,11 @@ local myTable = { myKey: 6 }    # Creates: { "myKey": 6 }
 
 ```sq
 # Example 1:
-local myTable = { [7]: 6 }          # Creates: { 7: 6 }
+local myTable = { [7] = 6 }          # Creates: { 7: 6 }
 
 # Example 2:
 local myKey = "dog"
-local myTable = { [myKey]: 6 }      # Creates: { "dog": 6 }
+local myTable = { [myKey] = 6 }      # Creates: { "dog": 6 }
 ```
 
 ### JSON Syntax
