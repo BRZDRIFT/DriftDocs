@@ -7,9 +7,15 @@ There are 3 different syntaxes to construct tables.
 - Expression Syntax: `{ [expression] = value, ... }`
 - JSON Syntax: `{ "key": value, ... }`
 
+You are free to mix and match the different syntaxes in the same table construction:
+```sq
+local a = { cat = "dog", "abc": "def", [1+4] = "some number" }
+# Creates: { "cat": "dog", "abc": "def", 5: "some number" }
+```
+
 ### Default Syntax
 - Key must be a string literal without quotes. String cannot start with a number.
-- Format: `{ key = value }`
+- Format: `{ key = value, ... }`
 
 ```sq
 # Example:
@@ -21,7 +27,7 @@ local myTable = { myKey = 6 }   # Creates: { "myKey": 6 }
 
 ### Expression Syntax
 - The key is the evaluated expression inside []
-- Format: `{ [expr] = value }`
+- Format: `{ [expr] = value, ... }`
 
 ```sq
 # Example 1:
@@ -34,7 +40,7 @@ local myTable = { [myKey] = 6 }      # Creates: { "dog": 6 }
 
 ### JSON Syntax
 - The key must be a string literal. Cannot use a variable or number for the key.
-- Format: `{ "key": value }`
+- Format: `{ "key": value, ... }`
 
 ```sq
 # Example:
