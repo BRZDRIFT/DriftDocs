@@ -3,9 +3,9 @@
 ### Syntaxes
 There are 3 different syntaxes to construct tables.
 
-- Default Syntax, `{ key = value }`
-- Expression Syntax, `{ [expression] = value }`
-- JSON Syntax, `{ "key": value }`
+- Default Syntax: `{ key = value, ... }`
+- Expression Syntax: `{ [expression] = value, ... }`
+- JSON Syntax: `{ "key": value, ... }`
 
 ### Default Syntax
 - Key must be a string literal without quotes. String cannot start with a number.
