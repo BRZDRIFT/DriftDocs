@@ -1571,10 +1571,12 @@
 
 <h2 id="table-constructors">Table Constructors</h2>
 <h3 id="syntaxes">Syntaxes</h3>
-<p>There are 3 different syntaxes to construct tables.
-- Default Syntax, <code>{ key = value }</code>
-- Expression Syntax, <code>{ [expression] = value }</code>
-- JSON Syntax, <code>{ "key": value }</code></p>
+<p>There are 3 different syntaxes to construct tables.</p>
+<ul>
+<li>Default Syntax, <code>{ key = value }</code></li>
+<li>Expression Syntax, <code>{ [expression] = value }</code></li>
+<li>JSON Syntax, <code>{ "key": value }</code></li>
+</ul>
 <h3 id="default-syntax">Default Syntax</h3>
 <ul>
 <li>Key must be a string literal without quotes. String cannot start with a number.</li>
@@ -1601,7 +1603,7 @@
 <h3 id="json-syntax">JSON Syntax</h3>
 <ul>
 <li>The key must be a string literal. Cannot use a variable or number for the key.</li>
-<li>Format: <code>{ "string": value }</code></li>
+<li>Format: <code>{ "key": value }</code></li>
 </ul>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Example:</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kt">local</span><span class="w"> </span><span class="n">myTable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;myKey&quot;</span><span class="o">:</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="p">}</span><span class="w">      </span><span class="c1"># Creates: { &quot;myKey&quot;: 6 }</span>
@@ -1627,9 +1629,9 @@
 </span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="kt">local</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">[</span><span class="n">myKey</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;test&quot;</span><span class="w"> </span><span class="p">}</span><span class="w">      </span><span class="c1"># { &quot;dog&quot;: &quot;test&quot; }</span>
 </span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
 </span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="c1"># local h = { myKey: 4 }            # invalid syntax, in JSON Syntax,</span>
-</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">                                    </span><span class="c1">#key must be a &quot;string&quot;</span>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">                                    </span><span class="c1"># key must be a &quot;string&quot;</span>
 </span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>
-</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="kt">local</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;myKey&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;test&quot;</span><span class="w"> </span><span class="p">}</span><span class="w">      </span><span class="c1"># { &quot;myKey&quot;: &quot;test&quot; }</span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="kt">local</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;myKey&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;test&quot;</span><span class="w"> </span><span class="p">}</span><span class="w">       </span><span class="c1"># { &quot;myKey&quot;: &quot;test&quot; }</span>
 </span></code></pre></div>
 
 
