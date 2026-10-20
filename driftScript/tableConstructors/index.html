@@ -1172,9 +1172,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#default-syntax" class="md-nav__link">
+  <a href="#standard-syntax" class="md-nav__link">
     <span class="md-ellipsis">
-      Default Syntax
+      Standard Syntax
     </span>
   </a>
   
@@ -1486,9 +1486,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#default-syntax" class="md-nav__link">
+  <a href="#standard-syntax" class="md-nav__link">
     <span class="md-ellipsis">
-      Default Syntax
+      Standard Syntax
     </span>
   </a>
   
@@ -1542,7 +1542,7 @@
 <h2 id="syntaxes">Syntaxes</h2>
 <p>There are 3 different syntaxes to construct tables.</p>
 <ul>
-<li>Default Syntax: <code>{ key = value, ... }</code></li>
+<li>Standard Syntax: <code>{ key = value, ... }</code></li>
 <li>Expression Syntax: <code>{ [expression] = value, ... }</code></li>
 <li>JSON Syntax: <code>{ "key": value, ... }</code></li>
 </ul>
@@ -1550,7 +1550,7 @@
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">local</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">cat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;dog&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;def&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="o">+</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;some number&quot;</span><span class="w"> </span><span class="p">}</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># Creates: { &quot;cat&quot;: &quot;dog&quot;, &quot;abc&quot;: &quot;def&quot;, 5: &quot;some number&quot; }</span>
 </span></code></pre></div></p>
-<h2 id="default-syntax">Default Syntax</h2>
+<h2 id="standard-syntax">Standard Syntax</h2>
 <ul>
 <li>Key must be a string literal without quotes. String cannot start with a number.</li>
 <li>Format: <code>{ key = value, ... }</code></li>
@@ -1584,7 +1584,7 @@
 <h2 id="more-examples">More Examples:</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">local</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="w"> </span><span class="p">}</span><span class="w">           </span><span class="c1"># Creates: { 3: &quot;abc&quot; }</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># local b = { 3 = &quot;abc&quot; }           # invalid syntax, in Default Syntax,</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># local b = { 3 = &quot;abc&quot; }           # invalid syntax, in Standard Syntax,</span>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">                                    </span><span class="c1"># key must not started with a number</span>
 </span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
 </span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1"># local c = { 3: &quot;abc&quot; }            # invalid syntax, in JSON Syntax,</span>
@@ -1592,7 +1592,7 @@
 </span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
 </span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="kt">local</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;3&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="w"> </span><span class="p">}</span><span class="w">            </span><span class="c1"># Creates: { &quot;3&quot;: &quot;abc&quot; }</span>
 </span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="c1"># local e = { &quot;3&quot; = &quot;abc&quot; }         # invalid syntax, in Default Syntax,</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="c1"># local e = { &quot;3&quot; = &quot;abc&quot; }         # invalid syntax, in Standard Syntax,</span>
 </span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">                                    </span><span class="c1"># string key must not have quotes</span>
 </span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
 </span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="kt">local</span><span class="w"> </span><span class="n">myKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;dog&quot;</span>
