@@ -1,6 +1,4 @@
-## Table Constructors
-
-### Syntaxes
+## Syntaxes
 There are 3 different syntaxes to construct tables.
 
 - Default Syntax: `{ key = value, ... }`
@@ -13,7 +11,7 @@ local a = { cat = "dog", "abc": "def", [1+4] = "some number" }
 # Creates: { "cat": "dog", "abc": "def", 5: "some number" }
 ```
 
-### Default Syntax
+## Default Syntax
 - Key must be a string literal without quotes. String cannot start with a number.
 - Format: `{ key = value, ... }`
 
@@ -25,7 +23,7 @@ local myTable = { myKey = 6 }   # Creates: { "myKey": 6 }
                                 # key will still be string literal "myKey"
 ```
 
-### Expression Syntax
+## Expression Syntax
 - The key is the evaluated expression inside []
 - Format: `{ [expr] = value, ... }`
 
@@ -38,7 +36,7 @@ local myKey = "dog"
 local myTable = { [myKey] = 6 }      # Creates: { "dog": 6 }
 ```
 
-### JSON Syntax
+## JSON Syntax
 - The key must be a string literal. Cannot use a variable or number for the key.
 - Format: `{ "key": value, ... }`
 
@@ -47,7 +45,7 @@ local myTable = { [myKey] = 6 }      # Creates: { "dog": 6 }
 local myTable = { "myKey": 6 }      # Creates: { "myKey": 6 }
 ```
 
-### More Examples:
+## More Examples:
 ```sq
 local a = { [3] = "abc" }           # Creates: { 3: "abc" }
 
