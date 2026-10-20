@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#table-constructors" class="md-skip">
+        <a href="#syntaxes" class="md-skip">
           Skip to content
         </a>
       
@@ -1163,16 +1163,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#table-constructors" class="md-nav__link">
-    <span class="md-ellipsis">
-      Table Constructors
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Table Constructors">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#syntaxes" class="md-nav__link">
     <span class="md-ellipsis">
       Syntaxes
@@ -1180,8 +1170,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#default-syntax" class="md-nav__link">
     <span class="md-ellipsis">
       Default Syntax
@@ -1189,8 +1179,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#expression-syntax" class="md-nav__link">
     <span class="md-ellipsis">
       Expression Syntax
@@ -1198,8 +1188,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#json-syntax" class="md-nav__link">
     <span class="md-ellipsis">
       JSON Syntax
@@ -1207,18 +1197,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#more-examples" class="md-nav__link">
     <span class="md-ellipsis">
       More Examples:
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1492,16 +1477,6 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#table-constructors" class="md-nav__link">
-    <span class="md-ellipsis">
-      Table Constructors
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Table Constructors">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#syntaxes" class="md-nav__link">
     <span class="md-ellipsis">
       Syntaxes
@@ -1509,8 +1484,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#default-syntax" class="md-nav__link">
     <span class="md-ellipsis">
       Default Syntax
@@ -1518,8 +1493,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#expression-syntax" class="md-nav__link">
     <span class="md-ellipsis">
       Expression Syntax
@@ -1527,8 +1502,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#json-syntax" class="md-nav__link">
     <span class="md-ellipsis">
       JSON Syntax
@@ -1536,18 +1511,13 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#more-examples" class="md-nav__link">
     <span class="md-ellipsis">
       More Examples:
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1569,8 +1539,7 @@
 
   <h1>Table Constructors</h1>
 
-<h2 id="table-constructors">Table Constructors</h2>
-<h3 id="syntaxes">Syntaxes</h3>
+<h2 id="syntaxes">Syntaxes</h2>
 <p>There are 3 different syntaxes to construct tables.</p>
 <ul>
 <li>Default Syntax: <code>{ key = value, ... }</code></li>
@@ -1581,7 +1550,7 @@
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">local</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">cat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;dog&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="o">:</span><span class="w"> </span><span class="s">&quot;def&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="o">+</span><span class="mi">4</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;some number&quot;</span><span class="w"> </span><span class="p">}</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># Creates: { &quot;cat&quot;: &quot;dog&quot;, &quot;abc&quot;: &quot;def&quot;, 5: &quot;some number&quot; }</span>
 </span></code></pre></div></p>
-<h3 id="default-syntax">Default Syntax</h3>
+<h2 id="default-syntax">Default Syntax</h2>
 <ul>
 <li>Key must be a string literal without quotes. String cannot start with a number.</li>
 <li>Format: <code>{ key = value, ... }</code></li>
@@ -1592,7 +1561,7 @@
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">                                </span><span class="c1"># also the name of a variable, the</span>
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">                                </span><span class="c1"># key will still be string literal &quot;myKey&quot;</span>
 </span></code></pre></div>
-<h3 id="expression-syntax">Expression Syntax</h3>
+<h2 id="expression-syntax">Expression Syntax</h2>
 <ul>
 <li>The key is the evaluated expression inside []</li>
 <li>Format: <code>{ [expr] = value, ... }</code></li>
@@ -1604,7 +1573,7 @@
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kt">local</span><span class="w"> </span><span class="n">myKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;dog&quot;</span>
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="kt">local</span><span class="w"> </span><span class="n">myTable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">[</span><span class="n">myKey</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="p">}</span><span class="w">      </span><span class="c1"># Creates: { &quot;dog&quot;: 6 }</span>
 </span></code></pre></div>
-<h3 id="json-syntax">JSON Syntax</h3>
+<h2 id="json-syntax">JSON Syntax</h2>
 <ul>
 <li>The key must be a string literal. Cannot use a variable or number for the key.</li>
 <li>Format: <code>{ "key": value, ... }</code></li>
@@ -1612,7 +1581,7 @@
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Example:</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kt">local</span><span class="w"> </span><span class="n">myTable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s">&quot;myKey&quot;</span><span class="o">:</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="p">}</span><span class="w">      </span><span class="c1"># Creates: { &quot;myKey&quot;: 6 }</span>
 </span></code></pre></div>
-<h3 id="more-examples">More Examples:</h3>
+<h2 id="more-examples">More Examples:</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">local</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="w"> </span><span class="p">}</span><span class="w">           </span><span class="c1"># Creates: { 3: &quot;abc&quot; }</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># local b = { 3 = &quot;abc&quot; }           # invalid syntax, in Default Syntax,</span>
