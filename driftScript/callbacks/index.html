@@ -1509,10 +1509,6 @@
   <h1>Callbacks</h1>
 
 <h2 id="onbuilditemcomplete-callback">OnBuildItemComplete Callback</h2>
-<ul>
-<li>Called when a build item completes in a production unit.</li>
-<li>Must set <code>m_onBuildItemCompleteCallbackName</code> via <code>gx_map_init_modify_ud_props</code> to enable this callback</li>
-</ul>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">on_build_item_complete_callback</span><span class="p">(</span><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="p">)</span>
 </span></code></pre></div>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">table</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
@@ -1524,6 +1520,10 @@
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">m_createdUnitID</span>
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">}</span>
 </span></code></pre></div>
+<ul>
+<li>Called when a build item completes in a production unit.</li>
+<li>Must set <code>m_onBuildItemCompleteCallbackName</code> via <code>gx_map_init_modify_ud_props</code> to enable this callback</li>
+</ul>
 <h2 id="onresearchcomplete-callback">OnResearchComplete Callback</h2>
 <div class="language-sq highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">void</span><span class="w"> </span><span class="n">on_research_complete_callback</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">unitID</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">researchName</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">researchLevel</span><span class="w"> </span><span class="p">[,</span><span class="w"> </span><span class="kt">table</span><span class="w"> </span><span class="n">extra</span><span class="p">])</span>
 </span></code></pre></div>
