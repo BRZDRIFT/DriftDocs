@@ -2,15 +2,15 @@
 
 ### Syntaxes
 There are 3 different syntaxes to construct tables.
-1) Default Syntax, `{ key = value }`
-2) Expression Syntax, `{ [expression] = value }`
-3) JSON Syntax, `{ "key": value }`
+- Default Syntax, `{ key = value }`
+- Expression Syntax, `{ [expression] = value }`
+- JSON Syntax, `{ "key": value }`
 
 ### Default Syntax
 - Key must be a string literal without quotes. String cannot start with a number.
 - Format: `{ key = value }`
 
-```
+```sq
 # Example:
 local myTable = { myKey: 6 }    # Creates: { "myKey": 6 }
                                 # Note: It does not matter if `myKey` is also the name of a variable,
@@ -21,7 +21,7 @@ local myTable = { myKey: 6 }    # Creates: { "myKey": 6 }
 - The key is the evaluated expression inside []
 - Format: `{ [expr] = value }`
 
-```
+```sq
 # Example 1:
 local myTable = { [7]: 6 }          # Creates: { 7: 6 }
 
@@ -34,13 +34,13 @@ local myTable = { [myKey]: 6 }      # Creates: { "dog": 6 }
 - The key must be a string literal. Cannot use a variable or number for the key.
 - Format: `{ "string": value }`
 
-```
+```sq
 # Example:
 local myTable = { "myKey": 6 }      # Creates: { "myKey": 6 }
 ```
 
 ### More Examples Below:
-```
+```sq
 local a = { [3] = "abc" }           # Creates: { 3: "abc" }
 # local b = { 3 = "abc" }           # invalid syntax, in Default Syntax, key must not started with a number
 # local c = { 3: "abc" }            # invalid syntax, in JSON Syntax, key must be a "string"
