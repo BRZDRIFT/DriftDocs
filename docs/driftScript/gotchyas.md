@@ -175,8 +175,8 @@ foreach (key, val in myTable2) {
 # c
 # b
 local myTable3 = { "a": 5, "b": 2, "c": "dog"}
-foreach (val in myTable3) {
-	print(val)
+foreach (key in myTable3) {
+	print(key)
 }
 
 # array initializer syntax: [val0, val1, etc]
