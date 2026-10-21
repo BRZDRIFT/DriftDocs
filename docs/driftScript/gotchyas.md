@@ -170,11 +170,10 @@ foreach (key, val in myTable2) {
 }
 
 # table single variable iteration..
-# NOTE: this syntax outputs value, not key as in languages like python
 # Possible Output (table iteration order is unspecified):
-# 5
-# dog
-# 2
+# a
+# c
+# b
 local myTable3 = { "a": 5, "b": 2, "c": "dog"}
 foreach (val in myTable3) {
 	print(val)
@@ -191,6 +190,7 @@ foreach (val in myArray) {
 	print(val)
 }
 
+# array two variable iteration
 # Output (array foreach iteration is ordered):
 # 0 -> 4
 # 1 -> 6
@@ -201,9 +201,8 @@ foreach (idx, val in myArray) {
 }
 ```
 
-- Please note, single variable foreach loop with table outputs `value` and not `key`.
-    - This is different from other languages like `Python`.
 - table foreach iteration order is `unspecified` (which is different than random)
+- array foreach iteration is ordered
 
 ## Other
 - semicolons `;` at the end of lines are optional, similar to `Python`

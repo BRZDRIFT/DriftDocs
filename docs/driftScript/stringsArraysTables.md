@@ -40,6 +40,8 @@ array.reduce(func(prevval, curval)[, initializer])
 array.filter(func(index, val))
 array.find(value)
 array.find_ref(value)
+array.contains(value)
+array.contains_ref(value)
 ```
 
 ## table
