@@ -45,6 +45,11 @@ Major changes from Squirrel:
     - same as squirrel's `_unm` (unary minus operator) except for `+` instead of `-`
 - Normal division operator `/` always returns float now.
 - Added floor division operator `//`.
+- Changed single-variable `foreach` behavior for tables
+    - `foreach (k in myTable)` now iterates over table keys instead of values
+- `in` keyword for arrays now checks if value is in array, rather than checking if index is valid.
+    - Checks if value is in array using `==` operator.
+- Added `in` support for strings. `"Cool" in "MyCoolString"` returns `true`.
 - Changed various lexing and parsing rules to be more intuitive
     - `local a = .1` is invalid in squirrel because floats must begin with a digit: i.e. `0.1`
         - However, this is valid Drift Script!
