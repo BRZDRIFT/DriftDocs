@@ -45,7 +45,7 @@ local myTable = { [myKey] = 6 }      # Creates: { "dog": 6 }
 local myTable = { "myKey": 6 }      # Creates: { "myKey": 6 }
 ```
 
-## More Examples:
+## More Examples
 ```sq
 local a = { [3] = "abc" }           # Creates: { 3: "abc" }
 
