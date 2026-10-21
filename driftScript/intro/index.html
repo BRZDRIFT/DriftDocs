@@ -1589,6 +1589,15 @@ to learn due to more learning material.</p>
 </li>
 <li>Normal division operator <code>/</code> always returns float now.</li>
 <li>Added floor division operator <code>//</code>.</li>
+<li>Changed single-variable <code>foreach</code> behavior for tables<ul>
+<li><code>foreach (k in myTable)</code> now iterates over table keys instead of values</li>
+</ul>
+</li>
+<li><code>in</code> keyword for arrays now checks if value is in array, rather than checking if index is valid.<ul>
+<li>Checks if value is in array using <code>==</code> operator.</li>
+</ul>
+</li>
+<li>Added <code>in</code> support for strings. <code>"Cool" in "MyCoolString"</code> returns <code>true</code>.</li>
 <li>Changed various lexing and parsing rules to be more intuitive<ul>
 <li><code>local a = .1</code> is invalid in squirrel because floats must begin with a digit: i.e. <code>0.1</code><ul>
 <li>However, this is valid Drift Script!</li>
