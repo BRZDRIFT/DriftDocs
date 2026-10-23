@@ -359,6 +359,8 @@ enum PlayerProp
     PlayerNameColor = 29,       # Read-Write (int) (i.e. ColorDesc)
     ColoredPlayerName = 30,     # Read (string)
     ColoredPlayerName2 = 31     # Read (string)
+    CurrentAPM = 32,            # Read (int)
+    AverageAPM = 33             # Read (int)
 }
 ```
 
