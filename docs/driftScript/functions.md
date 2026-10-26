@@ -564,7 +564,7 @@ table params = {
 ```
 
 - Only one of `m_location`, `m_triangleGroup`, `m_bFullMapVision` should be set
-- returns if vision is given for player at `m_location`, `m_triangleGroup`, or entire map
+- returns `true` if vision is given for `playerID` at `m_location`, `m_triangleGroup`, or entire map
 ## gx_set_area_vision
 ```sq
 void gx_set_area_vision(int playerID, table params)
