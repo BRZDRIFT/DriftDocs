@@ -584,6 +584,7 @@ table params = {
 - The only valid valid for `m_bFullMapVision` is `true`
 - `m_bSet` sets whether vision should be given to player at `m_location`, `m_triangleGroup`, or entire map
 - The vision at the region lasts forever until `gx_set_area_vision` is called again with `m_bSet = false`
+
 Examples:
 ```sq
 # Gives vision of location `MyLocation` to `somePlayerID`
