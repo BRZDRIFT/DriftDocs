@@ -6485,9 +6485,9 @@
 </span></code></pre></div>
 <ul>
 <li>Only one of <code>m_location</code>, <code>m_triangleGroup</code>, <code>m_bFullMapVision</code> should be set</li>
-<li><code>m_bSet</code> sets whether vision should be given to player at <code>m_location,</code>m_triangleGroup`, or entire map</li>
+<li><code>m_bSet</code> sets whether vision should be given to player at <code>m_location</code>, <code>m_triangleGroup</code>, or entire map</li>
 <li>The vision at the region lasts forever until <code>gx_set_area_vision</code> is called again with <code>m_bSet = false</code></li>
-<li>Example: <code>gx_get_area_vision(somePlayerID, { m_location = "MyLocation", m_bSet = true })</code><ul>
+<li>Example: <code>gx_set_area_vision(somePlayerID, { m_location = "MyLocation", m_bSet = true })</code><ul>
 <li>Gives vision of location <code>MyLocation</code> to player <code>somePlayerID</code></li>
 </ul>
 </li>
