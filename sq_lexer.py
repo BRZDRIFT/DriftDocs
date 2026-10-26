@@ -87,7 +87,7 @@ class SquirrelLexer(MyCppLexer):
             'array', 'delete', 'print', 'object', 'BuildStructureItemTable',
             'BuildItemTable', 'BuildItemType', 'UdProp', 'null', 'AuraTable',
             'clone', 'TextHorzAlign', 'TextVertAlign', 'TextHorzExpandDirection',
-            'TextVertExpandDirection'
+            'TextVertExpandDirection', 'ObjectiveStatus'
     )
 
     def get_tokens_unprocessed(self, text, stack=('root',)):
