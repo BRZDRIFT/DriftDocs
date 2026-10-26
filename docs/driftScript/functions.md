@@ -582,7 +582,7 @@ table params = {
 - Only one of `m_location`, `m_triangleGroup`, `m_bFullMapVision` should be set
 - `m_bSet` sets whether vision should be given to player at `m_location`, `m_triangleGroup`, or entire map
 - The vision at the region lasts forever until `gx_set_area_vision` is called again with `m_bSet = false`
-- Example: `gx_get_area_vision(somePlayerID, { m_location = "MyLocation", m_bSet = true })`
+- Example: `gx_set_area_vision(somePlayerID, { m_location = "MyLocation", m_bSet = true })`
     - Gives vision of location `MyLocation` to player `somePlayerID`
 ## gx_set_player_camera_look_at
 ```sq
