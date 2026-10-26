@@ -588,13 +588,22 @@ table params = {
 Examples:
 ```sq
 # Gives vision of location `MyLocation` to `somePlayerID`
-gx_set_area_vision(somePlayerID, { m_location = "MyLocation", m_bSet = true })
+gx_set_area_vision(somePlayerID, {
+    m_location = "MyLocation",
+    m_bSet = true
+})
 
 # Gives vision of entire map to `somePlayerID`
-gx_set_area_vision(somePlayerID, { m_bFullMapVision = true, m_bSet = true })
+gx_set_area_vision(somePlayerID, {
+    m_bFullMapVision = true,
+    m_bSet = true
+})
 
 # Removes vision of entire map from `somePlayerID`
-gx_set_area_vision(somePlayerID, { m_bFullMapVision = true, m_bSet = false })
+gx_set_area_vision(somePlayerID, {
+    m_bFullMapVision = true,
+    m_bSet = false
+})
 ```
 
 ## gx_set_player_camera_look_at
