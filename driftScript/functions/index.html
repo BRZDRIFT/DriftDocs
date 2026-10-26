@@ -6471,6 +6471,7 @@
 </span></code></pre></div>
 <ul>
 <li>Only one of <code>m_location</code>, <code>m_triangleGroup</code>, <code>m_bFullMapVision</code> should be set</li>
+<li>The only valid valid for <code>m_bFullMapVision</code> is <code>true</code></li>
 <li>returns <code>true</code> if vision is given for <code>playerID</code> at <code>m_location</code>, <code>m_triangleGroup</code>, or entire map</li>
 </ul>
 <h2 id="gx_set_area_vision">gx_set_area_vision</h2>
@@ -6485,6 +6486,7 @@
 </span></code></pre></div>
 <ul>
 <li>Only one of <code>m_location</code>, <code>m_triangleGroup</code>, <code>m_bFullMapVision</code> should be set</li>
+<li>The only valid valid for <code>m_bFullMapVision</code> is <code>true</code></li>
 <li><code>m_bSet</code> sets whether vision should be given to player at <code>m_location</code>, <code>m_triangleGroup</code>, or entire map</li>
 <li>The vision at the region lasts forever until <code>gx_set_area_vision</code> is called again with <code>m_bSet = false</code></li>
 <li>Example: <code>gx_set_area_vision(somePlayerID, { m_location = "MyLocation", m_bSet = true })</code><ul>
