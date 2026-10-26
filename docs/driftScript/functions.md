@@ -299,7 +299,7 @@ Float3 gx_get_unit_position(int unitID)
 ```
 
 - returns position of unit
-- returns Float3(0.0, 0.0, 0.0) if unit no longer exists
+- returns `Float3(0.0, 0.0, 0.0)` if unit no longer exists
 ## gx_is_ground_unit
 ```sq
 bool gx_is_ground_unit(int unitID)
@@ -726,7 +726,19 @@ void gx_label3d_destroy(int labelID)
 int gx_get_kills(int playerID, table params = {})
 ```
 
+```sq
+table params = {
+    bool m_bAlliedKills,        # default: false
+    bool m_bSelfKills,          # default: false
+    bool m_bNonAlliedKills,     # default: false
+    int m_playerID              # default: false
+```
 
+- `m_bAlliedKills`: include allied kills in kill count
+- `m_bSelfKills`: include self kills in kill count
+- `m_bNonAlliedKills`: include non-allied kills in kill count
+- `m_playerID`: include kills of `m_playerID`'s units
+- Only one of `m_bAlliedKills`, `m_bSelfKills`, `m_bNonAlliedKills`, `m_playerID` should be set to `true`
 ## gx_set_objective_status
 ```sq
 void gx_set_objective_status(table params)
