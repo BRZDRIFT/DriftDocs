@@ -555,13 +555,35 @@ Int2 gx_get_terrain_type(int index, int index2 = 0)
 bool gx_get_area_vision(int playerID, table params)
 ```
 
+```sq
+table params = {
+    string m_location,
+    string m_triangleGroup,
+    bool m_bFullMapVision
+}
+```
 
+- Only one of `m_location`, `m_triangleGroup`, `m_bFullMapVision` should be set
+- returns if vision is given for player at `m_location`, `m_triangleGroup`, or entire map
 ## gx_set_area_vision
 ```sq
 void gx_set_area_vision(int playerID, table params)
 ```
 
+```sq
+table params = {
+    string m_location,
+    string m_triangleGroup,
+    bool m_bFullMapVision,
+    bool m_bSet
+}
+```
 
+- Only one of `m_location`, `m_triangleGroup`, `m_bFullMapVision` should be set
+- `m_bSet` sets whether vision should be given to player at `m_location, `m_triangleGroup`, or entire map
+- The vision at the region lasts forever until `gx_set_area_vision` is called again with `m_bSet = false`
+- Example: `gx_get_area_vision(somePlayerID, { m_location = "MyLocation", m_bSet = true })`
+    - Gives vision of location `MyLocation` to player `somePlayerID`
 ## gx_set_player_camera_look_at
 ```sq
 void gx_set_player_camera_look_at(int playerID, table params)
@@ -637,6 +659,7 @@ table params = {
     string m_location,
     int m_forceIDs[],
     int m_playerIDs[],
+    bool m_bRequireVision,      # default: false
 	TextHorzAlign m_textHorzAlign,                  # default: TextHorzAlign.Middle
 	TextHorzExpandDirection m_horzExpandDirection,  # default: TextHorzExpandDirection.Both
 	TextVertExpandDirection m_vertExpandDirection   # default: TextVertExpandDirection.Both
@@ -644,7 +667,9 @@ table params = {
 ```
 
 - Only one `m_pos` or `m_location` should be set
-- `m_fontSize` does not correspond to real font size. Also zooming in/out in game will increase/decrease font size accordingly.
+- `m_fontSize` does not correspond to real font size.
+- Zooming in/out in-game will increase/decrease font size accordingly.
+- If both `m_forceIDs` and `m_playerIDs` are unset, label is visible to everyone
 ## gx_label3d_modify
 ```sq
 void gx_label3d_modify(int labelID, table params)
@@ -658,13 +683,16 @@ table params = {
     string m_location,
     int m_forceIDs[],
     int m_playerIDs[],
+    bool m_bRequireVision,
 	TextHorzAlign m_textHorzAlign,
 	TextHorzExpandDirection m_horzExpandDirection,
 	TextVertExpandDirection m_vertExpandDirection
 ```
 
 - Only one `m_pos` or `m_location` should be set
-- `m_fontSize` does not correspond to real font size. Also zooming in/out in game will increase/decrease font size accordingly.
+- `m_fontSize` does not correspond to real font size.
+- Zooming in/out in-game will increase/decrease font size accordingly.
+- If both `m_forceIDs` and `m_playerIDs` are unset, label is visible to everyone
 ## gx_label3d_destroy
 ```sq
 void gx_label3d_destroy(int labelID)
