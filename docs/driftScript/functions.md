@@ -624,6 +624,53 @@ int gx_get_unit_research_level(int unitID, string researchName)
 ```
 
 
+## gx_label3d_create
+```sq
+int gx_label3d_create(table params)
+```
+
+```sq
+table params = {
+    float m_fontSize,           # default: 20
+    string m_text,
+    Float2 m_pos,
+    string m_location,
+    int m_forceIDs[],
+    int m_playerIDs[],
+	TextHorzAlign m_textHorzAlign,                  # default: TextHorzAlign.Middle
+	TextHorzExpandDirection m_horzExpandDirection,  # default: TextHorzExpandDirection.Both
+	TextVertExpandDirection m_vertExpandDirection   # default: TextVertExpandDirection.Both
+
+```
+
+- Only one `m_pos` or `m_location` should be set
+- `m_fontSize` does not correspond to real font size. Also zooming in/out in game will increase/decrease font size accordingly.
+## gx_label3d_modify
+```sq
+void gx_label3d_modify(int labelID, table params)
+```
+
+```sq
+table params = {
+    float m_fontSize,
+    string m_text,
+    Float2 m_pos,
+    string m_location,
+    int m_forceIDs[],
+    int m_playerIDs[],
+	TextHorzAlign m_textHorzAlign,
+	TextHorzExpandDirection m_horzExpandDirection,
+	TextVertExpandDirection m_vertExpandDirection
+```
+
+- Only one `m_pos` or `m_location` should be set
+- `m_fontSize` does not correspond to real font size. Also zooming in/out in game will increase/decrease font size accordingly.
+## gx_label3d_destroy
+```sq
+void gx_label3d_destroy(int labelID)
+```
+
+
 ## gx_get_kills
 ```sq
 int gx_get_kills(int playerID, table params = {})

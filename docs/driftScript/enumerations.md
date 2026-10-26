@@ -59,6 +59,50 @@ enum DeathCause
 ```
 
 
+## TextHorzExpandDirection
+```sq
+enum TextHorzExpandDirection
+{
+    Both = 0,
+    Left = 1,
+    Right = 2
+}
+```
+
+
+## TextVertExpandDirection
+```sq
+enum TextVertExpandDirection
+{
+    Both = 0,
+    Top = 1,
+    Bottom = 2
+}
+```
+
+
+## TextHorzAlign
+```sq
+enum TextHorzAlign
+{
+    Middle = 0,
+    Left = 1,
+    Right = 2
+}
+```
+
+
+## TextVertAlign
+```sq
+enum TextVertAlign
+{
+    Middle = 0,
+    Top = 1,
+    Bottom = 2
+}
+```
+
+
 ## EffectType
 ```sq
 enum EffectType
