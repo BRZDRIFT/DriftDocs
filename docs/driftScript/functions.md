@@ -604,8 +604,7 @@ gx_set_area_vision(somePlayerID, {
     m_bFullMapVision = true,
     m_bSet = false
 })
-```
-
+```sq
 ## gx_set_player_camera_look_at
 ```sq
 void gx_set_player_camera_look_at(int playerID, table params)
