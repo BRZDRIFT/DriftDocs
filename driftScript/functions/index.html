@@ -6490,7 +6490,15 @@
 <li><code>m_bSet</code> sets whether vision should be given to player at <code>m_location</code>, <code>m_triangleGroup</code>, or entire map</li>
 <li>The vision at the region lasts forever until <code>gx_set_area_vision</code> is called again with <code>m_bSet = false</code></li>
 <li>Example: <code>gx_set_area_vision(somePlayerID, { m_location = "MyLocation", m_bSet = true })</code><ul>
-<li>Gives vision of location <code>MyLocation</code> to player <code>somePlayerID</code></li>
+<li>Gives vision of location <code>MyLocation</code> to <code>somePlayerID</code></li>
+</ul>
+</li>
+<li>Example: <code>gx_set_area_vision(somePlayerID, { m_bFullMapVision = true, m_bSet = true })</code><ul>
+<li>Gives vision of entire map to <code>somePlayerID</code></li>
+</ul>
+</li>
+<li>Example: <code>gx_set_area_vision(somePlayerID, { m_bFullMapVision = true, m_bSet = false })</code><ul>
+<li>Removes vision of entire map from <code>somePlayerID</code></li>
 </ul>
 </li>
 </ul>
