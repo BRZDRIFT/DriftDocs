@@ -564,6 +564,7 @@ table params = {
 ```
 
 - Only one of `m_location`, `m_triangleGroup`, `m_bFullMapVision` should be set
+- The only valid valid for `m_bFullMapVision` is `true`
 - returns `true` if vision is given for `playerID` at `m_location`, `m_triangleGroup`, or entire map
 ## gx_set_area_vision
 ```sq
@@ -580,6 +581,7 @@ table params = {
 ```
 
 - Only one of `m_location`, `m_triangleGroup`, `m_bFullMapVision` should be set
+- The only valid valid for `m_bFullMapVision` is `true`
 - `m_bSet` sets whether vision should be given to player at `m_location`, `m_triangleGroup`, or entire map
 - The vision at the region lasts forever until `gx_set_area_vision` is called again with `m_bSet = false`
 - Example: `gx_set_area_vision(somePlayerID, { m_location = "MyLocation", m_bSet = true })`
