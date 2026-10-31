@@ -93,6 +93,19 @@ table params = {
 - If neither `m_pos` nor `m_location` is set, unit will be created at `(0, 0)`
 - Units may not be placed at the exact center of `m_location`, if you need exact position use `m_pos`.
 - Setting `m_bForceGhostMode` is shortcut so u don't need to set `set_unit_prop(UnitProp.ForceGhostMode, ..)` after unit creation.
+## gx_create_units
+```sq
+int[] gx_create_units(table params)
+```
+
+```sq
+table params = {
+    ... same as gx_create_unit ...
+    int m_count = 0         # num units to create
+}
+```
+
+- Same as `gx_create_unit` except accepts a `m_count` parameter, and return an array of unit ids
 ## gx_get_distance_between_units
 ```sq
 float gx_get_distance_between_units(int unit0, int unit1)
